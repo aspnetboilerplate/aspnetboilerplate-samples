@@ -15,11 +15,11 @@ namespace SimpleTaskSystem
             base.Initialize(initializationContext);
             IocManager.Instance.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
 
-            DyanmicApiControllerBuilder
+            DynamicApiControllerBuilder
                 .For<ITaskAppService>("tasksystem/task")
                 .Build();
 
-            DyanmicApiControllerBuilder
+            DynamicApiControllerBuilder
                 .For<IPersonAppService>("tasksystem/person")
                 .Build();
         }
