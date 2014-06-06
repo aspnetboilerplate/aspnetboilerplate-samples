@@ -1,11 +1,27 @@
 ﻿<div id="applicationHost"></div>
 @section styles
 {
-    <!-- Common styles for Main application -->
     <link href="~/App/Main/styles/main.css" rel="stylesheet" />
 }
 
 @section scripts
 {
-    <script src="~/Scripts/require.js" data-main="/App/Main/main"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-animate.min.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/angular-sanitize.min.js"></script>
+
+    <script src="~/Scripts/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-utils.min.js"></script>
+    
+    <script src="~/App/Main/app.js"></script>
+    
+    <script src="~/App/Main/views/layout/layout.js"></script>
+    <script src="~/App/Main/views/task/list.js"></script>
+    <script src="~/App/Main/views/task/new.js"></script>
 }
+
+<div ng-app="app">
+    @Html.Partial("~/App/Main/views/layout/layout.cshtml")
+</div>

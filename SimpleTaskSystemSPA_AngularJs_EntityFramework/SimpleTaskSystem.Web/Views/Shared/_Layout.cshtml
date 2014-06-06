@@ -21,9 +21,6 @@
     <!-- Style for Bootstrap -->
     <link href="~/Content/bootstrap-cosmo.min.css" rel="stylesheet">
 
-    <!-- Style for Durandal -->
-    <link href="~/Content/durandal.css" rel="stylesheet" />
-
     <!-- Styles for jQuery plug-ins -->
     <link href="~/Content/toastr.min.css" rel="stylesheet" />
 
@@ -78,6 +75,9 @@
 
     <!-- Dynamic script for client side localization (It's created on runtime) -->
     <script src="/AbpLocalization/GetScripts" type="text/javascript"></script>
+
+    <!-- Dynamic script for client side javascript proxies (It's created on runtime) -->
+    <script src="/api/AbpServiceProxies/GetAll" type="text/javascript"></script>
 
     <!-- Custom scripts for views -->
     @RenderSection("scripts", required: false)

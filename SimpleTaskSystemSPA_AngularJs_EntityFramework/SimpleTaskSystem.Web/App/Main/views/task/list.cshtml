@@ -1,0 +1,27 @@
+﻿<div class="panel panel-default" ng-controller="sts.controllers.views.task.list as vm">
+    <div class="panel-heading" style="position: relative;">
+        <div class="row">
+            <h3 class="panel-title col-xs-6">
+                @L("TaskList") - <span data-bind="text: abp.utils.formatString(localize('Xtasks'), tasks().length)"></span>
+            </h3>
+            <div class="col-xs-6 text-right">
+                <select data-bind="value: selectedTaskState, event: { change: refreshTasks }">
+                    <option value="0">@L("AllTasks")</option>
+                    <option value="1">@L("ActiveTasks")</option>
+                    <option value="2">@L("CompletedTasks")</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <ul class="list-group" ng-repeat="task in vm.tasks">
+        <div class="list-group-item">
+            <span class="task-state-icon glyphicon" data-bind="click: $parent.changeTaskState, css: { 'glyphicon-minus': state() == 1, 'glyphicon-ok': state() == 2 }"></span>
+            <span @*ng-class={ 'task-description-active': state == 1, 'task-description-completed': state() == 2 }"*@>{{task.description}}</span>
+            <br />
+            <span data-bind="visible: task.assignedPersonId > 0">
+                <span class="task-assignedto">{{task.assignedPersonName}}</span>
+            </span>
+            <span class="task-creationtime">{{task.creationTime}}</span>
+        </div>
+    </ul>
+</div>
