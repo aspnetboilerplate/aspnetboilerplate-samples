@@ -1,45 +1,33 @@
-﻿//define(['service!tasksystem/person', 'service!tasksystem/task', 'plugins/history'],
-//    function (personService, taskService, history) {
+﻿(function () {
+    var controllerId = 'sts.controllers.views.task.list';
+    var app = angular.module('app');
+    app.controller(controllerId, ['$scope', function ($scope) {
+        var vm = this;
 
-//        var localize = abp.localization.getSource('SimpleTaskSystem');
+        vm.task = {
+            description: '',
+            assignedPersonId: null
+        };
 
-//        return function () {
-//            var that = this;
+        vm.people = []; //TODO: Move Person combo to a directive
 
-//            var _$view = null;
-//            var _$form = null;
+        abp.services.tasksystem.person.getAllPeople().done(function (data) {
+            vm.people = data.people;
+        });
 
-//            that.people = ko.mapping.fromJS([]);
+        that.saveTask = function () {
+            if (!_$form.valid()) { //TODO: Make validation with angular's validation system.
+                return;
+            }
 
-//            that.task = {
-//                description: ko.observable(''),
-//                assignedPersonId: ko.observable(0)
-//            };
+            abp.ui.setBusy(_$view, {
+                promise: taskService.createTask(ko.mapping.toJS(that.task))
+                    .done(function () {
+                        abp.notify.info(abp.utils.formatString(localize("TaskCreatedMessage"), that.task.description()));
+                        history.navigate('');
+                    })
+            });
+        };
 
-//            that.canActivate = function () {
-//                return personService.getAllPeople().done(function (data) {
-//                    ko.mapping.fromJS(data.people, that.people);
-//                });
-//            };
-
-//            that.attached = function (view, parent) {
-//                _$view = $(view);
-//                _$form = _$view.find('form');
-//                _$form.validate();
-//            };
-
-//            that.saveTask = function () {
-//                if (!_$form.valid()) {
-//                    return;
-//                }
-
-//                abp.ui.setBusy(_$view, {
-//                    promise: taskService.createTask(ko.mapping.toJS(that.task))
-//                        .done(function () {
-//                            abp.notify.info(abp.utils.formatString(localize("TaskCreatedMessage"), that.task.description()));
-//                            history.navigate('');
-//                        })
-//                });
-//            };
-//        };
-//    });
+    }]);
+})();

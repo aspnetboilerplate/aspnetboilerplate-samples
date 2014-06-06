@@ -7,11 +7,16 @@
 
         vm.localize = abp.localization.getSource('SimpleTaskSystem');
 
+        $scope.selectedTaskState = 0;
+
+        $scope.$watch('selectedTaskState', function (value) {
+            vm.refreshTasks();
+        });
+
         vm.refreshTasks = function () {
             abp.services.tasksystem.task.getTasks({
-                state: vm.selectedTaskState > 0 ? vm.selectedTaskState : null
+                state: $scope.selectedTaskState > 0 ? $scope.selectedTaskState : null
             }).done(function (data) {
-                alert(1);
                 $scope.$apply(function() {
                     vm.tasks = data.tasks;
                 });
