@@ -27,7 +27,6 @@ namespace SimpleTaskSystem.Tasks
                    };
         }
 
-        [UnitOfWork]
         public void UpdateTask(UpdateTaskInput input)
         {
             var task = _taskRepository.Get(input.TaskId);

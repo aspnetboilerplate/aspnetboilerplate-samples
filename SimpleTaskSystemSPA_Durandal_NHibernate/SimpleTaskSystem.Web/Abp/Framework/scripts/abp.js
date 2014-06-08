@@ -92,7 +92,7 @@
     /* LOGGING ***************************************************/
     //Implements Logging API that provides secure & controlled usage of console.log
 
-    abp.log = {};
+    abp.log = abp.log || {};
 
     abp.log.levels = {
         DEBUG: 1,
@@ -144,7 +144,7 @@
     /* NOTIFICATION *********************************************/
     //Defines Notification API, not implements it
 
-    abp.notify = {};
+    abp.notify = abp.notify || {};
 
     abp.notify.success = function (message, title) {
         abp.log.warn('abp.notify.success is not implemented!');
@@ -165,7 +165,7 @@
     /* MESSAGE **************************************************/
     //Defines Message API, not implements it
 
-    abp.message = {};
+    abp.message = abp.message || {};
 
     abp.message.info = function (message, title) {
         abp.log.warn('abp.message.info is not implemented!');
@@ -184,7 +184,7 @@
 
     /* UI *******************************************************/
 
-    abp.ui = {};
+    abp.ui = abp.ui || {};
 
     /* UI BLOCK */
     //Defines UI Block API, not implements it
@@ -210,7 +210,26 @@
 
     /* UTILS ***************************************************/
 
-    abp.utils = {};
+    abp.utils = abp.utils || {};
+
+    /* Creates a name namespace.
+    *  Example:
+    *  var taskService = abp.utils.createNamespace(abp, 'services.task');
+    *  taskService will be equal to abp.services.task
+    *  first argument (root) must be defined first
+    ************************************************************/
+    abp.utils.createNamespace = function (root, ns) {
+        var parts = ns.split('.');
+        for (var i = 0; i < parts.length; i++) {
+            if (typeof root[parts[i]] == 'undefined') {
+                root[parts[i]] = {};
+            }
+
+            root = root[parts[i]];
+        }
+
+        return root;
+    };
 
     /* Formats a string just like string.format in C#.
     *  Example:
