@@ -21,13 +21,15 @@
             {
                 url: '/', //default: /task/new
                 config: {
-                    templateUrl: getViewUrl('task/list')
+                    templateUrl: getViewUrl('task/list'),
+                    menuItem: 'TaskList'
                 }
             },
             {
                 url: '/task/new',
                 config: {
-                    templateUrl: getViewUrl('task/new')
+                    templateUrl: getViewUrl('task/new'),
+                    menuItem: 'NewTask'
                 }
             }
         ];
@@ -44,10 +46,10 @@
     }
 
     app.run(['$rootScope', '$location', '$routeParams', '$route', function ($rootScope, $location, $routeParams, $route) {
-        //$rootScope.$on('$routeChangeSuccess', function (event, next, current) {
-        //    if (next && next.$$route) {
-        //        $rootScope.activeMenu = next.$$route.menuItem;
-        //    }
-        //});
+        $rootScope.$on('$routeChangeSuccess', function (event, next, current) {
+            if (next && next.$$route) {
+                $rootScope.activeMenu = next.$$route.menuItem;
+            }
+        });
     }]);
 })();

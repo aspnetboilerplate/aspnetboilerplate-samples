@@ -11,10 +11,10 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav" data-bind="foreach: router.navigationModel">
-                <li class="active">
+                <li ng-class="{active: activeMenu == 'TaskList'}">
                     <a href="#/">TaskList</a>
                 </li>
-                <li>
+                <li ng-class="{active: activeMenu == 'NewTask'}">
                     <a href="#/task/new">NewTask</a>
                 </li>
             </ul>

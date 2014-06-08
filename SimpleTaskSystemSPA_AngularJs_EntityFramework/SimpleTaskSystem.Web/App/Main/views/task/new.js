@@ -1,7 +1,7 @@
 ﻿(function () {
-    var controllerId = 'sts.controllers.views.task.list';
+    var controllerId = 'sts.controllers.views.task.new';
     var app = angular.module('app');
-    app.controller(controllerId, ['$scope', function ($scope) {
+    app.controller(controllerId, ['$scope', '$location', function ($scope, $location) {
         var vm = this;
 
         vm.task = {
@@ -9,22 +9,28 @@
             assignedPersonId: null
         };
 
+        var localize = abp.localization.getSource('SimpleTaskSystem');
+
         vm.people = []; //TODO: Move Person combo to a directive
 
-        abp.services.tasksystem.person.getAllPeople().done(function (data) {
-            vm.people = data.people;
+        abp.services.tasksystem.person.getAllPeople({}).done(function (data) {
+            $scope.$apply(function () {
+                vm.people = data.people;
+            });
         });
 
-        that.saveTask = function () {
-            if (!_$form.valid()) { //TODO: Make validation with angular's validation system.
+        vm.saveTask = function () {
+            if (!$('#NewTaskForm').valid()) { //TODO: Make validation with angular's validation system.
                 return;
             }
 
-            abp.ui.setBusy(_$view, {
-                promise: taskService.createTask(ko.mapping.toJS(that.task))
+            abp.ui.setBusy($('#NewTaskForm'), {
+                promise: abp.services.tasksystem.task.createTask(vm.task)
                     .done(function () {
-                        abp.notify.info(abp.utils.formatString(localize("TaskCreatedMessage"), that.task.description()));
-                        history.navigate('');
+                        abp.notify.info(abp.utils.formatString(localize("TaskCreatedMessage"), vm.task.description));
+                        $scope.$apply(function () {
+                            $location.path('/'); //TODO: Look for a better way!
+                        });                           
                     })
             });
         };

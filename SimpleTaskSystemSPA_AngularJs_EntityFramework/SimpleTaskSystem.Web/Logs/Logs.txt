@@ -1191,3 +1191,155 @@ DEBUG 2014-06-06 15:45:26,488 [1    ] Abp.Modules.AbpModuleLoader              -
 DEBUG 2014-06-06 15:45:26,489 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemWebApiModule, SimpleTaskSystem.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 DEBUG 2014-06-06 15:45:26,489 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.Web.SimpleTaskSystemWebModule, SimpleTaskSystem.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 DEBUG 2014-06-06 15:45:26,586 [1    ] Abp.Modules.AbpModuleLoader              - 10 modules loaded.
+DEBUG 2014-06-08 20:02:37,015 [1    ] Abp.Modules.AbpModuleLoader              - Loading Abp modules...
+DEBUG 2014-06-08 20:02:38,301 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Application.AbpApplicationModule, Abp.Application, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:02:38,661 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Infrastructure.EntityFramework.AbpEntityFrameworkModule, Abp.Infrastructure.EntityFramework, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:02:38,700 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Web.AbpWebModule, Abp.Web, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:02:38,703 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.WebApi.Startup.AbpWebApiModule, Abp.Web.Api, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:02:38,741 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Web.Mvc.Startup.AbpWebMvcModule, Abp.Web.Mvc, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:02:38,763 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemCoreModule, SimpleTaskSystem.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:02:38,764 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemApplicationModule, SimpleTaskSystem.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:02:38,765 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemEntityFrameworkModule, SimpleTaskSystem.Infrastructure.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:02:38,765 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemWebApiModule, SimpleTaskSystem.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:02:38,766 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.Web.SimpleTaskSystemWebModule, SimpleTaskSystem.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:02:38,805 [1    ] Abp.Modules.AbpModuleLoader              - 10 modules loaded.
+DEBUG 2014-06-08 20:10:58,496 [1    ] Abp.Modules.AbpModuleLoader              - Loading Abp modules...
+DEBUG 2014-06-08 20:10:58,990 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Application.AbpApplicationModule, Abp.Application, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:10:59,150 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Infrastructure.EntityFramework.AbpEntityFrameworkModule, Abp.Infrastructure.EntityFramework, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:10:59,192 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Web.AbpWebModule, Abp.Web, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:10:59,196 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.WebApi.Startup.AbpWebApiModule, Abp.Web.Api, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:10:59,236 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Web.Mvc.Startup.AbpWebMvcModule, Abp.Web.Mvc, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:10:59,261 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemCoreModule, SimpleTaskSystem.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:10:59,262 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemApplicationModule, SimpleTaskSystem.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:10:59,263 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemEntityFrameworkModule, SimpleTaskSystem.Infrastructure.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:10:59,263 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemWebApiModule, SimpleTaskSystem.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:10:59,264 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.Web.SimpleTaskSystemWebModule, SimpleTaskSystem.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:10:59,318 [1    ] Abp.Modules.AbpModuleLoader              - 10 modules loaded.
+DEBUG 2014-06-08 20:19:22,629 [1    ] Abp.Modules.AbpModuleLoader              - Loading Abp modules...
+DEBUG 2014-06-08 20:19:23,139 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Application.AbpApplicationModule, Abp.Application, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:19:23,303 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Infrastructure.EntityFramework.AbpEntityFrameworkModule, Abp.Infrastructure.EntityFramework, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:19:23,346 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Web.AbpWebModule, Abp.Web, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:19:23,350 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.WebApi.Startup.AbpWebApiModule, Abp.Web.Api, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:19:23,391 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Web.Mvc.Startup.AbpWebMvcModule, Abp.Web.Mvc, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:19:23,416 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemCoreModule, SimpleTaskSystem.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:19:23,417 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemApplicationModule, SimpleTaskSystem.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:19:23,418 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemEntityFrameworkModule, SimpleTaskSystem.Infrastructure.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:19:23,418 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemWebApiModule, SimpleTaskSystem.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:19:23,419 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.Web.SimpleTaskSystemWebModule, SimpleTaskSystem.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:19:23,476 [1    ] Abp.Modules.AbpModuleLoader              - 10 modules loaded.
+ERROR 2014-06-08 20:34:29,022 [16   ] Default                                  - One or more errors occurred.
+System.AggregateException: One or more errors occurred. ---> Abp.Runtime.Validation.AbpValidationException: Method arguments are not valid! See ValidationErrors for details.
+   at Abp.WebApi.Controllers.Dynamic.Interceptors.AbpDynamicApiControllerInterceptor`1.Intercept(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.DynamicApiController`1Proxy.CreateTask(CreateTaskInput input)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClassc.<GetExecutor>b__6(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Abp.WebApi.Controllers.Dynamic.Selectors.DyanamicHttpActionDescriptor.<ExecuteAsync>b__0(Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+---> (Inner Exception #0) Abp.Runtime.Validation.AbpValidationException: Method arguments are not valid! See ValidationErrors for details.
+   at Abp.WebApi.Controllers.Dynamic.Interceptors.AbpDynamicApiControllerInterceptor`1.Intercept(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.DynamicApiController`1Proxy.CreateTask(CreateTaskInput input)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClassc.<GetExecutor>b__6(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)<---
+
+ERROR 2014-06-08 20:35:05,265 [50   ] Default                                  - One or more errors occurred.
+System.AggregateException: One or more errors occurred. ---> Abp.Runtime.Validation.AbpValidationException: Method arguments are not valid! See ValidationErrors for details.
+   at Abp.WebApi.Controllers.Dynamic.Interceptors.AbpDynamicApiControllerInterceptor`1.Intercept(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.DynamicApiController`1Proxy.CreateTask(CreateTaskInput input)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClassc.<GetExecutor>b__6(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Abp.WebApi.Controllers.Dynamic.Selectors.DyanamicHttpActionDescriptor.<ExecuteAsync>b__0(Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+---> (Inner Exception #0) Abp.Runtime.Validation.AbpValidationException: Method arguments are not valid! See ValidationErrors for details.
+   at Abp.WebApi.Controllers.Dynamic.Interceptors.AbpDynamicApiControllerInterceptor`1.Intercept(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.DynamicApiController`1Proxy.CreateTask(CreateTaskInput input)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClassc.<GetExecutor>b__6(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)<---
+
+DEBUG 2014-06-08 20:39:29,995 [1    ] Abp.Modules.AbpModuleLoader              - Loading Abp modules...
+DEBUG 2014-06-08 20:39:30,232 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Application.AbpApplicationModule, Abp.Application, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:39:30,381 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Infrastructure.EntityFramework.AbpEntityFrameworkModule, Abp.Infrastructure.EntityFramework, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:39:30,426 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Web.AbpWebModule, Abp.Web, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:39:30,429 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.WebApi.Startup.AbpWebApiModule, Abp.Web.Api, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:39:30,467 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Web.Mvc.Startup.AbpWebMvcModule, Abp.Web.Mvc, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:39:30,489 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemCoreModule, SimpleTaskSystem.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:39:30,490 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemApplicationModule, SimpleTaskSystem.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:39:30,491 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemEntityFrameworkModule, SimpleTaskSystem.Infrastructure.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:39:30,491 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemWebApiModule, SimpleTaskSystem.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:39:30,492 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.Web.SimpleTaskSystemWebModule, SimpleTaskSystem.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:39:30,703 [1    ] Abp.Modules.AbpModuleLoader              - 10 modules loaded.
+DEBUG 2014-06-08 20:46:49,916 [1    ] Abp.Modules.AbpModuleLoader              - Loading Abp modules...
+DEBUG 2014-06-08 20:46:51,201 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Application.AbpApplicationModule, Abp.Application, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:46:51,202 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Web.AbpWebModule, Abp.Web, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:46:51,203 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Web.Mvc.Startup.AbpWebMvcModule, Abp.Web.Mvc, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:46:51,683 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Infrastructure.EntityFramework.AbpEntityFrameworkModule, Abp.Infrastructure.EntityFramework, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:46:51,693 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemCoreModule, SimpleTaskSystem.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:46:51,695 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemEntityFrameworkModule, SimpleTaskSystem.Infrastructure.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:46:51,864 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemApplicationModule, SimpleTaskSystem.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:46:52,254 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.WebApi.Startup.AbpWebApiModule, Abp.Web.Api, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:46:52,254 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemWebApiModule, SimpleTaskSystem.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:46:52,255 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.Web.SimpleTaskSystemWebModule, SimpleTaskSystem.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:46:52,262 [1    ] Abp.Modules.AbpModuleLoader              - 10 modules loaded.
+DEBUG 2014-06-08 20:47:57,024 [1    ] Abp.Modules.AbpModuleLoader              - Loading Abp modules...
+DEBUG 2014-06-08 20:47:58,397 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Application.AbpApplicationModule, Abp.Application, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:47:58,398 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Web.AbpWebModule, Abp.Web, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:47:58,399 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Web.Mvc.Startup.AbpWebMvcModule, Abp.Web.Mvc, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:47:58,888 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Infrastructure.EntityFramework.AbpEntityFrameworkModule, Abp.Infrastructure.EntityFramework, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:47:58,898 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemCoreModule, SimpleTaskSystem.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:47:58,899 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemEntityFrameworkModule, SimpleTaskSystem.Infrastructure.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:47:59,043 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemApplicationModule, SimpleTaskSystem.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:47:59,440 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.WebApi.Startup.AbpWebApiModule, Abp.Web.Api, Version=0.2.2.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:47:59,440 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemWebApiModule, SimpleTaskSystem.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:47:59,441 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.Web.SimpleTaskSystemWebModule, SimpleTaskSystem.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-06-08 20:47:59,448 [1    ] Abp.Modules.AbpModuleLoader              - 10 modules loaded.
