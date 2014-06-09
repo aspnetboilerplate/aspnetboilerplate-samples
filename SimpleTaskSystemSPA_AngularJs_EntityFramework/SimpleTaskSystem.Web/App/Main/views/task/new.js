@@ -20,10 +20,6 @@
         });
 
         vm.saveTask = function () {
-            if (!$('#NewTaskForm').valid()) { //TODO: Make validation with angular's validation system.
-                return;
-            }
-
             abp.ui.setBusy($('#NewTaskForm'), {
                 promise: abp.services.tasksystem.task.createTask(vm.task)
                     .done(function () {

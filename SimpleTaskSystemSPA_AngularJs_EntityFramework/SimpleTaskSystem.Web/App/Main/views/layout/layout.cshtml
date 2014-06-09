@@ -1,4 +1,4 @@
-﻿<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+﻿<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="sts.controllers.views.layout as vm">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -20,10 +20,10 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="famfamfam-flag-tr" data-bind="css: getLanguageFlagClass(abp.localization.currentCulture.name)"></i> <span data-bind="text: getLanguageName(abp.localization.currentCulture.name)"></span> <b class="caret"></b></a>
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown"><i ng-class="vm.getLanguageFlagClass()"></i> <span>{{ vm.getLanguageName() }}</span> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li data-bind="visible: !abp.localization.isCurrentCulture('tr')"><a href="/AbpLocalization/ChangeCulture?cultureName=tr"><i class="famfamfam-flag-tr"></i> Türkçe</a></li>
-                        <li data-bind="visible: !abp.localization.isCurrentCulture('en')"><a href="/AbpLocalization/ChangeCulture?cultureName=en"><i class="famfamfam-flag-england"></i> English</a></li>
+                        <li ng-hide="vm.isCurrentLanguage('tr')"><a href="/AbpLocalization/ChangeCulture?cultureName=tr"><i class="famfamfam-flag-tr"></i> Türkçe</a></li>
+                        <li ng-hide="vm.isCurrentLanguage('en')"><a href="/AbpLocalization/ChangeCulture?cultureName=en"><i class="famfamfam-flag-england"></i> English</a></li>
                     </ul>
                 </li>
             </ul>
