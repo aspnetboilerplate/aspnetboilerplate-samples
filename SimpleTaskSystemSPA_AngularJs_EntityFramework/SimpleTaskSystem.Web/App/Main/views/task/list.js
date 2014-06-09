@@ -43,6 +43,10 @@
             });
         };
 
+        vm.getTaskCountText = function () {
+            return abp.utils.formatString(vm.localize('Xtasks'), vm.tasks.length);
+        };
+
         vm.refreshTasks();
     }]);
 })();

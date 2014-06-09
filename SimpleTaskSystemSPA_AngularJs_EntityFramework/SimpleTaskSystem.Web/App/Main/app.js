@@ -11,7 +11,9 @@
         'ngSanitize',
 
         'ui.bootstrap',
-        'ui.jq'
+        'ui.jq',
+
+        'abp'
     ]);
 
     app.constant('routes', getRoutes());

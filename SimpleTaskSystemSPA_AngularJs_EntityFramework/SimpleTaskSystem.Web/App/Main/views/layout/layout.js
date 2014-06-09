@@ -1,30 +1,23 @@
 ﻿(function () {
 
     var languages = [
-            {
-                name: 'tr',
-                displayName: 'Türkçe',
-                iconClass: 'famfamfam-flag-tr'
-            },
-            {
-                name: 'en',
-                displayName: 'English',
-                iconClass: 'famfamfam-flag-england'
-            }
+        {
+            name: 'tr',
+            displayName: 'Türkçe',
+            iconClass: 'famfamfam-flag-tr'
+        },
+        {
+            name: 'en',
+            displayName: 'English',
+            iconClass: 'famfamfam-flag-england'
+        }
     ];
-
-
-    var controllerId = 'sts.controllers.views.layout';
-
+    
     var app = angular.module('app');
-
-
-
-
+    var controllerId = 'sts.controllers.views.layout';
     app.controller(controllerId, ['$scope', function ($scope) {
         var that = this;
-
-
+        
         that.getLanguageFlagClass = function () {
             var lang = abp.localization.currentCulture.name;
             for (var i = 0; i < languages.length; i++) {

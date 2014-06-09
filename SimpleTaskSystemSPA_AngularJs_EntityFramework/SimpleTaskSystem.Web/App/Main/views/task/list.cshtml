@@ -2,7 +2,7 @@
     <div class="panel-heading" style="position: relative;">
         <div class="row">
             <h3 class="panel-title col-xs-6">
-                @L("TaskList") - <span data-bind="text: abp.utils.formatString(localize('Xtasks'), tasks().length)"></span>
+                @L("TaskList") - <span>{{vm.getTaskCountText()}}</span>
             </h3>
             <div class="col-xs-6 text-right">
                 <select ng-model="selectedTaskState">
@@ -18,7 +18,7 @@
             <span class="task-state-icon glyphicon" ng-click="vm.changeTaskState(task)" ng-class="{'glyphicon-minus': task.state == 1, 'glyphicon-ok': task.state == 2}"></span>
             <span ng-class="{'task-description-active': task.state == 1, 'task-description-completed': task.state == 2 }">{{task.description}}</span>
             <br />
-            <span data-bind="visible: task.assignedPersonId > 0">
+            <span ng-show="task.assignedPersonId > 0">
                 <span class="task-assignedto">{{task.assignedPersonName}}</span>
             </span>
             <span class="task-creationtime">{{task.creationTime}}</span>
