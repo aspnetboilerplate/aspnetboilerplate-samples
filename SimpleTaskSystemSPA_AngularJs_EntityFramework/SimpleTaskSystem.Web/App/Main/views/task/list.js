@@ -2,8 +2,10 @@
     var controllerId = 'sts.controllers.views.task.list';
     var app = angular.module('app');
 
-    app.controller(controllerId, ['$scope', function ($scope) {
+    app.controller(controllerId, ['$scope', 'services.tasksystem.task', function ($scope, taskService) {
         var vm = this;
+
+        vm.tasks = [];
 
         vm.localize = abp.localization.getSource('SimpleTaskSystem');
 
@@ -14,7 +16,7 @@
         });
 
         vm.refreshTasks = function () {
-            abp.services.tasksystem.task.getTasks({
+            taskService.getTasks({
                 state: $scope.selectedTaskState > 0 ? $scope.selectedTaskState : null
             }).done(function (data) {
                 $scope.$apply(function() {
