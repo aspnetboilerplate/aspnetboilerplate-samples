@@ -10,64 +10,64 @@
 
     abpModule.config([
         '$httpProvider', function ($httpProvider) {
-            //$httpProvider.defaults.transformResponse.push(function (a) {
-            //    return a;
-            //});
-        }
-    ]);
+            $httpProvider.interceptors.push(function () {
+                return {
+                    'request': function (config) {
+                        return config;
+                    },
 
-    abpModule.factory('abp.$http', [
-        '$q', '$http', function ($q, $http) {
+                    'response': function (response) {
+                        if (!response.config || !response.config.abp) {
+                            return response;
+                        }
 
-            //var defaultOptions = {
-            //    transformResponse: function (strData) {
-            //        if (!strData) {
-            //            return strData;
-            //        }
+                        //var data = response.data;
+                        if (!response.data) { //Needless check?
+                            return response;
+                        }
 
-            //        var data = JSON.parse(strData);
-            //        if (!data) { //Needless check?
-            //            return strData;
-            //        }
+                        if (response.data.targetUrl) { //TODO: Check if it works and does not prevent return value!
+                            location.href = data.targetUrl;
+                        }
 
-            //        if (data.targetUrl) { //TODO: Check if it works and does not prevent return value!
-            //            location.href = data.targetUrl;
-            //        }
+                        if (response.data.success === true) {
+                            response.data = response.data.result;
+                        } else { //data.success === false
+                            if (response.data.error) {
+                                //abp.log.error(response.data.error.details);
+                                abp.message.error(response.data.error.message);
+                                throw response.data.error.message;
+                            }
 
-            //        if (data.success === true) {
-            //            return data.result;
-            //        } else { //data.success === false
-            //            if (data.error) {
-            //                abp.log.error(data.error.details);
-            //                abp.message.error(data.error.message);
-            //            }
+                            if (response.data.unAuthorizedRequest && !response.data.targetUrl) {
+                                location.reload();
+                            }
+                        }
 
-            //            if (data.unAuthorizedRequest && !data.targetUrl) {
-            //                location.reload();
-            //            }
+                        return response;
+                    },
 
-            //            return data;
-            //        }
+                    //'responseError': function (rejection) {
+                    //    alert(1);
+                    //    console.log('asd: ' + rejection);
 
-            //    }
-            //};
-
-            return function (options) {
-
-                return $http($.extend({}, defaultOptions, options));
-            };
+                    //    return $q.reject(rejection);
+                    //}
+                };
+            });
         }
     ]);
 
     abpModule.factory('services.tasksystem.task', [
-        'abp.$http', function ($http) {
+        '$http', function ($http) {
             return new function () {
                 //Working on this code!
                 this.getTasks = function (input) {
                     return $http({
                         url: '/api/services/tasksystem/task/GetTasks',
                         method: 'POST',
-                        data: JSON.stringify(input)
+                        data: JSON.stringify(input),
+                        abp: true
                     });
                 };
             };
