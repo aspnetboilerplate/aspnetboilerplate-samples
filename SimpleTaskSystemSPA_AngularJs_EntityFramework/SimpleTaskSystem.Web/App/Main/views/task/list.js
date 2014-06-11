@@ -16,7 +16,6 @@
         });
 
         vm.refreshTasks = function () {
-            //NOTE: Working on task service!
             taskService.getTasks({
                 state: $scope.selectedTaskState > 0 ? $scope.selectedTaskState : null
             }).success(function (data) {
