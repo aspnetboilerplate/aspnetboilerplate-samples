@@ -10,21 +10,14 @@
 
     abpModule.config([
         '$httpProvider', function ($httpProvider) {
-            $httpProvider.interceptors.push(function () {
+            $httpProvider.interceptors.push(function ($q) {
                 return {
-                    'request': function (config) {
-                        return config;
-                    },
-
                     'response': function (response) {
-                        if (!response.config || !response.config.abp) {
+                        if (!response.config || !response.config.abp || !response.data) {
                             return response;
                         }
 
-                        //var data = response.data;
-                        if (!response.data) { //Needless check?
-                            return response;
-                        }
+                        var defer = $q.defer();
 
                         if (response.data.targetUrl) { //TODO: Check if it works and does not prevent return value!
                             location.href = data.targetUrl;
@@ -32,27 +25,29 @@
 
                         if (response.data.success === true) {
                             response.data = response.data.result;
+                            defer.resolve(response);
                         } else { //data.success === false
                             if (response.data.error) {
-                                //abp.log.error(response.data.error.details);
                                 abp.message.error(response.data.error.message);
-                                throw response.data.error.message;
+                            } else {
+                                response.data.error = {
+                                    message: 'Ajax request is not succeed!',
+                                    details: 'Error detail is not sent by server.'
+                                };
                             }
+
+                            abp.log.error(response.data.error.message + ' | ' + response.data.error.details);
+
+                            response.data = response.data.error;
+                            defer.reject(response);
 
                             if (response.data.unAuthorizedRequest && !response.data.targetUrl) {
                                 location.reload();
                             }
                         }
 
-                        return response;
-                    },
-
-                    //'responseError': function (rejection) {
-                    //    alert(1);
-                    //    console.log('asd: ' + rejection);
-
-                    //    return $q.reject(rejection);
-                    //}
+                        return defer.promise;
+                    }
                 };
             });
         }
@@ -61,7 +56,6 @@
     abpModule.factory('services.tasksystem.task', [
         '$http', function ($http) {
             return new function () {
-                //Working on this code!
                 this.getTasks = function (input) {
                     return $http({
                         url: '/api/services/tasksystem/task/GetTasks',
