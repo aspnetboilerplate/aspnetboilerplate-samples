@@ -19,11 +19,7 @@
             taskService.getTasks({
                 state: $scope.selectedTaskState > 0 ? $scope.selectedTaskState : null
             }).success(function (data) {
-                console.log(arguments);
                 vm.tasks = data.tasks;
-            }).error(function (a) {
-                console.log('error!');
-                console.log(arguments);
             });
         };
 
