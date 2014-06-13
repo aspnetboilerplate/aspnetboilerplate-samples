@@ -1,5 +1,5 @@
 ﻿<div ng-controller="sts.controllers.views.task.new as vm">
-    <form role="form" name="newTaskForm" novalidate>
+    <form id="NewTaskForm" role="form" name="newTaskForm" novalidate>
         <div class="form-group">
             <label for="TaskDescription">@L("TaskDescription")</label>
             <textarea id="TaskDescription" ng-model="vm.task.description" class="form-control" rows="3" placeholder="@L("EnterDescriptionHere")" required></textarea>

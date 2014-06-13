@@ -2,7 +2,7 @@
     var controllerId = 'sts.controllers.views.task.list';
     var app = angular.module('app');
 
-    app.controller(controllerId, ['$scope', 'services.tasksystem.task', function ($scope, taskService) {
+    app.controller(controllerId, ['$scope', 'abp.services.tasksystem.task', function ($scope, taskService) {
         var vm = this;
 
         vm.tasks = [];
@@ -31,14 +31,11 @@
                 newState = 1;
             }
 
-            abp.services.tasksystem.task.updateTask({
+            taskService.updateTask({
                 taskId: task.id,
                 state: newState
-            }).done(function () {
-                $scope.$apply(function () {
-                    task.state = newState;
-                });
-
+            }).success(function () {
+                task.state = newState;
                 abp.notify.info(vm.localize('TaskUpdatedMessage'));
             });
         };
