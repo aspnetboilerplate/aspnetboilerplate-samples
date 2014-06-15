@@ -1,10 +1,6 @@
 ﻿(function () {
     'use strict';
 
-    var getViewUrl = function (path) {
-        return '/AbpAppView/Load?viewUrl=/App/Main/views/' + path + '.cshtml';
-    };
-
     var app = angular.module('app', [
         'ngAnimate',
         'ngRoute',
@@ -21,16 +17,16 @@
     function getRoutes() {
         return [
             {
-                url: '/', //default: /task/new
+                url: '/', //default: /task/list
                 config: {
-                    templateUrl: getViewUrl('task/list'),
+                    templateUrl: '/App/Main/views/task/list.cshtml',
                     menuItem: 'TaskList'
                 }
             },
             {
                 url: '/task/new',
                 config: {
-                    templateUrl: getViewUrl('task/new'),
+                    templateUrl: '/App/Main/views/task/new.cshtml',
                     menuItem: 'NewTask'
                 }
             }
@@ -44,7 +40,7 @@
             $routeProvider.when(r.url, r.config);
         });
 
-        $routeProvider.otherwise({ redirectTo: '/' });
+        $routeProvider.otherwise({ redirectTo: abp.appPath });
     }
 
     app.run(['$rootScope', '$location', '$routeParams', '$route', function ($rootScope, $location, $routeParams, $route) {
