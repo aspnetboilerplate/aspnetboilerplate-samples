@@ -17,7 +17,7 @@
     function getRoutes() {
         return [
             {
-                url: '/', //default: /task/new
+                url: '/', //default: /task/list
                 config: {
                     templateUrl: '/App/Main/views/task/list.cshtml',
                     menuItem: 'TaskList'
