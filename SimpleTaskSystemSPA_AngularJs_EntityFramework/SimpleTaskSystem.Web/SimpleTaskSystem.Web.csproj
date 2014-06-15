@@ -38,21 +38,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abp, Version=0.2.2.1, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp, Version=0.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.0.2.2.1\lib\net451\Abp.dll</HintPath>
+      <HintPath>..\packages\Abp.0.2.3.0\lib\net451\Abp.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Application, Version=0.2.2.1, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp.Application, Version=0.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.Application.0.2.2.1\lib\net451\Abp.Application.dll</HintPath>
+      <HintPath>..\packages\Abp.Application.0.2.3.0\lib\net451\Abp.Application.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web, Version=0.2.2.1, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp.Web, Version=0.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.Web.0.2.2.1\lib\net451\Abp.Web.dll</HintPath>
+      <HintPath>..\packages\Abp.Web.0.2.3.0\lib\net451\Abp.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Mvc, Version=0.2.2.1, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp.Web.Mvc, Version=0.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.Web.Mvc.0.2.2.1\lib\net451\Abp.Web.Mvc.dll</HintPath>
+      <HintPath>..\packages\Abp.Web.Mvc.0.2.3.0\lib\net451\Abp.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -172,7 +172,7 @@
     <Content Include="Abp\Framework\scripts\libs\abp.jquery.js" />
     <Content Include="Abp\Framework\scripts\libs\abp.spin.js" />
     <Content Include="Abp\Framework\scripts\libs\abp.toastr.js" />
-    <Content Include="Abp\Framework\scripts\libs\angular\abp.ng.js" />
+    <Content Include="Abp\Framework\scripts\libs\angularjs\abp.ng.js" />
     <Content Include="Abp\Framework\scripts\libs\requirejs\plugins\service.js" />
     <Content Include="Abp\Framework\scripts\utils\ie10fix.js" />
     <Content Include="Abp\Framework\styles\abp.css" />
@@ -311,8 +311,6 @@
     <Content Include="App\Main\views\task\new.cshtml" />
     <Content Include="log4net.config" />
     <Content Include="App\Common\styles\main.less" />
-    <Content Include="Abp\Framework\styles\abp.less" />
-    <Content Include="Abp\Framework\styles\abp.css.map" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular-touch.min.js.map" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
@@ -322,6 +320,8 @@
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Abp\Framework\styles\abp.less" />
+    <Content Include="Abp\Framework\styles\abp.css.map" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />

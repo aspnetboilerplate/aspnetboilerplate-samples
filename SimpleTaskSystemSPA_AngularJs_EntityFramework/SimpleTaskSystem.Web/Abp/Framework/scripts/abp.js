@@ -267,13 +267,5 @@
 
         return str;
     };
-    
-    function endsWith(str, suffix) {
-        if (suffix.length > str.length) {
-            return false;
-        }
-
-        return str.indexOf(suffix, str.length - suffix.length) !== -1;
-    }
 
 })();
