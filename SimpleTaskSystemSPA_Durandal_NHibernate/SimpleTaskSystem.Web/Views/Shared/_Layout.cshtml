@@ -33,6 +33,12 @@
     <!-- Common styles for this application -->
     <link href="~/App/Common/styles/main.css" rel="stylesheet" />
 
+    <script type="text/javascript">
+        //This is used to get the application's root path from javascript. It's useful if you're running application in a virtual directory under IIS.
+        var abp = abp || {};
+        abp.appPath = '@ApplicationPath';
+    </script>
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="@Url.Content("~/Scripts/others/html5shiv.js")"></script>
