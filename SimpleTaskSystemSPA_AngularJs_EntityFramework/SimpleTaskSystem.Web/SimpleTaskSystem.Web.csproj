@@ -663,10 +663,6 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SimpleTaskSystem.Application\SimpleTaskSystem.Application.csproj">
-      <Project>{edf5d964-4c0f-4f19-b674-58a38a5e5401}</Project>
-      <Name>SimpleTaskSystem.Application</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SimpleTaskSystem.Infrastructure.EntityFramework\SimpleTaskSystem.Infrastructure.EntityFramework.csproj">
       <Project>{3d93c603-7c89-4c75-836b-c70681d30a45}</Project>
       <Name>SimpleTaskSystem.Infrastructure.EntityFramework</Name>

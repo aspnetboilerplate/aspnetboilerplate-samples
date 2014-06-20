@@ -17,7 +17,6 @@ namespace SimpleTaskSystem.Web
             return new[]
                    {
                        typeof(SimpleTaskSystemEntityFrameworkModule),
-                       typeof(SimpleTaskSystemApplicationModule),
                        typeof(SimpleTaskSystemWebApiModule)
                    };
         }
