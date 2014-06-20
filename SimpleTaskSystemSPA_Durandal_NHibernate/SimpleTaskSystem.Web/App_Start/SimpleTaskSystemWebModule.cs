@@ -17,7 +17,6 @@ namespace SimpleTaskSystem.Web
             return new[]
                    {
                        typeof(SimpleTaskSystemNHibernateModule),
-                       typeof(SimpleTaskSystemApplicationModule),
                        typeof(SimpleTaskSystemWebApiModule)
                    };
         }

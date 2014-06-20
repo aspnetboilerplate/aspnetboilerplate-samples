@@ -374,16 +374,12 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SimpleTaskSystem.Application\SimpleTaskSystem.Application.csproj">
-      <Project>{edf5d964-4c0f-4f19-b674-58a38a5e5401}</Project>
-      <Name>SimpleTaskSystem.Application</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SimpleTaskSystem.Infrastructure.NHibernate\SimpleTaskSystem.Infrastructure.NHibernate.csproj">
       <Project>{5b9b8451-736c-41f8-ad7e-d7e6885964ba}</Project>
       <Name>SimpleTaskSystem.Infrastructure.NHibernate</Name>
     </ProjectReference>
     <ProjectReference Include="..\SimpleTaskSystem.WebApi\SimpleTaskSystem.WebApi.csproj">
-      <Project>{5eb52d3d-09fd-463a-b02a-8d9856bd3724}</Project>
+      <Project>{5EB52D3D-09FD-463A-B02A-8D9856BD3724}</Project>
       <Name>SimpleTaskSystem.WebApi</Name>
     </ProjectReference>
   </ItemGroup>
