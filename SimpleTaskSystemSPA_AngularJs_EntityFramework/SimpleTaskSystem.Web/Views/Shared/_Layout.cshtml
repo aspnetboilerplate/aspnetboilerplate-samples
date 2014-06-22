@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="~/favicon.ico">
 
     <!-- Site title -->
-    <title>My ASP.NET Boilerplate Project!</title>
+    <title>Simple Task System!</title>
 
     <!-- Style for jQueryUI -->
     <link href="~/Content/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
@@ -49,12 +49,6 @@
     <!-- Modernizr: for feature detection (All other scripts are included at the end of file for faster page load) -->
     <script src="~/Scripts/modernizr-2.7.2.js"></script>
 
-</head>
-
-<body>
-
-    @RenderBody()
-
     <!-- jQuery and plugins -->
     <script src="~/Scripts/json2.min.js"></script>
     <script src="~/Scripts/jquery-2.1.1.min.js"></script>
@@ -82,6 +76,12 @@
 
     <!-- Custom scripts for views -->
     @RenderSection("scripts", required: false)
+
+</head>
+
+<body>
+
+    @RenderBody()
 
 </body>
 </html>

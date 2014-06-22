@@ -1,4 +1,5 @@
 ﻿(function () {
+    var app = angular.module('app');
 
     var languages = [
         {
@@ -13,11 +14,12 @@
         }
     ];
     
-    var app = angular.module('app');
     var controllerId = 'sts.controllers.views.layout';
-    app.controller(controllerId, ['$scope', function ($scope) {
+    app.controller(controllerId, ['routes', '$scope', function (routes, $scope) {
         var that = this;
-        
+
+        that.routes = routes;
+
         that.getLanguageFlagClass = function () {
             var lang = abp.localization.currentCulture.name;
             for (var i = 0; i < languages.length; i++) {

@@ -11,11 +11,8 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li ng-class="{active: activeMenu == 'TaskList'}">
-                    <a href="#/">@L("TaskList")</a>
-                </li>
-                <li ng-class="{active: activeMenu == 'NewTask'}">
-                    <a href="#/task/new">@L("NewTask")</a>
+                <li ng-class="{active: activeMenu == route.config.menuItem}" ng-repeat="route in vm.routes">
+                    <a ng-href="#{{route.url}}">{{route.config.menuText}}</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
