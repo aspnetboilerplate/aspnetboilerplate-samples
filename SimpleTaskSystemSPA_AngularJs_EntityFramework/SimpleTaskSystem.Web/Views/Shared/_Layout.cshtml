@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="~/favicon.ico">
 
     <!-- Site title -->
-    <title>Simple Task System!</title>
+    <title>My ASP.NET Boilerplate Project!</title>
 
     <!-- Style for jQueryUI -->
     <link href="~/Content/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
@@ -29,7 +29,7 @@
 
     <!-- Common styles for this application -->
     <link href="~/App/Common/styles/main.css" rel="stylesheet" />
-    
+
     <script type="text/javascript">
         //This is used to get the application's root path from javascript. It's useful if you're running application in a virtual directory under IIS.
         var abp = abp || {};
@@ -70,9 +70,6 @@
 
     <!-- Dynamic script for client side localization (It's created on runtime) -->
     <script src="/AbpLocalization/GetScripts" type="text/javascript"></script>
-
-    <!-- Dynamic script for client side javascript proxies (It's created on runtime) -->
-    <script src="/api/AbpServiceProxies/GetAll" type="text/javascript"></script>
 
     <!-- Custom scripts for views -->
     @RenderSection("scripts", required: false)

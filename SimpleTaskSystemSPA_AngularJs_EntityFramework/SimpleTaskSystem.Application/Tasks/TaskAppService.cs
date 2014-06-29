@@ -2,6 +2,7 @@
 using System.Threading;
 using Abp.Domain.Uow;
 using AutoMapper;
+using Castle.Core.Logging;
 using SimpleTaskSystem.People;
 using SimpleTaskSystem.Tasks.Dtos;
 
@@ -9,6 +10,8 @@ namespace SimpleTaskSystem.Tasks
 {
     public class TaskAppService : ITaskAppService
     {
+        public ILogger Logger { get; set; }
+
         private readonly ITaskRepository _taskRepository;
         private readonly IPersonRepository _personRepository;
 
@@ -16,6 +19,7 @@ namespace SimpleTaskSystem.Tasks
         {
             _taskRepository = taskRepository;
             _personRepository = personRepository;
+            Logger = NullLogger.Instance;
         }
 
         public GetTasksOutput GetTasks(GetTasksInput input)
@@ -29,6 +33,8 @@ namespace SimpleTaskSystem.Tasks
 
         public void UpdateTask(UpdateTaskInput input)
         {
+            Logger.Info("Updating a task for input: " + input);
+
             var task = _taskRepository.Get(input.TaskId);
 
             if (input.State.HasValue)

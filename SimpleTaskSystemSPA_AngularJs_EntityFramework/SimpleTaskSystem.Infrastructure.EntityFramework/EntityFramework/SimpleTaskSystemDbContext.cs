@@ -3,17 +3,17 @@ using Abp.Domain.Repositories.EntityFramework;
 using SimpleTaskSystem.People;
 using SimpleTaskSystem.Tasks;
 
-namespace SimpleTaskSystem.EntityFramework.Repositories
+namespace SimpleTaskSystem.EntityFramework
 {
     public class SimpleTaskSystemDbContext : AbpDbContext
     {
+        public virtual IDbSet<Task> Tasks { get; set; }
         public virtual IDbSet<Person> People { get; set; }
 
-        public virtual IDbSet<Task> Tasks { get; set; }
-
-        public SimpleTaskSystemDbContext(): base("MainDb")
+        public SimpleTaskSystemDbContext()
+            : base("MainDb")
         {
-            
+
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

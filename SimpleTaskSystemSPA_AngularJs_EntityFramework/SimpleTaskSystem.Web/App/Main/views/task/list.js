@@ -1,47 +1,50 @@
-﻿(function () {
-    var controllerId = 'sts.controllers.views.task.list';
+﻿(function() {
     var app = angular.module('app');
 
-    app.controller(controllerId, ['$scope', 'abp.services.tasksystem.task', function ($scope, taskService) {
-        var vm = this;
+    var controllerId = 'sts.controllers.views.task.list';
+    app.controller(controllerId, [
+        '$scope', 'abp.services.tasksystem.task',
+        function($scope, taskService) {
+            var vm = this;
 
-        vm.tasks = [];
+            vm.localize = abp.localization.getSource('SimpleTaskSystem');
 
-        vm.localize = abp.localization.getSource('SimpleTaskSystem');
+            vm.tasks = [];
 
-        $scope.selectedTaskState = 0;
+            $scope.selectedTaskState = 0;
 
-        $scope.$watch('selectedTaskState', function (value) {
-            vm.refreshTasks();
-        });
-
-        vm.refreshTasks = function () {
-            taskService.getTasks({
-                state: $scope.selectedTaskState > 0 ? $scope.selectedTaskState : null
-            }).success(function (data) {
-                vm.tasks = data.tasks;
+            $scope.$watch('selectedTaskState', function(value) {
+                vm.refreshTasks();
             });
-        };
 
-        vm.changeTaskState = function (task) {
-            var newState;
-            if (task.state == 1) {
-                newState = 2;
-            } else {
-                newState = 1;
-            }
+            vm.refreshTasks = function() {
+                taskService.getTasks({
+                    state: $scope.selectedTaskState > 0 ? $scope.selectedTaskState : null
+                }).success(function(data) {
+                    vm.tasks = data.tasks;
+                });
+            };
 
-            taskService.updateTask({
-                taskId: task.id,
-                state: newState
-            }).success(function () {
-                task.state = newState;
-                abp.notify.info(vm.localize('TaskUpdatedMessage'));
-            });
-        };
+            vm.changeTaskState = function(task) {
+                var newState;
+                if (task.state == 1) {
+                    newState = 2; //Completed
+                } else {
+                    newState = 1; //Active
+                }
 
-        vm.getTaskCountText = function () {
-            return abp.utils.formatString(vm.localize('Xtasks'), vm.tasks.length);
-        };
-    }]);
+                taskService.updateTask({
+                    taskId: task.id,
+                    state: newState
+                }).success(function() {
+                    task.state = newState;
+                    abp.notify.info(vm.localize('TaskUpdatedMessage'));
+                });
+            };
+
+            vm.getTaskCountText = function() {
+                return abp.utils.formatString(vm.localize('Xtasks'), vm.tasks.length);
+            };
+        }
+    ]);
 })();

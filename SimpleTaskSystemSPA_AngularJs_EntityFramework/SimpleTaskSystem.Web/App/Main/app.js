@@ -16,7 +16,7 @@
 
     app.constant('routes', [
         {
-            url: '/', //default: /task/list
+            url: '/',
             config: {
                 templateUrl: '/App/Main/views/task/list.cshtml',
                 menuText: localize('TaskList'),
@@ -24,7 +24,7 @@
             }
         },
         {
-            url: '/about',
+            url: '/new',
             config: {
                 templateUrl: '/App/Main/views/task/new.cshtml',
                 menuText: localize('NewTask'),

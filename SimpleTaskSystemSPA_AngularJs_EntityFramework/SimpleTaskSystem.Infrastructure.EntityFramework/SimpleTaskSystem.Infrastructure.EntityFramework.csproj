@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3D93C603-7C89-4C75-836B-C70681D30A45}</ProjectGuid>
+    <ProjectGuid>{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SimpleTaskSystem</RootNamespace>
@@ -30,13 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abp, Version=0.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp, Version=0.2.3.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.0.2.3.0\lib\net451\Abp.dll</HintPath>
+      <HintPath>..\packages\Abp.0.2.3.1\lib\net451\Abp.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Infrastructure.EntityFramework, Version=0.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp.Infrastructure.EntityFramework, Version=0.2.3.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.Infrastructure.EntityFramework.0.2.3.0\lib\net451\Abp.Infrastructure.EntityFramework.dll</HintPath>
+      <HintPath>..\packages\Abp.Infrastructure.EntityFramework.0.2.3.1\lib\net451\Abp.Infrastructure.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Core">
       <HintPath>..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
@@ -50,11 +50,13 @@
     <Reference Include="Dynamic">
       <HintPath>..\packages\DynamicQuery.1.0\lib\35\Dynamic.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Collections.Immutable">
@@ -70,11 +72,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntityFramework\Repositories\PersonRepository.cs" />
-    <Compile Include="EntityFramework\Repositories\SimpleTaskSystemDbContext.cs" />
-    <Compile Include="EntityFramework\Repositories\SimpleTaskSystemRepositoryBase.cs" />
     <Compile Include="EntityFramework\Repositories\TaskRepository.cs" />
+    <Compile Include="EntityFramework\SimpleTaskSystemDbContext.cs" />
+    <Compile Include="EntityFramework\Repositories\SimpleTaskSystemRepositoryBase.cs" />
+    <Compile Include="Migrations\201406291022389_InitialCreate.cs" />
+    <Compile Include="Migrations\201406291022389_InitialCreate.Designer.cs">
+      <DependentUpon>201406291022389_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="SimpleTaskSystemDataModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleTaskSystemEntityFrameworkModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -83,12 +90,16 @@
   <ItemGroup>
     <Content Include="Dynamic Expressions.html" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\SimpleTaskSystem.Core\SimpleTaskSystem.Core.csproj">
       <Project>{17298EA0-AF73-4F30-B6F1-2066100D7D74}</Project>
       <Name>SimpleTaskSystem.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201406291022389_InitialCreate.resx">
+      <DependentUpon>201406291022389_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

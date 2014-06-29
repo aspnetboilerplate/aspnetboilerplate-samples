@@ -5,26 +5,27 @@ using SimpleTaskSystem.Tasks;
 
 namespace SimpleTaskSystem.EntityFramework.Repositories
 {
-    public class TaskRepository : SimpleTaskSystemRepositoryBase<Task, long>, ITaskRepository
+public class TaskRepository : SimpleTaskSystemRepositoryBase<Task, long>, ITaskRepository
+{
+    public List<Task> GetAllWithPeople(int? assignedPersonId, TaskState? state)
     {
-        public List<Task> GetAllWithPeople(int? assignedPersonId, TaskState? state)
-        {
-            var query = GetAll();
+        var query = Context.Tasks.AsQueryable();
+        //var query = GetAll(); //alternative
             
-            if (assignedPersonId.HasValue)
-            {
-                query = query.Where(task => task.AssignedPerson.Id == assignedPersonId.Value);
-            }
-
-            if (state.HasValue)
-            {
-                query = query.Where(task => task.State == state);
-            }
-
-            return query
-                .OrderByDescending(task => task.CreationTime)
-                .Include(task => task.AssignedPerson)
-                .ToList();
+        if (assignedPersonId.HasValue)
+        {
+            query = query.Where(task => task.AssignedPerson.Id == assignedPersonId.Value);
         }
+
+        if (state.HasValue)
+        {
+            query = query.Where(task => task.State == state);
+        }
+
+        return query
+            .OrderByDescending(task => task.CreationTime)
+            .Include(task => task.AssignedPerson)
+            .ToList();
     }
+}
 }

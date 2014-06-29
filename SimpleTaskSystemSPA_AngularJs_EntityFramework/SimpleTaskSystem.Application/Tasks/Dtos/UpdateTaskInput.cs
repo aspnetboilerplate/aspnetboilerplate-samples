@@ -18,8 +18,13 @@ namespace SimpleTaskSystem.Tasks.Dtos
         {
             if (AssignedPersonId == null && State == null)
             {
-                results.Add(new ValidationResult("Both of AssignedPersonId and State can not be null in order to update a Task!", new[] {"AssignedPersonId", "State"}));
+                results.Add(new ValidationResult("Both of AssignedPersonId and State can not be null in order to update a Task!", new[] { "AssignedPersonId", "State" }));
             }
+        }
+
+        public override string ToString()
+        {
+            return string.Format("[UpdateTask > TaskId = {0}, AssignedPersonId = {1}, State = {2}]", TaskId, AssignedPersonId, State);
         }
     }
 }

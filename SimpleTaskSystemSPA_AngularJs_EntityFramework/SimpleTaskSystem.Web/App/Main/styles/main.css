@@ -20,7 +20,7 @@ body {
 .task-state-icon {
   cursor: pointer;
 }
-/* Angular animations */
+/* Angular transition animations */
 .shuffle-animation.ng-enter,
 .shuffle-animation.ng-leave {
   position: relative;

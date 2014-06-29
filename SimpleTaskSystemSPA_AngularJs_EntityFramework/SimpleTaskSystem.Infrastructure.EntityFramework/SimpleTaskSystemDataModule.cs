@@ -5,7 +5,7 @@ using Abp.Startup;
 
 namespace SimpleTaskSystem
 {
-    public class SimpleTaskSystemEntityFrameworkModule : AbpModule
+    public class SimpleTaskSystemDataModule : AbpModule
     {
         public override void Initialize(IAbpInitializationContext initializationContext)
         {

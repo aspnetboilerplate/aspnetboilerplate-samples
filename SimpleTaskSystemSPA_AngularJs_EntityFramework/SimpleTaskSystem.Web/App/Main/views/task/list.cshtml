@@ -1,9 +1,14 @@
 ﻿<div class="panel panel-default" ng-controller="sts.controllers.views.task.list as vm">
+
     <div class="panel-heading" style="position: relative;">
         <div class="row">
+            
+            <!-- Title -->
             <h3 class="panel-title col-xs-6">
                 @L("TaskList") - <span>{{vm.getTaskCountText()}}</span>
             </h3>
+            
+            <!-- Task state combobox -->
             <div class="col-xs-6 text-right">
                 <select ng-model="selectedTaskState">
                     <option value="0">@L("AllTasks")</option>
@@ -13,6 +18,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Task list -->
     <ul class="list-group" ng-repeat="task in vm.tasks">
         <div class="list-group-item">
             <span class="task-state-icon glyphicon" ng-click="vm.changeTaskState(task)" ng-class="{'glyphicon-minus': task.state == 1, 'glyphicon-ok': task.state == 2}"></span>
@@ -24,4 +31,5 @@
             <span class="task-creationtime">{{task.creationTime}}</span>
         </div>
     </ul>
+
 </div>

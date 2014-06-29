@@ -7,11 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTaskSystem.Core", "Si
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTaskSystem.Application", "SimpleTaskSystem.Application\SimpleTaskSystem.Application.csproj", "{EDF5D964-4C0F-4F19-B674-58A38A5E5401}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTaskSystem.Web", "SimpleTaskSystem.Web\SimpleTaskSystem.Web.csproj", "{E3DBB7F7-406D-4AE6-AD0A-59BF69DF536F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTaskSystem.WebApi", "SimpleTaskSystem.WebApi\SimpleTaskSystem.WebApi.csproj", "{5EB52D3D-09FD-463A-B02A-8D9856BD3724}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTaskSystem.Infrastructure.EntityFramework", "SimpleTaskSystem.Infrastructure.EntityFramework\SimpleTaskSystem.Infrastructure.EntityFramework.csproj", "{3D93C603-7C89-4C75-836B-C70681D30A45}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTaskSystem.Web", "SimpleTaskSystem.Web\SimpleTaskSystem.Web.csproj", "{897F6FD8-6F90-48E4-95A5-B4429B896205}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTaskSystem.Infrastructure.EntityFramework", "SimpleTaskSystem.Infrastructure.EntityFramework\SimpleTaskSystem.Infrastructure.EntityFramework.csproj", "{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,18 +27,18 @@ Global
 		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E3DBB7F7-406D-4AE6-AD0A-59BF69DF536F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E3DBB7F7-406D-4AE6-AD0A-59BF69DF536F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E3DBB7F7-406D-4AE6-AD0A-59BF69DF536F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E3DBB7F7-406D-4AE6-AD0A-59BF69DF536F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3D93C603-7C89-4C75-836B-C70681D30A45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3D93C603-7C89-4C75-836B-C70681D30A45}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3D93C603-7C89-4C75-836B-C70681D30A45}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3D93C603-7C89-4C75-836B-C70681D30A45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

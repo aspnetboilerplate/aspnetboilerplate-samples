@@ -30,24 +30,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abp, Version=0.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp, Version=0.2.3.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.0.2.3.0\lib\net451\Abp.dll</HintPath>
+      <HintPath>..\packages\Abp.0.2.3.1\lib\net451\Abp.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Application, Version=0.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp.Application, Version=0.2.3.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.Application.0.2.3.0\lib\net451\Abp.Application.dll</HintPath>
+      <HintPath>..\packages\Abp.Application.0.2.3.1\lib\net451\Abp.Application.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web, Version=0.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp.Web, Version=0.2.3.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.Web.0.2.3.0\lib\net451\Abp.Web.dll</HintPath>
+      <HintPath>..\packages\Abp.Web.0.2.3.1\lib\net451\Abp.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Api, Version=0.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp.Web.Api, Version=0.2.3.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.Web.Api.0.2.3.0\lib\net451\Abp.Web.Api.dll</HintPath>
+      <HintPath>..\packages\Abp.Web.Api.0.2.3.1\lib\net451\Abp.Web.Api.dll</HintPath>
     </Reference>
-    <Reference Include="AutoMapper, Version=3.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="AutoMapper">
       <HintPath>..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="AutoMapper.Net4, Version=3.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
@@ -103,13 +102,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SimpleTaskSystemWebModule.cs" />
+    <Compile Include="SimpleTaskSystemWebApiModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\SimpleTaskSystem.Application\SimpleTaskSystem.Application.csproj">
       <Project>{EDF5D964-4C0F-4F19-B674-58A38A5E5401}</Project>

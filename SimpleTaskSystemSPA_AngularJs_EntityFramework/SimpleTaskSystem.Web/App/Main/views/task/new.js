@@ -1,6 +1,7 @@
 ﻿(function() {
-    var controllerId = 'sts.controllers.views.task.new';
     var app = angular.module('app');
+
+    var controllerId = 'sts.controllers.views.task.new';
     app.controller(controllerId, [
         '$scope', '$location', 'abp.services.tasksystem.task', 'abp.services.tasksystem.person',
         function($scope, $location, taskService, personService) {
@@ -24,7 +25,7 @@
                     promise: taskService.createTask(vm.task)
                         .success(function() {
                             abp.notify.info(abp.utils.formatString(localize("TaskCreatedMessage"), vm.task.description));
-                            $location.path('/'); //TODO: Look for a better way!
+                            $location.path('/');
                         })
                 });
             };
