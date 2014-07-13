@@ -50,6 +50,8 @@ namespace SimpleTaskSystem.Tasks
 
         public void CreateTask(CreateTaskInput input)
         {
+            Logger.Info("Creating a new task with description: " + input.Description);
+
             var task = new Task { Description = input.Description };
 
             if (input.AssignedPersonId.HasValue)
