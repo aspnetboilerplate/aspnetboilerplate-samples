@@ -246,3 +246,29 @@ DEBUG 2014-07-06 14:48:13,477 [1    ] Abp.Modules.AbpModuleLoader              -
 DEBUG 2014-07-06 14:48:13,478 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemWebApiModule, SimpleTaskSystem.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 DEBUG 2014-07-06 14:48:13,478 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.Web.SimpleTaskSystemWebModule, SimpleTaskSystem.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 DEBUG 2014-07-06 14:48:13,543 [1    ] Abp.Modules.AbpModuleLoader              - 10 modules loaded.
+DEBUG 2014-07-21 16:04:47,434 [1    ] Abp.Modules.AbpModuleLoader              - Loading Abp modules...
+DEBUG 2014-07-21 16:04:47,922 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Modules.AbpStartupModule, Abp, Version=0.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-07-21 16:04:47,923 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Application.AbpApplicationModule, Abp.Application, Version=0.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-07-21 16:04:48,093 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Infrastructure.NHibernate.AbpNHibernateModule, Abp.Infrastructure.NHibernate, Version=0.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-07-21 16:04:48,135 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Web.AbpWebModule, Abp.Web, Version=0.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-07-21 16:04:48,139 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.WebApi.Startup.AbpWebApiModule, Abp.Web.Api, Version=0.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-07-21 16:04:48,179 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Web.Mvc.Startup.AbpWebMvcModule, Abp.Web.Mvc, Version=0.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-07-21 16:04:48,198 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemCoreModule, SimpleTaskSystem.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-07-21 16:04:48,198 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemApplicationModule, SimpleTaskSystem.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-07-21 16:04:48,200 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemNHibernateModule, SimpleTaskSystem.Infrastructure.NHibernate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-07-21 16:04:48,200 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemWebApiModule, SimpleTaskSystem.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-07-21 16:04:48,201 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.Web.SimpleTaskSystemWebModule, SimpleTaskSystem.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-07-21 16:04:48,259 [1    ] Abp.Modules.AbpModuleLoader              - 11 modules loaded.
+DEBUG 2014-07-21 16:09:18,421 [1    ] Abp.Modules.AbpModuleLoader              - Loading Abp modules...
+DEBUG 2014-07-21 16:09:18,921 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Modules.AbpStartupModule, Abp, Version=0.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-07-21 16:09:18,923 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Application.AbpApplicationModule, Abp.Application, Version=0.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-07-21 16:09:19,107 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Infrastructure.NHibernate.AbpNHibernateModule, Abp.Infrastructure.NHibernate, Version=0.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-07-21 16:09:19,150 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Web.AbpWebModule, Abp.Web, Version=0.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-07-21 16:09:19,153 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.WebApi.Startup.AbpWebApiModule, Abp.Web.Api, Version=0.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-07-21 16:09:19,193 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Web.Mvc.Startup.AbpWebMvcModule, Abp.Web.Mvc, Version=0.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-07-21 16:09:19,212 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemCoreModule, SimpleTaskSystem.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-07-21 16:09:19,212 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemApplicationModule, SimpleTaskSystem.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-07-21 16:09:19,214 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemNHibernateModule, SimpleTaskSystem.Infrastructure.NHibernate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-07-21 16:09:19,214 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.SimpleTaskSystemWebApiModule, SimpleTaskSystem.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-07-21 16:09:19,215 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: SimpleTaskSystem.Web.SimpleTaskSystemWebModule, SimpleTaskSystem.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-07-21 16:09:19,275 [1    ] Abp.Modules.AbpModuleLoader              - 11 modules loaded.
