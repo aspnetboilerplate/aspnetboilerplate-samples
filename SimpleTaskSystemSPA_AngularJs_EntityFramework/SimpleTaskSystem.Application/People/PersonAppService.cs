@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using Abp.Application.Services;
 using AutoMapper;
 using SimpleTaskSystem.People.Dtos;
 
 namespace SimpleTaskSystem.People
 {
-    public class PersonAppService : IPersonAppService
+    public class PersonAppService : ApplicationService, IPersonAppService
     {
         private readonly IPersonRepository _personRepository;
 
