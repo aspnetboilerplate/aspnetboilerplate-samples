@@ -108,3 +108,5 @@ Backup*/
 UpgradeLog*.XML
 SimpleTaskSystemSPA_AngularJs_EntityFramework/SimpleTaskSystem.Web/Logs/Logs.txt
 SimpleTaskSystemSPA_Durandal_NHibernate/SimpleTaskSystem.Web/Logs/Logs.txt
+/SimpleTaskSystem/SimpleTaskSystem.WebSpaAngular/Logs/Logs.txt
+/SimpleTaskSystem/SimpleTaskSystem.WebSpaDurandal/Logs/Logs.txt
