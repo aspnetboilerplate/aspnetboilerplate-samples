@@ -1,6 +1,6 @@
 ﻿using System;
 using Abp.Dependency;
-using Abp.Startup.Web;
+using Abp.Web.Startup;
 using Castle.Facilities.Logging;
 
 namespace SimpleTaskSystem.WebSpaDurandal

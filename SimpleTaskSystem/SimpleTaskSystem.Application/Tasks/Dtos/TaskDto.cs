@@ -3,6 +3,9 @@ using Abp.Application.Services.Dto;
 
 namespace SimpleTaskSystem.Tasks.Dtos
 {
+    /// <summary>
+    /// A DTO class that can be used in various application service methods when needed to send/receive Task objects.
+    /// </summary>
     public class TaskDto : EntityDto<long>
     {
         public int AssignedPersonId { get; set; }

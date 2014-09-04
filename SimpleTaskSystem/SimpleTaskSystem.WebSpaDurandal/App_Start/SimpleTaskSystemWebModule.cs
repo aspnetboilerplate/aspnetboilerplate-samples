@@ -16,7 +16,7 @@ namespace SimpleTaskSystem.WebSpaDurandal
         {
             return new[]
                    {
-                       typeof(SimpleTaskSystemNHibernateModule),
+                       typeof(SimpleTaskSystemDataModule),
                        typeof(SimpleTaskSystemWebApiModule)
                    };
         }

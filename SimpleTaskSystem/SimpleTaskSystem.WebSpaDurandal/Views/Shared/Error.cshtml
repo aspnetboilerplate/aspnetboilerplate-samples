@@ -1,5 +1,5 @@
 ﻿@using Abp.Runtime.Validation
-@model Abp.Web.Mvc.Models.AbpMvcErrorModel
+@model Abp.Web.Mvc.Models.ErrorViewModel
 <div class="row">
     <section class="col-lg-12">
         <div class="panel panel-warning">
@@ -11,7 +11,7 @@
                     @(!string.IsNullOrEmpty(Model.ErrorInfo.Details) ? Model.ErrorInfo.Details : Model.ErrorInfo.Message)
                 </p>
                 @* Show validation errors *@
-                @if (Model.Exception != null && Model.Exception is AbpValidationException)
+                @if (Model.Exception is AbpValidationException)
                 {
                     <ul>
                         @foreach (var validationResult in (Model.Exception as AbpValidationException).ValidationErrors)

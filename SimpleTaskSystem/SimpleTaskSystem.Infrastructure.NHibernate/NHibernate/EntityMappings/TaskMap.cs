@@ -3,6 +3,12 @@ using SimpleTaskSystem.Tasks;
 
 namespace SimpleTaskSystem.NHibernate.EntityMappings
 {
+    /// <summary>
+    /// Define mapping between <see cref="Task"/> entity and "StsTasks" table using FluentNHibernate.
+    /// 
+    /// Inherits from <see cref="EntityMap{TEntity,TPrimaryKey}"/>.
+    /// EntityMap gets table name in it's constructor and automatically maps Id property. So, we do not map Id again.
+    /// </summary>
     public class TaskMap : EntityMap<Task, long>
     {
         public TaskMap()

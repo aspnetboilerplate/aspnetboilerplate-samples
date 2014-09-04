@@ -5,15 +5,22 @@ using Abp.Runtime.Validation;
 
 namespace SimpleTaskSystem.Tasks.Dtos
 {
+    /// <summary>
+    /// This DTO class is used to send needed data to <see cref="ITaskAppService.UpdateTask"/> method.
+    /// 
+    /// Implements <see cref="IInputDto"/>, thus ABP applies standard input process (like automatic validation) for it. 
+    /// Implements <see cref="ICustomValidate"/> for additional custom validation.
+    /// </summary>
     public class UpdateTaskInput : IInputDto, ICustomValidate
     {
-        [Range(1, long.MaxValue)]
+        [Range(1, long.MaxValue)] //Data annotation attributes work as expected.
         public long TaskId { get; set; }
 
         public int? AssignedPersonId { get; set; }
 
         public TaskState? State { get; set; }
 
+        //Custom validation method. It's valled by ABP after data annotation validations.
         public void AddValidationErrors(List<ValidationResult> results)
         {
             if (AssignedPersonId == null && State == null)
