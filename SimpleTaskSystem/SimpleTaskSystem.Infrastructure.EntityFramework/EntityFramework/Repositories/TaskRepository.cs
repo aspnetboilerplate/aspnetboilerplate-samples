@@ -16,7 +16,7 @@ namespace SimpleTaskSystem.EntityFramework.Repositories
             
             var query = GetAll(); //GetAll() returns IQueryable<T>, so we can query over it.
             //var query = Context.Tasks.AsQueryable(); //Alternatively, we can directly use EF's DbContext object.
-            //var query = Table.AsQueryable(); //Another alternative: We can directly 'Table' property instead of 'Context.Tasks', they are identical.
+            //var query = Table.AsQueryable(); //Another alternative: We can directly use 'Table' property instead of 'Context.Tasks', they are identical.
             
             //Add some Where conditions...
 
