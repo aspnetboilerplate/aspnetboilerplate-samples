@@ -14,7 +14,7 @@ namespace SimpleTaskSystem.Tasks
     /// </summary>
     public class TaskAppService : ApplicationService, ITaskAppService
     {
-        // These members set in constructor using constructor injection.
+        //These members set in constructor using constructor injection.
         
         private readonly ITaskRepository _taskRepository;
         private readonly IPersonRepository _personRepository;
@@ -31,7 +31,7 @@ namespace SimpleTaskSystem.Tasks
         
         public GetTasksOutput GetTasks(GetTasksInput input)
         {
-            //Called specific GetAllWithPeople of task repository.
+            //Called specific GetAllWithPeople method of task repository.
             var tasks = _taskRepository.GetAllWithPeople(input.AssignedPersonId, input.State);
 
             //Used AutoMapper to automatically convert List<Task> to List<TaskDto>.
@@ -43,7 +43,7 @@ namespace SimpleTaskSystem.Tasks
         
         public void UpdateTask(UpdateTaskInput input)
         {
-            //We can use Logger, it's defined in ApplicationService class.
+            //We can use Logger, it's defined in ApplicationService base class.
             Logger.Info("Updating a task for input: " + input);
 
             //Retrieving a task entity with given id using standard Get method of repositories.
