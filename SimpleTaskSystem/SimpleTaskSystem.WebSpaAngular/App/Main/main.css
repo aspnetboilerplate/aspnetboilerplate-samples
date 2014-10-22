@@ -20,10 +20,13 @@ body {
 .task-state-icon {
   cursor: pointer;
 }
-/* Angular transition animations */
+/* Styles for angular ui transition animations */
+.angular-animation-container {
+  position: relative;
+}
 .shuffle-animation.ng-enter,
 .shuffle-animation.ng-leave {
-  position: relative;
+  position: absolute;
 }
 .shuffle-animation.ng-enter {
   -moz-transition: ease-out all 0.3s 0.4s;

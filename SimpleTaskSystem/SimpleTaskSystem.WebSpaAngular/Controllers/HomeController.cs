@@ -5,8 +5,8 @@ namespace SimpleTaskSystem.WebSpaAngular.Controllers
     public class HomeController : SimpleTaskSystemControllerBase
     {
         public ActionResult Index()
-        { 
-            return View();
+        {
+            return View("~/App/Main/views/layout/layout.cshtml"); //Layout of the angular application.
         }
 	}
 }

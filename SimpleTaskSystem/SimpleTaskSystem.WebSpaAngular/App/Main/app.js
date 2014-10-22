@@ -1,59 +1,33 @@
 ﻿(function () {
     'use strict';
 
-    var localize = abp.localization.getSource('SimpleTaskSystem');
-
     var app = angular.module('app', [
         'ngAnimate',
-        'ngRoute',
         'ngSanitize',
 
+        'ui.router',
         'ui.bootstrap',
         'ui.jq',
 
         'abp'
     ]);
 
-    app.constant('routes', [
-        {
-            url: '/',
-            config: {
-                templateUrl: '/App/Main/views/task/list.cshtml',
-                menuText: localize('TaskList'),
-                menuItem: 'TaskList'
-            }
-        },
-        {
-            url: '/new',
-            config: {
-                templateUrl: '/App/Main/views/task/new.cshtml',
-                menuText: localize('NewTask'),
-                menuItem: 'NewTask'
-            }
-        }
-    ]);
-
+    //Configuration for Angular UI routing.
     app.config([
-        '$routeProvider', 'routes',
-        function ($routeProvider, routes) {
-            routes.forEach(function (route) {
-                $routeProvider.when(route.url, route.config);
-            });
-
-            $routeProvider.otherwise({
-                redirectTo: '/'
-            });
-        }
-    ]);
-
-    app.run([
-        '$rootScope',
-        function ($rootScope) {
-            $rootScope.$on('$routeChangeSuccess', function (event, next, current) {
-                if (next && next.$$route) {
-                    $rootScope.activeMenu = next.$$route.menuItem; //Used in layout.cshtml to make selected menu 'active'.
-                }
-            });
+        '$stateProvider', '$urlRouterProvider',
+        function ($stateProvider, $urlRouterProvider) {
+            $urlRouterProvider.otherwise('/');
+            $stateProvider
+                .state('tasklist', {
+                    url: '/',
+                    templateUrl: '/App/Main/views/task/list.cshtml',
+                    menu: 'TaskList' //Matches to name of 'TaskList' menu in SimpleTaskSystemNavigationProvider
+                })
+                .state('newtask', {
+                    url: '/new',
+                    templateUrl: '/App/Main/views/task/new.cshtml',
+                    menu: 'NewTask' //Matches to name of 'NewTask' menu in SimpleTaskSystemNavigationProvider
+                });
         }
     ]);
 })();

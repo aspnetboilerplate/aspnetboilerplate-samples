@@ -27,11 +27,15 @@ body {
     cursor: pointer;
 }
 
-/* Angular transition animations */
+/* Styles for angular ui transition animations */
+
+.angular-animation-container {
+    position: relative;
+}
 
 .shuffle-animation.ng-enter,
 .shuffle-animation.ng-leave {
-    position: relative;
+    position: absolute;
 }
 
 .shuffle-animation.ng-enter {
@@ -41,12 +45,12 @@ body {
     transition: ease-out all 0.3s 0.4s;
     left: 2em;
     opacity: 0;
-}
 
-    .shuffle-animation.ng-enter.ng-enter-active {
+    &.ng-enter-active {
         left: 0;
         opacity: 1;
     }
+}
 
 .shuffle-animation.ng-leave {
     -moz-transition: 0.3s ease-out all;
@@ -55,9 +59,9 @@ body {
     transition: 0.3s ease-out all;
     left: 0;
     opacity: 1;
-}
 
-    .shuffle-animation.ng-leave.ng-leave-active {
+    &.ng-leave-active {
         left: 2em;
         opacity: 0;
     }
+}

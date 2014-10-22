@@ -1,7 +1,7 @@
 ﻿(function() {
     var app = angular.module('app');
 
-    var controllerId = 'sts.controllers.views.task.new';
+    var controllerId = 'sts.views.task.new';
     app.controller(controllerId, [
         '$scope', '$location', 'abp.services.tasksystem.task', 'abp.services.tasksystem.person',
         function($scope, $location, taskService, personService) {

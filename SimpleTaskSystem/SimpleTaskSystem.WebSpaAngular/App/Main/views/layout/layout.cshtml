@@ -1,34 +1,51 @@
-﻿<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="app.controllers.views.layout as vm">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#/">SimpleTaskSystem!</a>
-        </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li ng-class="{active: activeMenu == route.config.menuItem}" ng-repeat="route in vm.routes">
-                    <a ng-href="#{{route.url}}">{{route.config.menuText}}</a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="" data-toggle="dropdown"><i ng-class="vm.getLanguageFlagClass()"></i> <span>{{vm.getLanguageName()}}</span> <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li ng-hide="vm.isCurrentLanguage('tr')"><a href="/AbpLocalization/ChangeCulture?cultureName=tr"><i class="famfamfam-flag-tr"></i> Türkçe</a></li>
-                        <li ng-hide="vm.isCurrentLanguage('en')"><a href="/AbpLocalization/ChangeCulture?cultureName=en"><i class="famfamfam-flag-england"></i> English</a></li>
-                    </ul>
-                </li>
-            </ul>
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Task System</title>
+
+    <link rel="shortcut icon" href="~/favicon.ico">
+
+    @Styles.Render("~/Bundles/App/vendor/css")
+    @Styles.Render("~/Bundles/App/Main/css")
+
+    <script type="text/javascript">
+        //This is used to get the application's root path from javascript. It's useful if you're running application in a virtual directory under IIS.
+        var abp = abp || {}; abp.appPath = '@ApplicationPath';
+    </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="@Url.Content("~/Scripts/others/html5shiv.js")"></script>
+        <script src="@Url.Content("~/Scripts/others/respond.min.js")"></script>
+    <![endif]-->
+
+    @Scripts.Render("~/Bundles/App/vendor/js")
+
+    <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
+    <script src="~/api/AbpServiceProxies/GetAll?type=angular"></script>
+    <script src="~/AbpLocalization/GetScripts" type="text/javascript"></script>
+    <script src="~/AbpAuthorization/GetScripts" type="text/javascript"></script>
+    <script src="~/AbpNavigation/GetScripts" type="text/javascript"></script>
+
+    @Scripts.Render("~/Bundles/App/Main/js")
+</head>
+<body>
+    <div ng-app="app">
+        <div ng-controller="app.views.layout as vm">
+            <div ng-include="'/App/Main/views/layout/header.cshtml'"></div>
+            <div class="container">
+                <div class="angular-animation-container row">
+                    <div ui-view class="shuffle-animation col-xs-12"></div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-
-<div class="container">
-    <div data-ng-view class="shuffle-animation"></div>
-</div>
-
+</body>
+</html>
