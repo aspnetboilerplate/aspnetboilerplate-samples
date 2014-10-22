@@ -42,6 +42,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Abp.0.3.2.12\lib\net451\Abp.dll</HintPath>
     </Reference>
+    <Reference Include="Abp.NHibernate, Version=0.3.2.12, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Abp.NHibernate.0.3.2.12\lib\net451\Abp.NHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="Abp.Web, Version=0.3.2.12, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Abp.Web.0.3.2.12\lib\net451\Abp.Web.dll</HintPath>
@@ -82,6 +86,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
+    <Reference Include="FluentNHibernate, Version=1.4.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FluentNHibernate.1.4.0.0\lib\net35\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
@@ -94,6 +106,10 @@
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NHibernate.4.0.1.4000\lib\net40\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="System.Collections.Immutable, Version=1.0.34.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -172,16 +188,10 @@
     <Content Include="Abp\Framework\styles\abp.css" />
     <Content Include="Abp\Framework\styles\abp.min.css" />
     <Content Include="Abp\Framework\styles\utils\ie10fix.css" />
-    <Content Include="App\Common\styles\main.css">
+    <Content Include="App\Main\main.css">
       <DependentUpon>main.less</DependentUpon>
     </Content>
-    <Content Include="App\Common\styles\main.min.css">
-      <DependentUpon>main.css</DependentUpon>
-    </Content>
-    <Content Include="App\Main\styles\main.css">
-      <DependentUpon>main.less</DependentUpon>
-    </Content>
-    <Content Include="App\Main\styles\main.min.css">
+    <Content Include="App\Main\main.min.css">
       <DependentUpon>main.css</DependentUpon>
     </Content>
     <Content Include="App\Main\main.js" />
@@ -261,18 +271,14 @@
     <Content Include="Scripts\durandal\plugins\serializer.js" />
     <Content Include="Scripts\durandal\plugins\widget.js" />
     <Content Include="Scripts\durandal\system.js" />
-    <Content Include="App\Main\styles\main.less" />
     <Content Include="App\Main\views\layout.cshtml" />
     <Content Include="App\Main\views\tasklist.cshtml" />
-    <Content Include="App\Main\views\web.config">
+    <Content Include="App\Main\web.config">
       <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App\Main\styles\main.css.map">
-      <DependentUpon>main.css</DependentUpon>
     </Content>
     <Content Include="App\Main\views\newtask.cshtml" />
     <Content Include="log4net.config" />
-    <Content Include="App\Common\styles\main.less" />
+    <Content Include="App\Main\main.less" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
@@ -284,6 +290,7 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="App\Main\shell.cshtml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\durandal\transitions\entrance.js" />
     <Content Include="Scripts\durandal\viewEngine.js" />
@@ -304,6 +311,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout-3.2.0.debug.js" />
     <Content Include="Scripts\knockout-3.2.0.js" />
+    <Content Include="Scripts\knockout.punches.js" />
+    <Content Include="Scripts\knockout.punches.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\others\html5shiv.js" />
     <Content Include="Scripts\others\respond.min.js" />
@@ -322,13 +331,14 @@
     <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\SimpleTaskSystemWebModule.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SimpleTaskSystemControllerBase.cs" />
+    <Compile Include="App_Start\SimpleTaskSystemNavigationProvider.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -348,13 +358,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\Common\images\" />
-    <Folder Include="App\Common\scripts\" />
     <Folder Include="App\Main\images\" />
-    <Folder Include="App\Main\scripts\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SimpleTaskSystem.Core\SimpleTaskSystem.Core.csproj">
+      <Project>{17298EA0-AF73-4F30-B6F1-2066100D7D74}</Project>
+      <Name>SimpleTaskSystem.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SimpleTaskSystem.Infrastructure.NHibernate\SimpleTaskSystem.Infrastructure.NHibernate.csproj">
       <Project>{5b9b8451-736c-41f8-ad7e-d7e6885964ba}</Project>
       <Name>SimpleTaskSystem.Infrastructure.NHibernate</Name>

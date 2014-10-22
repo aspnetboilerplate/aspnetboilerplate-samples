@@ -1,4 +1,4 @@
-﻿//TODO: Move to framework?
+﻿//Shortcuts
 requirejs.config({
     paths: {
         'text': '../../Scripts/text',
@@ -16,15 +16,16 @@ define('knockout', function () { return ko; });
 
 define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/viewEngine', 'durandal/activator', 'knockout'],
     function (system, app, viewLocator, viewEngine, activator, ko) {
-        //system.debug(true); //TODO: remove in production code
+        //system.debug(true); //Enable this line only in debug!
 
-        //TODO: Move to framework?
+        ko.punches.enableAll();
+
+        //This is needed to use cshtml files as view
         viewEngine.convertViewIdToRequirePath = function (viewId) {
             return this.viewPlugin + '!/AbpAppView/Load?viewUrl=/App/Main/' + viewId + '.cshtml';
         };
 
-        //TODO: Is that good?
-        //Assume true if not false
+        //This is needed to return deffered as return values in methods like canActivate.
         activator.defaults.interpretResponse = function (value) {
             if (system.isObject(value)) {
                 value = value.can == undefined ? true : value.can;
@@ -42,7 +43,8 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/vie
         app.configurePlugins({
             router: true,
             dialog: true,
-            widget: true
+            widget: true,
+            observable: true
         });
 
         app.start().then(function () {
