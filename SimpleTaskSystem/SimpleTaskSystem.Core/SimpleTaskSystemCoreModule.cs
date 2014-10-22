@@ -1,7 +1,5 @@
 ﻿using System.Reflection;
-using Abp.Dependency;
 using Abp.Modules;
-using Abp.Startup;
 
 namespace SimpleTaskSystem
 {
@@ -10,12 +8,10 @@ namespace SimpleTaskSystem
     /// </summary>
     public class SimpleTaskSystemCoreModule : AbpModule
     {
-        public override void Initialize(IAbpInitializationContext initializationContext)
+        public override void Initialize()
         {
-            base.Initialize(initializationContext);
-
             //This code is used to register classes to dependency injection system for this assembly using conventions.
-            IocManager.Instance.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
         }
     }
 }

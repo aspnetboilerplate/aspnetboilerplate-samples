@@ -1,4 +1,4 @@
-﻿using Abp.Domain.Repositories.NHibernate;
+﻿using Abp.NHibernate.Repositories;
 using SimpleTaskSystem.People;
 
 namespace SimpleTaskSystem.NHibernate.Repositories

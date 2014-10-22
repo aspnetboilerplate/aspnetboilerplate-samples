@@ -1,6 +1,6 @@
 ﻿using System;
 using Abp.Dependency;
-using Abp.Web.Startup;
+using Abp.Web;
 using Castle.Facilities.Logging;
 
 namespace SimpleTaskSystem.WebSpaAngular

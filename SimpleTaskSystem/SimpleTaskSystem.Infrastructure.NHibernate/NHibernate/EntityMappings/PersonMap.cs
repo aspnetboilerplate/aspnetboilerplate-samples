@@ -1,4 +1,4 @@
-﻿using Abp.Domain.Entities.Mapping;
+﻿using Abp.NHibernate.EntityMappings;
 using SimpleTaskSystem.People;
 
 namespace SimpleTaskSystem.NHibernate.EntityMappings

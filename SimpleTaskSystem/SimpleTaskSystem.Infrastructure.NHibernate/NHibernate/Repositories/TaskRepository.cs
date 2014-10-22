@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Abp.Domain.Repositories;
-using Abp.Domain.Repositories.NHibernate;
+using Abp.NHibernate.Repositories;
 using NHibernate.Linq;
 using SimpleTaskSystem.Tasks;
 

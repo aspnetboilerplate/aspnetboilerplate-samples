@@ -1,33 +1,26 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using Abp.Dependency;
-using Abp.Localization;
+using Abp.Localization.Sources.Xml;
 using Abp.Modules;
-using Abp.Startup;
-using SimpleTaskSystem.WebSpaDurandal.Localization.SimpleTaskSystem;
 
 namespace SimpleTaskSystem.WebSpaDurandal
 {
+    [DependsOn(typeof(SimpleTaskSystemDataModule), typeof(SimpleTaskSystemWebApiModule))]
     public class SimpleTaskSystemWebModule : AbpModule
     {
-        public override Type[] GetDependedModules()
+        public override void Initialize()
         {
-            return new[]
-                   {
-                       typeof(SimpleTaskSystemDataModule),
-                       typeof(SimpleTaskSystemWebApiModule)
-                   };
-        }
+            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
 
-        public override void Initialize(IAbpInitializationContext initializationContext)
-        {
-            base.Initialize(initializationContext);
-            IocManager.Instance.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
-
-            LocalizationHelper.RegisterSource<SimpleTaskSystemLocalizationSource>();
-
+            Configuration.Localization.Sources.Add(
+                new XmlLocalizationSource(
+                    "SimpleTaskSystem",
+                    HttpContext.Current.Server.MapPath("~/Localization/SimpleTaskSystem")
+                    )
+                );
+            
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }

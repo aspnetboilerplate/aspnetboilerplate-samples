@@ -1,16 +1,14 @@
 ﻿using System.Reflection;
-using Abp.Dependency;
 using Abp.Modules;
-using Abp.Startup;
 
 namespace SimpleTaskSystem
 {
+    [DependsOn(typeof(SimpleTaskSystemCoreModule))]
     public class SimpleTaskSystemDataModule : AbpModule
     {
-        public override void Initialize(IAbpInitializationContext initializationContext)
+        public override void Initialize()
         {
-            base.Initialize(initializationContext);
-            IocManager.Instance.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
         }
     }
 }

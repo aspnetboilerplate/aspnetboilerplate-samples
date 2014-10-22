@@ -1,29 +1,25 @@
 ﻿using System.Configuration;
 using System.Reflection;
-using Abp.Dependency;
 using Abp.Modules;
-using Abp.Startup;
-using Abp.Startup.Infrastructure.NHibernate;
+using Abp.NHibernate.Config;
 using FluentNHibernate.Cfg.Db;
 
 namespace SimpleTaskSystem
 {
+    [DependsOn(typeof(SimpleTaskSystemCoreModule))]
     public class SimpleTaskSystemDataModule : AbpModule
     {
-        public override void PreInitialize(IAbpInitializationContext initializationContext)
+        public override void PreInitialize()
         {
-            base.PreInitialize(initializationContext);
-
             var connStr = ConfigurationManager.ConnectionStrings["MainDb"].ConnectionString;
-            initializationContext.GetModule<AbpNHibernateModule>().Configuration
+            Configuration.Modules.AbpNHibernate().FluentConfiguration
                 .Database(MsSqlConfiguration.MsSql2008.ConnectionString(connStr))
                 .Mappings(m => m.FluentMappings.AddFromAssembly(Assembly.GetExecutingAssembly()));
         }
 
-        public override void Initialize(IAbpInitializationContext initializationContext)
+        public override void Initialize()
         {
-            base.Initialize(initializationContext);
-            IocManager.Instance.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
         }
     }
 }

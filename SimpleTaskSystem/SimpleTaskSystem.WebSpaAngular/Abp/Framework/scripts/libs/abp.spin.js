@@ -32,8 +32,14 @@
 
     };
 
-    abp.ui.setBusy = function (elm, options) {
-        options = $.extend({}, options);
+    abp.ui.setBusy = function (elm, optionsOrPromise) {
+        if (optionsOrPromise.always || optionsOrPromise['finally']) { //Check if it's promise
+            optionsOrPromise = {
+                promise: optionsOrPromise
+            };
+        }
+
+        var options = $.extend({}, optionsOrPromise);
 
         if (!elm) {
             if (options.blockUI != false) {
@@ -60,8 +66,8 @@
                 options.promise.always(function () {
                     abp.ui.clearBusy(elm);
                 });
-            } else if (options.promise.finally) {
-                options.promise.finally(function () {
+            } else if (options.promise['finally']) {
+                options.promise['finally'](function () {
                     abp.ui.clearBusy(elm);
                 });
             }
