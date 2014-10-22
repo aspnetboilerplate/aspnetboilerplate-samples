@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Abp.Application.Services;
+using Abp.Domain.Repositories;
 using AutoMapper;
 using SimpleTaskSystem.People;
 using SimpleTaskSystem.Tasks.Dtos;
@@ -17,13 +18,13 @@ namespace SimpleTaskSystem.Tasks
         //These members set in constructor using constructor injection.
         
         private readonly ITaskRepository _taskRepository;
-        private readonly IPersonRepository _personRepository;
+        private readonly IRepository<Person> _personRepository;
         
         /// <summary>
         ///In constructor, we can get needed classes/interfaces.
         ///They are sent here by dependency injection system automatically.
         /// </summary>
-        public TaskAppService(ITaskRepository taskRepository, IPersonRepository personRepository)
+        public TaskAppService(ITaskRepository taskRepository, IRepository<Person> personRepository)
         {
             _taskRepository = taskRepository;
             _personRepository = personRepository;

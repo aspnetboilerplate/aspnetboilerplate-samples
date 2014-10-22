@@ -87,7 +87,6 @@
     <Compile Include="DbMigrations\VersionTable.cs" />
     <Compile Include="NHibernate\EntityMappings\PersonMap.cs" />
     <Compile Include="NHibernate\EntityMappings\TaskMap.cs" />
-    <Compile Include="NHibernate\Repositories\PersonRepository.cs" />
     <Compile Include="NHibernate\Repositories\TaskRepository.cs" />
     <Compile Include="SimpleTaskSystemDataModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

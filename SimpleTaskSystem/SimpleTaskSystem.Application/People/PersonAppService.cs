@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Abp.Domain.Repositories;
 using AutoMapper;
 using SimpleTaskSystem.People.Dtos;
 
@@ -6,9 +7,10 @@ namespace SimpleTaskSystem.People
 {
     public class PersonAppService : IPersonAppService //Optionally, you can derive from ApplicationService as we did for TaskAppService class.
     {
-        private readonly IPersonRepository _personRepository;
+        private readonly IRepository<Person> _personRepository;
 
-        public PersonAppService(IPersonRepository personRepository)
+        //ABP provides that we can directly inject IRepository<Person> (without creating any repository class)
+        public PersonAppService(IRepository<Person> personRepository)
         {
             _personRepository = personRepository;
         }

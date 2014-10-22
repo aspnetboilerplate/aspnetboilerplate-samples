@@ -80,7 +80,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntityFramework\Repositories\PersonRepository.cs" />
     <Compile Include="EntityFramework\Repositories\TaskRepository.cs" />
     <Compile Include="EntityFramework\SimpleTaskSystemDbContext.cs" />
     <Compile Include="EntityFramework\Repositories\SimpleTaskSystemRepositoryBase.cs" />

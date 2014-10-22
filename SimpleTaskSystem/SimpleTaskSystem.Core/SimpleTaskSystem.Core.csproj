@@ -68,7 +68,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SimpleTaskSystemConsts.cs" />
-    <Compile Include="People\IPersonRepository.cs" />
     <Compile Include="People\Person.cs" />
     <Compile Include="SimpleTaskSystemCoreModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
