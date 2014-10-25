@@ -16,17 +16,17 @@ namespace AbpjTable.Web
             context.Manager.MainMenu
                 .AddItem(
                     new MenuItemDefinition(
-                        "Home",
-                        new LocalizableString("HomePage", AbpjTableConsts.LocalizationSourceName),
+                        "People",
+                        new LocalizableString("People", AbpjTableConsts.LocalizationSourceName),
                         url: "#/",
-                        icon: "fa fa-home"
+                        icon: "fa fa-users"
                         )
                 ).AddItem(
                     new MenuItemDefinition(
-                        "About",
-                        new LocalizableString("About", AbpjTableConsts.LocalizationSourceName),
-                        url: "#/about",
-                        icon: "fa fa-info"
+                        "Cities",
+                        new LocalizableString("Cities", AbpjTableConsts.LocalizationSourceName),
+                        url: "#/cities",
+                        icon: "fa fa-building-o"
                         )
                 );
         }

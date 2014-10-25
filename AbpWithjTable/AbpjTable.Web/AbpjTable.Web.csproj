@@ -185,8 +185,8 @@
     </Content>
     <Content Include="App\Main\views\layout\header.js" />
     <Content Include="App\Main\views\layout\layout.js" />
-    <Content Include="App\Main\views\home\home.js" />
-    <Content Include="App\Main\views\about\about.js" />
+    <Content Include="App\Main\views\people\people.js" />
+    <Content Include="App\Main\views\cities\cities.js" />
     <Content Include="Content\bootstrap-cosmo.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -274,8 +274,8 @@
     <Content Include="Content\toastr.less" />
     <Content Include="App\Main\main.less" />
     <Content Include="App\Main\views\layout\layout.cshtml" />
-    <Content Include="App\Main\views\home\home.cshtml" />
-    <Content Include="App\Main\views\about\about.cshtml" />
+    <Content Include="App\Main\views\people\people.cshtml" />
+    <Content Include="App\Main\views\cities\cities.cshtml" />
     <Content Include="App\Main\web.config" />
     <Content Include="log4net.config" />
     <Content Include="Scripts\angular.js" />

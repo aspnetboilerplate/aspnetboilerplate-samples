@@ -43,7 +43,7 @@
                         .done(function (data) {
                             $dfd.resolve({
                                 "Result": "OK",
-                                "Records": data[originalListAction.recordsField],
+                                "Records": data[originalListAction.recordsField || 'items'],
                                 "TotalRecordCount": data.totalCount //TODO: Make an Interface to standardize totalCount
                             });
                         })

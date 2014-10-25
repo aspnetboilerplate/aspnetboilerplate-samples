@@ -18,15 +18,15 @@
         function($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/');
             $stateProvider
-                .state('home', {
+                .state('people', {
                     url: '/',
-                    templateUrl: '/App/Main/views/home/home.cshtml',
-                    menu: 'Home' //Matches to name of 'Home' menu in AbpjTableNavigationProvider
+                    templateUrl: '/App/Main/views/people/people.cshtml',
+                    menu: 'People'
                 })
-                .state('about', {
-                    url: '/about',
-                    templateUrl: '/App/Main/views/about/about.cshtml',
-                    menu: 'About' //Matches to name of 'About' menu in AbpjTableNavigationProvider
+                .state('cities', {
+                    url: '/cities',
+                    templateUrl: '/App/Main/views/cities/cities.cshtml',
+                    menu: 'Cities'
                 });
         }
     ]);

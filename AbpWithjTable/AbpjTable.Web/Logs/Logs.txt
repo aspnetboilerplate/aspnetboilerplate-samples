@@ -895,3 +895,207 @@ DEBUG 2014-10-25 20:45:18,908 [1    ] Abp.Modules.AbpModuleManager             -
 DEBUG 2014-10-25 20:45:18,908 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.Web.AbpjTableWebModule, AbpjTable.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 DEBUG 2014-10-25 20:45:18,909 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableWebApiModule, AbpjTable.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 DEBUG 2014-10-25 20:45:18,911 [1    ] Abp.Modules.AbpModuleManager             - 10 modules loaded.
+DEBUG 2014-10-25 20:50:36,874 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2014-10-25 20:50:37,558 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpCoreModule, Abp, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:50:37,560 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:50:37,560 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:50:37,560 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:50:37,560 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:50:37,560 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableApplicationModule, AbpjTable.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:50:37,560 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableCoreModule, AbpjTable.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:50:37,560 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableDataModule, AbpjTable.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:50:37,560 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.Web.AbpjTableWebModule, AbpjTable.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:50:37,560 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableWebApiModule, AbpjTable.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:50:37,563 [1    ] Abp.Modules.AbpModuleManager             - 10 modules loaded.
+DEBUG 2014-10-25 20:59:35,821 [38   ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2014-10-25 20:59:36,552 [38   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpCoreModule, Abp, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:59:36,554 [38   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:59:36,554 [38   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:59:36,554 [38   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:59:36,554 [38   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:59:36,555 [38   ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableApplicationModule, AbpjTable.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:59:36,555 [38   ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableCoreModule, AbpjTable.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:59:36,555 [38   ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableDataModule, AbpjTable.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:59:36,555 [38   ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.Web.AbpjTableWebModule, AbpjTable.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:59:36,555 [38   ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableWebApiModule, AbpjTable.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:59:36,557 [38   ] Abp.Modules.AbpModuleManager             - 10 modules loaded.
+ERROR 2014-10-25 20:59:39,856 [46   ] Default                                  - Can not find 'People'!
+Abp.AbpException: Can not find 'People'!
+   at Abp.Localization.Sources.DictionaryBasedLocalizationSource.GetString(String name, CultureInfo culture)
+   at Abp.Localization.Sources.DictionaryBasedLocalizationSource.GetString(String name)
+   at Abp.Localization.LocalizationHelper.GetString(String sourceName, String name)
+   at Abp.Localization.LocalizableString.Localize()
+   at Abp.Application.Navigation.UserMenuItem..ctor(MenuItemDefinition menuItemDefinition)
+   at Abp.Application.Navigation.UserNavigationManager.FillUserMenuItems(Nullable`1 userId, IList`1 menuItemDefinitions, IList`1 userMenuItems)
+   at Abp.Application.Navigation.UserNavigationManager.GetMenu(String menuName, Nullable`1 userId)
+   at Abp.Application.Navigation.UserNavigationManager.<>c__DisplayClass1.<GetMenus>b__0(MenuDefinition m)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at System.Collections.Immutable.ImmutableExtensions.FallbackWrapper`1.get_Count()
+   at System.Collections.Immutable.ImmutableList`1.FillFromEmpty(IEnumerable`1 items)
+   at System.Collections.Immutable.ImmutableList`1.AddRange(IEnumerable`1 items)
+   at System.Collections.Immutable.ImmutableList.ToImmutableList[TSource](IEnumerable`1 source)
+   at Abp.Application.Navigation.UserNavigationManager.GetMenus(Nullable`1 userId)
+   at Abp.Web.Navigation.NavigationScriptManager.GetScript()
+   at Abp.Web.Mvc.Controllers.Navigation.AbpNavigationController.GetScripts()
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+ERROR 2014-10-25 21:00:46,883 [39   ] Default                                  - Can not find 'People'!
+Abp.AbpException: Can not find 'People'!
+   at Abp.Localization.Sources.DictionaryBasedLocalizationSource.GetString(String name, CultureInfo culture)
+   at Abp.Localization.Sources.DictionaryBasedLocalizationSource.GetString(String name)
+   at Abp.Localization.LocalizationHelper.GetString(String sourceName, String name)
+   at Abp.Localization.LocalizableString.Localize()
+   at Abp.Application.Navigation.UserMenuItem..ctor(MenuItemDefinition menuItemDefinition)
+   at Abp.Application.Navigation.UserNavigationManager.FillUserMenuItems(Nullable`1 userId, IList`1 menuItemDefinitions, IList`1 userMenuItems)
+   at Abp.Application.Navigation.UserNavigationManager.GetMenu(String menuName, Nullable`1 userId)
+   at Abp.Application.Navigation.UserNavigationManager.<>c__DisplayClass1.<GetMenus>b__0(MenuDefinition m)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at System.Collections.Immutable.ImmutableExtensions.FallbackWrapper`1.get_Count()
+   at System.Collections.Immutable.ImmutableList`1.FillFromEmpty(IEnumerable`1 items)
+   at System.Collections.Immutable.ImmutableList`1.AddRange(IEnumerable`1 items)
+   at System.Collections.Immutable.ImmutableList.ToImmutableList[TSource](IEnumerable`1 source)
+   at Abp.Application.Navigation.UserNavigationManager.GetMenus(Nullable`1 userId)
+   at Abp.Web.Navigation.NavigationScriptManager.GetScript()
+   at Abp.Web.Mvc.Controllers.Navigation.AbpNavigationController.GetScripts()
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+DEBUG 2014-10-25 21:02:50,171 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2014-10-25 21:02:53,462 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpCoreModule, Abp, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:02:53,464 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:02:53,464 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:02:53,464 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:02:53,465 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:02:53,465 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableApplicationModule, AbpjTable.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:02:53,465 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableCoreModule, AbpjTable.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:02:53,465 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableDataModule, AbpjTable.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:02:53,465 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.Web.AbpjTableWebModule, AbpjTable.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:02:53,465 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableWebApiModule, AbpjTable.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:02:53,468 [1    ] Abp.Modules.AbpModuleManager             - 10 modules loaded.
+ERROR 2014-10-25 21:03:00,427 [14   ] Default                                  - The view '~/App/Main/views/home/home.cshtml' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/App/Main/views/home/home.cshtml
+System.InvalidOperationException: The view '~/App/Main/views/home/home.cshtml' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/App/Main/views/home/home.cshtml
+   at System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+DEBUG 2014-10-25 21:04:58,897 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2014-10-25 21:04:59,924 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpCoreModule, Abp, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:04:59,926 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:04:59,926 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:04:59,926 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:04:59,926 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:04:59,926 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableApplicationModule, AbpjTable.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:04:59,926 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableCoreModule, AbpjTable.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:04:59,926 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableDataModule, AbpjTable.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:04:59,926 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.Web.AbpjTableWebModule, AbpjTable.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:04:59,927 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableWebApiModule, AbpjTable.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:04:59,929 [1    ] Abp.Modules.AbpModuleManager             - 10 modules loaded.
+ERROR 2014-10-25 21:05:06,477 [12   ] Default                                  - The view '~/App/Main/views/home/home.cshtml' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/App/Main/views/home/home.cshtml
+System.InvalidOperationException: The view '~/App/Main/views/home/home.cshtml' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/App/Main/views/home/home.cshtml
+   at System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+DEBUG 2014-10-25 21:07:14,269 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2014-10-25 21:07:14,939 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpCoreModule, Abp, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:07:14,941 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:07:14,941 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:07:14,941 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:07:14,941 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:07:14,941 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableApplicationModule, AbpjTable.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:07:14,941 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableCoreModule, AbpjTable.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:07:14,941 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableDataModule, AbpjTable.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:07:14,941 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.Web.AbpjTableWebModule, AbpjTable.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:07:14,941 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableWebApiModule, AbpjTable.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:07:14,944 [1    ] Abp.Modules.AbpModuleManager             - 10 modules loaded.
+DEBUG 2014-10-25 21:11:28,749 [46   ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2014-10-25 21:11:29,442 [46   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpCoreModule, Abp, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:11:29,444 [46   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:11:29,444 [46   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:11:29,444 [46   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:11:29,444 [46   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:11:29,444 [46   ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableApplicationModule, AbpjTable.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:11:29,444 [46   ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableCoreModule, AbpjTable.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:11:29,444 [46   ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableDataModule, AbpjTable.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:11:29,444 [46   ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.Web.AbpjTableWebModule, AbpjTable.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:11:29,444 [46   ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableWebApiModule, AbpjTable.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:11:29,447 [46   ] Abp.Modules.AbpModuleManager             - 10 modules loaded.
+DEBUG 2014-10-25 21:19:51,600 [46   ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2014-10-25 21:19:52,319 [46   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpCoreModule, Abp, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:19:52,321 [46   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:19:52,321 [46   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:19:52,321 [46   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:19:52,321 [46   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:19:52,321 [46   ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableApplicationModule, AbpjTable.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:19:52,321 [46   ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableCoreModule, AbpjTable.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:19:52,321 [46   ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableDataModule, AbpjTable.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:19:52,321 [46   ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.Web.AbpjTableWebModule, AbpjTable.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:19:52,321 [46   ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableWebApiModule, AbpjTable.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:19:52,324 [46   ] Abp.Modules.AbpModuleManager             - 10 modules loaded.
+DEBUG 2014-10-25 21:20:18,266 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2014-10-25 21:20:19,393 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpCoreModule, Abp, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:20:19,395 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:20:19,395 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:20:19,395 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:20:19,395 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:20:19,395 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableApplicationModule, AbpjTable.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:20:19,395 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableCoreModule, AbpjTable.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:20:19,395 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableDataModule, AbpjTable.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:20:19,395 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.Web.AbpjTableWebModule, AbpjTable.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:20:19,395 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableWebApiModule, AbpjTable.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:20:19,398 [1    ] Abp.Modules.AbpModuleManager             - 10 modules loaded.
+DEBUG 2014-10-25 21:22:58,138 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2014-10-25 21:22:59,197 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpCoreModule, Abp, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:22:59,198 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:22:59,199 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:22:59,199 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:22:59,199 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:22:59,199 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableApplicationModule, AbpjTable.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:22:59,199 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableCoreModule, AbpjTable.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:22:59,199 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableDataModule, AbpjTable.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:22:59,199 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.Web.AbpjTableWebModule, AbpjTable.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:22:59,199 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableWebApiModule, AbpjTable.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:22:59,201 [1    ] Abp.Modules.AbpModuleManager             - 10 modules loaded.
