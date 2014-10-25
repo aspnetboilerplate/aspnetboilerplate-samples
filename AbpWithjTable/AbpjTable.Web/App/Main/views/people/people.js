@@ -25,7 +25,7 @@
                         title: 'Name'
                     },
                     surname: {
-                        title: 'Name'
+                        title: 'Surname'
                     },
                     birthCityId: {
                         title: 'Birth city',

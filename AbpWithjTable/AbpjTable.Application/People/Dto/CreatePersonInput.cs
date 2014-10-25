@@ -4,5 +4,6 @@ namespace AbpjTable.People.Dto
 {
     public class CreatePersonInput : PersonDto, IInputDto
     {
+
     }
 }
