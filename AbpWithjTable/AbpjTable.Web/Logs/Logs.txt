@@ -1163,3 +1163,15 @@ System.AggregateException: One or more errors occurred. ---> Abp.Runtime.Validat
 WARN  2014-10-25 21:40:10,991 [3    ] Default                                  - There are 2 validation errors:
 WARN  2014-10-25 21:40:10,991 [3    ] Default                                  - The Name field is required.
 WARN  2014-10-25 21:40:10,991 [3    ] Default                                  - The Surname field is required.
+DEBUG 2014-10-26 00:36:21,635 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2014-10-26 00:36:22,299 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpCoreModule, Abp, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-26 00:36:22,301 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-26 00:36:22,301 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-26 00:36:22,301 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-26 00:36:22,301 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-26 00:36:22,301 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableApplicationModule, AbpjTable.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-26 00:36:22,301 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableCoreModule, AbpjTable.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-26 00:36:22,301 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableDataModule, AbpjTable.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-26 00:36:22,301 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.Web.AbpjTableWebModule, AbpjTable.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-26 00:36:22,302 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableWebApiModule, AbpjTable.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-26 00:36:22,304 [1    ] Abp.Modules.AbpModuleManager             - 10 modules loaded.

@@ -77,7 +77,6 @@
   <ItemGroup>
     <Compile Include="EntityFramework\AbpjTableDbContext.cs" />
     <Compile Include="EntityFramework\Repositories\AbpjTableRepositoryBase.cs" />
-    <Compile Include="EntityFramework\Repositories\PersonRepository.cs" />
     <Compile Include="Migrations\201410241939445_InitialCreate.cs" />
     <Compile Include="Migrations\201410241939445_InitialCreate.Designer.cs">
       <DependentUpon>201410241939445_InitialCreate.cs</DependentUpon>

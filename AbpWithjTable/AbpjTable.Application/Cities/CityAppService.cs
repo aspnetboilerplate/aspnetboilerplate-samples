@@ -1,5 +1,6 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.Domain.Repositories;
+using AbpjTable.Cities.Dto;
 
 namespace AbpjTable.Cities
 {

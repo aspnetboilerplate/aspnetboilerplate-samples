@@ -63,7 +63,6 @@
     <Compile Include="AbpjTableConsts.cs" />
     <Compile Include="AbpjTableCoreModule.cs" />
     <Compile Include="Cities\City.cs" />
-    <Compile Include="People\IPersonRepository.cs" />
     <Compile Include="People\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -27,8 +27,22 @@
                     surname: {
                         title: 'Name'
                     },
-                    birthCityName: {
-                        title: 'Birth city'
+                    birthCityId: {
+                        title: 'Birth city',
+                        options: function () {
+                            var options = [];
+                            abp.services.app.city.getAllCities({
+                                async: false
+                            }).done(function (data) {
+                                for (var i = 0; i < data.items.length; i++) {
+                                    options.push({
+                                        Value: data.items[i].value,
+                                        DisplayText: data.items[i].displayText,
+                                    });
+                                };
+                            });
+                            return options;
+                        }
                     },
                     birthDate: {
                         title: 'Birth day',

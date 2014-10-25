@@ -1,8 +1,8 @@
 ﻿using Abp.Application.Services.Dto;
 
-namespace AbpjTable.Cities
+namespace AbpjTable.Cities.Dto
 {
-    public class ComboboxItemDto : IDto //TODO: Move to ABP!
+    public class ComboboxItemDto : IDto //TODO: Move to ABP..?
     {
         public string Value { get; set; }
 

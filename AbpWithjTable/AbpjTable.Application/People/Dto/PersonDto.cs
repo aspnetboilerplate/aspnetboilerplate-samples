@@ -12,7 +12,7 @@ namespace AbpjTable.People.Dto
         [Required]
         public virtual string Surname { get; set; }
 
-        public virtual string BirthCityName { get; set; }
+        public virtual string BirthCityId { get; set; }
 
         public virtual DateTime BirthDate { get; set; }
     }
