@@ -18,7 +18,8 @@ namespace AbpjTable.Web
                         "~/Content/bootstrap-cosmo.min.css",
                         "~/Content/toastr.min.css",
                         "~/Content/flags/famfamfam-flags.css",
-                        "~/Content/font-awesome.min.css"
+                        "~/Content/font-awesome.min.css",
+                        "~/Scripts/jtable/themes/metro/blue/jtable.min.css"
                     )
                 );
 
@@ -40,6 +41,7 @@ namespace AbpjTable.Web
                         "~/Scripts/toastr.min.js",
                         "~/Scripts/others/spinjs/spin.js",
                         "~/Scripts/others/spinjs/jquery.spin.js",
+                        "~/Scripts/jtable/jquery.jtable.min.js",
 
                         "~/Scripts/angular.min.js",
                         "~/Scripts/angular-animate.min.js",

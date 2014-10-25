@@ -30,6 +30,7 @@ namespace AbpjTable.EntityFramework
          *   Notice that, actually you will not directly create an instance of AbpjTableDbContext since ABP automatically handles it.
          */
         public AbpjTableDbContext(string nameOrConnectionString)
+            : base(nameOrConnectionString)
         {
 
         }

@@ -620,3 +620,278 @@ DEBUG 2014-10-24 22:17:20,920 [1    ] Abp.Modules.AbpModuleManager             -
 DEBUG 2014-10-24 22:17:20,920 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableDataModule, AbpjTable.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 DEBUG 2014-10-24 22:17:20,920 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.Web.AbpjTableWebModule, AbpjTable.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 DEBUG 2014-10-24 22:17:20,920 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableWebApiModule, AbpjTable.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:25:58,112 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2014-10-25 20:25:58,803 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpCoreModule, Abp, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:25:58,805 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:25:58,805 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:25:58,805 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:25:58,805 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:25:58,805 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableApplicationModule, AbpjTable.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:25:58,806 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableCoreModule, AbpjTable.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:25:58,806 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableDataModule, AbpjTable.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:25:58,806 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.Web.AbpjTableWebModule, AbpjTable.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:25:58,806 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableWebApiModule, AbpjTable.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:25:58,808 [1    ] Abp.Modules.AbpModuleManager             - 10 modules loaded.
+ERROR 2014-10-25 20:27:15,208 [14   ] Default                                  - One or more errors occurred.
+System.AggregateException: One or more errors occurred. ---> Abp.Runtime.Validation.AbpValidationException: Method arguments are not valid! See ValidationErrors for details.
+   at Abp.WebApi.Controllers.Dynamic.Interceptors.AbpDynamicApiControllerInterceptor`1.Intercept(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.DynamicApiController`1Proxy.GetPeople(GetPeopleInput input)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Abp.WebApi.Controllers.Dynamic.Selectors.DyanamicHttpActionDescriptor.<ExecuteAsync>b__0(Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+---> (Inner Exception #0) Abp.Runtime.Validation.AbpValidationException: Method arguments are not valid! See ValidationErrors for details.
+   at Abp.WebApi.Controllers.Dynamic.Interceptors.AbpDynamicApiControllerInterceptor`1.Intercept(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.DynamicApiController`1Proxy.GetPeople(GetPeopleInput input)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)<---
+
+WARN  2014-10-25 20:27:15,230 [14   ] Default                                  - There are 1 validation errors:
+WARN  2014-10-25 20:27:15,230 [14   ] Default                                  - input is null! (input)
+ERROR 2014-10-25 20:27:35,200 [13   ] Default                                  - One or more errors occurred.
+System.AggregateException: One or more errors occurred. ---> System.Data.SqlClient.SqlException: CREATE DATABASE statement not allowed within multi-statement transaction.
+   at Abp.WebApi.Controllers.Dynamic.Interceptors.AbpDynamicApiControllerInterceptor`1.Intercept(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.DynamicApiController`1Proxy.GetPeople(GetPeopleInput input)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Abp.WebApi.Controllers.Dynamic.Selectors.DyanamicHttpActionDescriptor.<ExecuteAsync>b__0(Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+---> (Inner Exception #0) System.Data.SqlClient.SqlException (0x80131904): CREATE DATABASE statement not allowed within multi-statement transaction.
+   at Abp.WebApi.Controllers.Dynamic.Interceptors.AbpDynamicApiControllerInterceptor`1.Intercept(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.DynamicApiController`1Proxy.GetPeople(GetPeopleInput input)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+ClientConnectionId:2c3469f8-1e0d-481a-83bb-203e26c90365<---
+
+ERROR 2014-10-25 20:28:21,260 [10   ] Default                                  - One or more errors occurred.
+System.AggregateException: One or more errors occurred. ---> System.Data.SqlClient.SqlException: CREATE DATABASE statement not allowed within multi-statement transaction.
+   at Abp.WebApi.Controllers.Dynamic.Interceptors.AbpDynamicApiControllerInterceptor`1.Intercept(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.DynamicApiController`1Proxy.GetPeople(GetPeopleInput input)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Abp.WebApi.Controllers.Dynamic.Selectors.DyanamicHttpActionDescriptor.<ExecuteAsync>b__0(Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+---> (Inner Exception #0) System.Data.SqlClient.SqlException (0x80131904): CREATE DATABASE statement not allowed within multi-statement transaction.
+   at Abp.WebApi.Controllers.Dynamic.Interceptors.AbpDynamicApiControllerInterceptor`1.Intercept(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.DynamicApiController`1Proxy.GetPeople(GetPeopleInput input)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+ClientConnectionId:2c3469f8-1e0d-481a-83bb-203e26c90365<---
+
+DEBUG 2014-10-25 20:30:05,277 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2014-10-25 20:30:06,415 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpCoreModule, Abp, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:30:06,416 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:30:06,416 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:30:06,417 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:30:06,417 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:30:06,417 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableApplicationModule, AbpjTable.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:30:06,417 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableCoreModule, AbpjTable.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:30:06,417 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableDataModule, AbpjTable.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:30:06,417 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.Web.AbpjTableWebModule, AbpjTable.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:30:06,417 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableWebApiModule, AbpjTable.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:30:06,420 [1    ] Abp.Modules.AbpModuleManager             - 10 modules loaded.
+DEBUG 2014-10-25 20:39:28,415 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2014-10-25 20:39:29,448 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpCoreModule, Abp, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:39:29,450 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:39:29,450 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:39:29,450 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:39:29,450 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:39:29,450 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableApplicationModule, AbpjTable.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:39:29,450 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableCoreModule, AbpjTable.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:39:29,450 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableDataModule, AbpjTable.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:39:29,450 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.Web.AbpjTableWebModule, AbpjTable.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:39:29,450 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableWebApiModule, AbpjTable.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:39:29,453 [1    ] Abp.Modules.AbpModuleManager             - 10 modules loaded.
+DEBUG 2014-10-25 20:41:20,910 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2014-10-25 20:41:21,974 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpCoreModule, Abp, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:41:21,975 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:41:21,975 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:41:21,975 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:41:21,976 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:41:21,976 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableApplicationModule, AbpjTable.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:41:21,976 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableCoreModule, AbpjTable.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:41:21,976 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableDataModule, AbpjTable.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:41:21,976 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.Web.AbpjTableWebModule, AbpjTable.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:41:21,976 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableWebApiModule, AbpjTable.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:41:21,978 [1    ] Abp.Modules.AbpModuleManager             - 10 modules loaded.
+DEBUG 2014-10-25 20:43:14,790 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2014-10-25 20:43:15,840 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpCoreModule, Abp, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:43:15,841 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:43:15,842 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:43:15,842 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:43:15,842 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:43:15,842 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableApplicationModule, AbpjTable.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:43:15,842 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableCoreModule, AbpjTable.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:43:15,842 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableDataModule, AbpjTable.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:43:15,842 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.Web.AbpjTableWebModule, AbpjTable.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:43:15,842 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableWebApiModule, AbpjTable.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:43:15,845 [1    ] Abp.Modules.AbpModuleManager             - 10 modules loaded.
+ERROR 2014-10-25 20:44:08,573 [9    ] Default                                  - One or more errors occurred.
+System.AggregateException: One or more errors occurred. ---> System.Data.Entity.Core.EntityException: The underlying provider failed on Open. ---> System.Data.SqlClient.SqlException: Cannot open database "AbpjTable.EntityFramework.AbpjTableDbContext" requested by the login. The login failed.
+Login failed for user 'HALILNTB\Halil›brahim'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.<Open>b__36(DbConnection t, DbConnectionInterceptionContext c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext](TTarget target, Action`2 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.Open(DbConnection connection, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.<Open>b__2()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.<>c__DisplayClass1.<Execute>b__0()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute(Action operation)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   --- End of inner exception stack trace ---
+   at Abp.WebApi.Controllers.Dynamic.Interceptors.AbpDynamicApiControllerInterceptor`1.Intercept(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.DynamicApiController`1Proxy.GetPeople(GetPeopleInput input)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Abp.WebApi.Controllers.Dynamic.Selectors.DyanamicHttpActionDescriptor.<ExecuteAsync>b__0(Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+---> (Inner Exception #0) System.Data.Entity.Core.EntityException: The underlying provider failed on Open. ---> System.Data.SqlClient.SqlException: Cannot open database "AbpjTable.EntityFramework.AbpjTableDbContext" requested by the login. The login failed.
+Login failed for user 'HALILNTB\Halil›brahim'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.<Open>b__36(DbConnection t, DbConnectionInterceptionContext c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext](TTarget target, Action`2 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.Open(DbConnection connection, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.<Open>b__2()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.<>c__DisplayClass1.<Execute>b__0()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute(Action operation)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   --- End of inner exception stack trace ---
+   at Abp.WebApi.Controllers.Dynamic.Interceptors.AbpDynamicApiControllerInterceptor`1.Intercept(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.DynamicApiController`1Proxy.GetPeople(GetPeopleInput input)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)<---
+
+DEBUG 2014-10-25 20:45:06,394 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2014-10-25 20:45:07,462 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpCoreModule, Abp, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:45:07,463 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:45:07,463 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:45:07,463 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:45:07,464 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:45:07,464 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableApplicationModule, AbpjTable.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:45:07,464 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableCoreModule, AbpjTable.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:45:07,464 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableDataModule, AbpjTable.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:45:07,464 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.Web.AbpjTableWebModule, AbpjTable.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:45:07,464 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableWebApiModule, AbpjTable.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:45:07,467 [1    ] Abp.Modules.AbpModuleManager             - 10 modules loaded.
+DEBUG 2014-10-25 20:45:15,451 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2014-10-25 20:45:18,906 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpCoreModule, Abp, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:45:18,907 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:45:18,908 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:45:18,908 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:45:18,908 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:45:18,908 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableApplicationModule, AbpjTable.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:45:18,908 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableCoreModule, AbpjTable.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:45:18,908 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableDataModule, AbpjTable.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:45:18,908 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.Web.AbpjTableWebModule, AbpjTable.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:45:18,909 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableWebApiModule, AbpjTable.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 20:45:18,911 [1    ] Abp.Modules.AbpModuleManager             - 10 modules loaded.

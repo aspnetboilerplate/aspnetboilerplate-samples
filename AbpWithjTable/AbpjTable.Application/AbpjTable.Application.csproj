@@ -70,7 +70,10 @@
   <ItemGroup>
     <Compile Include="AbpjTableApplicationModule.cs" />
     <Compile Include="AbpjTableAppServiceBase.cs" />
+    <Compile Include="People\Dto\GetPeopleInput.cs" />
     <Compile Include="People\IPersonAppService.cs" />
+    <Compile Include="People\PersonAppService.cs" />
+    <Compile Include="People\Dto\PersonDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
