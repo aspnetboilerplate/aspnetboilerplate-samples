@@ -70,6 +70,12 @@
   <ItemGroup>
     <Compile Include="AbpjTableApplicationModule.cs" />
     <Compile Include="AbpjTableAppServiceBase.cs" />
+    <Compile Include="Cities\CityAppService.cs" />
+    <Compile Include="Cities\ComboboxItemDto.cs" />
+    <Compile Include="Cities\Dto\CityDto.cs" />
+    <Compile Include="Cities\ICityAppService.cs" />
+    <Compile Include="People\Dto\CreatePersonInput.cs" />
+    <Compile Include="People\Dto\CreatePersonOutput.cs" />
     <Compile Include="People\Dto\GetPeopleInput.cs" />
     <Compile Include="People\IPersonAppService.cs" />
     <Compile Include="People\PersonAppService.cs" />

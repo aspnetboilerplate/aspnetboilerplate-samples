@@ -66,7 +66,7 @@
                         .done(function (data) {
                             $dfd.resolve({
                                 "Result": "OK",
-                                "Record": data[originalCreateAction.recordField]
+                                "Record": data[originalCreateAction.recordField || 'item']
                             });
                         })
                         .fail(function (error) {

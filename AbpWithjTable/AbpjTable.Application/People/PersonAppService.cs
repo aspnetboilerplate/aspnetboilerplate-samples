@@ -31,5 +31,17 @@ namespace AbpjTable.People
                        Items = Mapper.Map<List<PersonDto>>(personList)
                    };
         }
+
+        public CreatePersonOutput CreatePerson(CreatePersonInput input)
+        {
+            var person = Mapper.Map<Person>(input);
+
+            _personRepository.InsertAndGetId(person);
+
+            return new CreatePersonOutput
+                   {
+                       Person = Mapper.Map<PersonDto>(person)
+                   };
+        }
     }
 }

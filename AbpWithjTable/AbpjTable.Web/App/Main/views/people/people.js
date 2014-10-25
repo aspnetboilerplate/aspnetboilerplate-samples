@@ -10,6 +10,10 @@
                 actions: {
                     listAction: {
                         method: abp.services.app.person.getPeople
+                    },
+                    createAction: {
+                        method: abp.services.app.person.createPerson,
+                        recordField: 'person'
                     }
                 },
                 fields: {

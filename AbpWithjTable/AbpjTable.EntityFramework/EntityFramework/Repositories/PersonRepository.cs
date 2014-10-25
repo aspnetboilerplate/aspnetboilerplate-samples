@@ -4,7 +4,7 @@ using AbpjTable.People;
 
 namespace AbpjTable.EntityFramework.Repositories
 {
-    internal class PersonRepository : AbpjTableRepositoryBase<Person>, IPersonRepository
+    public class PersonRepository : AbpjTableRepositoryBase<Person>, IPersonRepository
     {
         public IQueryable<Person> GetAllIncludingBirthCity()
         {

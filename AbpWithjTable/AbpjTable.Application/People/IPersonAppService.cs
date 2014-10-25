@@ -7,5 +7,7 @@ namespace AbpjTable.People
     public interface IPersonAppService : IApplicationService    
     {
         PagedResultOutput<PersonDto> GetPeople(GetPeopleInput input);
+
+        CreatePersonOutput CreatePerson(CreatePersonInput input);
     }
 }

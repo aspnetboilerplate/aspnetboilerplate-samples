@@ -1099,3 +1099,67 @@ DEBUG 2014-10-25 21:22:59,199 [1    ] Abp.Modules.AbpModuleManager             -
 DEBUG 2014-10-25 21:22:59,199 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.Web.AbpjTableWebModule, AbpjTable.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 DEBUG 2014-10-25 21:22:59,199 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableWebApiModule, AbpjTable.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 DEBUG 2014-10-25 21:22:59,201 [1    ] Abp.Modules.AbpModuleManager             - 10 modules loaded.
+DEBUG 2014-10-25 21:27:48,211 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2014-10-25 21:27:49,281 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpCoreModule, Abp, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:27:49,282 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:27:49,283 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:27:49,283 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:27:49,283 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:27:49,283 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableApplicationModule, AbpjTable.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:27:49,283 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableCoreModule, AbpjTable.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:27:49,283 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableDataModule, AbpjTable.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:27:49,283 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.Web.AbpjTableWebModule, AbpjTable.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:27:49,283 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableWebApiModule, AbpjTable.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:27:49,286 [1    ] Abp.Modules.AbpModuleManager             - 10 modules loaded.
+DEBUG 2014-10-25 21:39:07,732 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2014-10-25 21:39:08,420 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpCoreModule, Abp, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:39:08,421 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:39:08,421 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:39:08,422 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:39:08,422 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.3.2.12, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:39:08,422 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableApplicationModule, AbpjTable.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:39:08,422 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableCoreModule, AbpjTable.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:39:08,422 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableDataModule, AbpjTable.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:39:08,422 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.Web.AbpjTableWebModule, AbpjTable.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:39:08,422 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpjTable.AbpjTableWebApiModule, AbpjTable.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-10-25 21:39:08,424 [1    ] Abp.Modules.AbpModuleManager             - 10 modules loaded.
+ERROR 2014-10-25 21:40:10,987 [3    ] Default                                  - One or more errors occurred.
+System.AggregateException: One or more errors occurred. ---> Abp.Runtime.Validation.AbpValidationException: Method arguments are not valid! See ValidationErrors for details.
+   at Abp.WebApi.Controllers.Dynamic.Interceptors.AbpDynamicApiControllerInterceptor`1.Intercept(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.DynamicApiController`1Proxy.CreatePerson(CreatePersonInput input)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Abp.WebApi.Controllers.Dynamic.Selectors.DyanamicHttpActionDescriptor.<ExecuteAsync>b__0(Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+---> (Inner Exception #0) Abp.Runtime.Validation.AbpValidationException: Method arguments are not valid! See ValidationErrors for details.
+   at Abp.WebApi.Controllers.Dynamic.Interceptors.AbpDynamicApiControllerInterceptor`1.Intercept(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.DynamicApiController`1Proxy.CreatePerson(CreatePersonInput input)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)<---
+
+WARN  2014-10-25 21:40:10,991 [3    ] Default                                  - There are 2 validation errors:
+WARN  2014-10-25 21:40:10,991 [3    ] Default                                  - The Name field is required.
+WARN  2014-10-25 21:40:10,991 [3    ] Default                                  - The Surname field is required.
