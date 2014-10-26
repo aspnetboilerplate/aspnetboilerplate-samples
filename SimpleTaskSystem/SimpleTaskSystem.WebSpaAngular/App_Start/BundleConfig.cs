@@ -36,6 +36,7 @@ namespace SimpleTaskSystem.WebSpaAngular
 
                         "~/Scripts/bootstrap.min.js",
 
+                        "~/Scripts/moment-with-locales.min.js",
                         "~/Scripts/jquery.blockUI.min.js",
                         "~/Scripts/toastr.min.js",
                         "~/Scripts/others/spinjs/spin.js",

@@ -8,7 +8,7 @@ namespace SimpleTaskSystem.Tasks.Dtos
     /// </summary>
     public class TaskDto : EntityDto<long>
     {
-        public int AssignedPersonId { get; set; }
+        public int? AssignedPersonId { get; set; }
 
         public string AssignedPersonName { get; set; }
 

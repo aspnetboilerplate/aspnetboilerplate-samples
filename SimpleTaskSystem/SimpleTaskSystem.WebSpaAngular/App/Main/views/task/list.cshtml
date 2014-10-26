@@ -25,10 +25,10 @@
             <span class="task-state-icon glyphicon" ng-click="vm.changeTaskState(task)" ng-class="{'glyphicon-minus': task.state == 1, 'glyphicon-ok': task.state == 2}"></span>
             <span ng-class="{'task-description-active': task.state == 1, 'task-description-completed': task.state == 2 }">{{task.description}}</span>
             <br />
-            <span ng-show="task.assignedPersonId > 0">
+            <span ng-show="task.assignedPersonId">
                 <span class="task-assignedto">{{task.assignedPersonName}}</span>
             </span>
-            <span class="task-creationtime">{{task.creationTime}}</span>
+            <span class="task-creationtime">{{task.creationTime | momentFromNow}}</span>
         </div>
     </ul>
 
