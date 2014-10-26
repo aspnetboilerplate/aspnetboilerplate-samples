@@ -1097,9 +1097,9 @@
       <Project>{17298EA0-AF73-4F30-B6F1-2066100D7D74}</Project>
       <Name>SimpleTaskSystem.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SimpleTaskSystem.Infrastructure.EntityFramework\SimpleTaskSystem.Infrastructure.EntityFramework.csproj">
-      <Project>{3979f157-deb0-4878-ab1d-4cef6b5a1300}</Project>
-      <Name>SimpleTaskSystem.Infrastructure.EntityFramework</Name>
+    <ProjectReference Include="..\SimpleTaskSystem.EntityFramework\SimpleTaskSystem.EntityFramework.csproj">
+      <Project>{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}</Project>
+      <Name>SimpleTaskSystem.EntityFramework</Name>
     </ProjectReference>
     <ProjectReference Include="..\SimpleTaskSystem.WebApi\SimpleTaskSystem.WebApi.csproj">
       <Project>{5EB52D3D-09FD-463A-B02A-8D9856BD3724}</Project>

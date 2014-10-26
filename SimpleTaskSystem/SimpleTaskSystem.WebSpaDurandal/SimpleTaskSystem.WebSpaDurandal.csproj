@@ -366,9 +366,9 @@
       <Project>{17298EA0-AF73-4F30-B6F1-2066100D7D74}</Project>
       <Name>SimpleTaskSystem.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SimpleTaskSystem.Infrastructure.NHibernate\SimpleTaskSystem.Infrastructure.NHibernate.csproj">
-      <Project>{5b9b8451-736c-41f8-ad7e-d7e6885964ba}</Project>
-      <Name>SimpleTaskSystem.Infrastructure.NHibernate</Name>
+    <ProjectReference Include="..\SimpleTaskSystem.NHibernate\SimpleTaskSystem.NHibernate.csproj">
+      <Project>{5B9B8451-736C-41F8-AD7E-D7E6885964BA}</Project>
+      <Name>SimpleTaskSystem.NHibernate</Name>
     </ProjectReference>
     <ProjectReference Include="..\SimpleTaskSystem.WebApi\SimpleTaskSystem.WebApi.csproj">
       <Project>{5EB52D3D-09FD-463A-B02A-8D9856BD3724}</Project>
