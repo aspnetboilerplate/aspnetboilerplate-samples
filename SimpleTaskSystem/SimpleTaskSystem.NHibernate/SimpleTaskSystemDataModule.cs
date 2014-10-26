@@ -11,7 +11,7 @@ namespace SimpleTaskSystem
     {
         public override void PreInitialize()
         {
-            var connStr = ConfigurationManager.ConnectionStrings["MainDb"].ConnectionString;
+            var connStr = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
             Configuration.Modules.AbpNHibernate().FluentConfiguration
                 .Database(MsSqlConfiguration.MsSql2008.ConnectionString(connStr))
                 .Mappings(m => m.FluentMappings.AddFromAssembly(Assembly.GetExecutingAssembly()));

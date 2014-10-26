@@ -17,6 +17,7 @@ namespace SimpleTaskSystem.Tasks
     /// Implements <see cref="IHasCreationTime"/>, thus ABP sets CreationTime automatically while saving to database.
     /// Also, this helps us to use standard naming and functionality for 'creation time' of entities.
     /// </summary>
+    [Table("StsTasks")]
     public class Task : Entity<long>, IHasCreationTime
     {
         /// <summary>

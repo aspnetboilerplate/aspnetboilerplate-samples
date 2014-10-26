@@ -1,4 +1,5 @@
-﻿using Abp.Domain.Entities;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using Abp.Domain.Entities;
 
 namespace SimpleTaskSystem.People
 {
@@ -7,6 +8,7 @@ namespace SimpleTaskSystem.People
     /// 
     /// It inherits from <see cref="Entity"/> class (Optionally can implement <see cref="IEntity"/> directly).
     /// </summary>
+    [Table("StsPeople")]
     public class Person : Entity
     {
         /// <summary>
