@@ -31,7 +31,7 @@ namespace SimpleTaskSystem.Tasks.Dtos
 
         public override string ToString()
         {
-            return string.Format("[UpdateTask > TaskId = {0}, AssignedPersonId = {1}, State = {2}]", TaskId, AssignedPersonId, State);
+            return string.Format("[UpdateTaskInput > TaskId = {0}, AssignedPersonId = {1}, State = {2}]", TaskId, AssignedPersonId, State);
         }
     }
 }

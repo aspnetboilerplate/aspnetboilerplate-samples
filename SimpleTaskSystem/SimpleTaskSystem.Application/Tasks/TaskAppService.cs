@@ -50,7 +50,7 @@ namespace SimpleTaskSystem.Tasks
             //Retrieving a task entity with given id using standard Get method of repositories.
             var task = _taskRepository.Get(input.TaskId);
 
-            //Updating changed peoperties of the retrieved task entity.
+            //Updating changed properties of the retrieved task entity.
 
             if (input.State.HasValue)
             {
@@ -70,7 +70,7 @@ namespace SimpleTaskSystem.Tasks
         public void CreateTask(CreateTaskInput input)
         {
             //We can use Logger, it's defined in ApplicationService class.
-            Logger.Info("Creating a new task with description: " + input.Description);
+            Logger.Info("Creating a task for input: " + input);
 
             //Creating a new Task entity with given input's properties
             var task = new Task { Description = input.Description };
