@@ -40,21 +40,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abp, Version=0.3.2.12, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.0.3.2.12\lib\net451\Abp.dll</HintPath>
+      <HintPath>..\packages\Abp.0.4.0.0\lib\net451\Abp.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web, Version=0.3.2.12, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp.Web, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.Web.0.3.2.12\lib\net451\Abp.Web.dll</HintPath>
+      <HintPath>..\packages\Abp.Web.0.4.0.0\lib\net451\Abp.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Api, Version=0.3.2.12, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp.Web.Api, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.Web.Api.0.3.2.12\lib\net451\Abp.Web.Api.dll</HintPath>
+      <HintPath>..\packages\Abp.Web.Api.0.4.0.0\lib\net451\Abp.Web.Api.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Mvc, Version=0.3.2.12, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp.Web.Mvc, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.Web.Mvc.0.3.2.12\lib\net451\Abp.Web.Mvc.dll</HintPath>
+      <HintPath>..\packages\Abp.Web.Mvc.0.4.0.0\lib\net451\Abp.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
@@ -294,8 +294,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Abp\Framework\styles\abp.less" />
-    <Content Include="Abp\Framework\styles\abp.css.map" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular-touch.min.js.map" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
@@ -312,6 +310,8 @@
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="App\Main\views\layout\header.cshtml" />
+    <Content Include="Abp\Framework\styles\abp.less" />
+    <Content Include="Abp\Framework\styles\abp.css.map" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />

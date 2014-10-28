@@ -9,9 +9,9 @@ namespace SimpleTaskSystem.WebSpaAngular
     /// When you add menu items here, they are automatically appear in angular application.
     /// See .cshtml and .js files under App/Main/views/layout/header to know how to render menu.
     /// </summary>
-    public class SimpleTaskSystemNavigationProvider : INavigationProvider
+    public class SimpleTaskSystemNavigationProvider : NavigationProvider
     {
-        public void SetNavigation(INavigationProviderContext context)
+        public override void SetNavigation(INavigationProviderContext context)
         {
             context.Manager.MainMenu
                 .AddItem(
