@@ -18,11 +18,14 @@
             });
 
             vm.refreshTasks = function() {
-                taskService.getTasks({
-                    state: $scope.selectedTaskState > 0 ? $scope.selectedTaskState : null
-                }).success(function(data) {
-                    vm.tasks = data.tasks;
-                });
+                abp.ui.setBusy( //Set whole page busy until getTasks complete
+                    null,
+                    taskService.getTasks({
+                        state: $scope.selectedTaskState > 0 ? $scope.selectedTaskState : null
+                    }).success(function(data) {
+                        vm.tasks = data.tasks;
+                    })
+                );
             };
 
             vm.changeTaskState = function(task) {

@@ -15,11 +15,14 @@
             };
 
             that.refreshTasks = function () {
-                taskService.getTasks({
-                    state: that.selectedTaskState() > 0 ? that.selectedTaskState() : null
-                }).done(function (data) {
-                    ko.mapping.fromJS(data.tasks, that.tasks);
-                });
+                abp.ui.setBusy( //Set whole page busy until getTasks complete
+                    null,
+                    taskService.getTasks({
+                        state: that.selectedTaskState() > 0 ? that.selectedTaskState() : null
+                    }).done(function(data) {
+                        ko.mapping.fromJS(data.tasks, that.tasks);
+                    })
+                );
             };
 
             that.changeTaskState = function (task) {
