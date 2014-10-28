@@ -44,7 +44,7 @@
                             $dfd.resolve({
                                 "Result": "OK",
                                 "Records": data[originalListAction.recordsField || 'items'],
-                                "TotalRecordCount": data.totalCount //TODO: Make an Interface to standardize totalCount
+                                "TotalRecordCount": data.totalCount
                             });
                         })
                         .fail(function (error) {
@@ -59,7 +59,7 @@
             var originalCreateAction = self.options.actions.createAction;
             self.options.actions.createAction = function (postData) {
                 return $.Deferred(function ($dfd) {
-
+                    console.log(postData);
                     var input = $.extend({}, postData);
 
                     originalCreateAction.method(input)
