@@ -1,4 +1,4 @@
-aspnetboilerplate-samples
+ASP.NET Boilerplate - Sample projects
 =========================
 
-Sample projects using ASP.NET Boilerplate
+Each sample project contains it's own README in it's own folder.
