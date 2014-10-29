@@ -18,6 +18,14 @@ namespace SimpleTaskSystem.WebSpaDurandal
             Configuration.Localization.Languages.Add(new LanguageInfo("en", "English", "famfamfam-flag-england", true));
             Configuration.Localization.Languages.Add(new LanguageInfo("tr", "Türkçe", "famfamfam-flag-tr"));
 
+            //Add a localization source
+            Configuration.Localization.Sources.Add(
+                new XmlLocalizationSource(
+                    "SimpleTaskSystem",
+                    HttpContext.Current.Server.MapPath("~/Localization/SimpleTaskSystem")
+                    )
+                );
+
             //Configure navigation/menu
             Configuration.Navigation.Providers.Add<SimpleTaskSystemNavigationProvider>();
         }
@@ -25,13 +33,6 @@ namespace SimpleTaskSystem.WebSpaDurandal
         public override void Initialize()
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
-
-            Configuration.Localization.Sources.Add(
-                new XmlLocalizationSource(
-                    "SimpleTaskSystem",
-                    HttpContext.Current.Server.MapPath("~/Localization/SimpleTaskSystem")
-                    )
-                );
 
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
