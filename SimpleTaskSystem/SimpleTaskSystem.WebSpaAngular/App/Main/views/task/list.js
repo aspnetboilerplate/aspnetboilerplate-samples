@@ -20,7 +20,7 @@
             vm.refreshTasks = function() {
                 abp.ui.setBusy( //Set whole page busy until getTasks complete
                     null,
-                    taskService.getTasks({
+                    taskService.getTasks({ //Call application service method directly from javascript
                         state: $scope.selectedTaskState > 0 ? $scope.selectedTaskState : null
                     }).success(function(data) {
                         vm.tasks = data.tasks;
