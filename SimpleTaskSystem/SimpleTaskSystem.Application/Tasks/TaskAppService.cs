@@ -77,7 +77,7 @@ namespace SimpleTaskSystem.Tasks
 
             if (input.AssignedPersonId.HasValue)
             {
-                task.AssignedPersonId = input.AssignedPersonId.Value;
+                task.AssignedPerson = _personRepository.Load(input.AssignedPersonId.Value);
             }
 
             //Saving entity with standard Insert method of repositories.
