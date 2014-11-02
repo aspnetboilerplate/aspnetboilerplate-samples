@@ -4,7 +4,7 @@ using Abp.Modules;
 namespace SimpleTaskSystem
 {
     /// <summary>
-    /// 'Aplication layer module' for this project.
+    /// 'Application layer module' for this project.
     /// </summary>
     [DependsOn(typeof(SimpleTaskSystemCoreModule))]
     public class SimpleTaskSystemApplicationModule : AbpModule
