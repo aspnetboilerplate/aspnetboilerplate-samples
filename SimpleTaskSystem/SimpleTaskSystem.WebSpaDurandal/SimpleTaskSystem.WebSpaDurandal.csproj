@@ -364,7 +364,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\Main\images\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

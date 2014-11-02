@@ -21,15 +21,16 @@
             });
 
             vm.saveTask = function() {
-                abp.ui.setBusy(null, {
-                    promise: taskService.createTask(vm.task)
-                        .success(function() {
-                            abp.notify.info(abp.utils.formatString(localize("TaskCreatedMessage"), vm.task.description));
-                            $location.path('/');
-                        })
-                });
+                abp.ui.setBusy(
+                    null,
+                    taskService.createTask(
+                        vm.task
+                    ).success(function() {
+                        abp.notify.info(abp.utils.formatString(localize("TaskCreatedMessage"), vm.task.description));
+                        $location.path('/');
+                    })
+                );
             };
-
         }
     ]);
 })();

@@ -33,13 +33,14 @@
                     return;
                 }
 
-                abp.ui.setBusy(_$view, {
-                    promise: taskService.createTask(ko.mapping.toJS(that.task))
-                        .done(function () {
-                            abp.notify.info(abp.utils.formatString(localize("TaskCreatedMessage"), that.task.description()));
-                            history.navigate('');
-                        })
-                });
+                abp.ui.setBusy(_$view,
+                    taskService.createTask(
+                        ko.mapping.toJS(that.task)
+                    ).done(function() {
+                        abp.notify.info(abp.utils.formatString(localize("TaskCreatedMessage"), that.task.description()));
+                        history.navigate('');
+                    })
+                );
             };
         };
     });
