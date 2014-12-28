@@ -42,8 +42,8 @@
 
     <script src="~/Scripts/json2.min.js"></script>
     <script src="~/Scripts/jquery-2.1.1.min.js"></script>
-    <script src="~/Scripts/jquery-ui.min-1.11.1.js"></script>
-    <script src="~/Scripts/jquery.blockUI.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.11.2.min.js"></script>
+    <script src="~/Scripts/jquery.blockUI.js"></script>
     <script src="~/Scripts/toastr.min.js"></script>
     <script src="~/Scripts/others/spinjs/spin.js"></script>
     <script src="~/Scripts/others/spinjs/jquery.spin.js"></script>
@@ -58,9 +58,7 @@
 
     <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
     <script src="~/api/AbpServiceProxies/GetAll"></script>
-    <script src="~/AbpLocalization/GetScripts" type="text/javascript"></script>
-    <script src="~/AbpAuthorization/GetScripts" type="text/javascript"></script>
-    <script src="~/AbpNavigation/GetScripts" type="text/javascript"></script>
+    <script src="~/AbpScripts/GetScripts" type="text/javascript"></script>
 </head>
 <body>
     @RenderBody()
