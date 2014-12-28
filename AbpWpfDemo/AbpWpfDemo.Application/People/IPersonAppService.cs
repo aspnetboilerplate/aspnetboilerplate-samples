@@ -1,12 +1,13 @@
-﻿using Abp.Application.Services;
+﻿using System.Threading.Tasks;
+using Abp.Application.Services;
 using AbpWpfDemo.People.Dto;
 
 namespace AbpWpfDemo.People
 {
     public interface IPersonAppService : IApplicationService
     {
-        GetPeopleOutput GetAllPeople();
+        Task<GetPeopleOutput> GetAllPeopleAsync();
 
-        void AddNewPerson(AddNewPersonInput input);
+        Task AddNewPerson(AddNewPersonInput input);
     }
 }

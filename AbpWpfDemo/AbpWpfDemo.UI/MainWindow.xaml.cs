@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows;
 using Abp.Dependency;
 using AbpWpfDemo.People;
@@ -19,31 +20,31 @@ namespace AbpWpfDemo.UI
             InitializeComponent();
         }
 
-        private void LoadAllPeopleButton_Click(object sender, RoutedEventArgs e)
+        private async void LoadAllPeopleButton_Click(object sender, RoutedEventArgs e)
         {
-            LoadAllPeople();
+            await LoadAllPeopleAsync();
         }
 
-        private void LoadAllPeople()
+        private async Task LoadAllPeopleAsync()
         {
             PeopleList.Items.Clear();
-            var result = _personAppService.GetAllPeople();
+            var result = await _personAppService.GetAllPeopleAsync();
             foreach (var person in result.People)
             {
                 PeopleList.Items.Add(person.Name);
             }
         }
 
-        private void AddNewPersonButton_Click(object sender, RoutedEventArgs e)
+        private async void AddNewPersonButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                _personAppService.AddNewPerson(new AddNewPersonInput
+                await _personAppService.AddNewPerson(new AddNewPersonInput
                 {
                     Name = NameTextBox.Text
                 });
 
-                LoadAllPeople();
+                await LoadAllPeopleAsync();
             }
             catch (Exception ex)
             {
