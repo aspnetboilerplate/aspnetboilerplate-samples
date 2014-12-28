@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Abp.Domain.Repositories;
+using Abp.NHibernate;
 using Abp.NHibernate.Repositories;
 using NHibernate.Linq;
 using SimpleTaskSystem.Tasks;
@@ -16,13 +17,18 @@ namespace SimpleTaskSystem.NHibernate.Repositories
     /// </summary>
     public class TaskRepository : NhRepositoryBase<Task, long>, ITaskRepository
     {
+        public TaskRepository(ISessionProvider sessionProvider)
+            : base(sessionProvider)
+        {
+        }
+
         public List<Task> GetAllWithPeople(int? assignedPersonId, TaskState? state)
         {
             //In repository methods, we do not deal with create/dispose DB connections (Session) and transactions. ABP handles it.
-            
+
             var query = GetAll(); //GetAll() returns IQueryable<T>, so we can query over it.
             //var query = Session.Query<Task>(); //Alternatively, we can directly use NHibernate's Session
-            
+
             //Add some Where conditions...
 
             if (assignedPersonId.HasValue)

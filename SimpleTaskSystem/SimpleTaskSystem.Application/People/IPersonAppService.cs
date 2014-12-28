@@ -1,10 +1,11 @@
-﻿using Abp.Application.Services;
+﻿using System.Threading.Tasks;
+using Abp.Application.Services;
 using SimpleTaskSystem.People.Dtos;
 
 namespace SimpleTaskSystem.People
 {
     public interface IPersonAppService : IApplicationService
     {
-        GetAllPeopleOutput GetAllPeople();
+        Task<GetAllPeopleOutput> GetAllPeople();
     }
 }
