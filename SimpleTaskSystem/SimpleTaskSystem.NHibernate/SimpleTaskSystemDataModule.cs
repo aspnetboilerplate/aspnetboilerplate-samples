@@ -1,8 +1,8 @@
 ﻿using System.Configuration;
 using System.Reflection;
+using Abp.Configuration.Startup;
 using Abp.Modules;
 using Abp.NHibernate;
-using Abp.NHibernate.Config;
 using FluentNHibernate.Cfg.Db;
 
 namespace SimpleTaskSystem
