@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Abp.Extensions;
 using Abp.Runtime.Validation;
 using Shouldly;
 using SimpleTaskSystem.People;
@@ -48,13 +49,15 @@ namespace SimpleTaskSystem.Test.Tasks
                     Description = "my test task 2",
                     AssignedPersonId = thomasMore.Id
                 });
-
+            
             //Check results
             UsingDbContext(context =>
             {
                 context.Tasks.Count().ShouldBe(initialTaskCount + 2);
                 context.Tasks.FirstOrDefault(t => t.AssignedPersonId == null && t.Description == "my test task 1").ShouldNotBe(null);
-                context.Tasks.FirstOrDefault(t => t.AssignedPersonId == thomasMore.Id && t.Description == "my test task 2").ShouldNotBe(null);
+                var task2 = context.Tasks.FirstOrDefault(t => t.Description == "my test task 2");
+                task2.ShouldNotBe(null);
+                task2.AssignedPersonId.ShouldBe(thomasMore.Id);
             });
         }
 
