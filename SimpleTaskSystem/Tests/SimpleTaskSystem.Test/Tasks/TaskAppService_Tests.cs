@@ -14,7 +14,7 @@ namespace SimpleTaskSystem.Test.Tasks
 
         public TaskAppService_Tests()
         {
-            //Creating the class which is tested (Software Under Test)
+            //Creating the class which is tested (SUT - Software Under Test)
             _taskAppService = LocalIocManager.Resolve<ITaskAppService>();
         }
 
@@ -32,7 +32,7 @@ namespace SimpleTaskSystem.Test.Tasks
         [Fact]
         public void Should_Create_New_Tasks()
         {
-            //Preparing for test
+            //Prepare for test
             var initialTaskCount = UsingDbContext(context => context.Tasks.Count());
             var thomasMore = GetPerson("Thomas More");
 
@@ -49,10 +49,13 @@ namespace SimpleTaskSystem.Test.Tasks
                     AssignedPersonId = thomasMore.Id
                 });
 
-            //Checking results
-            UsingDbContext(context => context.Tasks.Count()).ShouldBe(initialTaskCount + 2);
-            UsingDbContext(context => context.Tasks.FirstOrDefault(t => t.AssignedPersonId == null && t.Description == "my test task 1")).ShouldNotBe(null);
-            UsingDbContext(context => context.Tasks.FirstOrDefault(t => t.AssignedPersonId == thomasMore.Id && t.Description == "my test task 2")).ShouldNotBe(null);
+            //Check results
+            UsingDbContext(context =>
+            {
+                context.Tasks.Count().ShouldBe(initialTaskCount + 2);
+                context.Tasks.FirstOrDefault(t => t.AssignedPersonId == null && t.Description == "my test task 1").ShouldNotBe(null);
+                context.Tasks.FirstOrDefault(t => t.AssignedPersonId == thomasMore.Id && t.Description == "my test task 2").ShouldNotBe(null);
+            });
         }
 
         [Fact]
