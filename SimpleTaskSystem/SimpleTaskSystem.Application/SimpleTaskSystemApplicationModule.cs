@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using Abp.AutoMapper;
 using Abp.Modules;
 
 namespace SimpleTaskSystem
@@ -6,7 +7,7 @@ namespace SimpleTaskSystem
     /// <summary>
     /// 'Application layer module' for this project.
     /// </summary>
-    [DependsOn(typeof(SimpleTaskSystemCoreModule))]
+    [DependsOn(typeof(SimpleTaskSystemCoreModule), typeof(AbpAutoMapperModule))]
     public class SimpleTaskSystemApplicationModule : AbpModule
     {
         public override void Initialize()
