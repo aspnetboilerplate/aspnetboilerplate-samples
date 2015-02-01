@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InitialData\SimpleTaskSystemInitialDataBuilder.cs" />
+    <Compile Include="People\PersonAppService_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleTaskSystemTestBase.cs" />
     <Compile Include="Tasks\TaskAppService_Tests.cs" />
