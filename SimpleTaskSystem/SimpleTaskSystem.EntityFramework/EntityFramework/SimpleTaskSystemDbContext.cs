@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Data.Common;
+using System.Data.Entity;
 using Abp.EntityFramework;
 using SimpleTaskSystem.People;
 using SimpleTaskSystem.Tasks;
@@ -21,6 +22,13 @@ namespace SimpleTaskSystem.EntityFramework
             : base(nameOrConnectionString)
         {
             
+        }
+
+        //This constructor is used in tests
+        public SimpleTaskSystemDbContext(DbConnection connection)
+            : base(connection, true)
+        {
+
         }
     }
 }

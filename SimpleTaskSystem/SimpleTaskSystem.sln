@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTaskSystem.Core", "SimpleTaskSystem.Core\SimpleTaskSystem.Core.csproj", "{17298EA0-AF73-4F30-B6F1-2066100D7D74}"
 EndProject
@@ -25,6 +25,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D742A1
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Tests", "_Tests", "{36FC5083-E476-495B-BCB5-C847BED245A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTaskSystem.Test", "Tests\SimpleTaskSystem.Test\SimpleTaskSystem.Test.csproj", "{DD4C50B3-D341-4F89-A15B-8E198CACBCE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,6 +64,10 @@ Global
 		{5B9B8451-736C-41F8-AD7E-D7E6885964BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B9B8451-736C-41F8-AD7E-D7E6885964BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B9B8451-736C-41F8-AD7E-D7E6885964BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD4C50B3-D341-4F89-A15B-8E198CACBCE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD4C50B3-D341-4F89-A15B-8E198CACBCE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD4C50B3-D341-4F89-A15B-8E198CACBCE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD4C50B3-D341-4F89-A15B-8E198CACBCE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,5 +78,6 @@ Global
 		{5EB52D3D-09FD-463A-B02A-8D9856BD3724} = {679BAA44-7C00-45A8-B769-4442DAD8458C}
 		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300} = {679BAA44-7C00-45A8-B769-4442DAD8458C}
 		{5B9B8451-736C-41F8-AD7E-D7E6885964BA} = {679BAA44-7C00-45A8-B769-4442DAD8458C}
+		{DD4C50B3-D341-4F89-A15B-8E198CACBCE5} = {36FC5083-E476-495B-BCB5-C847BED245A4}
 	EndGlobalSection
 EndGlobal
