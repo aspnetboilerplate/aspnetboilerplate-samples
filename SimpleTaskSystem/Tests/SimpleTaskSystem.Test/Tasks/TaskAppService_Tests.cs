@@ -73,13 +73,13 @@ namespace SimpleTaskSystem.Test.Tasks
         public void Should_Change_Assigned_People()
         {
             //We can work with repositories instead of DbContext
-            //Remember that we're also testing repositories in this case.
             var taskRepository = LocalIocManager.Resolve<ITaskRepository>();
 
             //Obtain test data
             var isaacAsimov = GetPerson("Isaac Asimov");
             var thomasMore = GetPerson("Thomas More");
-            var targetTask = taskRepository.Single(t => t.AssignedPersonId == isaacAsimov.Id);
+            var targetTask = taskRepository.FirstOrDefault(t => t.AssignedPersonId == isaacAsimov.Id);
+            targetTask.ShouldNotBe(null);
 
             //Run SUT
             _taskAppService.UpdateTask(
