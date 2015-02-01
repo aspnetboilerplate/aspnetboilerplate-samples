@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Abp.Runtime.Validation;
 using Shouldly;
 using SimpleTaskSystem.People;
 using SimpleTaskSystem.Tasks;
@@ -52,6 +53,13 @@ namespace SimpleTaskSystem.Test.Tasks
             UsingDbContext(context => context.Tasks.Count()).ShouldBe(initialTaskCount + 2);
             UsingDbContext(context => context.Tasks.FirstOrDefault(t => t.AssignedPersonId == null && t.Description == "my test task 1")).ShouldNotBe(null);
             UsingDbContext(context => context.Tasks.FirstOrDefault(t => t.AssignedPersonId == thomasMore.Id && t.Description == "my test task 2")).ShouldNotBe(null);
+        }
+
+        [Fact]
+        public void Should_Not_Create_Task_Without_Description()
+        {
+            //Description is not set
+            Assert.Throws<AbpValidationException>(() => _taskAppService.CreateTask(new CreateTaskInput()));
         }
         
         //Trying to assign a task of Isaac Asimov to Thomas More
