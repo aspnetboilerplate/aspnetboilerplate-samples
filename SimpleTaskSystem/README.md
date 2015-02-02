@@ -9,3 +9,4 @@ Both projects share same Domain ve Application layers. Sample projects are docum
 
 * Angular&EF version: http://www.codeproject.com/Articles/791740/Using-AngularJs-ASP-NET-MVC-Web-API-and-EntityFram
 * Durandal&NH version: http://www.codeproject.com/Articles/768664/Introduction-to-ASP-NET-Boilerplate
+* Unit Testing for this project: http://www.codeproject.com/Articles/871786/Unit-testing-in-Csharp-using-xUnit-Entity-Framewor
