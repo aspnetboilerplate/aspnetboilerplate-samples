@@ -4,6 +4,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Abp.Localization;
+using Abp.Localization.Sources;
 using Abp.Localization.Sources.Xml;
 using Abp.Modules;
 
@@ -20,9 +21,11 @@ namespace SimpleTaskSystem.WebSpaDurandal
 
             //Add a localization source
             Configuration.Localization.Sources.Add(
-                new XmlLocalizationSource(
+                new DictionaryBasedLocalizationSource(
                     "SimpleTaskSystem",
-                    HttpContext.Current.Server.MapPath("~/Localization/SimpleTaskSystem")
+                    new XmlFileLocalizationDictionaryProvider(
+                        HttpContext.Current.Server.MapPath("~/Localization/SimpleTaskSystem")
+                        )
                     )
                 );
 

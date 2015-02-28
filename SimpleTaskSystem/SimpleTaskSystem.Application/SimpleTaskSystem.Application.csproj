@@ -32,13 +32,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abp, Version=0.5.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.0.5.2.0\lib\net451\Abp.dll</HintPath>
+    <Reference Include="Abp">
+      <HintPath>..\packages\Abp.0.5.4.0\lib\net451\Abp.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.AutoMapper, Version=0.5.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.AutoMapper.0.5.2.0\lib\net451\Abp.AutoMapper.dll</HintPath>
+    <Reference Include="Abp.AutoMapper">
+      <HintPath>..\packages\Abp.AutoMapper.0.5.3.0\lib\net451\Abp.AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
