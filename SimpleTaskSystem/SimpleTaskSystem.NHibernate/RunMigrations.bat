@@ -1,2 +1,2 @@
-..\packages\FluentMigrator.1.3.0.0\tools\Migrate.exe /connection "Server=localhost; Database=SimpleTaskSystemDb; Trusted_Connection=True;" /db sqlserver /target "bin\Debug\SimpleTaskSystem.NHibernate.dll"
+..\packages\FluentMigrator.1.5.0.0\tools\Migrate.exe /connection "Server=localhost; Database=SimpleTaskSystemDb; Trusted_Connection=True;" /db sqlserver /target "bin\Debug\SimpleTaskSystem.NHibernate.dll"
 pause
