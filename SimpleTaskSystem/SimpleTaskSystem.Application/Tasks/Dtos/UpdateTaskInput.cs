@@ -20,7 +20,7 @@ namespace SimpleTaskSystem.Tasks.Dtos
 
         public TaskState? State { get; set; }
 
-        //Custom validation method. It's valled by ABP after data annotation validations.
+        //Custom validation method. It's called by ABP after data annotation validations.
         public void AddValidationErrors(List<ValidationResult> results)
         {
             if (AssignedPersonId == null && State == null)
