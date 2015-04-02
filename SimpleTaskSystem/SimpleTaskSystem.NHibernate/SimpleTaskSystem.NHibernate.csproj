@@ -36,9 +36,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Abp.0.5.10.1\lib\net451\Abp.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.FluentMigrator, Version=0.5.5.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp.FluentMigrator, Version=0.5.10.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.FluentMigrator.0.5.5.0\lib\net451\Abp.FluentMigrator.dll</HintPath>
+      <HintPath>..\packages\Abp.FluentMigrator.0.5.10.0\lib\net451\Abp.FluentMigrator.dll</HintPath>
     </Reference>
     <Reference Include="Abp.NHibernate, Version=0.5.10.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

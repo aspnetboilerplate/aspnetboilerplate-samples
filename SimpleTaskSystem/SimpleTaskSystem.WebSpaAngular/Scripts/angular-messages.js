@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.3.8
+ * @license AngularJS v1.3.15
  * (c) 2010-2014 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -178,7 +178,7 @@ angular.module('ngMessages', [])
     * at a time and this depends on the prioritization of the messages within the template. (This can
     * be changed by using the ng-messages-multiple on the directive container.)
     *
-    * A remote template can also be used to promote message reuseability and messages can also be
+    * A remote template can also be used to promote message reusability and messages can also be
     * overridden.
     *
     * {@link module:ngMessages Click here} to learn more about `ngMessages` and `ngMessage`.
@@ -331,6 +331,9 @@ angular.module('ngMessages', [])
     * must be situated since it determines which messages are visible based on the state
     * of the provided key/value map that `ngMessages` listens on.
     *
+    * More information about using `ngMessage` can be found in the
+    * {@link module:ngMessages `ngMessages` module documentation}.
+    *
     * @usage
     * ```html
     * <!-- using attribute directives -->
@@ -347,8 +350,6 @@ angular.module('ngMessages', [])
     *   <ng-message when="keyValue3">...</ng-message>
     * </ng-messages>
     * ```
-    *
-    * {@link module:ngMessages Click here} to learn more about `ngMessages` and `ngMessage`.
     *
     * @param {string} ngMessage a string value corresponding to the message key.
     */
