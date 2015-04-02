@@ -32,13 +32,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abp, Version=0.5.5.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp, Version=0.5.10.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.0.5.5.0\lib\net451\Abp.dll</HintPath>
+      <HintPath>..\packages\Abp.0.5.10.1\lib\net451\Abp.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.AutoMapper, Version=0.5.5.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Abp.AutoMapper, Version=0.5.10.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Abp.AutoMapper.0.5.5.0\lib\net451\Abp.AutoMapper.dll</HintPath>
+      <HintPath>..\packages\Abp.AutoMapper.0.5.10.0\lib\net451\Abp.AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -66,6 +66,10 @@
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Nito.AsyncEx">
       <HintPath>..\packages\Nito.AsyncEx.3.0.0\lib\net45\Nito.AsyncEx.dll</HintPath>
