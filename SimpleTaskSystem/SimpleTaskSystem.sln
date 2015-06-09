@@ -30,6 +30,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Tests", "_Tests", "{36FC50
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTaskSystem.Test", "Tests\SimpleTaskSystem.Test\SimpleTaskSystem.Test.csproj", "{DD4C50B3-D341-4F89-A15B-8E198CACBCE5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTaskSystem.ConsoleApp", "SimpleTaskSystem.ConsoleApp\SimpleTaskSystem.ConsoleApp.csproj", "{858EE6C5-E5F6-45BC-BA74-04F2BFD169EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +70,10 @@ Global
 		{DD4C50B3-D341-4F89-A15B-8E198CACBCE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD4C50B3-D341-4F89-A15B-8E198CACBCE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD4C50B3-D341-4F89-A15B-8E198CACBCE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{858EE6C5-E5F6-45BC-BA74-04F2BFD169EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{858EE6C5-E5F6-45BC-BA74-04F2BFD169EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{858EE6C5-E5F6-45BC-BA74-04F2BFD169EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{858EE6C5-E5F6-45BC-BA74-04F2BFD169EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
