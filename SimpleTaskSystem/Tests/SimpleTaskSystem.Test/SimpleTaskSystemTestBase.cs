@@ -4,6 +4,7 @@ using Abp.Collections;
 using Abp.Modules;
 using Abp.TestBase;
 using Castle.MicroKernel.Registration;
+using EntityFramework.DynamicFilters;
 using SimpleTaskSystem.EntityFramework;
 using SimpleTaskSystem.Test.InitialData;
 
@@ -43,6 +44,7 @@ namespace SimpleTaskSystem.Test
         {
             using (var context = LocalIocManager.Resolve<SimpleTaskSystemDbContext>())
             {
+                context.DisableAllFilters();
                 action(context);
                 context.SaveChanges();
             }
@@ -54,6 +56,7 @@ namespace SimpleTaskSystem.Test
 
             using (var context = LocalIocManager.Resolve<SimpleTaskSystemDbContext>())
             {
+                context.DisableAllFilters();
                 result = func(context);
                 context.SaveChanges();
             }
