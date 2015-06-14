@@ -258,6 +258,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Icon.png" />
+    <Content Include="Localization\SimpleTaskSystem\SimpleTaskSystem-zh-CN.xml" />
     <Content Include="Localization\SimpleTaskSystem\SimpleTaskSystem.tr.xml" />
     <Content Include="Localization\SimpleTaskSystem\SimpleTaskSystem.xml">
       <SubType>Designer</SubType>

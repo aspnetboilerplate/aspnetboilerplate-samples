@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Abp.AutoMapper;
 using Abp.Domain.Repositories;
-using AutoMapper;
 using SimpleTaskSystem.People.Dtos;
 
 namespace SimpleTaskSystem.People
@@ -19,9 +19,10 @@ namespace SimpleTaskSystem.People
         //This method uses async pattern that is supported by ASP.NET Boilerplate
         public async Task<GetAllPeopleOutput> GetAllPeople()
         {
+            var people = await _personRepository.GetAllListAsync();
             return new GetAllPeopleOutput
                    {
-                       People = Mapper.Map<List<PersonDto>>(await _personRepository.GetAllListAsync())
+                       People = people.MapTo<List<PersonDto>>()
                    };
         }
     }
