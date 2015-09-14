@@ -7,6 +7,8 @@ using Abp.Domain.Entities;
 using Abp.Domain.Repositories;
 using Abp.EntityFramework;
 using Abp.Modules;
+using Castle.Core.Logging;
+using Castle.Facilities.Logging;
 
 namespace AbpEfConsoleApp
 {
@@ -14,9 +16,12 @@ namespace AbpEfConsoleApp
     {
         static void Main(string[] args)
         {
+
             //Bootstrapping ABP system
             using (var bootstrapper = new AbpBootstrapper())
             {
+                bootstrapper.IocManager.IocContainer.AddFacility<LoggingFacility>(f => f.UseLog4Net().WithConfig("log4net.config"));
+
                 bootstrapper.Initialize();
 
                 //Getting a Tester object from DI and running it
@@ -42,15 +47,21 @@ namespace AbpEfConsoleApp
     //Entry class of the test. It uses constructor-injection to get a repository.
     public class Tester : ITransientDependency
     {
+        public ILogger Logger { get; set; }
+
         private readonly IRepository<User, Guid> _userRepository;
 
         public Tester(IRepository<User, Guid> userRepository)
         {
             _userRepository = userRepository;
+
+            Logger = NullLogger.Instance;
         }
 
         public void Run()
         {
+            Logger.Debug("Started Tester.Run()");
+
             //GetAllList
             foreach (var user in _userRepository.GetAllList())
             {
@@ -65,6 +76,8 @@ namespace AbpEfConsoleApp
 
             //Unknown user
             Console.WriteLine("null! " + _userRepository.FirstOrDefault(Guid.NewGuid()));
+
+            Logger.Debug("Finished Tester.Run()");
         }
     }
 
