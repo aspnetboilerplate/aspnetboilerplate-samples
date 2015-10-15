@@ -6,8 +6,8 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Abp.Localization;
-using Abp.Localization.Sources;
-using Abp.Localization.Sources.Xml;
+using Abp.Localization.Dictionaries;
+using Abp.Localization.Dictionaries.Xml;
 using Abp.Modules;
 
 namespace SimpleTaskSystem.WebSpaAngular
