@@ -24,6 +24,7 @@ namespace SimpleTaskSystem.Tasks
         /// A reference (navigation property) to assigned <see cref="Person"/> for this task.
         /// We declare <see cref="ForeignKeyAttribute"/> for EntityFramework here. No need for NHibernate.
         /// </summary>
+
         [ForeignKey("AssignedPersonId")]
         public virtual Person AssignedPerson { get; set; }
 

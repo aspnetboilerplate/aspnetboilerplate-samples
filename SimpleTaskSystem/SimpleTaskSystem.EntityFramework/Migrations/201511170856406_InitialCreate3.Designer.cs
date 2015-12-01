@@ -7,13 +7,13 @@ namespace SimpleTaskSystem.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class InitialCreate3 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate3));
         
         string IMigrationMetadata.Id
         {
-            get { return "201406291022389_InitialCreate"; }
+            get { return "201511170856406_InitialCreate3"; }
         }
         
         string IMigrationMetadata.Source
