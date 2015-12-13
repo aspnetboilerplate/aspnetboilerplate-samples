@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Abp.Domain.Repositories;
 
@@ -44,6 +45,9 @@ namespace MultipleDbContextDemo.Services
         public void CreatePerson(string name)
         {
             _personRepository.Insert(new Person(name));
+            _courseRepository.Insert(new Course(name));
+
+            throw new ApplicationException("This is throwed to rollback transaction (in app service)!");
         }
     }
 }
