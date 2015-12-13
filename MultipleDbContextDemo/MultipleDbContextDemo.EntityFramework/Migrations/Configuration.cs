@@ -12,8 +12,10 @@ namespace MultipleDbContextDemo.Migrations
 
         protected override void Seed(MultipleDbContextDemo.EntityFramework.MyFirstDbContext context)
         {
-            // This method will be called every time after migrating to the latest version.
-            // You can add any seed data here...
+            context.Persons.AddOrUpdate(p => p.PersonName,
+                new Person("Yunus"),
+                new Person("Emre")
+                );
         }
     }
 }

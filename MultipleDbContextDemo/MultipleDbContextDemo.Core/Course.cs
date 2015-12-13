@@ -7,5 +7,15 @@ namespace MultipleDbContextDemo
     public class Course : Entity
     {
         public virtual string CourseName { get; set; }
+
+        public Course()
+        {
+            
+        }
+
+        public Course(string courseName)
+        {
+            CourseName = courseName;
+        }
     }
 }

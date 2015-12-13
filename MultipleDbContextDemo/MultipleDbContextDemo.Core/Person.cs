@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using Abp.Domain.Entities;
 
 namespace MultipleDbContextDemo
@@ -12,5 +7,15 @@ namespace MultipleDbContextDemo
     public class Person : Entity
     {
         public virtual string PersonName { get; set; }
+
+        public Person()
+        {
+            
+        }
+
+        public Person(string personName)
+        {
+            PersonName = personName;
+        }
     }
 }
