@@ -18,3 +18,7 @@ A sample project to show multiple EF DbContext working together.
 * Run application with F5.
 * You can see peole and course list.
 * You can create a new person here.
+
+### Notes
+
+* MSDTC should be enabled on your computer.
