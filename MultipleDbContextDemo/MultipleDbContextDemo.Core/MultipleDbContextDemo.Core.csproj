@@ -79,6 +79,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Course.cs" />
     <Compile Include="MultipleDbContextDemoConsts.cs" />
     <Compile Include="MultipleDbContextDemoCoreModule.cs" />
     <Compile Include="Person.cs" />

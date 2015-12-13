@@ -13,10 +13,4 @@ namespace MultipleDbContextDemo
     {
         public virtual string PersonName { get; set; }
     }
-
-    [Table("Courses")] //In second database
-    public class Course : Entity
-    {
-        public virtual string CourseName { get; set; }
-    }
 }
