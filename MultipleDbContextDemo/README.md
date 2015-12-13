@@ -21,4 +21,4 @@ A sample project to show multiple EF DbContext working together.
 
 ### Notes
 
-* MSDTC should be enabled on your computer.
+* MSDTC (Distributed Transaction Coordinator) should be running on your computer.
