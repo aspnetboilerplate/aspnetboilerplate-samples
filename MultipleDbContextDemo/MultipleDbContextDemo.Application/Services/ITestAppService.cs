@@ -5,10 +5,12 @@ namespace MultipleDbContextDemo.Services
 {
     public interface ITestAppService : IApplicationService
     {
-        List<string> GetFromFirstDb();
+        List<string> GetPeople();
         
-        List<string> GetFromSecondDb();
+        List<string> GetCourses();
         
-        List<string> GetFromBothDbs();
+        List<string> GetPeopleAndCourses();
+
+        void CreatePerson(string name);
     }
 }
