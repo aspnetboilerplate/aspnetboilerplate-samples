@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using Abp.Authorization.Users;
 using Abp.Organizations;
 using Abp.Runtime.Session;
@@ -32,6 +33,23 @@ namespace OrganizationUnitsDemo.Tests.Products
             var productsInOu12 = _productManager.GetProductsInOu(GetOu("OU12").Id);
             productsInOu12.Count.ShouldBe(1);
             productsInOu12.Any(p => p.Name == "Product C").ShouldBeTrue();
+        }
+
+        [Fact]
+        public void Test_GetProductsInOuIncludingChildren()
+        {
+            var productsInOu1 = _productManager.GetProductsInOuIncludingChildren(GetOu("OU1").Id);
+            productsInOu1.Count.ShouldBe(3);
+            productsInOu1.Any(p => p.Name == "Product D").ShouldBeFalse();
+        }
+
+        [Fact]
+        public async Task Test_GetProductsForUser()
+        {
+            var productsOfUser = await _productManager.GetProductsForUserAsync(AbpSession.GetUserId());
+            productsOfUser.Count.ShouldBe(2);
+            productsOfUser.Any(p => p.Name == "Product B").ShouldBeTrue();
+            productsOfUser.Any(p => p.Name == "Product D").ShouldBeTrue();
         }
 
         private OrganizationUnit GetOu(string displayName)
