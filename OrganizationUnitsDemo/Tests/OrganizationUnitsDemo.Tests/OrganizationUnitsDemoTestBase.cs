@@ -44,7 +44,6 @@ namespace OrganizationUnitsDemo.Tests
             base.AddModules(modules);
 
             //Adding testing modules. Depended modules of these modules are automatically added.
-            modules.Add<OrganizationUnitsDemoApplicationModule>();
             modules.Add<OrganizationUnitsDemoDataModule>();
         }
 

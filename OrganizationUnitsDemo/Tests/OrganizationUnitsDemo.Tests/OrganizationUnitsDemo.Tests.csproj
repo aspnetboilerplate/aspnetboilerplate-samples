@@ -152,7 +152,6 @@
   <ItemGroup>
     <Compile Include="Products\ProductManager_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sessions\SessionAppService_Tests.cs" />
     <Compile Include="OrganizationUnitsDemoTestBase.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -160,10 +159,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\OrganizationUnitsDemo.Application\OrganizationUnitsDemo.Application.csproj">
-      <Project>{EDF5D964-4C0F-4F19-B674-58A38A5E5401}</Project>
-      <Name>OrganizationUnitsDemo.Application</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\OrganizationUnitsDemo.Core\OrganizationUnitsDemo.Core.csproj">
       <Project>{17298EA0-AF73-4F30-B6F1-2066100D7D74}</Project>
       <Name>OrganizationUnitsDemo.Core</Name>
