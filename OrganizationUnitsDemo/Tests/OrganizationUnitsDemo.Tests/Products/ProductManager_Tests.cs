@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Abp.Authorization.Users;
 using Abp.Organizations;
 using Abp.Runtime.Session;
+using Castle.Core;
 using OrganizationUnitsDemo.EntityFramework;
 using OrganizationUnitsDemo.Products;
 using Shouldly;
@@ -13,14 +14,13 @@ namespace OrganizationUnitsDemo.Tests.Products
     public class ProductManager_Tests : OrganizationUnitsDemoTestBase
     {
         private readonly ProductManager _productManager;
-        private readonly OrganizationUnitManager _organizationUnitManager;
 
         public ProductManager_Tests()
         {
             CreateTestData();
 
             _productManager = Resolve<ProductManager>();
-            _organizationUnitManager = Resolve<OrganizationUnitManager>();
+            Resolve<OrganizationUnitManager>();
         }
 
         [Fact]
@@ -50,6 +50,23 @@ namespace OrganizationUnitsDemo.Tests.Products
             productsOfUser.Count.ShouldBe(2);
             productsOfUser.Any(p => p.Name == "Product B").ShouldBeTrue();
             productsOfUser.Any(p => p.Name == "Product D").ShouldBeTrue();
+        }
+
+        [Fact]
+        public async Task GetProductsForUserIncludingChildOus()
+        {
+            var productsOfUser = await _productManager.GetProductsForUserIncludingChildOusAsync(AbpSession.GetUserId());
+            productsOfUser.Count.ShouldBe(2);
+            productsOfUser.Any(p => p.Name == "Product B").ShouldBeTrue();
+            productsOfUser.Any(p => p.Name == "Product D").ShouldBeTrue();
+
+            //Assign user to OU1
+            var ou1 = GetOu("OU1");
+            UsingDbContext(context => AssignUserToOu(context, AbpSession.GetUserId(), ou1.Id));
+
+            //Now, user can get all products
+            productsOfUser = await _productManager.GetProductsForUserIncludingChildOusAsync(AbpSession.GetUserId());
+            productsOfUser.Count.ShouldBe(4);
         }
 
         private OrganizationUnit GetOu(string displayName)

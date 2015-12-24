@@ -44,13 +44,29 @@ namespace OrganizationUnitsDemo.Products
             return query.ToList();
         }
 
-        public virtual async Task<List<Product>> GetProductsForUserAsync(long userId)
+        public async Task<List<Product>> GetProductsForUserAsync(long userId)
         {
             var user = await _userManager.GetUserByIdAsync(userId);
             var organizationUnits = await _userManager.GetOrganizationUnitsAsync(user);
             var organizationUnitIds = organizationUnits.Select(ou => ou.Id);
 
             return await _productRepository.GetAllListAsync(p => organizationUnitIds.Contains(p.OrganizationUnitId));
+        }
+
+        [UnitOfWork]
+        public virtual async Task<List<Product>> GetProductsForUserIncludingChildOusAsync(long userId)
+        {
+            var user = await _userManager.GetUserByIdAsync(userId);
+            var organizationUnits = await _userManager.GetOrganizationUnitsAsync(user);
+            var organizationUnitCodes = organizationUnits.Select(ou => ou.Code);
+
+            var query =
+                from product in _productRepository.GetAll()
+                join organizationUnit in _organizationUnitRepository.GetAll() on product.OrganizationUnitId equals organizationUnit.Id
+                where organizationUnitCodes.Any(code => organizationUnit.Code.StartsWith(code))
+                select product;
+
+            return query.ToList();
         }
     }
 }
