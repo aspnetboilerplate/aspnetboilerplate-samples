@@ -92,7 +92,6 @@
     <Compile Include="MultipleDbContextDemoApplicationModule.cs" />
     <Compile Include="MultipleDbContextDemoAppServiceBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\MyCourseCreateHandler.cs" />
     <Compile Include="Services\TestAppService.cs" />
     <Compile Include="Services\ITestAppService.cs" />
   </ItemGroup>
