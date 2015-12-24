@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Abp.Authorization.Users;
 using Abp.Organizations;
 using Abp.Runtime.Session;
-using Castle.Core;
 using OrganizationUnitsDemo.EntityFramework;
 using OrganizationUnitsDemo.Products;
 using Shouldly;
