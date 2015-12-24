@@ -1,14 +1,16 @@
 ﻿using System.Data.Common;
+using System.Data.Entity;
 using Abp.Zero.EntityFramework;
 using OrganizationUnitsDemo.Authorization.Roles;
 using OrganizationUnitsDemo.MultiTenancy;
+using OrganizationUnitsDemo.Products;
 using OrganizationUnitsDemo.Users;
 
 namespace OrganizationUnitsDemo.EntityFramework
 {
     public class OrganizationUnitsDemoDbContext : AbpZeroDbContext<Tenant, Role, User>
     {
-        //TODO: Define an IDbSet for your Entities...
+        public IDbSet<Product> Products { get; set; }
 
         /* NOTE: 
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.

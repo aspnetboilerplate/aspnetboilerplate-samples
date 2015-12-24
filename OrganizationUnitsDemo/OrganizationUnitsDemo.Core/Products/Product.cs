@@ -5,8 +5,10 @@ using Abp.Organizations;
 namespace OrganizationUnitsDemo.Products
 {
     [Table("AppProducts")]
-    public class Product : Entity, IMustHaveOrganizationUnit
+    public class Product : Entity, IMustHaveTenant, IMustHaveOrganizationUnit
     {
+        public virtual int TenantId { get; set; }
+
         public virtual long OrganizationUnitId { get; set; }
 
         public virtual string Name { get; set; }
@@ -18,8 +20,10 @@ namespace OrganizationUnitsDemo.Products
             
         }
 
-        public Product(string name, float price)
+        public Product(int tenantId, long organizationUnitId, string name, float price)
         {
+            TenantId = tenantId;
+            OrganizationUnitId = organizationUnitId;
             Name = name;
             Price = price;
         }

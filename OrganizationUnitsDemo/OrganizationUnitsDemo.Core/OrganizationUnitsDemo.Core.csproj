@@ -99,6 +99,7 @@
     <Compile Include="MultiTenancy\Tenant.cs" />
     <Compile Include="MultiTenancy\TenantManager.cs" />
     <Compile Include="Products\Product.cs" />
+    <Compile Include="Products\ProductManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Authorization\Roles\Role.cs" />
     <Compile Include="Authorization\Roles\RoleManager.cs" />

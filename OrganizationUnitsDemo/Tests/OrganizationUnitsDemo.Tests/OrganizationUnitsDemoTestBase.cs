@@ -8,14 +8,14 @@ using Abp.Configuration.Startup;
 using Abp.Modules;
 using Abp.Runtime.Session;
 using Abp.TestBase;
+using Castle.MicroKernel.Registration;
+using EntityFramework.DynamicFilters;
 using OrganizationUnitsDemo.EntityFramework;
 using OrganizationUnitsDemo.Migrations.SeedData;
 using OrganizationUnitsDemo.MultiTenancy;
 using OrganizationUnitsDemo.Users;
-using Castle.MicroKernel.Registration;
-using EntityFramework.DynamicFilters;
 
-namespace OrganizationUnitsDemo.Tests.Sessions
+namespace OrganizationUnitsDemo.Tests
 {
     public abstract class OrganizationUnitsDemoTestBase : AbpIntegratedTestBase
     {
