@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbpWpfDemo.Core", "AbpWpfDemo.Core\AbpWpfDemo.Core.csproj", "{17298EA0-AF73-4F30-B6F1-2066100D7D74}"
 EndProject
@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{DFA48E
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbpWpfDemo.UI", "AbpWpfDemo.UI\AbpWpfDemo.UI.csproj", "{C4442C7E-8BCD-4245-B713-BFB21821F77A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbpWpfDemo.UI-WinForms", "AbpWpfDemo.UI-WinForms\AbpWpfDemo.UI-WinForms.csproj", "{E1409FB3-6FA5-4BAF-B093-D713EC4A1FAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +42,10 @@ Global
 		{C4442C7E-8BCD-4245-B713-BFB21821F77A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4442C7E-8BCD-4245-B713-BFB21821F77A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4442C7E-8BCD-4245-B713-BFB21821F77A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1409FB3-6FA5-4BAF-B093-D713EC4A1FAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1409FB3-6FA5-4BAF-B093-D713EC4A1FAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1409FB3-6FA5-4BAF-B093-D713EC4A1FAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1409FB3-6FA5-4BAF-B093-D713EC4A1FAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
