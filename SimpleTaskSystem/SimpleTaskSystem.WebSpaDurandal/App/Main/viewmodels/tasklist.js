@@ -1,6 +1,6 @@
 ﻿define(['service!tasksystem/task'],
     function (taskService) {
-
+ 
         return function () {
             var that = this; //an alias of this
 
