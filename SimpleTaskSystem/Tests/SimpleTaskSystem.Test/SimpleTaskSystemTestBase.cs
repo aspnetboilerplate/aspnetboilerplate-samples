@@ -20,6 +20,12 @@ namespace SimpleTaskSystem.Test
     {
         protected SimpleTaskSystemTestBase()
         {
+            //Seed initial data
+            UsingDbContext(context => new SimpleTaskSystemInitialDataBuilder().Build(context));
+        }
+
+        protected override void PreInitialize()
+        {
             //Fake DbConnection using Effort!
             LocalIocManager.IocContainer.Register(
                 Component.For<DbConnection>()
@@ -27,8 +33,7 @@ namespace SimpleTaskSystem.Test
                     .LifestyleSingleton()
                 );
 
-            //Seed initial data
-            UsingDbContext(context => new SimpleTaskSystemInitialDataBuilder().Build(context));
+            base.PreInitialize();
         }
 
         protected override void AddModules(ITypeList<AbpModule> modules)
