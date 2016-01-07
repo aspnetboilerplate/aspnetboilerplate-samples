@@ -33,16 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abp, Version=0.7.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.0.7.3.0\lib\net451\Abp.dll</HintPath>
+    <Reference Include="Abp, Version=0.7.7.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.0.7.7.1\lib\net452\Abp.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.FluentMigrator, Version=0.7.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.FluentMigrator.0.7.3.0\lib\net451\Abp.FluentMigrator.dll</HintPath>
+    <Reference Include="Abp.FluentMigrator, Version=0.7.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.FluentMigrator.0.7.7.0\lib\net452\Abp.FluentMigrator.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.NHibernate, Version=0.7.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.NHibernate.0.7.2.0\lib\net451\Abp.NHibernate.dll</HintPath>
+    <Reference Include="Abp.NHibernate, Version=0.7.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.NHibernate.0.7.7.0\lib\net452\Abp.NHibernate.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Castle.Core">
@@ -56,19 +56,20 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="FluentMigrator, Version=1.6.0.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentMigrator.1.6.0\lib\40\FluentMigrator.dll</HintPath>
+    <Reference Include="FluentMigrator, Version=1.6.1.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.1.6.1\lib\40\FluentMigrator.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="FluentNHibernate">
-      <HintPath>..\packages\FluentNHibernate.2.0.1.0\lib\net40\FluentNHibernate.dll</HintPath>
+    <Reference Include="FluentNHibernate, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
