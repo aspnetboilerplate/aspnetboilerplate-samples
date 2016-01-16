@@ -108,6 +108,10 @@
       <Project>{13c18cb4-7608-4163-99a3-22d482890a41}</Project>
       <Name>AbpSwagger.Application</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OtherApp.Application\OtherApp.Application.csproj">
+      <Project>{7429c2f2-49f1-4cf3-a052-2849c3fdfa9f}</Project>
+      <Name>OtherApp.Application</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

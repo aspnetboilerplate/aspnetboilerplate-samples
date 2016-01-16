@@ -349,6 +349,10 @@
       <Project>{13c18cb4-7608-4163-99a3-22d482890a41}</Project>
       <Name>AbpSwagger.Application</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OtherApp.Application\OtherApp.Application.csproj">
+      <Project>{7429C2F2-49F1-4CF3-A052-2849C3FDFA9F}</Project>
+      <Name>OtherApp.Application</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

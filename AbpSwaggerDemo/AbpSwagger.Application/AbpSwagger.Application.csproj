@@ -85,6 +85,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbpSwaggerAppModule.cs" />
+    <Compile Include="Classes\ClassAppService.cs" />
+    <Compile Include="Classes\Dto\ClassListDto.cs" />
+    <Compile Include="Classes\IClassAppService.cs" />
     <Compile Include="Students\Dto\GetStudentForEditOutput.cs" />
     <Compile Include="Students\Dto\GetStudentInput.cs" />
     <Compile Include="Students\Dto\PagedAndSortedInputDto.cs" />

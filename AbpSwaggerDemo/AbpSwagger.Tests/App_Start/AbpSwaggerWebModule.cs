@@ -9,13 +9,16 @@ using Abp.WebApi.Swagger.Application;
 using Abp.WebApi.Swagger.Builders;
 using Abp.WebApi.Swagger.Configuration;
 using AbpSwagger.Application;
+using AbpSwagger.Application.Classes;
 using AbpSwagger.Application.WebApi.WebApi;
+using OtherApp.Application;
 
 namespace AbpSwagger.Tests
 {
     [DependsOn(
        typeof(AbpSwaggerModule),
        typeof(AbpSwaggerAppModule),
+       typeof(OtherAppModule),
        typeof(SwaggerWebApiModule))]
     public class AbpSwaggerWebModule : AbpModule
     {
@@ -31,9 +34,13 @@ namespace AbpSwagger.Tests
                 x.EnableTranslator("zh-cn");
             };
 
-            AbpSwaggerBuilder.ForAll<IApplicationService>(typeof(AbpSwaggerAppModule).Assembly)
-                .Build("AbpSwagger").EnableAbpSwaggerUi();
-          
+            AbpSwaggerBuilder.ForAll<IApplicationService>(typeof (AbpSwaggerAppModule).Assembly)
+                .Where(x => x != typeof (IClassAppService))
+                .Build("AbpSwagger");
+
+            AbpSwaggerBuilder.ForAll<IApplicationService>(typeof(OtherAppModule).Assembly)
+               .Build("OtherModule").EnableAbpSwaggerUi();
+
 
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
