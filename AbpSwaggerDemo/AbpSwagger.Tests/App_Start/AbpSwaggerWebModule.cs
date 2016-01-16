@@ -5,9 +5,9 @@ using System.Web.Routing;
 using Abp.Application.Services;
 using Abp.Modules;
 using Abp.WebApi.Swagger;
+using Abp.Configuration.Startup;
 using Abp.WebApi.Swagger.Application;
 using Abp.WebApi.Swagger.Builders;
-using Abp.WebApi.Swagger.Configuration;
 using AbpSwagger.Application;
 using AbpSwagger.Application.Classes;
 using AbpSwagger.Application.WebApi.WebApi;
@@ -26,12 +26,11 @@ namespace AbpSwagger.Tests
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
 
-            var configure = IocManager.Resolve<IAbpSwaggerModuleConfiguration>();
-            configure.AbpSwaggerUiConfigure = (x) =>
+            Configuration.Modules.AbpSwagger().AbpSwaggerUiConfigure = x =>
             {
                 x.DocExpansion(DocExpansion.List);
-                x.BooleanValues(new string[] { "0", "1" });
-                x.EnableTranslator("zh-cn");
+                x.BooleanValues(new[] { "0", "1" });
+                x.EnableTranslator("en");
             };
 
             AbpSwaggerBuilder.ForAll<IApplicationService>(typeof (AbpSwaggerAppModule).Assembly)
