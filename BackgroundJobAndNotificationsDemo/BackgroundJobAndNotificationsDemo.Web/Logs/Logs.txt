@@ -1,0 +1,34 @@
+DEBUG 2016-01-20 23:08:29,797 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-01-20 23:08:31,061 [1    ] Abp.Modules.AbpModuleManager             - Found 13 ABP modules in total.
+DEBUG 2016-01-20 23:08:31,063 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.7.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-20 23:08:31,065 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.7.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-20 23:08:31,065 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.7.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-20 23:08:31,065 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.7.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-20 23:08:31,065 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.7.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-20 23:08:31,065 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.7.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-20 23:08:31,066 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.7.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-20 23:08:31,066 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.7.7.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-20 23:08:31,066 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoApplicationModule, BackgroundJobAndNotificationsDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-20 23:08:31,066 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoCoreModule, BackgroundJobAndNotificationsDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-20 23:08:31,066 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoDataModule, BackgroundJobAndNotificationsDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-20 23:08:31,066 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Web.BackgroundJobAndNotificationsDemoWebModule, BackgroundJobAndNotificationsDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-20 23:08:31,066 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Api.BackgroundJobAndNotificationsDemoWebApiModule, BackgroundJobAndNotificationsDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-20 23:08:31,070 [1    ] Abp.Modules.AbpModuleManager             - 13 modules loaded.
+DEBUG 2016-01-20 23:08:31,088 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-20 23:08:31,088 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-20 23:08:31,088 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-20 23:08:31,088 [1    ] o.Configuration.LanguageManagementConfig - Converted BackgroundJobAndNotificationsDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-20 23:08:32,647 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-01-20 23:08:32,652 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-01-20 23:08:32,652 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-01-20 23:08:32,653 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-01-20 23:08:32,653 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: BackgroundJobAndNotificationsDemo
+DEBUG 2016-01-20 23:08:33,418 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 4 classes defines auto mapping attributes
+DEBUG 2016-01-20 23:08:33,418 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-01-20 23:08:33,541 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-01-20 23:08:33,542 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-01-20 23:08:33,549 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-01-20 23:08:33,582 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-01-20 23:08:33,584 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-01-20 23:08:33,585 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-01-20 23:08:33,586 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Sessions.ISessionAppService' with service name 'app/session'.
