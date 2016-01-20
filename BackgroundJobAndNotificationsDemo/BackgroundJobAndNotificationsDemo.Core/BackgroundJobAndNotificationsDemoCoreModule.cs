@@ -2,10 +2,12 @@
 using Abp.Localization.Dictionaries;
 using Abp.Localization.Dictionaries.Xml;
 using Abp.Modules;
+using Abp.Threading.BackgroundWorkers;
 using Abp.Zero;
 using Abp.Zero.Configuration;
 using BackgroundJobAndNotificationsDemo.Authorization;
 using BackgroundJobAndNotificationsDemo.Authorization.Roles;
+using BackgroundJobAndNotificationsDemo.Users;
 
 namespace BackgroundJobAndNotificationsDemo
 {
@@ -36,6 +38,13 @@ namespace BackgroundJobAndNotificationsDemo
         public override void Initialize()
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+        }
+
+        public override void PostInitialize()
+        {
+            IocManager.Resolve<IBackgroundWorkerManager>().Add(
+                IocManager.Resolve<MakeInactiveUsersPassiveWorker>()
+                );
         }
     }
 }

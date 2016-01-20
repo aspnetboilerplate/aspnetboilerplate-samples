@@ -34,8 +34,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Abp, Version=0.7.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.0.7.8.0\lib\net452\Abp.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\aspnetboilerplate\src\Abp\bin\Debug\Abp.dll</HintPath>
     </Reference>
     <Reference Include="Abp.Zero, Version=0.7.7.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Abp.Zero.0.7.7.0\lib\net452\Abp.Zero.dll</HintPath>
