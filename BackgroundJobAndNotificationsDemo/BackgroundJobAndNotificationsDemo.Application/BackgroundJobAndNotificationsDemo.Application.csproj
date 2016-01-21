@@ -97,6 +97,9 @@
   <ItemGroup>
     <Compile Include="BackgroundJobAndNotificationsDemoApplicationModule.cs" />
     <Compile Include="BackgroundJobAndNotificationsDemoAppServiceBase.cs" />
+    <Compile Include="Emailing\IPrivateEmailAppService.cs" />
+    <Compile Include="Emailing\PrivateEmailAppService.cs" />
+    <Compile Include="Emailing\Dto\SendPrivateEmailInput.cs" />
     <Compile Include="MultiTenancy\Dto\CreateTenantInput.cs" />
     <Compile Include="MultiTenancy\ITenantAppService.cs" />
     <Compile Include="MultiTenancy\Dto\TenantListDto.cs" />

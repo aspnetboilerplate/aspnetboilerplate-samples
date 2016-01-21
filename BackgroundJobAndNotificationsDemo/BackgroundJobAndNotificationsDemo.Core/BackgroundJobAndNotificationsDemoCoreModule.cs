@@ -42,9 +42,8 @@ namespace BackgroundJobAndNotificationsDemo
 
         public override void PostInitialize()
         {
-            IocManager.Resolve<IBackgroundWorkerManager>().Add(
-                IocManager.Resolve<MakeInactiveUsersPassiveWorker>()
-                );
+            var workManager = IocManager.Resolve<IBackgroundWorkerManager>();
+            workManager.Add(IocManager.Resolve<MakeInactiveUsersPassiveWorker>());
         }
     }
 }
