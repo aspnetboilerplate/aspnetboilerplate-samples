@@ -2,10 +2,13 @@
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Abp.Hangfire;
+using Abp.Hangfire.Configuration;
 using Abp.Modules;
 using Abp.Web.Mvc;
 using Abp.Zero.Configuration;
 using BackgroundJobAndNotificationsDemo.Api;
+using Hangfire;
 
 namespace BackgroundJobAndNotificationsDemo.Web
 {
@@ -13,7 +16,8 @@ namespace BackgroundJobAndNotificationsDemo.Web
         typeof(BackgroundJobAndNotificationsDemoDataModule), 
         typeof(BackgroundJobAndNotificationsDemoApplicationModule), 
         typeof(BackgroundJobAndNotificationsDemoWebApiModule),
-        typeof(AbpWebMvcModule))]
+        typeof(AbpWebMvcModule),
+        typeof(AbpHangfireModule))]
     public class BackgroundJobAndNotificationsDemoWebModule : AbpModule
     {
         public override void PreInitialize()
@@ -23,6 +27,8 @@ namespace BackgroundJobAndNotificationsDemo.Web
 
             //Configure navigation/menu
             Configuration.Navigation.Providers.Add<BackgroundJobAndNotificationsDemoNavigationProvider>();
+
+            Hangfire.GlobalConfiguration.Configuration.UseSqlServerStorage("Default"); //Set database connection
         }
 
         public override void Initialize()

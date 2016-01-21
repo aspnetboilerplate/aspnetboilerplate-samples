@@ -7,7 +7,7 @@ using Abp.Domain.Uow;
 
 namespace BackgroundJobAndNotificationsDemo.Users
 {
-    public class SendPrivateEmailJob : BackgroundJobBase, ITransientDependency
+    public class SendPrivateEmailJob : BackgroundJob<SendPrivateEmailJobArgs>, ITransientDependency
     {
         private readonly IRepository<User, long> _userRepository;
 
@@ -16,25 +16,8 @@ namespace BackgroundJobAndNotificationsDemo.Users
             _userRepository = userRepository;
         }
 
-        //TODO: Move this to base and make BackgroundJobBase generic?
-        public override void Execute(object state)
-        {
-            if (state == null)
-            {
-                throw new ArgumentNullException("state");
-            }
-
-            var args = state as SendPrivateEmailJobArgs;
-            if (args == null)
-            {
-                throw new ArgumentException("state should be type of SendPrivateEmailJobArgs", "state");
-            }
-
-            ExecuteJob(args);
-        }
-
         [UnitOfWork]
-        protected virtual void ExecuteJob(SendPrivateEmailJobArgs args)
+        protected override void ExecuteJob(SendPrivateEmailJobArgs args)
         {
             //A simulation of exceptions
             if (RandomHelper.GetRandom(0, 100) < 50)
