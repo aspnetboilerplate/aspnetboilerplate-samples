@@ -26,7 +26,7 @@ namespace BackgroundJobAndNotificationsDemo.Emailing
                 throw new UserFriendlyException("There is no such a user: " + input.UserName);
             }
 
-            await _backgroundJobManager.EnqueueAsync<SendPrivateEmailJob>(
+            await _backgroundJobManager.EnqueueAsync<SendPrivateEmailJob, SendPrivateEmailJobArgs>(
                 new SendPrivateEmailJobArgs
                 {
                     Subject = input.Subject,

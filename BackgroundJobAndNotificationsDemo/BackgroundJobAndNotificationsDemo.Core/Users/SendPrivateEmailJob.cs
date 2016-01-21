@@ -17,7 +17,7 @@ namespace BackgroundJobAndNotificationsDemo.Users
         }
 
         [UnitOfWork]
-        protected override void ExecuteJob(SendPrivateEmailJobArgs args)
+        public override void Execute(SendPrivateEmailJobArgs args)
         {
             //A simulation of exceptions
             if (RandomHelper.GetRandom(0, 100) < 50)
