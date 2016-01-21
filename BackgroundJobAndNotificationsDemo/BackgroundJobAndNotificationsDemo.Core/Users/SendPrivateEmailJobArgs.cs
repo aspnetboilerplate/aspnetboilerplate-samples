@@ -1,5 +1,8 @@
-﻿namespace BackgroundJobAndNotificationsDemo.Users
+﻿using System;
+
+namespace BackgroundJobAndNotificationsDemo.Users
 {
+    [Serializable]
     public class SendPrivateEmailJobArgs
     {
         public long SenderUserId { get; set; }

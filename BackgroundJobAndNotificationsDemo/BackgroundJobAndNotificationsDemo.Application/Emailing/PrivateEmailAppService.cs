@@ -1,4 +1,5 @@
-﻿using Abp.Authorization;
+﻿using System.Threading.Tasks;
+using Abp.Authorization;
 using Abp.BackgroundJobs;
 using Abp.Runtime.Session;
 using Abp.UI;
@@ -17,15 +18,15 @@ namespace BackgroundJobAndNotificationsDemo.Emailing
             _backgroundJobManager = backgroundJobManager;
         }
 
-        public void Send(SendPrivateEmailInput input)
+        public async Task Send(SendPrivateEmailInput input)
         {
-            var targetUser = UserManager.FindByNameAsync(input.UserName);
+            var targetUser = await UserManager.FindByNameAsync(input.UserName);
             if (targetUser == null)
             {
                 throw new UserFriendlyException("There is no such a user: " + input.UserName);
             }
 
-            _backgroundJobManager.EnqueueAsync<SendPrivateEmailJob>(
+            await _backgroundJobManager.EnqueueAsync<SendPrivateEmailJob>(
                 new SendPrivateEmailJobArgs
                 {
                     Subject = input.Subject,

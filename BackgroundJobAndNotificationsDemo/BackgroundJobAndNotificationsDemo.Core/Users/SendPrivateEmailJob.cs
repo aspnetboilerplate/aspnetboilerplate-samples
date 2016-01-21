@@ -1,12 +1,13 @@
 ﻿using System;
 using Abp;
 using Abp.BackgroundJobs;
+using Abp.Dependency;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
 
 namespace BackgroundJobAndNotificationsDemo.Users
 {
-    public class SendPrivateEmailJob : BackgroundJobBase
+    public class SendPrivateEmailJob : BackgroundJobBase, ITransientDependency
     {
         private readonly IRepository<User, long> _userRepository;
 

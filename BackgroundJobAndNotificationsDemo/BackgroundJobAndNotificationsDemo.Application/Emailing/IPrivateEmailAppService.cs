@@ -1,10 +1,11 @@
-﻿using Abp.Application.Services;
+﻿using System.Threading.Tasks;
+using Abp.Application.Services;
 using BackgroundJobAndNotificationsDemo.Emailing.Dto;
 
 namespace BackgroundJobAndNotificationsDemo.Emailing
 {
     public interface IPrivateEmailAppService : IApplicationService
     {
-        void Send(SendPrivateEmailInput input);
+        Task Send(SendPrivateEmailInput input);
     }
 }
