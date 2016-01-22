@@ -2,6 +2,7 @@
 using System.Configuration;
 using BackgroundJobAndNotificationsDemo.Api.Controllers;
 using BackgroundJobAndNotificationsDemo.Web;
+using Hangfire;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
@@ -42,6 +43,8 @@ namespace BackgroundJobAndNotificationsDemo.Web
             {
                 app.UseGoogleAuthentication(CreateGoogleAuthOptions());
             }
+
+            app.UseHangfireDashboard(); //Enable hangfire dashboard.
         }
 
         private static FacebookAuthenticationOptions CreateFacebookAuthOptions()
