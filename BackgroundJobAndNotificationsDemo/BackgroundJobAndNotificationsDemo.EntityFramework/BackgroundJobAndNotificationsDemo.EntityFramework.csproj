@@ -145,6 +145,10 @@
     <Compile Include="Migrations\201601221435540_Added_BackgroundJobInfo.Designer.cs">
       <DependentUpon>201601221435540_Added_BackgroundJobInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601221608456_Added_CreatorUserId_To_BackgroundJobInfo.cs" />
+    <Compile Include="Migrations\201601221608456_Added_CreatorUserId_To_BackgroundJobInfo.Designer.cs">
+      <DependentUpon>201601221608456_Added_CreatorUserId_To_BackgroundJobInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="BackgroundJobAndNotificationsDemoDataModule.cs" />
     <Compile Include="Migrations\SeedData\DefaultEditionsBuilder.cs" />
@@ -190,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201601221435540_Added_BackgroundJobInfo.resx">
       <DependentUpon>201601221435540_Added_BackgroundJobInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601221608456_Added_CreatorUserId_To_BackgroundJobInfo.resx">
+      <DependentUpon>201601221608456_Added_CreatorUserId_To_BackgroundJobInfo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
