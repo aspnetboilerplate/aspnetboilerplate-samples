@@ -23,7 +23,7 @@ namespace BackgroundJobAndNotificationsDemo.Users
         }
 
         [UnitOfWork]
-        protected override void Timer_Elapsed(object sender, System.EventArgs e)
+        protected override void DoWork()
         {
             using (CurrentUnitOfWork.DisableFilter(AbpDataFilters.MayHaveTenant))
             {
