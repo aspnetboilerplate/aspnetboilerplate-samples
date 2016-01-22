@@ -7,7 +7,7 @@ using Abp.Domain.Uow;
 
 namespace BackgroundJobAndNotificationsDemo.Users
 {
-    public class SendPrivateEmailJob : BackgroundJob<SendPrivateEmailJobArgs>, ITransientDependency
+    public class SendPrivateEmailJob : BackgroundJob<SendPrivateEmailJobArgs>, ITransientDependency, IDisposable
     {
         private readonly IRepository<User, long> _userRepository;
 
@@ -20,10 +20,10 @@ namespace BackgroundJobAndNotificationsDemo.Users
         public override void Execute(SendPrivateEmailJobArgs args)
         {
             //A simulation of exceptions
-            if (RandomHelper.GetRandom(0, 100) < 50)
-            {
-                throw new Exception("Random exception!");
-            }
+            //if (RandomHelper.GetRandom(0, 100) < 50)
+            //{
+            //    throw new Exception("Random exception!");
+            //}
 
             using (CurrentUnitOfWork.SetFilterParameter(AbpDataFilters.MayHaveTenant, AbpDataFilters.Parameters.TenantId, args.TargetTenantId))
             {
@@ -38,6 +38,11 @@ namespace BackgroundJobAndNotificationsDemo.Users
                 Logger.Info("Sending email to " + user.EmailAddress + " -> " + args.Subject);
                 Logger.Info(args.Body);
             }
+        }
+
+        public void Dispose()
+        {
+            Logger.Debug("Disposed SendPrivateEmailJob");
         }
     }
 }

@@ -17,7 +17,7 @@ namespace BackgroundJobAndNotificationsDemo.Web
         typeof(BackgroundJobAndNotificationsDemoApplicationModule), 
         typeof(BackgroundJobAndNotificationsDemoWebApiModule),
         typeof(AbpWebMvcModule),
-        typeof(AbpHangfireModule))]
+        typeof(AbpHangfireModule))] //Add AbpHangfireModule dependency
     public class BackgroundJobAndNotificationsDemoWebModule : AbpModule
     {
         public override void PreInitialize()
@@ -28,7 +28,12 @@ namespace BackgroundJobAndNotificationsDemo.Web
             //Configure navigation/menu
             Configuration.Navigation.Providers.Add<BackgroundJobAndNotificationsDemoNavigationProvider>();
 
-            Hangfire.GlobalConfiguration.Configuration.UseSqlServerStorage("Default"); //Set database connection
+            //Configuration.BackgroundJobs.IsJobExecutionEnabled = false; //Can disable job manager to not process jobs.
+
+            Configuration.BackgroundJobs.UseHangfire(configuration => //Configure to use hangfire for background jobs.
+            {
+                configuration.GlobalConfiguration.UseSqlServerStorage("Default"); //Set database connection
+            });
         }
 
         public override void Initialize()
