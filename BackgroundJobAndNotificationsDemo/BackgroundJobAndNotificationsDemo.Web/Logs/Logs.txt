@@ -32,3 +32,324 @@ DEBUG 2016-01-20 23:08:33,582 [1    ] Abp.Logging.LogHelper                    -
 DEBUG 2016-01-20 23:08:33,584 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Roles.IRoleAppService' with service name 'app/role'.
 DEBUG 2016-01-20 23:08:33,585 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Users.IUserAppService' with service name 'app/user'.
 DEBUG 2016-01-20 23:08:33,586 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-01-22 16:37:20,362 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-01-22 16:37:22,326 [1    ] Abp.Modules.AbpModuleManager             - Found 14 ABP modules in total.
+DEBUG 2016-01-22 16:37:22,330 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.7.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:37:22,331 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:37:22,331 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.7.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:37:22,331 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:37:22,331 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:37:22,332 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:37:22,332 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:37:22,332 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.7.7.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:37:22,332 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.7.7.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:37:22,332 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoApplicationModule, BackgroundJobAndNotificationsDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:37:22,332 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoCoreModule, BackgroundJobAndNotificationsDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:37:22,333 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoDataModule, BackgroundJobAndNotificationsDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:37:22,333 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Web.BackgroundJobAndNotificationsDemoWebModule, BackgroundJobAndNotificationsDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:37:22,333 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Api.BackgroundJobAndNotificationsDemoWebApiModule, BackgroundJobAndNotificationsDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:37:22,337 [1    ] Abp.Modules.AbpModuleManager             - 14 modules loaded.
+DEBUG 2016-01-22 16:37:22,363 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-22 16:37:22,363 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-22 16:37:22,363 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-22 16:37:22,363 [1    ] o.Configuration.LanguageManagementConfig - Converted BackgroundJobAndNotificationsDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-22 16:37:25,427 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-01-22 16:37:25,433 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-01-22 16:37:25,434 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-01-22 16:37:25,435 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-01-22 16:37:25,435 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: BackgroundJobAndNotificationsDemo
+DEBUG 2016-01-22 16:37:25,524 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-01-22 16:37:26,949 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 4 classes defines auto mapping attributes
+DEBUG 2016-01-22 16:37:26,949 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-01-22 16:37:27,069 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-01-22 16:37:27,070 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-01-22 16:37:27,075 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-01-22 16:37:27,103 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Emailing.IPrivateEmailAppService' with service name 'app/privateEmail'.
+DEBUG 2016-01-22 16:37:27,104 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-01-22 16:37:27,105 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-01-22 16:37:27,105 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-01-22 16:37:27,107 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-01-22 16:37:27,199 [1    ] emo.Users.MakeInactiveUsersPassiveWorker - Start background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
+DEBUG 2016-01-22 16:41:14,905 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-01-22 16:41:16,837 [1    ] Abp.Modules.AbpModuleManager             - Found 14 ABP modules in total.
+DEBUG 2016-01-22 16:41:16,840 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.7.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:41:16,841 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:41:16,842 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.7.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:41:16,842 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:41:16,842 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:41:16,842 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:41:16,842 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:41:16,842 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.7.7.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:41:16,842 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.7.7.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:41:16,842 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoApplicationModule, BackgroundJobAndNotificationsDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:41:16,842 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoCoreModule, BackgroundJobAndNotificationsDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:41:16,843 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoDataModule, BackgroundJobAndNotificationsDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:41:16,843 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Web.BackgroundJobAndNotificationsDemoWebModule, BackgroundJobAndNotificationsDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:41:16,843 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Api.BackgroundJobAndNotificationsDemoWebApiModule, BackgroundJobAndNotificationsDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:41:16,847 [1    ] Abp.Modules.AbpModuleManager             - 14 modules loaded.
+DEBUG 2016-01-22 16:41:16,872 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-22 16:41:16,872 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-22 16:41:16,872 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-22 16:41:16,872 [1    ] o.Configuration.LanguageManagementConfig - Converted BackgroundJobAndNotificationsDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-22 16:41:19,605 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-01-22 16:41:19,611 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-01-22 16:41:19,611 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-01-22 16:41:19,612 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-01-22 16:41:19,613 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: BackgroundJobAndNotificationsDemo
+DEBUG 2016-01-22 16:41:19,694 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-01-22 16:41:21,217 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 4 classes defines auto mapping attributes
+DEBUG 2016-01-22 16:41:21,217 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-01-22 16:41:21,347 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-01-22 16:41:21,348 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-01-22 16:41:21,354 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-01-22 16:41:21,380 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Emailing.IPrivateEmailAppService' with service name 'app/privateEmail'.
+DEBUG 2016-01-22 16:41:21,381 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-01-22 16:41:21,382 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-01-22 16:41:21,383 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-01-22 16:41:21,384 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-01-22 16:41:21,473 [1    ] emo.Users.MakeInactiveUsersPassiveWorker - Start background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
+INFO  2016-01-22 16:41:35,089 [11   ] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject
+INFO  2016-01-22 16:41:35,089 [11   ] ificationsDemo.Users.SendPrivateEmailJob - test body 1453473689884
+DEBUG 2016-01-22 16:43:06,378 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-01-22 16:43:07,697 [1    ] Abp.Modules.AbpModuleManager             - Found 14 ABP modules in total.
+DEBUG 2016-01-22 16:43:07,700 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.7.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:43:07,702 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:43:07,702 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.7.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:43:07,702 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:43:07,702 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:43:07,702 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:43:07,702 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:43:07,702 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.7.7.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:43:07,702 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.7.7.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:43:07,702 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoApplicationModule, BackgroundJobAndNotificationsDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:43:07,702 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoCoreModule, BackgroundJobAndNotificationsDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:43:07,703 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoDataModule, BackgroundJobAndNotificationsDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:43:07,703 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Web.BackgroundJobAndNotificationsDemoWebModule, BackgroundJobAndNotificationsDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:43:07,703 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Api.BackgroundJobAndNotificationsDemoWebApiModule, BackgroundJobAndNotificationsDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:43:07,706 [1    ] Abp.Modules.AbpModuleManager             - 14 modules loaded.
+DEBUG 2016-01-22 16:43:07,729 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-22 16:43:07,729 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-22 16:43:07,729 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-22 16:43:07,729 [1    ] o.Configuration.LanguageManagementConfig - Converted BackgroundJobAndNotificationsDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-22 16:43:09,339 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-01-22 16:43:09,345 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-01-22 16:43:09,345 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-01-22 16:43:09,346 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-01-22 16:43:09,346 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: BackgroundJobAndNotificationsDemo
+DEBUG 2016-01-22 16:43:09,406 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-01-22 16:43:10,201 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 4 classes defines auto mapping attributes
+DEBUG 2016-01-22 16:43:10,201 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-01-22 16:43:10,310 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-01-22 16:43:10,311 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-01-22 16:43:10,316 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-01-22 16:43:10,342 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Emailing.IPrivateEmailAppService' with service name 'app/privateEmail'.
+DEBUG 2016-01-22 16:43:10,342 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-01-22 16:43:10,343 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-01-22 16:43:10,344 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-01-22 16:43:10,345 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-01-22 16:43:10,405 [1    ] emo.Users.MakeInactiveUsersPassiveWorker - Start background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
+INFO  2016-01-22 16:43:24,590 [14   ] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject
+INFO  2016-01-22 16:43:24,590 [14   ] ificationsDemo.Users.SendPrivateEmailJob - test body 1453473798015
+INFO  2016-01-22 16:43:29,628 [11   ] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject
+INFO  2016-01-22 16:43:29,628 [11   ] ificationsDemo.Users.SendPrivateEmailJob - test body 1453473800601
+ERROR 2016-01-22 16:43:30,666 [15   ] lers.Filters.AbpExceptionFilterAttribute - System.Exception: random test exception
+   at BackgroundJobAndNotificationsDemo.Emailing.PrivateEmailAppService.<Send>d__1.MoveNext() in d:\Halil\GitHub\aspnetboilerplate-samples\BackgroundJobAndNotificationsDemo\BackgroundJobAndNotificationsDemo.Application\Emailing\PrivateEmailAppService.cs:line 27
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at Abp.Threading.InternalAsyncHelper.<AwaitTaskWithPostActionAndFinally>d__4.MoveNext() in d:\Halil\GitHub\aspnetboilerplate\src\Abp\Threading\InternalAsyncHelper.cs:line 40
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at Abp.Threading.InternalAsyncHelper.<AwaitTaskWithFinally>d__0.MoveNext() in d:\Halil\GitHub\aspnetboilerplate\src\Abp\Threading\InternalAsyncHelper.cs:line 20
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Threading.Tasks.TaskHelpersExtensions.<CastToObject>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+System.Exception: random test exception
+   at BackgroundJobAndNotificationsDemo.Emailing.PrivateEmailAppService.<Send>d__1.MoveNext() in d:\Halil\GitHub\aspnetboilerplate-samples\BackgroundJobAndNotificationsDemo\BackgroundJobAndNotificationsDemo.Application\Emailing\PrivateEmailAppService.cs:line 27
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at Abp.Threading.InternalAsyncHelper.<AwaitTaskWithPostActionAndFinally>d__4.MoveNext() in d:\Halil\GitHub\aspnetboilerplate\src\Abp\Threading\InternalAsyncHelper.cs:line 40
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at Abp.Threading.InternalAsyncHelper.<AwaitTaskWithFinally>d__0.MoveNext() in d:\Halil\GitHub\aspnetboilerplate\src\Abp\Threading\InternalAsyncHelper.cs:line 20
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Threading.Tasks.TaskHelpersExtensions.<CastToObject>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+DEBUG 2016-01-22 16:44:06,164 [6    ] Abp.BackgroundJobs.BackgroundJobManager  - Stop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-01-22 16:44:06,165 [6    ] emo.Users.MakeInactiveUsersPassiveWorker - Stop background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
+DEBUG 2016-01-22 16:44:06,165 [6    ] Abp.BackgroundJobs.BackgroundJobManager  - WaitToStop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-01-22 16:44:06,166 [6    ] emo.Users.MakeInactiveUsersPassiveWorker - WaitToStop background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
+DEBUG 2016-01-22 16:44:12,435 [20   ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-01-22 16:44:13,737 [20   ] Abp.Modules.AbpModuleManager             - Found 14 ABP modules in total.
+DEBUG 2016-01-22 16:44:13,740 [20   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.7.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:44:13,742 [20   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:44:13,742 [20   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.7.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:44:13,742 [20   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:44:13,742 [20   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:44:13,742 [20   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:44:13,742 [20   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:44:13,742 [20   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.7.7.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:44:13,743 [20   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.7.7.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:44:13,743 [20   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoApplicationModule, BackgroundJobAndNotificationsDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:44:13,743 [20   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoCoreModule, BackgroundJobAndNotificationsDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:44:13,743 [20   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoDataModule, BackgroundJobAndNotificationsDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:44:13,743 [20   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Web.BackgroundJobAndNotificationsDemoWebModule, BackgroundJobAndNotificationsDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:44:13,743 [20   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Api.BackgroundJobAndNotificationsDemoWebApiModule, BackgroundJobAndNotificationsDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:44:13,746 [20   ] Abp.Modules.AbpModuleManager             - 14 modules loaded.
+DEBUG 2016-01-22 16:44:13,767 [20   ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-22 16:44:13,767 [20   ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-22 16:44:13,767 [20   ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-22 16:44:13,767 [20   ] o.Configuration.LanguageManagementConfig - Converted BackgroundJobAndNotificationsDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-22 16:44:15,250 [20   ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-01-22 16:44:15,254 [20   ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-01-22 16:44:15,254 [20   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-01-22 16:44:15,255 [20   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-01-22 16:44:15,256 [20   ] Abp.Localization.LocalizationManager     - Initialized localization source: BackgroundJobAndNotificationsDemo
+DEBUG 2016-01-22 16:44:15,311 [20   ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-01-22 16:44:16,147 [20   ] Abp.AutoMapper.AbpAutoMapperModule       - Found 4 classes defines auto mapping attributes
+DEBUG 2016-01-22 16:44:16,147 [20   ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-01-22 16:44:16,190 [20   ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-01-22 16:44:16,191 [20   ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-01-22 16:44:16,195 [20   ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-01-22 16:44:16,215 [20   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Emailing.IPrivateEmailAppService' with service name 'app/privateEmail'.
+DEBUG 2016-01-22 16:44:16,216 [20   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-01-22 16:44:16,217 [20   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-01-22 16:44:16,218 [20   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-01-22 16:44:16,219 [20   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-01-22 16:44:16,277 [20   ] emo.Users.MakeInactiveUsersPassiveWorker - Start background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
+WARN  2016-01-22 16:44:25,581 [11   ] Abp.BackgroundJobs.BackgroundJobManager  - Exception has been thrown by the target of an invocation.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Exception: random test exception
+   at BackgroundJobAndNotificationsDemo.Users.SendPrivateEmailJob.Execute(SendPrivateEmailJobArgs args) in d:\Halil\GitHub\aspnetboilerplate-samples\BackgroundJobAndNotificationsDemo\BackgroundJobAndNotificationsDemo.Core\Users\SendPrivateEmailJob.cs:line 24
+   at Castle.Proxies.SendPrivateEmailJobProxy.Execute_callback(SendPrivateEmailJobArgs args)
+   at Castle.Proxies.Invocations.SendPrivateEmailJob_Execute.InvokeMethodOnTarget()
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Abp.Domain.Uow.UnitOfWorkInterceptor.PerformSyncUow(IInvocation invocation, UnitOfWorkOptions options) in d:\Halil\GitHub\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkInterceptor.cs:line 60
+   at Abp.Domain.Uow.UnitOfWorkInterceptor.PerformUow(IInvocation invocation, UnitOfWorkOptions options) in d:\Halil\GitHub\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkInterceptor.cs:line 52
+   at Abp.Domain.Uow.UnitOfWorkInterceptor.Intercept(IInvocation invocation) in d:\Halil\GitHub\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkInterceptor.cs:line 41
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.SendPrivateEmailJobProxy.Execute(SendPrivateEmailJobArgs args)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at Abp.BackgroundJobs.BackgroundJobManager.TryProcessJob(BackgroundJobInfo jobInfo) in d:\Halil\GitHub\aspnetboilerplate\src\Abp\BackgroundJobs\BackgroundJobManager.cs:line 97
+WARN  2016-01-22 16:45:25,709 [34   ] Abp.BackgroundJobs.BackgroundJobManager  - Exception has been thrown by the target of an invocation.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Exception: random test exception
+   at BackgroundJobAndNotificationsDemo.Users.SendPrivateEmailJob.Execute(SendPrivateEmailJobArgs args) in d:\Halil\GitHub\aspnetboilerplate-samples\BackgroundJobAndNotificationsDemo\BackgroundJobAndNotificationsDemo.Core\Users\SendPrivateEmailJob.cs:line 24
+   at Castle.Proxies.SendPrivateEmailJobProxy.Execute_callback(SendPrivateEmailJobArgs args)
+   at Castle.Proxies.Invocations.SendPrivateEmailJob_Execute.InvokeMethodOnTarget()
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Abp.Domain.Uow.UnitOfWorkInterceptor.PerformSyncUow(IInvocation invocation, UnitOfWorkOptions options) in d:\Halil\GitHub\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkInterceptor.cs:line 60
+   at Abp.Domain.Uow.UnitOfWorkInterceptor.PerformUow(IInvocation invocation, UnitOfWorkOptions options) in d:\Halil\GitHub\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkInterceptor.cs:line 52
+   at Abp.Domain.Uow.UnitOfWorkInterceptor.Intercept(IInvocation invocation) in d:\Halil\GitHub\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkInterceptor.cs:line 41
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.SendPrivateEmailJobProxy.Execute(SendPrivateEmailJobArgs args)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at Abp.BackgroundJobs.BackgroundJobManager.TryProcessJob(BackgroundJobInfo jobInfo) in d:\Halil\GitHub\aspnetboilerplate\src\Abp\BackgroundJobs\BackgroundJobManager.cs:line 97
+WARN  2016-01-22 16:47:25,895 [64   ] Abp.BackgroundJobs.BackgroundJobManager  - Exception has been thrown by the target of an invocation.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Exception: random test exception
+   at BackgroundJobAndNotificationsDemo.Users.SendPrivateEmailJob.Execute(SendPrivateEmailJobArgs args) in d:\Halil\GitHub\aspnetboilerplate-samples\BackgroundJobAndNotificationsDemo\BackgroundJobAndNotificationsDemo.Core\Users\SendPrivateEmailJob.cs:line 24
+   at Castle.Proxies.SendPrivateEmailJobProxy.Execute_callback(SendPrivateEmailJobArgs args)
+   at Castle.Proxies.Invocations.SendPrivateEmailJob_Execute.InvokeMethodOnTarget()
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Abp.Domain.Uow.UnitOfWorkInterceptor.PerformSyncUow(IInvocation invocation, UnitOfWorkOptions options) in d:\Halil\GitHub\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkInterceptor.cs:line 60
+   at Abp.Domain.Uow.UnitOfWorkInterceptor.PerformUow(IInvocation invocation, UnitOfWorkOptions options) in d:\Halil\GitHub\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkInterceptor.cs:line 52
+   at Abp.Domain.Uow.UnitOfWorkInterceptor.Intercept(IInvocation invocation) in d:\Halil\GitHub\aspnetboilerplate\src\Abp\Domain\Uow\UnitOfWorkInterceptor.cs:line 41
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.SendPrivateEmailJobProxy.Execute(SendPrivateEmailJobArgs args)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at Abp.BackgroundJobs.BackgroundJobManager.TryProcessJob(BackgroundJobInfo jobInfo) in d:\Halil\GitHub\aspnetboilerplate\src\Abp\BackgroundJobs\BackgroundJobManager.cs:line 97
+DEBUG 2016-01-22 16:48:23,353 [47   ] Abp.BackgroundJobs.BackgroundJobManager  - Stop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-01-22 16:48:23,353 [47   ] emo.Users.MakeInactiveUsersPassiveWorker - Stop background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
+DEBUG 2016-01-22 16:48:23,354 [47   ] Abp.BackgroundJobs.BackgroundJobManager  - WaitToStop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-01-22 16:48:23,354 [47   ] emo.Users.MakeInactiveUsersPassiveWorker - WaitToStop background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
+DEBUG 2016-01-22 16:48:27,384 [81   ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-01-22 16:48:28,706 [81   ] Abp.Modules.AbpModuleManager             - Found 14 ABP modules in total.
+DEBUG 2016-01-22 16:48:28,709 [81   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.7.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:48:28,711 [81   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:48:28,711 [81   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.7.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:48:28,711 [81   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:48:28,711 [81   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:48:28,711 [81   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:48:28,711 [81   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.7.8.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:48:28,711 [81   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.7.7.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:48:28,711 [81   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.7.7.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:48:28,712 [81   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoApplicationModule, BackgroundJobAndNotificationsDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:48:28,712 [81   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoCoreModule, BackgroundJobAndNotificationsDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:48:28,712 [81   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoDataModule, BackgroundJobAndNotificationsDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:48:28,712 [81   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Web.BackgroundJobAndNotificationsDemoWebModule, BackgroundJobAndNotificationsDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:48:28,712 [81   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Api.BackgroundJobAndNotificationsDemoWebApiModule, BackgroundJobAndNotificationsDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-01-22 16:48:28,716 [81   ] Abp.Modules.AbpModuleManager             - 14 modules loaded.
+DEBUG 2016-01-22 16:48:28,737 [81   ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-22 16:48:28,737 [81   ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-22 16:48:28,737 [81   ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-22 16:48:28,737 [81   ] o.Configuration.LanguageManagementConfig - Converted BackgroundJobAndNotificationsDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-01-22 16:48:30,185 [81   ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-01-22 16:48:30,190 [81   ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-01-22 16:48:30,190 [81   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-01-22 16:48:30,191 [81   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-01-22 16:48:30,191 [81   ] Abp.Localization.LocalizationManager     - Initialized localization source: BackgroundJobAndNotificationsDemo
+DEBUG 2016-01-22 16:48:30,247 [81   ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-01-22 16:48:31,092 [81   ] Abp.AutoMapper.AbpAutoMapperModule       - Found 4 classes defines auto mapping attributes
+DEBUG 2016-01-22 16:48:31,092 [81   ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-01-22 16:48:31,136 [81   ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-01-22 16:48:31,137 [81   ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-01-22 16:48:31,140 [81   ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-01-22 16:48:31,162 [81   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Emailing.IPrivateEmailAppService' with service name 'app/privateEmail'.
+DEBUG 2016-01-22 16:48:31,163 [81   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-01-22 16:48:31,164 [81   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-01-22 16:48:31,165 [81   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-01-22 16:48:31,165 [81   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-01-22 16:48:31,224 [81   ] emo.Users.MakeInactiveUsersPassiveWorker - Start background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
+INFO  2016-01-22 16:48:40,405 [22   ] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject
+INFO  2016-01-22 16:48:40,405 [22   ] ificationsDemo.Users.SendPrivateEmailJob - test body 1453473863452

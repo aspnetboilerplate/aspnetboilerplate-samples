@@ -70,12 +70,12 @@
       <HintPath>..\..\..\aspnetboilerplate\src\Abp.Web.Mvc\bin\Debug\Abp.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Abp.Zero, Version=0.7.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Zero.0.7.7.0\lib\net452\Abp.Zero.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\module-zero\src\Abp.Zero\bin\Debug\Abp.Zero.dll</HintPath>
     </Reference>
     <Reference Include="Abp.Zero.EntityFramework, Version=0.7.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Zero.EntityFramework.0.7.7.0\lib\net452\Abp.Zero.EntityFramework.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\module-zero\src\Abp.Zero.EntityFramework\bin\Debug\Abp.Zero.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>

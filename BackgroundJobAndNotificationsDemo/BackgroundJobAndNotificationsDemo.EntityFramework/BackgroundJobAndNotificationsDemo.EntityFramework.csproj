@@ -42,12 +42,12 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Abp.Zero, Version=0.7.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Zero.0.7.7.0\lib\net452\Abp.Zero.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\module-zero\src\Abp.Zero\bin\Debug\Abp.Zero.dll</HintPath>
     </Reference>
     <Reference Include="Abp.Zero.EntityFramework, Version=0.7.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Zero.EntityFramework.0.7.7.0\lib\net452\Abp.Zero.EntityFramework.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\module-zero\src\Abp.Zero.EntityFramework\bin\Debug\Abp.Zero.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -141,6 +141,10 @@
     <Compile Include="Migrations\201601032115057_Upgraded_Module_Zero_0_7_7.Designer.cs">
       <DependentUpon>201601032115057_Upgraded_Module_Zero_0_7_7.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601221435540_Added_BackgroundJobInfo.cs" />
+    <Compile Include="Migrations\201601221435540_Added_BackgroundJobInfo.Designer.cs">
+      <DependentUpon>201601221435540_Added_BackgroundJobInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="BackgroundJobAndNotificationsDemoDataModule.cs" />
     <Compile Include="Migrations\SeedData\DefaultEditionsBuilder.cs" />
@@ -183,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201601032115057_Upgraded_Module_Zero_0_7_7.resx">
       <DependentUpon>201601032115057_Upgraded_Module_Zero_0_7_7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601221435540_Added_BackgroundJobInfo.resx">
+      <DependentUpon>201601221435540_Added_BackgroundJobInfo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

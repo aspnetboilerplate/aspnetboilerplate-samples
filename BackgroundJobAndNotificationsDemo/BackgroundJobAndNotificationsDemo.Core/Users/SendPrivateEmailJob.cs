@@ -1,4 +1,6 @@
-﻿using Abp.BackgroundJobs;
+﻿using System;
+using Abp;
+using Abp.BackgroundJobs;
 using Abp.Dependency;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
@@ -17,6 +19,11 @@ namespace BackgroundJobAndNotificationsDemo.Users
         [UnitOfWork]
         public override void Execute(SendPrivateEmailJobArgs args)
         {
+            //if (RandomHelper.GetRandom(0, 100) <= 50)
+            //{
+            //    throw new Exception("random test exception");
+            //}
+
             using (CurrentUnitOfWork.SetFilterParameter(AbpDataFilters.MayHaveTenant, AbpDataFilters.Parameters.TenantId, args.TargetTenantId))
             {
                 var user = _userRepository.FirstOrDefault(args.TargetUserId);
