@@ -44,6 +44,8 @@ namespace BackgroundJobAndNotificationsDemo.Web
                 app.UseGoogleAuthentication(CreateGoogleAuthOptions());
             }
 
+            app.MapSignalR();
+
             app.UseHangfireDashboard(); //Enable hangfire dashboard.
         }
 

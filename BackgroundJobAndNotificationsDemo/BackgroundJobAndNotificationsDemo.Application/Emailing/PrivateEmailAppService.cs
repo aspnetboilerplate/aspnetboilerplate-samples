@@ -74,23 +74,4 @@ namespace BackgroundJobAndNotificationsDemo.Emailing
             Subject = subject;
         }
     }
-
-    public class LoggerRealTimeNotifier : IRealTimeNotifier, ITransientDependency
-    {
-        public ILogger Logger { get; set; }
-
-        public LoggerRealTimeNotifier()
-        {
-            Logger = NullLogger.Instance;
-        }
-
-        public Task SendNotificationAsync(NotificationInfo notification, List<UserNotificationInfo> userNotifications)
-        {
-            Logger.Info("Send a notification: " + notification.NotificationName + " -> " + notification.Data.ToString());
-
-            //TODO: SendNotificationAsync signature and parameters should be changed!
-
-            return Task.FromResult(0);
-        }
-    }
 }

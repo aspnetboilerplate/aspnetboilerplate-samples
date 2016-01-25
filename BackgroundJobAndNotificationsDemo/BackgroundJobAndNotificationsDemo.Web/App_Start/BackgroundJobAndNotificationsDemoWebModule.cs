@@ -6,6 +6,7 @@ using Abp.Hangfire;
 using Abp.Hangfire.Configuration;
 using Abp.Modules;
 using Abp.Web.Mvc;
+using Abp.Web.SignalR;
 using Abp.Zero.Configuration;
 using BackgroundJobAndNotificationsDemo.Api;
 using Hangfire;
@@ -17,6 +18,7 @@ namespace BackgroundJobAndNotificationsDemo.Web
         typeof(BackgroundJobAndNotificationsDemoApplicationModule), 
         typeof(BackgroundJobAndNotificationsDemoWebApiModule),
         typeof(AbpWebMvcModule),
+        typeof(AbpWebSignalRModule), //Add AbpWebSignalRModule dependency
         typeof(AbpHangfireModule))] //Add AbpHangfireModule dependency
     public class BackgroundJobAndNotificationsDemoWebModule : AbpModule
     {
