@@ -17,5 +17,7 @@ namespace BackgroundJobAndNotificationsDemo.Emailing.Dto
         [Required]
         [MaxLength(4000)]
         public string Body { get; set; }
+
+        public bool SendNotification { get; set; }
     }
 }

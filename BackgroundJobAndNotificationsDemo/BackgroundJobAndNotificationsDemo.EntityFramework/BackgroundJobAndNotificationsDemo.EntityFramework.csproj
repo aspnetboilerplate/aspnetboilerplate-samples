@@ -149,6 +149,14 @@
     <Compile Include="Migrations\201601221608456_Added_CreatorUserId_To_BackgroundJobInfo.Designer.cs">
       <DependentUpon>201601221608456_Added_CreatorUserId_To_BackgroundJobInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601251255158_Added_Notification_Entities.cs" />
+    <Compile Include="Migrations\201601251255158_Added_Notification_Entities.Designer.cs">
+      <DependentUpon>201601251255158_Added_Notification_Entities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601251300274_Revised_Lengths.cs" />
+    <Compile Include="Migrations\201601251300274_Revised_Lengths.Designer.cs">
+      <DependentUpon>201601251300274_Revised_Lengths.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="BackgroundJobAndNotificationsDemoDataModule.cs" />
     <Compile Include="Migrations\SeedData\DefaultEditionsBuilder.cs" />
@@ -197,6 +205,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201601221608456_Added_CreatorUserId_To_BackgroundJobInfo.resx">
       <DependentUpon>201601221608456_Added_CreatorUserId_To_BackgroundJobInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601251255158_Added_Notification_Entities.resx">
+      <DependentUpon>201601251255158_Added_Notification_Entities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601251300274_Revised_Lengths.resx">
+      <DependentUpon>201601251300274_Revised_Lengths.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
