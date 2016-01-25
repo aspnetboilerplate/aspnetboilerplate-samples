@@ -1,5 +1,6 @@
 ﻿@using System.Threading
 @using System.Web.Optimization
+@using Abp.Web.Mvc.Extensions
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,9 +39,9 @@
     <script src="~/api/AbpServiceProxies/GetAll?type=angular"></script>
     <script src="~/AbpScripts/GetScripts" type="text/javascript"></script>
 
-    <!--SignalR scripts. -->
-    <script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <!-- SignalR scripts --> 
     <script src="~/signalr/hubs"></script>
+    @Html.IncludeScript("~/Abp/Framework/scripts/libs/abp.signalr.js")
 
     @Scripts.Render("~/Bundles/App/Main/js")
     
