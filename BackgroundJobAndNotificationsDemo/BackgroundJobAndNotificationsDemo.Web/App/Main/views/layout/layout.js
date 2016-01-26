@@ -4,12 +4,12 @@
         '$scope', function ($scope) {
             var vm = this;
 
-            $scope.globalNotifications = [];
+            $scope.globalUserNotifications = [];
 
-
-            abp.event.on('abp.notifications.received', function(notification) {
+            abp.event.on('abp.notifications.received', function (userNotification) {
                 $scope.$apply(function () {
-                    $scope.globalNotifications.unshift(notification);
+                    $scope.globalUserNotifications.unshift(userNotification);
+                    abp.notify.info(userNotification.Notification.Data.SenderName + " sent an email to your email address!");
                 });
             });
 
