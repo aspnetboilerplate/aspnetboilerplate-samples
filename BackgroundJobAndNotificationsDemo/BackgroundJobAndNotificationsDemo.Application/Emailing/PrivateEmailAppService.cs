@@ -1,14 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Abp.Authorization;
 using Abp.BackgroundJobs;
-using Abp.Dependency;
 using Abp.Notifications;
-using Abp.Runtime.Session;
 using Abp.UI;
 using BackgroundJobAndNotificationsDemo.Emailing.Dto;
 using BackgroundJobAndNotificationsDemo.Users;
-using Castle.Core.Logging;
 
 namespace BackgroundJobAndNotificationsDemo.Emailing
 {
@@ -16,12 +12,12 @@ namespace BackgroundJobAndNotificationsDemo.Emailing
     public class PrivateEmailAppService : BackgroundJobAndNotificationsDemoAppServiceBase, IPrivateEmailAppService
     {
         private readonly IBackgroundJobManager _backgroundJobManager;
-        private readonly INotificationManager _notificationManager;
+        private readonly INotificationPublisher _notificationPublisher;
 
-        public PrivateEmailAppService(IBackgroundJobManager backgroundJobManager, INotificationManager notificationManager)
+        public PrivateEmailAppService(IBackgroundJobManager backgroundJobManager, INotificationPublisher notificationPublisher)
         {
             _backgroundJobManager = backgroundJobManager;
-            _notificationManager = notificationManager;
+            _notificationPublisher = notificationPublisher;
         }
 
         public async Task Send(SendPrivateEmailInput input)
@@ -46,12 +42,10 @@ namespace BackgroundJobAndNotificationsDemo.Emailing
 
             if (input.SendNotification)
             {
-                await _notificationManager.PublishAsync(
-                    new NotificationPublishOptions(
-                        NotificationNames.YouHaveAnEmail,
-                        new YouHaveAnEmailNotificationData(currentUser.UserName, input.Subject),
-                        userIds: new[] { targetUser.Id }
-                        )
+                await _notificationPublisher.PublishAsync(
+                    NotificationNames.YouHaveAnEmail,
+                    new YouHaveAnEmailNotificationData(currentUser.UserName, input.Subject),
+                    userIds: new[] {targetUser.Id}
                     );
             }
         }
