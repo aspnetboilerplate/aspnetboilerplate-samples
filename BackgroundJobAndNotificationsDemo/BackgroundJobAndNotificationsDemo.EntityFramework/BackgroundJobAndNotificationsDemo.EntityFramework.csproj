@@ -161,6 +161,10 @@
     <Compile Include="Migrations\201601262132550_Revised_Notification_Entities.Designer.cs">
       <DependentUpon>201601262132550_Revised_Notification_Entities.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602011322189_Update_2016020101.cs" />
+    <Compile Include="Migrations\201602011322189_Update_2016020101.Designer.cs">
+      <DependentUpon>201602011322189_Update_2016020101.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="BackgroundJobAndNotificationsDemoDataModule.cs" />
     <Compile Include="Migrations\SeedData\DefaultEditionsBuilder.cs" />
@@ -218,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201601262132550_Revised_Notification_Entities.resx">
       <DependentUpon>201601262132550_Revised_Notification_Entities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602011322189_Update_2016020101.resx">
+      <DependentUpon>201602011322189_Update_2016020101.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
