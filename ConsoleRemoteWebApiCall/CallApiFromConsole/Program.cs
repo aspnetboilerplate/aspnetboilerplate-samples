@@ -9,6 +9,7 @@ using Abp.Dependency;
 using Abp.Domain.Entities.Auditing;
 using Abp.Extensions;
 using Abp.IO.Extensions;
+using Abp.Json;
 using Abp.Modules;
 using Abp.Threading;
 using Abp.Web.Models;
@@ -52,9 +53,19 @@ namespace CallApiFromConsole
                             return;
                         }
 
-                        Console.WriteLine("Logging in...");
+                        Console.Write("Cookie based (C) or Token based (T) auth (default: C)?");
+                        var authType = Console.ReadLine() ?? "C";
                         
-                        client.Object.Login();
+                        if (authType.ToUpperInvariant() == "T")
+                        {
+                            Console.WriteLine("Logging in with TOKEN based auth...");
+                            client.Object.TokenBasedAuth();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Logging in with COOKIE based auth...");
+                            client.Object.CookieBasedAuth();
+                        }
 
                         Console.WriteLine("Getting roles...");
 
@@ -108,13 +119,14 @@ namespace CallApiFromConsole
             _abpWebApiClient = abpWebApiClient;
         }
 
-        public void Login()
+        public void CookieBasedAuth()
         {
-            var cookies = LoginAndGetCookies(BaseUrl + "Account/Login", TenancyName, UserName, Password);
-            foreach (Cookie cookie in cookies)
-            {
-                _abpWebApiClient.Cookies.Add(cookie);
-            }
+            CookieBasedAuth(BaseUrl + "Account/Login");
+        }
+
+        public void TokenBasedAuth()
+        {
+            TokenBasedAuth(BaseUrl + "api/Account/Authenticate");
         }
 
         public async Task<ListResultOutput<RoleListDto>> GetRolesAsync()
@@ -124,9 +136,9 @@ namespace CallApiFromConsole
                 );
         }
 
-        private static CookieCollection LoginAndGetCookies(string url, string tenancyName, string userName, string password)
+        private void CookieBasedAuth(string url)
         {
-            var requestBytes = Encoding.UTF8.GetBytes("TenancyName=" + tenancyName + "&UsernameOrEmailAddress=" + userName + "&Password=" + password);
+            var requestBytes = Encoding.UTF8.GetBytes("TenancyName=" + TenancyName + "&UsernameOrEmailAddress=" + UserName + "&Password=" + Password);
 
             var request = WebRequest.CreateHttp(url);
 
@@ -151,9 +163,66 @@ namespace CallApiFromConsole
                         throw new Exception("Could not login. Reason: " + ajaxResponse.Error.Message + " | " + ajaxResponse.Error.Details);
                     }
 
-                    return response.Cookies;
+                    _abpWebApiClient.Cookies.Clear();
+                    foreach (Cookie cookie in response.Cookies)
+                    {
+                        _abpWebApiClient.Cookies.Add(cookie);
+                    }
                 }
             }
+        }
+        
+        private void TokenBasedAuth(string url)
+        {
+            var token = AsyncHelper.RunSync(() =>
+                _abpWebApiClient.PostAsync<string>(
+                    url,
+                    new
+                    {
+                        TenancyName = TenancyName,
+                        UsernameOrEmailAddress = UserName,
+                        Password = Password
+                    }));
+
+            _abpWebApiClient.RequestHeaders.Add(new NameValue("Authorization", "Bearer " + token));
+
+            #region Alternative implementation: Manual HTTP request
+
+            //var requestBytes = Encoding.UTF8.GetBytes((new
+            //{
+            //    TenancyName = TenancyName,
+            //    UsernameOrEmailAddress = UserName,
+            //    Password = Password
+            //}).ToJsonString());
+
+            //var request = WebRequest.CreateHttp(url);
+
+            //request.Method = WebRequestMethods.Http.Post;
+            //request.ContentType = "application/json";
+            //request.Accept = "application/json";
+            //request.ContentLength = requestBytes.Length;
+
+            //using (var stream = request.GetRequestStream())
+            //{
+            //    stream.Write(requestBytes, 0, requestBytes.Length);
+            //    stream.Flush();
+
+            //    using (var response = (HttpWebResponse)request.GetResponse())
+            //    {
+            //        var responseString = Encoding.UTF8.GetString(response.GetResponseStream().GetAllBytes());
+            //        var ajaxResponse = JsonString2Object<AjaxResponse>(responseString);
+
+            //        if (!ajaxResponse.Success)
+            //        {
+            //            throw new Exception("Could not login. Reason: " + ajaxResponse.Error.Message + " | " + ajaxResponse.Error.Details);
+            //        }
+
+            //        var token = ajaxResponse.Result.ToString();
+            //        _abpWebApiClient.RequestHeaders.Add(new NameValue("Authorization", "Bearer " + token));
+            //    }
+            //}
+
+            #endregion
         }
 
         private static TObj JsonString2Object<TObj>(string str)
