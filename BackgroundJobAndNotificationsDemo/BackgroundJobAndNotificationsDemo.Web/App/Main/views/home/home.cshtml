@@ -26,10 +26,10 @@
         <div class="col-sm-6">
             <h3>Incoming Notifications</h3>
             <div ng-repeat="userNotification in globalUserNotifications" style="border-top: 1px solid #CCC;">
-                <h4>{{userNotification.Notification.Data.SenderName}} sent an email to your email address</h4>
+                <h4>{{userNotification.notification.data.senderName}} sent an email to your email address</h4>
                 <p>
-                    {{userNotification.Notification.Data.Subject}} <br/>
-                    <span class="text-muted">{{userNotification.Notification.CreationTime}}</span>
+                    {{userNotification.notification.data.subject}} <br/>
+                    <span class="text-muted">{{userNotification.notification.creationTime}}</span>
                 </p>
             </div>
         </div>

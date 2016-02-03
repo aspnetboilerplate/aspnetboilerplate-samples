@@ -51,8 +51,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Abp.EntityFramework, Version=0.7.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.EntityFramework.0.7.8.0\lib\net452\Abp.EntityFramework.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\aspnetboilerplate\src\Abp.EntityFramework\bin\Debug\Abp.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Abp.HangFire">
       <HintPath>..\..\..\aspnetboilerplate\src\Abp.HangFire\bin\Debug\Abp.HangFire.dll</HintPath>

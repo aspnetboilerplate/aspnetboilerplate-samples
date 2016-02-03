@@ -165,6 +165,10 @@
     <Compile Include="Migrations\201602011322189_Update_2016020101.Designer.cs">
       <DependentUpon>201602011322189_Update_2016020101.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602031329280_Rename_Index_For_Notification.cs" />
+    <Compile Include="Migrations\201602031329280_Rename_Index_For_Notification.Designer.cs">
+      <DependentUpon>201602031329280_Rename_Index_For_Notification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="BackgroundJobAndNotificationsDemoDataModule.cs" />
     <Compile Include="Migrations\SeedData\DefaultEditionsBuilder.cs" />
@@ -225,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602011322189_Update_2016020101.resx">
       <DependentUpon>201602011322189_Update_2016020101.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602031329280_Rename_Index_For_Notification.resx">
+      <DependentUpon>201602031329280_Rename_Index_For_Notification.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

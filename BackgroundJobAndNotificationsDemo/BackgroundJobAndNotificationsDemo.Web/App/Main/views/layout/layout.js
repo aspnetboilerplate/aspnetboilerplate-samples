@@ -7,9 +7,10 @@
             $scope.globalUserNotifications = [];
 
             abp.event.on('abp.notifications.received', function (userNotification) {
+                console.log(userNotification);
                 $scope.$apply(function () {
                     $scope.globalUserNotifications.unshift(userNotification);
-                    abp.notify.info(userNotification.Notification.Data.SenderName + " sent an email to your email address!");
+                    abp.notify.info(userNotification.notification.data.senderName + " sent an email to your email address!");
                 });
             });
 
