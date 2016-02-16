@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using Abp.Owin;
 using BackgroundJobAndNotificationsDemo.Api.Controllers;
 using BackgroundJobAndNotificationsDemo.Web;
 using Hangfire;
@@ -19,6 +20,8 @@ namespace BackgroundJobAndNotificationsDemo.Web
     {
         public void Configuration(IAppBuilder app)
         {
+            app.UseAbp();
+
             app.UseOAuthBearerAuthentication(AccountController.OAuthBearerOptions);
 
             app.UseCookieAuthentication(new CookieAuthenticationOptions

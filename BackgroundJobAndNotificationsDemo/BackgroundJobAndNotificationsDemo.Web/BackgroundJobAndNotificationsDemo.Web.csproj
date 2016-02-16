@@ -42,43 +42,49 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abp, Version=0.7.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\aspnetboilerplate\src\Abp\bin\Debug\Abp.dll</HintPath>
-    </Reference>
-    <Reference Include="Abp.AutoMapper, Version=0.7.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.AutoMapper.0.7.8.0\lib\net452\Abp.AutoMapper.dll</HintPath>
+    <Reference Include="Abp, Version=0.8.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.0.8.0.1\lib\net461\Abp.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.EntityFramework, Version=0.7.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\aspnetboilerplate\src\Abp.EntityFramework\bin\Debug\Abp.EntityFramework.dll</HintPath>
+    <Reference Include="Abp.AutoMapper, Version=0.8.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.AutoMapper.0.8.0.1\lib\net461\Abp.AutoMapper.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.HangFire">
-      <HintPath>..\..\..\aspnetboilerplate\src\Abp.HangFire\bin\Debug\Abp.HangFire.dll</HintPath>
+    <Reference Include="Abp.EntityFramework, Version=0.8.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.EntityFramework.0.8.0.1\lib\net461\Abp.EntityFramework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.Web, Version=0.7.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\aspnetboilerplate\src\Abp.Web\bin\Debug\Abp.Web.dll</HintPath>
+    <Reference Include="Abp.HangFire, Version=0.8.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.HangFire.0.8.0.1\lib\net461\Abp.HangFire.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.Web.Api, Version=0.7.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\aspnetboilerplate\src\Abp.Web.Api\bin\Debug\Abp.Web.Api.dll</HintPath>
+    <Reference Include="Abp.Owin, Version=0.8.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Owin.0.8.0.1\lib\net461\Abp.Owin.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.Web.Mvc, Version=0.7.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\aspnetboilerplate\src\Abp.Web.Mvc\bin\Debug\Abp.Web.Mvc.dll</HintPath>
+    <Reference Include="Abp.Web, Version=0.8.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.0.8.0.1\lib\net461\Abp.Web.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.Web.SignalR">
-      <HintPath>..\..\..\aspnetboilerplate\src\Abp.Web.SignalR\bin\Debug\Abp.Web.SignalR.dll</HintPath>
+    <Reference Include="Abp.Web.Api, Version=0.8.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Api.0.8.0.1\lib\net461\Abp.Web.Api.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.Zero, Version=0.7.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\module-zero\src\Abp.Zero\bin\Debug\Abp.Zero.dll</HintPath>
+    <Reference Include="Abp.Web.Mvc, Version=0.8.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Mvc.0.8.0.1\lib\net461\Abp.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.Zero.EntityFramework, Version=0.7.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\module-zero\src\Abp.Zero.EntityFramework\bin\Debug\Abp.Zero.EntityFramework.dll</HintPath>
+    <Reference Include="Abp.Web.SignalR, Version=0.8.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.SignalR.0.8.0.1\lib\net461\Abp.Web.SignalR.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.Zero, Version=0.8.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.0.8.0.1\lib\net461\Abp.Zero.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.Zero.EntityFramework, Version=0.8.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.EntityFramework.0.8.0.1\lib\net461\Abp.Zero.EntityFramework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
@@ -194,8 +200,9 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Collections.Immutable">
-      <HintPath>..\packages\Microsoft.Bcl.Immutable.1.0.34\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+    <Reference Include="System.Collections.Immutable, Version=1.1.37.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.1.37\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
@@ -1237,7 +1244,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\sweetalert\sweet-alert.scss" />
