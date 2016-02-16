@@ -42,11 +42,14 @@ namespace BackgroundJobAndNotificationsDemo.Emailing
 
             if (input.SendNotification)
             {
-                await _notificationPublisher.PublishAsync(
-                    NotificationNames.YouHaveAnEmail,
-                    new YouHaveAnEmailNotificationData(currentUser.UserName, input.Subject),
-                    userIds: new[] {targetUser.Id}
+                var notificationData = new MessageNotificationData(
+                    string.Format("{0} sent you an email with subject: {1}",
+                        currentUser.UserName,
+                        input.Subject
+                        )
                     );
+
+                await _notificationPublisher.PublishAsync(NotificationNames.YouHaveAnEmail, notificationData, userIds: new[] {targetUser.Id});
             }
         }
     }
@@ -54,18 +57,5 @@ namespace BackgroundJobAndNotificationsDemo.Emailing
     public static class NotificationNames
     {
         public const string YouHaveAnEmail = "App.YouHaveAnEmail";
-    }
-
-    public class YouHaveAnEmailNotificationData : NotificationData
-    {
-        public string SenderName { get; set; }
-
-        public string Subject { get; set; }
-
-        public YouHaveAnEmailNotificationData(string senderName, string subject)
-        {
-            SenderName = senderName;
-            Subject = subject;
-        }
     }
 }

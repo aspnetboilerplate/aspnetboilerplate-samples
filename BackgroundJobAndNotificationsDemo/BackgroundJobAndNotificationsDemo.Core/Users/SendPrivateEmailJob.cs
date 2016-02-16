@@ -1,6 +1,4 @@
-﻿using System;
-using Abp;
-using Abp.BackgroundJobs;
+﻿using Abp.BackgroundJobs;
 using Abp.Dependency;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
@@ -34,7 +32,7 @@ namespace BackgroundJobAndNotificationsDemo.Users
                 }
 
                 //Here, we should actually send the email! We can inject and use IEmailSender for example.
-                Logger.Info("Sending email to " + user.EmailAddress + " -> " + args.Subject);
+                Logger.Info("Sending email to " + user.EmailAddress + " in background job -> " + args.Subject);
                 Logger.Info(args.Body);
             }
         }

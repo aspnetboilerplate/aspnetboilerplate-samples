@@ -14,12 +14,16 @@
 
             vm.sendEmail = function() {
                 privateEmailService.send(vm.sendEmailArgs).success(function () {
-                    abp.notify.success('Successfully added email to the queue for ' + vm.sendEmailArgs.userName);
+                    abp.notify.success("Email sent to the server.");
 
                     //reset mail!
                     vm.sendEmailArgs.subject = 'test subject ' + new Date().getTime();
                     vm.sendEmailArgs.body = 'test body ' + new Date().getTime();
                 });
+            };
+            
+            vm.formatNotificationMessage = function (userNotification) {
+                return abp.notifications.getFormattedMessageFromUserNotification(userNotification);
             };
         }
     ]);

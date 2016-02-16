@@ -1,7 +1,7 @@
 ﻿<div ng-controller="app.views.home as vm">
     <div class="row">
         <div class="col-sm-6">
-            <h3>Test Form</h3>
+            <h3>Notification Test Form (sending email)</h3>
             <form>
                 <div class="form-group">
                     <label>Username</label>
@@ -26,9 +26,8 @@
         <div class="col-sm-6">
             <h3>Incoming Notifications</h3>
             <div ng-repeat="userNotification in globalUserNotifications" style="border-top: 1px solid #CCC;">
-                <h4>{{userNotification.notification.data.senderName}} sent an email to your email address</h4>
                 <p>
-                    {{userNotification.notification.data.subject}} <br/>
+                    {{vm.formatNotificationMessage(userNotification)}} <br />
                     <span class="text-muted">{{userNotification.notification.creationTime}}</span>
                 </p>
             </div>
