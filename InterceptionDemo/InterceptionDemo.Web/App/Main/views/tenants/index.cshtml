@@ -1,0 +1,22 @@
+﻿<div ng-controller="app.views.tenants.index as vm">
+    <h1>@L("Tenants")</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <button ng-click="vm.openTenantCreationModal()" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> @L("CreateNewTenant")</button>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>@L("TenancyName")</th>
+                        <th>@L("Name")</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="tenant in vm.tenants">
+                        <td>{{tenant.tenancyName}}</td>
+                        <td>{{tenant.name}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

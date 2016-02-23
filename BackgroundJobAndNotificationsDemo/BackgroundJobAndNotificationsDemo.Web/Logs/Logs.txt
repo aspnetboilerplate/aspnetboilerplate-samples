@@ -353,3 +353,977 @@ DEBUG 2016-01-22 16:48:31,165 [81   ] Abp.Logging.LogHelper                    -
 DEBUG 2016-01-22 16:48:31,224 [81   ] emo.Users.MakeInactiveUsersPassiveWorker - Start background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
 INFO  2016-01-22 16:48:40,405 [22   ] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject
 INFO  2016-01-22 16:48:40,405 [22   ] ificationsDemo.Users.SendPrivateEmailJob - test body 1453473863452
+DEBUG 2016-02-16 14:22:19,699 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-02-16 14:22:22,484 [1    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2016-02-16 14:22:22,487 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:22:22,489 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:22:22,489 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:22:22,489 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:22:22,489 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Owin.AbpOwinModule, Abp.Owin, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:22:22,489 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:22:22,490 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:22:22,490 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:22:22,490 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:22:22,490 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:22:22,490 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:22:22,490 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoApplicationModule, BackgroundJobAndNotificationsDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:22:22,490 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoCoreModule, BackgroundJobAndNotificationsDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:22:22,490 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoDataModule, BackgroundJobAndNotificationsDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:22:22,490 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Web.BackgroundJobAndNotificationsDemoWebModule, BackgroundJobAndNotificationsDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:22:22,490 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Api.BackgroundJobAndNotificationsDemoWebApiModule, BackgroundJobAndNotificationsDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:22:22,495 [1    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2016-02-16 14:22:22,543 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-02-16 14:22:22,544 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-02-16 14:22:22,544 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-02-16 14:22:22,544 [1    ] o.Configuration.LanguageManagementConfig - Converted BackgroundJobAndNotificationsDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2016-02-16 14:22:22,605 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2016-02-16 14:22:22,761 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2016-02-16 14:22:25,877 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-02-16 14:22:25,883 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-02-16 14:22:25,884 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-02-16 14:22:25,885 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-02-16 14:22:25,885 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: BackgroundJobAndNotificationsDemo
+DEBUG 2016-02-16 14:22:25,891 [1    ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2016-02-16 14:22:25,903 [1    ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2016-02-16 14:22:25,905 [1    ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: localhost@BackgroundJobAndNotificationsDemo'.
+INFO  2016-02-16 14:22:25,905 [1    ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2016-02-16 14:22:25,905 [1    ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2016-02-16 14:22:25,905 [1    ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2016-02-16 14:22:25,905 [1    ] Hangfire.BackgroundJobServer             -     Worker count: 40.
+INFO  2016-02-16 14:22:25,905 [1    ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'.
+INFO  2016-02-16 14:22:25,905 [1    ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15.
+INFO  2016-02-16 14:22:25,906 [1    ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15.
+DEBUG 2016-02-16 14:22:25,939 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2016-02-16 14:22:26,145 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2016-02-16 14:22:26,149 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2016-02-16 14:22:26,202 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2016-02-16 14:22:26,204 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2016-02-16 14:22:26,208 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'AggregatedCounter'...
+DEBUG 2016-02-16 14:22:26,210 [c411f] Hangfire.Server.Worker                   - Background process 'Worker #673c411f' started.
+DEBUG 2016-02-16 14:22:26,210 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2016-02-16 14:22:26,219 [d69c5] Hangfire.Server.Worker                   - Background process 'Worker #ed7d69c5' started.
+INFO  2016-02-16 14:22:26,222 [chdog] Hangfire.Server.ServerWatchdog           - 1 servers were removed due to timeout
+DEBUG 2016-02-16 14:22:26,226 [bc4af] Hangfire.Server.Worker                   - Background process 'Worker #e1fbc4af' started.
+DEBUG 2016-02-16 14:22:26,277 [8d812] Hangfire.Server.Worker                   - Background process 'Worker #5d48d812' started.
+DEBUG 2016-02-16 14:22:26,280 [429c7] Hangfire.Server.Worker                   - Background process 'Worker #70e429c7' started.
+DEBUG 2016-02-16 14:22:26,286 [62ce5] Hangfire.Server.Worker                   - Background process 'Worker #b1462ce5' started.
+DEBUG 2016-02-16 14:22:26,294 [57b08] Hangfire.Server.Worker                   - Background process 'Worker #1bb57b08' started.
+DEBUG 2016-02-16 14:22:26,350 [aba03] Hangfire.Server.Worker                   - Background process 'Worker #033aba03' started.
+DEBUG 2016-02-16 14:22:26,372 [0db29] Hangfire.Server.Worker                   - Background process 'Worker #0510db29' started.
+DEBUG 2016-02-16 14:22:26,404 [nager] Hangfire.SqlServer.ExpirationManager     - Removed 1 outdated record(s) from 'AggregatedCounter' table.
+DEBUG 2016-02-16 14:22:26,418 [842a7] Hangfire.Server.Worker                   - Background process 'Worker #a67842a7' started.
+DEBUG 2016-02-16 14:22:26,438 [b8fbc] Hangfire.Server.Worker                   - Background process 'Worker #023b8fbc' started.
+DEBUG 2016-02-16 14:22:26,495 [5f8da] Hangfire.Server.Worker                   - Background process 'Worker #8c25f8da' started.
+DEBUG 2016-02-16 14:22:26,530 [b0e64] Hangfire.Server.Worker                   - Background process 'Worker #0c8b0e64' started.
+DEBUG 2016-02-16 14:22:26,539 [4bfc1] Hangfire.Server.Worker                   - Background process 'Worker #fbf4bfc1' started.
+DEBUG 2016-02-16 14:22:26,558 [80bb2] Hangfire.Server.Worker                   - Background process 'Worker #c0680bb2' started.
+DEBUG 2016-02-16 14:22:26,569 [9ce73] Hangfire.Server.Worker                   - Background process 'Worker #3959ce73' started.
+DEBUG 2016-02-16 14:22:26,579 [45509] Hangfire.Server.Worker                   - Background process 'Worker #b8645509' started.
+DEBUG 2016-02-16 14:22:26,588 [0f217] Hangfire.Server.Worker                   - Background process 'Worker #8250f217' started.
+DEBUG 2016-02-16 14:22:26,601 [251b4] Hangfire.Server.Worker                   - Background process 'Worker #98d251b4' started.
+DEBUG 2016-02-16 14:22:26,620 [07094] Hangfire.Server.Worker                   - Background process 'Worker #51b07094' started.
+DEBUG 2016-02-16 14:22:26,622 [b6f86] Hangfire.Server.Worker                   - Background process 'Worker #89cb6f86' started.
+DEBUG 2016-02-16 14:22:26,675 [ccc51] Hangfire.Server.Worker                   - Background process 'Worker #f64ccc51' started.
+DEBUG 2016-02-16 14:22:26,686 [440c9] Hangfire.Server.Worker                   - Background process 'Worker #a46440c9' started.
+DEBUG 2016-02-16 14:22:26,699 [d354a] Hangfire.Server.Worker                   - Background process 'Worker #faed354a' started.
+DEBUG 2016-02-16 14:22:26,715 [be958] Hangfire.Server.Worker                   - Background process 'Worker #eb7be958' started.
+DEBUG 2016-02-16 14:22:26,730 [21d76] Hangfire.Server.Worker                   - Background process 'Worker #54121d76' started.
+DEBUG 2016-02-16 14:22:26,738 [40887] Hangfire.Server.Worker                   - Background process 'Worker #2cd40887' started.
+DEBUG 2016-02-16 14:22:26,750 [9d3f3] Hangfire.Server.Worker                   - Background process 'Worker #0e09d3f3' started.
+DEBUG 2016-02-16 14:22:26,768 [a169c] Hangfire.Server.Worker                   - Background process 'Worker #029a169c' started.
+DEBUG 2016-02-16 14:22:26,778 [42e18] Hangfire.Server.Worker                   - Background process 'Worker #11042e18' started.
+DEBUG 2016-02-16 14:22:26,784 [f6924] Hangfire.Server.Worker                   - Background process 'Worker #28cf6924' started.
+DEBUG 2016-02-16 14:22:26,821 [82d17] Hangfire.Server.Worker                   - Background process 'Worker #c9782d17' started.
+DEBUG 2016-02-16 14:22:26,825 [89d76] Hangfire.Server.Worker                   - Background process 'Worker #00989d76' started.
+DEBUG 2016-02-16 14:22:26,841 [0df4c] Hangfire.Server.Worker                   - Background process 'Worker #9b40df4c' started.
+DEBUG 2016-02-16 14:22:26,846 [ab709] Hangfire.Server.Worker                   - Background process 'Worker #76eab709' started.
+DEBUG 2016-02-16 14:22:26,865 [552ab] Hangfire.Server.Worker                   - Background process 'Worker #139552ab' started.
+DEBUG 2016-02-16 14:22:26,872 [524c8] Hangfire.Server.Worker                   - Background process 'Worker #4de524c8' started.
+DEBUG 2016-02-16 14:22:26,893 [99928] Hangfire.Server.Worker                   - Background process 'Worker #f7599928' started.
+DEBUG 2016-02-16 14:22:26,911 [7288c] Hangfire.Server.Worker                   - Background process 'Worker #df57288c' started.
+DEBUG 2016-02-16 14:22:26,917 [0f2c8] Hangfire.Server.Worker                   - Background process 'Worker #7480f2c8' started.
+DEBUG 2016-02-16 14:22:26,948 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2016-02-16 14:22:26,955 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2016-02-16 14:22:27,567 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Job'...
+DEBUG 2016-02-16 14:22:27,597 [nager] Hangfire.SqlServer.ExpirationManager     - Removed 8 outdated record(s) from 'Job' table.
+DEBUG 2016-02-16 14:22:28,983 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'List'...
+DEBUG 2016-02-16 14:22:29,012 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Set'...
+DEBUG 2016-02-16 14:22:29,035 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Hash'...
+DEBUG 2016-02-16 14:22:29,410 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 4 classes defines auto mapping attributes
+DEBUG 2016-02-16 14:22:29,410 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-02-16 14:22:29,533 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-02-16 14:22:29,539 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-02-16 14:22:29,540 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-02-16 14:22:29,572 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-02-16 14:22:29,573 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-02-16 14:22:29,574 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-02-16 14:22:29,575 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-02-16 14:22:29,575 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Emailing.IPrivateEmailAppService' with service name 'app/privateEmail'.
+DEBUG 2016-02-16 14:22:29,707 [1    ] emo.Users.MakeInactiveUsersPassiveWorker - Start background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
+DEBUG 2016-02-16 14:22:48,281 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"f529eaaf-61b6-4bcf-af21-dfc455d8f801","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-02-16T14:22:48.2748785+02:00","Properties":{}}
+DEBUG 2016-02-16 14:22:48,315 [11   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: f529eaaf-61b6-4bcf-af21-dfc455d8f801
+INFO  2016-02-16 14:22:56,935 [62ce5] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject1455625368778
+INFO  2016-02-16 14:22:56,936 [62ce5] ificationsDemo.Users.SendPrivateEmailJob - test body 1455625368778
+INFO  2016-02-16 14:22:57,109 [7288c] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject 1455625372217
+INFO  2016-02-16 14:22:57,109 [7288c] ificationsDemo.Users.SendPrivateEmailJob - test body 1455625372217
+INFO  2016-02-16 14:23:11,731 [57b08] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject 1455625377031
+INFO  2016-02-16 14:23:11,731 [57b08] ificationsDemo.Users.SendPrivateEmailJob - test body 1455625377031
+INFO  2016-02-16 14:23:12,342 [62ce5] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject 1455625386510
+INFO  2016-02-16 14:23:12,342 [62ce5] ificationsDemo.Users.SendPrivateEmailJob - test body 1455625386510
+INFO  2016-02-16 14:23:26,950 [aba03] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject 1455625395489
+INFO  2016-02-16 14:23:26,950 [8d812] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject 1455625392152
+INFO  2016-02-16 14:23:26,950 [aba03] ificationsDemo.Users.SendPrivateEmailJob - test body 1455625395489
+INFO  2016-02-16 14:23:26,950 [8d812] ificationsDemo.Users.SendPrivateEmailJob - test body 1455625392152
+DEBUG 2016-02-16 14:23:28,767 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: f529eaaf-61b6-4bcf-af21-dfc455d8f801
+DEBUG 2016-02-16 14:23:29,947 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"348a72bd-6002-425a-a175-9bc0aebb82fd","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-02-16T14:23:29.9472862+02:00","Properties":{}}
+DEBUG 2016-02-16 14:23:29,953 [12   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 348a72bd-6002-425a-a175-9bc0aebb82fd
+INFO  2016-02-16 14:23:41,990 [842a7] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject1455625410063
+INFO  2016-02-16 14:23:42,005 [842a7] ificationsDemo.Users.SendPrivateEmailJob - test body 1455625410063
+INFO  2016-02-16 14:23:42,046 [429c7] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject 1455625412015
+INFO  2016-02-16 14:23:42,046 [429c7] ificationsDemo.Users.SendPrivateEmailJob - test body 1455625412015
+INFO  2016-02-16 14:23:42,133 [d69c5] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject 1455625413325
+INFO  2016-02-16 14:23:42,133 [d69c5] ificationsDemo.Users.SendPrivateEmailJob - test body 1455625413325
+INFO  2016-02-16 14:23:42,258 [0db29] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject 1455625414449
+INFO  2016-02-16 14:23:42,258 [0db29] ificationsDemo.Users.SendPrivateEmailJob - test body 1455625414449
+INFO  2016-02-16 14:24:11,870 [5f8da] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject 1455625421528
+INFO  2016-02-16 14:24:11,870 [5f8da] ificationsDemo.Users.SendPrivateEmailJob - test body 1455625421528
+DEBUG 2016-02-16 14:27:26,280 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2016-02-16 14:31:33,790 [134  ] bp.Hangfire.HangfireBackgroundJobManager - Stop background worker: Abp.Hangfire.HangfireBackgroundJobManager
+DEBUG 2016-02-16 14:31:33,790 [134  ] emo.Users.MakeInactiveUsersPassiveWorker - Stop background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
+DEBUG 2016-02-16 14:31:33,791 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' stopped.
+DEBUG 2016-02-16 14:31:33,791 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' stopped.
+DEBUG 2016-02-16 14:31:33,791 [429c7] Hangfire.Server.Worker                   - Background process 'Worker #70e429c7' stopped.
+DEBUG 2016-02-16 14:31:33,792 [0db29] Hangfire.Server.Worker                   - Background process 'Worker #0510db29' stopped.
+DEBUG 2016-02-16 14:31:33,792 [d69c5] Hangfire.Server.Worker                   - Background process 'Worker #ed7d69c5' stopped.
+DEBUG 2016-02-16 14:31:33,792 [7288c] Hangfire.Server.Worker                   - Background process 'Worker #df57288c' stopped.
+DEBUG 2016-02-16 14:31:33,792 [5f8da] Hangfire.Server.Worker                   - Background process 'Worker #8c25f8da' stopped.
+DEBUG 2016-02-16 14:31:33,792 [0f2c8] Hangfire.Server.Worker                   - Background process 'Worker #7480f2c8' stopped.
+DEBUG 2016-02-16 14:31:33,792 [842a7] Hangfire.Server.Worker                   - Background process 'Worker #a67842a7' stopped.
+DEBUG 2016-02-16 14:31:33,792 [8d812] Hangfire.Server.Worker                   - Background process 'Worker #5d48d812' stopped.
+DEBUG 2016-02-16 14:31:33,792 [57b08] Hangfire.Server.Worker                   - Background process 'Worker #1bb57b08' stopped.
+DEBUG 2016-02-16 14:31:33,805 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' stopped.
+DEBUG 2016-02-16 14:31:33,805 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' stopped.
+DEBUG 2016-02-16 14:31:33,805 [62ce5] Hangfire.Server.Worker                   - Background process 'Worker #b1462ce5' stopped.
+DEBUG 2016-02-16 14:31:33,793 [99928] Hangfire.Server.Worker                   - Background process 'Worker #f7599928' stopped.
+DEBUG 2016-02-16 14:31:33,806 [0df4c] Hangfire.Server.Worker                   - Background process 'Worker #9b40df4c' stopped.
+DEBUG 2016-02-16 14:31:33,793 [aba03] Hangfire.Server.Worker                   - Background process 'Worker #033aba03' stopped.
+DEBUG 2016-02-16 14:31:33,794 [524c8] Hangfire.Server.Worker                   - Background process 'Worker #4de524c8' stopped.
+DEBUG 2016-02-16 14:31:33,794 [89d76] Hangfire.Server.Worker                   - Background process 'Worker #00989d76' stopped.
+DEBUG 2016-02-16 14:31:33,795 [42e18] Hangfire.Server.Worker                   - Background process 'Worker #11042e18' stopped.
+DEBUG 2016-02-16 14:31:33,795 [82d17] Hangfire.Server.Worker                   - Background process 'Worker #c9782d17' stopped.
+DEBUG 2016-02-16 14:31:33,797 [a169c] Hangfire.Server.Worker                   - Background process 'Worker #029a169c' stopped.
+DEBUG 2016-02-16 14:31:33,797 [9d3f3] Hangfire.Server.Worker                   - Background process 'Worker #0e09d3f3' stopped.
+DEBUG 2016-02-16 14:31:33,798 [be958] Hangfire.Server.Worker                   - Background process 'Worker #eb7be958' stopped.
+DEBUG 2016-02-16 14:31:33,794 [d354a] Hangfire.Server.Worker                   - Background process 'Worker #faed354a' stopped.
+DEBUG 2016-02-16 14:31:33,795 [0f217] Hangfire.Server.Worker                   - Background process 'Worker #8250f217' stopped.
+DEBUG 2016-02-16 14:31:33,794 [21d76] Hangfire.Server.Worker                   - Background process 'Worker #54121d76' stopped.
+DEBUG 2016-02-16 14:31:33,799 [f6924] Hangfire.Server.Worker                   - Background process 'Worker #28cf6924' stopped.
+DEBUG 2016-02-16 14:31:33,796 [9ce73] Hangfire.Server.Worker                   - Background process 'Worker #3959ce73' stopped.
+DEBUG 2016-02-16 14:31:33,795 [440c9] Hangfire.Server.Worker                   - Background process 'Worker #a46440c9' stopped.
+DEBUG 2016-02-16 14:31:33,800 [4bfc1] Hangfire.Server.Worker                   - Background process 'Worker #fbf4bfc1' stopped.
+DEBUG 2016-02-16 14:31:33,797 [45509] Hangfire.Server.Worker                   - Background process 'Worker #b8645509' stopped.
+DEBUG 2016-02-16 14:31:33,793 [ab709] Hangfire.Server.Worker                   - Background process 'Worker #76eab709' stopped.
+DEBUG 2016-02-16 14:31:33,798 [b8fbc] Hangfire.Server.Worker                   - Background process 'Worker #023b8fbc' stopped.
+DEBUG 2016-02-16 14:31:33,794 [07094] Hangfire.Server.Worker                   - Background process 'Worker #51b07094' stopped.
+DEBUG 2016-02-16 14:31:33,798 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' stopped.
+DEBUG 2016-02-16 14:31:33,793 [552ab] Hangfire.Server.Worker                   - Background process 'Worker #139552ab' stopped.
+DEBUG 2016-02-16 14:31:33,793 [40887] Hangfire.Server.Worker                   - Background process 'Worker #2cd40887' stopped.
+DEBUG 2016-02-16 14:31:33,801 [b6f86] Hangfire.Server.Worker                   - Background process 'Worker #89cb6f86' stopped.
+DEBUG 2016-02-16 14:31:33,803 [80bb2] Hangfire.Server.Worker                   - Background process 'Worker #c0680bb2' stopped.
+DEBUG 2016-02-16 14:31:33,803 [c411f] Hangfire.Server.Worker                   - Background process 'Worker #673c411f' stopped.
+DEBUG 2016-02-16 14:31:33,804 [251b4] Hangfire.Server.Worker                   - Background process 'Worker #98d251b4' stopped.
+DEBUG 2016-02-16 14:31:33,801 [b0e64] Hangfire.Server.Worker                   - Background process 'Worker #0c8b0e64' stopped.
+DEBUG 2016-02-16 14:31:33,800 [ccc51] Hangfire.Server.Worker                   - Background process 'Worker #f64ccc51' stopped.
+DEBUG 2016-02-16 14:31:33,804 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' stopped.
+DEBUG 2016-02-16 14:31:33,804 [bc4af] Hangfire.Server.Worker                   - Background process 'Worker #e1fbc4af' stopped.
+DEBUG 2016-02-16 14:31:33,811 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' stopped.
+INFO  2016-02-16 14:31:33,811 [134  ] Hangfire.BackgroundJobServer             - Hangfire Server stopped.
+DEBUG 2016-02-16 14:31:33,812 [134  ] bp.Hangfire.HangfireBackgroundJobManager - WaitToStop background worker: Abp.Hangfire.HangfireBackgroundJobManager
+DEBUG 2016-02-16 14:31:33,812 [134  ] emo.Users.MakeInactiveUsersPassiveWorker - WaitToStop background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
+DEBUG 2016-02-16 14:31:38,387 [63   ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-02-16 14:31:40,048 [63   ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2016-02-16 14:31:40,051 [63   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:31:40,053 [63   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:31:40,053 [63   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:31:40,053 [63   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:31:40,053 [63   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Owin.AbpOwinModule, Abp.Owin, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:31:40,054 [63   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:31:40,054 [63   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:31:40,054 [63   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:31:40,054 [63   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:31:40,054 [63   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:31:40,054 [63   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:31:40,054 [63   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoApplicationModule, BackgroundJobAndNotificationsDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:31:40,054 [63   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoCoreModule, BackgroundJobAndNotificationsDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:31:40,054 [63   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoDataModule, BackgroundJobAndNotificationsDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:31:40,054 [63   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Web.BackgroundJobAndNotificationsDemoWebModule, BackgroundJobAndNotificationsDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:31:40,055 [63   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Api.BackgroundJobAndNotificationsDemoWebApiModule, BackgroundJobAndNotificationsDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:31:40,059 [63   ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2016-02-16 14:31:40,094 [63   ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-02-16 14:31:40,094 [63   ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-02-16 14:31:40,094 [63   ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-02-16 14:31:40,094 [63   ] o.Configuration.LanguageManagementConfig - Converted BackgroundJobAndNotificationsDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2016-02-16 14:31:40,118 [63   ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2016-02-16 14:31:40,146 [63   ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2016-02-16 14:31:41,761 [63   ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-02-16 14:31:41,766 [63   ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-02-16 14:31:41,766 [63   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-02-16 14:31:41,767 [63   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-02-16 14:31:41,767 [63   ] Abp.Localization.LocalizationManager     - Initialized localization source: BackgroundJobAndNotificationsDemo
+DEBUG 2016-02-16 14:31:41,772 [63   ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2016-02-16 14:31:41,782 [63   ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2016-02-16 14:31:41,784 [63   ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: localhost@BackgroundJobAndNotificationsDemo'.
+INFO  2016-02-16 14:31:41,784 [63   ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2016-02-16 14:31:41,784 [63   ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2016-02-16 14:31:41,784 [63   ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2016-02-16 14:31:41,784 [63   ] Hangfire.BackgroundJobServer             -     Worker count: 40.
+INFO  2016-02-16 14:31:41,785 [63   ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'.
+INFO  2016-02-16 14:31:41,785 [63   ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15.
+INFO  2016-02-16 14:31:41,785 [63   ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15.
+DEBUG 2016-02-16 14:31:41,793 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2016-02-16 14:31:41,913 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2016-02-16 14:31:41,914 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2016-02-16 14:31:41,914 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2016-02-16 14:31:41,915 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2016-02-16 14:31:41,915 [7e950] Hangfire.Server.Worker                   - Background process 'Worker #b387e950' started.
+DEBUG 2016-02-16 14:31:41,916 [6ba27] Hangfire.Server.Worker                   - Background process 'Worker #a0c6ba27' started.
+DEBUG 2016-02-16 14:31:41,916 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2016-02-16 14:31:41,916 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'AggregatedCounter'...
+DEBUG 2016-02-16 14:31:41,917 [ad152] Hangfire.Server.Worker                   - Background process 'Worker #2b6ad152' started.
+DEBUG 2016-02-16 14:31:41,918 [a1efb] Hangfire.Server.Worker                   - Background process 'Worker #d36a1efb' started.
+DEBUG 2016-02-16 14:31:41,920 [f08bf] Hangfire.Server.Worker                   - Background process 'Worker #3caf08bf' started.
+DEBUG 2016-02-16 14:31:41,920 [e5b4c] Hangfire.Server.Worker                   - Background process 'Worker #2c5e5b4c' started.
+DEBUG 2016-02-16 14:31:41,921 [8a220] Hangfire.Server.Worker                   - Background process 'Worker #1588a220' started.
+DEBUG 2016-02-16 14:31:41,922 [4376a] Hangfire.Server.Worker                   - Background process 'Worker #7eb4376a' started.
+DEBUG 2016-02-16 14:31:41,923 [7399d] Hangfire.Server.Worker                   - Background process 'Worker #f8b7399d' started.
+DEBUG 2016-02-16 14:31:41,924 [06e0a] Hangfire.Server.Worker                   - Background process 'Worker #c5e06e0a' started.
+DEBUG 2016-02-16 14:31:41,925 [dc1e8] Hangfire.Server.Worker                   - Background process 'Worker #1dadc1e8' started.
+DEBUG 2016-02-16 14:31:41,926 [7057e] Hangfire.Server.Worker                   - Background process 'Worker #2cd7057e' started.
+DEBUG 2016-02-16 14:31:41,927 [48271] Hangfire.Server.Worker                   - Background process 'Worker #79a48271' started.
+DEBUG 2016-02-16 14:31:41,927 [757af] Hangfire.Server.Worker                   - Background process 'Worker #436757af' started.
+DEBUG 2016-02-16 14:31:41,929 [2c0ec] Hangfire.Server.Worker                   - Background process 'Worker #4b42c0ec' started.
+DEBUG 2016-02-16 14:31:41,931 [cfbe2] Hangfire.Server.Worker                   - Background process 'Worker #4d1cfbe2' started.
+DEBUG 2016-02-16 14:31:41,932 [6f984] Hangfire.Server.Worker                   - Background process 'Worker #f116f984' started.
+DEBUG 2016-02-16 14:31:41,934 [8f193] Hangfire.Server.Worker                   - Background process 'Worker #90d8f193' started.
+DEBUG 2016-02-16 14:31:41,936 [3939c] Hangfire.Server.Worker                   - Background process 'Worker #1f13939c' started.
+DEBUG 2016-02-16 14:31:41,937 [017ec] Hangfire.Server.Worker                   - Background process 'Worker #015017ec' started.
+DEBUG 2016-02-16 14:31:41,938 [becd9] Hangfire.Server.Worker                   - Background process 'Worker #ee9becd9' started.
+DEBUG 2016-02-16 14:31:41,941 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Job'...
+DEBUG 2016-02-16 14:31:41,942 [b6362] Hangfire.Server.Worker                   - Background process 'Worker #bf9b6362' started.
+DEBUG 2016-02-16 14:31:41,945 [90a0e] Hangfire.Server.Worker                   - Background process 'Worker #57390a0e' started.
+DEBUG 2016-02-16 14:31:41,946 [80a77] Hangfire.Server.Worker                   - Background process 'Worker #bca80a77' started.
+DEBUG 2016-02-16 14:31:41,948 [6fd93] Hangfire.Server.Worker                   - Background process 'Worker #c946fd93' started.
+DEBUG 2016-02-16 14:31:41,949 [924e6] Hangfire.Server.Worker                   - Background process 'Worker #2b4924e6' started.
+DEBUG 2016-02-16 14:31:41,950 [525ee] Hangfire.Server.Worker                   - Background process 'Worker #08d525ee' started.
+DEBUG 2016-02-16 14:31:41,950 [1ec04] Hangfire.Server.Worker                   - Background process 'Worker #cda1ec04' started.
+DEBUG 2016-02-16 14:31:41,951 [bb2ed] Hangfire.Server.Worker                   - Background process 'Worker #6d4bb2ed' started.
+DEBUG 2016-02-16 14:31:41,951 [6f300] Hangfire.Server.Worker                   - Background process 'Worker #60a6f300' started.
+DEBUG 2016-02-16 14:31:41,952 [7ea58] Hangfire.Server.Worker                   - Background process 'Worker #81e7ea58' started.
+DEBUG 2016-02-16 14:31:41,953 [63e97] Hangfire.Server.Worker                   - Background process 'Worker #53f63e97' started.
+DEBUG 2016-02-16 14:31:41,953 [08304] Hangfire.Server.Worker                   - Background process 'Worker #cbb08304' started.
+DEBUG 2016-02-16 14:31:41,954 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'List'...
+DEBUG 2016-02-16 14:31:41,954 [c1b8e] Hangfire.Server.Worker                   - Background process 'Worker #803c1b8e' started.
+DEBUG 2016-02-16 14:31:41,955 [e03c3] Hangfire.Server.Worker                   - Background process 'Worker #98ee03c3' started.
+DEBUG 2016-02-16 14:31:41,956 [ced04] Hangfire.Server.Worker                   - Background process 'Worker #de9ced04' started.
+DEBUG 2016-02-16 14:31:41,956 [1b866] Hangfire.Server.Worker                   - Background process 'Worker #9b81b866' started.
+DEBUG 2016-02-16 14:31:41,957 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Set'...
+DEBUG 2016-02-16 14:31:41,957 [98e8e] Hangfire.Server.Worker                   - Background process 'Worker #16398e8e' started.
+DEBUG 2016-02-16 14:31:41,958 [90b97] Hangfire.Server.Worker                   - Background process 'Worker #6f990b97' started.
+DEBUG 2016-02-16 14:31:41,958 [67d40] Hangfire.Server.Worker                   - Background process 'Worker #74d67d40' started.
+DEBUG 2016-02-16 14:31:41,959 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Hash'...
+DEBUG 2016-02-16 14:31:41,959 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2016-02-16 14:31:41,960 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2016-02-16 14:31:42,995 [63   ] Abp.AutoMapper.AbpAutoMapperModule       - Found 4 classes defines auto mapping attributes
+DEBUG 2016-02-16 14:31:42,995 [63   ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-02-16 14:31:43,042 [63   ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-02-16 14:31:43,046 [63   ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-02-16 14:31:43,046 [63   ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-02-16 14:31:43,066 [63   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-02-16 14:31:43,067 [63   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-02-16 14:31:43,068 [63   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-02-16 14:31:43,069 [63   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-02-16 14:31:43,070 [63   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Emailing.IPrivateEmailAppService' with service name 'app/privateEmail'.
+DEBUG 2016-02-16 14:31:43,129 [63   ] emo.Users.MakeInactiveUsersPassiveWorker - Start background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
+DEBUG 2016-02-16 14:35:33,942 [140  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 348a72bd-6002-425a-a175-9bc0aebb82fd
+DEBUG 2016-02-16 14:35:38,041 [117  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"d3518782-47fb-4a97-948c-6e978830aa6d","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-02-16T14:35:38.0338363+02:00","Properties":{}}
+DEBUG 2016-02-16 14:35:38,158 [123  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: d3518782-47fb-4a97-948c-6e978830aa6d
+DEBUG 2016-02-16 14:36:17,715 [131  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: d3518782-47fb-4a97-948c-6e978830aa6d
+DEBUG 2016-02-16 14:36:18,533 [154  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"7a6bfb41-6c02-467c-9ee5-5c1633b9da08","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-02-16T14:36:18.5330608+02:00","Properties":{}}
+DEBUG 2016-02-16 14:36:18,548 [153  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 7a6bfb41-6c02-467c-9ee5-5c1633b9da08
+INFO  2016-02-16 14:36:27,012 [6ba27] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject1455626179000
+INFO  2016-02-16 14:36:27,012 [6ba27] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626179000
+DEBUG 2016-02-16 14:36:41,934 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2016-02-16 14:36:58,435 [155  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"9d48630c-80c6-4e05-8b5e-56d3e5c3ae3d","IpAddress":"::1","TenantId":1,"UserId":4,"ConnectTime":"2016-02-16T14:36:58.435875+02:00","Properties":{}}
+DEBUG 2016-02-16 14:36:58,440 [110  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 9d48630c-80c6-4e05-8b5e-56d3e5c3ae3d
+INFO  2016-02-16 14:37:11,987 [90a0e] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject1455626218396
+INFO  2016-02-16 14:37:11,987 [90a0e] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626218396
+INFO  2016-02-16 14:37:11,988 [6f984] ificationsDemo.Users.SendPrivateEmailJob - Sending email to hi_kalkan@yahoo.com -> test subject 1455626181072
+INFO  2016-02-16 14:37:11,988 [6f984] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626181072
+INFO  2016-02-16 14:37:11,988 [6fd93] ificationsDemo.Users.SendPrivateEmailJob - Sending email to hi_kalkan@yahoo.com -> test subject 1455626228998
+INFO  2016-02-16 14:37:11,988 [6fd93] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626228998
+INFO  2016-02-16 14:37:11,988 [7399d] ificationsDemo.Users.SendPrivateEmailJob - Sending email to hi_kalkan@yahoo.com -> test subject 1455626226600
+INFO  2016-02-16 14:37:11,988 [7399d] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626226600
+INFO  2016-02-16 14:37:26,986 [ced04] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject 1455626222019 :)
+INFO  2016-02-16 14:37:26,986 [ced04] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626222019
+DEBUG 2016-02-16 14:39:31,091 [149  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 7a6bfb41-6c02-467c-9ee5-5c1633b9da08
+DEBUG 2016-02-16 14:39:32,201 [56   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"0b11db39-dd1a-4dd7-8dd8-63245e2887fa","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-02-16T14:39:32.2017959+02:00","Properties":{}}
+DEBUG 2016-02-16 14:39:32,207 [155  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 0b11db39-dd1a-4dd7-8dd8-63245e2887fa
+INFO  2016-02-16 14:39:42,009 [f08bf] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject 1455626241057
+INFO  2016-02-16 14:39:42,009 [f08bf] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626241057
+DEBUG 2016-02-16 14:39:56,109 [59   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 9d48630c-80c6-4e05-8b5e-56d3e5c3ae3d
+DEBUG 2016-02-16 14:39:57,190 [126  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"cb0a6b2f-5695-44e6-98da-3eae2652759c","IpAddress":"::1","TenantId":1,"UserId":4,"ConnectTime":"2016-02-16T14:39:57.190145+02:00","Properties":{}}
+DEBUG 2016-02-16 14:39:57,199 [131  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: cb0a6b2f-5695-44e6-98da-3eae2652759c
+DEBUG 2016-02-16 14:39:58,011 [149  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 0b11db39-dd1a-4dd7-8dd8-63245e2887fa
+DEBUG 2016-02-16 14:39:58,971 [60   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"67594fdc-7aba-42d4-87d5-3f48a06f798a","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-02-16T14:39:58.9715749+02:00","Properties":{}}
+DEBUG 2016-02-16 14:39:58,983 [149  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 67594fdc-7aba-42d4-87d5-3f48a06f798a
+INFO  2016-02-16 14:40:12,007 [e5b4c] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject1455626399265
+INFO  2016-02-16 14:40:12,007 [e5b4c] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626399265
+INFO  2016-02-16 14:40:12,007 [6f300] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject1455626398118
+INFO  2016-02-16 14:40:12,007 [6f300] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626398118
+INFO  2016-02-16 14:40:12,007 [90b97] ificationsDemo.Users.SendPrivateEmailJob - Sending email to hi_kalkan@yahoo.com -> test subject 1455626405076
+INFO  2016-02-16 14:40:12,007 [90b97] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626405076
+INFO  2016-02-16 14:40:27,014 [7057e] ificationsDemo.Users.SendPrivateEmailJob - Sending email to hi_kalkan@yahoo.com -> test subject 1455626411126
+INFO  2016-02-16 14:40:27,014 [7057e] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626411126
+INFO  2016-02-16 14:40:27,016 [dc1e8] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject 1455626403577
+INFO  2016-02-16 14:40:27,016 [dc1e8] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626403577
+INFO  2016-02-16 14:40:27,016 [cfbe2] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject 1455626420757
+INFO  2016-02-16 14:40:27,016 [cfbe2] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626420757
+INFO  2016-02-16 14:40:27,016 [525ee] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject 1455626420114
+INFO  2016-02-16 14:40:27,016 [525ee] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626420114
+DEBUG 2016-02-16 14:40:39,484 [58   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 67594fdc-7aba-42d4-87d5-3f48a06f798a
+DEBUG 2016-02-16 14:40:40,474 [57   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"361d9741-8f1b-4cf6-acb6-2ff3c1c6d71b","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-02-16T14:40:40.4741089+02:00","Properties":{}}
+DEBUG 2016-02-16 14:40:40,480 [56   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 361d9741-8f1b-4cf6-acb6-2ff3c1c6d71b
+DEBUG 2016-02-16 14:40:51,951 [53   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: cb0a6b2f-5695-44e6-98da-3eae2652759c
+DEBUG 2016-02-16 14:40:52,716 [128  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"77f2b0db-9596-4f43-8b68-1a9a22f5f5b0","IpAddress":"::1","TenantId":1,"UserId":4,"ConnectTime":"2016-02-16T14:40:52.7163566+02:00","Properties":{}}
+DEBUG 2016-02-16 14:40:52,725 [128  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 77f2b0db-9596-4f43-8b68-1a9a22f5f5b0
+INFO  2016-02-16 14:40:57,010 [08304] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject 1455626420992
+INFO  2016-02-16 14:40:57,010 [08304] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626420992
+INFO  2016-02-16 14:40:57,016 [924e6] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject1455626453098
+INFO  2016-02-16 14:40:57,016 [924e6] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626453098
+DEBUG 2016-02-16 14:40:57,259 [46   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 361d9741-8f1b-4cf6-acb6-2ff3c1c6d71b
+DEBUG 2016-02-16 14:40:58,329 [53   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"8fc1cad5-511b-4bfa-bfc7-08cbd84fcea9","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-02-16T14:40:58.3299214+02:00","Properties":{}}
+DEBUG 2016-02-16 14:40:58,338 [54   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 8fc1cad5-511b-4bfa-bfc7-08cbd84fcea9
+DEBUG 2016-02-16 14:41:04,298 [138  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 8fc1cad5-511b-4bfa-bfc7-08cbd84fcea9
+DEBUG 2016-02-16 14:41:05,436 [46   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"42b5932d-2d3d-4170-be11-e19f11d21595","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-02-16T14:41:05.4364382+02:00","Properties":{}}
+DEBUG 2016-02-16 14:41:05,446 [149  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 42b5932d-2d3d-4170-be11-e19f11d21595
+INFO  2016-02-16 14:41:12,009 [c1b8e] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject1455626465064
+INFO  2016-02-16 14:41:12,009 [c1b8e] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626465064
+INFO  2016-02-16 14:41:12,009 [2c0ec] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject 1455626454933
+INFO  2016-02-16 14:41:12,009 [2c0ec] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626454933
+INFO  2016-02-16 14:41:12,009 [90a0e] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject 1455626463223
+INFO  2016-02-16 14:41:12,009 [90a0e] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626463223
+DEBUG 2016-02-16 14:41:41,946 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2016-02-16 14:42:20,047 [50   ] bp.Hangfire.HangfireBackgroundJobManager - Stop background worker: Abp.Hangfire.HangfireBackgroundJobManager
+DEBUG 2016-02-16 14:42:20,048 [50   ] emo.Users.MakeInactiveUsersPassiveWorker - Stop background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
+DEBUG 2016-02-16 14:42:20,049 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' stopped.
+DEBUG 2016-02-16 14:42:20,049 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' stopped.
+DEBUG 2016-02-16 14:42:20,049 [525ee] Hangfire.Server.Worker                   - Background process 'Worker #08d525ee' stopped.
+DEBUG 2016-02-16 14:42:20,049 [924e6] Hangfire.Server.Worker                   - Background process 'Worker #2b4924e6' stopped.
+DEBUG 2016-02-16 14:42:20,049 [7057e] Hangfire.Server.Worker                   - Background process 'Worker #2cd7057e' stopped.
+DEBUG 2016-02-16 14:42:20,049 [f08bf] Hangfire.Server.Worker                   - Background process 'Worker #3caf08bf' stopped.
+DEBUG 2016-02-16 14:42:20,049 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' stopped.
+DEBUG 2016-02-16 14:42:20,049 [cfbe2] Hangfire.Server.Worker                   - Background process 'Worker #4d1cfbe2' stopped.
+DEBUG 2016-02-16 14:42:20,049 [08304] Hangfire.Server.Worker                   - Background process 'Worker #cbb08304' stopped.
+DEBUG 2016-02-16 14:42:20,049 [90b97] Hangfire.Server.Worker                   - Background process 'Worker #6f990b97' stopped.
+DEBUG 2016-02-16 14:42:20,049 [6f300] Hangfire.Server.Worker                   - Background process 'Worker #60a6f300' stopped.
+DEBUG 2016-02-16 14:42:20,049 [6fd93] Hangfire.Server.Worker                   - Background process 'Worker #c946fd93' stopped.
+DEBUG 2016-02-16 14:42:20,049 [dc1e8] Hangfire.Server.Worker                   - Background process 'Worker #1dadc1e8' stopped.
+DEBUG 2016-02-16 14:42:20,049 [2c0ec] Hangfire.Server.Worker                   - Background process 'Worker #4b42c0ec' stopped.
+DEBUG 2016-02-16 14:42:20,049 [90a0e] Hangfire.Server.Worker                   - Background process 'Worker #57390a0e' stopped.
+DEBUG 2016-02-16 14:42:20,049 [67d40] Hangfire.Server.Worker                   - Background process 'Worker #74d67d40' stopped.
+DEBUG 2016-02-16 14:42:20,049 [c1b8e] Hangfire.Server.Worker                   - Background process 'Worker #803c1b8e' stopped.
+DEBUG 2016-02-16 14:42:20,049 [80a77] Hangfire.Server.Worker                   - Background process 'Worker #bca80a77' stopped.
+DEBUG 2016-02-16 14:42:20,049 [48271] Hangfire.Server.Worker                   - Background process 'Worker #79a48271' stopped.
+DEBUG 2016-02-16 14:42:20,049 [ced04] Hangfire.Server.Worker                   - Background process 'Worker #de9ced04' stopped.
+DEBUG 2016-02-16 14:42:20,049 [4376a] Hangfire.Server.Worker                   - Background process 'Worker #7eb4376a' stopped.
+DEBUG 2016-02-16 14:42:20,049 [becd9] Hangfire.Server.Worker                   - Background process 'Worker #ee9becd9' stopped.
+DEBUG 2016-02-16 14:42:20,049 [e03c3] Hangfire.Server.Worker                   - Background process 'Worker #98ee03c3' stopped.
+DEBUG 2016-02-16 14:42:20,049 [7399d] Hangfire.Server.Worker                   - Background process 'Worker #f8b7399d' stopped.
+DEBUG 2016-02-16 14:42:20,050 [017ec] Hangfire.Server.Worker                   - Background process 'Worker #015017ec' stopped.
+DEBUG 2016-02-16 14:42:20,050 [757af] Hangfire.Server.Worker                   - Background process 'Worker #436757af' stopped.
+DEBUG 2016-02-16 14:42:20,050 [8f193] Hangfire.Server.Worker                   - Background process 'Worker #90d8f193' stopped.
+DEBUG 2016-02-16 14:42:20,050 [7e950] Hangfire.Server.Worker                   - Background process 'Worker #b387e950' stopped.
+DEBUG 2016-02-16 14:42:20,050 [98e8e] Hangfire.Server.Worker                   - Background process 'Worker #16398e8e' stopped.
+DEBUG 2016-02-16 14:42:20,050 [bb2ed] Hangfire.Server.Worker                   - Background process 'Worker #6d4bb2ed' stopped.
+DEBUG 2016-02-16 14:42:20,050 [1ec04] Hangfire.Server.Worker                   - Background process 'Worker #cda1ec04' stopped.
+DEBUG 2016-02-16 14:42:20,050 [ad152] Hangfire.Server.Worker                   - Background process 'Worker #2b6ad152' stopped.
+DEBUG 2016-02-16 14:42:20,050 [b6362] Hangfire.Server.Worker                   - Background process 'Worker #bf9b6362' stopped.
+DEBUG 2016-02-16 14:42:20,050 [a1efb] Hangfire.Server.Worker                   - Background process 'Worker #d36a1efb' stopped.
+DEBUG 2016-02-16 14:42:20,050 [06e0a] Hangfire.Server.Worker                   - Background process 'Worker #c5e06e0a' stopped.
+DEBUG 2016-02-16 14:42:20,050 [8a220] Hangfire.Server.Worker                   - Background process 'Worker #1588a220' stopped.
+DEBUG 2016-02-16 14:42:20,050 [3939c] Hangfire.Server.Worker                   - Background process 'Worker #1f13939c' stopped.
+DEBUG 2016-02-16 14:42:20,050 [63e97] Hangfire.Server.Worker                   - Background process 'Worker #53f63e97' stopped.
+DEBUG 2016-02-16 14:42:20,050 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' stopped.
+DEBUG 2016-02-16 14:42:20,050 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' stopped.
+DEBUG 2016-02-16 14:42:20,050 [7ea58] Hangfire.Server.Worker                   - Background process 'Worker #81e7ea58' stopped.
+DEBUG 2016-02-16 14:42:20,050 [6f984] Hangfire.Server.Worker                   - Background process 'Worker #f116f984' stopped.
+DEBUG 2016-02-16 14:42:20,050 [1b866] Hangfire.Server.Worker                   - Background process 'Worker #9b81b866' stopped.
+DEBUG 2016-02-16 14:42:20,051 [e5b4c] Hangfire.Server.Worker                   - Background process 'Worker #2c5e5b4c' stopped.
+DEBUG 2016-02-16 14:42:20,051 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' stopped.
+DEBUG 2016-02-16 14:42:20,051 [6ba27] Hangfire.Server.Worker                   - Background process 'Worker #a0c6ba27' stopped.
+DEBUG 2016-02-16 14:42:20,055 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' stopped.
+INFO  2016-02-16 14:42:20,055 [50   ] Hangfire.BackgroundJobServer             - Hangfire Server stopped.
+DEBUG 2016-02-16 14:42:20,055 [50   ] bp.Hangfire.HangfireBackgroundJobManager - WaitToStop background worker: Abp.Hangfire.HangfireBackgroundJobManager
+DEBUG 2016-02-16 14:42:20,056 [50   ] emo.Users.MakeInactiveUsersPassiveWorker - WaitToStop background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
+DEBUG 2016-02-16 14:42:24,960 [146  ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-02-16 14:42:26,674 [146  ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2016-02-16 14:42:26,677 [146  ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:42:26,679 [146  ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:42:26,679 [146  ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:42:26,679 [146  ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:42:26,679 [146  ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Owin.AbpOwinModule, Abp.Owin, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:42:26,679 [146  ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:42:26,679 [146  ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:42:26,679 [146  ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:42:26,680 [146  ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:42:26,681 [146  ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:42:26,681 [146  ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:42:26,681 [146  ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoApplicationModule, BackgroundJobAndNotificationsDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:42:26,681 [146  ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoCoreModule, BackgroundJobAndNotificationsDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:42:26,681 [146  ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoDataModule, BackgroundJobAndNotificationsDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:42:26,681 [146  ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Web.BackgroundJobAndNotificationsDemoWebModule, BackgroundJobAndNotificationsDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:42:26,681 [146  ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Api.BackgroundJobAndNotificationsDemoWebApiModule, BackgroundJobAndNotificationsDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:42:26,686 [146  ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2016-02-16 14:42:26,722 [146  ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-02-16 14:42:26,722 [146  ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-02-16 14:42:26,722 [146  ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-02-16 14:42:26,722 [146  ] o.Configuration.LanguageManagementConfig - Converted BackgroundJobAndNotificationsDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2016-02-16 14:42:26,747 [146  ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2016-02-16 14:42:26,773 [146  ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2016-02-16 14:42:28,577 [146  ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-02-16 14:42:28,586 [146  ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-02-16 14:42:28,586 [146  ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-02-16 14:42:28,587 [146  ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-02-16 14:42:28,588 [146  ] Abp.Localization.LocalizationManager     - Initialized localization source: BackgroundJobAndNotificationsDemo
+DEBUG 2016-02-16 14:42:28,593 [146  ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2016-02-16 14:42:28,602 [146  ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2016-02-16 14:42:28,605 [146  ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: localhost@BackgroundJobAndNotificationsDemo'.
+INFO  2016-02-16 14:42:28,605 [146  ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2016-02-16 14:42:28,605 [146  ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2016-02-16 14:42:28,605 [146  ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2016-02-16 14:42:28,605 [146  ] Hangfire.BackgroundJobServer             -     Worker count: 40.
+INFO  2016-02-16 14:42:28,605 [146  ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'.
+INFO  2016-02-16 14:42:28,605 [146  ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15.
+INFO  2016-02-16 14:42:28,605 [146  ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15.
+DEBUG 2016-02-16 14:42:28,614 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2016-02-16 14:42:28,741 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2016-02-16 14:42:28,742 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2016-02-16 14:42:28,742 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2016-02-16 14:42:28,743 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2016-02-16 14:42:28,743 [20def] Hangfire.Server.Worker                   - Background process 'Worker #c3920def' started.
+DEBUG 2016-02-16 14:42:28,744 [62a02] Hangfire.Server.Worker                   - Background process 'Worker #65962a02' started.
+DEBUG 2016-02-16 14:42:28,744 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2016-02-16 14:42:28,744 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'AggregatedCounter'...
+DEBUG 2016-02-16 14:42:28,745 [ddd6c] Hangfire.Server.Worker                   - Background process 'Worker #a88ddd6c' started.
+DEBUG 2016-02-16 14:42:28,746 [0d470] Hangfire.Server.Worker                   - Background process 'Worker #fef0d470' started.
+DEBUG 2016-02-16 14:42:28,747 [910d1] Hangfire.Server.Worker                   - Background process 'Worker #0fc910d1' started.
+DEBUG 2016-02-16 14:42:28,748 [fb13c] Hangfire.Server.Worker                   - Background process 'Worker #748fb13c' started.
+DEBUG 2016-02-16 14:42:28,748 [46637] Hangfire.Server.Worker                   - Background process 'Worker #95146637' started.
+DEBUG 2016-02-16 14:42:28,749 [4404e] Hangfire.Server.Worker                   - Background process 'Worker #2214404e' started.
+DEBUG 2016-02-16 14:42:28,750 [c0b97] Hangfire.Server.Worker                   - Background process 'Worker #a6fc0b97' started.
+DEBUG 2016-02-16 14:42:28,750 [4dfed] Hangfire.Server.Worker                   - Background process 'Worker #f574dfed' started.
+DEBUG 2016-02-16 14:42:28,750 [7ac21] Hangfire.Server.Worker                   - Background process 'Worker #1067ac21' started.
+DEBUG 2016-02-16 14:42:28,751 [069b0] Hangfire.Server.Worker                   - Background process 'Worker #ea8069b0' started.
+DEBUG 2016-02-16 14:42:28,751 [dbf29] Hangfire.Server.Worker                   - Background process 'Worker #2cbdbf29' started.
+DEBUG 2016-02-16 14:42:28,752 [efb49] Hangfire.Server.Worker                   - Background process 'Worker #e3aefb49' started.
+DEBUG 2016-02-16 14:42:28,753 [ed07b] Hangfire.Server.Worker                   - Background process 'Worker #498ed07b' started.
+DEBUG 2016-02-16 14:42:28,753 [bfb23] Hangfire.Server.Worker                   - Background process 'Worker #8acbfb23' started.
+DEBUG 2016-02-16 14:42:28,754 [2b2f7] Hangfire.Server.Worker                   - Background process 'Worker #b642b2f7' started.
+DEBUG 2016-02-16 14:42:28,755 [04a37] Hangfire.Server.Worker                   - Background process 'Worker #4a504a37' started.
+DEBUG 2016-02-16 14:42:28,755 [a9759] Hangfire.Server.Worker                   - Background process 'Worker #368a9759' started.
+DEBUG 2016-02-16 14:42:28,756 [e2dd1] Hangfire.Server.Worker                   - Background process 'Worker #782e2dd1' started.
+DEBUG 2016-02-16 14:42:28,757 [62f45] Hangfire.Server.Worker                   - Background process 'Worker #a4462f45' started.
+DEBUG 2016-02-16 14:42:28,757 [1e52a] Hangfire.Server.Worker                   - Background process 'Worker #4751e52a' started.
+DEBUG 2016-02-16 14:42:28,758 [5565b] Hangfire.Server.Worker                   - Background process 'Worker #32e5565b' started.
+DEBUG 2016-02-16 14:42:28,759 [b6275] Hangfire.Server.Worker                   - Background process 'Worker #3ddb6275' started.
+DEBUG 2016-02-16 14:42:28,759 [90bea] Hangfire.Server.Worker                   - Background process 'Worker #b5490bea' started.
+DEBUG 2016-02-16 14:42:28,760 [7c0c2] Hangfire.Server.Worker                   - Background process 'Worker #0ef7c0c2' started.
+DEBUG 2016-02-16 14:42:28,761 [30bca] Hangfire.Server.Worker                   - Background process 'Worker #58d30bca' started.
+DEBUG 2016-02-16 14:42:28,762 [86e35] Hangfire.Server.Worker                   - Background process 'Worker #87f86e35' started.
+DEBUG 2016-02-16 14:42:28,762 [db504] Hangfire.Server.Worker                   - Background process 'Worker #fd8db504' started.
+DEBUG 2016-02-16 14:42:28,763 [a5f72] Hangfire.Server.Worker                   - Background process 'Worker #3d4a5f72' started.
+DEBUG 2016-02-16 14:42:28,764 [1a70d] Hangfire.Server.Worker                   - Background process 'Worker #d091a70d' started.
+DEBUG 2016-02-16 14:42:28,764 [e266b] Hangfire.Server.Worker                   - Background process 'Worker #90fe266b' started.
+DEBUG 2016-02-16 14:42:28,765 [5dd4a] Hangfire.Server.Worker                   - Background process 'Worker #4ae5dd4a' started.
+DEBUG 2016-02-16 14:42:28,767 [8cb39] Hangfire.Server.Worker                   - Background process 'Worker #0f88cb39' started.
+DEBUG 2016-02-16 14:42:28,767 [efca1] Hangfire.Server.Worker                   - Background process 'Worker #822efca1' started.
+DEBUG 2016-02-16 14:42:28,768 [13243] Hangfire.Server.Worker                   - Background process 'Worker #ace13243' started.
+DEBUG 2016-02-16 14:42:28,769 [19892] Hangfire.Server.Worker                   - Background process 'Worker #f5819892' started.
+DEBUG 2016-02-16 14:42:28,770 [5e168] Hangfire.Server.Worker                   - Background process 'Worker #59c5e168' started.
+DEBUG 2016-02-16 14:42:28,771 [a6dcd] Hangfire.Server.Worker                   - Background process 'Worker #543a6dcd' started.
+DEBUG 2016-02-16 14:42:28,774 [95540] Hangfire.Server.Worker                   - Background process 'Worker #a5195540' started.
+DEBUG 2016-02-16 14:42:28,776 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2016-02-16 14:42:28,778 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2016-02-16 14:42:28,779 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Job'...
+DEBUG 2016-02-16 14:42:28,795 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'List'...
+DEBUG 2016-02-16 14:42:28,797 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Set'...
+DEBUG 2016-02-16 14:42:28,799 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Hash'...
+DEBUG 2016-02-16 14:42:29,896 [146  ] Abp.AutoMapper.AbpAutoMapperModule       - Found 4 classes defines auto mapping attributes
+DEBUG 2016-02-16 14:42:29,896 [146  ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-02-16 14:42:29,944 [146  ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-02-16 14:42:29,948 [146  ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-02-16 14:42:29,949 [146  ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-02-16 14:42:29,969 [146  ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-02-16 14:42:29,970 [146  ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-02-16 14:42:29,971 [146  ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-02-16 14:42:29,972 [146  ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-02-16 14:42:29,973 [146  ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Emailing.IPrivateEmailAppService' with service name 'app/privateEmail'.
+DEBUG 2016-02-16 14:42:30,032 [146  ] emo.Users.MakeInactiveUsersPassiveWorker - Start background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
+DEBUG 2016-02-16 14:42:37,990 [155  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 42b5932d-2d3d-4170-be11-e19f11d21595
+DEBUG 2016-02-16 14:42:40,945 [59   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"07179ee1-b91a-4b35-b88a-79785a0147d7","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-02-16T14:42:40.9409657+02:00","Properties":{}}
+DEBUG 2016-02-16 14:42:41,067 [49   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 07179ee1-b91a-4b35-b88a-79785a0147d7
+DEBUG 2016-02-16 14:42:45,255 [46   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"eeed1fd6-a00e-42fd-a03b-1d4206ad57c8","IpAddress":"::1","TenantId":1,"UserId":4,"ConnectTime":"2016-02-16T14:42:45.2556098+02:00","Properties":{}}
+DEBUG 2016-02-16 14:42:45,265 [46   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: eeed1fd6-a00e-42fd-a03b-1d4206ad57c8
+INFO  2016-02-16 14:42:58,832 [ed07b] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject1455626565584
+INFO  2016-02-16 14:42:58,832 [fb13c] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject1455626561405
+INFO  2016-02-16 14:42:58,832 [fb13c] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626561405
+INFO  2016-02-16 14:42:58,832 [ed07b] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626565584
+DEBUG 2016-02-16 14:42:59,316 [46   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 07179ee1-b91a-4b35-b88a-79785a0147d7
+DEBUG 2016-02-16 14:43:00,139 [155  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: eeed1fd6-a00e-42fd-a03b-1d4206ad57c8
+DEBUG 2016-02-16 14:43:00,302 [53   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"02225eea-6b62-4478-bb1b-e0b50536a5fd","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-02-16T14:43:00.3029292+02:00","Properties":{}}
+DEBUG 2016-02-16 14:43:00,334 [104  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 02225eea-6b62-4478-bb1b-e0b50536a5fd
+DEBUG 2016-02-16 14:43:01,357 [104  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"5f7a53c4-e109-4242-be6c-ca82bc63e25b","IpAddress":"::1","TenantId":1,"UserId":4,"ConnectTime":"2016-02-16T14:43:01.357887+02:00","Properties":{}}
+DEBUG 2016-02-16 14:43:01,367 [155  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 5f7a53c4-e109-4242-be6c-ca82bc63e25b
+INFO  2016-02-16 14:43:13,799 [62a02] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject1455626581666
+INFO  2016-02-16 14:43:13,799 [62a02] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626581666
+INFO  2016-02-16 14:43:28,800 [62f45] ificationsDemo.Users.SendPrivateEmailJob - Sending email to hi_kalkan@yahoo.com -> test subject 1455626597368
+INFO  2016-02-16 14:43:28,800 [62f45] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626597368
+INFO  2016-02-16 14:43:28,800 [0d470] ificationsDemo.Users.SendPrivateEmailJob - Sending email to hi_kalkan@yahoo.com -> sela naber koçöum
+INFO  2016-02-16 14:43:28,800 [0d470] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626580552
+DEBUG 2016-02-16 14:43:29,498 [104  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 02225eea-6b62-4478-bb1b-e0b50536a5fd
+DEBUG 2016-02-16 14:43:30,662 [129  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"6a28a338-8606-45f3-8155-df3d14334788","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-02-16T14:43:30.662872+02:00","Properties":{}}
+DEBUG 2016-02-16 14:43:30,698 [46   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 6a28a338-8606-45f3-8155-df3d14334788
+INFO  2016-02-16 14:43:43,811 [a9759] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com -> test subject1455626610741
+INFO  2016-02-16 14:43:43,811 [a9759] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626610741
+DEBUG 2016-02-16 14:44:53,589 [55   ] bp.Hangfire.HangfireBackgroundJobManager - Stop background worker: Abp.Hangfire.HangfireBackgroundJobManager
+DEBUG 2016-02-16 14:44:53,590 [55   ] emo.Users.MakeInactiveUsersPassiveWorker - Stop background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
+DEBUG 2016-02-16 14:44:53,591 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' stopped.
+DEBUG 2016-02-16 14:44:53,591 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' stopped.
+DEBUG 2016-02-16 14:44:53,591 [fb13c] Hangfire.Server.Worker                   - Background process 'Worker #748fb13c' stopped.
+DEBUG 2016-02-16 14:44:53,591 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' stopped.
+DEBUG 2016-02-16 14:44:53,591 [7ac21] Hangfire.Server.Worker                   - Background process 'Worker #1067ac21' stopped.
+DEBUG 2016-02-16 14:44:53,591 [5565b] Hangfire.Server.Worker                   - Background process 'Worker #32e5565b' stopped.
+DEBUG 2016-02-16 14:44:53,591 [dbf29] Hangfire.Server.Worker                   - Background process 'Worker #2cbdbf29' stopped.
+DEBUG 2016-02-16 14:44:53,591 [1a70d] Hangfire.Server.Worker                   - Background process 'Worker #d091a70d' stopped.
+DEBUG 2016-02-16 14:44:53,591 [5e168] Hangfire.Server.Worker                   - Background process 'Worker #59c5e168' stopped.
+DEBUG 2016-02-16 14:44:53,591 [62a02] Hangfire.Server.Worker                   - Background process 'Worker #65962a02' stopped.
+DEBUG 2016-02-16 14:44:53,591 [0d470] Hangfire.Server.Worker                   - Background process 'Worker #fef0d470' stopped.
+DEBUG 2016-02-16 14:44:53,591 [95540] Hangfire.Server.Worker                   - Background process 'Worker #a5195540' stopped.
+DEBUG 2016-02-16 14:44:53,591 [2b2f7] Hangfire.Server.Worker                   - Background process 'Worker #b642b2f7' stopped.
+DEBUG 2016-02-16 14:44:53,591 [1e52a] Hangfire.Server.Worker                   - Background process 'Worker #4751e52a' stopped.
+DEBUG 2016-02-16 14:44:53,591 [8cb39] Hangfire.Server.Worker                   - Background process 'Worker #0f88cb39' stopped.
+DEBUG 2016-02-16 14:44:53,591 [a6dcd] Hangfire.Server.Worker                   - Background process 'Worker #543a6dcd' stopped.
+DEBUG 2016-02-16 14:44:53,591 [e266b] Hangfire.Server.Worker                   - Background process 'Worker #90fe266b' stopped.
+DEBUG 2016-02-16 14:44:53,591 [db504] Hangfire.Server.Worker                   - Background process 'Worker #fd8db504' stopped.
+DEBUG 2016-02-16 14:44:53,591 [a5f72] Hangfire.Server.Worker                   - Background process 'Worker #3d4a5f72' stopped.
+DEBUG 2016-02-16 14:44:53,591 [90bea] Hangfire.Server.Worker                   - Background process 'Worker #b5490bea' stopped.
+DEBUG 2016-02-16 14:44:53,591 [30bca] Hangfire.Server.Worker                   - Background process 'Worker #58d30bca' stopped.
+DEBUG 2016-02-16 14:44:53,591 [62f45] Hangfire.Server.Worker                   - Background process 'Worker #a4462f45' stopped.
+DEBUG 2016-02-16 14:44:53,591 [b6275] Hangfire.Server.Worker                   - Background process 'Worker #3ddb6275' stopped.
+DEBUG 2016-02-16 14:44:53,591 [7c0c2] Hangfire.Server.Worker                   - Background process 'Worker #0ef7c0c2' stopped.
+DEBUG 2016-02-16 14:44:53,592 [04a37] Hangfire.Server.Worker                   - Background process 'Worker #4a504a37' stopped.
+DEBUG 2016-02-16 14:44:53,591 [069b0] Hangfire.Server.Worker                   - Background process 'Worker #ea8069b0' stopped.
+DEBUG 2016-02-16 14:44:53,592 [ddd6c] Hangfire.Server.Worker                   - Background process 'Worker #a88ddd6c' stopped.
+DEBUG 2016-02-16 14:44:53,592 [13243] Hangfire.Server.Worker                   - Background process 'Worker #ace13243' stopped.
+DEBUG 2016-02-16 14:44:53,592 [46637] Hangfire.Server.Worker                   - Background process 'Worker #95146637' stopped.
+DEBUG 2016-02-16 14:44:53,592 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' stopped.
+DEBUG 2016-02-16 14:44:53,592 [efb49] Hangfire.Server.Worker                   - Background process 'Worker #e3aefb49' stopped.
+DEBUG 2016-02-16 14:44:53,592 [bfb23] Hangfire.Server.Worker                   - Background process 'Worker #8acbfb23' stopped.
+DEBUG 2016-02-16 14:44:53,592 [efca1] Hangfire.Server.Worker                   - Background process 'Worker #822efca1' stopped.
+DEBUG 2016-02-16 14:44:53,592 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' stopped.
+DEBUG 2016-02-16 14:44:53,592 [e2dd1] Hangfire.Server.Worker                   - Background process 'Worker #782e2dd1' stopped.
+DEBUG 2016-02-16 14:44:53,592 [ed07b] Hangfire.Server.Worker                   - Background process 'Worker #498ed07b' stopped.
+DEBUG 2016-02-16 14:44:53,592 [4dfed] Hangfire.Server.Worker                   - Background process 'Worker #f574dfed' stopped.
+DEBUG 2016-02-16 14:44:53,592 [5dd4a] Hangfire.Server.Worker                   - Background process 'Worker #4ae5dd4a' stopped.
+DEBUG 2016-02-16 14:44:53,592 [86e35] Hangfire.Server.Worker                   - Background process 'Worker #87f86e35' stopped.
+DEBUG 2016-02-16 14:44:53,592 [c0b97] Hangfire.Server.Worker                   - Background process 'Worker #a6fc0b97' stopped.
+DEBUG 2016-02-16 14:44:53,592 [4404e] Hangfire.Server.Worker                   - Background process 'Worker #2214404e' stopped.
+DEBUG 2016-02-16 14:44:53,592 [a9759] Hangfire.Server.Worker                   - Background process 'Worker #368a9759' stopped.
+DEBUG 2016-02-16 14:44:53,592 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' stopped.
+DEBUG 2016-02-16 14:44:53,592 [19892] Hangfire.Server.Worker                   - Background process 'Worker #f5819892' stopped.
+DEBUG 2016-02-16 14:44:53,592 [20def] Hangfire.Server.Worker                   - Background process 'Worker #c3920def' stopped.
+DEBUG 2016-02-16 14:44:53,592 [910d1] Hangfire.Server.Worker                   - Background process 'Worker #0fc910d1' stopped.
+DEBUG 2016-02-16 14:44:53,595 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' stopped.
+INFO  2016-02-16 14:44:53,595 [55   ] Hangfire.BackgroundJobServer             - Hangfire Server stopped.
+DEBUG 2016-02-16 14:44:53,595 [55   ] bp.Hangfire.HangfireBackgroundJobManager - WaitToStop background worker: Abp.Hangfire.HangfireBackgroundJobManager
+DEBUG 2016-02-16 14:44:53,596 [55   ] emo.Users.MakeInactiveUsersPassiveWorker - WaitToStop background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
+DEBUG 2016-02-16 14:44:58,457 [51   ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-02-16 14:45:00,200 [51   ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2016-02-16 14:45:00,203 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:00,205 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:00,205 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:00,205 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:00,205 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Owin.AbpOwinModule, Abp.Owin, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:00,205 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:00,205 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:00,205 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:00,206 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:00,206 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:00,206 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:00,206 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoApplicationModule, BackgroundJobAndNotificationsDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:00,206 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoCoreModule, BackgroundJobAndNotificationsDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:00,206 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoDataModule, BackgroundJobAndNotificationsDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:00,206 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Web.BackgroundJobAndNotificationsDemoWebModule, BackgroundJobAndNotificationsDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:00,206 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Api.BackgroundJobAndNotificationsDemoWebApiModule, BackgroundJobAndNotificationsDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:00,210 [51   ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2016-02-16 14:45:00,247 [51   ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-02-16 14:45:00,247 [51   ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-02-16 14:45:00,247 [51   ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-02-16 14:45:00,247 [51   ] o.Configuration.LanguageManagementConfig - Converted BackgroundJobAndNotificationsDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2016-02-16 14:45:00,271 [51   ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2016-02-16 14:45:00,301 [51   ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2016-02-16 14:45:01,958 [51   ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-02-16 14:45:01,962 [51   ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-02-16 14:45:01,963 [51   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-02-16 14:45:01,963 [51   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-02-16 14:45:01,964 [51   ] Abp.Localization.LocalizationManager     - Initialized localization source: BackgroundJobAndNotificationsDemo
+DEBUG 2016-02-16 14:45:01,968 [51   ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2016-02-16 14:45:01,977 [51   ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2016-02-16 14:45:01,980 [51   ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: localhost@BackgroundJobAndNotificationsDemo'.
+INFO  2016-02-16 14:45:01,980 [51   ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2016-02-16 14:45:01,980 [51   ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2016-02-16 14:45:01,980 [51   ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2016-02-16 14:45:01,980 [51   ] Hangfire.BackgroundJobServer             -     Worker count: 40.
+INFO  2016-02-16 14:45:01,980 [51   ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'.
+INFO  2016-02-16 14:45:01,980 [51   ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15.
+INFO  2016-02-16 14:45:01,980 [51   ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15.
+DEBUG 2016-02-16 14:45:01,988 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2016-02-16 14:45:02,109 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2016-02-16 14:45:02,109 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2016-02-16 14:45:02,110 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2016-02-16 14:45:02,111 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2016-02-16 14:45:02,111 [b5fed] Hangfire.Server.Worker                   - Background process 'Worker #4d5b5fed' started.
+DEBUG 2016-02-16 14:45:02,112 [f1828] Hangfire.Server.Worker                   - Background process 'Worker #d03f1828' started.
+DEBUG 2016-02-16 14:45:02,112 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2016-02-16 14:45:02,112 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'AggregatedCounter'...
+DEBUG 2016-02-16 14:45:02,112 [daddd] Hangfire.Server.Worker                   - Background process 'Worker #2dfdaddd' started.
+DEBUG 2016-02-16 14:45:02,113 [9edb5] Hangfire.Server.Worker                   - Background process 'Worker #8849edb5' started.
+DEBUG 2016-02-16 14:45:02,114 [60fce] Hangfire.Server.Worker                   - Background process 'Worker #bef60fce' started.
+DEBUG 2016-02-16 14:45:02,116 [382c8] Hangfire.Server.Worker                   - Background process 'Worker #222382c8' started.
+DEBUG 2016-02-16 14:45:02,117 [74410] Hangfire.Server.Worker                   - Background process 'Worker #6ae74410' started.
+DEBUG 2016-02-16 14:45:02,118 [9559d] Hangfire.Server.Worker                   - Background process 'Worker #b359559d' started.
+DEBUG 2016-02-16 14:45:02,119 [eadd1] Hangfire.Server.Worker                   - Background process 'Worker #0d9eadd1' started.
+DEBUG 2016-02-16 14:45:02,120 [faf05] Hangfire.Server.Worker                   - Background process 'Worker #1f2faf05' started.
+DEBUG 2016-02-16 14:45:02,121 [fcc41] Hangfire.Server.Worker                   - Background process 'Worker #208fcc41' started.
+DEBUG 2016-02-16 14:45:02,121 [96f47] Hangfire.Server.Worker                   - Background process 'Worker #0ba96f47' started.
+DEBUG 2016-02-16 14:45:02,123 [18fde] Hangfire.Server.Worker                   - Background process 'Worker #f8618fde' started.
+DEBUG 2016-02-16 14:45:02,127 [e08f3] Hangfire.Server.Worker                   - Background process 'Worker #af2e08f3' started.
+DEBUG 2016-02-16 14:45:02,131 [e0ccf] Hangfire.Server.Worker                   - Background process 'Worker #0efe0ccf' started.
+DEBUG 2016-02-16 14:45:02,132 [68b9d] Hangfire.Server.Worker                   - Background process 'Worker #41e68b9d' started.
+DEBUG 2016-02-16 14:45:02,134 [b1159] Hangfire.Server.Worker                   - Background process 'Worker #4d5b1159' started.
+DEBUG 2016-02-16 14:45:02,137 [1d852] Hangfire.Server.Worker                   - Background process 'Worker #db91d852' started.
+DEBUG 2016-02-16 14:45:02,137 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Job'...
+DEBUG 2016-02-16 14:45:02,138 [3665e] Hangfire.Server.Worker                   - Background process 'Worker #63a3665e' started.
+DEBUG 2016-02-16 14:45:02,139 [1eec8] Hangfire.Server.Worker                   - Background process 'Worker #45c1eec8' started.
+DEBUG 2016-02-16 14:45:02,143 [959a4] Hangfire.Server.Worker                   - Background process 'Worker #89c959a4' started.
+DEBUG 2016-02-16 14:45:02,144 [ff103] Hangfire.Server.Worker                   - Background process 'Worker #631ff103' started.
+DEBUG 2016-02-16 14:45:02,145 [40f45] Hangfire.Server.Worker                   - Background process 'Worker #fc540f45' started.
+DEBUG 2016-02-16 14:45:02,146 [5ddb5] Hangfire.Server.Worker                   - Background process 'Worker #cfa5ddb5' started.
+DEBUG 2016-02-16 14:45:02,147 [61572] Hangfire.Server.Worker                   - Background process 'Worker #71461572' started.
+DEBUG 2016-02-16 14:45:02,147 [61d57] Hangfire.Server.Worker                   - Background process 'Worker #69561d57' started.
+DEBUG 2016-02-16 14:45:02,148 [13d6e] Hangfire.Server.Worker                   - Background process 'Worker #d7b13d6e' started.
+DEBUG 2016-02-16 14:45:02,149 [13f36] Hangfire.Server.Worker                   - Background process 'Worker #fb113f36' started.
+DEBUG 2016-02-16 14:45:02,149 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'List'...
+DEBUG 2016-02-16 14:45:02,149 [32103] Hangfire.Server.Worker                   - Background process 'Worker #e9d32103' started.
+DEBUG 2016-02-16 14:45:02,150 [2a808] Hangfire.Server.Worker                   - Background process 'Worker #61e2a808' started.
+DEBUG 2016-02-16 14:45:02,150 [a3e82] Hangfire.Server.Worker                   - Background process 'Worker #937a3e82' started.
+DEBUG 2016-02-16 14:45:02,151 [95d41] Hangfire.Server.Worker                   - Background process 'Worker #46695d41' started.
+DEBUG 2016-02-16 14:45:02,151 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Set'...
+DEBUG 2016-02-16 14:45:02,151 [1c39d] Hangfire.Server.Worker                   - Background process 'Worker #9961c39d' started.
+DEBUG 2016-02-16 14:45:02,152 [c7599] Hangfire.Server.Worker                   - Background process 'Worker #842c7599' started.
+DEBUG 2016-02-16 14:45:02,153 [51b4b] Hangfire.Server.Worker                   - Background process 'Worker #20f51b4b' started.
+DEBUG 2016-02-16 14:45:02,153 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Hash'...
+DEBUG 2016-02-16 14:45:02,153 [59421] Hangfire.Server.Worker                   - Background process 'Worker #fcb59421' started.
+DEBUG 2016-02-16 14:45:02,154 [072a4] Hangfire.Server.Worker                   - Background process 'Worker #307072a4' started.
+DEBUG 2016-02-16 14:45:02,154 [4aa3e] Hangfire.Server.Worker                   - Background process 'Worker #9b64aa3e' started.
+DEBUG 2016-02-16 14:45:02,155 [f112b] Hangfire.Server.Worker                   - Background process 'Worker #da0f112b' started.
+DEBUG 2016-02-16 14:45:02,156 [4c3fa] Hangfire.Server.Worker                   - Background process 'Worker #2a44c3fa' started.
+DEBUG 2016-02-16 14:45:02,156 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2016-02-16 14:45:02,157 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2016-02-16 14:45:03,250 [51   ] Abp.AutoMapper.AbpAutoMapperModule       - Found 4 classes defines auto mapping attributes
+DEBUG 2016-02-16 14:45:03,250 [51   ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-02-16 14:45:03,296 [51   ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-02-16 14:45:03,300 [51   ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-02-16 14:45:03,300 [51   ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-02-16 14:45:03,320 [51   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-02-16 14:45:03,321 [51   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-02-16 14:45:03,322 [51   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-02-16 14:45:03,323 [51   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-02-16 14:45:03,323 [51   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Emailing.IPrivateEmailAppService' with service name 'app/privateEmail'.
+DEBUG 2016-02-16 14:45:03,382 [51   ] emo.Users.MakeInactiveUsersPassiveWorker - Start background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
+DEBUG 2016-02-16 14:45:14,499 [58   ] bp.Hangfire.HangfireBackgroundJobManager - Stop background worker: Abp.Hangfire.HangfireBackgroundJobManager
+DEBUG 2016-02-16 14:45:14,500 [58   ] emo.Users.MakeInactiveUsersPassiveWorker - Stop background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
+DEBUG 2016-02-16 14:45:14,501 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' stopped.
+DEBUG 2016-02-16 14:45:14,501 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' stopped.
+DEBUG 2016-02-16 14:45:14,501 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' stopped.
+DEBUG 2016-02-16 14:45:14,501 [f112b] Hangfire.Server.Worker                   - Background process 'Worker #da0f112b' stopped.
+DEBUG 2016-02-16 14:45:14,501 [59421] Hangfire.Server.Worker                   - Background process 'Worker #fcb59421' stopped.
+DEBUG 2016-02-16 14:45:14,501 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' stopped.
+DEBUG 2016-02-16 14:45:14,501 [4aa3e] Hangfire.Server.Worker                   - Background process 'Worker #9b64aa3e' stopped.
+DEBUG 2016-02-16 14:45:14,501 [51b4b] Hangfire.Server.Worker                   - Background process 'Worker #20f51b4b' stopped.
+DEBUG 2016-02-16 14:45:14,501 [95d41] Hangfire.Server.Worker                   - Background process 'Worker #46695d41' stopped.
+DEBUG 2016-02-16 14:45:14,501 [072a4] Hangfire.Server.Worker                   - Background process 'Worker #307072a4' stopped.
+DEBUG 2016-02-16 14:45:14,501 [c7599] Hangfire.Server.Worker                   - Background process 'Worker #842c7599' stopped.
+DEBUG 2016-02-16 14:45:14,501 [a3e82] Hangfire.Server.Worker                   - Background process 'Worker #937a3e82' stopped.
+DEBUG 2016-02-16 14:45:14,501 [13f36] Hangfire.Server.Worker                   - Background process 'Worker #fb113f36' stopped.
+DEBUG 2016-02-16 14:45:14,501 [1c39d] Hangfire.Server.Worker                   - Background process 'Worker #9961c39d' stopped.
+DEBUG 2016-02-16 14:45:14,502 [13d6e] Hangfire.Server.Worker                   - Background process 'Worker #d7b13d6e' stopped.
+DEBUG 2016-02-16 14:45:14,502 [5ddb5] Hangfire.Server.Worker                   - Background process 'Worker #cfa5ddb5' stopped.
+DEBUG 2016-02-16 14:45:14,502 [2a808] Hangfire.Server.Worker                   - Background process 'Worker #61e2a808' stopped.
+DEBUG 2016-02-16 14:45:14,502 [32103] Hangfire.Server.Worker                   - Background process 'Worker #e9d32103' stopped.
+DEBUG 2016-02-16 14:45:14,502 [40f45] Hangfire.Server.Worker                   - Background process 'Worker #fc540f45' stopped.
+DEBUG 2016-02-16 14:45:14,502 [1eec8] Hangfire.Server.Worker                   - Background process 'Worker #45c1eec8' stopped.
+DEBUG 2016-02-16 14:45:14,502 [3665e] Hangfire.Server.Worker                   - Background process 'Worker #63a3665e' stopped.
+DEBUG 2016-02-16 14:45:14,502 [61d57] Hangfire.Server.Worker                   - Background process 'Worker #69561d57' stopped.
+DEBUG 2016-02-16 14:45:14,502 [18fde] Hangfire.Server.Worker                   - Background process 'Worker #f8618fde' stopped.
+DEBUG 2016-02-16 14:45:14,502 [68b9d] Hangfire.Server.Worker                   - Background process 'Worker #41e68b9d' stopped.
+DEBUG 2016-02-16 14:45:14,502 [e0ccf] Hangfire.Server.Worker                   - Background process 'Worker #0efe0ccf' stopped.
+DEBUG 2016-02-16 14:45:14,502 [61572] Hangfire.Server.Worker                   - Background process 'Worker #71461572' stopped.
+DEBUG 2016-02-16 14:45:14,502 [96f47] Hangfire.Server.Worker                   - Background process 'Worker #0ba96f47' stopped.
+DEBUG 2016-02-16 14:45:14,502 [9559d] Hangfire.Server.Worker                   - Background process 'Worker #b359559d' stopped.
+DEBUG 2016-02-16 14:45:14,502 [fcc41] Hangfire.Server.Worker                   - Background process 'Worker #208fcc41' stopped.
+DEBUG 2016-02-16 14:45:14,502 [ff103] Hangfire.Server.Worker                   - Background process 'Worker #631ff103' stopped.
+DEBUG 2016-02-16 14:45:14,502 [daddd] Hangfire.Server.Worker                   - Background process 'Worker #2dfdaddd' stopped.
+DEBUG 2016-02-16 14:45:14,502 [74410] Hangfire.Server.Worker                   - Background process 'Worker #6ae74410' stopped.
+DEBUG 2016-02-16 14:45:14,502 [959a4] Hangfire.Server.Worker                   - Background process 'Worker #89c959a4' stopped.
+DEBUG 2016-02-16 14:45:14,502 [9edb5] Hangfire.Server.Worker                   - Background process 'Worker #8849edb5' stopped.
+DEBUG 2016-02-16 14:45:14,502 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' stopped.
+DEBUG 2016-02-16 14:45:14,503 [4c3fa] Hangfire.Server.Worker                   - Background process 'Worker #2a44c3fa' stopped.
+DEBUG 2016-02-16 14:45:14,503 [382c8] Hangfire.Server.Worker                   - Background process 'Worker #222382c8' stopped.
+DEBUG 2016-02-16 14:45:14,503 [eadd1] Hangfire.Server.Worker                   - Background process 'Worker #0d9eadd1' stopped.
+DEBUG 2016-02-16 14:45:14,503 [b1159] Hangfire.Server.Worker                   - Background process 'Worker #4d5b1159' stopped.
+DEBUG 2016-02-16 14:45:14,503 [1d852] Hangfire.Server.Worker                   - Background process 'Worker #db91d852' stopped.
+DEBUG 2016-02-16 14:45:14,503 [faf05] Hangfire.Server.Worker                   - Background process 'Worker #1f2faf05' stopped.
+DEBUG 2016-02-16 14:45:14,503 [60fce] Hangfire.Server.Worker                   - Background process 'Worker #bef60fce' stopped.
+DEBUG 2016-02-16 14:45:14,503 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' stopped.
+DEBUG 2016-02-16 14:45:14,503 [f1828] Hangfire.Server.Worker                   - Background process 'Worker #d03f1828' stopped.
+DEBUG 2016-02-16 14:45:14,503 [e08f3] Hangfire.Server.Worker                   - Background process 'Worker #af2e08f3' stopped.
+DEBUG 2016-02-16 14:45:14,503 [b5fed] Hangfire.Server.Worker                   - Background process 'Worker #4d5b5fed' stopped.
+DEBUG 2016-02-16 14:45:14,505 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' stopped.
+INFO  2016-02-16 14:45:14,505 [58   ] Hangfire.BackgroundJobServer             - Hangfire Server stopped.
+DEBUG 2016-02-16 14:45:14,505 [58   ] bp.Hangfire.HangfireBackgroundJobManager - WaitToStop background worker: Abp.Hangfire.HangfireBackgroundJobManager
+DEBUG 2016-02-16 14:45:14,506 [58   ] emo.Users.MakeInactiveUsersPassiveWorker - WaitToStop background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
+DEBUG 2016-02-16 14:45:39,936 [51   ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-02-16 14:45:41,720 [51   ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2016-02-16 14:45:41,724 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:41,726 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:41,726 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:41,726 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:41,726 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Owin.AbpOwinModule, Abp.Owin, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:41,726 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:41,726 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:41,726 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:41,726 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:41,727 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:41,727 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:41,727 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoApplicationModule, BackgroundJobAndNotificationsDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:41,727 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoCoreModule, BackgroundJobAndNotificationsDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:41,727 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoDataModule, BackgroundJobAndNotificationsDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:41,727 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Web.BackgroundJobAndNotificationsDemoWebModule, BackgroundJobAndNotificationsDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:41,728 [51   ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Api.BackgroundJobAndNotificationsDemoWebApiModule, BackgroundJobAndNotificationsDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:45:41,731 [51   ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2016-02-16 14:45:41,769 [51   ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-02-16 14:45:41,769 [51   ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-02-16 14:45:41,769 [51   ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-02-16 14:45:41,769 [51   ] o.Configuration.LanguageManagementConfig - Converted BackgroundJobAndNotificationsDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2016-02-16 14:45:41,792 [51   ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2016-02-16 14:45:41,808 [51   ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2016-02-16 14:45:43,584 [51   ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-02-16 14:45:43,589 [51   ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-02-16 14:45:43,589 [51   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-02-16 14:45:43,590 [51   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-02-16 14:45:43,591 [51   ] Abp.Localization.LocalizationManager     - Initialized localization source: BackgroundJobAndNotificationsDemo
+DEBUG 2016-02-16 14:45:43,595 [51   ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2016-02-16 14:45:43,605 [51   ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2016-02-16 14:45:43,607 [51   ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: localhost@BackgroundJobAndNotificationsDemo'.
+INFO  2016-02-16 14:45:43,607 [51   ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2016-02-16 14:45:43,607 [51   ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2016-02-16 14:45:43,607 [51   ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2016-02-16 14:45:43,607 [51   ] Hangfire.BackgroundJobServer             -     Worker count: 40.
+INFO  2016-02-16 14:45:43,608 [51   ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'.
+INFO  2016-02-16 14:45:43,608 [51   ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15.
+INFO  2016-02-16 14:45:43,608 [51   ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15.
+DEBUG 2016-02-16 14:45:43,617 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2016-02-16 14:45:43,739 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2016-02-16 14:45:43,740 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2016-02-16 14:45:43,741 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2016-02-16 14:45:43,741 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2016-02-16 14:45:43,742 [60aa0] Hangfire.Server.Worker                   - Background process 'Worker #dbe60aa0' started.
+DEBUG 2016-02-16 14:45:43,742 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'AggregatedCounter'...
+DEBUG 2016-02-16 14:45:43,742 [60bc2] Hangfire.Server.Worker                   - Background process 'Worker #6b060bc2' started.
+DEBUG 2016-02-16 14:45:43,743 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2016-02-16 14:45:43,743 [1ae95] Hangfire.Server.Worker                   - Background process 'Worker #9ef1ae95' started.
+DEBUG 2016-02-16 14:45:43,744 [57ec7] Hangfire.Server.Worker                   - Background process 'Worker #0d957ec7' started.
+DEBUG 2016-02-16 14:45:43,746 [b2c09] Hangfire.Server.Worker                   - Background process 'Worker #864b2c09' started.
+DEBUG 2016-02-16 14:45:43,747 [caa70] Hangfire.Server.Worker                   - Background process 'Worker #3aecaa70' started.
+DEBUG 2016-02-16 14:45:43,748 [99412] Hangfire.Server.Worker                   - Background process 'Worker #2af99412' started.
+DEBUG 2016-02-16 14:45:43,749 [574c5] Hangfire.Server.Worker                   - Background process 'Worker #51e574c5' started.
+DEBUG 2016-02-16 14:45:43,749 [10683] Hangfire.Server.Worker                   - Background process 'Worker #6ec10683' started.
+DEBUG 2016-02-16 14:45:43,750 [3d558] Hangfire.Server.Worker                   - Background process 'Worker #23e3d558' started.
+DEBUG 2016-02-16 14:45:43,751 [c4169] Hangfire.Server.Worker                   - Background process 'Worker #f41c4169' started.
+DEBUG 2016-02-16 14:45:43,752 [7e962] Hangfire.Server.Worker                   - Background process 'Worker #64d7e962' started.
+DEBUG 2016-02-16 14:45:43,753 [02a47] Hangfire.Server.Worker                   - Background process 'Worker #85502a47' started.
+DEBUG 2016-02-16 14:45:43,754 [c48db] Hangfire.Server.Worker                   - Background process 'Worker #057c48db' started.
+DEBUG 2016-02-16 14:45:43,755 [b52ce] Hangfire.Server.Worker                   - Background process 'Worker #6f0b52ce' started.
+DEBUG 2016-02-16 14:45:43,756 [b2927] Hangfire.Server.Worker                   - Background process 'Worker #594b2927' started.
+DEBUG 2016-02-16 14:45:43,757 [a611f] Hangfire.Server.Worker                   - Background process 'Worker #70aa611f' started.
+DEBUG 2016-02-16 14:45:43,758 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Job'...
+DEBUG 2016-02-16 14:45:43,758 [a320a] Hangfire.Server.Worker                   - Background process 'Worker #f56a320a' started.
+DEBUG 2016-02-16 14:45:43,760 [535b3] Hangfire.Server.Worker                   - Background process 'Worker #fb8535b3' started.
+DEBUG 2016-02-16 14:45:43,761 [aa8f0] Hangfire.Server.Worker                   - Background process 'Worker #cb0aa8f0' started.
+DEBUG 2016-02-16 14:45:43,762 [ec822] Hangfire.Server.Worker                   - Background process 'Worker #2f3ec822' started.
+DEBUG 2016-02-16 14:45:43,763 [8cadf] Hangfire.Server.Worker                   - Background process 'Worker #b4b8cadf' started.
+DEBUG 2016-02-16 14:45:43,767 [a2950] Hangfire.Server.Worker                   - Background process 'Worker #604a2950' started.
+DEBUG 2016-02-16 14:45:43,769 [e3d4e] Hangfire.Server.Worker                   - Background process 'Worker #569e3d4e' started.
+DEBUG 2016-02-16 14:45:43,770 [38e0d] Hangfire.Server.Worker                   - Background process 'Worker #09b38e0d' started.
+DEBUG 2016-02-16 14:45:43,771 [567f4] Hangfire.Server.Worker                   - Background process 'Worker #391567f4' started.
+DEBUG 2016-02-16 14:45:43,771 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'List'...
+DEBUG 2016-02-16 14:45:43,772 [d06fc] Hangfire.Server.Worker                   - Background process 'Worker #be7d06fc' started.
+DEBUG 2016-02-16 14:45:43,772 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Set'...
+DEBUG 2016-02-16 14:45:43,772 [d89c8] Hangfire.Server.Worker                   - Background process 'Worker #9a3d89c8' started.
+DEBUG 2016-02-16 14:45:43,773 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Hash'...
+DEBUG 2016-02-16 14:45:43,773 [e6e49] Hangfire.Server.Worker                   - Background process 'Worker #e3be6e49' started.
+DEBUG 2016-02-16 14:45:43,774 [bec68] Hangfire.Server.Worker                   - Background process 'Worker #463bec68' started.
+DEBUG 2016-02-16 14:45:43,774 [698fe] Hangfire.Server.Worker                   - Background process 'Worker #bbb698fe' started.
+DEBUG 2016-02-16 14:45:43,775 [890dc] Hangfire.Server.Worker                   - Background process 'Worker #c05890dc' started.
+DEBUG 2016-02-16 14:45:43,775 [902a1] Hangfire.Server.Worker                   - Background process 'Worker #763902a1' started.
+DEBUG 2016-02-16 14:45:43,776 [5e21a] Hangfire.Server.Worker                   - Background process 'Worker #4eb5e21a' started.
+DEBUG 2016-02-16 14:45:43,776 [6ce61] Hangfire.Server.Worker                   - Background process 'Worker #5ad6ce61' started.
+DEBUG 2016-02-16 14:45:43,777 [6aca9] Hangfire.Server.Worker                   - Background process 'Worker #4cf6aca9' started.
+DEBUG 2016-02-16 14:45:43,777 [62b1c] Hangfire.Server.Worker                   - Background process 'Worker #abb62b1c' started.
+DEBUG 2016-02-16 14:45:43,778 [2ee6e] Hangfire.Server.Worker                   - Background process 'Worker #9342ee6e' started.
+DEBUG 2016-02-16 14:45:43,778 [24ff4] Hangfire.Server.Worker                   - Background process 'Worker #44124ff4' started.
+DEBUG 2016-02-16 14:45:43,779 [5f2ce] Hangfire.Server.Worker                   - Background process 'Worker #1c15f2ce' started.
+DEBUG 2016-02-16 14:45:43,779 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2016-02-16 14:45:43,780 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2016-02-16 14:45:44,952 [51   ] Abp.AutoMapper.AbpAutoMapperModule       - Found 4 classes defines auto mapping attributes
+DEBUG 2016-02-16 14:45:44,952 [51   ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-02-16 14:45:44,998 [51   ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-02-16 14:45:45,002 [51   ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-02-16 14:45:45,002 [51   ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-02-16 14:45:45,022 [51   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-02-16 14:45:45,023 [51   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-02-16 14:45:45,024 [51   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-02-16 14:45:45,024 [51   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-02-16 14:45:45,025 [51   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Emailing.IPrivateEmailAppService' with service name 'app/privateEmail'.
+DEBUG 2016-02-16 14:45:45,085 [51   ] emo.Users.MakeInactiveUsersPassiveWorker - Start background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
+DEBUG 2016-02-16 14:45:52,403 [158  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 6a28a338-8606-45f3-8155-df3d14334788
+DEBUG 2016-02-16 14:45:53,535 [58   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 5f7a53c4-e109-4242-be6c-ca82bc63e25b
+DEBUG 2016-02-16 14:45:57,397 [83   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"64b57858-d0af-4488-b994-e4acf89048f0","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-02-16T14:45:57.3894113+02:00","Properties":{}}
+DEBUG 2016-02-16 14:45:57,430 [49   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 64b57858-d0af-4488-b994-e4acf89048f0
+DEBUG 2016-02-16 14:45:57,432 [58   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"9f703aad-b7c9-4771-a293-ad19c8f2c77b","IpAddress":"::1","TenantId":1,"UserId":4,"ConnectTime":"2016-02-16T14:45:57.4324415+02:00","Properties":{}}
+DEBUG 2016-02-16 14:45:57,456 [17   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 9f703aad-b7c9-4771-a293-ad19c8f2c77b
+INFO  2016-02-16 14:46:13,811 [b2c09] ificationsDemo.Users.SendPrivateEmailJob - Sending email to admin@aspnetboilerplate.com in background job -> test subject1455626758223
+INFO  2016-02-16 14:46:13,811 [b2c09] ificationsDemo.Users.SendPrivateEmailJob - test body 1455626758223
+DEBUG 2016-02-16 14:46:26,805 [133  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 64b57858-d0af-4488-b994-e4acf89048f0
+DEBUG 2016-02-16 14:46:29,104 [49   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 9f703aad-b7c9-4771-a293-ad19c8f2c77b
+DEBUG 2016-02-16 14:56:46,697 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-02-16 14:56:48,372 [1    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2016-02-16 14:56:48,375 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:56:48,377 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:56:48,377 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:56:48,377 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:56:48,377 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Owin.AbpOwinModule, Abp.Owin, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:56:48,377 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:56:48,377 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:56:48,377 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:56:48,377 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:56:48,377 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:56:48,377 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.8.0.1, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:56:48,378 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoApplicationModule, BackgroundJobAndNotificationsDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:56:48,378 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoCoreModule, BackgroundJobAndNotificationsDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:56:48,378 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.BackgroundJobAndNotificationsDemoDataModule, BackgroundJobAndNotificationsDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:56:48,378 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Web.BackgroundJobAndNotificationsDemoWebModule, BackgroundJobAndNotificationsDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:56:48,378 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BackgroundJobAndNotificationsDemo.Api.BackgroundJobAndNotificationsDemoWebApiModule, BackgroundJobAndNotificationsDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-16 14:56:48,382 [1    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2016-02-16 14:56:48,419 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-02-16 14:56:48,420 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-02-16 14:56:48,420 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-02-16 14:56:48,420 [1    ] o.Configuration.LanguageManagementConfig - Converted BackgroundJobAndNotificationsDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2016-02-16 14:56:48,462 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2016-02-16 14:56:48,502 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2016-02-16 14:56:50,266 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-02-16 14:56:50,271 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-02-16 14:56:50,271 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-02-16 14:56:50,272 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-02-16 14:56:50,272 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: BackgroundJobAndNotificationsDemo
+DEBUG 2016-02-16 14:56:50,276 [1    ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2016-02-16 14:56:50,285 [1    ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2016-02-16 14:56:50,288 [1    ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: localhost@BackgroundJobAndNotificationsDemo'.
+INFO  2016-02-16 14:56:50,288 [1    ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2016-02-16 14:56:50,288 [1    ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2016-02-16 14:56:50,288 [1    ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2016-02-16 14:56:50,288 [1    ] Hangfire.BackgroundJobServer             -     Worker count: 40.
+INFO  2016-02-16 14:56:50,288 [1    ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'.
+INFO  2016-02-16 14:56:50,288 [1    ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15.
+INFO  2016-02-16 14:56:50,288 [1    ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15.
+DEBUG 2016-02-16 14:56:50,297 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2016-02-16 14:56:50,424 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2016-02-16 14:56:50,424 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2016-02-16 14:56:50,425 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2016-02-16 14:56:50,425 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2016-02-16 14:56:50,426 [f5217] Hangfire.Server.Worker                   - Background process 'Worker #c3ff5217' started.
+DEBUG 2016-02-16 14:56:50,427 [233c3] Hangfire.Server.Worker                   - Background process 'Worker #010233c3' started.
+DEBUG 2016-02-16 14:56:50,427 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2016-02-16 14:56:50,427 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'AggregatedCounter'...
+DEBUG 2016-02-16 14:56:50,428 [98a43] Hangfire.Server.Worker                   - Background process 'Worker #34a98a43' started.
+DEBUG 2016-02-16 14:56:50,429 [784d3] Hangfire.Server.Worker                   - Background process 'Worker #f51784d3' started.
+DEBUG 2016-02-16 14:56:50,430 [3e8dc] Hangfire.Server.Worker                   - Background process 'Worker #eb03e8dc' started.
+INFO  2016-02-16 14:56:50,432 [chdog] Hangfire.Server.ServerWatchdog           - 1 servers were removed due to timeout
+DEBUG 2016-02-16 14:56:50,432 [b43c2] Hangfire.Server.Worker                   - Background process 'Worker #ad2b43c2' started.
+DEBUG 2016-02-16 14:56:50,433 [12e02] Hangfire.Server.Worker                   - Background process 'Worker #4cf12e02' started.
+DEBUG 2016-02-16 14:56:50,434 [ebbde] Hangfire.Server.Worker                   - Background process 'Worker #b24ebbde' started.
+DEBUG 2016-02-16 14:56:50,435 [6ced1] Hangfire.Server.Worker                   - Background process 'Worker #c406ced1' started.
+DEBUG 2016-02-16 14:56:50,435 [410ba] Hangfire.Server.Worker                   - Background process 'Worker #c5c410ba' started.
+DEBUG 2016-02-16 14:56:50,436 [413b8] Hangfire.Server.Worker                   - Background process 'Worker #5d2413b8' started.
+DEBUG 2016-02-16 14:56:50,438 [75e5e] Hangfire.Server.Worker                   - Background process 'Worker #18e75e5e' started.
+DEBUG 2016-02-16 14:56:50,439 [704d2] Hangfire.Server.Worker                   - Background process 'Worker #534704d2' started.
+DEBUG 2016-02-16 14:56:50,440 [db2e9] Hangfire.Server.Worker                   - Background process 'Worker #2dddb2e9' started.
+DEBUG 2016-02-16 14:56:50,441 [735d1] Hangfire.Server.Worker                   - Background process 'Worker #3ce735d1' started.
+DEBUG 2016-02-16 14:56:50,442 [e4f91] Hangfire.Server.Worker                   - Background process 'Worker #96ae4f91' started.
+DEBUG 2016-02-16 14:56:50,444 [4fe79] Hangfire.Server.Worker                   - Background process 'Worker #9754fe79' started.
+DEBUG 2016-02-16 14:56:50,445 [ffea7] Hangfire.Server.Worker                   - Background process 'Worker #d24ffea7' started.
+DEBUG 2016-02-16 14:56:50,447 [57ec5] Hangfire.Server.Worker                   - Background process 'Worker #3e457ec5' started.
+DEBUG 2016-02-16 14:56:50,449 [1ce7d] Hangfire.Server.Worker                   - Background process 'Worker #c4c1ce7d' started.
+DEBUG 2016-02-16 14:56:50,451 [e7633] Hangfire.Server.Worker                   - Background process 'Worker #fdce7633' started.
+DEBUG 2016-02-16 14:56:50,453 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Job'...
+DEBUG 2016-02-16 14:56:50,454 [d9f2e] Hangfire.Server.Worker                   - Background process 'Worker #5ccd9f2e' started.
+DEBUG 2016-02-16 14:56:50,455 [15602] Hangfire.Server.Worker                   - Background process 'Worker #4d615602' started.
+DEBUG 2016-02-16 14:56:50,462 [64a3b] Hangfire.Server.Worker                   - Background process 'Worker #dd464a3b' started.
+DEBUG 2016-02-16 14:56:50,463 [d724b] Hangfire.Server.Worker                   - Background process 'Worker #7f3d724b' started.
+DEBUG 2016-02-16 14:56:50,464 [9fd13] Hangfire.Server.Worker                   - Background process 'Worker #5169fd13' started.
+DEBUG 2016-02-16 14:56:50,465 [a6540] Hangfire.Server.Worker                   - Background process 'Worker #592a6540' started.
+DEBUG 2016-02-16 14:56:50,465 [8efd3] Hangfire.Server.Worker                   - Background process 'Worker #26e8efd3' started.
+DEBUG 2016-02-16 14:56:50,466 [36e41] Hangfire.Server.Worker                   - Background process 'Worker #f5636e41' started.
+DEBUG 2016-02-16 14:56:50,467 [75027] Hangfire.Server.Worker                   - Background process 'Worker #08875027' started.
+DEBUG 2016-02-16 14:56:50,467 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'List'...
+DEBUG 2016-02-16 14:56:50,467 [cb52f] Hangfire.Server.Worker                   - Background process 'Worker #b2dcb52f' started.
+DEBUG 2016-02-16 14:56:50,468 [05ad2] Hangfire.Server.Worker                   - Background process 'Worker #93e05ad2' started.
+DEBUG 2016-02-16 14:56:50,468 [176b4] Hangfire.Server.Worker                   - Background process 'Worker #b2d176b4' started.
+DEBUG 2016-02-16 14:56:50,469 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Set'...
+DEBUG 2016-02-16 14:56:50,469 [d552c] Hangfire.Server.Worker                   - Background process 'Worker #140d552c' started.
+DEBUG 2016-02-16 14:56:50,470 [ebdd3] Hangfire.Server.Worker                   - Background process 'Worker #eb8ebdd3' started.
+DEBUG 2016-02-16 14:56:50,470 [f3591] Hangfire.Server.Worker                   - Background process 'Worker #080f3591' started.
+DEBUG 2016-02-16 14:56:50,471 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Hash'...
+DEBUG 2016-02-16 14:56:50,471 [d906e] Hangfire.Server.Worker                   - Background process 'Worker #05bd906e' started.
+DEBUG 2016-02-16 14:56:50,472 [6d20f] Hangfire.Server.Worker                   - Background process 'Worker #c1e6d20f' started.
+DEBUG 2016-02-16 14:56:50,473 [23c84] Hangfire.Server.Worker                   - Background process 'Worker #29923c84' started.
+DEBUG 2016-02-16 14:56:50,473 [34eec] Hangfire.Server.Worker                   - Background process 'Worker #c8034eec' started.
+DEBUG 2016-02-16 14:56:50,474 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2016-02-16 14:56:50,474 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2016-02-16 14:56:51,488 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 4 classes defines auto mapping attributes
+DEBUG 2016-02-16 14:56:51,489 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-02-16 14:56:51,602 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-02-16 14:56:51,607 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-02-16 14:56:51,607 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BackgroundJobAndNotificationsDemo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-02-16 14:56:51,631 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-02-16 14:56:51,632 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-02-16 14:56:51,633 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-02-16 14:56:51,633 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-02-16 14:56:51,634 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BackgroundJobAndNotificationsDemo.Emailing.IPrivateEmailAppService' with service name 'app/privateEmail'.
+DEBUG 2016-02-16 14:56:51,695 [1    ] emo.Users.MakeInactiveUsersPassiveWorker - Start background worker: Castle.Proxies.MakeInactiveUsersPassiveWorkerProxy
+DEBUG 2016-02-16 14:57:07,400 [60   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"1c51860b-5852-4fcb-8065-3a12150cae99","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-02-16T14:57:07.3962543+02:00","Properties":{}}
+DEBUG 2016-02-16 14:57:07,424 [60   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 1c51860b-5852-4fcb-8065-3a12150cae99
+DEBUG 2016-02-16 14:58:13,775 [54   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 1c51860b-5852-4fcb-8065-3a12150cae99
+DEBUG 2016-02-16 14:58:14,533 [58   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"2eb39d38-5e9a-4b61-aa69-dcb3568ba58e","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-02-16T14:58:14.5332925+02:00","Properties":{}}
+DEBUG 2016-02-16 14:58:14,542 [54   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 2eb39d38-5e9a-4b61-aa69-dcb3568ba58e
