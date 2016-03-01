@@ -24,7 +24,7 @@ namespace InterceptionDemo.Interceptors
             //After method execution
             stopwatch.Stop();
             _logger.InfoFormat(
-                "{0} executed in {1} milliseconds.",
+                "MeasureDurationInterceptor: {0} executed in {1} milliseconds.",
                 invocation.MethodInvocationTarget.Name,
                 stopwatch.Elapsed.TotalMilliseconds.ToString("0.000")
                 );

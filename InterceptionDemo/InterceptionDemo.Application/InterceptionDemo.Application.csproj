@@ -97,8 +97,11 @@
   <ItemGroup>
     <Compile Include="InterceptionDemoApplicationModule.cs" />
     <Compile Include="InterceptionDemoAppServiceBase.cs" />
+    <Compile Include="Interceptors\InternalAsyncHelper.cs" />
+    <Compile Include="Interceptors\MeasureDurationAsyncInterceptor.cs" />
     <Compile Include="Interceptors\MeasureDurationInterceptor.cs" />
     <Compile Include="Interceptors\MeasureDurationInterceptorRegistrar.cs" />
+    <Compile Include="Interceptors\MeasureDurationWithPostAsyncActionInterceptor.cs" />
     <Compile Include="MultiTenancy\Dto\CreateTenantInput.cs" />
     <Compile Include="MultiTenancy\ITenantAppService.cs" />
     <Compile Include="MultiTenancy\Dto\TenantListDto.cs" />
