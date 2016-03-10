@@ -33,20 +33,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abp, Version=0.8.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.0.8.2.0\lib\net452\Abp.dll</HintPath>
+    <Reference Include="Abp, Version=0.8.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.0.8.3.0\lib\net452\Abp.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.AutoMapper, Version=0.8.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.AutoMapper.0.8.2.0\lib\net452\Abp.AutoMapper.dll</HintPath>
+    <Reference Include="Abp.AutoMapper, Version=0.8.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.AutoMapper.0.8.3.0\lib\net452\Abp.AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.Web, Version=0.8.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.0.8.2.0\lib\net452\Abp.Web.dll</HintPath>
+    <Reference Include="Abp.Web, Version=0.8.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.0.8.3.0\lib\net452\Abp.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Abp.Web.Api, Version=0.8.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.Web.Api.0.8.2.0\lib\net452\Abp.Web.Api.dll</HintPath>
+    <Reference Include="Abp.Web.Api, Version=0.8.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Api.0.8.3.0\lib\net452\Abp.Web.Api.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Abp.Zero, Version=0.8.2.0, Culture=neutral, processorArchitecture=MSIL">
