@@ -5,6 +5,11 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>Entities</title>
 <link type="text/css" rel="stylesheet" href="bootstrap.min.css" />
+<style type="text/css">
+.auto-style1 {
+	text-decoration: underline;
+}
+</style>
 </head>
 
 <body>
@@ -14,10 +19,6 @@
 <ul class="download">
 	<li><a href="SimpleTaskSystem.zip">Download sample application</a> (or see on <a href="https://github.com/aspnetboilerplate/aspnetboilerplate-samples">Github</a>)</li>
 </ul>
-
-<p><a href="taskever.png"><img alt="Taskever - Made with ASP.NET Boilerplate" border="0" src="taskever.png" style="max-width: 100%;" /></a></p>
-
-<p><i>A comprehensive application made using <strong>ASP.NET Boilerplate</strong>. See <a href="http://www.taskever.com" target="_blank">http://www.<b>taskever</b>.com</a></i></p>
 
 <h2>Contents</h2>
 
@@ -74,6 +75,14 @@
 </ul>
 
 <h2 id="Introduction">Introduction to the problem</h2>
+<p><span class="auto-style1"><strong><em>IMPORTANT NOTE</em></strong></span><em>: 
+While this article shows to develop User Interface vith Durandal, it's not 
+possible to create Durdandal templates from </em>
+<a href="http://aspnetboilerplate.com"><em>http://aspnetboilerplate.com</em></a><em> 
+anymore. But this article is still useful to who want to use NHibernate as ORM 
+within ABP framework and to understand ABP in general. Click </em>
+<a href="http://www.codeproject.com/Articles/791740/Using-AngularJs-ASP-NET-MVC-Web-API-and-EntityFram">
+<em>here</em></a><em> for Angular &amp; EntityFramework version of this article.</em></p>
 
 <p><strong>DRY </strong>- Don&#39;t Repeat Yourself! is one of the main ideas of a good developer while developing a software. We&#39;re trying to implement it from simple methods to classes and modules. What about developing a new web based application? We, software developers, have similar needs when developing enterprise web applications.</p>
 
@@ -398,23 +407,26 @@ public interface IPersonAppService : <strong>IApplicationService</strong>
     GetAllPeopleOutput GetAllPeople();
 }</pre>
 
-<p>All application services implement <strong>IApplicationService </strong>by convention. It ensures <strong>dependency injection </strong>and provides some built-in features of ABP (like validation). I defined only one method, named <strong>GetAllPeople()</strong> and returns a DTO named <strong>GetAllPeopleOutput</strong>. I name DTOs as like that: <strong>method name </strong>plus <strong>Input </strong>or <strong>Output </strong>postfix. See <strong>GetAllPeopleOutput </strong>class:</p>
+<p>All application services implement <strong>IApplicationService </strong>by convention. It ensures <strong>dependency injection </strong>and provides some built-in features of ABP (like validation, 
+audit logging and authorization). I defined only one method, named <strong>GetAllPeople()</strong> and returns a DTO named <strong>GetAllPeopleOutput</strong>. I name DTOs as like that: <strong>method name </strong>plus <strong>Input </strong>or <strong>Output </strong>postfix. See <strong>GetAllPeopleOutput </strong>class:</p>
 
 <pre>
-public class GetAllPeopleOutput : IOutputDto
+public class GetAllPeopleOutput
 {
     public List&lt;PersonDto&gt; People { get; set; }
 }</pre>
 
-<p>An output DTO implements <strong>IOutputDto</strong> (it extends IDto). It does nothing but used to identify DTOs by convention. <strong>PersonDto </strong>is another DTO class to pass a <strong>Person </strong>information to the presentation layer:</p>
+<p><strong>PersonDto </strong>is another DTO class to pass a <strong>Person </strong>information to the presentation layer:</p>
 
-<pre>
+<pre>[AutoMapFrom(typeof(Person))] //AutoMapFrom attribute maps Person -&gt; PersonDto
 public class PersonDto : EntityDto
 {
     public string Name { get; set; }
 }</pre>
 
-<p><strong>EntityDto </strong>is another helper class of ABP that defines <strong>Id </strong>property and implements <strong>IDto </strong>interface automatically. <strong>IPersonAppService</strong> is implemented as shown below:</p>
+<p><strong>EntityDto </strong>is another helper class of ABP that defines <strong>Id </strong>property. 
+AutoMapFrom attribute creates automatic mapping configuration from Person to 
+PersonDto for AutoMapper. <strong>IPersonAppService</strong> is implemented as shown below:</p>
 
 <pre>public class PersonAppService : IPersonAppService //Optionally, you can derive from ApplicationService as we did for TaskAppService class.
 {
@@ -428,9 +440,10 @@ public class PersonDto : EntityDto
 
     public GetAllPeopleOutput GetAllPeople()
     {
+        var people = await _personRepository.GetAllListAsync();
         return new GetAllPeopleOutput
                 {
-                    People = Mapper.Map&lt;List&lt;PersonDto&gt;&gt;(_personRepository.GetAllList())
+                    People = people.MapTo&lt;List&lt;PersonDto&gt;&gt;()
                 };
     }
 }</pre>
@@ -439,12 +452,13 @@ public class PersonDto : EntityDto
 Also, ABP can create a standard repository for an entity without defining or 
 implementing a repository.</p>
 
-<p><strong>GetAllPeople()</strong> method simply gets a list of all people (using ABP&#39;s out of the box implementation) from database and converts it to list of <strong>PersonDto </strong>objects using <strong>AutoMapper</strong> [6] library. AutoMapper makes it incredibly easy to map one class to another using conventions (and configurations if needed). I just defined a single line of code to configure mapping:</p>
+<p><strong>GetAllPeople()</strong> method simply gets a list of all people (using ABP&#39;s out of the box implementation) from database and converts it to list of <strong>PersonDto </strong>objects using <strong>AutoMapper</strong> [6] library. AutoMapper makes it incredibly easy to map one class to another using conventions (and configurations if needed). 
+ABP's MapTo extension method uses AutoMapper internally to convert it.</p>
 
 <pre>
 Mapper.CreateMap&lt;Person, PersonDto&gt;();</pre>
 
-<p>This code works when application starts and creates mapping. Then, when I need, I call the Mapper.Map method to create a <strong>PersonDto </strong>object using an existing <strong>Person </strong>object. To get more informatin about AutoMapper, see it&#39;s web site [6]. Other application service is <strong>TaskAppService </strong>implemented as below:</p>
+<p>To get more informatin about AutoMapper, see it&#39;s web site [6]. Other application service is <strong>TaskAppService </strong>implemented as below:</p>
 
 <pre>public class TaskAppService : ApplicationService, ITaskAppService
 {
@@ -524,10 +538,18 @@ Mapper.CreateMap&lt;Person, PersonDto&gt;();</pre>
 
 <h3 id="DTOValidation">DTO Validation</h3>
 
-<p>Validation is an important and critical but a little tedious concept in application development. ABP provides infrastructure to make validation easier and nicer. Validating the user input is an application-layer task. An application service method should validate inputs and throw exceptions if given input is not valid. ASP.NET MVC and Web API has built-in validation system that can be achived using data annotations (like Required). But an Application service is a plain class, not derived from Controller. Fortunately, ABP provides similar mechanism for ordinary application service methods (using Castle Dynamic proxies and interception). Your method&#39;s input parameter should be marked as IValidate. IInputDto is already derived from IValidate, so you can mark your DTO class as IInputDto to enable validation:</p>
+<p>Validation is an important and critical but a little tedious concept in 
+application development. ABP provides infrastructure to make validation easier 
+and nicer. Validating the user input is an application-layer task. An 
+application service method should validate inputs and throw exceptions if given 
+input is not valid. ASP.NET MVC and Web API has built-in validation system that 
+can be achived using data annotations (like Required). But an Application 
+service is a plain class, not derived from Controller. Fortunately, ABP provides 
+similar mechanism for ordinary application service methods (using Castle Dynamic 
+proxies and interception):</p>
 
 <pre lang="cs">
-public class CreateTaskInput : IInputDto
+public class CreateTaskInput
 {
     public int? AssignedPersonId { get; set; }
 
@@ -960,6 +982,8 @@ public class PersonAppService : IPersonAppService
 <h2 id="ArticleHistory">Article history</h2>
 
 <ul>
+	<li><strong>2016-07-19</strong>: Updated article and source code for ABP 
+	v0.10.</li>
 	<li><strong>2014-11-02</strong>: Updated article and source codes for ABP 
 	v0.4.1.</li>
 	<li><strong>2014-09-06</strong>: Article completely revised and updated with sample application for ABP v0.3.2.</li>
