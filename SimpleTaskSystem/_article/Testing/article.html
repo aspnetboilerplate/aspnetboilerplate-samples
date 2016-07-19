@@ -58,7 +58,7 @@
 /// Seeds database with initial data (&lt;see cref=&quot;SimpleTaskSystemInitialDataBuilder&quot;/&gt;).
 /// Provides methods to easily work with DbContext.
 /// &lt;/summary&gt;
-public abstract class SimpleTaskSystemTestBase : AbpIntegratedTestBase
+public abstract class SimpleTaskSystemTestBase : AbpIntegratedTestBase&lt;SimpleTaskSystemTestModule&gt;
 {
     protected SimpleTaskSystemTestBase()
     {
@@ -76,15 +76,6 @@ public abstract class SimpleTaskSystemTestBase : AbpIntegratedTestBase
             );
 
         base.PreInitialize();
-    }
-
-    protected override void AddModules(ITypeList&lt;AbpModule&gt; modules)
-    {
-        base.AddModules(modules);
-
-        //Adding testing modules. Depended modules of these modules are automatically added.
-        modules.Add&lt;SimpleTaskSystemApplicationModule&gt;();
-        modules.Add&lt;SimpleTaskSystemDataModule&gt;();
     }
 
     public void UsingDbContext(Action&lt;SimpleTaskSystemDbContext&gt; action)
@@ -114,9 +105,20 @@ public abstract class SimpleTaskSystemTestBase : AbpIntegratedTestBase
 
 <p>This base class extends <strong>AbpIntegratedTestBase</strong>. It&#39;s a base class which initializes the ABP system. Defines <strong>LocalIocContainer</strong> property, that is a <strong>IIocManager</strong> object. Each test will work with it&#39;s dedicated IIocManager. Thus, tests will be isolated from each other.</p>
 
-<p>We overrided <strong>AddModules</strong> method to add the modules we want to test (Depended modules are automatically added).</p>
+<p>We should create a module dedicated for tests. It's <strong>SimpleTaskSystemTestModule</strong> 
+here:</p>
+<pre lang="cs">[DependsOn(
+        typeof(SimpleTaskSystemDataModule),
+        typeof(SimpleTaskSystemApplicationModule)
+    )]
+public class SimpleTaskSystemTestModule : AbpModule
+{
+        
+}</pre>
+<p>This module only defines depended modules, which will be tested.</p>
 
-<p>In the constructor, we&#39;re registering <strong>DbConnection</strong> to dependency injection system using <strong>Effort</strong>. We registered it as Singleton (for LocalIocConainer). Thus, same database (and connection) will be used in a test even we create more than one DbContext in same test. <strong>SimpleTaskSystemDbContext</strong> must have a constructor getting DbConnection in order to use this in-memory database. So, I added the constructor below that accepts a DbConnection:</p>
+<p>In the SimpleTaskSystemTestBase's PreInitialize method, we&#39;re registering <strong>DbConnection</strong> to dependency injection system using <strong>Effort</strong> 
+(PreInitialize method is used to run some code just befor ABP initialized). We registered it as Singleton (for LocalIocConainer). Thus, same database (and connection) will be used in a test even we create more than one DbContext in same test. <strong>SimpleTaskSystemDbContext</strong> must have a constructor getting DbConnection in order to use this in-memory database. So, I added the constructor below that accepts a DbConnection:</p>
 
 <pre>
 public class SimpleTaskSystemDbContext : AbpDbContext
@@ -227,7 +229,9 @@ public class TaskAppService : ApplicationService, ITaskAppService
 
 <p>In unit test, generally, dependencies of testing class is mocked (by creating fake implementations using some mock frameworks like Moq and NSubstitute). This makes unit testing harder, especially when dependencies grows.</p>
 
-<p>We will not do it like that since we&#39;re using dependency injection. All dependencies will be filled automatically by dependency injection with real implementations, not fakes. Only fake thing is the <strong>database</strong>. Actually, this is an integration test since it not only tests the TaskAppService, but also tests repositories. Even, we&#39;re testing with validation, unit of work and other infrastructures of ASP.NET Boilerplate. This is very valuable since we&#39;re testing the application much more realistic.</p>
+<p>We will not do it like that since we&#39;re using dependency injection. All dependencies will be filled automatically by dependency injection with real implementations, not fakes. Only fake thing is the <strong>database</strong>. Actually, this is an 
+<strong>integration test</strong> since it not only tests the TaskAppService, but also tests repositories. Even, we&#39;re testing 
+it with validation, unit of work and other infrastructures of ASP.NET Boilerplate. This is very valuable since we&#39;re testing the application much more realistic.</p>
 
 <p>So, let&#39;s create first test to test CreateTask method.</p>
 
@@ -399,6 +403,10 @@ work. For such cases, I recommend using LocalDB.</p>
 
 <h2 id="ArticleHistory">Article History</h2>
 <ul>
+	<li>2016-07-19<ul>
+		<li>Upgraded article and source code for ABP v0.10 release.</li>
+	</ul>
+	</li>
 	<li>2016-01-07<ul>
 		<li>Upgraded solution to .Net Framework 4.5.2.</li>
 		<li>Upgraded Abp to v0.7.7.1.</li>
