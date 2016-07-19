@@ -1,8 +1,6 @@
-﻿using Abp.Application.Services.Dto;
-
-namespace SimpleTaskSystem.Tasks.Dtos
+﻿namespace SimpleTaskSystem.Tasks.Dtos
 {
-    public class GetTasksInput : IInputDto
+    public class GetTasksInput
     {
         public TaskState? State { get; set; }
 

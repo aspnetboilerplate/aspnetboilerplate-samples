@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Abp.Application.Services.Dto;
 using Abp.Runtime.Validation;
 
 namespace SimpleTaskSystem.Tasks.Dtos
@@ -8,10 +7,9 @@ namespace SimpleTaskSystem.Tasks.Dtos
     /// <summary>
     /// This DTO class is used to send needed data to <see cref="ITaskAppService.UpdateTask"/> method.
     /// 
-    /// Implements <see cref="IInputDto"/>, thus ABP applies standard input process (like automatic validation) for it. 
     /// Implements <see cref="ICustomValidate"/> for additional custom validation.
     /// </summary>
-    public class UpdateTaskInput : IInputDto, ICustomValidate
+    public class UpdateTaskInput : ICustomValidate
     {
         [Range(1, long.MaxValue)] //Data annotation attributes work as expected.
         public long TaskId { get; set; }

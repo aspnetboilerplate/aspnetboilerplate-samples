@@ -1,6 +1,5 @@
 using System;
 using Abp.Application.Services.Dto;
-using Abp.Extensions;
 
 namespace SimpleTaskSystem.Tasks.Dtos
 {
