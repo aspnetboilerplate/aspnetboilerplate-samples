@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Data.Common;
-using Abp.Collections;
-using Abp.Modules;
 using Abp.TestBase;
 using Castle.MicroKernel.Registration;
 using EntityFramework.DynamicFilters;
@@ -16,7 +14,7 @@ namespace SimpleTaskSystem.Test
     /// Seeds database with initial data (<see cref="SimpleTaskSystemInitialDataBuilder"/>).
     /// Provides methods to easily work with DbContext.
     /// </summary>
-    public abstract class SimpleTaskSystemTestBase : AbpIntegratedTestBase
+    public abstract class SimpleTaskSystemTestBase : AbpIntegratedTestBase<SimpleTaskSystemTestModule>
     {
         protected SimpleTaskSystemTestBase()
         {
@@ -34,15 +32,6 @@ namespace SimpleTaskSystem.Test
                 );
 
             base.PreInitialize();
-        }
-
-        protected override void AddModules(ITypeList<AbpModule> modules)
-        {
-            base.AddModules(modules);
-
-            //Adding testing modules. Depended modules of these modules are automatically added.
-            modules.Add<SimpleTaskSystemApplicationModule>();
-            modules.Add<SimpleTaskSystemDataModule>();
         }
 
         public void UsingDbContext(Action<SimpleTaskSystemDbContext> action)

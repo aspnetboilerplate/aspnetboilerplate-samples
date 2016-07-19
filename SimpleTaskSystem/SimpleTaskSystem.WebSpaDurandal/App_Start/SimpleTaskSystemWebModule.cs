@@ -7,10 +7,15 @@ using Abp.Localization;
 using Abp.Localization.Dictionaries;
 using Abp.Localization.Dictionaries.Xml;
 using Abp.Modules;
+using Abp.Web.Mvc;
 
 namespace SimpleTaskSystem.WebSpaDurandal
 {
-    [DependsOn(typeof(SimpleTaskSystemDataModule), typeof(SimpleTaskSystemWebApiModule))]
+    [DependsOn(
+        typeof(SimpleTaskSystemDataModule), 
+        typeof(SimpleTaskSystemWebApiModule), 
+        typeof(AbpWebMvcModule)
+        )]
     public class SimpleTaskSystemWebModule : AbpModule
     {
         public override void PreInitialize()

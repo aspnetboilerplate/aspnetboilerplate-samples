@@ -6,7 +6,7 @@ using Castle.Facilities.Logging;
 
 namespace SimpleTaskSystem.WebSpaAngular
 {
-    public class MvcApplication : AbpWebApplication
+    public class MvcApplication : AbpWebApplication<SimpleTaskSystemWebModule>
     {
         protected override void Application_Start(object sender, EventArgs e)
         {

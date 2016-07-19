@@ -8,7 +8,7 @@ namespace SimpleTaskSystem.ConsoleApp
     {
         static void Main(string[] args)
         {
-            using (var bootstrapper = new AbpBootstrapper())
+            using (var bootstrapper = AbpBootstrapper.Create<SimpleTaskSystemConsoleAppModule>())
             {
                 bootstrapper.Initialize();
 

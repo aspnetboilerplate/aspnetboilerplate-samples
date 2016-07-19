@@ -9,7 +9,7 @@ namespace SimpleTaskSystem
     /// <summary>
     /// 'Web API layer module' for this project.
     /// </summary>
-    [DependsOn(typeof(AbpWebApiModule))] //We declare depended modules explicitly
+    [DependsOn(typeof(AbpWebApiModule), typeof(SimpleTaskSystemApplicationModule))]
     public class SimpleTaskSystemWebApiModule : AbpModule
     {
         public override void Initialize()
