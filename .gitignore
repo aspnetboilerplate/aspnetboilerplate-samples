@@ -113,3 +113,4 @@ SimpleTaskSystemSPA_Durandal_NHibernate/SimpleTaskSystem.Web/Logs/Logs.txt
 AbpSwaggerDemo/.vs/config/applicationhost.config
 InterceptionDemo/InterceptionDemo.Web/Logs/Logs.txt
 .vs
+!nuget.exe

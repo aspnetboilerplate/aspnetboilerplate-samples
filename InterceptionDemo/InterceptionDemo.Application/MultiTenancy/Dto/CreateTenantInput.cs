@@ -1,10 +1,9 @@
 using System.ComponentModel.DataAnnotations;
-using Abp.Application.Services.Dto;
 using InterceptionDemo.Users;
 
 namespace InterceptionDemo.MultiTenancy.Dto
 {
-    public class CreateTenantInput : IInputDto
+    public class CreateTenantInput
     {
         [Required]
         [StringLength(Tenant.MaxTenancyNameLength)]

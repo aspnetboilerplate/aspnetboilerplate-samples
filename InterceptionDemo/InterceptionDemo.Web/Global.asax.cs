@@ -4,7 +4,7 @@ using Castle.Facilities.Logging;
 
 namespace InterceptionDemo.Web
 {
-    public class MvcApplication : AbpWebApplication
+    public class MvcApplication : AbpWebApplication<InterceptionDemoWebModule>
     {
         protected override void Application_Start(object sender, EventArgs e)
         {

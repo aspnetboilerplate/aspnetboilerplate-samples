@@ -2,11 +2,10 @@ using Abp.Authorization.Users;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
 using InterceptionDemo.Authorization.Roles;
-using InterceptionDemo.MultiTenancy;
 
 namespace InterceptionDemo.Users
 {
-    public class UserStore : AbpUserStore<Tenant, Role, User>
+    public class UserStore : AbpUserStore<Role, User>
     {
         public UserStore(
             IRepository<User, long> userRepository,

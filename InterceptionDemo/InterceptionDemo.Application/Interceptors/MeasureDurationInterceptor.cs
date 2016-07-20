@@ -6,11 +6,11 @@ namespace InterceptionDemo.Interceptors
 {
     public class MeasureDurationInterceptor : IInterceptor
     {
-        private readonly ILogger _logger;
+        public ILogger Logger { get; set; }
 
-        public MeasureDurationInterceptor(ILogger logger)
+        public MeasureDurationInterceptor()
         {
-            _logger = logger;
+            Logger = NullLogger.Instance;
         }
 
         public void Intercept(IInvocation invocation)
@@ -23,7 +23,7 @@ namespace InterceptionDemo.Interceptors
 
             //After method execution
             stopwatch.Stop();
-            _logger.InfoFormat(
+            Logger.InfoFormat(
                 "MeasureDurationInterceptor: {0} executed in {1} milliseconds.",
                 invocation.MethodInvocationTarget.Name,
                 stopwatch.Elapsed.TotalMilliseconds.ToString("0.000")

@@ -3,7 +3,7 @@ using InterceptionDemo.Users;
 
 namespace InterceptionDemo.MultiTenancy
 {
-    public class Tenant : AbpTenant<Tenant, User>
+    public class Tenant : AbpTenant<User>
     {
         public Tenant()
         {

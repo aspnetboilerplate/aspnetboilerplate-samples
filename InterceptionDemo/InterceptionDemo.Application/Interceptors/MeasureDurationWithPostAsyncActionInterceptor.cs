@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Reflection;
 using System.Threading.Tasks;
 using Castle.Core.Logging;
@@ -9,11 +8,11 @@ namespace InterceptionDemo.Interceptors
 {
     public class MeasureDurationWithPostAsyncActionInterceptor : IInterceptor
     {
-        private readonly ILogger _logger;
+        public ILogger Logger { get; set; }
 
-        public MeasureDurationWithPostAsyncActionInterceptor(ILogger logger)
+        public MeasureDurationWithPostAsyncActionInterceptor()
         {
-            _logger = logger;
+            Logger = NullLogger.Instance;
         }
 
         public void Intercept(IInvocation invocation)
@@ -82,15 +81,15 @@ namespace InterceptionDemo.Interceptors
 
         private async Task TestActionAsync(IInvocation invocation)
         {
-            _logger.Info("Waiting after method execution for " + invocation.MethodInvocationTarget.Name);
+            Logger.Info("Waiting after method execution for " + invocation.MethodInvocationTarget.Name);
             await Task.Delay(200); //Here, we can await another methods. This is just for test.
-            _logger.Info("Waited after method execution for " + invocation.MethodInvocationTarget.Name);
+            Logger.Info("Waited after method execution for " + invocation.MethodInvocationTarget.Name);
         }
 
         private void LogExecutionTime(IInvocation invocation, Stopwatch stopwatch)
         {
             stopwatch.Stop();
-            _logger.InfoFormat(
+            Logger.InfoFormat(
                 "MeasureDurationWithPostAsyncActionInterceptor: {0} executed in {1} milliseconds.",
                 invocation.MethodInvocationTarget.Name,
                 stopwatch.Elapsed.TotalMilliseconds.ToString("0.000")

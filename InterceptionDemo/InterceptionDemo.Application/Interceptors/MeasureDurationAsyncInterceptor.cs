@@ -8,11 +8,11 @@ namespace InterceptionDemo.Interceptors
 {
     public class MeasureDurationAsyncInterceptor : IInterceptor
     {
-        private readonly ILogger _logger;
+        public ILogger Logger { get; set; }
 
-        public MeasureDurationAsyncInterceptor(ILogger logger)
+        public MeasureDurationAsyncInterceptor()
         {
-            _logger = logger;
+            Logger = NullLogger.Instance;
         }
 
         public void Intercept(IInvocation invocation)
@@ -41,7 +41,7 @@ namespace InterceptionDemo.Interceptors
                 {
                     //After method execution
                     stopwatch.Stop();
-                    _logger.InfoFormat(
+                    Logger.InfoFormat(
                         "MeasureDurationAsyncInterceptor: {0} executed in {1} milliseconds.",
                         invocation.MethodInvocationTarget.Name,
                         stopwatch.Elapsed.TotalMilliseconds.ToString("0.000")
@@ -59,7 +59,7 @@ namespace InterceptionDemo.Interceptors
 
             //After method execution
             stopwatch.Stop();
-            _logger.InfoFormat(
+            Logger.InfoFormat(
                 "MeasureDurationAsyncInterceptor: {0} executed in {1} milliseconds.",
                 invocation.MethodInvocationTarget.Name,
                 stopwatch.Elapsed.TotalMilliseconds.ToString("0.000")

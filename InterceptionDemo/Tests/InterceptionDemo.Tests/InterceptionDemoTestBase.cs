@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Abp.Collections;
 using Abp.Configuration.Startup;
-using Abp.Modules;
 using Abp.Runtime.Session;
 using Abp.TestBase;
 using InterceptionDemo.EntityFramework;
@@ -17,7 +16,7 @@ using EntityFramework.DynamicFilters;
 
 namespace InterceptionDemo.Tests
 {
-    public abstract class InterceptionDemoTestBase : AbpIntegratedTestBase
+    public abstract class InterceptionDemoTestBase : AbpIntegratedTestBase<InterceptionDemoTestModule>
     {
         protected InterceptionDemoTestBase()
         {
@@ -37,15 +36,6 @@ namespace InterceptionDemo.Tests
                     .UsingFactoryMethod(Effort.DbConnectionFactory.CreateTransient)
                     .LifestyleSingleton()
                 );
-        }
-
-        protected override void AddModules(ITypeList<AbpModule> modules)
-        {
-            base.AddModules(modules);
-
-            //Adding testing modules. Depended modules of these modules are automatically added.
-            modules.Add<InterceptionDemoApplicationModule>();
-            modules.Add<InterceptionDemoDataModule>();
         }
 
         public void UsingDbContext(Action<InterceptionDemoDbContext> action)

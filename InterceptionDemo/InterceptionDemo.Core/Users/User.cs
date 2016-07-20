@@ -1,12 +1,11 @@
 ﻿using System;
 using Abp.Authorization.Users;
 using Abp.Extensions;
-using InterceptionDemo.MultiTenancy;
 using Microsoft.AspNet.Identity;
 
 namespace InterceptionDemo.Users
 {
-    public class User : AbpUser<Tenant, User>
+    public class User : AbpUser<User>
     {
         public const string DefaultPassword = "123qwe";
 
