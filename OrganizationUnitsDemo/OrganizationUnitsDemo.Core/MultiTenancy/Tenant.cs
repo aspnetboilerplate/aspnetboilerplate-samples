@@ -3,7 +3,7 @@ using OrganizationUnitsDemo.Users;
 
 namespace OrganizationUnitsDemo.MultiTenancy
 {
-    public class Tenant : AbpTenant<Tenant, User>
+    public class Tenant : AbpTenant<User>
     {
         public Tenant()
         {

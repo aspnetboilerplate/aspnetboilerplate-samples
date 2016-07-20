@@ -17,7 +17,7 @@ using OrganizationUnitsDemo.Users;
 
 namespace OrganizationUnitsDemo.Tests
 {
-    public abstract class OrganizationUnitsDemoTestBase : AbpIntegratedTestBase
+    public abstract class OrganizationUnitsDemoTestBase : AbpIntegratedTestBase<OrganizationUnitsDemoTestModule>
     {
         protected OrganizationUnitsDemoTestBase()
         {
@@ -37,14 +37,6 @@ namespace OrganizationUnitsDemo.Tests
                     .UsingFactoryMethod(Effort.DbConnectionFactory.CreateTransient)
                     .LifestyleSingleton()
                 );
-        }
-
-        protected override void AddModules(ITypeList<AbpModule> modules)
-        {
-            base.AddModules(modules);
-
-            //Adding testing modules. Depended modules of these modules are automatically added.
-            modules.Add<OrganizationUnitsDemoDataModule>();
         }
 
         public void UsingDbContext(Action<OrganizationUnitsDemoDbContext> action)

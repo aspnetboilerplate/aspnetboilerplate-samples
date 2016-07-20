@@ -2,11 +2,10 @@ using Abp.Authorization.Users;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
 using OrganizationUnitsDemo.Authorization.Roles;
-using OrganizationUnitsDemo.MultiTenancy;
 
 namespace OrganizationUnitsDemo.Users
 {
-    public class UserStore : AbpUserStore<Tenant, Role, User>
+    public class UserStore : AbpUserStore<Role, User>
     {
         public UserStore(
             IRepository<User, long> userRepository,

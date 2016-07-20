@@ -28,8 +28,8 @@ namespace OrganizationUnitsDemo.Users
             ICacheManager cacheManager,
             IRepository<OrganizationUnit, long> organizationUnitRepository,
             IRepository<UserOrganizationUnit, long> userOrganizationUnitRepository,
-            IOrganizationUnitSettings organizationUnitSettings
-            )
+            IOrganizationUnitSettings organizationUnitSettings,
+            IRepository<UserLoginAttempt, long> userLoginAttemptRepository)
             : base(
                 store,
                 roleManager,
@@ -43,7 +43,9 @@ namespace OrganizationUnitsDemo.Users
                 cacheManager,
                 organizationUnitRepository,
                 userOrganizationUnitRepository,
-                organizationUnitSettings)
+                organizationUnitSettings,
+                userLoginAttemptRepository
+            )
         {
         }
     }
