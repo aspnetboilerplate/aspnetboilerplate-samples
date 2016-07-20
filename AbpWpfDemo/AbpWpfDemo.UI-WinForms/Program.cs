@@ -10,7 +10,7 @@ namespace AbpWpfDemo.UI_WinForms
         [STAThread]
         static void Main()
         {
-            using (var bootstrapper = new AbpBootstrapper())
+            using (var bootstrapper = AbpBootstrapper.Create<AbpWinFormsDemoUiModule>())
             {
                 bootstrapper.IocManager.IocContainer.AddFacility<LoggingFacility>(f => f.UseLog4Net().WithConfig("log4net.config"));
                 

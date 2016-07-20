@@ -14,7 +14,7 @@ namespace AbpWpfDemo.UI
 
         public App()
         {
-            _bootstrapper = new AbpBootstrapper();
+            _bootstrapper = AbpBootstrapper.Create<AbpWpfDemoUiModule>();
             _bootstrapper.IocManager.IocContainer.AddFacility<LoggingFacility>(f => f.UseLog4Net().WithConfig("log4net.config"));
         }
 
