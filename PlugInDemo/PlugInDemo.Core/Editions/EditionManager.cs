@@ -1,6 +1,6 @@
 ﻿using Abp.Application.Editions;
-using Abp.Application.Features;
 using Abp.Domain.Repositories;
+using PlugInDemo.Features;
 
 namespace PlugInDemo.Editions
 {
@@ -9,12 +9,11 @@ namespace PlugInDemo.Editions
         public const string DefaultEditionName = "Standard";
 
         public EditionManager(
-            IRepository<Edition> editionRepository, 
-            IRepository<EditionFeatureSetting, long> editionFeatureRepository)
+            IRepository<Edition> editionRepository,
+            FeatureValueStore featureValueStore)
             : base(
-                editionRepository, 
-                editionFeatureRepository
-            )
+                editionRepository,
+                featureValueStore)
         {
         }
     }

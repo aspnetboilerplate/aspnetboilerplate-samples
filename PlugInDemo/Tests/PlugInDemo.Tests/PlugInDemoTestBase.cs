@@ -3,9 +3,7 @@ using System.Data.Common;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
-using Abp.Collections;
 using Abp.Configuration.Startup;
-using Abp.Modules;
 using Abp.Runtime.Session;
 using Abp.TestBase;
 using PlugInDemo.EntityFramework;
@@ -17,7 +15,7 @@ using EntityFramework.DynamicFilters;
 
 namespace PlugInDemo.Tests
 {
-    public abstract class PlugInDemoTestBase : AbpIntegratedTestBase
+    public abstract class PlugInDemoTestBase : AbpIntegratedTestBase<PlugInDemoTestModule>
     {
         protected PlugInDemoTestBase()
         {
@@ -38,16 +36,7 @@ namespace PlugInDemo.Tests
                     .LifestyleSingleton()
                 );
         }
-
-        protected override void AddModules(ITypeList<AbpModule> modules)
-        {
-            base.AddModules(modules);
-
-            //Adding testing modules. Depended modules of these modules are automatically added.
-            modules.Add<PlugInDemoApplicationModule>();
-            modules.Add<PlugInDemoDataModule>();
-        }
-
+        
         public void UsingDbContext(Action<PlugInDemoDbContext> action)
         {
             using (var context = LocalIocManager.Resolve<PlugInDemoDbContext>())

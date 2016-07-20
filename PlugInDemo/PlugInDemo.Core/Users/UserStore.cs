@@ -2,11 +2,10 @@ using Abp.Authorization.Users;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
 using PlugInDemo.Authorization.Roles;
-using PlugInDemo.MultiTenancy;
 
 namespace PlugInDemo.Users
 {
-    public class UserStore : AbpUserStore<Tenant, Role, User>
+    public class UserStore : AbpUserStore<Role, User>
     {
         public UserStore(
             IRepository<User, long> userRepository,

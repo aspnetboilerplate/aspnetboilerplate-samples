@@ -3,7 +3,7 @@ using PlugInDemo.Users;
 
 namespace PlugInDemo.MultiTenancy
 {
-    public class Tenant : AbpTenant<Tenant, User>
+    public class Tenant : AbpTenant<User>
     {
         public Tenant()
         {

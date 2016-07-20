@@ -495,9 +495,19 @@
         return root;
     };
 
+    /* Find and replaces a string (search) to another string (replacement) in
+    *  given string (str).
+    *  Example:
+    *  abp.utils.replaceAll('This is a test string', 'is', 'X') = 'ThX X a test string'
+    ************************************************************/
+    abp.utils.replaceAll = function (str, search, replacement) {
+        var fix = search.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        return str.replace(new RegExp(fix, 'g'), replacement);
+    };
+    
     /* Formats a string just like string.format in C#.
     *  Example:
-    *  _formatString('Hello {0}','Halil') = 'Hello Halil'
+    *  abp.utils.formatString('Hello {0}','Tuana') = 'Hello Tuana'
     ************************************************************/
     abp.utils.formatString = function () {
         if (arguments.length < 1) {
@@ -508,7 +518,7 @@
 
         for (var i = 1; i < arguments.length; i++) {
             var placeHolder = '{' + (i - 1) + '}';
-            str = str.replace(placeHolder, arguments[i]);
+            str = abp.utils.replaceAll(str, placeHolder, arguments[i]);
         }
 
         return str;
@@ -569,5 +579,122 @@
         //alternative for $.isFunction
         return !!(obj && obj.constructor && obj.call && obj.apply);
     };
+
+    /* TIMING *****************************************/
+    abp.timing = abp.timing || {};
+
+    abp.timing.utcClockProvider = (function () {
+
+        var toUtc = function (date) {
+            return Date.UTC(
+                date.getUTCFullYear()
+                , date.getUTCMonth()
+                , date.getUTCDate()
+                , date.getUTCHours()
+                , date.getUTCMinutes()
+                , date.getUTCSeconds()
+                , date.getUTCMilliseconds()
+            );
+        }
+
+        var now = function () {
+            return new Date();
+        };
+
+        var normalize = function (date) {
+            if (!date) {
+                return date;
+            }
+
+            return new Date(toUtc(date));
+        };
+
+        // Public interface ///////////////////////////////////////////////////
+
+        return {
+            now: now,
+            normalize: normalize
+        };
+    })();
+
+    abp.timing.localClockProvider = (function () {
+
+        var toLocal = function (date) {
+            return new Date(
+                date.getFullYear()
+                , date.getMonth()
+                , date.getDate()
+                , date.getHours()
+                , date.getMinutes()
+                , date.getSeconds()
+                , date.getMilliseconds()
+            );
+        }
+
+        var now = function () {
+            return toLocal(new Date());
+        }
+
+        var normalize = function (date) {
+            if (!date) {
+                return date;
+            }
+
+            return toLocal(date);
+        }
+
+        // Public interface ///////////////////////////////////////////////////
+
+        return {
+            now: now,
+            normalize: normalize
+        };
+    })();
+
+    abp.timing.unspecifiedClockProvider = (function () {
+
+        var now = function () {
+            return new Date();
+        }
+
+        var normalize = function (date) {
+            return date;
+        }
+
+        // Public interface ///////////////////////////////////////////////////
+
+        return {
+            now: now,
+            normalize: normalize
+        };
+    })();
+
+    abp.timing.convertToUserTimezone = function (date) {
+        var localTime = date.getTime();
+        var utcTime = localTime + (date.getTimezoneOffset() * 60000);
+        var targetTime = parseInt(utcTime) + parseInt(abp.timing.timeZoneInfo.windows.currentUtcOffsetInMilliseconds);
+        return new Date(targetTime);
+    };
+
+    /* CLOCK *****************************************/
+    abp.clock = abp.clock || {};
+
+    abp.clock.now = function () {
+        if (abp.clock.provider) {
+            return abp.clock.provider.now();
+        }
+
+        return new Date();
+    }
+
+    abp.clock.normalize = function (date) {
+        if (abp.clock.provider) {
+            return abp.clock.provider.normalize(date);
+        }
+
+        return date;
+    }
+
+    abp.clock.provider = abp.timing.unspecifiedClockProvider;
 
 })(jQuery);
