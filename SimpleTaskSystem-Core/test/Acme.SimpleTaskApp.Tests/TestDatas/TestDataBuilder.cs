@@ -1,4 +1,5 @@
 using Acme.SimpleTaskApp.EntityFrameworkCore;
+using Acme.SimpleTaskApp.Tasks;
 
 namespace Acme.SimpleTaskApp.Tests.TestDatas
 {
@@ -13,7 +14,10 @@ namespace Acme.SimpleTaskApp.Tests.TestDatas
 
         public void Build()
         {
-            //create test data here...
+            _context.Tasks.AddRange(
+                new Task("Follow the white rabbit", "Follow the white rabbit in order to know the reality."),
+                new Task("Clean your room") { State = TaskState.Completed }
+                );
         }
     }
 }

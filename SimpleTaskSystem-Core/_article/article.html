@@ -201,8 +201,106 @@ Initial, migration):</p>
 <p>Now, I have a Task entity and corresponding table in the database.&nbsp; I entered 
 a few sample Tasks to the table:</p>
 <p><img alt="AppTasks table" height="81" src="apptasks-table.png" width="579" /></p>
+<p>Note that, the database <strong>connection string</strong> is defined in
+<strong>appsettings.json</strong> in the <strong>.Web</strong> application.</p>
 <h3>Task Application Service</h3>
-<p>...</p>
+<p><em>
+<a href="http://www.aspnetboilerplate.com/Pages/Documents/Application-Services" target="_blank">Application Services</a> are used to expose domain logic to the presentation layer. 
+An Application Service is called from presentation layer with a 
+<a href="http://www.aspnetboilerplate.com/Pages/Documents/Data-Transfer-Objects" target="_blank">
+Data Transfer Object</a> (DTO) as parameter (if needed),
+uses domain objects to perform some specific business logic and returns a DTO back to the presentation layer 
+(if needed).</em></p>
+<p>I'm creating the first application service, <strong>TaskAppService</strong>,&nbsp;into 
+the <strong>.Application</strong> project to perform task related application 
+logic. First, I wanted to define an interface for the app service:</p>
+<pre lang="cs">public interface ITaskAppService : <strong>IApplicationService</strong>
+{
+    Task&lt;ListResultOutput&lt;TaskListDto&gt;&gt; GetAll(GetAllTasksInput input);
+}</pre>
+<p>Defining an interface is not required, but suggested. By convention, all app 
+services <strong>should</strong> implement <strong>IApplicationService</strong> interface in ABP. I just created a
+<strong>GetAll</strong> method to query tasks. To do that, I also defined the following DTOs:</p>
+<pre lang="cs">public class GetAllTasksInput
+{
+    public TaskState? State { get; set; }
+}
+
+<strong>[AutoMapFrom(typeof(Task))]</strong>
+public class TaskListDto : EntityDto
+{
+    public string Title { get; set; }
+
+    public string Description { get; set; }
+
+    public DateTime CreationTime { get; set; }
+
+    public TaskState State { get; set; }
+}</pre>
+<ul>
+	<li><strong>GetAllTasksInput</strong> DTO defines parameters of the <strong>GetAll</strong> app service method. Instead of directly defining the 
+	<strong>state</strong> as method parameter, I added it into a DTO object. Thus, I can 
+add other parameters into this DTO later without breaking my existing clients.</li>
+	<li><strong>TaskListDto</strong> is used to return a Task data. It's derived from
+	<strong>EntityDto</strong>, which just defines an <strong>Id </strong>property 
+(we could add Id to our Dto and not derive from EntityDto, no problem). We 
+	defined [<strong>AutoMapFrom</strong>] attribute to create
+	<a href="http://automapper.org/" target="_blank">AutoMapper</a> mapping from 
+	Task entity to TaskListDto. This attribute is defined in
+	<a href="http://nuget.org/packages/Abp.AutoMapper" target="_blank">
+	Abp.AutoMapper</a> nuget package.</li>
+	<li>Lastly, <strong>ListResultOutput</strong> is a simple class contains a 
+	list of items (we could directly return a List&lt;TaskListDto&gt;, no problem).</li>
+</ul>
+<p>Now, we can implement the <strong>ITaskAppService</strong> as shown below:</p>
+<pre lang="cs">public class TaskAppService : <strong>SimpleTaskAppAppServiceBase</strong>, <strong>ITaskAppService</strong>
+{
+    private readonly IRepository&lt;Task&gt; _taskRepository;
+
+    public TaskAppService(<strong>IRepository&lt;Task&gt; taskRepository</strong>)
+    {
+        _taskRepository = taskRepository;
+    }
+
+    public async Task&lt;ListResultOutput&lt;TaskListDto&gt;&gt; GetAll(GetAllTasksInput input)
+    {
+        var tasks = await _taskRepository
+            .GetAll()
+            <strong>.WhereIf(input.State.HasValue, t =&gt; t.State == input.State.Value)</strong>
+            .ToListAsync();
+
+        return new ListResultOutput&lt;TaskListDto&gt;(
+            <strong>ObjectMapper.Map&lt;List&lt;TaskListDto&gt;&gt;(tasks)</strong>
+      ););
+    }
+}</pre>
+<ul>
+	<li><strong>TaskAppService</strong> is derived from <strong>
+	SimpleTaskAppAppServiceBase</strong> included in the startup template (which 
+	is derived from ABP's ApplicationService class). This is not required, app 
+	services can be plain classes. But <strong>ApplicationService</strong> base 
+	class has some pre-injected services (like ObjectMapper used here).</li>
+	<li>I used
+	<a href="http://www.aspnetboilerplate.com/Pages/Documents/Dependency-Injection" target="_blank">
+	dependency injection</a> to get a
+	<a href="http://www.aspnetboilerplate.com/Pages/Documents/Repositories" target="_blank">
+	repository</a>.</li>
+	<li><strong>Repositories</strong> are used to abstract database operations 
+	for entities. ABP creates a pre-defined repository (like IRepository&lt;Task&gt; 
+	here) to perform common tasks. IRepository.<strong>GetAll() </strong>used 
+	here returns an <strong>IQueryable</strong> to query entities.</li>
+	<li><strong>WhereIf</strong> is an extension method of ABP to simplify 
+	conditional usage of IQueryable.Where method.</li>
+	<li><strong>ObjectMapper</strong> (which somes from the ApplicationService 
+	base class and implemented via AutoMapper by default) is used to map list of 
+	Task objects to list of TaskListDtos objects.</li>
+</ul>
+<h3>Testing the TaskAppService</h3>
+<p>Before going further to create user interface, I want to test TaskAppService. 
+Startup template contains .Tests project to test our code.</p>
+<p>s</p>
+<p>TODO: Discussions</p>
+<p>* Why not used domain services?&nbsp;</p>
 
 </body>
 
