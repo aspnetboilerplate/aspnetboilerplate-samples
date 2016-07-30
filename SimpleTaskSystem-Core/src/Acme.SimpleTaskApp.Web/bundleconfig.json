@@ -1,0 +1,8 @@
+[
+  {
+    "outputFileName": "wwwroot/js/views/home/index.min.js",
+    "inputFiles": [
+      "wwwroot/js/views/home/index.js"
+    ]
+  }
+]
