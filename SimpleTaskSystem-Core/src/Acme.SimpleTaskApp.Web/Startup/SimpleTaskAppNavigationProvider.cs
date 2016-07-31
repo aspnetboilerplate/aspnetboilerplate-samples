@@ -13,21 +13,21 @@ namespace Acme.SimpleTaskApp.Web.Startup
             context.Manager.MainMenu
                 .AddItem(
                     new MenuItemDefinition(
-                        "Home",
+                        PageNames.Home,
                         L("HomePage"),
                         url: "",
                         icon: "fa fa-home"
                         )
                 ).AddItem(
                     new MenuItemDefinition(
-                        "About",
+                        PageNames.About,
                         L("About"),
                         url: "Home/About",
                         icon: "fa fa-info"
                         )
                 ).AddItem(
                     new MenuItemDefinition(
-                        "TaskList",
+                        PageNames.TaskList,
                         L("TaskList"),
                         url: "Tasks",
                         icon: "fa fa-tasks"

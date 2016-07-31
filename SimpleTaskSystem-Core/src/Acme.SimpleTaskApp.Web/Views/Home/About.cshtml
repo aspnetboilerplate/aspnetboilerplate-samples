@@ -1,4 +1,10 @@
-﻿<h2>@L("About")!</h2>
+﻿@using Acme.SimpleTaskApp.Web.Startup
+@{
+    ViewBag.Title = L("About");
+    ViewBag.ActiveMenu = PageNames.About; //Matches with the menu name in SimpleTaskAppNavigationProvider to highlight the menu item
+}
+
+<h2>@L("About")!</h2>
 
 <div class="row">
     <div class="col-lg-12">

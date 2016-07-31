@@ -1,8 +1,9 @@
-﻿@model Acme.SimpleTaskApp.Web.Models.Tasks.IndexViewModel
+﻿@using Acme.SimpleTaskApp.Web.Startup
+@model Acme.SimpleTaskApp.Web.Models.Tasks.IndexViewModel
 
 @{
     ViewBag.Title = L("TaskList");
-    ViewBag.ActiveMenu = "TaskList"; //Matches with the menu name in SimpleTaskAppNavigationProvider to highlight the menu item
+    ViewBag.ActiveMenu = PageNames.TaskList; //Matches with the menu name in SimpleTaskAppNavigationProvider to highlight the menu item
 }
 
 @section scripts

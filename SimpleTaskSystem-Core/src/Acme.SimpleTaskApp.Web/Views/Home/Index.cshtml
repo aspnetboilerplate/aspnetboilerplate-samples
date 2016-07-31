@@ -1,4 +1,10 @@
-﻿@section scripts
+﻿@using Acme.SimpleTaskApp.Web.Startup
+@{
+    ViewBag.Title = L("Home");
+    ViewBag.ActiveMenu = PageNames.Home; //Matches with the menu name in SimpleTaskAppNavigationProvider to highlight the menu item
+}
+
+@section scripts
 {
     <environment names="Development">
         <script src="~/js/views/home/index.js"></script>

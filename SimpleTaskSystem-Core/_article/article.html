@@ -12,7 +12,7 @@
 <h2>Contents</h2>
 <ul>
 	<li><a href="#ArticleIntro">Introduction</a><ul>
-		<li><a href="#ArticleRequirements">Pre Requirements</a></li>
+		<li><a href="#ArticleRequirements">Prerequirements</a></li>
 	</ul>
 	</li>
 	<li><a href="#ArticleCreateApp">Create the Application</a></li>
@@ -55,14 +55,15 @@ application using the following tools:</p>
 	AJAX/DOM library.</li>
 	<li><a href="https://xunit.github.io/" target="_blank">xUnit</a> and
 	<a href="http://shouldly.readthedocs.io/en/latest/" target="_blank">Shouldly</a> 
-	for unit tests.</li>
+	for server side unit/integrations tests.</li>
 </ul>
 <p>We will also use
 <a href="https://logging.apache.org/log4net/" target="_blank">Log4Net</a> and
 <a href="http://automapper.org/" target="_blank">AutoMapper</a> which are 
 included in ABP
 <a href="http://www.aspnetboilerplate.com/Templates" target="_blank">startup 
-template</a> by default. We will also use the following techniques:</p>
+template</a> by default.</p>
+<p>We will use the following techniques:</p>
 <ul>
 	<li>
 	<a href="http://aspnetboilerplate.com/Pages/Documents/NLayer-Architecture" target="_blank">
@@ -77,13 +78,13 @@ template</a> by default. We will also use the following techniques:</p>
 	<a href="https://en.wikipedia.org/wiki/Integration_testing" target="_blank">
 	Integration Testing</a></li>
 </ul>
-<p>The project will be developed here is a simple task management application 
+<p>The project will be developed here is <strong>a simple task management application</strong> 
 where tasks can be assigned to people. Instead of developing the application 
 layer by layer, I will go to vertical and change the layers as the application 
 grows. While the application grows, I will introduce some features of ABP and 
 other frameworks as needed.</p>
 
-<h3 id="ArticleRequirements">Pre Requirements</h3>
+<h3 id="ArticleRequirements">Prerequirements</h3>
 
 <p>Following tools should be installed in your machine to be able to run/develop 
 the sample application:</p>
@@ -109,11 +110,11 @@ the sample application:</p>
 
 <h2 id="ArticleCreateApp">Create the Application</h2>
 
-<p>I used ABP's startup template to create a new web application named "<strong>Acme.SimpleTaskApp</strong>" 
-(company name, Acme, is optional):</p>
+<p>I used ABP's startup template (<a href="http://www.aspnetboilerplate.com/Templates">http://www.aspnetboilerplate.com/Templates</a>) to create a new web application named "<strong>Acme.SimpleTaskApp</strong>" 
+(company name, "Acme" here, is optional while creating templates):</p>
 <p>
 <img alt="ABP startup template creation" height="427" src="Template-Creation.png" width="533" /></p>
-<p>It creates an layered solution as shown below:&nbsp;</p>
+<p>It creates a layered solution as shown below:&nbsp;</p>
 <p>
 <img alt="Startup template projects" height="184" src="Template-Projects.png" width="303" /></p>
 <p>It includes 6 projects starting with the name that I entered as the project 
@@ -132,12 +133,18 @@ name:</p>
 	(complete integration test for server side).</li>
 </ul>
 
+<p>When you run the application, you can see the user interface of the template:</p>
+<p>
+<img alt="Template Home Page" height="377" src="template-default-home.png" width="768" /></p>
+<p>It contains a top menu, empty Home and About pages and a language switch 
+dropdown.</p>
+
 <h2 id="ArticleDevelopApp">Developing the Application</h2>
 
 <h3 id="ArticleCreateTaskEntity">Creating a Task Entity</h3>
 
 <p>I want to start with a simple&nbsp;<strong>Task</strong> entity. Since an 
-entity is part of the domain layer, I added it into the <strong>.Core </strong>
+entity is part of the <strong>domain layer</strong>, I added it into the <strong>.Core </strong>
 project:</p>
 <pre lang="cs">[Table(&quot;<strong>AppTasks</strong>&quot;)]
 public class <strong>Task : Entity, IHasCreationTime</strong>
@@ -182,13 +189,15 @@ public enum <strong>TaskState : byte
 	<strong>int</strong> by default. We can use the generic version, <strong>
 	Entity&lt;TPrimaryKey&gt;,</strong> to choice a different PK type.</li>
 	<li><strong>IHasCreationTime</strong> is a simple interface just defines
-	<strong>CreationTime</strong> property.</li>
-	<li>Task defines a required Title and an optional Description.</li>
-	<li><strong>TaskState</strong> is a simple enum to define states of a Task 
-	entity.</li>
+	<strong>CreationTime</strong> property (it's good to use a standard name for 
+	CreationTime).</li>
+	<li><strong>Task</strong> entity defines a required <strong>Title</strong> and an optional 
+	<strong>Description</strong>.</li>
+	<li><strong>TaskState</strong> is a simple enum to define states of a Task.</li>
 	<li><strong>Clock.Now</strong> returns DateTime.Now by default. But it 
 	provides an abstraction, so we can easily switch to DateTime.UtcNow in the 
-	feature if it's needed. So, always use Clock.Now instead of DateTime.Now.</li>
+	feature if it's needed. Always use Clock.Now instead of DateTime.Now while 
+	working with ABP framework.</li>
 	<li>I wanted to store Task entities into <strong>AppTasks</strong> table in 
 	the database.</li>
 </ul>
@@ -213,7 +222,8 @@ a <strong>DbSet</strong> for the Task entity into the DbContext:</p>
 
 <p>We will create an initial migration to create database and the AppTasks 
 table. I open the <strong>Windows Command Line</strong> and run the following 
-command:</p>
+command (active directory should be the root directory of .EntityFrameworkCore 
+project):</p>
 <p>
 <img alt="EF Core Initial Migration" height="51" src="EF-Core-Initial-Migration.png" width="660" /></p>
 <p>This command creates a <strong>Migrations</strong>&nbsp;folder in the 
@@ -250,7 +260,8 @@ our database model:</p>
     }
 }</pre>
 <p>This code is used to create AppTasks table when we execute the migrations to 
-the database. </p>
+the database (see <a href="https://docs.efproject.net/" target="_blank">entity 
+framework documentation</a> for more information on migrations).</p>
 
 <h3 id="ArticleCreateDb">Creating the Database</h3>
 
@@ -258,8 +269,8 @@ the database. </p>
 <p>
 <img alt="dotnet ef database update" height="44" src="EF-Core-Database-Update.png" width="558" /></p>
 <p>This command created a database named <strong>SimpleTaskAppDb</strong> in the 
-local SQL Server and executed the migrations (currently, there is a single, 
-Initial, migration):</p>
+local SQL Server and executed migrations (currently, there is a single, 
+"Initial", migration):</p>
 <p>
 <img alt="Created Database" height="140" src="Created-Database.png" width="211" /></p>
 <p>Now, I have a Task entity and corresponding table in the database.&nbsp; I entered 
@@ -293,7 +304,7 @@ services <strong>should</strong> implement <strong>IApplicationService</strong> 
 }
 
 <strong>[AutoMapFrom(typeof(Task))]</strong>
-public class TaskListDto : EntityDto
+public class TaskListDto : EntityDto, IHasCreationTime
 {
     public string Title { get; set; }
 
@@ -304,19 +315,20 @@ public class TaskListDto : EntityDto
     public TaskState State { get; set; }
 }</pre>
 <ul>
-	<li><strong>GetAllTasksInput</strong> DTO defines parameters of the <strong>GetAll</strong> app service method. Instead of directly defining the 
-	<strong>state</strong> as method parameter, I added it into a DTO object. Thus, I can 
-add other parameters into this DTO later without breaking my existing clients.</li>
+	<li><strong>GetAllTasksInput</strong> DTO defines input parameters of the <strong>GetAll</strong> app service method. Instead of directly defining the 
+	<strong>state</strong> as method parameter, I added it into a DTO object. 
+	Thus, I can add other parameters into this DTO later without breaking my 
+	existing clients (we could directly add a state parameter to the method).</li>
 	<li><strong>TaskListDto</strong> is used to return a Task data. It's derived from
 	<strong>EntityDto</strong>, which just defines an <strong>Id </strong>property 
-(we could add Id to our Dto and not derive from EntityDto, no problem). We 
+(we could add Id to our Dto and not derive from EntityDto). We 
 	defined [<strong>AutoMapFrom</strong>] attribute to create
 	<a href="http://automapper.org/" target="_blank">AutoMapper</a> mapping from 
 	Task entity to TaskListDto. This attribute is defined in
 	<a href="http://nuget.org/packages/Abp.AutoMapper" target="_blank">
 	Abp.AutoMapper</a> nuget package.</li>
 	<li>Lastly, <strong>ListResultOutput</strong> is a simple class contains a 
-	list of items (we could directly return a List&lt;TaskListDto&gt;, no problem).</li>
+	list of items (we could directly return a List&lt;TaskListDto&gt;).</li>
 </ul>
 <p>Now, we can implement the <strong>ITaskAppService</strong> as shown below:</p>
 <pre lang="cs">public class TaskAppService : <strong>SimpleTaskAppAppServiceBase</strong>, <strong>ITaskAppService</strong>
@@ -354,7 +366,7 @@ add other parameters into this DTO later without breaking my existing clients.</
 	repository</a>.</li>
 	<li><strong>Repositories</strong> are used to abstract database operations 
 	for entities. ABP creates a pre-defined repository (like IRepository&lt;Task&gt; 
-	here) to perform common tasks. IRepository.<strong>GetAll() </strong>used 
+	here) for each entity to perform common tasks. IRepository.<strong>GetAll() </strong>used 
 	here returns an <strong>IQueryable</strong> to query entities.</li>
 	<li><strong>WhereIf</strong> is an extension method of ABP to simplify 
 	conditional usage of IQueryable.Where method.</li>
@@ -370,8 +382,8 @@ You can skip this section if you don't interest in automated testing.</p>
 <p>Startup template contains <strong>.Tests</strong> project to test our code. It uses EF Core's 
 <strong>InMemory</strong> database provider instead of SQL Server. Thus, our unit tests can work 
 without a real database. It creates a <strong>separated database for each test</strong>. Thus, 
-tests are <strong>isolated</strong> from each other. We can use <strong>TestDataBuilder</strong> class to add some 
-initial test data to the InMemory database before running tests. I changed 
+tests are <strong>isolated</strong> from each other. We can use <strong>TestDataBuilder</strong> 
+class to add some initial test data to <strong>InMemory</strong> database before running tests. I changed 
 TestDataBuilder as shown below:</p>
 <pre lang="cs">public class TestDataBuilder
 {
@@ -405,41 +417,42 @@ tests the TaskAppService.GetAll method we created above.</p>
     }
 
     [Fact]
-    public async System.Threading.Tasks.Task Should_Get_All_Tasks()
+    public async System.Threading.Tasks.Task <strong>Should_Get_All_Tasks</strong>()
     {
         //Act
-        var output = await _taskAppService.GetAll(new GetAllTasksInput());
+        var output = await <strong>_taskAppService.GetAll</strong>(new GetAllTasksInput());
 
         //Assert
-        output.Items.Count.ShouldBe(2);
+        output.Items.Count.<strong>ShouldBe(2)</strong>;
     }
 
     [Fact]
-    public async System.Threading.Tasks.Task Should_Get_Filtered_Tasks()
+    public async System.Threading.Tasks.Task <strong>Should_Get_Filtered_Tasks</strong>()
     {
         //Act
-        var output = await _taskAppService.GetAll(new GetAllTasksInput { State = TaskState.Open });
+        var output = await <strong>_taskAppService.GetAll</strong>(new GetAllTasksInput { State = <strong>TaskState.Open</strong> });
 
         //Assert
-        output.Items.ShouldAllBe(t =&gt; t.State == TaskState.Open);
+        output.Items.<strong>ShouldAllBe(t =&gt; t.State == TaskState.Open)</strong>;
     }
 }</pre>
 <p>I created two different tests to test GetAll method as shown above. Now, I 
-can open the Test Explorer and run the unit tests:</p>
+can open Test Explorer (from Test\Windows\Test Explorer in the main menu of VS) and run the unit tests:</p>
 <p><img alt="Test explorer" height="255" src="test-explorer.png" width="521" /></p>
 <p>All of them succeed. The last one was a pre-built test in the startup 
 template, which we can ignore for now.</p>
-<p>ABP startup template comes with
+<p>Notice that; ABP startup template comes with
 <a href="https://xunit.github.io/" target="_blank">xUnit</a> and
 <a href="http://shouldly.readthedocs.io/en/latest/" target="_blank">Shouldly</a> 
-installed by default. So, we used them to write tests.</p>
+installed by default. So, we used them to write our tests.</p>
 
 <h3 id="ArticleTaskListView">Task List View</h3>
+<p>Now, I know that TaskAppService is properly working. I can start to create a 
+page to list all tasks.</p>
 
 <h4 id="ArticleAddTaskListMenuItem">Adding a New Menu Item</h4>
 
-<p>Now, I know that TaskAppService is properly working. I can start to create a 
-page to list all tasks. First, I'm adding a new item to the top menu:</p>
+<p>&nbsp;First, I'm adding a new item to the top menu:</p>
 <pre lang="cs">public class SimpleTaskAppNavigationProvider : NavigationProvider
 {
     public override void SetNavigation(INavigationProviderContext context)
@@ -698,7 +711,9 @@ the .Web project:</p>
 <h3 id="ArticleTaskListPageTest">Automated Testing Task List Page</h3>
 
 <p>We can create integration tests that is also integrated to ASP.NET Core MVC 
-infrastructure. Thus, we can completely test our server side code. ABP startup 
+infrastructure. Thus, we can completely test our server side code. You can skip 
+this section if you don't interest in automated testing.</p>
+<p>ABP startup 
 template includes a <strong>.Web.Tests</strong> project to do that. I created a 
 simple test to request to <strong>TaskController.Index</strong> and check the 
 response:</p>
@@ -786,6 +801,7 @@ fundamental tags will be enough.</p>
 
 <p>I'll improve this article by adding following features to the sample project:</p>
 <ul>
+	<li>Clean pre-built Home and About pages.</li>
 	<li>Introduce Person entity (to assign tasks).</li>
 	<li>Add a Task Creation Page.</li>
 	<li>Add a button to task items to close/re-open tasks.</li>
