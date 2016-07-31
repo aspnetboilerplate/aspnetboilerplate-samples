@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using Abp.AspNetCore.Mvc.Controllers;
 using Acme.SimpleTaskApp.Tasks;
 using Acme.SimpleTaskApp.Tasks.Dtos;
 using Acme.SimpleTaskApp.Web.Models.Tasks;
@@ -7,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Acme.SimpleTaskApp.Web.Controllers
 {
-    public class TasksController : AbpController
+    public class TasksController : SimpleTaskAppControllerBase
     {
         private readonly ITaskAppService _taskAppService;
 

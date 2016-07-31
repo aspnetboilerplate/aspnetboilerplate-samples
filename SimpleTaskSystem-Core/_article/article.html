@@ -495,7 +495,7 @@ create a new menu item.</p>
 
 <p>I'm creating a new controller class, <strong>TasksController</strong>, in the <strong>.Web</strong> 
 project as shown below:</p>
-<pre lang="cs">public class TasksController : AbpController
+<pre lang="cs">public class TasksController : <strong>SimpleTaskAppControllerBase</strong>
 {
     private readonly ITaskAppService _taskAppService;
 
@@ -511,9 +511,15 @@ project as shown below:</p>
         return View(model);
     }
 }</pre>
-<p>I injected ITaskAppService in order to get list of tasks. Instead of directly 
+<ul>
+	<li>I derived from <strong>SimpleTaskAppControllerBase</strong>
+	(which is derived from AbpController) that contains common base code for 
+	Controllers in this application.</li>
+	<li>I injected <strong>ITaskAppService</strong> in order to get list of tasks.</li>
+	<li>Instead of directly 
 passing result of the GetAll method to the view, I created an IndexViewModel 
-class in the .Web project which is shown below:</p>
+class in the .Web project which is shown below:</li>
+</ul>
 <pre lang="cs">public class IndexViewModel
 {
     <strong>public IReadOnlyList&lt;TaskListDto&gt; Tasks { get; }</strong>
@@ -566,8 +572,9 @@ be used in the view to select a Bootstrap label class for given task.</p>
         &lt;/ul&gt;
     &lt;/div&gt;
 &lt;/div&gt;</pre>
-<p>We simply used given model to render the view using Bootstrap's <strong>list 
-group</strong> component. Here, we used IndexViewModel.<strong>GetTaskLabel</strong> 
+<p>We simply used given model to render the view using Bootstrap's 
+<a href="http://getbootstrap.com/components/#list-group" target="_blank">list 
+group</a> component. Here, we used IndexViewModel.<strong>GetTaskLabel()</strong> 
 method to get label types for tasks. Rendered page will be like that:</p>
 <p>
 <img alt="Task list" height="405" src="task-list-view-1.png" width="763" /></p>
@@ -576,8 +583,9 @@ method to get label types for tasks. Rendered page will be like that:</p>
 
 <p>
 We used <strong>L</strong> method in the view which comes from ABP framework. 
-It's used to localize strings. We define localized strings in 
-Localization/Source folder in the <strong>.Core</strong> project as .json files. 
+It's used to localize strings. We have define localized strings in 
+<strong>Localization/Source</strong> folder in the <strong>.Core</strong> project as 
+<strong>.json</strong> files. 
 English localization is shown below:</p>
 <pre lang="xml">{
   &quot;culture&quot;: &quot;en&quot;,
@@ -588,9 +596,9 @@ English localization is shown below:</p>
     &quot;About&quot;: &quot;About&quot;,
     &quot;Home_Description&quot;: &quot;Welcome to SimpleTaskApp...&quot;,
     &quot;About_Description&quot;: &quot;This is a simple startup template to use ASP.NET Core with ABP framework.&quot;,
-    &quot;TaskList&quot;: &quot;Task List&quot;,
+<strong>    &quot;TaskList&quot;: &quot;Task List&quot;,
     &quot;TaskState_Open&quot;: &quot;Open&quot;,
-    &quot;TaskState_Completed&quot;: &quot;Completed&quot;
+    &quot;TaskState_Completed&quot;: &quot;Completed&quot;</strong>
   }
 }</pre>
 <p>
@@ -602,9 +610,9 @@ localization document</a> for more information on the localization system.</p>
 
 <h4 id="ArticleFilterTasks">Filtering Tasks</h4>
 
-<p>As shown above, TaskController gets <strong>GetAllTasksInput</strong> that 
-can be used to filter tasks. So, we can add a dropdown to filter tasks. First, I 
-added the dropdown to the view (inside the header): </p>
+<p>As shown above, TaskController actually gets a <strong>GetAllTasksInput</strong> that 
+can be used to filter tasks. So, we can add a dropdown to task list view to filter tasks. First, I 
+added the dropdown to the view (I added inside the header): </p>
 <pre lang="xml">&lt;h2&gt;
     @L(&quot;TaskList&quot;)
 <strong>    &lt;span class=&quot;pull-right&quot;&gt;
@@ -639,7 +647,6 @@ method:</p>
             }
         };
 
-
         list.AddRange(Enum.GetValues(typeof(TaskState))
                 .Cast&lt;TaskState&gt;()
                 .Select(state =&gt;
@@ -654,7 +661,7 @@ method:</p>
         return list;
     }</strong>
 }</pre>
-<p>We should set SelectedTaskState in the controller:</p>
+<p>We should set <strong>SelectedTaskState</strong> in the controller:</p>
 <pre lang="cs">public async Task&lt;ActionResult&gt; Index(GetAllTasksInput input)
 {
     var output = await _taskAppService.GetAll(input);
@@ -669,7 +676,7 @@ view:</p>
 <p><img alt="Task list" height="405" src="task-list-view-2.png" width="763" /></p>
 <p>I added the combobox but it can not work yet. I'll write a simple javascript 
 code to re-request/refresh task list page when combobox value changes. So, I'm creating 
-wwwroot\js\views\tasks\<strong>index.js</strong> file in the .Web project:</p>
+wwwroot\js\views\tasks\<strong>index.js</strong> file in the <strong>.Web</strong> project:</p>
 <pre lang="cs">(function ($) {
     $(function () {
 
@@ -694,7 +701,9 @@ the .Web project:</p>
     <strong>&quot;wwwroot/js/views/tasks/index.js</strong>&quot;
   ]
 }</pre>
-<p>Now, I can include the javascript file into my page:</p>
+<p>And creates a minified version of the script:</p>
+<p><img alt="Minified js file" height="167" src="minified-js.png" width="215" /></p>
+<p>Whenever I change the index.js, index.min.js is automatically re-generated. Now, I can include the javascript file into my page:</p>
 <pre lang="xml">@section scripts
 {
     &lt;environment names=&quot;Development&quot;&gt;
@@ -706,7 +715,8 @@ the .Web project:</p>
     &lt;/environment&gt;
 }</pre>
 <p>With this code, our view will use index.js in development and index.min.js 
-(minified version) in production.</p>
+(minified version) in production. This is a common approach in ASP.NET Core MVC 
+projects.</p>
 
 <h3 id="ArticleTaskListPageTest">Automated Testing Task List Page</h3>
 
@@ -739,14 +749,13 @@ response:</p>
 }</pre>
 <p><strong>GetResponseAsStringAsync</strong> and <strong>GetUrl</strong> methods are some helper methods provided 
 by <strong>AbpAspNetCoreIntegratedTestBase</strong> class of ABP. We can instead 
-directly use the Client (an instance of HttpClient) property to make requests, 
-but using these shortcut methods makes it easier. See
+directly use the Client (an instance of HttpClient) property to make requests. But using these shortcut methods makes it easier. See
 <a href="https://docs.asp.net/en/latest/testing/integration-testing.html" target="_blank">
 integration testing documentation</a> of ASP.NET Core for more.</p>
 <p>When I debug the test, I can see the response HTML:</p>
 <p><img alt="Web test" height="431" src="web-test-1.png" width="620" /></p>
-<p>That shows the Index page returned a response without any exception. But.. we 
-may want to go more and check if returned HTML is the same as we expect. There 
+<p>That shows the Index page returned a response without any exception. But... 
+we may want to go more and check if returned HTML is what we expect. There 
 are some libraries can be used to parse HTML.
 <a href="https://anglesharp.github.io/" target="_blank">AngleSharp</a> is one of 
 them and comes as pre-installed in ABP startup template's .Web.Tests project. 
@@ -794,18 +803,18 @@ So, I used it to check the created HTML code:</p>
         }</strong>
     }
 }</pre>
-<p>You can check it deeper and in more detailed. But in most cases, checking the 
+<p>You can check the HTML deeper and in more detailed. But in most cases, checking the 
 fundamental tags will be enough.</p>
 
 <h2 id="ArticleMore">More</h2>
 
 <p>I'll improve this article by adding following features to the sample project:</p>
 <ul>
-	<li>Clean pre-built Home and About pages.</li>
-	<li>Introduce Person entity (to assign tasks).</li>
+	<li>Introduce Person entity (to assign tasks) and add database migrations.</li>
 	<li>Add a Task Creation Page.</li>
 	<li>Add a button to task items to close/re-open tasks.</li>
 	<li>Add a Task detail page.</li>
+	<li>Remove Home and About pages coming from startup template.</li>
 </ul>
 
 <h2 id="ArticleHistory">Article History</h2>

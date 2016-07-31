@@ -41,8 +41,7 @@ namespace Acme.SimpleTaskApp.Web.Models.Tasks
                     Selected = SelectedTaskState == null
                 }
             };
-
-
+            
             list.AddRange(Enum.GetValues(typeof(TaskState))
                     .Cast<TaskState>()
                     .Select(state =>
