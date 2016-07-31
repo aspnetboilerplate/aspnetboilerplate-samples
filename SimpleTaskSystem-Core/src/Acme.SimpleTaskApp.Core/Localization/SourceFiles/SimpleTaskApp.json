@@ -6,6 +6,10 @@
     "HomePage": "HomePage",
     "About": "About",
     "Home_Description": "Welcome to SimpleTaskApp...",
-    "About_Description": "This is a simple startup template to use ASP.NET Core with ABP framework."
+    "About_Description": "This is a simple startup template to use ASP.NET Core with ABP framework.",
+    "TaskList": "Task List",
+    "TaskState_Open": "Open",
+    "TaskState_Completed": "Completed",
+    "AllTasks": "All Tasks"
   }
 }

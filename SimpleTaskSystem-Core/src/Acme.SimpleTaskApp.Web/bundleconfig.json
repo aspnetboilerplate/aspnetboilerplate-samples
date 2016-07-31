@@ -4,5 +4,11 @@
     "inputFiles": [
       "wwwroot/js/views/home/index.js"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/js/views/tasks/index.min.js",
+    "inputFiles": [
+      "wwwroot/js/views/tasks/index.js"
+    ]
   }
 ]

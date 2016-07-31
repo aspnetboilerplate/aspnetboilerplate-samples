@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.Domain.Repositories;
@@ -22,6 +23,7 @@ namespace Acme.SimpleTaskApp.Tasks
             var tasks = await _taskRepository
                 .GetAll()
                 .WhereIf(input.State.HasValue, t => t.State == input.State.Value)
+                .OrderByDescending(t => t.CreationTime)
                 .ToListAsync();
 
             return new ListResultOutput<TaskListDto>(

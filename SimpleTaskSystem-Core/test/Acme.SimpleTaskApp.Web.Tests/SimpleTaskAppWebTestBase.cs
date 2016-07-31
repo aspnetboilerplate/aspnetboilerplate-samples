@@ -1,22 +1,18 @@
 ﻿using System;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Abp.AspNetCore.TestBase;
-using Abp.Extensions;
 using Acme.SimpleTaskApp.EntityFrameworkCore;
 using Acme.SimpleTaskApp.Tests.TestDatas;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Routing;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Shouldly;
-using Abp.Collections.Extensions;
 
 namespace Acme.SimpleTaskApp.Web.Tests
 {
-    public abstract class SimpleTaskAppWebTestBase :AbpAspNetCoreIntegratedTestBase<Startup>
+    public abstract class SimpleTaskAppWebTestBase : AbpAspNetCoreIntegratedTestBase<Startup>
     {
         protected static readonly Lazy<string> ContentRootFolder;
 
@@ -36,39 +32,6 @@ namespace Acme.SimpleTaskApp.Web.Tests
                 .CreateWebHostBuilder()
                 .UseContentRoot(ContentRootFolder.Value);
         }
-
-        #region GetUrl
-
-        protected virtual string GetUrl<TController>()
-        {
-            var controllerName = typeof(TController).Name;
-            if (controllerName.EndsWith("Controller"))
-            {
-                controllerName = controllerName.Left(controllerName.Length - "Controller".Length);
-            }
-
-            return "/" + controllerName;
-        }
-
-        protected virtual string GetUrl<TController>(string actionName)
-        {
-            return GetUrl<TController>() + "/" + actionName;
-        }
-
-        protected virtual string GetUrl<TController>(string actionName, object queryStringParamsAsAnonymousObject)
-        {
-            var url = GetUrl<TController>(actionName);
-
-            var dictionary = new RouteValueDictionary(queryStringParamsAsAnonymousObject);
-            if (dictionary.Any())
-            {
-                url += "?" + dictionary.Select(d => $"{d.Key}={d.Value}").JoinAsString("&");
-            }
-
-            return url;
-        }
-
-        #endregion
 
         #region Get response
 

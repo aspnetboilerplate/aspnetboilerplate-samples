@@ -25,6 +25,13 @@ namespace Acme.SimpleTaskApp.Web.Startup
                         url: "Home/About",
                         icon: "fa fa-info"
                         )
+                ).AddItem(
+                    new MenuItemDefinition(
+                        "TaskList",
+                        L("TaskList"),
+                        url: "Tasks",
+                        icon: "fa fa-tasks"
+                        )
                 );
         }
 

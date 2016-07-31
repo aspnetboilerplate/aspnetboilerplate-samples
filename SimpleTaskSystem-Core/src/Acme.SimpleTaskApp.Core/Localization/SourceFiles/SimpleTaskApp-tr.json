@@ -6,6 +6,10 @@
     "HomePage": "Ana sayfa",
     "About": "Hakkında",
     "Home_Description": "SimpleTaskApp projesine hoşgeldiniz...",
-    "About_Description": "Bu proje, ASP.NET Core ile ABP framework kullanmak için basit bir başlangıç şablonudur."
+    "About_Description": "Bu proje, ASP.NET Core ile ABP framework kullanmak için basit bir başlangıç şablonudur.",
+    "TaskList": "Görev Listesi",
+    "TaskState_Open": "Açık",
+    "TaskState_Completed": "Tamamlanmış",
+    "AllTasks": "Tüm Görevler"
   }
 }
