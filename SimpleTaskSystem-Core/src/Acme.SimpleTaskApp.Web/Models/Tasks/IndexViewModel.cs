@@ -49,7 +49,7 @@ namespace Acme.SimpleTaskApp.Web.Models.Tasks
                         new SelectListItem
                         {
                             Text = localizationManager.GetString(SimpleTaskAppConsts.LocalizationSourceName, $"TaskState_{state}"),
-                            Value = ((byte)state).ToString(),
+                            Value = state.ToString(),
                             Selected = state == SelectedTaskState
                         })
             );

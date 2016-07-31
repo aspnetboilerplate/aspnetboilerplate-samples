@@ -11,7 +11,31 @@
 
 <h2>Contents</h2>
 <ul>
-	<li>Introduction</li>
+	<li>Introduction<ul>
+		<li>Pre Requirements</li>
+	</ul>
+	</li>
+	<li>Create the Application</li>
+	<li>Developing the Application<ul>
+		<li>Creating a Task Entity</li>
+		<li>Adding Task to DbContext</li>
+		<li>Creating the First Database Migration</li>
+		<li>Creating the Database</li>
+		<li>Task Application Service</li>
+		<li>Testing the TaskAppService</li>
+		<li>Task List View<ul>
+			<li>Adding a New Menu Item</li>
+			<li>Creating the TaskController and ViewModel</li>
+			<li>Task List View</li>
+			<li>Localization</li>
+			<li>Filtering Tasks</li>
+		</ul>
+		</li>
+		<li>Automated Testing Task List Page</li>
+	</ul>
+	</li>
+	<li>More</li>
+	<li>Article History</li>
 </ul>
 <h2>Introduction</h2>
 <p>In this article, I'll show to create a simple <strong>layered</strong> web 
@@ -57,7 +81,27 @@ layer by layer, I will go to vertical and change the layers as the application
 grows. While the application grows, I will introduce some features of ABP and 
 other frameworks as needed.</p>
 <h3>Pre Requirements</h3>
-<p>...bundler&amp;minifier, web compiler, vs 2015 update 3 v.s.</p>
+<p>Following tools should be installed in your machine to be able to run/develop 
+the sample application:</p>
+<ul>
+	<li>
+	<a href="https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx" target="_blank">
+	Visual Studio 2015</a> with
+	<a href="https://www.visualstudio.com/news/releasenotes/vs2015-update3-vs" target="_blank">
+	Update 3</a> installed.</li>
+	<li>
+	<a href="https://go.microsoft.com/fwlink/?LinkId=817245" target="_blank">
+	ASP.NET Core</a></li>
+	<li>Visual Studio Extensions:<ul>
+		<li>
+		<a href="https://visualstudiogallery.msdn.microsoft.com/9ec27da7-e24b-4d56-8064-fd7e88ac1c40" target="_blank">
+		Bundler &amp; Minifier</a></li>
+		<li>
+		<a href="https://visualstudiogallery.msdn.microsoft.com/3b329021-cd7a-4a01-86fc-714c2d05bb6c" target="_blank">
+		Web Compiler</a></li>
+	</ul>
+	</li>
+</ul>
 <h2>Create the Application</h2>
 <p>I used ABP's startup template to create a new web application named "<strong>Acme.SimpleTaskApp</strong>" 
 (company name, Acme, is optional):</p>
@@ -408,7 +452,7 @@ page to list all tasks. First, I'm adding a new item to the top menu:</p>
         return new LocalizableString(name, SimpleTaskAppConsts.LocalizationSourceName);
     }
 }</pre>
-<p>&nbsp;Startup template comes with two pages: Home and About, as shown above. 
+<p>Startup template comes with two pages: Home and About, as shown above. 
 We can change them or create new pages. I prefered to leave them for now and 
 create a new menu item.</p>
 <h4>Creating the TaskController and ViewModel</h4>
@@ -560,7 +604,7 @@ method:</p>
                     new SelectListItem
                     {
                         Text = localizationManager.GetString(SimpleTaskAppConsts.LocalizationSourceName, $&quot;TaskState_{state}&quot;),
-                        Value = ((byte)state).ToString(),
+                        Value = state.ToString(),
                         Selected = state == SelectedTaskState
                     })
         );
@@ -603,20 +647,20 @@ files in ASP.NET Core projects) to minify the script:</p>
 <p>This adds the following lines into <strong>bundleconfig.json</strong> file in 
 the .Web project:</p>
 <pre lang="js">{
-  &quot;outputFileName&quot;: &quot;wwwroot/js/views/tasks/<strong>index.min.js</strong>&quot;,
+  &quot;outputFileName&quot;: <strong>&quot;wwwroot/js/views/tasks/index.min.js</strong>&quot;,
   &quot;inputFiles&quot;: [
-    &quot;wwwroot/js/views/tasks/<strong>index.js</strong>&quot;
+    <strong>&quot;wwwroot/js/views/tasks/index.js</strong>&quot;
   ]
 }</pre>
 <p>Now, I can include the javascript file into my page:</p>
 <pre lang="xml">@section scripts
 {
     &lt;environment names=&quot;Development&quot;&gt;
-        &lt;script src=&quot;~/js/views/tasks/index.js&quot;&gt;&lt;/script&gt;
+        <strong>&lt;script src=&quot;~/js/views/tasks/index.js&quot;&gt;&lt;/script&gt;</strong>
     &lt;/environment&gt;
 
     &lt;environment names=&quot;Staging,Production&quot;&gt;
-        &lt;script src=&quot;~/js/views/tasks/index.min.js&quot;&gt;&lt;/script&gt;
+        <strong>&lt;script src=&quot;~/js/views/tasks/index.min.js&quot;&gt;&lt;/script&gt;</strong>
     &lt;/environment&gt;
 }</pre>
 <p>With this code, our view will use index.js in development and index.min.js 
@@ -624,11 +668,100 @@ the .Web project:</p>
 <h3>Automated Testing Task List Page</h3>
 <p>We can create integration tests that is also integrated to ASP.NET Core MVC 
 infrastructure. Thus, we can completely test our server side code. ABP startup 
-template includes a <strong>.Web.Tests</strong> project to do that.</p>
-<p><strong>TODO: It's currently using real database, change to in-memory!</strong></p>
-<p>...</p>
-<p>TODO: Discussions</p>
-<p>* Why not used domain services?&nbsp;</p>
+template includes a <strong>.Web.Tests</strong> project to do that. I created a 
+simple test to request to <strong>TaskController.Index</strong> and check the 
+response:</p>
+<pre lang="cs">public class TasksController_Tests : SimpleTaskAppWebTestBase
+{
+    [Fact]
+    public async System.Threading.Tasks.Task Should_Get_Tasks_By_State()
+    {
+        //Act
+
+        var response = await GetResponseAsStringAsync(
+            GetUrl&lt;TasksController&gt;(nameof(TasksController.Index), new
+                {
+                    state = TaskState.Open
+                }
+            )
+        );
+
+        //Assert
+
+        response.ShouldNotBeNullOrWhiteSpace();
+    }
+}</pre>
+<p><strong>GetResponseAsStringAsync</strong> and <strong>GetUrl</strong> methods are some helper methods provided 
+by <strong>AbpAspNetCoreIntegratedTestBase</strong> class of ABP. We can instead 
+directly use the Client (an instance of HttpClient) property to make requests, 
+but using these shortcut methods makes it easier. See
+<a href="https://docs.asp.net/en/latest/testing/integration-testing.html" target="_blank">
+integration testing documentation</a> of ASP.NET Core for more.</p>
+<p>When I debug the test, I can see the response HTML:</p>
+<p><img alt="Web test" height="431" src="web-test-1.png" width="620" /></p>
+<p>That shows the Index page returned a response without any exception. But.. we 
+may want to go more and check if returned HTML is the same as we expect. There 
+are some libraries can be used to parse HTML.
+<a href="https://anglesharp.github.io/" target="_blank">AngleSharp</a> is one of 
+them and comes as pre-installed in ABP startup template's .Web.Tests project. 
+So, I used it to check the created HTML code:</p>
+<pre lang="cs">public class TasksController_Tests : SimpleTaskAppWebTestBase
+{
+    [Fact]
+    public async System.Threading.Tasks.Task Should_Get_Tasks_By_State()
+    {
+        //Act
+
+        var response = await GetResponseAsStringAsync(
+            GetUrl&lt;TasksController&gt;(nameof(TasksController.Index), new
+                {
+                    state = TaskState.Open
+                }
+            )
+        );
+
+        //Assert
+
+        response.ShouldNotBeNullOrWhiteSpace();
+
+<strong>        //Get tasks from database
+        var tasksInDatabase = await UsingDbContextAsync(async dbContext =&gt;
+        {
+            return await dbContext.Tasks
+                .Where(t =&gt; t.State == TaskState.Open)
+                .ToListAsync();
+        });
+
+        //Parse HTML response to check if tasks in the database are returned
+        var document = new HtmlParser().Parse(response);
+        var listItems = document.QuerySelectorAll(&quot;#TaskList li&quot;);
+            
+        //Check task count
+        listItems.Length.ShouldBe(tasksInDatabase.Count);
+
+        //Check if returned list items are same those in the database
+        foreach (var listItem in listItems)
+        {
+            var header = listItem.QuerySelector(&quot;.list-group-item-heading&quot;);
+            var taskTitle = header.InnerHtml.Trim();
+            tasksInDatabase.Any(t =&gt; t.Title == taskTitle).ShouldBeTrue();
+        }</strong>
+    }
+}</pre>
+<p>You can check it deeper and in more detailed. But in most cases, checking the 
+fundamental tags will be enough.</p>
+<h2>More</h2>
+<p>I'll improve this article by adding following features to the sample project:</p>
+<ul>
+	<li>Introduce Person entity (to assign tasks).</li>
+	<li>Add a Task Creation Page.</li>
+	<li>Add a button to task items to close/re-open tasks.</li>
+	<li>Add a Task detail page.</li>
+</ul>
+<h2>Article History</h2>
+<ul>
+	<li><strong>2016-08-01</strong>: Initial publication.</li>
+</ul>
 
 </body>
 

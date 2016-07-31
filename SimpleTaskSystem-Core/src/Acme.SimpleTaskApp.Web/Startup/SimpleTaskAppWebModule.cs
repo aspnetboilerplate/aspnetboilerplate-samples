@@ -1,7 +1,6 @@
 ﻿using System.Reflection;
 using Abp.AspNetCore;
 using Abp.AspNetCore.Configuration;
-using Abp.EntityFrameworkCore.Configuration;
 using Abp.Modules;
 using Acme.SimpleTaskApp.Configuration;
 using Acme.SimpleTaskApp.EntityFrameworkCore;
@@ -26,11 +25,6 @@ namespace Acme.SimpleTaskApp.Web.Startup
         public override void PreInitialize()
         {
             Configuration.DefaultNameOrConnectionString = _appConfiguration.GetConnectionString(SimpleTaskAppConsts.ConnectionStringName);
-
-            Configuration.Modules.AbpEfCore().AddDbContext<SimpleTaskAppDbContext>(options =>
-            {
-                DbContextOptionsConfigurer.Configure(options.DbContextOptions, options.ConnectionString);
-            });
 
             Configuration.Navigation.Providers.Add<SimpleTaskAppNavigationProvider>();
 
