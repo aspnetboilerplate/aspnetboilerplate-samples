@@ -11,33 +11,35 @@
 
 <h2>Contents</h2>
 <ul>
-	<li>Introduction<ul>
-		<li>Pre Requirements</li>
+	<li><a href="#ArticleIntro">Introduction</a><ul>
+		<li><a href="#ArticleRequirements">Pre Requirements</a></li>
 	</ul>
 	</li>
-	<li>Create the Application</li>
-	<li>Developing the Application<ul>
-		<li>Creating a Task Entity</li>
-		<li>Adding Task to DbContext</li>
-		<li>Creating the First Database Migration</li>
-		<li>Creating the Database</li>
-		<li>Task Application Service</li>
-		<li>Testing the TaskAppService</li>
-		<li>Task List View<ul>
-			<li>Adding a New Menu Item</li>
-			<li>Creating the TaskController and ViewModel</li>
-			<li>Task List View</li>
-			<li>Localization</li>
-			<li>Filtering Tasks</li>
+	<li><a href="#ArticleCreateApp">Create the Application</a></li>
+	<li><a href="#ArticleDevelopApp">Developing the Application</a><ul>
+		<li><a href="#ArticleCreateTaskEntity">Creating a Task Entity</a></li>
+		<li><a href="#ArticleAddTaskToDbContext">Adding Task to DbContext</a></li>
+		<li><a href="#ArticleCreateFirstMigration">Creating the First Database Migration</a></li>
+		<li><a href="#ArticleCreateDb">Creating the Database</a></li>
+		<li><a href="#ArticleTaskAppService">Task Application Service</a></li>
+		<li><a href="#ArticleTestTaskAppService">Testing the TaskAppService</a></li>
+		<li><a href="#ArticleTaskListView">Task List View</a><ul>
+			<li><a href="#ArticleAddTaskListMenuItem">Adding a New Menu Item</a></li>
+			<li><a href="#ArticleCreateTaskController">Creating the TaskController and ViewModel</a></li>
+			<li><a href="#ArticleTaskListPage">Task List Page</a></li>
+			<li><a href="#ArticleLocalization">Localization</a></li>
+			<li><a href="#ArticleFilterTasks">Filtering Tasks</a></li>
 		</ul>
 		</li>
-		<li>Automated Testing Task List Page</li>
+		<li><a href="#ArticleTaskListPageTest">Automated Testing Task List Page</a></li>
 	</ul>
 	</li>
-	<li>More</li>
-	<li>Article History</li>
+	<li><a href="#ArticleMore">More</a></li>
+	<li><a href="#ArticleHistory">Article History</a></li>
 </ul>
-<h2>Introduction</h2>
+
+<h2 id="ArticleIntro">Introduction</h2>
+
 <p>In this article, I'll show to create a simple <strong>layered</strong> web 
 application using the following tools:</p>
 <ul>
@@ -80,7 +82,9 @@ where tasks can be assigned to people. Instead of developing the application
 layer by layer, I will go to vertical and change the layers as the application 
 grows. While the application grows, I will introduce some features of ABP and 
 other frameworks as needed.</p>
-<h3>Pre Requirements</h3>
+
+<h3 id="ArticleRequirements">Pre Requirements</h3>
+
 <p>Following tools should be installed in your machine to be able to run/develop 
 the sample application:</p>
 <ul>
@@ -102,7 +106,9 @@ the sample application:</p>
 	</ul>
 	</li>
 </ul>
-<h2>Create the Application</h2>
+
+<h2 id="ArticleCreateApp">Create the Application</h2>
+
 <p>I used ABP's startup template to create a new web application named "<strong>Acme.SimpleTaskApp</strong>" 
 (company name, Acme, is optional):</p>
 <p>
@@ -125,8 +131,11 @@ name:</p>
 	<li><strong>.Web.Tests</strong> project is for ASP.NET Core integrated tests 
 	(complete integration test for server side).</li>
 </ul>
-<h2>Developing the Application</h2>
-<h3>Creating a Task Entity</h3>
+
+<h2 id="ArticleDevelopApp">Developing the Application</h2>
+
+<h3 id="ArticleCreateTaskEntity">Creating a Task Entity</h3>
+
 <p>I want to start with a simple&nbsp;<strong>Task</strong> entity. Since an 
 entity is part of the domain layer, I added it into the <strong>.Core </strong>
 project:</p>
@@ -183,7 +192,9 @@ public enum <strong>TaskState : byte
 	<li>I wanted to store Task entities into <strong>AppTasks</strong> table in 
 	the database.</li>
 </ul>
-<h3>Adding Task to DbContext</h3>
+
+<h3 id="ArticleAddTaskToDbContext">Adding Task to DbContext</h3>
+
 <p><strong>.EntityFrameworkCore</strong> project includes a pre-defined <strong>DbContext</strong>. I should add 
 a <strong>DbSet</strong> for the Task entity into the DbContext:</p>
 <pre lang="cs">public class SimpleTaskAppDbContext : AbpDbContext
@@ -197,7 +208,9 @@ a <strong>DbSet</strong> for the Task entity into the DbContext:</p>
     }
 }</pre>
 <p>Now, EF Core knows that we have a Task entity.&nbsp;</p>
-<h3>Creating the First Database Migration&nbsp;</h3>
+
+<h3 id="ArticleCreateFirstMigration">Creating the First Database Migration&nbsp;</h3>
+
 <p>We will create an initial migration to create database and the AppTasks 
 table. I open the <strong>Windows Command Line</strong> and run the following 
 command:</p>
@@ -238,7 +251,9 @@ our database model:</p>
 }</pre>
 <p>This code is used to create AppTasks table when we execute the migrations to 
 the database. </p>
-<h3>Creating the Database</h3>
+
+<h3 id="ArticleCreateDb">Creating the Database</h3>
+
 <p>To create the database, I run the following command in the command line:</p>
 <p>
 <img alt="dotnet ef database update" height="44" src="EF-Core-Database-Update.png" width="558" /></p>
@@ -252,7 +267,9 @@ a few sample Tasks to the table:</p>
 <p><img alt="AppTasks table" height="81" src="apptasks-table.png" width="579" /></p>
 <p>Note that, the database <strong>connection string</strong> is defined in
 <strong>appsettings.json</strong> in the <strong>.Web</strong> application.</p>
-<h3>Task Application Service</h3>
+
+<h3 id="ArticleTaskAppService">Task Application Service</h3>
+
 <p><em>
 <a href="http://www.aspnetboilerplate.com/Pages/Documents/Application-Services" target="_blank">Application Services</a> are used to expose domain logic to the presentation layer. 
 An Application Service is called from presentation layer with a 
@@ -345,7 +362,9 @@ add other parameters into this DTO later without breaking my existing clients.</
 	base class and implemented via AutoMapper by default) is used to map list of 
 	Task objects to list of TaskListDtos objects.</li>
 </ul>
-<h3>Testing the TaskAppService</h3>
+
+<h3 id="ArticleTestTaskAppService">Testing the TaskAppService</h3>
+
 <p>Before going further to create user interface, I want to <strong>test</strong> TaskAppService. 
 You can skip this section if you don't interest in automated testing.</p>
 <p>Startup template contains <strong>.Tests</strong> project to test our code. It uses EF Core's 
@@ -414,8 +433,11 @@ template, which we can ignore for now.</p>
 <a href="https://xunit.github.io/" target="_blank">xUnit</a> and
 <a href="http://shouldly.readthedocs.io/en/latest/" target="_blank">Shouldly</a> 
 installed by default. So, we used them to write tests.</p>
-<h3>Task List View</h3>
-<h4>Adding a New Menu Item</h4>
+
+<h3 id="ArticleTaskListView">Task List View</h3>
+
+<h4 id="ArticleAddTaskListMenuItem">Adding a New Menu Item</h4>
+
 <p>Now, I know that TaskAppService is properly working. I can start to create a 
 page to list all tasks. First, I'm adding a new item to the top menu:</p>
 <pre lang="cs">public class SimpleTaskAppNavigationProvider : NavigationProvider
@@ -455,7 +477,9 @@ page to list all tasks. First, I'm adding a new item to the top menu:</p>
 <p>Startup template comes with two pages: Home and About, as shown above. 
 We can change them or create new pages. I prefered to leave them for now and 
 create a new menu item.</p>
-<h4>Creating the TaskController and ViewModel</h4>
+
+<h4 id="ArticleCreateTaskController">Creating the TaskController and ViewModel</h4>
+
 <p>I'm creating a new controller class, <strong>TasksController</strong>, in the <strong>.Web</strong> 
 project as shown below:</p>
 <pre lang="cs">public class TasksController : AbpController
@@ -500,7 +524,9 @@ class in the .Web project which is shown below:</p>
 <p>This simple view model gets a list of tasks (which is provided from 
 ITaskAppService) in it's constructor. It also has GetTaskLabel method that will 
 be used in the view to select a Bootstrap label class for given task.</p>
-<h4>Task List View</h4>
+
+<h4 id="ArticleTaskListPage">Task List Page</h4>
+
 <p>And finally, the Index view is shown below:</p>
 <pre lang="xml"><strong>@model Acme.SimpleTaskApp.Web.Models.Tasks.IndexViewModel</strong>
 
@@ -532,8 +558,9 @@ group</strong> component. Here, we used IndexViewModel.<strong>GetTaskLabel</str
 method to get label types for tasks. Rendered page will be like that:</p>
 <p>
 <img alt="Task list" height="405" src="task-list-view-1.png" width="763" /></p>
-<h4>
-Localization</h4>
+
+<h4 id="ArticleLocalization">Localization</h4>
+
 <p>
 We used <strong>L</strong> method in the view which comes from ABP framework. 
 It's used to localize strings. We define localized strings in 
@@ -559,7 +586,9 @@ added the <strong>last 3 lines</strong> and used in the view above. While using
 ABP's localization is pretty simple, you can see
 <a href="http://www.aspnetboilerplate.com/Pages/Documents/Localization" target="_blank">
 localization document</a> for more information on the localization system.</p>
-<h4>Filtering Tasks</h4>
+
+<h4 id="ArticleFilterTasks">Filtering Tasks</h4>
+
 <p>As shown above, TaskController gets <strong>GetAllTasksInput</strong> that 
 can be used to filter tasks. So, we can add a dropdown to filter tasks. First, I 
 added the dropdown to the view (inside the header): </p>
@@ -665,7 +694,9 @@ the .Web project:</p>
 }</pre>
 <p>With this code, our view will use index.js in development and index.min.js 
 (minified version) in production.</p>
-<h3>Automated Testing Task List Page</h3>
+
+<h3 id="ArticleTaskListPageTest">Automated Testing Task List Page</h3>
+
 <p>We can create integration tests that is also integrated to ASP.NET Core MVC 
 infrastructure. Thus, we can completely test our server side code. ABP startup 
 template includes a <strong>.Web.Tests</strong> project to do that. I created a 
@@ -750,7 +781,9 @@ So, I used it to check the created HTML code:</p>
 }</pre>
 <p>You can check it deeper and in more detailed. But in most cases, checking the 
 fundamental tags will be enough.</p>
-<h2>More</h2>
+
+<h2 id="ArticleMore">More</h2>
+
 <p>I'll improve this article by adding following features to the sample project:</p>
 <ul>
 	<li>Introduce Person entity (to assign tasks).</li>
@@ -758,7 +791,9 @@ fundamental tags will be enough.</p>
 	<li>Add a button to task items to close/re-open tasks.</li>
 	<li>Add a Task detail page.</li>
 </ul>
-<h2>Article History</h2>
+
+<h2 id="ArticleHistory">Article History</h2>
+
 <ul>
 	<li><strong>2016-08-01</strong>: Initial publication.</li>
 </ul>
