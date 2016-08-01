@@ -335,26 +335,38 @@ public class TaskListDto : EntityDto, IHasCreationTime
 	list of items (we could directly return a List&lt;TaskListDto&gt;).</li>
 </ul>
 <p>Now, we can implement the <strong>ITaskAppService</strong> as shown below:</p>
-<pre lang="cs">public class TaskAppService : <strong>SimpleTaskAppAppServiceBase</strong>, <strong>ITaskAppService</strong>
+<pre lang="cs">using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Abp.Application.Services.Dto;
+using Abp.Domain.Repositories;
+using Abp.Linq.Extensions;
+using Acme.SimpleTaskApp.Tasks.Dtos;
+using Microsoft.EntityFrameworkCore;
+
+namespace Acme.SimpleTaskApp.Tasks
 {
-    private readonly IRepository&lt;Task&gt; _taskRepository;
-
-    public TaskAppService(<strong>IRepository&lt;Task&gt; taskRepository</strong>)
+    public class TaskAppService : SimpleTaskAppAppServiceBase, ITaskAppService
     {
-        _taskRepository = taskRepository;
-    }
+        private readonly IRepository&lt;Task&gt; _taskRepository;
 
-    public async Task&lt;ListResultOutput&lt;TaskListDto&gt;&gt; GetAll(GetAllTasksInput input)
-    {
-        var tasks = await _taskRepository
-            .GetAll()
-            <strong>.WhereIf(input.State.HasValue, t =&gt; t.State == input.State.Value)</strong>
-            .OrderByDescending(t =&gt; t.CreationTime)
-            .ToListAsync();
+        public TaskAppService(IRepository&lt;Task&gt; taskRepository)
+        {
+            _taskRepository = taskRepository;
+        }
 
-        return new ListResultOutput&lt;TaskListDto&gt;(
-            <strong>ObjectMapper.Map&lt;List&lt;TaskListDto&gt;&gt;(tasks)</strong>
-      ););
+        public async Task&lt;ListResultOutput&lt;TaskListDto&gt;&gt; GetAll(GetAllTasksInput input)
+        {
+            var tasks = await _taskRepository
+                .GetAll()
+                .WhereIf(input.State.HasValue, t =&gt; t.State == input.State.Value)
+                .OrderByDescending(t =&gt; t.CreationTime)
+                .ToListAsync();
+
+            return new ListResultOutput&lt;TaskListDto&gt;(
+                ObjectMapper.Map&lt;List&lt;TaskListDto&gt;&gt;(tasks)
+            );
+        }
     }
 }</pre>
 <ul>
