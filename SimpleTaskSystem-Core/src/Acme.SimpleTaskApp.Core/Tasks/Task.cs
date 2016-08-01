@@ -37,10 +37,4 @@ namespace Acme.SimpleTaskApp.Tasks
             Description = description;
         }
     }
-
-    public enum TaskState : byte
-    {
-        Open = 0,
-        Completed = 1
-    }
 }

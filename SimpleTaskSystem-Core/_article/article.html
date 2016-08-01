@@ -150,41 +150,51 @@ dropdown.</p>
 <p>I want to start with a simple&nbsp;<strong>Task</strong> entity. Since an 
 entity is part of the <strong>domain layer</strong>, I added it into the <strong>.Core </strong>
 project:</p>
-<pre lang="cs">[Table(&quot;<strong>AppTasks</strong>&quot;)]
-public class <strong>Task : Entity, IHasCreationTime</strong>
+<pre lang="cs">using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
+using Abp.Timing;
+
+namespace Acme.SimpleTaskApp.Tasks
 {
-    public const int MaxTitleLength = 256;
-    public const int MaxDescriptionLength = 64 * 1024; //64KB
-
-    [Required]
-    [MaxLength(MaxTitleLength)]
-    public string Title { get; set; }
-
-    [MaxLength(MaxDescriptionLength)]
-    public string Description { get; set; }
-
-    public DateTime CreationTime { get; set; }
-
-    public TaskState State { get; set; }
-
-    public Task()
+    [Table(&quot;AppTasks&quot;)]
+    public class Task : Entity, IHasCreationTime
     {
-        CreationTime = <strong>Clock.Now</strong>;
-        State = TaskState.Open;
+        public const int MaxTitleLength = 256;
+        public const int MaxDescriptionLength = 64 * 1024; //64KB
+
+        [Required]
+        [MaxLength(MaxTitleLength)]
+        public string Title { get; set; }
+
+        [MaxLength(MaxDescriptionLength)]
+        public string Description { get; set; }
+
+        public DateTime CreationTime { get; set; }
+
+        public TaskState State { get; set; }
+
+        public Task()
+        {
+            CreationTime = Clock.Now;
+            State = TaskState.Open;
+        }
+
+        public Task(string title, string description = null)
+            : this()
+        {
+            Title = title;
+            Description = description;
+        }
     }
 
-    public Task(string title, string description = null)
-        :this()
+    public enum TaskState : byte
     {
-        Title = title;
-        Description = description;
+        Open = 0,
+        Completed = 1
     }
-}
-
-public enum <strong>TaskState : byte
-</strong>{
-    Open = 0,
-    Completed = 1
 }</pre>
 <ul>
 	<li>I derived from ABP's base <strong>
