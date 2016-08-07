@@ -40,7 +40,7 @@
                     <span class="pull-right label label-lg @Model.GetTaskLabel(task)">@L($"TaskState_{task.State}")</span>
                     <h4 class="list-group-item-heading">@task.Title</h4>
                     <div class="list-group-item-text">
-                        @task.CreationTime.ToString("yyyy-MM-dd HH:mm:ss")
+                        @task.CreationTime.ToString("yyyy-MM-dd HH:mm:ss") | @(task.AssignedPersonName ?? L("Unassigned"))
                     </div>
                 </li>
             }

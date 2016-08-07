@@ -223,7 +223,150 @@ public async System.Threading.Tasks.Task Should_Get_All_Tasks()
     output.Items.Count.ShouldBe(2);
     <strong>output.Items.Count(t =&gt; t.AssignedPersonName != null).ShouldBe(1);
 </strong>}</pre>
-<p>&nbsp;</p>
+<h3>Show Assigned Person Name in the Task List Page</h3>
+<p>Finally, we can change <strong>Tasks\Index.cshtml</strong> to show <strong>
+AssignedPersonName</strong>:</p>
+<pre lang="xml">@foreach (var task in Model.Tasks)
+{
+    &lt;li class=&quot;list-group-item&quot;&gt;
+        &lt;span class=&quot;pull-right label label-lg @Model.GetTaskLabel(task)&quot;&gt;@L($&quot;TaskState_{task.State}&quot;)&lt;/span&gt;
+        &lt;h4 class=&quot;list-group-item-heading&quot;&gt;@task.Title&lt;/h4&gt;
+        &lt;div class=&quot;list-group-item-text&quot;&gt;
+            @task.CreationTime.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;)<strong> | @(task.AssignedPersonName ?? L(&quot;Unassigned&quot;))</strong>
+        &lt;/div&gt;
+    &lt;/li&gt;
+}</pre>
+<p>When we run the application, we can see it in the task list:</p>
+<p>
+<img alt="Task list with person name" height="311" src="task-list-assigned-person.png" width="446" /></p>
+<h3>New Application Service Method for Task Creation</h3>
+<p>We can list tasks, but we don't have a <strong>task creation page</strong> yet. First, adding 
+a <strong>Create</strong> method to 
+the <strong>ITaskAppService</strong> interface:</p>
+<pre lang="cs">public interface ITaskAppService : IApplicationService
+{
+    //...
+
+    System.Threading.Tasks.Task Create(CreateTaskInput input);
+}</pre>
+<p>And implementing it in TaskAppService class:</p>
+<pre lang="cs">public class TaskAppService : SimpleTaskAppAppServiceBase, ITaskAppService
+{
+    private readonly IRepository&lt;Task&gt; _taskRepository;
+
+    public TaskAppService(IRepository&lt;Task&gt; taskRepository)
+    {
+        _taskRepository = taskRepository;
+    }
+
+    //...
+
+<strong>    public async System.Threading.Tasks.Task Create(CreateTaskInput input)
+    {
+        var task = ObjectMapper.Map&lt;Task&gt;(input);
+        await _taskRepository.InsertAsync(task);
+    }</strong>
+}</pre>
+<p>Create method automatically <strong>maps</strong> given input to a Task entity and inserting to the 
+database using the repository. <strong>CreateTaskInput</strong>
+<a href="http://www.aspnetboilerplate.com/Pages/Documents/Data-Transfer-Objects" target="_blank">DTO</a> is like that:</p>
+<pre lang="cs">using System;
+using System.ComponentModel.DataAnnotations;
+using Abp.AutoMapper;
+
+namespace Acme.SimpleTaskApp.Tasks.Dtos
+{
+    <strong>[AutoMapTo(typeof(Task))]</strong>
+    public class CreateTaskInput
+    {
+        [Required]
+        [MaxLength(<strong>Task.MaxTitleLength</strong>)]
+        public string Title { get; set; }
+
+        [MaxLength(<strong>Task.MaxDescriptionLength</strong>)]
+        public string Description { get; set; }
+
+        public Guid? AssignedPersonId { get; set; }
+    }
+}</pre>
+<p>Configured to map it to Task entity (using AutoMapTo attribute) and added 
+data annotations to apply
+<a href="http://www.aspnetboilerplate.com/Pages/Documents/Validating-Data-Transfer-Objects" target="_blank">
+validation</a>. We used constants from Task entity to use same max lengths.</p>
+<h3>Testing Task Creation Service</h3>
+<p>I'm adding some integration tests into TaskAppService_Tests class to test the 
+Create method:</p>
+<pre lang="cs">using Acme.SimpleTaskApp.Tasks;
+using Acme.SimpleTaskApp.Tasks.Dtos;
+using Shouldly;
+using Xunit;
+using System.Linq;
+using Abp.Runtime.Validation;
+
+namespace Acme.SimpleTaskApp.Tests.Tasks
+{
+    public class TaskAppService_Tests : SimpleTaskAppTestBase
+    {
+        private readonly ITaskAppService _taskAppService;
+
+        public TaskAppService_Tests()
+        {
+            _taskAppService = Resolve&lt;ITaskAppService&gt;();
+        }
+
+        //...
+
+        [Fact]
+        public async System.Threading.Tasks.Task <strong>Should_Create_New_Task_With_Title</strong>()
+        {
+            await _taskAppService.Create(new CreateTaskInput
+            {
+                Title = &quot;Newly created task #1&quot;
+            });
+
+            UsingDbContext(context =&gt;
+            {
+                var task1 = context.Tasks.FirstOrDefault(t =&gt; t.Title == &quot;Newly created task #1&quot;);
+                <strong>task1.ShouldNotBeNull();</strong>
+            });
+        }
+
+        [Fact]
+        public async System.Threading.Tasks.Task <strong>Should_Create_New_Task_With_Title_And_Assigned_Person</strong>()
+        {
+            <strong>var neo = UsingDbContext(context =&gt; context.People.Single(p =&gt; p.Name == &quot;Neo&quot;));
+</strong>
+            await _taskAppService.Create(new CreateTaskInput
+            {
+                Title = &quot;Newly created task #1&quot;,
+                <strong>AssignedPersonId = neo.Id</strong>
+            });
+
+            UsingDbContext(context =&gt;
+            {
+                var task1 = context.Tasks.FirstOrDefault(t =&gt; t.Title == &quot;Newly created task #1&quot;);
+                task1.ShouldNotBeNull();
+                <strong>task1.AssignedPersonId.ShouldBe(neo.Id);</strong>
+            });
+        }
+
+        [Fact]
+        public async System.Threading.Tasks.Task <strong>Should_Not_Create_New_Task_Without_Title</strong>()
+        {
+            await <strong>Assert.ThrowsAsync&lt;AbpValidationException&gt;</strong>(async () =&gt;
+            {
+                await _taskAppService.Create(new CreateTaskInput
+                {
+                    Title = null
+                });
+            });
+        }
+    }
+}</pre>
+<p>First test creates a task with a <strong>title</strong>, second one creates a 
+task with a <strong>title</strong> and <strong>assigned person</strong>, the 
+last one tries to create an <strong>invalid</strong> task to show the <strong>
+exception</strong> case.</p>
 <p>...</p>
 
 <h2 id="ArticleHistory">Article History</h2>

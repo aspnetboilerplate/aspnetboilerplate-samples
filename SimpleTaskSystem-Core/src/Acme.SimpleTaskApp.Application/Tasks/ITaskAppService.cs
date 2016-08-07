@@ -8,5 +8,7 @@ namespace Acme.SimpleTaskApp.Tasks
     public interface ITaskAppService : IApplicationService
     {
         Task<ListResultOutput<TaskListDto>> GetAll(GetAllTasksInput input);
+
+        System.Threading.Tasks.Task Create(CreateTaskInput input);
     }
 }

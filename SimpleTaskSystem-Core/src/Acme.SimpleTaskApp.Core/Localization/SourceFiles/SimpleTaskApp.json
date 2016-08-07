@@ -10,6 +10,7 @@
     "TaskList": "Task List",
     "TaskState_Open": "Open",
     "TaskState_Completed": "Completed",
-    "AllTasks": "All Tasks"
+    "AllTasks": "All Tasks",
+    "Unassigned": "Unassigned"
   }
 }

@@ -10,6 +10,7 @@
     "TaskList": "Görev Listesi",
     "TaskState_Open": "Açık",
     "TaskState_Completed": "Tamamlanmış",
-    "AllTasks": "Tüm Görevler"
+    "AllTasks": "Tüm Görevler",
+    "Unassigned": "Atanmamış"
   }
 }
