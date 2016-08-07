@@ -156,6 +156,74 @@ test data:</p>
 <p>I added a person and assigned to the first task:</p>
 <p>
 <img alt="Tasks table" height="118" src="tasks-table-with-person.png" width="649" /></p>
+<h3>Return Assigned Person in the Task List</h3>
+<p>I'll change the <strong>TaskAppService</strong> to return assigned person information. First, 
+I'm adding two properties to <strong>TaskListDto</strong>:</p>
+<pre lang="cs">[AutoMapFrom(typeof(Task))]
+public class TaskListDto : EntityDto, IHasCreationTime
+{
+    //...
+
+<strong>    public Guid? AssignedPersonId { get; set; }
+
+    public string AssignedPersonName { get; set; }</strong>
+}</pre>
+<p>And including the Task.AssignedPerson property to the query (just added the 
+Include line):</p>
+<pre lang="cs">public class TaskAppService : SimpleTaskAppAppServiceBase, ITaskAppService
+{
+    //...
+
+    public async Task&lt;ListResultOutput&lt;TaskListDto&gt;&gt; GetAll(GetAllTasksInput input)
+    {
+        var tasks = await _taskRepository
+            .GetAll()
+            <strong>.Include(t =&gt; t.AssignedPerson)</strong>
+            .WhereIf(input.State.HasValue, t =&gt; t.State == input.State.Value)
+            .OrderByDescending(t =&gt; t.CreationTime)
+            .ToListAsync();
+
+        return new ListResultOutput&lt;TaskListDto&gt;(
+            ObjectMapper.Map&lt;List&lt;TaskListDto&gt;&gt;(tasks)
+        );
+    }
+}</pre>
+<p>Thus, GetAll method will return Assigned person information with the tasks. 
+Since we used AutoMapper, new properties will also be copied to DTO 
+automatically.</p>
+<h3>Change Unit Test to Test Assigned Person</h3>
+<p>At this point, we can change unit tests to see if assigned people are 
+retrieved while getting the task list. First, I changed initial test data in the 
+TestDataBuilder class to assign a person to a task:</p>
+<pre lang="cs">public class TestDataBuilder
+{
+    //...
+
+    public void Build()
+    {
+<strong>        var neo = new Person(&quot;Neo&quot;);
+        _context.People.Add(neo);
+        _context.SaveChanges();</strong>
+
+        _context.Tasks.AddRange(
+            new Task(&quot;Follow the white rabbit&quot;, &quot;Follow the white rabbit in order to know the reality.&quot;, <strong>neo.Id</strong>),
+            new Task(&quot;Clean your room&quot;) { State = TaskState.Completed }
+            );
+    }
+}</pre>
+<p>Then I'm changing TaskAppService_Tests.Should_Get_All_Tasks() method to check 
+if one of the retrieved tasks has a person assigned (see the last line added):</p>
+<pre lang="cs">[Fact]
+public async System.Threading.Tasks.Task Should_Get_All_Tasks()
+{
+    //Act
+    var output = await _taskAppService.GetAll(new GetAllTasksInput());
+
+    //Assert
+    output.Items.Count.ShouldBe(2);
+    <strong>output.Items.Count(t =&gt; t.AssignedPersonName != null).ShouldBe(1);
+</strong>}</pre>
+<p>&nbsp;</p>
 <p>...</p>
 
 <h2 id="ArticleHistory">Article History</h2>
