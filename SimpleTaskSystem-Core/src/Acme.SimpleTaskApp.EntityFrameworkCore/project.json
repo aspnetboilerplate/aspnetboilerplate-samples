@@ -2,7 +2,7 @@
   "version": "1.0.0.0-*",
 
   "dependencies": {
-    "Abp.EntityFrameworkCore": "0.10.3",
+    "Abp.EntityFrameworkCore": "0.10.3.1",
     "Acme.SimpleTaskApp.Core": "1.0.0.0-*",
     "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0",
     "Microsoft.EntityFrameworkCore.SqlServer.Design": {

@@ -2,7 +2,7 @@
   "version": "1.0.0.0-*",
 
   "dependencies": {
-    "Abp": "0.10.3",
+    "Abp": "0.10.3.1",
     "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0",
     "Microsoft.Extensions.Configuration.Json": "1.0.0"
   },
