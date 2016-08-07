@@ -39,26 +39,129 @@ other parts:</p>
 
 <h3 id="ArticleCreateTaskEntity">Creating the Person Entity</h3>
 
-<p>I'll add Person concept to the application to assign tasks to people. So, I 
-define a simple Person entity:</p>
-<p>&nbsp;</p>
-<p>s</p>
+<p>I'll add <strong>Person</strong> concept to the application to <strong>assign tasks</strong> to people. So, I 
+define a simple <strong>Person entity</strong>:</p>
+<pre lang="cs"><strong>[Table(&quot;AppPersons&quot;)]</strong>
+public class Person : <strong>AuditedEntity&lt;Guid&gt;</strong>
+{
+    public const int MaxNameLength = 32;
 
-<h2 id="ArticleMore">More</h2>
+    [Required]
+    [MaxLength(MaxNameLength)]
+    public string Name { get; set; }
 
-<p>I'll improve this article by adding following features to the sample project:</p>
-<ul>
-	<li>Introduce Person entity (to assign tasks) and add database migrations.</li>
-	<li>Add a Task Creation Page.</li>
-	<li>Add a button to task items to close/re-open tasks.</li>
-	<li>Add a Task detail page.</li>
-	<li>Remove Home and About pages coming from startup template.</li>
-</ul>
+    public Person()
+    {
+            
+    }
+
+    public Person(string name)
+    {
+        Name = name;
+    }
+}</pre>
+<p>This time, I set Id (primary key)&nbsp; type as <strong>Guid</strong>, for 
+demonstration. I also derived from <strong>AuditedEntity</strong> (which has 
+CreationTime, CreaterUserId, LastModificationTime and LastModifierUserId 
+properties) instead of base Entity class.</p>
+<h3>Relating Person to the Task Entity</h3>
+<p>I'm also adding <strong>AssignedPerson</strong> property to the <strong>Task</strong> entity 
+(only sharing the changed parts here):</p>
+<pre lang="cs">[Table(&quot;AppTasks&quot;)]
+public class Task : Entity, IHasCreationTime
+{
+    //...
+
+<strong>    [ForeignKey(nameof(AssignedPersonId))]
+    public Person AssignedPerson { get; set; }
+    public Guid? AssignedPersonId { get; set; }</strong>
+
+    public Task(string title, string description = null, <strong>Guid? assignedPersonId = null</strong>)
+        : this()
+    {
+        Title = title;
+        Description = description;
+        <strong>AssignedPersonId = assignedPersonId;</strong>
+    }
+}</pre>
+
+<p>AssignedPerson is <strong>optional</strong>. So, as task can be assigned to a 
+person or 
+can be unassigned.</p>
+<h3>Adding Person to DbContext</h3>
+<p>Finally, I'm adding new Person entity to the DbContext class:</p>
+<pre lang="cs">public class SimpleTaskAppDbContext : AbpDbContext
+{
+    <strong>public DbSet&lt;Person&gt; People { get; set; }</strong>
+    
+    //...
+}</pre>
+<h3>Adding a New Migration for Person Entity</h3>
+<p>Now, I'm running the following command in the command line:</p>
+<p>
+<img alt="dotnet ef migrations add" height="38" src="migration-add-person.png" width="670" /></p>
+<p>And it creates a new migration class in the project:</p>
+<pre lang="cs">public partial class Added_Person : Migration
+{
+    protected override void Up(MigrationBuilder migrationBuilder)
+    {
+        migrationBuilder.CreateTable(
+            name: &quot;AppPersons&quot;,
+            columns: table =&gt; new
+            {
+                Id = table.Column&lt;Guid&gt;(nullable: false),
+                CreationTime = table.Column&lt;DateTime&gt;(nullable: false),
+                CreatorUserId = table.Column&lt;long&gt;(nullable: true),
+                LastModificationTime = table.Column&lt;DateTime&gt;(nullable: true),
+                LastModifierUserId = table.Column&lt;long&gt;(nullable: true),
+                Name = table.Column&lt;string&gt;(maxLength: 32, nullable: false)
+            },
+            constraints: table =&gt;
+            {
+                table.PrimaryKey(&quot;PK_AppPersons&quot;, x =&gt; x.Id);
+            });
+
+        migrationBuilder.AddColumn&lt;Guid&gt;(
+            name: &quot;AssignedPersonId&quot;,
+            table: &quot;AppTasks&quot;,
+            nullable: true);
+
+        migrationBuilder.CreateIndex(
+            name: &quot;IX_AppTasks_AssignedPersonId&quot;,
+            table: &quot;AppTasks&quot;,
+            column: &quot;AssignedPersonId&quot;);
+
+        migrationBuilder.AddForeignKey(
+            name: &quot;FK_AppTasks_AppPersons_AssignedPersonId&quot;,
+            table: &quot;AppTasks&quot;,
+            column: &quot;AssignedPersonId&quot;,
+            principalTable: &quot;AppPersons&quot;,
+            principalColumn: &quot;Id&quot;,
+            onDelete: <strong>ReferentialAction.SetNull</strong>);
+    }
+
+    //...
+}</pre>
+<p>I just changed ReferentialAction.Restrict to ReferentialAction.SetNull. It 
+does that: if I delete a person, assigned tasks to that person become 
+unassigned. This is not important in this demo. But I wanted to show that you 
+can change the migration code if you need. Actually, you always review the 
+generated code before applying it to the database. After that, we can <strong>
+apply migration</strong> to our database:</p>
+<p>
+<img alt="dotnet ef database update" height="33" src="migration-person-update.png" width="558" /></p>
+<p>When we open the database, we can see the new table and columns and add some 
+test data:</p>
+<p><img alt="Person table" height="79" src="person-table.png" width="668" /></p>
+<p>I added a person and assigned to the first task:</p>
+<p>
+<img alt="Tasks table" height="118" src="tasks-table-with-person.png" width="649" /></p>
+<p>...</p>
 
 <h2 id="ArticleHistory">Article History</h2>
 
 <ul>
-	<li><strong>2016-08-01</strong>: Initial publication.</li>
+	<li><strong>2016-08-08</strong>: Initial publication.</li>
 </ul>
 
 </body>

@@ -8,9 +8,10 @@ using Acme.SimpleTaskApp.EntityFrameworkCore;
 namespace Acme.SimpleTaskApp.EntityFrameworkCore.Migrations
 {
     [DbContext(typeof(SimpleTaskAppDbContext))]
-    partial class SimpleTaskAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20160807095846_Added_Person")]
+    partial class Added_Person
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
