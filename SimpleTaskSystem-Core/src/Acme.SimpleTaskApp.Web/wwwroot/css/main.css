@@ -4,3 +4,6 @@
 .famfamfam-flags {
   display: inline-block;
 }
+label.error {
+  color: red;
+}

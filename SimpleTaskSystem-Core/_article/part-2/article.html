@@ -367,7 +367,174 @@ namespace Acme.SimpleTaskApp.Tests.Tasks
 task with a <strong>title</strong> and <strong>assigned person</strong>, the 
 last one tries to create an <strong>invalid</strong> task to show the <strong>
 exception</strong> case.</p>
+<h3>Task Creation Page</h3>
+<p>We know that TaskAppService.Create is properly working. Now, we can create a 
+page to add a new task. Final page will be like that:</p>
+<p>
+<img alt="Create task page" height="450" src="create-task-page-view.png" width="742" /></p>
+<p>First, I added a <strong>Create</strong> action to the TaskController in 
+order to prepare the page above:</p>
+<pre lang="cs">using System.Threading.Tasks;
+using Abp.Application.Services.Dto;
+using Acme.SimpleTaskApp.Tasks;
+using Acme.SimpleTaskApp.Tasks.Dtos;
+using Acme.SimpleTaskApp.Web.Models.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Linq;
+using Acme.SimpleTaskApp.Common;
+using Acme.SimpleTaskApp.Web.Models.People;
+
+namespace Acme.SimpleTaskApp.Web.Controllers
+{
+    public class TasksController : SimpleTaskAppControllerBase
+    {
+        private readonly ITaskAppService _taskAppService;
+        private readonly ILookupAppService _lookupAppService;
+
+        public TasksController(
+            ITaskAppService taskAppService,
+            <strong>ILookupAppService lookupAppService</strong>)
+        {
+            _taskAppService = taskAppService;
+            _lookupAppService = lookupAppService;
+        }
+
+        //...
+        
+<strong>        public async Task&lt;ActionResult&gt; Create()
+        {
+            var peopleSelectListItems = (await _lookupAppService.GetPeopleComboboxItems()).Items
+                .Select(p =&gt; p.ToSelectListItem())
+                .ToList();
+
+            peopleSelectListItems.Insert(0, new SelectListItem { Value = string.Empty, Text = L(&quot;Unassigned&quot;), Selected = true });
+
+            return View(new CreateTaskViewModel(peopleSelectListItems));
+        }</strong>
+    }
+}</pre>
+<p>I injected ILookupAppService that is used to get people combobox items. While 
+I could directly inject and use IRepository&lt;Person, Guid&gt; here, I prefered this 
+to make a better layering and re-usability. 
+ILookupAppService.GetPeopleComboboxItems is defined in application layer as 
+shown below:</p>
+<pre lang="cs">public interface ILookupAppService : IApplicationService
+{
+    Task&lt;ListResultOutput&lt;ComboboxItemDto&gt;&gt; GetPeopleComboboxItems();
+}
+
+public class LookupAppService : SimpleTaskAppAppServiceBase, ILookupAppService
+{
+    private readonly IRepository&lt;Person, Guid&gt; _personRepository;
+
+    public LookupAppService(<strong>IRepository&lt;Person, Guid&gt; personRepository</strong>)
+    {
+        _personRepository = personRepository;
+    }
+
+<strong>    public async Task&lt;ListResultOutput&lt;ComboboxItemDto&gt;&gt; GetPeopleComboboxItems()
+    {
+        var people = await _personRepository.GetAllListAsync();
+        return new ListResultOutput&lt;ComboboxItemDto&gt;(
+            people.Select(p =&gt; new ComboboxItemDto(p.Id.ToString(&quot;D&quot;), p.Name)).ToList()
+        );
+    }</strong>
+}</pre>
+<p><strong>ComboboxItemDto</strong> is a simple class (defined in ABP) to 
+transfer a combobox item data. TaskController.Create method simply uses this 
+method and converts the returned list to a list of <strong>SelectListItem</strong> 
+(defined in AspNet Core) and passes to the view. Create view is shown below:</p>
+<pre lang="xml">@using Acme.SimpleTaskApp.Web.Models.People
+@model CreateTaskViewModel
+
+@section scripts
+{
+    &lt;environment names=&quot;Development&quot;&gt;
+        &lt;script src=&quot;~/js/views/tasks/create.js&quot;&gt;&lt;/script&gt;
+    &lt;/environment&gt;
+
+    &lt;environment names=&quot;Staging,Production&quot;&gt;
+        &lt;script src=&quot;~/js/views/tasks/create.min.js&quot;&gt;&lt;/script&gt;
+    &lt;/environment&gt;
+}
+
+&lt;h2&gt;
+    @L(&quot;NewTask&quot;)
+&lt;/h2&gt;
+
+&lt;form id=&quot;TaskCreationForm&quot;&gt;
+    
+<strong>    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;Title&quot;&gt;@L(&quot;Title&quot;)&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;Title&quot; class=&quot;form-control&quot; placeholder=&quot;@L(&quot;Title&quot;)&quot; required maxlength=&quot;@Acme.SimpleTaskApp.Tasks.Task.MaxTitleLength&quot;&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;Description&quot;&gt;@L(&quot;Description&quot;)&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;Description&quot; class=&quot;form-control&quot; placeholder=&quot;@L(&quot;Description&quot;)&quot; maxlength=&quot;@Acme.SimpleTaskApp.Tasks.Task.MaxDescriptionLength&quot;&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;form-group&quot;&gt;
+        @Html.Label(L(&quot;AssignedPerson&quot;))
+        @Html.DropDownList(
+            &quot;AssignedPersonId&quot;,
+            Model.People,
+            new
+            {
+                @class = &quot;form-control&quot;,
+                id = &quot;AssignedPersonCombobox&quot;
+            })
+    &lt;/div&gt;</strong>
+
+    &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;@L(&quot;Save&quot;)&lt;/button&gt;
+
+&lt;/form&gt;</pre>
+<p>I included create.js defined like that:</p>
+<pre lang="js">(function($) {
+    $(function() {
+
+        var _$form = $(&#39;<strong>#TaskCreationForm</strong>&#39;);
+
+        _$form.find(&#39;input:first&#39;).focus();
+
+        _$form.<strong>validate()</strong>;
+
+        _$form.find(&#39;button[type=submit]&#39;)
+            .click(function(e) {
+                e.preventDefault();
+
+                if (<strong>!_$form.valid()</strong>) {
+                    return;
+                }
+
+                var input = <strong>_$form.serializeFormToObject()</strong>;
+                <strong>abp.services.app.task.create</strong>(input)
+                    .done(function() {
+                        location.href = &#39;/Tasks&#39;;
+                    });
+            });
+    });
+})(jQuery);</pre>
+<p>Let's see what's done in this javascript code:</p>
+<ul>
+	<li>Prepares <strong>validatation</strong> for the form (using
+	<a href="https://jqueryvalidation.org/" target="_blank">jquery validation</a> 
+	plugin) and validates it on Save button's click.</li>
+	<li>Uses <strong>serializeFormToObject</strong> jquery plugin (defined in 
+	jquery-extensions.js in the solution) to convert forum data to a JSON object 
+	(I included jquery-extensions.js to the _Layout.cshtml).</li>
+	<li>Uses <strong>abp.services.task.create</strong> method to call 
+	TaskAppService.Create method. This is one of the important features of ABP. 
+	We can use application services from javascript code just like calling a 
+	javascript method in our code. See
+	<a href="http://www.aspnetboilerplate.com/Pages/Documents/AspNet-Core#application-services-as-controllers">
+	details</a>.</li>
+</ul>
 <p>...</p>
+<p>TODO:</p>
+<p>- anti forgery</p>
+<p>- use component for person combobox</p>
 
 <h2 id="ArticleHistory">Article History</h2>
 

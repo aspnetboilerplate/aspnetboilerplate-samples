@@ -10,5 +10,17 @@
     "inputFiles": [
       "wwwroot/js/views/tasks/index.js"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/js/views/tasks/create.min.js",
+    "inputFiles": [
+      "wwwroot/js/views/tasks/create.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/jquery-extensions.min.js",
+    "inputFiles": [
+      "wwwroot/js/jquery-extensions.js"
+    ]
   }
 ]

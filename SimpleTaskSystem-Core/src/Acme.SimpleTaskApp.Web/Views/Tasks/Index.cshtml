@@ -9,16 +9,17 @@
 @section scripts
 {
     <environment names="Development">
-        <script src="~/js/views/tasks/index.js"></script>
+        <script src="~/js/views/tasks/index.js" asp-append-version="true"></script>
     </environment>
 
     <environment names="Staging,Production">
-        <script src="~/js/views/tasks/index.min.js"></script>
+        <script src="~/js/views/tasks/index.min.js" asp-append-version="true"></script>
     </environment>
 }
 
 <h2>
     @L("TaskList")
+    <span><a class="btn btn-primary btn-sm" asp-action="Create">@L("AddNew")</a></span>
     <span class="pull-right">
         @Html.DropDownListFor(
            model => model.SelectedTaskState,

@@ -1,0 +1,45 @@
+﻿@using Acme.SimpleTaskApp.Web.Models.People
+@model CreateTaskViewModel
+
+@section scripts
+{
+    <environment names="Development">
+        <script src="~/js/views/tasks/create.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="~/js/views/tasks/create.min.js" asp-append-version="true"></script>
+    </environment>
+}
+
+<h2>
+    @L("NewTask")
+</h2>
+
+<form id="TaskCreationForm">
+    
+    <div class="form-group">
+        <label for="Title">@L("Title")</label>
+        <input type="text" name="Title" class="form-control" placeholder="@L("Title")" required maxlength="@Acme.SimpleTaskApp.Tasks.Task.MaxTitleLength">
+    </div>
+
+    <div class="form-group">
+        <label for="Description">@L("Description")</label>
+        <input type="text" name="Description" class="form-control" placeholder="@L("Description")" maxlength="@Acme.SimpleTaskApp.Tasks.Task.MaxDescriptionLength">
+    </div>
+
+    <div class="form-group">
+        @Html.Label(L("AssignedPerson"))
+        @Html.DropDownList(
+            "AssignedPersonId",
+            Model.People,
+            new
+            {
+                @class = "form-control",
+                id = "AssignedPersonCombobox"
+            })
+    </div>
+
+    <button type="submit" class="btn btn-default">@L("Save")</button>
+
+</form>

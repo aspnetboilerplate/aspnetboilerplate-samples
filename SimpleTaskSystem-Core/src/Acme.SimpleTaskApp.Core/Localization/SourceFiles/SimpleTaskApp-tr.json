@@ -11,6 +11,12 @@
     "TaskState_Open": "Açık",
     "TaskState_Completed": "Tamamlanmış",
     "AllTasks": "Tüm Görevler",
-    "Unassigned": "Atanmamış"
+    "Unassigned": "Atanmamış",
+    "NewTask": "Yeni Görev",
+    "Title": "Başlık",
+    "Description": "Tanımlama",
+    "Save": "Kaydet",
+    "AddNew": "Yeni Ekle",
+    "AssignedPerson": "Atanan Kişi"
   }
 }
