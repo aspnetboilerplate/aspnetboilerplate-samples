@@ -16,7 +16,20 @@
 <h2>Contents</h2>
 <ul>
 	<li><a href="#ArticleIntro">Introduction</a></li>
-	<li>...</li>
+	<li><a href="#ArticleDevelopApp">Developing the Application</a><ul>
+		<li><a href="#ArticleCreatePersonEntity">Creating the Person Entity</a></li>
+		<li><a href="#ArticleRelateToTask">Relating Person to the Task Entity</a></li>
+		<li><a href="#ArticleAddPersonToDbContext">Adding Person to DbContext</a></li>
+		<li><a href="#ArticleAddPersonMigration">Adding a New Migration for Person Entity</a></li>
+		<li><a href="#ArticleRetPersonInTaskList">Return Assigned Person in the Task List</a></li>
+		<li><a href="#ArticleUnitTestAssignedPerson">Change Unit Test to Test Assigned Person</a></li>
+		<li><a href="#ArticleShowPersonInTaskList">Show Assigned Person Name in the Task List Page</a></li>
+		<li><a href="#ArticleTaskCreateService">New Application Service Method for Task Creation</a></li>
+		<li><a href="#ArticleTaskCreateServiceTest">Testing Task Creation Service</a></li>
+		<li><a href="#ArticleTaskCreatePage">Task Creation Page</a></li>
+	</ul>
+	</li>
+	<li><a href="#ArticleRemoveHomeAndAbout">Remove Home and About Page</a></li>
 	<li><a href="#ArticleMore">More</a></li>
 	<li><a href="#ArticleHistory">Article History</a></li>
 </ul>
@@ -37,7 +50,7 @@ other parts:</p>
 
 <h2 id="ArticleDevelopApp">Developing the Application</h2>
 
-<h3 id="ArticleCreateTaskEntity">Creating the Person Entity</h3>
+<h3 id="ArticleCreatePersonEntity">Creating the Person Entity</h3>
 
 <p>I'll add <strong>Person</strong> concept to the application to <strong>assign tasks</strong> to people. So, I 
 define a simple <strong>Person entity</strong>:</p>
@@ -64,7 +77,9 @@ public class Person : <strong>AuditedEntity&lt;Guid&gt;</strong>
 demonstration. I also derived from <strong>AuditedEntity</strong> (which has 
 CreationTime, CreaterUserId, LastModificationTime and LastModifierUserId 
 properties) instead of base Entity class.</p>
-<h3>Relating Person to the Task Entity</h3>
+
+<h3 id="ArticleRelateToTask">Relating Person to the Task Entity</h3>
+
 <p>I'm also adding <strong>AssignedPerson</strong> property to the <strong>Task</strong> entity 
 (only sharing the changed parts here):</p>
 <pre lang="cs">[Table(&quot;AppTasks&quot;)]
@@ -88,7 +103,9 @@ public class Task : Entity, IHasCreationTime
 <p>AssignedPerson is <strong>optional</strong>. So, as task can be assigned to a 
 person or 
 can be unassigned.</p>
-<h3>Adding Person to DbContext</h3>
+
+<h3 id="ArticleAddPersonToDbContext">Adding Person to DbContext</h3>
+
 <p>Finally, I'm adding new Person entity to the DbContext class:</p>
 <pre lang="cs">public class SimpleTaskAppDbContext : AbpDbContext
 {
@@ -96,7 +113,9 @@ can be unassigned.</p>
     
     //...
 }</pre>
-<h3>Adding a New Migration for Person Entity</h3>
+
+<h3 id="ArticleAddPersonMigration">Adding a New Migration for Person Entity</h3>
+
 <p>Now, I'm running the following command in the command line:</p>
 <p>
 <img alt="dotnet ef migrations add" height="38" src="migration-add-person.png" width="670" /></p>
@@ -156,7 +175,9 @@ test data:</p>
 <p>I added a person and assigned to the first task:</p>
 <p>
 <img alt="Tasks table" height="118" src="tasks-table-with-person.png" width="649" /></p>
-<h3>Return Assigned Person in the Task List</h3>
+
+<h3 id="ArticleRetPersonInTaskList">Return Assigned Person in the Task List</h3>
+
 <p>I'll change the <strong>TaskAppService</strong> to return assigned person information. First, 
 I'm adding two properties to <strong>TaskListDto</strong>:</p>
 <pre lang="cs">[AutoMapFrom(typeof(Task))]
@@ -191,7 +212,9 @@ Include line):</p>
 <p>Thus, GetAll method will return Assigned person information with the tasks. 
 Since we used AutoMapper, new properties will also be copied to DTO 
 automatically.</p>
-<h3>Change Unit Test to Test Assigned Person</h3>
+
+<h3 id="ArticleUnitTestAssignedPerson">Change Unit Test to Test Assigned Person</h3>
+
 <p>At this point, we can change unit tests to see if assigned people are 
 retrieved while getting the task list. First, I changed initial test data in the 
 TestDataBuilder class to assign a person to a task:</p>
@@ -223,7 +246,9 @@ public async System.Threading.Tasks.Task Should_Get_All_Tasks()
     output.Items.Count.ShouldBe(2);
     <strong>output.Items.Count(t =&gt; t.AssignedPersonName != null).ShouldBe(1);
 </strong>}</pre>
-<h3>Show Assigned Person Name in the Task List Page</h3>
+
+<h3 id="ArticleShowPersonInTaskList">Show Assigned Person Name in the Task List Page</h3>
+
 <p>Finally, we can change <strong>Tasks\Index.cshtml</strong> to show <strong>
 AssignedPersonName</strong>:</p>
 <pre lang="xml">@foreach (var task in Model.Tasks)
@@ -239,7 +264,9 @@ AssignedPersonName</strong>:</p>
 <p>When we run the application, we can see it in the task list:</p>
 <p>
 <img alt="Task list with person name" height="311" src="task-list-assigned-person.png" width="446" /></p>
-<h3>New Application Service Method for Task Creation</h3>
+
+<h3 id="ArticleTaskCreateService">New Application Service Method for Task Creation</h3>
+
 <p>We can list tasks, but we don't have a <strong>task creation page</strong> yet. First, adding 
 a <strong>Create</strong> method to 
 the <strong>ITaskAppService</strong> interface:</p>
@@ -293,7 +320,9 @@ namespace Acme.SimpleTaskApp.Tasks.Dtos
 data annotations to apply
 <a href="http://www.aspnetboilerplate.com/Pages/Documents/Validating-Data-Transfer-Objects" target="_blank">
 validation</a>. We used constants from Task entity to use same max lengths.</p>
-<h3>Testing Task Creation Service</h3>
+
+<h3 id="ArticleTaskCreateServiceTest">Testing Task Creation Service</h3>
+
 <p>I'm adding some integration tests into TaskAppService_Tests class to test the 
 Create method:</p>
 <pre lang="cs">using Acme.SimpleTaskApp.Tasks;
@@ -367,7 +396,9 @@ namespace Acme.SimpleTaskApp.Tests.Tasks
 task with a <strong>title</strong> and <strong>assigned person</strong>, the 
 last one tries to create an <strong>invalid</strong> task to show the <strong>
 exception</strong> case.</p>
-<h3>Task Creation Page</h3>
+
+<h3 id="ArticleTaskCreatePage">Task Creation Page</h3>
+
 <p>We know that TaskAppService.Create is properly working. Now, we can create a 
 page to add a new task. Final page will be like that:</p>
 <p>
@@ -531,7 +562,9 @@ method and converts the returned list to a list of <strong>SelectListItem</stron
 	<a href="http://www.aspnetboilerplate.com/Pages/Documents/AspNet-Core#application-services-as-controllers">
 	details</a>.</li>
 </ul>
-<h2>Remove Home and About Page</h2>
+
+<h2 id="ArticleRemoveHomeAndAbout">Remove Home and About Page</h2>
+
 <p>We can remove Home and About page from the application if we don't need. To 
 do that, first change <strong>HomeController</strong> like that:</p>
 <pre lang="cs">using Microsoft.AspNetCore.Mvc;
@@ -547,17 +580,22 @@ namespace Acme.SimpleTaskApp.Web.Controllers
     }
 }</pre>
 <p>Then delete <strong>Views/Home</strong> folder and remove menu items from 
-SimpleTaskApp<strong>NavigationProvider</strong> class. You can also remove 
-unnecessary keys from localization JSON files.</p>
-<h2>More</h2>
+SimpleTaskApp<strong>NavigationProvider</strong> 
+class. You can also remove unnecessary keys from localization JSON files.</p>
+
+<h2 id="ArticleMore">More</h2>
+
+<p>I'll improve this article by adding</p>
 <ul>
+	<li>Open/Close tasks from the task list and refresh the task item.</li>
 	<li>Use component for person combobox.</li>
+    <li>...</li>
 </ul>
 
 <h2 id="ArticleHistory">Article History</h2>
 
 <ul>
-	<li><strong>2016-08-08/strong>: Initial publication.</li>
+	<li><strong>2016-08-08</strong>: Initial publication.</li>
 </ul>
 
 </body>
