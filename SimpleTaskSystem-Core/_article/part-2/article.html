@@ -531,15 +531,33 @@ method and converts the returned list to a list of <strong>SelectListItem</stron
 	<a href="http://www.aspnetboilerplate.com/Pages/Documents/AspNet-Core#application-services-as-controllers">
 	details</a>.</li>
 </ul>
-<p>...</p>
-<p>TODO:</p>
-<p>- anti forgery</p>
-<p>- use component for person combobox</p>
+<h2>Remove Home and About Page</h2>
+<p>We can remove Home and About page from the application if we don't need. To 
+do that, first change <strong>HomeController</strong> like that:</p>
+<pre lang="cs">using Microsoft.AspNetCore.Mvc;
+
+namespace Acme.SimpleTaskApp.Web.Controllers
+{
+    public class HomeController : SimpleTaskAppControllerBase
+    {
+        public ActionResult Index()
+        {
+            <strong>return RedirectToAction(&quot;Index&quot;, &quot;Tasks&quot;);</strong>
+        }
+    }
+}</pre>
+<p>Then delete <strong>Views/Home</strong> folder and remove menu items from 
+SimpleTaskApp<strong>NavigationProvider</strong> class. You can also remove 
+unnecessary keys from localization JSON files.</p>
+<h2>More</h2>
+<ul>
+	<li>Use component for person combobox.</li>
+</ul>
 
 <h2 id="ArticleHistory">Article History</h2>
 
 <ul>
-	<li><strong>2016-08-08</strong>: Initial publication.</li>
+	<li><strong>2016-08-08/strong>: Initial publication.</li>
 </ul>
 
 </body>
