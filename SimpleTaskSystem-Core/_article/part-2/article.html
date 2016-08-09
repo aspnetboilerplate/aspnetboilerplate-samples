@@ -247,6 +247,8 @@ public async System.Threading.Tasks.Task Should_Get_All_Tasks()
     <strong>output.Items.Count(t =&gt; t.AssignedPersonName != null).ShouldBe(1);
 </strong>}</pre>
 
+<p>Note: Count extension method requires <em>using System.Linq;</em> statement.</p>
+
 <h3 id="ArticleShowPersonInTaskList">Show Assigned Person Name in the Task List Page</h3>
 
 <p>Finally, we can change <strong>Tasks\Index.cshtml</strong> to show <strong>
@@ -475,7 +477,23 @@ public class LookupAppService : SimpleTaskAppAppServiceBase, ILookupAppService
 <p><strong>ComboboxItemDto</strong> is a simple class (defined in ABP) to 
 transfer a combobox item data. TaskController.Create method simply uses this 
 method and converts the returned list to a list of <strong>SelectListItem</strong> 
-(defined in AspNet Core) and passes to the view. Create view is shown below:</p>
+(defined in AspNet Core) and passes to the view using CreateTaskViewModel class:</p>
+<pre lang="cs">using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc.Rendering;
+
+namespace Acme.SimpleTaskApp.Web.Models.People
+{
+    public class CreateTaskViewModel
+    {
+        <strong>public List&lt;SelectListItem&gt; People { get; set; }</strong>
+
+        public CreateTaskViewModel(List&lt;SelectListItem&gt; people)
+        {
+            People = people;
+        }
+    }
+}</pre>
+<p>Create view is shown below:</p>
 <pre lang="xml">@using Acme.SimpleTaskApp.Web.Models.People
 @model CreateTaskViewModel
 
@@ -521,7 +539,7 @@ method and converts the returned list to a list of <strong>SelectListItem</stron
     &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;@L(&quot;Save&quot;)&lt;/button&gt;
 
 &lt;/form&gt;</pre>
-<p>I included create.js defined like that:</p>
+<p>I included <strong>create.js</strong> defined like that:</p>
 <pre lang="js">(function($) {
     $(function() {
 
@@ -554,7 +572,8 @@ method and converts the returned list to a list of <strong>SelectListItem</stron
 	plugin) and validates it on Save button's click.</li>
 	<li>Uses <strong>serializeFormToObject</strong> jquery plugin (defined in 
 	jquery-extensions.js in the solution) to convert forum data to a JSON object 
-	(I included jquery-extensions.js to the _Layout.cshtml).</li>
+	(I included jquery-extensions.js to the _Layout.cshtml as the last script 
+	file).</li>
 	<li>Uses <strong>abp.services.task.create</strong> method to call 
 	TaskAppService.Create method. This is one of the important features of ABP. 
 	We can use application services from javascript code just like calling a 
@@ -562,6 +581,10 @@ method and converts the returned list to a list of <strong>SelectListItem</stron
 	<a href="http://www.aspnetboilerplate.com/Pages/Documents/AspNet-Core#application-services-as-controllers">
 	details</a>.</li>
 </ul>
+
+<p>Finally, I added an "Add Task" button to the <em>task list</em> page in order 
+to navigate to the <em>task creation page</em>:</p>
+<pre lang="xml">&lt;a class=&quot;btn btn-primary btn-sm&quot; asp-action=&quot;<strong>Create</strong>&quot;&gt;@L(&quot;AddNew&quot;)&lt;/a&gt;</pre>
 
 <h2 id="ArticleRemoveHomeAndAbout">Remove Home and About Page</h2>
 
@@ -595,6 +618,7 @@ class. You can also remove unnecessary keys from localization JSON files.</p>
 <h2 id="ArticleHistory">Article History</h2>
 
 <ul>
+	<li><strong>2016-08-09</strong>: Revised article based on feedbacks.</li>
 	<li><strong>2016-08-08</strong>: Initial publication.</li>
 </ul>
 
