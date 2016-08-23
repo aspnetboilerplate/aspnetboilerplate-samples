@@ -6,10 +6,15 @@ using System.Web.Routing;
 using Abp.Localization;
 using Abp.Localization.Sources.Xml;
 using Abp.Modules;
+using Abp.Web.Mvc;
 
 namespace MultipleDbContextDemo.Web
 {
-    [DependsOn(typeof(MultipleDbContextDemoDataModule), typeof(MultipleDbContextDemoApplicationModule), typeof(MultipleDbContextDemoWebApiModule))]
+    [DependsOn(
+        typeof(MultipleDbContextDemoDataModule), 
+        typeof(MultipleDbContextDemoApplicationModule), 
+        typeof(MultipleDbContextDemoWebApiModule),
+        typeof(AbpWebMvcModule))]
     public class MultipleDbContextDemoWebModule : AbpModule
     {
         public override void PreInitialize()
