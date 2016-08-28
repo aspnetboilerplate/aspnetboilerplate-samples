@@ -16,6 +16,16 @@ namespace CallApiFromConsole
             Console.WriteLine("");
 
             Console.ForegroundColor = ConsoleColor.Gray;
+
+            RunDemo();
+
+            Console.WriteLine();
+            Console.WriteLine("Press ENTER to exit...");
+            Console.ReadLine();
+        }
+
+        private static void RunDemo()
+        {
             try
             {
                 using (var bootstrapper = AbpBootstrapper.Create<MyModule>())
@@ -28,6 +38,7 @@ namespace CallApiFromConsole
                         testClient.Object.TenancyName = Console.ReadLine();
                         if (testClient.Object.TenancyName.IsNullOrWhiteSpace())
                         {
+                            Console.WriteLine("tenancy (demo) name can not be null or empty");
                             return;
                         }
 
@@ -35,6 +46,7 @@ namespace CallApiFromConsole
                         testClient.Object.UserName = Console.ReadLine();
                         if (testClient.Object.UserName.IsNullOrWhiteSpace())
                         {
+                            Console.WriteLine("username can not be null or empty");
                             return;
                         }
 
@@ -42,12 +54,13 @@ namespace CallApiFromConsole
                         testClient.Object.Password = Console.ReadLine();
                         if (testClient.Object.Password.IsNullOrWhiteSpace())
                         {
+                            Console.WriteLine("password can not be null or empty");
                             return;
                         }
 
                         Console.Write("Cookie based (C) or Token based (T) auth (default: C)?");
                         var authType = Console.ReadLine() ?? "C";
-                        
+
                         if (authType.ToUpperInvariant() == "T")
                         {
                             Console.WriteLine("Logging in with TOKEN based auth...");
@@ -61,7 +74,9 @@ namespace CallApiFromConsole
 
                         Console.WriteLine("Getting roles...");
 
-                        var roles = AsyncHelper.RunSync(() => testClient.Object.GetRolesAsync());
+                        var roles = AsyncHelper.RunSync(
+                            () => testClient.Object.GetRolesAsync()
+                        );
 
                         Console.WriteLine(roles.Items.Count + " roles found:");
                         foreach (var role in roles.Items)
@@ -75,10 +90,6 @@ namespace CallApiFromConsole
             {
                 Console.WriteLine(ex.ToString());
             }
-
-            Console.WriteLine();
-            Console.WriteLine("Press ENTER to exit...");
-            Console.ReadLine();
         }
     }
 }

@@ -4,6 +4,11 @@ using Abp.Domain.Entities.Auditing;
 
 namespace CallApiFromConsole
 {
+    public class GetRolesInput
+    {
+        public string Permission { get; set; }
+    }
+
     public class RoleListDto : EntityDto, IHasCreationTime
     {
         public string Name { get; set; }

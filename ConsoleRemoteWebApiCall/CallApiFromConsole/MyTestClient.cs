@@ -47,7 +47,8 @@ namespace CallApiFromConsole
         public async Task<ListResultOutput<RoleListDto>> GetRolesAsync()
         {
             return await _abpWebApiClient.PostAsync<ListResultOutput<RoleListDto>>(
-                BaseUrl + "api/services/app/role/GetRoles"
+                BaseUrl + "api/services/app/role/GetRoles",
+                new GetRolesInput()
             );
         }
 
