@@ -6,9 +6,9 @@
   "dependencies": {
     "Acme.SimpleTaskApp.Tests": "1.0.0.0-*",
     "Acme.SimpleTaskApp.Web": "1.0.0-*",
-    "Microsoft.AspNetCore.Mvc": "1.0.0",
-    "AngleSharp": "0.9.7",
-    "Abp.AspNetCore.TestBase": "0.10.3.1"
+    "Abp.AspNetCore.TestBase": "0.12.0",
+    "AngleSharp": "0.9.8.1",
+    "Microsoft.AspNetCore.Mvc": "1.0.1"
   },
 
   "frameworks": {

@@ -1,6 +1,5 @@
 ﻿using System;
 using Abp.AspNetCore;
-using Abp.AspNetCore.Mvc;
 using Abp.AspNetCore.TestBase;
 using Abp.Dependency;
 using Acme.SimpleTaskApp.EntityFrameworkCore;
@@ -19,10 +18,7 @@ namespace Acme.SimpleTaskApp.Web.Tests
         {
             services.AddEntityFrameworkInMemoryDatabase();
 
-            services.AddMvc(options =>
-            {
-                options.AddAbp(services); //Add ABP infrastructure to MVC
-            });
+            services.AddMvc();
 
             //Configure Abp and Dependency Injection
             return services.AddAbp<SimpleTaskAppWebTestModule>(options =>

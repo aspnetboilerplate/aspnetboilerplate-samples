@@ -1,6 +1,5 @@
 ﻿using System;
 using Abp.AspNetCore;
-using Abp.AspNetCore.Mvc;
 using Acme.SimpleTaskApp.EntityFrameworkCore;
 using Castle.Facilities.Logging;
 using Microsoft.AspNetCore.Builder;
@@ -20,10 +19,7 @@ namespace Acme.SimpleTaskApp.Web.Startup
                 DbContextOptionsConfigurer.Configure(options.DbContextOptions, options.ConnectionString);
             });
 
-            services.AddMvc(options =>
-            {
-                options.AddAbp(services); //Add ABP infrastructure to MVC
-            });
+            services.AddMvc();
 
             //Configure Abp and Dependency Injection
             return services.AddAbp<SimpleTaskAppWebModule>(options =>
