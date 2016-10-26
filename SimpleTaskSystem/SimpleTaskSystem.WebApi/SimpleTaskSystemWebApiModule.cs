@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
 using Abp.Application.Services;
+using Abp.Configuration.Startup;
 using Abp.Modules;
 using Abp.WebApi;
-using Abp.WebApi.Controllers.Dynamic.Builders;
 
 namespace SimpleTaskSystem
 {
@@ -20,7 +20,7 @@ namespace SimpleTaskSystem
             //Creating dynamic Web Api Controllers for application services.
             //Thus, 'web api layer' is created automatically by ABP.
 
-            DynamicApiControllerBuilder
+            Configuration.Modules.AbpWebApi().DynamicApiControllerBuilder
                 .ForAll<IApplicationService>(Assembly.GetAssembly(typeof (SimpleTaskSystemApplicationModule)), "tasksystem")
                 .Build();
         }

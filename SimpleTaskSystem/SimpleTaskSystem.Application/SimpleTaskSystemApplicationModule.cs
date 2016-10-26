@@ -16,7 +16,10 @@ namespace SimpleTaskSystem
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
 
             //We must declare mappings to be able to use AutoMapper
-            DtoMappings.Map();
+            Configuration.Modules.AbpAutoMapper().Configurators.Add(mapper =>
+            {
+                DtoMappings.Map(mapper);
+            });
         }
     }
 }

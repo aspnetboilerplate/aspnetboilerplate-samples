@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using Abp.Runtime.Validation;
 
 namespace SimpleTaskSystem.Tasks.Dtos
@@ -19,11 +18,11 @@ namespace SimpleTaskSystem.Tasks.Dtos
         public TaskState? State { get; set; }
 
         //Custom validation method. It's called by ABP after data annotation validations.
-        public void AddValidationErrors(List<ValidationResult> results)
+        public void AddValidationErrors(CustomValidationContext context)
         {
             if (AssignedPersonId == null && State == null)
             {
-                results.Add(new ValidationResult("Both of AssignedPersonId and State can not be null in order to update a Task!", new[] { "AssignedPersonId", "State" }));
+                context.Results.Add(new ValidationResult("Both of AssignedPersonId and State can not be null in order to update a Task!", new[] { "AssignedPersonId", "State" }));
             }
         }
 
