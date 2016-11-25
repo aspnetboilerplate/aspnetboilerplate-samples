@@ -1,1 +1,0 @@
-﻿Add plugin module dlls into this folder.
