@@ -1,0 +1,26 @@
+﻿<div ng-controller="app.views.users.index as vm">
+    <h1>@L("Users")</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <button ng-click="vm.openUserCreationModal()" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> @L("CreateNewUser")</button>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>@L("UserName")</th>
+                        <th>@L("FullName")</th>
+                        <th>@L("EmailAddress")</th>
+                        <th>@L("IsActive")</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="user in vm.users">
+                        <td>{{user.userName}}</td>
+                        <td>{{user.fullName}}</td>
+                        <td>{{user.emailAddress}}</td>
+                        <td>{{user.isActive ? '@L("Yes")' : '@L("No")'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
