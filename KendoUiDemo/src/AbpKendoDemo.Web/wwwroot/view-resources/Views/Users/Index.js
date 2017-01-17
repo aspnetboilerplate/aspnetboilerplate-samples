@@ -4,7 +4,6 @@
         var _userService = abp.services.app.user;
         var _$modal = $('#UserCreateModal');
         var _$form = _$modal.find('form');
-        var _$usersGrid = $('#UsersGrid');
 
         _$form.validate();
 
@@ -30,7 +29,7 @@
             _$modal.find('input:not([type=hidden]):first').focus();
         });
 
-        _$usersGrid.kendoGrid({
+        $('#UsersGrid').kendoGrid({
             editable: true,
             columns: [{
                 field: 'userName',
