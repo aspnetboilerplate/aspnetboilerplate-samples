@@ -56,5 +56,11 @@ namespace AbpKendoDemo.Users
 
             CheckErrors(await UserManager.CreateAsync(user));
         }
+
+        public async Task UpdateUser(UpdateUserInput input)
+        {
+            var user = await _userRepository.GetAsync(input.Id);
+            input.MapTo(user);
+        }
     }
 }

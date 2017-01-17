@@ -1,9 +1,19 @@
 ﻿@using Abp.Authorization.Users
 @using AbpKendoDemo.Web.Startup
-@model Abp.Application.Services.Dto.ListResultDto<AbpKendoDemo.Users.Dto.UserListDto>
 @{
     ViewBag.CurrentPageName = PageNames.Users; //The menu item will be active for this page.
 }
+
+@section styles {
+    <environment names="Development">
+        <link rel="stylesheet" href="~/view-resources/Views/Users/Index.css" asp-append-version="true" />
+    </environment>
+
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/view-resources/Views/Users/Index.min.css" asp-append-version="true" />
+    </environment>
+}
+
 @section scripts
 {
     <environment names="Development">
@@ -16,33 +26,18 @@
 }
 <div>
     <h1>@L("Users")</h1>
+    <div class="row buttons-area">
+        <div class="col-md-12">
+            <button data-toggle="modal" data-target="#UserCreateModal" class="btn btn-primary"><i class="fa fa-plus"></i> @L("CreateNewUser")</button>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-12">
-            <button data-toggle="modal" data-target="#UserCreateModal" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> @L("CreateNewUser")</button>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>@L("UserName")</th>
-                        <th>@L("FullName")</th>
-                        <th>@L("EmailAddress")</th>
-                        <th>@L("IsActive")</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var user in Model.Items)
-                    {
-                        <tr>
-                            <td>@user.UserName</td>
-                            <td>@user.FullName</td>
-                            <td>@user.EmailAddress</td>
-                            <td>@L(user.IsActive ? "Yes" : "No")</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+            <div id="UsersGrid"></div>
         </div>
     </div>
 </div>
+
 <div class="modal fade" id="UserCreateModal" tabindex="-1" role="dialog" aria-labelledby="UserCreateModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

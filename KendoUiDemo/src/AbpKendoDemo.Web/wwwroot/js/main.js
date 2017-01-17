@@ -1,4 +1,5 @@
-﻿(function ($) {
+﻿var app = app || {};
+(function ($) {
 
     //Notification handler
     abp.event.on('abp.notifications.received', function (userNotification) {
@@ -26,5 +27,12 @@
     if ($.blockUI) {
         $.blockUI.defaults.baseZ = 2000;
     }
+
+    /* Some helpers */
+
+    var appLocalizationSource = abp.localization.getSource('AbpKendoDemo');
+    app.l = function () {
+        return appLocalizationSource.apply(this, arguments);
+    };
 
 })(jQuery);
