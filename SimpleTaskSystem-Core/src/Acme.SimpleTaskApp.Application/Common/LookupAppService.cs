@@ -16,10 +16,10 @@ namespace Acme.SimpleTaskApp.Common
             _personRepository = personRepository;
         }
 
-        public async Task<ListResultOutput<ComboboxItemDto>> GetPeopleComboboxItems()
+        public async Task<ListResultDto<ComboboxItemDto>> GetPeopleComboboxItems()
         {
             var people = await _personRepository.GetAllListAsync();
-            return new ListResultOutput<ComboboxItemDto>(
+            return new ListResultDto<ComboboxItemDto>(
                 people.Select(p => new ComboboxItemDto(p.Id.ToString("D"), p.Name)).ToList()
             );
         }

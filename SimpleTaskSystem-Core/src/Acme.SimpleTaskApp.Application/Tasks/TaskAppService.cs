@@ -18,7 +18,7 @@ namespace Acme.SimpleTaskApp.Tasks
             _taskRepository = taskRepository;
         }
 
-        public async Task<ListResultOutput<TaskListDto>> GetAll(GetAllTasksInput input)
+        public async Task<ListResultDto<TaskListDto>> GetAll(GetAllTasksInput input)
         {
             var tasks = await _taskRepository
                 .GetAll()
@@ -27,7 +27,7 @@ namespace Acme.SimpleTaskApp.Tasks
                 .OrderByDescending(t => t.CreationTime)
                 .ToListAsync();
 
-            return new ListResultOutput<TaskListDto>(
+            return new ListResultDto<TaskListDto>(
                 ObjectMapper.Map<List<TaskListDto>>(tasks)
             );
         }
