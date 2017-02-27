@@ -6,6 +6,6 @@ namespace Acme.SimpleTaskApp.Common
 {
     public interface ILookupAppService : IApplicationService
     {
-        Task<ListResultOutput<ComboboxItemDto>> GetPeopleComboboxItems();
+        Task<ListResultDto<ComboboxItemDto>> GetPeopleComboboxItems();
     }
 }
