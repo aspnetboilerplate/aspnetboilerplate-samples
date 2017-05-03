@@ -4,20 +4,23 @@
   "testRunner": "xunit",
 
   "dependencies": {
-    "Abp.AspNetCore.TestBase": "1.4.1",
     "Acme.SimpleTaskApp.Tests": "1.0.0.0-*",
     "Acme.SimpleTaskApp.Web": "1.0.0-*",
+    "Abp.AspNetCore.TestBase": "1.4.1",
+    "NSubstitute": "1.10.0",
+    "Shouldly": "2.8.2",
+    "Microsoft.AspNetCore.Mvc": "1.1.1",
     "AngleSharp": "0.9.9",
-    "Microsoft.AspNetCore.Mvc": "1.1.1"
+    "dotnet-test-xunit": "2.2.0-preview2-build1029",
+    "xunit": "2.2.0-beta2-build3300",
+    "xunit.extensibility.execution": "2.2.0-beta2-build3300",
+    "xunit.runner.visualstudio": "2.2.0-beta2-build1149",
+    "Microsoft.DotNet.InternalAbstractions": "1.0.0"
   },
 
   "frameworks": {
     "net461": {
       "Microsoft.NETCore.App": "1.0.0-rc2-3002702"
     }
-  },
-
-  "buildOptions": {
-    "preserveCompilationContext": true
   }
 }
