@@ -2,6 +2,7 @@
 using Abp.AspNetCore;
 using Abp.AspNetCore.TestBase;
 using Abp.Dependency;
+using Abp.Reflection.Extensions;
 using Acme.SimpleTaskApp.EntityFrameworkCore;
 using Acme.SimpleTaskApp.Web.Startup;
 using Castle.MicroKernel.Registration;
@@ -21,7 +22,7 @@ namespace Acme.SimpleTaskApp.Web.Tests
             services.AddEntityFrameworkInMemoryDatabase();
 
             services.AddMvc()
-                .PartManager.ApplicationParts.Add(new AssemblyPart(typeof(SimpleTaskAppWebModule).Assembly));
+                .PartManager.ApplicationParts.Add(new AssemblyPart(typeof(SimpleTaskAppWebModule).GetAssembly()));
 
             //Configure Abp and Dependency Injection
             return services.AddAbp<SimpleTaskAppWebTestModule>(options =>
