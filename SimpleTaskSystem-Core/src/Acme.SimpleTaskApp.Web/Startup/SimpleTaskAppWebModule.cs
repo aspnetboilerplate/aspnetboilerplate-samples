@@ -2,6 +2,7 @@
 using Abp.AspNetCore;
 using Abp.AspNetCore.Configuration;
 using Abp.Modules;
+using Abp.Reflection.Extensions;
 using Acme.SimpleTaskApp.Configuration;
 using Acme.SimpleTaskApp.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
@@ -30,13 +31,13 @@ namespace Acme.SimpleTaskApp.Web.Startup
 
             Configuration.Modules.AbpAspNetCore()
                 .CreateControllersForAppServices(
-                    typeof(SimpleTaskAppApplicationModule).Assembly
+                    typeof(SimpleTaskAppApplicationModule).GetAssembly()
                 );
         }
 
         public override void Initialize()
         {
-            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+            IocManager.RegisterAssemblyByConvention(typeof(SimpleTaskAppWebModule).GetAssembly());
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using Abp.AutoMapper;
 using Abp.Modules;
+using Abp.Reflection.Extensions;
 
 namespace Acme.SimpleTaskApp
 {
@@ -11,7 +12,7 @@ namespace Acme.SimpleTaskApp
     {
         public override void Initialize()
         {
-            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+            IocManager.RegisterAssemblyByConvention(typeof(SimpleTaskAppApplicationModule).GetAssembly());
         }
     }
 }

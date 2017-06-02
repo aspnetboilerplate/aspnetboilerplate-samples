@@ -1,4 +1,5 @@
-﻿@using System.Threading
+﻿@using System.Globalization
+@using System.Threading
 @using System.Threading.Tasks
 @using Abp.Timing
 @using Acme.SimpleTaskApp.Web.Views.Shared.Components.LanguageSelection
@@ -145,7 +146,7 @@
     <script>
         abp.localization.defaultSourceName = '@LocalizationSourceName';
         if (moment) { //Localizing momentjs
-            moment.locale('@Thread.CurrentThread.CurrentUICulture.Name');
+            moment.locale('@CultureInfo.CurrentUICulture.Name');
         }
     </script>
 

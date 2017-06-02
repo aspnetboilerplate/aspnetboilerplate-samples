@@ -1,6 +1,7 @@
 using System.Reflection;
 using Abp.AspNetCore.TestBase;
 using Abp.Modules;
+using Abp.Reflection.Extensions;
 using Acme.SimpleTaskApp.Web.Startup;
 
 namespace Acme.SimpleTaskApp.Web.Tests
@@ -13,7 +14,7 @@ namespace Acme.SimpleTaskApp.Web.Tests
     {
         public override void Initialize()
         {
-            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+            IocManager.RegisterAssemblyByConvention(typeof(SimpleTaskAppWebTestModule).GetAssembly());
         }
     }
 }

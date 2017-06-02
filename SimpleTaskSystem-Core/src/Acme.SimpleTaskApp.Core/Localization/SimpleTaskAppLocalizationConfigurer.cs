@@ -1,8 +1,8 @@
-﻿using System.Reflection;
-using Abp.Configuration.Startup;
+﻿using Abp.Configuration.Startup;
 using Abp.Localization;
 using Abp.Localization.Dictionaries;
 using Abp.Localization.Dictionaries.Json;
+using Abp.Reflection.Extensions;
 
 namespace Acme.SimpleTaskApp.Localization
 {
@@ -16,8 +16,8 @@ namespace Acme.SimpleTaskApp.Localization
             localizationConfiguration.Sources.Add(
                 new DictionaryBasedLocalizationSource(SimpleTaskAppConsts.LocalizationSourceName,
                     new JsonEmbeddedFileLocalizationDictionaryProvider(
-                        Assembly.GetExecutingAssembly(),
-                        "Acme.SimpleTaskApp.Core.Localization.SourceFiles"
+                        typeof(SimpleTaskAppLocalizationConfigurer).GetAssembly(),
+                        "Acme.SimpleTaskApp.Localization.SourceFiles"
                     )
                 )
             );

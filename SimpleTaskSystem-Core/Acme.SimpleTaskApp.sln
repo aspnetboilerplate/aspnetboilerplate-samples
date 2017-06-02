@@ -1,28 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AFAA0841-BD93-466F-B8F4-FB4EEC86F1FC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8326CDCE-1AB4-4188-96E1-640A068AE3AE}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Acme.SimpleTaskApp.Web", "src\Acme.SimpleTaskApp.Web\Acme.SimpleTaskApp.Web.xproj", "{A2213374-BB48-48FD-BBD4-81E6A961D866}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Acme.SimpleTaskApp.Core", "src\Acme.SimpleTaskApp.Core\Acme.SimpleTaskApp.Core.xproj", "{0FA75A5B-AB83-4FD0-B545-279774C01E87}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Acme.SimpleTaskApp.Application", "src\Acme.SimpleTaskApp.Application\Acme.SimpleTaskApp.Application.xproj", "{3870C648-4AEA-4B85-BA3F-F2F63B96136A}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Acme.SimpleTaskApp.EntityFrameworkCore", "src\Acme.SimpleTaskApp.EntityFrameworkCore\Acme.SimpleTaskApp.EntityFrameworkCore.xproj", "{DC780BC4-4EAC-4C63-9052-6F3169A59FA4}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F10AA149-2626-486E-85BB-9CD5365F3016}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Acme.SimpleTaskApp.Tests", "test\Acme.SimpleTaskApp.Tests\Acme.SimpleTaskApp.Tests.xproj", "{0D4C5D00-C144-4213-A007-4B8944113AB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.SimpleTaskApp.Web", "src\Acme.SimpleTaskApp.Web\Acme.SimpleTaskApp.Web.csproj", "{A2213374-BB48-48FD-BBD4-81E6A961D866}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Acme.SimpleTaskApp.Web.Tests", "test\Acme.SimpleTaskApp.Web.Tests\Acme.SimpleTaskApp.Web.Tests.xproj", "{5D441612-29CA-4DAD-9945-B9DE11CE026C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.SimpleTaskApp.Core", "src\Acme.SimpleTaskApp.Core\Acme.SimpleTaskApp.Core.csproj", "{0FA75A5B-AB83-4FD0-B545-279774C01E87}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.SimpleTaskApp.Application", "src\Acme.SimpleTaskApp.Application\Acme.SimpleTaskApp.Application.csproj", "{3870C648-4AEA-4B85-BA3F-F2F63B96136A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.SimpleTaskApp.EntityFrameworkCore", "src\Acme.SimpleTaskApp.EntityFrameworkCore\Acme.SimpleTaskApp.EntityFrameworkCore.csproj", "{DC780BC4-4EAC-4C63-9052-6F3169A59FA4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.SimpleTaskApp.Tests", "test\Acme.SimpleTaskApp.Tests\Acme.SimpleTaskApp.Tests.csproj", "{0D4C5D00-C144-4213-A007-4B8944113AB1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.SimpleTaskApp.Web.Tests", "test\Acme.SimpleTaskApp.Web.Tests\Acme.SimpleTaskApp.Web.Tests.csproj", "{5D441612-29CA-4DAD-9945-B9DE11CE026C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

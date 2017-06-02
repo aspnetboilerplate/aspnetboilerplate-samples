@@ -12,21 +12,16 @@ namespace Acme.SimpleTaskApp.Web
     {
         public static string CalculateContentRootFolder()
         {
-            var coreAssemblyDirectoryPath = Path.GetDirectoryName(typeof(SimpleTaskAppCoreModule).Assembly.Location);
+            var coreAssemblyDirectoryPath = Path.GetDirectoryName(AppContext.BaseDirectory);
             if (coreAssemblyDirectoryPath == null)
             {
-                throw new ApplicationException("Could not find location of Acme.SimpleTaskApp.Core assembly!");
+                throw new Exception("Could not find location of Acme.SimpleTaskApp.Core assembly!");
             }
 
             var directoryInfo = new DirectoryInfo(coreAssemblyDirectoryPath);
             while (!DirectoryContains(directoryInfo.FullName, "Acme.SimpleTaskApp.sln"))
             {
-                if (directoryInfo.Parent == null)
-                {
-                    throw new ApplicationException("Could not find content root folder!");
-                }
-
-                directoryInfo = directoryInfo.Parent;
+                directoryInfo = directoryInfo.Parent ?? throw new Exception("Could not find content root folder!");
             }
 
             return Path.Combine(directoryInfo.FullName, @"src\Acme.SimpleTaskApp.Web");

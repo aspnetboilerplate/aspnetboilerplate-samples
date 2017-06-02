@@ -1,5 +1,6 @@
 ﻿using System;
 using Abp.AspNetCore;
+using Abp.Castle.Logging.Log4Net;
 using Acme.SimpleTaskApp.EntityFrameworkCore;
 using Castle.Facilities.Logging;
 using Microsoft.AspNetCore.Builder;
@@ -26,7 +27,7 @@ namespace Acme.SimpleTaskApp.Web.Startup
             {
                 //Configure Log4Net logging
                 options.IocManager.IocContainer.AddFacility<LoggingFacility>(
-                    f => f.UseLog4Net().WithConfig("log4net.config")
+                    f => f.UseAbpLog4Net().WithConfig("log4net.config")
                 );
             });
         }

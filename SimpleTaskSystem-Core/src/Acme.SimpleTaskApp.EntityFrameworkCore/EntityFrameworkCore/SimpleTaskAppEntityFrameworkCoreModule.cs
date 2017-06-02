@@ -1,6 +1,6 @@
-﻿using System.Reflection;
-using Abp.EntityFrameworkCore;
+﻿using Abp.EntityFrameworkCore;
 using Abp.Modules;
+using Abp.Reflection.Extensions;
 
 namespace Acme.SimpleTaskApp.EntityFrameworkCore
 {
@@ -11,7 +11,7 @@ namespace Acme.SimpleTaskApp.EntityFrameworkCore
     {
         public override void Initialize()
         {
-            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+            IocManager.RegisterAssemblyByConvention(typeof(SimpleTaskAppEntityFrameworkCoreModule).GetAssembly());
         }
     }
 }
