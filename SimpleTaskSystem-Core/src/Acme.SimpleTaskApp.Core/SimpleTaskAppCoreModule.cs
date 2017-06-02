@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Abp.Modules;
+using Abp.Reflection.Extensions;
 using Acme.SimpleTaskApp.Localization;
 
 namespace Acme.SimpleTaskApp
@@ -15,7 +16,7 @@ namespace Acme.SimpleTaskApp
 
         public override void Initialize()
         {
-            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+            IocManager.RegisterAssemblyByConvention(typeof(SimpleTaskAppCoreModule).GetAssembly());
         }
     }
 }

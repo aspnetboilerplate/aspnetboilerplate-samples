@@ -2,13 +2,14 @@
 
   <PropertyGroup>
     <VersionPrefix>1.0.0.0</VersionPrefix>
-    <TargetFramework>net461</TargetFramework>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
     <AssemblyName>Acme.SimpleTaskApp.EntityFrameworkCore</AssemblyName>
     <OutputType>Exe</OutputType>
     <PackageId>Acme.SimpleTaskApp.EntityFrameworkCore</PackageId>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace>Acme.SimpleTaskApp</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,11 +23,6 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.1">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 
   <ItemGroup>

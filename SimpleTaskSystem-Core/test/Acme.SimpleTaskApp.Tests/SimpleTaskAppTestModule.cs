@@ -1,5 +1,6 @@
 using System.Reflection;
 using Abp.Modules;
+using Abp.Reflection.Extensions;
 using Abp.TestBase;
 using Acme.SimpleTaskApp.EntityFrameworkCore;
 using Castle.MicroKernel.Registration;
@@ -24,7 +25,7 @@ namespace Acme.SimpleTaskApp.Tests
 
         public override void Initialize()
         {
-            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+            IocManager.RegisterAssemblyByConvention(typeof(SimpleTaskAppTestModule).GetAssembly());
         }
 
         private void SetupInMemoryDb()
