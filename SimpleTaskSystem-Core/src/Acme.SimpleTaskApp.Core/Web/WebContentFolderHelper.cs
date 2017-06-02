@@ -12,7 +12,7 @@ namespace Acme.SimpleTaskApp.Web
     {
         public static string CalculateContentRootFolder()
         {
-            var coreAssemblyDirectoryPath = Path.GetDirectoryName(typeof(SimpleTaskAppCoreModule).Assembly.Location);
+            var coreAssemblyDirectoryPath = Path.GetDirectoryName(AppContext.BaseDirectory);
             if (coreAssemblyDirectoryPath == null)
             {
                 throw new ApplicationException("Could not find location of Acme.SimpleTaskApp.Core assembly!");
