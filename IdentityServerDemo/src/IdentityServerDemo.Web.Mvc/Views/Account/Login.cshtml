@@ -1,0 +1,107 @@
+﻿@using Abp.Extensions
+@using Abp.Authorization.Users
+@using Abp.MultiTenancy
+@model IdentityServerDemo.Web.Models.Account.LoginFormViewModel
+@section Styles
+{
+    <environment names="Development">
+        <link rel="stylesheet" href="~/view-resources/Views/Account/Login.css" asp-append-version="true" />
+    </environment>
+
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/view-resources/Views/Account/Login.min.css" asp-append-version="true" />
+    </environment>
+
+}
+@section Scripts
+{
+    <environment names="Development">
+        <script src="~/view-resources/Views/Account/Login.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="~/view-resources/Views/Account/Login.min.js" asp-append-version="true"></script>
+    </environment>
+}
+<div class="card">
+    <div class="body">
+        <form id="LoginForm" method="POST" asp-action="Login">
+            <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
+            <input type="hidden" name="returnUrlHash" />
+            <h4 class="text-center">@L("LogIn")</h4>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="material-icons">person</i>
+                </span>
+                <div class="form-line">
+                    <input type="text" class="form-control" name="usernameOrEmailAddress" placeholder="@L("UserNameOrEmail")" required autofocus maxlength="@AbpUserBase.MaxEmailAddressLength">
+                </div>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="material-icons">lock</i>
+                </span>
+                <div class="form-line">
+                    <input type="password" class="form-control" name="Password" placeholder="@L("Password")" required maxlength="@AbpUserBase.MaxPlainPasswordLength">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 p-t-5">
+                    <input type="checkbox" name="RememberMe" id="rememberme" class="filled-in chk-col-pink" value="true">
+                    <label for="rememberme">@L("RememberMe")</label>
+                </div>
+                <div class="col-xs-4">
+                    <button id="LoginButton" class="btn btn-block bg-pink waves-effect" type="submit">@L("LogIn")</button>
+                </div>
+            </div>
+            @if (Model.IsSelfRegistrationAllowed)
+            {
+                <div class="row m-t-15 m-b--20">
+                    <div class="col-xs-12">
+                        <a asp-action="Register">@L("Register")</a>
+                    </div>
+                </div>
+            }
+        </form>
+
+        @{
+            var loginProviders = Context.Authentication
+                .GetAuthenticationSchemes()
+                .Where(s => !s.DisplayName.IsNullOrWhiteSpace())
+                .ToList();
+
+            Func<string, string> getSocialIconClass = (provider) =>
+            {
+                provider = provider.ToLowerInvariant();
+
+                if (provider == "microsoft")
+                {
+                    return "windows";
+                }
+
+                return provider;
+            };
+        }
+
+        @if (Model.MultiTenancySide == MultiTenancySides.Tenant && loginProviders.Count > 0)
+        {
+            <div class="login-options">
+                <h4>@L("OrLoginWith")</h4>
+                <ul class="social-icons">
+                    <form asp-action="ExternalLogin" method="post">
+                        <input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl" />
+                        <input type="hidden" name="provider" value="" />
+
+                        @foreach (var p in loginProviders)
+                        {
+                            <a class="btn btn-default btn-sm fa fa-@(getSocialIconClass(p.DisplayName)) social-login-link" title="@p.DisplayName"
+                               data-provider="@p.DisplayName"
+                               href="javascript:;">
+                            </a>
+                        }
+                    </form>
+                </ul>
+            </div>
+        }
+    </div>
+</div>

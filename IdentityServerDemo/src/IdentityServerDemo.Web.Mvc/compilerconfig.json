@@ -1,0 +1,18 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/main.css",
+    "inputFile": "wwwroot/css/main.less"
+  },
+  {
+    "outputFile": "wwwroot/view-resources/Views/Account/Login.css",
+    "inputFile": "wwwroot/view-resources/Views/Account/Login.less"
+  },
+  {
+    "outputFile": "wwwroot/view-resources/Views/Account/_Layout.css",
+    "inputFile": "wwwroot/view-resources/Views/Account/_Layout.less"
+  },
+  {
+    "outputFile": "wwwroot/view-resources/Views/Shared/_Layout.css",
+    "inputFile": "wwwroot/view-resources/Views/Shared/_Layout.less"
+  }
+]
