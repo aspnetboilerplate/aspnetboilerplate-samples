@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
     <PackageTargetFallback>$(PackageTargetFallback);dotnet5.6;portable-net45+win8</PackageTargetFallback>
@@ -32,6 +32,7 @@
     <ProjectReference Include="..\IdentityServerDemo.Web.Core\IdentityServerDemo.Web.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="1.2.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.1">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>

@@ -1,10 +1,13 @@
 ﻿using System;
 using Abp.AspNetCore;
 using Abp.Castle.Logging.Log4Net;
+using Abp.IdentityServer4;
 using IdentityServerDemo.Configuration;
 using IdentityServerDemo.Identity;
 using IdentityServerDemo.Web.Resources;
 using Castle.Facilities.Logging;
+using IdentityServerDemo.Authorization.Users;
+using IdentityServerDemo.EntityFrameworkCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -17,6 +20,7 @@ using Owin;
 using Abp.Owin;
 using IdentityServerDemo.Owin;
 #endif
+
 
 namespace IdentityServerDemo.Web.Startup
 {
@@ -38,6 +42,14 @@ namespace IdentityServerDemo.Web.Startup
             });
 
             IdentityRegistrar.Register(services);
+
+            services.AddIdentityServer()
+                .AddTemporarySigningCredential()
+                .AddInMemoryIdentityResources(IdentityServerConfig.GetIdentityResources())
+                .AddInMemoryApiResources(IdentityServerConfig.GetApiResources())
+                .AddInMemoryClients(IdentityServerConfig.GetClients())
+                .AddAbpPersistedGrants<IdentityServerDemoDbContext>()
+                .AddAbpIdentityServer<User>();
 
             services.AddScoped<IWebResourceManager, WebResourceManager>();
 
@@ -65,6 +77,17 @@ namespace IdentityServerDemo.Web.Startup
             }
 
             AuthConfigurer.Configure(app, _appConfiguration);
+
+            app.UseIdentityServer();
+
+            app.UseIdentityServerAuthentication(
+                new IdentityServerAuthenticationOptions
+                {
+                    Authority = "http://localhost:62114/",
+                    RequireHttpsMetadata = false,
+                    AutomaticAuthenticate = true,
+                    AutomaticChallenge = true
+                });
 
             app.UseStaticFiles();
 

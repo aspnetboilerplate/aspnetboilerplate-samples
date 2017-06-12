@@ -11,9 +11,10 @@ using Abp.Notifications;
 namespace IdentityServerDemo.Migrations
 {
     [DbContext(typeof(IdentityServerDemoDbContext))]
-    partial class IdentityServerDemoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170612033054_Added_PersistedGrantEntity")]
+    partial class Added_PersistedGrantEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")
