@@ -13,11 +13,7 @@ namespace IdentityServerDemo.Identity
         {
             services.AddLogging();
 
-            services.AddAbpIdentity<Tenant, User, Role>(options =>
-                {
-                    options.Cookies.ApplicationCookie.AuthenticationScheme = "AbpZeroTemplateAuthSchema";
-                    options.Cookies.ApplicationCookie.CookieName = "AbpZeroTemplateAuth";
-                })
+            services.AddAbpIdentity<Tenant, User, Role>()
                 .AddAbpTenantManager<TenantManager>()
                 .AddAbpUserManager<UserManager>()
                 .AddAbpRoleManager<RoleManager>()
