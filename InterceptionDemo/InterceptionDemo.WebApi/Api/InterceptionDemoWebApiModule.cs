@@ -4,7 +4,6 @@ using Abp.Application.Services;
 using Abp.Configuration.Startup;
 using Abp.Modules;
 using Abp.WebApi;
-using Abp.WebApi.Controllers.Dynamic.Builders;
 
 namespace InterceptionDemo.Api
 {
@@ -15,7 +14,7 @@ namespace InterceptionDemo.Api
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
 
-            DynamicApiControllerBuilder
+            Configuration.Modules.AbpWebApi().DynamicApiControllerBuilder
                 .ForAll<IApplicationService>(typeof(InterceptionDemoApplicationModule).Assembly, "app")
                 .Build();
 

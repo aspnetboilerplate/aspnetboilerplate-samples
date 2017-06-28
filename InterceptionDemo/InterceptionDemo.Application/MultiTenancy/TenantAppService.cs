@@ -24,9 +24,9 @@ namespace InterceptionDemo.MultiTenancy
             _editionManager = editionManager;
         }
 
-        public ListResultOutput<TenantListDto> GetTenants()
+        public ListResultDto<TenantListDto> GetTenants()
         {
-            return new ListResultOutput<TenantListDto>(
+            return new ListResultDto<TenantListDto>(
                 _tenantManager.Tenants
                     .OrderBy(t => t.TenancyName)
                     .ToList()
@@ -44,7 +44,7 @@ namespace InterceptionDemo.MultiTenancy
                 tenant.EditionId = defaultEdition.Id;
             }
 
-            CheckErrors(await TenantManager.CreateAsync(tenant));
+            await TenantManager.CreateAsync(tenant);
             await CurrentUnitOfWork.SaveChangesAsync(); //To get new tenant's id.
 
             //We are working entities of new tenant, so changing tenant filter

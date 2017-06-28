@@ -3,13 +3,12 @@ using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
 using Abp.MultiTenancy;
 using Abp.Runtime.Caching;
-using InterceptionDemo.Authorization.Roles;
 using InterceptionDemo.MultiTenancy;
 using InterceptionDemo.Users;
 
 namespace InterceptionDemo.Features
 {
-    public class FeatureValueStore : AbpFeatureValueStore<Tenant, Role, User>
+    public class FeatureValueStore : AbpFeatureValueStore<Tenant, User>
     {
         public FeatureValueStore(
             ICacheManager cacheManager,
