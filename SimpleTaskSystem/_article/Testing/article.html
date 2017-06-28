@@ -52,7 +52,8 @@
 
 <p>To create test classes easier, I&#39;ll create a base class that prepares a fake database connection:</p>
 
-<pre>/// &lt;summary&gt;
+<pre>
+/// &lt;summary&gt;
 /// This is base class for all our test classes.
 /// It prepares ABP system, modules and a fake, in-memory database.
 /// Seeds database with initial data (&lt;see cref=&quot;SimpleTaskSystemInitialDataBuilder&quot;/&gt;).
@@ -105,9 +106,10 @@ public abstract class SimpleTaskSystemTestBase : AbpIntegratedTestBase&lt;Simple
 
 <p>This base class extends <strong>AbpIntegratedTestBase</strong>. It&#39;s a base class which initializes the ABP system. Defines <strong>LocalIocContainer</strong> property, that is a <strong>IIocManager</strong> object. Each test will work with it&#39;s dedicated IIocManager. Thus, tests will be isolated from each other.</p>
 
-<p>We should create a module dedicated for tests. It's <strong>SimpleTaskSystemTestModule</strong> 
-here:</p>
-<pre lang="cs">[DependsOn(
+<p>We should create a module dedicated for tests. It&#39;s <strong>SimpleTaskSystemTestModule</strong> here:</p>
+
+<pre lang="cs">
+[DependsOn(
         typeof(SimpleTaskSystemDataModule),
         typeof(SimpleTaskSystemApplicationModule)
     )]
@@ -115,10 +117,10 @@ public class SimpleTaskSystemTestModule : AbpModule
 {
         
 }</pre>
+
 <p>This module only defines depended modules, which will be tested.</p>
 
-<p>In the SimpleTaskSystemTestBase's PreInitialize method, we&#39;re registering <strong>DbConnection</strong> to dependency injection system using <strong>Effort</strong> 
-(PreInitialize method is used to run some code just befor ABP initialized). We registered it as Singleton (for LocalIocConainer). Thus, same database (and connection) will be used in a test even we create more than one DbContext in same test. <strong>SimpleTaskSystemDbContext</strong> must have a constructor getting DbConnection in order to use this in-memory database. So, I added the constructor below that accepts a DbConnection:</p>
+<p>In the SimpleTaskSystemTestBase&#39;s PreInitialize method, we&#39;re registering <strong>DbConnection</strong> to dependency injection system using <strong>Effort</strong> (PreInitialize method is used to run some code just befor ABP initialized). We registered it as Singleton (for LocalIocConainer). Thus, same database (and connection) will be used in a test even we create more than one DbContext in same test. <strong>SimpleTaskSystemDbContext</strong> must have a constructor getting DbConnection in order to use this in-memory database. So, I added the constructor below that accepts a DbConnection:</p>
 
 <pre>
 public class SimpleTaskSystemDbContext : AbpDbContext
@@ -229,9 +231,7 @@ public class TaskAppService : ApplicationService, ITaskAppService
 
 <p>In unit test, generally, dependencies of testing class is mocked (by creating fake implementations using some mock frameworks like Moq and NSubstitute). This makes unit testing harder, especially when dependencies grows.</p>
 
-<p>We will not do it like that since we&#39;re using dependency injection. All dependencies will be filled automatically by dependency injection with real implementations, not fakes. Only fake thing is the <strong>database</strong>. Actually, this is an 
-<strong>integration test</strong> since it not only tests the TaskAppService, but also tests repositories. Even, we&#39;re testing 
-it with validation, unit of work and other infrastructures of ASP.NET Boilerplate. This is very valuable since we&#39;re testing the application much more realistic.</p>
+<p>We will not do it like that since we&#39;re using dependency injection. All dependencies will be filled automatically by dependency injection with real implementations, not fakes. Only fake thing is the <strong>database</strong>. Actually, this is an <strong>integration test</strong> since it not only tests the TaskAppService, but also tests repositories. Even, we&#39;re testing it with validation, unit of work and other infrastructures of ASP.NET Boilerplate. This is very valuable since we&#39;re testing the application much more realistic.</p>
 
 <p>So, let&#39;s create first test to test CreateTask method.</p>
 
@@ -387,42 +387,43 @@ public async Task Should_Get_All_People()
 <h2 id="ArticleSummary">Summary</h2>
 
 <p>In this article, I wanted to show simply testing projects developed upon ASP.NET Boilerplate application framework. ASP.NET Boilerplate provides a good infrastructure to implement test driven development, or simply creating some unit/integration tests for your applications.</p>
-<p>Effort library provides a fake database that works well with EntityFramework. 
-It works as long as you use EntityFramework and LINQ to perform database 
-operations. If you have a stored procedure and want to test it, Effort does not 
-work. For such cases, I recommend using LocalDB.</p>
+
+<p>Effort library provides a fake database that works well with EntityFramework. It works as long as you use EntityFramework and LINQ to perform database operations. If you have a stored procedure and want to test it, Effort does not work. For such cases, I recommend using LocalDB.</p>
+
 <p>Use the following links for more information on ASP.NET Boilerplate:</p>
+
 <ul>
-	<li>Official site and documentation: 
-	<a href="http://www.aspnetboilerplate.com">aspnetboilerplate.com</a></li>
+	<li>Official site and documentation: <a href="http://www.aspnetboilerplate.com">aspnetboilerplate.com</a></li>
 	<li>Official forum: <a href="http://forum.aspnetboilerplate.com/">forum.aspnetboilerplate.com</a></li>
 	<li>Github repositories: <a href="https://github.com/aspnetboilerplate">github.com/aspnetboilerplate</a></li>
-	<li>Follow on twitter: <a href="https://twitter.com/aspboilerplate">
-	@aspboilerplate</a></li>
+	<li>Follow on twitter: <a href="https://twitter.com/aspboilerplate"> @aspboilerplate</a></li>
 </ul>
 
 <h2 id="ArticleHistory">Article History</h2>
+
 <ul>
-	<li>2016-07-19<ul>
+	<li>2016-07-19
+	<ul>
 		<li>Upgraded article and source code for ABP v0.10 release.</li>
 	</ul>
 	</li>
-	<li>2016-01-07<ul>
+	<li>2016-01-07
+	<ul>
 		<li>Upgraded solution to .Net Framework 4.5.2.</li>
 		<li>Upgraded Abp to v0.7.7.1.</li>
 	</ul>
 	</li>
-	<li>2015-06-15<ul>
+	<li>2015-06-15
+	<ul>
 		<li>Updated sample project and article based on latest ABP version.</li>
 	</ul>
 	</li>
-	<li>2015-02-02<ul>
+	<li>2015-02-02
+	<ul>
 		<li>First publish of the article.</li>
 	</ul>
 	</li>
 </ul>
-
-
 
 </body>
 
