@@ -10,7 +10,9 @@
 
             function loadPeopleAndCourses() {
                 testService.getPeopleAndCourses().success(function (result) {
+                    console.log(result);
                     vm.items = result;
+                 
                 });
             }
 
