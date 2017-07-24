@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Abp.Application.Services;
 
 namespace MultipleDbContextDemo.Services
@@ -12,5 +13,10 @@ namespace MultipleDbContextDemo.Services
         List<string> GetPeopleAndCourses();
 
         void CreatePerson(string name);
+
+	    Task CreateCourseAsync(string name);
+
+
+
     }
 }

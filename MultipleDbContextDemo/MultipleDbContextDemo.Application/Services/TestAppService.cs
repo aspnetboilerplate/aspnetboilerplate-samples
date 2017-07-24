@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Abp.Domain.Repositories;
+using Abp.UI;
 
 namespace MultipleDbContextDemo.Services
 {
@@ -44,7 +46,36 @@ namespace MultipleDbContextDemo.Services
 
         public void CreatePerson(string name)
         {
-            _personRepository.Insert(new Person(name));
-        }
-    }
+	      var entity=    _personRepository.FirstOrDefault(a => a.PersonName == name);
+	        if (entity==null)
+	        {
+				_personRepository.Insert(new Person(name));
+			}
+	        else
+	        {
+				throw new UserFriendlyException("Persons already exist");
+
+			}
+		}
+
+		public async Task CreateCourseAsync(string name)
+		{
+
+			var entity = await _courseRepository.FirstOrDefaultAsync(a => a.CourseName == name);
+
+			if (entity==null)
+			{
+				await _courseRepository.InsertAsync(new Course(name));
+
+			}
+			else
+			{
+				throw new UserFriendlyException("Courses already exist");
+
+
+			}
+
+
+		}
+	}
 }
