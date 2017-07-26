@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using Abp;
+using Abp.Castle.Logging.Log4Net;
 using Castle.Facilities.Logging;
 
 namespace AbpWpfDemo.UI
@@ -15,7 +16,7 @@ namespace AbpWpfDemo.UI
         public App()
         {
             _bootstrapper = AbpBootstrapper.Create<AbpWpfDemoUiModule>();
-            _bootstrapper.IocManager.IocContainer.AddFacility<LoggingFacility>(f => f.UseLog4Net().WithConfig("log4net.config"));
+            _bootstrapper.IocManager.IocContainer.AddFacility<LoggingFacility>(f => f.UseAbpLog4Net().WithConfig("log4net.config"));
         }
 
         protected override void OnStartup(StartupEventArgs e)

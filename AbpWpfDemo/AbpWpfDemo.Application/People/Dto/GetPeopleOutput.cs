@@ -3,7 +3,7 @@ using Abp.Application.Services.Dto;
 
 namespace AbpWpfDemo.People.Dto
 {
-    public class GetPeopleOutput : IOutputDto
+    public class GetPeopleOutput
     {
         public List<PersonDto> People { get; set; }
     }

@@ -3,7 +3,7 @@ using Abp.Application.Services.Dto;
 
 namespace AbpWpfDemo.People.Dto
 {
-    public class AddNewPersonInput : IInputDto
+    public class AddNewPersonInput
     {
         [Required]
         public string Name { get; set; }
