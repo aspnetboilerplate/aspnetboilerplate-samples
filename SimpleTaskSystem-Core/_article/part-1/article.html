@@ -59,9 +59,7 @@
 <p>In this article, I&#39;ll show to create a simple cross platform <strong>layered</strong> web application using the following tools:</p>
 
 <ul>
-	<li>
-	<a href="https://www.microsoft.com/net/core#windowsvs2017" target="_blank">
-	.Net Core</a> as base cross platform application development framework.</li>
+	<li><a href="https://www.microsoft.com/net/core#windowsvs2017" target="_blank">.Net Core</a> as base cross platform application development framework.</li>
 	<li><a href="http://www.aspnetboilerplate.com/" target="_blank">ASP.NET Boilerplate</a> (ABP) as startup template and application framework.</li>
 	<li><a href="https://docs.asp.net/" target="_blank">ASP.NET Core</a> as web framework.</li>
 	<li><a href="https://docs.efproject.net/" target="_blank">Entity Framework Core</a> as ORM framework.</li>
@@ -86,7 +84,7 @@
 <p>Following tools should be installed in your machine to be able to run/develop the sample application:</p>
 
 <ul>
-	<li><a href="https://www.visualstudio.com" target="_blank">Visual Studio 2017</a></li>
+	<li><a href="https://www.visualstudio.com/" target="_blank">Visual Studio 2017</a></li>
 	<li>SQL Server (you can change connection string to localdb)</li>
 	<li>Visual Studio Extensions:
 	<ul>
@@ -98,14 +96,9 @@
 
 <h2 id="ArticleCreateApp">Create the Application</h2>
 
-<p>I used ABP&#39;s startup template (<a href="http://www.aspnetboilerplate.com/Templates">http://www.aspnetboilerplate.com/Templates</a>) to create a new web application named &quot;<strong>Acme.SimpleTaskApp</strong>&quot;. 
-Company name (&quot;Acme&quot; here) is optional while creating templates. I 
-also selected <strong>Multi Page Web Application</strong> since I don&#39;t want to 
-use SPA in this article and I <strong>disabled Include module zero</strong> 
-since I want the most basic startup template:</p>
+<p>I used ABP&#39;s startup template (<a href="http://www.aspnetboilerplate.com/Templates">http://www.aspnetboilerplate.com/Templates</a>) to create a new web application named &quot;<strong>Acme.SimpleTaskApp</strong>&quot;. Company name (&quot;Acme&quot; here) is optional while creating templates. I also selected <strong>Multi Page Web Application</strong> since I don&#39;t want to use SPA in this article and I <strong>disabled Include module zero</strong> since I want the most basic startup template:</p>
 
-<p>
-<img alt="Template creation aspnetboilerplate" height="685" src="Template-Creation-2.png" width="687" /></p>
+<p><img alt="Template creation aspnetboilerplate" height="685" src="Template-Creation-2.png" width="687" /></p>
 
 <p>It creates a layered solution as shown below:&nbsp;</p>
 
@@ -119,8 +112,7 @@ since I want the most basic startup template:</p>
 	<li><strong>.EntityFramework</strong> project is for EF Core integration (abstracts EF Core from other layers).</li>
 	<li><strong>.Web</strong> project is for ASP.NET MVC layer.</li>
 	<li><strong>.Tests</strong> project is for unit and integration tests (up to application layer, excluding web layer)</li>
-	<li><strong>.Web.Tests</strong> project is for ASP.NET Core integrated tests (complete integration test 
-	including the web layer).</li>
+	<li><strong>.Web.Tests</strong> project is for ASP.NET Core integrated tests (complete integration test including the web layer).</li>
 </ul>
 
 <p>When you run the application, you can see the user interface of the template:</p>
@@ -212,17 +204,13 @@ public class SimpleTaskAppDbContext : AbpDbContext
 
 <h3 id="ArticleCreateFirstMigration">Creating the First Database Migration&nbsp;</h3>
 
-<p>We will create an initial database migration to create database and the AppTasks table. I open the
-<strong>Package Manager Console from Visual Studio</strong> and run the <strong>
-Add-Migration</strong> command (Default project must be the .EntityFrameworkCore project):</p>
+<p>We will create an initial database migration to create database and the AppTasks table. I open the <strong>Package Manager Console from Visual Studio</strong> and run the <strong> Add-Migration</strong> command (Default project must be the .EntityFrameworkCore project):</p>
 
-<p>
-<img alt="Entity Framework Core Add Migration" height="86" src="EF-Core-Initial-Migration-2.png" width="730" /></p>
+<p><img alt="Entity Framework Core Add Migration" height="86" src="EF-Core-Initial-Migration-2.png" width="730" /></p>
 
 <p>This command creates a <strong>Migrations</strong>&nbsp;folder in the .EntityFrameworkCore project which includes a migration class and a snapshot of our database model:</p>
 
-<p>
-<img alt="EF Core initial migration" height="216" src="EntityFrameworkCore-Project-Migrations-2.png" width="314" /></p>
+<p><img alt="EF Core initial migration" height="216" src="EntityFrameworkCore-Project-Migrations-2.png" width="314" /></p>
 
 <p><strong>Automatically generated</strong> &quot;Initial&quot; migration class is&nbsp;shown below:</p>
 
@@ -259,11 +247,9 @@ public partial class Initial : Migration
 
 <h3 id="ArticleCreateDb">Creating the Database</h3>
 
-<p>To create the database, I run <strong>Update-Database</strong> command from 
-Package Manager Console:</p>
+<p>To create the database, I run <strong>Update-Database</strong> command from Package Manager Console:</p>
 
-<p>
-<img alt="EF Update-Database command" height="117" src="EF-Core-Database-Update-2.png" width="710" /></p>
+<p><img alt="EF Update-Database command" height="117" src="EF-Core-Database-Update-2.png" width="710" /></p>
 
 <p>This command created a database named <strong>SimpleTaskAppDb</strong> in the local SQL Server and executed migrations (currently, there is a single, &quot;Initial&quot;, migration):</p>
 
@@ -284,11 +270,10 @@ Package Manager Console:</p>
 <pre lang="cs">
 public interface ITaskAppService : <strong>IApplicationService</strong>
 {
-    Task&lt;ListResultOutput&lt;TaskListDto&gt;&gt; GetAll(GetAllTasksInput input);
+    Task&lt;ListResultDto&lt;TaskListDto&gt;&gt; GetAll(GetAllTasksInput input);
 }</pre>
 
-<p>Defining an interface is not required, but suggested. By convention, all app services <strong>should</strong> implement <strong>IApplicationService</strong> interface in ABP 
-(it&#39;s just an empty marker interface). I created a <strong>GetAll</strong> method to query tasks. To do that, I also defined the following DTOs:</p>
+<p>Defining an interface is not required, but suggested. By convention, all app services <strong>should</strong> implement <strong>IApplicationService</strong> interface in ABP (it&#39;s just an empty marker interface). I created a <strong>GetAll</strong> method to query tasks. To do that, I also defined the following DTOs:</p>
 
 <pre lang="cs">
 public class GetAllTasksInput
@@ -311,7 +296,7 @@ public class TaskListDto : EntityDto, IHasCreationTime
 <ul>
 	<li><strong>GetAllTasksInput</strong> DTO defines input parameters of the <strong>GetAll</strong> app service method. Instead of directly defining the <strong>state</strong> as method parameter, I added it into a DTO object. Thus, I can add other parameters into this DTO later without breaking my existing clients (we could directly add a state parameter to the method).</li>
 	<li><strong>TaskListDto</strong> is used to return a Task data. It&#39;s derived from <strong>EntityDto</strong>, which just defines an <strong>Id </strong>property (we could add Id to our Dto and not derive from EntityDto). We defined [<strong>AutoMapFrom</strong>] attribute to create <a href="http://automapper.org/" target="_blank">AutoMapper</a> mapping from Task entity to TaskListDto. This attribute is defined in <a href="http://nuget.org/packages/Abp.AutoMapper" target="_blank"> Abp.AutoMapper</a> nuget package.</li>
-	<li>Lastly, <strong>ListResultOutput</strong> is a simple class contains a list of items (we could directly return a List&lt;TaskListDto&gt;).</li>
+	<li>Lastly, <strong>ListResultDto</strong>&nbsp;is a simple class contains a list of items (we could directly return a List&lt;TaskListDto&gt;).</li>
 </ul>
 
 <p>Now, we can implement the <strong>ITaskAppService</strong> as shown below:</p>
@@ -337,7 +322,7 @@ namespace Acme.SimpleTaskApp.Tasks
             _taskRepository = taskRepository;
         }
 
-        public async Task&lt;ListResultOutput&lt;TaskListDto&gt;&gt; GetAll(GetAllTasksInput input)
+        public async Task&lt;ListResultDto&lt;TaskListDto&gt;&gt; GetAll(GetAllTasksInput input)
         {
             var tasks = await _taskRepository
                 .GetAll()
@@ -345,7 +330,7 @@ namespace Acme.SimpleTaskApp.Tasks
                 .OrderByDescending(t =&gt; t.CreationTime)
                 .ToListAsync();
 
-            return new ListResultOutput&lt;TaskListDto&gt;(
+            return new ListResultDto&lt;TaskListDto&gt;(
                 ObjectMapper.Map&lt;List&lt;TaskListDto&gt;&gt;(tasks)
             );
         }
@@ -792,8 +777,8 @@ public class TasksController_Tests : SimpleTaskAppWebTestBase
 <h2 id="ArticleHistory">Article History</h2>
 
 <ul>
-	<li><strong>2017-06-02</strong>: Changed article and solution to support
-	<strong>.net core</strong>.</li>
+	<li><strong>2017-07-30</strong>: Replaced ListResultOutput by&nbsp;ListResultDto in the article.</li>
+	<li><strong>2017-06-02</strong>: Changed article and solution to support <strong>.net core</strong>.</li>
 	<li><strong>2016-08-08</strong>: Added link to the second article.</li>
 	<li><strong>2016-08-01</strong>: Initial publication.</li>
 </ul>
