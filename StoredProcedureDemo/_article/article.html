@@ -12,8 +12,51 @@
 
 <h1>Custom Repositories In ASP.NET Boilerplate</h1>
 <h2>Introduction</h2>
-<p>In this article, i will show how to create custom repostories in ABP and 
-usege of storage procedure, view, user defined functions.</p>
+<p>In this article, i will explain how to create custom repostories in ABP and 
+usage of storage procedure, view, user defined functions.</p>
+<p>You can download the sample project
+<a href="https://aspnetboilerplate.com/Templates>ASP.NET 
+Core MVC</strong></a>) that is used for this article from here:
+<a href="https://aspnetboilerplate.com/Templates">
+https://aspnetboilerplate.com/Templates</a></p>
+<p>For documentation: 
+<a href="https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Core">https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Core</a></p>
+
+<p>We will create a custom repository to do some basic operations on User entity, using storage procedure, view and user defined function.</p>
+
+<h2>Creating A Custom Repository</h2>
+
+
+
+<p>
+<span style="color: rgb(51, 51, 51); font-family: Roboto, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+To implement a custom repository, just derive from your application specific base repository class.</span></p>
+
+<pre>
+  	public interface IUserRepository: <strong> IRepository&lt;User, long&gt; </strong>
+    {
+      ...
+      ...
+    }
+    
+    public class UserRepository : <strong>AbpZeroTemplateRepositoryBase&lt;User, long&gt;, IUserRepository </strong>
+    {
+        private readonly IActiveTransactionProvider _transactionProvider;
+
+        public UserRepository(IDbContextProvider&lt;PhoneBookDbContext&gt; dbContextProvider, IActiveTransactionProvider transactionProvider)
+            : base(dbContextProvider)
+        {
+            _transactionProvider = transactionProvider;
+        }
+        
+        ...
+        ...
+    }
+    
+</pre>
+
+<p>That's all! We created the repository and we will implement the functions. But firstly, we have to handle the transactions.</p>
+
 
 
 
