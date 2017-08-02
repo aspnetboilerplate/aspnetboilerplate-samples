@@ -11,7 +11,7 @@
 
 
 <h1>Custom Repositories In ASP.NET Boilerplate</h1>
-<h2>Introduction</h2>
+<h3>Introduction</h3>
 <p>In this article, i will explain how to create custom repostories in ABP and 
 usage of storage procedure, view, user defined functions.</p>
 <p>You can download the sample project
@@ -24,7 +24,7 @@ https://aspnetboilerplate.com/Templates</a></p>
 
 <p>We will create a custom repository to do some basic operations on User entity, using storage procedure, view and user defined function.</p>
 
-<h2>Creating A Custom Repository</h2>
+<h3>Creating A Custom Repository</h3>
 
 
 
@@ -55,11 +55,181 @@ To implement a custom repository, just derive from your application specific bas
     
 </pre>
 
-<p>That's all! We created the repository and we will implement the functions. But firstly, we have to handle the transactions.</p>
+<p>That's all! We created the repository and we will implement the functions. But firstly, we have to handle the connection.</p>
+
+<h3>Database Connection</h3>
+
+<p>We will implement this functions in UserRepository class, to use them when needed.</p>
+
+<pre>
+        private DbCommand CreateCommand(string commandText, CommandType commandType, params SqlParameter[] parameters)
+        {
+            var command = Context.Database.GetDbConnection().CreateCommand();
+
+            command.CommandText = commandText;
+            command.CommandType = commandType;
+            command.Transaction = GetActiveTransaction();
+
+            foreach (var parameter in parameters)
+            {
+                command.Parameters.Add(parameter);
+            }
+
+            return command;
+        }
+
+        private void EnsureConnectionOpen()
+        {
+            var connection = Context.Database.GetDbConnection();
+
+            if (connection.State != ConnectionState.Open)
+            {
+                connection.Open();
+            }
+        }
+
+        private DbTransaction GetActiveTransaction()
+        {
+            return (DbTransaction)_transactionProvider.GetActiveTransaction(new ActiveTransactionProviderArgs
+            {
+                {"ContextType", typeof(PhoneBookDbContext) },
+                {"MultiTenancySide", MultiTenancySide }
+            });
+        }
+</pre>
 
 
 
+<h3>Storage Procedure</h3>
 
+<p> Here is a storage procedure call that gets username of all users.</p>
+
+<pre>
+        public async Task&lt;List&lt;string&gt;&gt; GetUserNames()
+        {
+            EnsureConnectionOpen();
+
+            using (var command = CreateCommand("GetUsernames", CommandType.StoredProcedure))
+            {
+                using (var dataReader = await command.ExecuteReaderAsync())
+                {
+                    var result = new List&lt;string&gt;();
+
+                    while (dataReader.Read())
+                    {
+                        result.Add(dataReader["UserName"].ToString());
+                    }
+
+                    return result;
+                }
+            }
+        }
+</pre>
+<p>In interface class:</p>
+<pre>
+  	public interface IUserRepository: <strong> IRepository&lt;User, long&gt; </strong>
+    {
+      ...
+      <strong>Task&lt;List&lt;string&gt;&gt; GetUserNames();</strong>
+      ...
+    }
+</pre>
+
+<p>Now we implemented the functon that calls storage procedure from database. Let's use it in application service:</p>
+
+<pre>
+ 	 public class UserAppService : AsyncCrudAppService&lt;User, UserDto, long, PagedResultRequestDto, CreateUserDto, UserDto&gt;, IUserAppService
+    {
+        ...
+        <strong>private readonly IUserRepository _userRepository;</strong>
+		...
+		
+        public UserAppService(... ... .... , <strong>IUserRepository userRepository</strong>)
+            : base(repository)
+        {
+            ...
+            <strong>_userRepository = userRepository</strong>;
+        }
+        
+        ...
+        
+        <strong> public async Task&lt;List&lt;string&gt;&gt; GetUsers()
+        {
+            return await _userRepository.GetUserNames();
+        }</strong>
+        ...
+    }
+</pre>
+
+<p>That's it. You can run tha application and call the app service from browser's console to see the results.</p>
+
+<p>Here is an example function that sends a parameter to delete a user</p>
+
+<pre>
+		 public async Task DeleteUser(EntityDto input)
+        {
+            var commandText = "EXEC DeleteUserById @id";
+            var parameter = new SqlParameter("id", input.Id);
+            await Context.Database.ExecuteSqlCommandAsync(commandText,new CancellationToken(), parameter);
+        }
+</pre>
+<p>And another example function that sends a parameter to update a user's email address.</p>
+<pre>
+		public async Task UpdateEmail(UpdateEmailDto input)
+        {
+            var commandText = "EXEC UpdateEmailById @email, @id";
+            var parameterId = new SqlParameter("id", input.Id);
+            var parameterEmail = new SqlParameter("email", input.EmailAddress);
+            await Context.Database.ExecuteSqlCommandAsync(commandText, new CancellationToken(), parameterEmail, parameterId);
+        }
+</pre>
+
+<h3>View</h3>
+
+<p>You can call a view like that:</p>
+<pre>
+		public async Task&lt;List&lt;string&gt;&gt; GetAdminUsernames()
+        {
+            EnsureConnectionOpen();
+            using (var command = CreateCommand("SELECT * FROM dbo.UserAdminView", CommandType.Text))
+            {
+                    using (var dataReader = await command.ExecuteReaderAsync())
+                    {
+                        var result = new List&lt;string&gt;();
+                        while (dataReader.Read())
+                        {
+                            result.Add(dataReader["UserName"].ToString());
+                        }
+                        return result;
+                    }
+            }
+        }
+ </pre>
+ 
+<h3>User Defined Function</h3>
+
+<p>You can call a User Defined Function like that:</p>
+
+<pre>
+        public async Task&lt;GetUserByIdOutput&gt; GetUserById(EntityDto input)
+        {
+            EnsureConnectionOpen();
+            using (var command = CreateCommand("SELECT dbo.GetUsernameById(@id)", CommandType.Text, new SqlParameter("@id", input.Id)))
+                {
+                    var username = (await command.ExecuteScalarAsync()).ToString();
+                    return new GetUserByIdOutput() { Username = username };
+                }
+            
+        }
+</pre>
+
+<h2>Source On Github</h2>
+
+<p>Source code is published on github: <a href="https://github.com/aspnetboilerplate/aspnetboilerplate-samples/tree/master/StoredProcedureDemo"> https://github.com/aspnetboilerplate/aspnetboilerplate-samples/tree/master/StoredProcedureDemo </a></p>
+
+<p><strong> <a href="https://aspnetboilerplate.com/"> ASP.NET BOILERPLATE </a></strong></p>
 </body>
+
+
 
 </html>
