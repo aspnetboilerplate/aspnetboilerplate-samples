@@ -52,7 +52,7 @@
 <p>I&#39;ll add <strong>Person</strong> concept to the application to <strong>assign tasks</strong> to people. So, I define a simple <strong>Person entity</strong>:</p>
 
 <pre lang="cs">
-<strong>[Table(&quot;AppPersons&quot;)]</strong>
+[Table(&quot;AppPersons&quot;)]
 public class Person : <strong>AuditedEntity&lt;Guid&gt;</strong>
 {
     public const int MaxNameLength = 32;
@@ -113,11 +113,9 @@ public class SimpleTaskAppDbContext : AbpDbContext
 
 <h3 id="ArticleAddPersonMigration">Adding a New Migration for Person Entity</h3>
 
-<p>Now, I&#39;m running the following command in the <strong>Package Manager 
-Console</strong>:</p>
+<p>Now, I&#39;m running the following command in the <strong>Package Manager Console</strong>:</p>
 
-<p>
-<img alt="Add new migration" height="69" src="migration-add-person-2.png" width="707" /></p>
+<p><img alt="Add new migration" height="69" src="migration-add-person-2.png" width="707" /></p>
 
 <p>And it creates a new migration class in the project:</p>
 
@@ -166,8 +164,7 @@ public partial class Added_Person : Migration
 
 <p>I just changed ReferentialAction.Restrict to ReferentialAction.SetNull. It does that: if I delete a person, assigned tasks to that person become unassigned. This is not important in this demo. But I wanted to show that you can change the migration code if you need. Actually, you always review the generated code before applying it to the database. After that, we can <strong> apply migration</strong> to our database:</p>
 
-<p>
-<img alt="Update-Database" height="74" src="migration-person-update-2.png" width="706" /></p>
+<p><img alt="Update-Database" height="74" src="migration-person-update-2.png" width="706" /></p>
 
 <p>When we open the database, we can see the new table and columns and add some test data:</p>
 
@@ -192,15 +189,14 @@ public class TaskListDto : EntityDto, IHasCreationTime
     public string AssignedPersonName { get; set; }</strong>
 }</pre>
 
-<p>And including the Task.AssignedPerson property to the query. Just added the
-<strong>Include</strong> line:</p>
+<p>And including the Task.AssignedPerson property to the query. Just added the <strong>Include</strong> line:</p>
 
 <pre lang="cs">
 public class TaskAppService : SimpleTaskAppAppServiceBase, ITaskAppService
 {
     //...
 
-    public async Task&lt;ListResultOutput&lt;TaskListDto&gt;&gt; GetAll(GetAllTasksInput input)
+    public async Task&lt;ListResultDto&lt;TaskListDto&gt;&gt; GetAll(GetAllTasksInput input)
     {
         var tasks = await _taskRepository
             .GetAll()
@@ -209,7 +205,7 @@ public class TaskAppService : SimpleTaskAppAppServiceBase, ITaskAppService
             .OrderByDescending(t =&gt; t.CreationTime)
             .ToListAsync();
 
-        return new ListResultOutput&lt;TaskListDto&gt;(
+        return new ListResultDto&lt;TaskListDto&gt;(
             ObjectMapper.Map&lt;List&lt;TaskListDto&gt;&gt;(tasks)
         );
     }
@@ -463,7 +459,7 @@ namespace Acme.SimpleTaskApp.Web.Controllers
 <pre lang="cs">
 public interface ILookupAppService : IApplicationService
 {
-    Task&lt;ListResultOutput&lt;ComboboxItemDto&gt;&gt; GetPeopleComboboxItems();
+    Task&lt;ListResultDto&lt;ComboboxItemDto&gt;&gt; GetPeopleComboboxItems();
 }
 
 public class LookupAppService : SimpleTaskAppAppServiceBase, ILookupAppService
@@ -475,10 +471,10 @@ public class LookupAppService : SimpleTaskAppAppServiceBase, ILookupAppService
         _personRepository = personRepository;
     }
 
-<strong>    public async Task&lt;ListResultOutput&lt;ComboboxItemDto&gt;&gt; GetPeopleComboboxItems()
+<strong>    public async Task&lt;ListResultDto&lt;ComboboxItemDto&gt;&gt; GetPeopleComboboxItems()
     {
         var people = await _personRepository.GetAllListAsync();
-        return new ListResultOutput&lt;ComboboxItemDto&gt;(
+        return new ListResultDto&lt;ComboboxItemDto&gt;(
             people.Select(p =&gt; new ComboboxItemDto(p.Id.ToString(&quot;D&quot;), p.Name)).ToList()
         );
     }</strong>
@@ -627,8 +623,8 @@ namespace Acme.SimpleTaskApp.Web.Controllers
 <h2 id="ArticleHistory">Article History</h2>
 
 <ul>
-	<li><strong>2017-06-02</strong>: Changed article and solution to support 
-	.net core.</li>
+	<li><strong>2017-07-30</strong>: Replaces ListResultOutput by ListResultDto in the article.</li>
+	<li><strong>2017-06-02</strong>: Changed article and solution to support .net core.</li>
 	<li><strong>2016-08-09</strong>: Revised article based on feedbacks.</li>
 	<li><strong>2016-08-08</strong>: Initial publication.</li>
 </ul>
