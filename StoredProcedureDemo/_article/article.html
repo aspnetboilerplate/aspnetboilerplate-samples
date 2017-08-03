@@ -55,7 +55,7 @@ solution structure as like below:</p>
 </pre>
 <p>Implement the repository in infrastructure layer (Acme.PhoneBook.EntityFrameworkCore).</p>
 <pre>
-    public class UserRepository : <strong>AbpZeroTemplateRepositoryBase&lt;User, long&gt;, IUserRepository </strong>
+    public class UserRepository : <strong>PhoneBookRepositoryBase&lt;User, long&gt;, IUserRepository </strong>
     {
         private readonly IActiveTransactionProvider _transactionProvider;
 

@@ -14,7 +14,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Acme.PhoneBook.Authorization.Users
 {
-    public class UserRepository : AbpZeroTemplateRepositoryBase<User, long>, IUserRepository
+    public class UserRepository : PhoneBookRepositoryBase<User, long>, IUserRepository
     {
         private readonly IActiveTransactionProvider _transactionProvider;
 
