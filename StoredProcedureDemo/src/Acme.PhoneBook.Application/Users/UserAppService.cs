@@ -9,9 +9,12 @@ using Acme.PhoneBook.Users.Dto;
 using Microsoft.AspNetCore.Identity;
 using System.Linq;
 using Abp.Authorization;
+using Abp.Domain.Uow;
 using Microsoft.EntityFrameworkCore;
 using Abp.IdentityFramework;
 using Acme.PhoneBook.Authorization.Roles;
+using Acme.PhoneBook.Authorization.Users.Dtos;
+using Acme.PhoneBook.EntityFrameworkCore.Repositories;
 using Acme.PhoneBook.Roles.Dto;
 
 namespace Acme.PhoneBook.Users
@@ -22,13 +25,15 @@ namespace Acme.PhoneBook.Users
         private readonly UserManager _userManager;
         private readonly IPasswordHasher<User> _passwordHasher;
         private readonly IRepository<Role> _roleRepository;
+        private readonly IUserRepository _userRepository;
 
-        public UserAppService(IRepository<User, long> repository, UserManager userManager, IPasswordHasher<User> passwordHasher, IRepository<Role> roleRepository)
+        public UserAppService(IUserRepository userRepository, IRepository<User, long> repository, UserManager userManager, IPasswordHasher<User> passwordHasher, IRepository<Role> roleRepository)
             : base(repository)
         {
             _userManager = userManager;
             _passwordHasher = passwordHasher;
             _roleRepository = roleRepository;
+            _userRepository = userRepository;
         }
         
         public override async Task<UserDto> Create(CreateUserDto input)
@@ -81,6 +86,31 @@ namespace Acme.PhoneBook.Users
         {
             var roles = await _roleRepository.GetAllListAsync();
             return new ListResultDto<RoleDto>(ObjectMapper.Map<List<RoleDto>>(roles));
+        }
+        
+        public async Task<List<string>> GetUsers()
+        {
+            return await _userRepository.GetUserNames();
+        }
+        
+        public async Task<List<string>> GetAdminUsernames()
+        {
+            return await _userRepository.GetAdminUsernames();
+        }
+        
+        public async Task DeleteUser(EntityDto input)
+        {
+            await _userRepository.DeleteUser(input);
+        }
+        
+        public async Task UpdateEmail(UpdateEmailDto input)
+        {
+            await _userRepository.UpdateEmail(input);
+        }
+        
+        public async Task<GetUserByIdOutput> GetUserById(EntityDto input)
+        {
+            return await _userRepository.GetUserById(input);
         }
 
         protected override User MapToEntity(CreateUserDto createInput)
