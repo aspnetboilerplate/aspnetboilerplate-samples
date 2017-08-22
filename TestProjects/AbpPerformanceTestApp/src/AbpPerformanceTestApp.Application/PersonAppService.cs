@@ -16,10 +16,10 @@ namespace AbpPerformanceTestApp
             _personRepository = personRepository;
         }
 
-        public async Task<ListResultDto<PersonListDto>> GetPeople(GetPeopleInput input)
+        public async Task<ListResultDto<Person>> GetPeople(GetPeopleInput input)
         {
             var persons = await _personRepository.GetAllListAsync();
-            return new ListResultDto<PersonListDto>(ObjectMapper.Map<List<PersonListDto>>(persons.ToList()));
+            return new ListResultDto<Person>(persons);
         }
 
         public async Task<int> InsertAndGetId(InsertAndGetIdInput input)

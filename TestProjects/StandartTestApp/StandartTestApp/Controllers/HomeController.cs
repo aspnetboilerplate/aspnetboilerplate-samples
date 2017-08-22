@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using StandartTestApp.dto;
 
 namespace StandartTestApp.Controllers
 {
@@ -24,7 +25,7 @@ namespace StandartTestApp.Controllers
             await _personService.Delete( new DeletePersonInput {Id = id});
         }
 
-        public async Task<List<PersonDto>> GetList()
+        public async Task<List<Person>> GetList()
         {
             return await _personService.GetAllPeople();
         }

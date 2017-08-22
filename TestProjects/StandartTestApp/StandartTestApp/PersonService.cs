@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using StandartTestApp.dto;
 
 namespace StandartTestApp
 {
@@ -23,10 +22,10 @@ namespace StandartTestApp
             return new InsertAndGetIdOutput { Id = person.Id };
         }
 
-        public async Task<List<PersonDto>> GetAllPeople()
+        public async Task<List<Person>> GetAllPeople()
         {
             var people = await _context.People.ToListAsync();
-            return people.Select(p => new PersonDto { Name = p.Name, Id = p.Id, PhoneNumber = p.PhoneNumber }).ToList();
+            return people;
         }
 
         public async Task Delete(DeletePersonInput input)
@@ -45,31 +44,5 @@ namespace StandartTestApp
         {
             return 42;
         }
-    }
-
-    public class PersonDto
-    {
-        public int Id { get; set; }
-
-        public string Name { get; set; }
-
-        public string PhoneNumber { get; set; }
-    }
-    
-    public class DeletePersonInput
-    {
-        public int Id { get; set; }
-    }
-
-    public class InsertAndGetIdInput
-    {
-        public string Name { get; set; }
-
-        public string PhoneNumber { get; set; }
-    }
-
-    public class InsertAndGetIdOutput
-    {
-        public int Id { get; set; }
     }
 }
