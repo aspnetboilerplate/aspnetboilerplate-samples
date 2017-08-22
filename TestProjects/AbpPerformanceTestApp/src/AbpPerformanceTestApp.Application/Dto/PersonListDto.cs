@@ -1,7 +1,7 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 
-namespace AbpPerformanceTestApp
+namespace AbpPerformanceTestApp.Dto
 {
     [AutoMapFrom(typeof(Person))]
     public class PersonListDto : EntityDto

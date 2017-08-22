@@ -3,8 +3,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.Domain.Repositories;
+using AbpPerformanceTestApp.Dto;
 
-namespace AbpPerformanceTestApp.Dto
+namespace AbpPerformanceTestApp
 {
     public class PersonAppService : AbpPerformanceTestAppAppServiceBase, IPersonAppService
     {
