@@ -7,7 +7,7 @@ using Abp.Domain.Entities;
 namespace AbpPerformanceTestApp
 {
     [Table("PbPersons")]
-    public class Person : Entity<int>
+    public class Person : Entity
     {
         public virtual string Name { get; set; }
         

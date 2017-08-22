@@ -137,10 +137,10 @@ namespace TesterApp
         }
         public static string AvarageCountLogGenerator(double averageGetPeople, double averageGetConstant, double averageDelete, double averageInsertAndGetId, string withOrWithoutAbp)
         {
-            return "\n Avarage GetPeople " + withOrWithoutAbp + " => " + averageGetPeople + "\n " +
+            return "Avarage GetPeople " + withOrWithoutAbp + " => " + averageGetPeople + "\n " +
                    "Avarage GetConstant " + withOrWithoutAbp + " => " + averageGetConstant + "\n " +
                    "Avarage Delete " + withOrWithoutAbp + " => " + averageDelete + "\n " +
-                   "Avarage InsertAndGetId " + withOrWithoutAbp + " => " + averageInsertAndGetId;
+                   "Avarage InsertAndGetId " + withOrWithoutAbp + " => " + averageInsertAndGetId + "\n ";
 
         }
         public static string SuccessfullLogGenerator(string methodType, TimeSpan elapsedTime, string withOrWithoutAbp)

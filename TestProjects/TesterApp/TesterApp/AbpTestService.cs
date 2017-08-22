@@ -12,7 +12,7 @@ namespace TesterApp
 {
     public class AbpTestService : TestService
     {
-        private const string BaseAddress = "http://localhost:62114/api/services/app/Person/";
+        private const string BaseAddress = "http://localhost:8080/api/services/app/Person/";
 
         public AbpTestService()
             : base(BaseAddress)

@@ -943,3 +943,420 @@ Result:
  Avarage GetConstant Without Abp => 0.0023118372
  Avarage Delete Without Abp => 0.004780162
  Avarage InsertAndGetId Without Abp => 0.007389821
+
+15-Aug-17 07:49:49
+",Thread Count = 5
+
+Repeat Count = 100
+
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.025656645(Avg), 2.5656645 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.025678685(Avg), 2.5678685 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.02576405(Avg), 2.576405 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.025897065(Avg), 2.5897065 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.025921697(Avg), 2.5921697 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.005889595(Avg), 0.5889595 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.005966346(Avg), 0.5966346 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.005757374(Avg), 0.5757374 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.005733906(Avg), 0.5733906 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.017295306(Avg), 1.7295306 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.017487232(Avg), 1.7487232 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.017488092(Avg), 1.7488092 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.017574812(Avg), 1.7574812 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.017804837(Avg), 1.7804837 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.003421276(Avg), 0.3421276 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.003447785(Avg), 0.3447785 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.003451347(Avg), 0.3451347 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.003477685(Avg), 0.3477685 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.003503968(Avg), 0.3503968 (Total)
+Result: 
+ Error Rate With AbpABP => 0/19
+ 
+
+ Avarage GetPeople With Abp => 0.583680525
+ Avarage GetConstant With Abp => 0.0034604122
+ Avarage Delete With Abp => 0.0175300558
+ Avarage InsertAndGetId With Abp => 0.0257836284
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.017030125(Avg), 1.7030125 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.017079248(Avg), 1.7079248 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.017238328(Avg), 1.7238328 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.017398558(Avg), 1.7398558 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.01749638(Avg), 1.749638 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.0012802(Avg), 0.12802 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.001497391(Avg), 0.1497391 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.001037577(Avg), 0.1037577 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.001454012(Avg), 0.1454012 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.001136357(Avg), 0.1136357 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.004978489(Avg), 0.4978489 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.005093044(Avg), 0.5093044 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.005149625(Avg), 0.5149625 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.005175984(Avg), 0.5175984 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.005272668(Avg), 0.5272668 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.002212114(Avg), 0.2212114 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00223102(Avg), 0.223102 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.002241681(Avg), 0.2241681 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.002301618(Avg), 0.2301618 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.002303123(Avg), 0.2303123 (Total)
+Result: 
+ Error Rate Without AbpABP => 0/20
+ 
+
+ Avarage GetPeople Without Abp => 0.12811074
+ Avarage GetConstant Without Abp => 0.0022579112
+ Avarage Delete Without Abp => 0.005133962
+ Avarage InsertAndGetId Without Abp => 0.0172485278
+
+15-Aug-17 07:51:28
+",Thread Count = 5
+
+Repeat Count = 100
+
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.009914772(Avg), 0.9914772 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.009930689(Avg), 0.9930689 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.010044426(Avg), 1.0044426 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.010046727(Avg), 1.0046727 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.010151617(Avg), 1.0151617 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000548766(Avg), 0.0548766 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000736057(Avg), 0.0736057 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000630063(Avg), 0.0630063 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000738721(Avg), 0.0738721 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000527961(Avg), 0.0527961 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.01284846(Avg), 1.284846 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.013144147(Avg), 1.3144147 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.013153397(Avg), 1.3153397 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.013240746(Avg), 1.3240746 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.013250547(Avg), 1.3250547 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.003607327(Avg), 0.3607327 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.003616559(Avg), 0.3616559 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.003643432(Avg), 0.3643432 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.003641362(Avg), 0.3641362 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.003669603(Avg), 0.3669603 (Total)
+Result: 
+ Error Rate With AbpABP => 0/20
+ 
+
+ Avarage GetPeople With Abp => 0.06363136
+ Avarage GetConstant With Abp => 0.0036356566
+ Avarage Delete With Abp => 0.0131274594
+ Avarage InsertAndGetId With Abp => 0.0100176462
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.007287232(Avg), 0.7287232 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.00736427(Avg), 0.736427 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.007345694(Avg), 0.7345694 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000274891(Avg), 0.0274891 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000289871(Avg), 0.0289871 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000350138(Avg), 0.0350138 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.007652958(Avg), 0.7652958 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.007804653(Avg), 0.7804653 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000230901(Avg), 0.0230901 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000270247(Avg), 0.0270247 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.005242246(Avg), 0.5242246 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.00530501(Avg), 0.530501 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.005458941(Avg), 0.5458941 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.005945217(Avg), 0.5945217 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.002742141(Avg), 0.2742141 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.002799119(Avg), 0.2799119 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.002790558(Avg), 0.2790558 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.002792786(Avg), 0.2792786 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00282042(Avg), 0.282042 (Total)
+Result: 
+ Error Rate Without AbpABP => 0/19
+ 
+
+ Avarage GetPeople Without Abp => 0.02832096
+ Avarage GetConstant Without Abp => 0.0027890048
+ Avarage Delete Without Abp => 0.0054878535
+ Avarage InsertAndGetId Without Abp => 0.0074909614
+
+15-Aug-17 07:52:07
+",Thread Count = 5
+
+Repeat Count = 100
+
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.012594654(Avg), 1.2594654 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.012696029(Avg), 1.2696029 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.012751314(Avg), 1.2751314 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.012750933(Avg), 1.2750933 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.012839723(Avg), 1.2839723 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000401689(Avg), 0.0401689 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000623486(Avg), 0.0623486 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000490761(Avg), 0.0490761 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000547201(Avg), 0.0547201 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.010578871(Avg), 1.0578871 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.01080296(Avg), 1.080296 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.010855978(Avg), 1.0855978 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.010870539(Avg), 1.0870539 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.010947992(Avg), 1.0947992 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.003855479(Avg), 0.3855479 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.003923267(Avg), 0.3923267 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.003940475(Avg), 0.3940475 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.003954168(Avg), 0.3954168 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.003957021(Avg), 0.3957021 (Total)
+Result: 
+ Error Rate With AbpABP => 0/19
+ 
+Avarage GetPeople With Abp => 0.051578425
+ Avarage GetConstant With Abp => 0.003926082
+ Avarage Delete With Abp => 0.010811268
+ Avarage InsertAndGetId With Abp => 0.0127265306
+ 
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.006927284(Avg), 0.6927284 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.006930859(Avg), 0.6930859 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.006935276(Avg), 0.6935276 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.00722966(Avg), 0.722966 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000296094(Avg), 0.0296094 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.007227714(Avg), 0.7227714 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000311835(Avg), 0.0311835 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000312771(Avg), 0.0312771 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000140721(Avg), 0.0140721 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.00013984(Avg), 0.013984 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.004025348(Avg), 0.4025348 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.004082343(Avg), 0.4082343 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.004211271(Avg), 0.4211271 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.004228812(Avg), 0.4228812 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.004331906(Avg), 0.4331906 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.004328776(Avg), 0.4328776 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.004343089(Avg), 0.4343089 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.004342563(Avg), 0.4342563 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00439142(Avg), 0.439142 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.004520057(Avg), 0.4520057 (Total)
+Result: 
+ Error Rate Without AbpABP => 0/20
+ 
+Avarage GetPeople Without Abp => 0.02402522
+ Avarage GetConstant Without Abp => 0.004385181
+ Avarage Delete Without Abp => 0.004175936
+ Avarage InsertAndGetId Without Abp => 0.0070501586
+ 
+
+15-Aug-17 07:55:04
+",Thread Count = 5
+
+Repeat Count = 100
+
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.011400583(Avg), 1.1400583 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.011527424(Avg), 1.1527424 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.01159384(Avg), 1.159384 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.011658169(Avg), 1.1658169 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.011705136(Avg), 1.1705136 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000473297(Avg), 0.0473297 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000428635(Avg), 0.0428635 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000605504(Avg), 0.0605504 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.00054602(Avg), 0.054602 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.015049434(Avg), 1.5049434 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.015156916(Avg), 1.5156916 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.01524175(Avg), 1.524175 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.015344121(Avg), 1.5344121 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.015531216(Avg), 1.5531216 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.004235017(Avg), 0.4235017 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.004253478(Avg), 0.4253478 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.004273038(Avg), 0.4273038 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.004273983(Avg), 0.4273983 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.004276434(Avg), 0.4276434 (Total)
+Result: 
+ Error Rate With AbpABP => 0/19
+ 
+Avarage GetPeople With Abp => 0.0513364
+ Avarage GetConstant With Abp => 0.00426239
+ Avarage Delete With Abp => 0.0152646874
+ Avarage InsertAndGetId With Abp => 0.0115770304
+ 
+
+15-Aug-17 07:55:58
+",Thread Count = 5
+
+Repeat Count = 100
+
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.009474518(Avg), 0.9474518 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.009791194(Avg), 0.9791194 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.009913472(Avg), 0.9913472 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.009914652(Avg), 0.9914652 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.010115995(Avg), 1.0115995 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.0015013(Avg), 0.15013 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.001922131(Avg), 0.1922131 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.001626986(Avg), 0.1626986 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.001505093(Avg), 0.1505093 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.001302437(Avg), 0.1302437 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.005613334(Avg), 0.5613334 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.005657227(Avg), 0.5657227 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.005682196(Avg), 0.5682196 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.005705164(Avg), 0.5705164 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.005731579(Avg), 0.5731579 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00227655(Avg), 0.227655 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.002308468(Avg), 0.2308468 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.002315884(Avg), 0.2315884 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.002347884(Avg), 0.2347884 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.002362603(Avg), 0.2362603 (Total)
+Result: 
+ Error Rate Without AbpABP => 0/20
+ 
+Avarage GetPeople Without Abp => 0.15715894
+ Avarage GetConstant Without Abp => 0.0023222778
+ Avarage Delete Without Abp => 0.0056779
+ Avarage InsertAndGetId Without Abp => 0.0098419662
+ 
+
+15-Aug-17 07:57:00
+",Thread Count = 5
+
+Repeat Count = 100
+
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.012280839(Avg), 1.2280839 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.012334452(Avg), 1.2334452 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.012407355(Avg), 1.2407355 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.012488041(Avg), 1.2488041 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.012488609(Avg), 1.2488609 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000419646(Avg), 0.0419646 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000420189(Avg), 0.0420189 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000606479(Avg), 0.0606479 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.012143607(Avg), 1.2143607 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.012149808(Avg), 1.2149808 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.012617691(Avg), 1.2617691 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.01261864(Avg), 1.261864 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.012773936(Avg), 1.2773936 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.003953223(Avg), 0.3953223 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.003957867(Avg), 0.3957867 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.003980134(Avg), 0.3980134 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.004013579(Avg), 0.4013579 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.004025476(Avg), 0.4025476 (Total)
+Result: 
+ Error Rate With AbpABP => 0/18
+ 
+Avarage GetPeople With Abp => 0.0482104666666667
+ Avarage GetConstant With Abp => 0.0039860558
+ Avarage Delete With Abp => 0.0124607364
+ Avarage InsertAndGetId With Abp => 0.0123998592
+ 
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.0068886(Avg), 0.68886 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.006886611(Avg), 0.6886611 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.006891961(Avg), 0.6891961 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.007079988(Avg), 0.7079988 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.007083657(Avg), 0.7083657 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000368(Avg), 0.0368 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.00037282(Avg), 0.037282 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000182454(Avg), 0.0182454 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000174825(Avg), 0.0174825 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.000371716(Avg), 0.0371716 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.003889437(Avg), 0.3889437 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.003893709(Avg), 0.3893709 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.004035457(Avg), 0.4035457 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.004030197(Avg), 0.4030197 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.004061864(Avg), 0.4061864 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.004561401(Avg), 0.4561401 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.004557355(Avg), 0.4557355 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.004570988(Avg), 0.4570988 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.004589026(Avg), 0.4589026 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00459875(Avg), 0.459875 (Total)
+Result: 
+ Error Rate Without AbpABP => 0/20
+ 
+Avarage GetPeople Without Abp => 0.0293963
+ Avarage GetConstant Without Abp => 0.004575504
+ Avarage Delete Without Abp => 0.0039821328
+ Avarage InsertAndGetId Without Abp => 0.0069661634
+ 
+
+15-Aug-17 07:57:23
+",Thread Count = 10
+
+Repeat Count = 10
+
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.05474357(Avg), 0.5474357 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.05452702(Avg), 0.5452702 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.05502701(Avg), 0.5502701 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.05552071(Avg), 0.5552071 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.05569288(Avg), 0.5569288 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.05590259(Avg), 0.5590259 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.05619017(Avg), 0.5619017 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.05687597(Avg), 0.5687597 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.05912798(Avg), 0.5912798 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.00583348(Avg), 0.0583348 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.00428143(Avg), 0.0428143 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.00563528(Avg), 0.0563528 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.00517108(Avg), 0.0517108 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.00550587(Avg), 0.0550587 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.00630769(Avg), 0.0630769 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.06163088(Avg), 0.6163088 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.00551943(Avg), 0.0551943 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.0032699(Avg), 0.032699 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.00404785(Avg), 0.0404785 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.03197315(Avg), 0.3197315 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.03182528(Avg), 0.3182528 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.03298023(Avg), 0.3298023 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.03378247(Avg), 0.3378247 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.03399043(Avg), 0.3399043 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.03490933(Avg), 0.3490933 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.03485254(Avg), 0.3485254 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.03476205(Avg), 0.3476205 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.03622174(Avg), 0.3622174 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.03287495(Avg), 0.3287495 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00867849(Avg), 0.0867849 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00866135(Avg), 0.0866135 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.0086835(Avg), 0.086835 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00888987(Avg), 0.0888987 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00915137(Avg), 0.0915137 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00917181(Avg), 0.0917181 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00924789(Avg), 0.0924789 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00906653(Avg), 0.0906653 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00891925(Avg), 0.0891925 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00929403(Avg), 0.0929403 (Total)
+Result: 
+ Error Rate With AbpABP => 0/39
+ 
+Avarage GetPeople With Abp => 0.0506355666666667
+ Avarage GetConstant With Abp => 0.008976409
+ Avarage Delete With Abp => 0.033817217
+ Avarage InsertAndGetId With Abp => 0.056523878
+ 
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.02124474(Avg), 0.2124474 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.02243301(Avg), 0.2243301 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.0223223(Avg), 0.223223 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.02313733(Avg), 0.2313733 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.0234087(Avg), 0.234087 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.00206072(Avg), 0.0206072 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.00322654(Avg), 0.0322654 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.00228237(Avg), 0.0228237 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.02478936(Avg), 0.2478936 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.00148491(Avg), 0.0148491 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.02547067(Avg), 0.2547067 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.02545267(Avg), 0.2545267 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.00231585(Avg), 0.0231585 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.00153443(Avg), 0.0153443 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.00118441(Avg), 0.0118441 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.00119271(Avg), 0.0119271 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.02682229(Avg), 0.2682229 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.0268592(Avg), 0.268592 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.00091642(Avg), 0.0091642 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.0008979(Avg), 0.008979 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.00882603(Avg), 0.0882603 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.00852027(Avg), 0.0852027 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.00795737(Avg), 0.0795737 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.00779145(Avg), 0.0779145 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.00996828(Avg), 0.0996828 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.00976409(Avg), 0.0976409 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.00852301(Avg), 0.0852301 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.00976024(Avg), 0.0976024 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.00956532(Avg), 0.0956532 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.01001122(Avg), 0.1001122 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00400894(Avg), 0.0400894 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00395155(Avg), 0.0395155 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00437709(Avg), 0.0437709 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.004359(Avg), 0.04359 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00439578(Avg), 0.0439578 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00421262(Avg), 0.0421262 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00429614(Avg), 0.0429614 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00451188(Avg), 0.0451188 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00442315(Avg), 0.0442315 (Total)
+(Without Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00472608(Avg), 0.0472608 (Total)
+Result: 
+ Error Rate Without AbpABP => 0/40
+ 
+Avarage GetPeople Without Abp => 0.01709626
+ Avarage GetConstant Without Abp => 0.004326223
+ Avarage Delete Without Abp => 0.009068728
+ Avarage InsertAndGetId Without Abp => 0.024194027
+ 
+
+22-Aug-17 13:13:57
+",Thread Count = 10
+
+Repeat Count = 10
+

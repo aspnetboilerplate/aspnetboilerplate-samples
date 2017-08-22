@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
-using Abp.AutoMapper;
 using Abp.Domain.Repositories;
-using Abp.Linq.Extensions;
-using AutoMapper;
 
-namespace AbpPerformanceTestApp
+namespace AbpPerformanceTestApp.Dto
 {
     public class PersonAppService : AbpPerformanceTestAppAppServiceBase, IPersonAppService
     {
@@ -28,8 +23,7 @@ namespace AbpPerformanceTestApp
 
         public async Task<int> InsertAndGetId(InsertAndGetIdInput input)
         {
-            var returnId = await _personRepository.InsertAndGetIdAsync(new Person(){Name = input.Name,PhoneNumber = input.PhoneNumber});
-            return returnId;
+            return await _personRepository.InsertAndGetIdAsync(new Person(){Name = input.Name,PhoneNumber = input.PhoneNumber});
         }
 
         public async Task Delete(EntityDto input)
