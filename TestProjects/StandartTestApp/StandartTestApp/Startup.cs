@@ -60,7 +60,7 @@ namespace StandartTestApp
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            DbInitializer.Initialize(context);
+            context.Database.EnsureCreated();
         }
     }
 }
