@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace TesterApp
 {
     public class StandartTestService : TestService
     {
-        private const string BaseAddress = "http://localhost:8081/Home/";
+        private const string BaseAddress = "http://localhost:55380/Home/";
+
         public StandartTestService()
             : base(BaseAddress)
         {
@@ -21,6 +19,7 @@ namespace TesterApp
             {
                 return;
             }
+
             throw new Exception(response.ReasonPhrase);
         }
 
@@ -31,6 +30,7 @@ namespace TesterApp
             {
                 return;
             }
+
             throw new Exception(response.ReasonPhrase);
         }
 
@@ -49,8 +49,9 @@ namespace TesterApp
             
             if (response.IsSuccessStatusCode)
             {
-                return await response.Content.ReadAsAsync<int>();
+                return Convert.ToInt32(await response.Content.ReadAsStringAsync());
             }
+
             throw new Exception(response.ReasonPhrase);
         }
     }

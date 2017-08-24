@@ -4,13 +4,14 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Abp.Threading;
+using static TesterApp.LogHelper;
 
 namespace TesterApp
 {
     class Program
     {
-        private static readonly ReaderWriterLockSlim Lock = new ReaderWriterLockSlim();
-        public enum TestType { Both, WithAbp, WithoutAbp};
+        public enum TestType { Both, WithAbp, WithoutAbp };
         private static AbpTestService _abpTester;
         private static StandartTestService _standartTester;
         private static CountdownEvent _cdEvent;
@@ -18,7 +19,7 @@ namespace TesterApp
         private static TesterAppCommandLineArgs _args;
 
         /// <summary>
-        /// TesterApp.exe -a 0 -t 5 -r 10 -o "C:\testresult.txt"
+        /// TesterApp.exe -a 0 -t 5 -r 10 -o "d:\testresult.txt"
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
@@ -27,12 +28,13 @@ namespace TesterApp
             _abpTester = new AbpTestService();
             _standartTester = new StandartTestService();
             _cdEvent = new CountdownEvent(_args.ThreadCount);
-            RunAsync().Wait();
+
+            AsyncHelper.RunSync(() => RunAsync());
         }
 
         public static async Task RunAsync()
         {
-            Log("\n"+DateTime.UtcNow + "\n\",Thread Count = " + _args.ThreadCount + "\n", "Repeat Count = " + _args.RepeatCount + "\n");
+            Log("\n" + DateTime.UtcNow + "\nThread Count = " + _args.ThreadCount + "\n", "Repeat Count = " + _args.RepeatCount + "\n");
 
             if (_args.TestType == (int)TestType.Both || _args.TestType == (int)TestType.WithAbp)
             {
@@ -43,6 +45,7 @@ namespace TesterApp
                 EvaluateErrors(_abpTester.Results, "With Abp");
                 EvaluateAvarageSeconds(_abpTester.Results, "With Abp");
             }
+
             if (_args.TestType == (int)TestType.Both || _args.TestType == (int)TestType.WithoutAbp)
             {
                 await TestThatMethod(TestInsertGetDeletefromDatabase, _standartTester);
@@ -52,10 +55,9 @@ namespace TesterApp
                 EvaluateErrors(_standartTester.Results, "Without Abp");
                 EvaluateAvarageSeconds(_standartTester.Results, "Without Abp");
             }
-            
+
             Console.ReadLine();
         }
-
 
         static async Task TestThatMethod(Func<TestService, Task> testFunction, TestService testService)
         {
@@ -66,9 +68,9 @@ namespace TesterApp
                     await testFunction(testService);
                 }).Start();
             }
+
             WaitThreads();
         }
-
 
         static async Task TestInsertGetDeletefromDatabase(TestService testService)
         {
@@ -83,7 +85,7 @@ namespace TesterApp
             await testService.GetConstant_Timer(_args.RepeatCount);
             _cdEvent.Signal();
         }
-        
+
         public static void EvaluateResults(List<TestResult> results, string withOrWithoutAbp)
         {
             foreach (var result in results)
@@ -111,46 +113,31 @@ namespace TesterApp
             Log(AvarageCountLogGenerator(averageGetPeople, averageGetConstant, averageDelete, averageInsertAndGetId, withOrWithoutAbp));
         }
 
-        public static void Log(params string[] results)
-        {
-            Lock.EnterWriteLock();
-            try
-            {
-                var file = new StreamWriter(_args.OutputFilePath, true);
-                foreach (var str in results)
-                {
-                    file.WriteLine(str);
-                    Console.WriteLine(str);
-                }
-                file.Close();
-            }
-            finally
-            {
-                Lock.ExitWriteLock();
-            }
-        }
-
         public static string ErrorCountLogGenerator(int abpCount, int abpErrorCount, string withOrWithoutAbp)
         {
-            return "Result: \n Error Rate "+ withOrWithoutAbp + "ABP => " + abpErrorCount + "/" + abpCount + "\n ";
+            return "Result: \n Error Rate " + withOrWithoutAbp + "ABP => " + abpErrorCount + "/" + abpCount + "\n ";
 
         }
+
         public static string AvarageCountLogGenerator(double averageGetPeople, double averageGetConstant, double averageDelete, double averageInsertAndGetId, string withOrWithoutAbp)
         {
-            return "Avarage GetPeople " + withOrWithoutAbp + " => " + averageGetPeople + "   (" + (1/ averageGetPeople) +  " per second)\n " +
-                   "Avarage GetConstant " + withOrWithoutAbp + " => " + averageGetConstant + "   (" + (1 / averageGetConstant) + " per second)\n " +
-                   "Avarage Delete " + withOrWithoutAbp + " => " + averageDelete + "   (" + (1 / averageDelete) + " per second)\n " +
-                   "Avarage InsertAndGetId " + withOrWithoutAbp + " => " + averageInsertAndGetId +"   (" + (1 / averageInsertAndGetId) + " per second)\n ";
+            return "Avarage GetPeople " + withOrWithoutAbp + " => " + averageGetPeople + "   (" + (1 / averageGetPeople) + " per second)\n" +
+                   "Avarage GetConstant " + withOrWithoutAbp + " => " + averageGetConstant + "   (" + (1 / averageGetConstant) + " per second)\n" +
+                   "Avarage Delete " + withOrWithoutAbp + " => " + averageDelete + "   (" + (1 / averageDelete) + " per second)\n" +
+                   "Avarage InsertAndGetId " + withOrWithoutAbp + " => " + averageInsertAndGetId + "   (" + (1 / averageInsertAndGetId) + " per second)\n";
 
         }
+
         public static string SuccessfullLogGenerator(string methodType, TimeSpan elapsedTime, string withOrWithoutAbp)
         {
             return "(" + withOrWithoutAbp + " ) -> SUCCESSFUL.  Time elapsed For " + methodType + ": " + elapsedTime.TotalSeconds / _args.RepeatCount + "(Avg), " + elapsedTime.TotalSeconds + " (Total)";
         }
-        public static string UnsuccessfullLogGenerator( string message, string withOrWithoutAbp)
+
+        public static string UnsuccessfullLogGenerator(string message, string withOrWithoutAbp)
         {
             return "(" + withOrWithoutAbp + " ) -> FAILED. " + message;
         }
+
         public static void WaitThreads()
         {
             _cdEvent.Wait();
