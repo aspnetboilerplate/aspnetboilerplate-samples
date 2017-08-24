@@ -2053,3 +2053,153 @@ On Method InsertAndGetId => Without ABP, it is %187.7 faster than With ABP
 On Method Delete => With ABP, it is %254.8 faster than Without ABP
 On Method GetPeople => With ABP, it is %347.5 faster than Without ABP
 On Method GetConstant => With ABP, it is %384.8 faster than Without ABP
+
+24-Aug-17 14:14:15
+Thread Count = 5
+
+Repeat Count = 10
+
+Results: 
+
+(WITH ABP)    Avarage duration of InsertAndGetId = 0.06007 seconds. (16.647/s)
+(WITH ABP)    Avarage duration of Delete = 0.01521 seconds. (65.746/s)
+(WITH ABP)    Avarage duration of GetPeople = 0.00694 seconds. (144.092/s)
+(WITH ABP)    Avarage duration of GetConstant = 0.00549 seconds. (182.149/s)
+
+
+(WITHOUT ABP) Avarage duration of InsertAndGetId = 0.03746 seconds. (26.695/s)
+(WITHOUT ABP) Avarage duration of Delete = 0.07094 seconds. (14.096/s)
+(WITHOUT ABP) Avarage duration of GetPeople = 0.04331 seconds. (23.089/s)
+(WITHOUT ABP) Avarage duration of GetConstant = 0.02237 seconds. (44.703/s)
+
+
+
+On Method InsertAndGetId => With ABP, it is %37.6 slower than Without ABP
+On Method Delete => With ABP, it is %466.4 faster than Without ABP
+On Method GetPeople => With ABP, it is %624.1 faster than Without ABP
+On Method GetConstant => With ABP, it is %407.5 faster than Without ABP
+
+24-Aug-17 14:17:34
+Thread Count = 5
+
+Repeat Count = 10
+
+Results: 
+
+(WITH ABP)    Avarage duration of InsertAndGetId = 0.06835 seconds. (14.631/s)
+(WITH ABP)    Avarage duration of Delete = 0.01563 seconds. (63.98/s)
+(WITH ABP)    Avarage duration of GetPeople = 0.00993 seconds. (100.705/s)
+(WITH ABP)    Avarage duration of GetConstant = 0.00545 seconds. (183.486/s)
+
+
+(WITHOUT ABP) Avarage duration of InsertAndGetId = 0.04077 seconds. (24.528/s)
+(WITHOUT ABP) Avarage duration of Delete = 0.04629 seconds. (21.603/s)
+(WITHOUT ABP) Avarage duration of GetPeople = 0.03071 seconds. (32.563/s)
+(WITHOUT ABP) Avarage duration of GetConstant = 0.01817 seconds. (55.036/s)
+
+
+
+On Method InsertAndGetId => With ABP, it is %40.4 slower than Without ABP
+On Method Delete => With ABP, it is %296.2 faster than Without ABP
+On Method GetPeople => With ABP, it is %309.3 faster than Without ABP
+On Method GetConstant => With ABP, it is %333.4 faster than Without ABP
+
+24-Aug-17 14:18:30
+Thread Count = 5
+
+Repeat Count = 10
+
+Results: 
+
+(WITH ABP)    Avarage duration of InsertAndGetId = 0.05903 seconds. (16.941/s)
+(WITH ABP)    Avarage duration of Delete = 0.01345 seconds. (74.349/s)
+(WITH ABP)    Avarage duration of GetPeople = 0.00748 seconds. (133.69/s)
+(WITH ABP)    Avarage duration of GetConstant = 0.00504 seconds. (198.413/s)
+
+
+(WITHOUT ABP) Avarage duration of InsertAndGetId = 0.03049 seconds. (32.798/s)
+(WITHOUT ABP) Avarage duration of Delete = 0.03417 seconds. (29.265/s)
+(WITHOUT ABP) Avarage duration of GetPeople = 0.02388 seconds. (41.876/s)
+(WITHOUT ABP) Avarage duration of GetConstant = 0.01903 seconds. (52.549/s)
+
+
+
+On Method InsertAndGetId => With ABP, it is %48.3 slower than Without ABP
+On Method Delete => With ABP, it is %254.1 faster than Without ABP
+On Method GetPeople => With ABP, it is %319.3 faster than Without ABP
+On Method GetConstant => With ABP, it is %377.6 faster than Without ABP
+
+24-Aug-17 14:25:49
+Thread Count = 5
+
+Repeat Count = 10
+
+Results: 
+
+(WITH ABP)    Avarage duration of InsertAndGetId = 0.05708 seconds. (17.519/s)
+(WITH ABP)    Avarage duration of Delete = 0.01692 seconds. (59.102/s)
+(WITH ABP)    Avarage duration of GetPeople = 0.00885 seconds. (112.994/s)
+(WITH ABP)    Avarage duration of GetConstant = 0.00478 seconds. (209.205/s)
+Total Error Count = 0
+
+(WITHOUT ABP) Avarage duration of InsertAndGetId = 0.0315 seconds. (31.746/s)
+(WITHOUT ABP) Avarage duration of Delete = 0.03971 seconds. (25.183/s)
+(WITHOUT ABP) Avarage duration of GetPeople = 0.03077 seconds. (32.499/s)
+(WITHOUT ABP) Avarage duration of GetConstant = 0.01719 seconds. (58.173/s)
+Total Error Count = 0
+
+
+On Method InsertAndGetId => With ABP, it is %44.8 slower than Without ABP
+On Method Delete => With ABP, it is %234.7 faster than Without ABP
+On Method GetPeople => With ABP, it is %347.7 faster than Without ABP
+On Method GetConstant => With ABP, it is %359.6 faster than Without ABP
+
+24-Aug-17 14:28:31
+Thread Count = 5
+
+Repeat Count = 10
+
+Results: 
+
+(WITH ABP)    Avarage duration of InsertAndGetId = 0.04401 seconds. (22.722/s)
+(WITH ABP)    Avarage duration of Delete = 0.01624 seconds. (61.576/s)
+(WITH ABP)    Avarage duration of GetPeople = 0.00863 seconds. (115.875/s)
+(WITH ABP)    Avarage duration of GetConstant = 0.01553 seconds. (64.392/s)
+Total Error Count = 0
+
+24-Aug-17 14:28:41
+Thread Count = 5
+
+Repeat Count = 10
+
+
+(WITHOUT ABP) Avarage duration of InsertAndGetId = 0.03643 seconds. (27.45/s)
+(WITHOUT ABP) Avarage duration of Delete = 0.03404 seconds. (29.377/s)
+(WITHOUT ABP) Avarage duration of GetPeople = 0.0353 seconds. (28.329/s)
+(WITHOUT ABP) Avarage duration of GetConstant = 0.02628 seconds. (38.052/s)
+Total Error Count = 0
+
+24-Aug-17 14:28:57
+Thread Count = 5
+
+Repeat Count = 10
+
+Results: 
+
+(WITH ABP)    Avarage duration of InsertAndGetId = 0.03809 seconds. (26.254/s)
+(WITH ABP)    Avarage duration of Delete = 0.01404 seconds. (71.225/s)
+(WITH ABP)    Avarage duration of GetPeople = 0.00696 seconds. (143.678/s)
+(WITH ABP)    Avarage duration of GetConstant = 0.00463 seconds. (215.983/s)
+Total Error Count = 0
+
+(WITHOUT ABP) Avarage duration of InsertAndGetId = 0.04641 seconds. (21.547/s)
+(WITHOUT ABP) Avarage duration of Delete = 0.04592 seconds. (21.777/s)
+(WITHOUT ABP) Avarage duration of GetPeople = 0.02585 seconds. (38.685/s)
+(WITHOUT ABP) Avarage duration of GetConstant = 0.01831 seconds. (54.615/s)
+Total Error Count = 0
+
+
+On Method InsertAndGetId => With ABP, it is %121.8 faster than Without ABP
+On Method Delete => With ABP, it is %327.1 faster than Without ABP
+On Method GetPeople => With ABP, it is %371.4 faster than Without ABP
+On Method GetConstant => With ABP, it is %395.5 faster than Without ABP

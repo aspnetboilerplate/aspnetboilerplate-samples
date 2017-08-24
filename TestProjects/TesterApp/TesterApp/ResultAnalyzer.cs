@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using static TesterApp.Program.TestType;
 
 namespace TesterApp
 {
@@ -16,54 +17,89 @@ namespace TesterApp
             _standartResults = standartResults;
         }
 
-        public void AnalyzeResults()
+        public void AnalyzeResults(int argsTestType)
         {
-            var abpInsertAndGetIdAvg = GetAvarageSpeed(_abpResults, "InsertAndGetId");
-            var abpDeleteAvg = GetAvarageSpeed(_abpResults, "Delete");
-            var abpGetPeopleAvg = GetAvarageSpeed(_abpResults, "GetPeople");
-            var abpGetConstantAvg = GetAvarageSpeed(_abpResults, "GetConstant");
-            var stdInsertAndGetIdAvg = GetAvarageSpeed(_standartResults, "InsertAndGetId");
-            var stdDeleteAvg = GetAvarageSpeed(_standartResults, "Delete");
-            var stdGetPeopleAvg = GetAvarageSpeed(_standartResults, "GetPeople");
-            var stdGetConstantAvg = GetAvarageSpeed(_standartResults, "GetConstant");
+            double abpInsertAndGetIdAvg = 0,
+                abpDeleteAvg = 0,
+                abpGetPeopleAvg = 0,
+                abpGetConstantAvg = 0,
+                stdInsertAndGetIdAvg = 0,
+                stdDeleteAvg = 0,
+                stdGetPeopleAvg = 0,
+                stdGetConstantAvg = 0;
+            
 
-            LogHelper.Log(
-                "Results: \n\n" +
-                "(WITH ABP)    Avarage duration of InsertAndGetId = " + abpInsertAndGetIdAvg + " seconds. (" + Math.Round(1 / abpInsertAndGetIdAvg,3) + "/s)\n" +
-                "(WITH ABP)    Avarage duration of Delete = " + abpDeleteAvg + " seconds. (" + Math.Round(1 / abpDeleteAvg, 3) + "/s)\n" +
-                "(WITH ABP)    Avarage duration of GetPeople = " + abpGetPeopleAvg + " seconds. (" + Math.Round(1 / abpGetPeopleAvg, 3) + "/s)\n" +
-                "(WITH ABP)    Avarage duration of GetConstant = " + abpGetConstantAvg + " seconds. (" + Math.Round(1 / abpGetConstantAvg, 3) + "/s)\n" +
-                "\n" +
-                "(WITHOUT ABP) Avarage duration of InsertAndGetId = " + stdInsertAndGetIdAvg + " seconds. (" + Math.Round(1 / stdInsertAndGetIdAvg, 3) + "/s)\n" +
-                "(WITHOUT ABP) Avarage duration of Delete = " + stdDeleteAvg + " seconds. (" + Math.Round(1 / stdDeleteAvg, 3) + "/s)\n" +
-                "(WITHOUT ABP) Avarage duration of GetPeople = " + stdGetPeopleAvg + " seconds. (" + Math.Round(1 / stdGetPeopleAvg, 3) + "/s)\n" +
-                "(WITHOUT ABP) Avarage duration of GetConstant = " + stdGetConstantAvg + " seconds. (" + Math.Round(1 / stdGetConstantAvg, 3) + "/s)\n"
-            );
+            if (argsTestType == (int)Both || argsTestType == (int)WithAbp)
+            {
+                var errorCount = GetErrorCount(_abpResults);
 
-            LogHelper.Log(
-                "\n\n" +
-                "On Method InsertAndGetId => " + CompareSpeeds("With ABP", abpInsertAndGetIdAvg,"Without ABP", stdInsertAndGetIdAvg) + "\n" +
-                "On Method Delete => " + CompareSpeeds("With ABP", abpDeleteAvg, "Without ABP", stdDeleteAvg) + "\n" +
-                "On Method GetPeople => " + CompareSpeeds("With ABP", abpGetPeopleAvg, "Without ABP", stdGetPeopleAvg) + "\n" +
-                "On Method GetConstant => " + CompareSpeeds("With ABP", abpGetConstantAvg, "Without ABP", stdGetConstantAvg)
-            );
+                abpInsertAndGetIdAvg = GetAvarageSpeed(_abpResults, "InsertAndGetId");
+                abpDeleteAvg = GetAvarageSpeed(_abpResults, "Delete");
+                abpGetPeopleAvg = GetAvarageSpeed(_abpResults, "GetPeople");
+                abpGetConstantAvg = GetAvarageSpeed(_abpResults, "GetConstant");
+
+                LogHelper.Log(
+                    "Results: \n\n" +
+                    "(WITH ABP)    Avarage duration of InsertAndGetId = " + abpInsertAndGetIdAvg + " seconds. (" + Math.Round(1 / abpInsertAndGetIdAvg, 3) + "/s)\n" +
+                    "(WITH ABP)    Avarage duration of Delete = " + abpDeleteAvg + " seconds. (" + Math.Round(1 / abpDeleteAvg, 3) + "/s)\n" +
+                    "(WITH ABP)    Avarage duration of GetPeople = " + abpGetPeopleAvg + " seconds. (" + Math.Round(1 / abpGetPeopleAvg, 3) + "/s)\n" +
+                    "(WITH ABP)    Avarage duration of GetConstant = " + abpGetConstantAvg + " seconds. (" + Math.Round(1 / abpGetConstantAvg, 3) + "/s)\n"+
+                    "Total Error Count = " + errorCount
+                );
+            }
+
+            if (argsTestType == (int)Both || argsTestType == (int)WithoutAbp)
+            {
+                var errorCount = GetErrorCount(_standartResults);
+
+                stdInsertAndGetIdAvg = GetAvarageSpeed(_standartResults, "InsertAndGetId");
+                stdDeleteAvg = GetAvarageSpeed(_standartResults, "Delete");
+                stdGetPeopleAvg = GetAvarageSpeed(_standartResults, "GetPeople");
+                stdGetConstantAvg = GetAvarageSpeed(_standartResults, "GetConstant");
+
+                LogHelper.Log(
+                    "\n" +
+                    "(WITHOUT ABP) Avarage duration of InsertAndGetId = " + stdInsertAndGetIdAvg + " seconds. (" + Math.Round(1 / stdInsertAndGetIdAvg, 3) + "/s)\n" +
+                    "(WITHOUT ABP) Avarage duration of Delete = " + stdDeleteAvg + " seconds. (" + Math.Round(1 / stdDeleteAvg, 3) + "/s)\n" +
+                    "(WITHOUT ABP) Avarage duration of GetPeople = " + stdGetPeopleAvg + " seconds. (" + Math.Round(1 / stdGetPeopleAvg, 3) + "/s)\n" +
+                    "(WITHOUT ABP) Avarage duration of GetConstant = " + stdGetConstantAvg + " seconds. (" + Math.Round(1 / stdGetConstantAvg, 3) + "/s)\n" +
+                    "Total Error Count = " + errorCount
+                );
+            }
+
+            if (argsTestType == (int)Both)
+            {
+                LogHelper.Log(
+                    "\n\n" +
+                    "On Method InsertAndGetId => " + CompareSpeeds("With ABP", abpInsertAndGetIdAvg, "Without ABP", stdInsertAndGetIdAvg) + "\n" +
+                    "On Method Delete => " + CompareSpeeds("With ABP", abpDeleteAvg, "Without ABP", stdDeleteAvg) + "\n" +
+                    "On Method GetPeople => " + CompareSpeeds("With ABP", abpGetPeopleAvg, "Without ABP", stdGetPeopleAvg) + "\n" +
+                    "On Method GetConstant => " + CompareSpeeds("With ABP", abpGetConstantAvg, "Without ABP", stdGetConstantAvg)
+                );
+            }
+           
         }
 
 
-        public double GetAvarageSpeed(List<TestResult> results, string method , bool success = true)
+        private double GetAvarageSpeed(List<TestResult> results, string method , bool success = true)
         {
            var successfullResults = results.Where(r=>r.Success == success && r.Method.Contains(method)).ToList();
            return successfullResults.Count > 0 ? Math.Round(successfullResults.Average(sr => sr.Duration.TotalSeconds),5) : 99999;
         }
 
-        public string CompareSpeeds(string xType, double x, string yType, double y)
+        private int GetErrorCount(List<TestResult> results)
         {
-            var ratio = x >= y ? x / y : y / x;
+            return results.Where(r => !r.Success).ToList().Count;
+        }
+
+        private string CompareSpeeds(string xType, double x, string yType, double y)
+        {
+            var ratio = x >= y ? 1.0-(y / x) : y / x;
             ratio = Math.Round(ratio, 3);
 
             return x>=y? 
-                ""+ yType + ", it is %" + ratio*100 +" faster than " + xType :
-                ""+ xType + ", it is %" + ratio * 100 + " faster than " + yType;
+                ""+ xType + ", it is %" + ratio*100 +" slower than " + yType :
+                ""+ xType + ", it is %" + ratio*100 + " faster than " + yType;
         }
 
     }

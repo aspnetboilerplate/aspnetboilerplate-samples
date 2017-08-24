@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Abp.Threading;
 using static TesterApp.LogHelper;
+using static TesterApp.Program.TestType;
 
 namespace TesterApp
 {
@@ -36,24 +37,21 @@ namespace TesterApp
         {
             Log("\n" + DateTime.UtcNow + "\nThread Count = " + _args.ThreadCount + "\n", "Repeat Count = " + _args.RepeatCount + "\n");
 
-            if (_args.TestType == (int)TestType.Both || _args.TestType == (int)TestType.WithAbp)
+            if (_args.TestType == (int)Both || _args.TestType == (int)WithAbp)
             {
                 await TestThatMethod(TestInsertGetDeletefromDatabase, _abpTester);
                 await TestThatMethod(TestGetConstant, _abpTester);
 
             }
 
-            if (_args.TestType == (int)TestType.Both || _args.TestType == (int)TestType.WithoutAbp)
+            if (_args.TestType == (int)Both || _args.TestType == (int)WithoutAbp)
             {
                 await TestThatMethod(TestInsertGetDeletefromDatabase, _standartTester);
                 await TestThatMethod(TestGetConstant, _standartTester);
                 
             }
-
-            if (_args.TestType == (int)TestType.Both)
-            {
-                new ResultAnalyzer(_abpTester.Results,_standartTester.Results).AnalyzeResults();
-            }
+            
+             new ResultAnalyzer(_abpTester.Results,_standartTester.Results).AnalyzeResults(_args.TestType);
 
 
             Console.ReadLine();
@@ -85,67 +83,7 @@ namespace TesterApp
             await testService.GetConstant_Timer(_args.RepeatCount);
             _cdEvent.Signal();
         }
-        public static void EvaluateResults(List<TestResult> results, string withOrWithoutAbp)
-        {
-            foreach (var result in results)
-            {
-                Log(result.Success
-                    ? SuccessfullLogGenerator(result.Method, result.Duration, withOrWithoutAbp)
-                    : UnsuccessfullLogGenerator(result.ErrorMessage, withOrWithoutAbp));
-            }
-        }
-
-        public static void EvaluateResult(List<TestResult> results, string withOrWithoutAbp)
-        {
-            foreach (var result in results)
-            {
-                Log(result.Success
-                    ? SuccessfullLogGenerator(result.Method, result.Duration, withOrWithoutAbp)
-                    : UnsuccessfullLogGenerator(result.ErrorMessage, withOrWithoutAbp));
-            }
-        }
-
-        public static void EvaluateErrors(List<TestResult> results, string withOrWithoutAbp)
-        {
-            var count = results.Count;
-            var errorCount = results.Count(r => !r.Success);
-            Log(ErrorCountLogGenerator(count, errorCount, withOrWithoutAbp)); 
-        }
-
-        public static void EvaluateAvarageSeconds(List<TestResult> results, string withOrWithoutAbp)
-        {
-            var averageGetPeople = results.Where(r => r.Success && r.Method == "GetPeople").Average(r => r.Duration.TotalSeconds);
-            var averageGetConstant = results.Where(r => r.Success && r.Method == "GetConstant").Average(r => r.Duration.TotalSeconds);
-            var averageDelete = results.Where(r => r.Success && r.Method == "Delete").Average(r => r.Duration.TotalSeconds);
-            var averageInsertAndGetId = results.Where(r => r.Success && r.Method == "InsertAndGetId").Average(r => r.Duration.TotalSeconds);
-
-            Log(AvarageCountLogGenerator(averageGetPeople, averageGetConstant, averageDelete, averageInsertAndGetId, withOrWithoutAbp));
-        }
-
-        public static string ErrorCountLogGenerator(int abpCount, int abpErrorCount, string withOrWithoutAbp)
-        {
-            return "Result: \n Error Rate " + withOrWithoutAbp + "ABP => " + abpErrorCount + "/" + abpCount + "\n ";
-
-        }
-
-        public static string AvarageCountLogGenerator(double averageGetPeople, double averageGetConstant, double averageDelete, double averageInsertAndGetId, string withOrWithoutAbp)
-        {
-            return "Avarage InsertAndGetId " + withOrWithoutAbp + " => " + averageInsertAndGetId + "   (" + (1 / averageInsertAndGetId) + " per second)\n" +
-                   "Avarage Delete " + withOrWithoutAbp + " => " + averageDelete + "   (" + (1 / averageDelete) + " per second)\n" +
-                   "Avarage GetPeople " + withOrWithoutAbp + " => " + averageGetPeople + "   (" + (1 / averageGetPeople) + " per second)\n" +
-                   "Avarage GetConstant " + withOrWithoutAbp + " => " + averageGetConstant + "   (" + (1 / averageGetConstant) + " per second)\n";
-        }
-
-        public static string SuccessfullLogGenerator(string methodType, TimeSpan elapsedTime, string withOrWithoutAbp)
-        {
-            return "(" + withOrWithoutAbp + " ) -> SUCCESSFUL.  Time elapsed For " + methodType + ": " + elapsedTime.TotalSeconds / _args.RepeatCount + "(Avg), " + elapsedTime.TotalSeconds + " (Total)";
-        }
-
-        public static string UnsuccessfullLogGenerator(string message, string withOrWithoutAbp)
-        {
-            return "(" + withOrWithoutAbp + " ) -> FAILED. " + message;
-        }
-
+        
         public static void WaitThreads()
         {
             _cdEvent.Wait();
