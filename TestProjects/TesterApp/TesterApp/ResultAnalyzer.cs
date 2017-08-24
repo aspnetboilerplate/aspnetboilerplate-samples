@@ -94,7 +94,7 @@ namespace TesterApp
 
         private string CompareSpeeds(string xType, double x, string yType, double y)
         {
-            var ratio = x >= y ? 1.0-(y / x) : y / x;
+            var ratio = x >= y ? 1.0-(y / x) : (y / x)-1.0;
             ratio = Math.Round(ratio, 3);
 
             return x>=y? 
