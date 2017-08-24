@@ -6,12 +6,13 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Abp;
+using Abp.Threading.Extensions;
 
 namespace TesterApp
 {
     public abstract class TestService
     {
-        public List<TestResult> Results { get; set; }
+        public List<TestResult> Results { get; }
 
         public HttpClient Client { get; }
 
@@ -32,106 +33,108 @@ namespace TesterApp
             Results = new List<TestResult>();
         }
 
-        public async Task GetPeople_Timer()
+        public async Task GetPeople_Timer(int repeat)
         {
-            var result = new TestResult {Method = "GetPeople"};
-            var stopwatch = Stopwatch.StartNew();
-
-            try
+            for (var i = 0; i < repeat; i++)
             {
-                await GetPeople();
-                result.Success = true;
-            }
-            catch (Exception ex)
-            {
-                result.Success = false;
-                result.ErrorMessage = ex.Message;
-            }
-            finally
-            {
-                stopwatch.Stop();
-                result.Duration = stopwatch.Elapsed;
-                Results.Add(result);
+                var result = new TestResult { Method = "GetPeople" };
+                var stopwatch = Stopwatch.StartNew();
+                try
+                {
+                    await GetPeople();
+                    result.Success = true;
+                }
+                catch (Exception ex)
+                {
+                    result.Success = false;
+                    result.ErrorMessage = ex.Message;
+                }
+                finally
+                {
+                    stopwatch.Stop();
+                    result.Duration = stopwatch.Elapsed;
+                    Results.Locking(r => r.Add(result));
+                }
             }
         }
 
         public async Task GetConstant_Timer(int repeat)
         {
-            var result = new TestResult { Method = "GetConstant" };
-            var stopwatch = Stopwatch.StartNew();
-
-            try
+            for (var i = 0; i < repeat; i++)
             {
-                for (int i = 0; i < repeat; i++)
+                var result = new TestResult { Method = "GetConstant" };
+                var stopwatch = Stopwatch.StartNew();
+                try
                 {
                     await GetConstant();
+                    result.Success = true;
                 }
-                result.Success = true;
-            }
-            catch (Exception ex)
-            {
-                result.Success = false;
-                result.ErrorMessage = ex.Message;
-            }
-            finally
-            {
-                stopwatch.Stop();
-                result.Duration = stopwatch.Elapsed;
-                Results.Add(result);
+                catch (Exception ex)
+                {
+                    result.Success = false;
+                    result.ErrorMessage = ex.Message;
+                }
+                finally
+                {
+                    stopwatch.Stop();
+                    result.Duration = stopwatch.Elapsed;
+                    Results.Locking(r => r.Add(result));
+                }
             }
         }
 
         public async Task Delete_Timer(List<int> idList)
         {
-            var result = new TestResult { Method = "Delete" };
-            var stopwatch = Stopwatch.StartNew();
-
-            try
+            foreach (var id in idList)
             {
-                foreach (var id in idList)
+                var result = new TestResult { Method = "Delete" };
+                var stopwatch = Stopwatch.StartNew();
+
+                try
                 {
                     await Delete(id);
+                    result.Success = true;
                 }
-                result.Success = true;
-            }
-            catch (Exception ex)
-            {
-                result.Success = false;
-                result.ErrorMessage = ex.Message;
-            }
-            finally
-            {
-                stopwatch.Stop();
-                result.Duration = stopwatch.Elapsed;
-                Results.Add(result);
+                catch (Exception ex)
+                {
+                    result.Success = false;
+                    result.ErrorMessage = ex.Message;
+                }
+                finally
+                {
+                    stopwatch.Stop();
+                    result.Duration = stopwatch.Elapsed;
+                    Results.Locking(r => r.Add(result));
+                }
             }
         }
 
         public async Task<List<int>> InsertAndGetId_Timer(int repeat)
         {
             var idList = new List<int>();
-            var result = new TestResult { Method = "InsertAndGetId" };
-            var stopwatch = Stopwatch.StartNew();
 
-            try
+            for (var i = 0; i < repeat; i++)
             {
-                for (int i = 0; i < repeat; i++)
+                var result = new TestResult { Method = "InsertAndGetId" };
+                var randomString = RandomString(15);
+                var stopwatch = Stopwatch.StartNew();
+                try
                 {
-                    var id = await InsertAndGetId(RandomString(15), "666666");
+                    var id = await InsertAndGetId(randomString, "666666");
                     idList.Add(id);
+                    result.Success = true;
                 }
-                result.Success = true;
-            }
-            catch (Exception ex)
-            {
-                result.Success = false;
-                result.ErrorMessage = ex.Message;
-            }
-            finally
-            {
-                stopwatch.Stop();
-                result.Duration = stopwatch.Elapsed;
-                Results.Add(result);
+                catch (Exception ex)
+                {
+                    result.Success = false;
+                    result.ErrorMessage = ex.Message;
+                }
+                finally
+                {
+                    stopwatch.Stop();
+                    result.Duration = stopwatch.Elapsed;
+                    Results.Locking(r => r.Add(result));
+                }
             }
             return idList;
         }
@@ -141,6 +144,6 @@ namespace TesterApp
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             return new string(Enumerable.Repeat(chars, length).Select(s => s[RandomHelper.GetRandom(s.Length)]).ToArray());
         }
-        
+
     }
 }
