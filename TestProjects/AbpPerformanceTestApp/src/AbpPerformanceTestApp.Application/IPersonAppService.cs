@@ -10,7 +10,7 @@ namespace AbpPerformanceTestApp
 {
     public interface IPersonAppService : IApplicationService
     {
-        Task<ListResultDto<Person>> GetPeople(GetPeopleInput input);
+        Task<List<Person>> GetPeople();
 
         Task<int> InsertAndGetId(InsertAndGetIdInput input);
 

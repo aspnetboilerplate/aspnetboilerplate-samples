@@ -1360,3 +1360,503 @@ Avarage GetPeople Without Abp => 0.01709626
 
 Repeat Count = 10
 
+
+22-Aug-17 14:55:44
+",Thread Count = 10
+
+Repeat Count = 10
+
+
+22-Aug-17 14:55:53
+",Thread Count = 10
+
+Repeat Count = 10
+
+
+23-Aug-17 06:20:32
+",Thread Count = 10
+
+Repeat Count = 10
+
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 4.2E-07(Avg), 4.2E-06 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 8E-08(Avg), 8E-07 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 1.2E-07(Avg), 1.2E-06 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 8E-08(Avg), 8E-07 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 8E-08(Avg), 8E-07 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 8E-08(Avg), 8E-07 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 4E-08(Avg), 4E-07 (Total)
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 4E-08(Avg), 4E-07 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 4E-08(Avg), 4E-07 (Total)
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 8E-08(Avg), 8E-07 (Total)
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+Result: 
+ Error Rate With AbpABP => 27/37
+ 
+
+23-Aug-17 06:22:45
+",Thread Count = 10
+
+Repeat Count = 10
+
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 7.6E-07(Avg), 7.6E-06 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 8E-08(Avg), 8E-07 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 8E-08(Avg), 8E-07 (Total)
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 8E-08(Avg), 8E-07 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 4E-08(Avg), 4E-07 (Total)
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 8E-08(Avg), 8E-07 (Total)
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 1.2E-07(Avg), 1.2E-06 (Total)
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 8E-08(Avg), 8E-07 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 8E-08(Avg), 8E-07 (Total)
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+Result: 
+ Error Rate With AbpABP => 28/37
+ 
+
+23-Aug-17 06:23:25
+",Thread Count = 10
+
+Repeat Count = 10
+
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 3.8E-07(Avg), 3.8E-06 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 3.4E-07(Avg), 3.4E-06 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 4E-08(Avg), 4E-07 (Total)
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 8E-08(Avg), 8E-07 (Total)
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 4E-08(Avg), 4E-07 (Total)
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 4E-08(Avg), 4E-07 (Total)
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 4E-08(Avg), 4E-07 (Total)
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0(Avg), 0 (Total)
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 4E-08(Avg), 4E-07 (Total)
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 4E-08(Avg), 4E-07 (Total)
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+Result: 
+ Error Rate With AbpABP => 29/39
+ 
+
+23-Aug-17 06:24:16
+",Thread Count = 1
+
+Repeat Count = 10
+
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 5.5E-07(Avg), 5.5E-06 (Total)
+(With Abp ) -> FAILED. An error occurred while sending the request.
+Result: 
+ Error Rate With AbpABP => 3/4
+ 
+
+23-Aug-17 06:25:37
+",Thread Count = 1
+
+Repeat Count = 10
+
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.15307362(Avg), 1.5307362 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.04151919(Avg), 0.4151919 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.02766349(Avg), 0.2766349 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00306626(Avg), 0.0306626 (Total)
+Result: 
+ Error Rate With AbpABP => 0/4
+ 
+Avarage GetPeople With Abp => 0.4151919   (2.40852482912118 per second)
+ Avarage GetConstant With Abp => 0.00306626   (326.130204222734 per second)
+ Avarage Delete With Abp => 0.02766349   (36.1487288841719 per second)
+ Avarage InsertAndGetId With Abp => 0.15307362   (6.53280428071146 per second)
+ 
+
+23-Aug-17 06:26:09
+",Thread Count = 5
+
+Repeat Count = 10
+
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.03403995(Avg), 0.3403995 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.03456932(Avg), 0.3456932 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.03459652(Avg), 0.3459652 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.03510698(Avg), 0.3510698 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.03543323(Avg), 0.3543323 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.01414011(Avg), 0.1414011 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.01382623(Avg), 0.1382623 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.01469463(Avg), 0.1469463 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.01468308(Avg), 0.1468308 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.01497041(Avg), 0.1497041 (Total)
+(With Abp ) -> FAILED. Internal Server Error
+(With Abp ) -> FAILED. Internal Server Error
+(With Abp ) -> FAILED. Internal Server Error
+(With Abp ) -> FAILED. Internal Server Error
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.04977134(Avg), 0.4977134 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00760269(Avg), 0.0760269 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00814908(Avg), 0.0814908 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00815447(Avg), 0.0815447 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00847999(Avg), 0.0847999 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.008474(Avg), 0.08474 (Total)
+Result: 
+ Error Rate With AbpABP => 4/20
+ 
+Avarage GetPeople With Abp => 0.14462892   (6.91424647297373 per second)
+ Avarage GetConstant With Abp => 0.008172046   (122.368376291568 per second)
+ Avarage Delete With Abp => 0.04977134   (20.0918842048456 per second)
+ Avarage InsertAndGetId With Abp => 0.0347492   (28.7776409241076 per second)
+ 
+
+23-Aug-17 06:26:20
+",Thread Count = 5
+
+Repeat Count = 10
+
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.11204085(Avg), 1.1204085 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.11247974(Avg), 1.1247974 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.1125547(Avg), 1.125547 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.11257523(Avg), 1.1257523 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.11261756(Avg), 1.1261756 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.01785005(Avg), 0.1785005 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.01751505(Avg), 0.1751505 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.01778309(Avg), 0.1778309 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.0177984(Avg), 0.177984 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.0175277(Avg), 0.175277 (Total)
+(With Abp ) -> FAILED. Internal Server Error
+(With Abp ) -> FAILED. Internal Server Error
+(With Abp ) -> FAILED. Internal Server Error
+(With Abp ) -> FAILED. Internal Server Error
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.08707564(Avg), 0.8707564 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.01008515(Avg), 0.1008515 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.01060524(Avg), 0.1060524 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.01071758(Avg), 0.1071758 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.01076774(Avg), 0.1076774 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.01110215(Avg), 0.1110215 (Total)
+Result: 
+ Error Rate With AbpABP => 4/20
+ 
+Avarage GetPeople With Abp => 0.17694858   (5.65135928188856 per second)
+ Avarage GetConstant With Abp => 0.010655572   (93.8476132487304 per second)
+ Avarage Delete With Abp => 0.08707564   (11.4842681604178 per second)
+ Avarage InsertAndGetId With Abp => 0.112453616   (8.89255530920411 per second)
+ 
+
+23-Aug-17 06:42:05
+",Thread Count = 5
+
+Repeat Count = 10
+
+(With Abp ) -> FAILED. Unexpected character encountered while parsing value: {. Path '', line 1, position 1.
+(With Abp ) -> FAILED. Unexpected character encountered while parsing value: {. Path '', line 1, position 1.
+(With Abp ) -> FAILED. Unexpected character encountered while parsing value: {. Path '', line 1, position 1.
+(With Abp ) -> FAILED. Unexpected character encountered while parsing value: {. Path '', line 1, position 1.
+(With Abp ) -> FAILED. Unexpected character encountered while parsing value: {. Path '', line 1, position 1.
+(With Abp ) -> FAILED. Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[TesterApp.Person]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'result', line 1, position 10.
+(With Abp ) -> FAILED. Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[TesterApp.Person]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'result', line 1, position 10.
+(With Abp ) -> FAILED. Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[TesterApp.Person]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'result', line 1, position 10.
+(With Abp ) -> FAILED. Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[TesterApp.Person]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'result', line 1, position 10.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 4.2E-07(Avg), 4.2E-06 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 8E-08(Avg), 8E-07 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 8E-08(Avg), 8E-07 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 8E-08(Avg), 8E-07 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 8E-08(Avg), 8E-07 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.0122536(Avg), 0.122536 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.0130307(Avg), 0.130307 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.01262509(Avg), 0.1262509 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.0139948(Avg), 0.139948 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.01401178(Avg), 0.1401178 (Total)
+Result: 
+ Error Rate With AbpABP => 9/19
+ 
+
+23-Aug-17 06:43:45
+",Thread Count = 5
+
+Repeat Count = 10
+
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.12081929(Avg), 1.2081929 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.10532994(Avg), 1.0532994 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.11627255(Avg), 1.1627255 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.08790213(Avg), 0.8790213 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.11691016(Avg), 1.1691016 (Total)
+(With Abp ) -> FAILED. Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'Abp.Application.Services.Dto.ListResultDto`1[TesterApp.Person]' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path 'result', line 1, position 11.
+(With Abp ) -> FAILED. Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'Abp.Application.Services.Dto.ListResultDto`1[TesterApp.Person]' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path 'result', line 1, position 11.
+(With Abp ) -> FAILED. Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'Abp.Application.Services.Dto.ListResultDto`1[TesterApp.Person]' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path 'result', line 1, position 11.
+(With Abp ) -> FAILED. Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'Abp.Application.Services.Dto.ListResultDto`1[TesterApp.Person]' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path 'result', line 1, position 11.
+(With Abp ) -> FAILED. Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'Abp.Application.Services.Dto.ListResultDto`1[TesterApp.Person]' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path 'result', line 1, position 11.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.03800532(Avg), 0.3800532 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.03799172(Avg), 0.3799172 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.03808939(Avg), 0.3808939 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.03838442(Avg), 0.3838442 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.03842162(Avg), 0.3842162 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.01055974(Avg), 0.1055974 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.01055303(Avg), 0.1055303 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.01059058(Avg), 0.1059058 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.01075184(Avg), 0.1075184 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.01100752(Avg), 0.1100752 (Total)
+Result: 
+ Error Rate With AbpABP => 5/20
+ 
+
+23-Aug-17 06:49:10
+",Thread Count = 5
+
+Repeat Count = 10
+
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.04510833(Avg), 0.4510833 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.04540558(Avg), 0.4540558 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.04585998(Avg), 0.4585998 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.04596509(Avg), 0.4596509 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.04619289(Avg), 0.4619289 (Total)
+(With Abp ) -> FAILED. Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'Abp.Application.Services.Dto.ListResultDto`1[TesterApp.Person]' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path 'result', line 1, position 11.
+(With Abp ) -> FAILED. Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'Abp.Application.Services.Dto.ListResultDto`1[TesterApp.Person]' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path 'result', line 1, position 11.
+(With Abp ) -> FAILED. Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'Abp.Application.Services.Dto.ListResultDto`1[TesterApp.Person]' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path 'result', line 1, position 11.
+(With Abp ) -> FAILED. Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'Abp.Application.Services.Dto.ListResultDto`1[TesterApp.Person]' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path 'result', line 1, position 11.
+(With Abp ) -> FAILED. Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'Abp.Application.Services.Dto.ListResultDto`1[TesterApp.Person]' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path 'result', line 1, position 11.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.01219147(Avg), 0.1219147 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.01245724(Avg), 0.1245724 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.01272062(Avg), 0.1272062 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.01285524(Avg), 0.1285524 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.01319602(Avg), 0.1319602 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00604179(Avg), 0.0604179 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.0060801(Avg), 0.060801 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00610991(Avg), 0.0610991 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.0061862(Avg), 0.061862 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00636692(Avg), 0.0636692 (Total)
+Result: 
+ Error Rate With AbpABP => 5/20
+ 
+
+23-Aug-17 06:49:18
+",Thread Count = 5
+
+Repeat Count = 10
+
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.07969797(Avg), 0.7969797 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.08026001(Avg), 0.8026001 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.0806013(Avg), 0.806013 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.08022904(Avg), 0.8022904 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.08046352(Avg), 0.8046352 (Total)
+(With Abp ) -> FAILED. Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'Abp.Application.Services.Dto.ListResultDto`1[TesterApp.Person]' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path 'result', line 1, position 11.
+(With Abp ) -> FAILED. Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'Abp.Application.Services.Dto.ListResultDto`1[TesterApp.Person]' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path 'result', line 1, position 11.
+(With Abp ) -> FAILED. Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'Abp.Application.Services.Dto.ListResultDto`1[TesterApp.Person]' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path 'result', line 1, position 11.
+(With Abp ) -> FAILED. Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'Abp.Application.Services.Dto.ListResultDto`1[TesterApp.Person]' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path 'result', line 1, position 11.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.0180182(Avg), 0.180182 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.01950863(Avg), 0.1950863 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.01982205(Avg), 0.1982205 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.02006353(Avg), 0.2006353 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.02049356(Avg), 0.2049356 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00875448(Avg), 0.0875448 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.0088841(Avg), 0.088841 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00906221(Avg), 0.0906221 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00935018(Avg), 0.0935018 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.00940068(Avg), 0.0940068 (Total)
+Result: 
+ Error Rate With AbpABP => 4/19
+ 
+
+23-Aug-17 06:52:08
+",Thread Count = 5
+
+Repeat Count = 10
+
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.09699595(Avg), 0.9699595 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.00162107(Avg), 0.0162107 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.09926994(Avg), 0.9926994 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.001022(Avg), 0.01022 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.11811634(Avg), 1.1811634 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.10369642(Avg), 1.0369642 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.10035412(Avg), 1.0035412 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.0009939(Avg), 0.009939 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.0010518(Avg), 0.010518 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.00131412(Avg), 0.0131412 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.0235325(Avg), 0.235325 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.02154751(Avg), 0.2154751 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.02014517(Avg), 0.2014517 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.0206452(Avg), 0.206452 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.0208978(Avg), 0.208978 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.01002396(Avg), 0.1002396 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.01007485(Avg), 0.1007485 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.01017521(Avg), 0.1017521 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.01092302(Avg), 0.1092302 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.01102462(Avg), 0.1102462 (Total)
+Result: 
+ Error Rate With AbpABP => 0/20
+ 
+Avarage GetPeople With Abp => 0.01200578   (83.2932137687014 per second)
+ Avarage GetConstant With Abp => 0.010444332   (95.7457116453211 per second)
+ Avarage Delete With Abp => 0.021353636   (46.8304320631859 per second)
+ Avarage InsertAndGetId With Abp => 0.103686554   (9.64445206656207 per second)
+ 
+
+23-Aug-17 07:02:17
+",Thread Count = 5
+
+Repeat Count = 10
+
+
+23-Aug-17 07:03:14
+",Thread Count = 5
+
+Repeat Count = 10
+
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 7.2E-07(Avg), 7.2E-06 (Total)
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 8E-08(Avg), 8E-07 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 4E-08(Avg), 4E-07 (Total)
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 8E-08(Avg), 8E-07 (Total)
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+(With Abp ) -> FAILED. An error occurred while sending the request.
+Result: 
+ Error Rate With AbpABP => 12/16
+ 
+
+23-Aug-17 07:04:15
+",Thread Count = 5
+
+Repeat Count = 10
+
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.23560941(Avg), 2.3560941 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.23595289(Avg), 2.3595289 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.23653285(Avg), 2.3653285 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.23573313(Avg), 2.3573313 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For InsertAndGetId: 0.23691896(Avg), 2.3691896 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.04244699(Avg), 0.4244699 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.0425243(Avg), 0.425243 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.04282934(Avg), 0.4282934 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.04336071(Avg), 0.4336071 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetPeople: 0.04347626(Avg), 0.4347626 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.03702903(Avg), 0.3702903 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.03831416(Avg), 0.3831416 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.03839404(Avg), 0.3839404 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.03912837(Avg), 0.3912837 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For Delete: 0.04031215(Avg), 0.4031215 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.01174793(Avg), 0.1174793 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.0117838(Avg), 0.117838 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.01196123(Avg), 0.1196123 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.01215803(Avg), 0.1215803 (Total)
+(With Abp ) -> SUCCESSFUL.  Time elapsed For GetConstant: 0.01267397(Avg), 0.1267397 (Total)
+Result: 
+ Error Rate With AbpABP => 0/20
+ 
+Avarage GetPeople With Abp => 0.4292752   (2.32950797064447 per second)
+ Avarage GetConstant With Abp => 0.012064992   (82.8844312536635 per second)
+ Avarage Delete With Abp => 0.03863555   (25.882898004558 per second)
+ Avarage InsertAndGetId With Abp => 0.236149448   (4.23460655305025 per second)
+ 

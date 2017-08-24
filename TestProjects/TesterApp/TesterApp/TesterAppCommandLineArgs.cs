@@ -6,8 +6,8 @@ namespace TesterApp
 {
     public class TesterAppCommandLineArgs : CommandLineArgs
     {
-        public int ThreadCount => Convert.ToInt32(this.GetOrDefault("t") ?? "10");
-        public int TestType => Convert.ToInt32(this.GetOrDefault("a") ?? "0");
+        public int ThreadCount => Convert.ToInt32(this.GetOrDefault("t") ?? "5");
+        public int TestType => Convert.ToInt32(this.GetOrDefault("a") ?? "1");
         public int RepeatCount => Convert.ToInt32(this.GetOrDefault("r") ?? "10");
 
         public string OutputFilePath

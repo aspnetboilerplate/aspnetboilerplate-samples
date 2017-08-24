@@ -16,7 +16,7 @@ namespace TesterApp
 
         public HttpClient Client { get; }
 
-        public abstract Task<List<Person>> GetPeople();
+        public abstract Task GetPeople();
 
         public abstract Task GetConstant();
 
@@ -33,7 +33,7 @@ namespace TesterApp
             Results = new List<TestResult>();
         }
 
-        public async Task CallGetPeople()
+        public async Task GetPeople_Timer()
         {
             var result = new TestResult {Method = "GetPeople"};
             var stopwatch = Stopwatch.StartNew();

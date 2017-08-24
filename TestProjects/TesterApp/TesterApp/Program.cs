@@ -73,7 +73,7 @@ namespace TesterApp
         static async Task TestInsertGetDeletefromDatabase(TestService testService)
         {
             var idList = await testService.InsertAndGetId_Timer(_args.RepeatCount);
-            await testService.CallGetPeople();
+            await testService.GetPeople_Timer();
             await testService.Delete_Timer(idList);
             _cdEvent.Signal();
         }

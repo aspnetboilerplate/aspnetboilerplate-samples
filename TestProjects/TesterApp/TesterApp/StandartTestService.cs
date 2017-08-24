@@ -14,12 +14,12 @@ namespace TesterApp
         {
         }
 
-        public override async Task<List<Person>> GetPeople()
+        public override async Task GetPeople()
         {
             var response = await Client.GetAsync("GetList");
             if (response.IsSuccessStatusCode)
             {
-                return await response.Content.ReadAsAsync<List<Person>>();
+                return;
             }
             throw new Exception(response.ReasonPhrase);
         }
