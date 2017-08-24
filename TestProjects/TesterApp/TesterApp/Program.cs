@@ -63,9 +63,9 @@ namespace TesterApp
         {
             for (int i = 0; i < _args.ThreadCount; i++)
             {
-                new Thread(async () =>
+                new Thread(() =>
                 {
-                    await testFunction(testService);
+                    AsyncHelper.RunSync(() => testFunction(testService));
                 }).Start();
             }
 
