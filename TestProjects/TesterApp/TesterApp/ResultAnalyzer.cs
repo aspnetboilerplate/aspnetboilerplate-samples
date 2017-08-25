@@ -71,10 +71,10 @@ namespace TesterApp
             {
                 LogHelper.Log(
                     "\n\n" +
-                    "On Method InsertAndGetId => " + CompareSpeeds("With ABP", abpInsertAndGetIdAvg, "Without ABP", stdInsertAndGetIdAvg) + "\n" +
-                    "On Method Delete => " + CompareSpeeds("With ABP", abpDeleteAvg, "Without ABP", stdDeleteAvg) + "\n" +
-                    "On Method GetPeople => " + CompareSpeeds("With ABP", abpGetPeopleAvg, "Without ABP", stdGetPeopleAvg) + "\n" +
-                    "On Method GetConstant => " + CompareSpeeds("With ABP", abpGetConstantAvg, "Without ABP", stdGetConstantAvg)
+                    "On Method InsertAndGetId => " + CompareSpeeds(abpInsertAndGetIdAvg, stdInsertAndGetIdAvg) + "\n" +
+                    "On Method Delete         => " + CompareSpeeds(abpDeleteAvg, stdDeleteAvg) + "\n" +
+                    "On Method GetPeople      => " + CompareSpeeds(abpGetPeopleAvg, stdGetPeopleAvg) + "\n" +
+                    "On Method GetConstant    => " + CompareSpeeds(abpGetConstantAvg, stdGetConstantAvg)
                 );
             }
            
@@ -92,7 +92,7 @@ namespace TesterApp
             return results.Where(r => !r.Success).ToList().Count;
         }
 
-        private string CompareSpeeds(string xType, double x, string yType, double y)
+        private string CompareSpeeds(double x, double y, string xType = "With ABP", string yType = "Without ABP")
         {
             var ratio = x >= y ? 1.0-(y / x) : (y / x)-1.0;
             ratio = Math.Round(ratio, 3);

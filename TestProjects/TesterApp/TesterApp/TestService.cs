@@ -37,12 +37,15 @@ namespace TesterApp
         {
             for (var i = 0; i < repeat; i++)
             {
-                var result = new TestResult { Method = "GetPeople" };
+                var result = new TestResult
+                {
+                    Method = "GetPeople",
+                    Success = true
+                };
                 var stopwatch = Stopwatch.StartNew();
                 try
                 {
                     await GetPeople();
-                    result.Success = true;
                 }
                 catch (Exception ex)
                 {
@@ -62,12 +65,15 @@ namespace TesterApp
         {
             for (var i = 0; i < repeat; i++)
             {
-                var result = new TestResult { Method = "GetConstant" };
+                var result = new TestResult
+                {
+                    Method = "GetConstant",
+                    Success = true
+                };
                 var stopwatch = Stopwatch.StartNew();
                 try
                 {
                     await GetConstant();
-                    result.Success = true;
                 }
                 catch (Exception ex)
                 {
@@ -87,13 +93,16 @@ namespace TesterApp
         {
             foreach (var id in idList)
             {
-                var result = new TestResult { Method = "Delete" };
+                var result = new TestResult
+                {
+                    Method = "Delete",
+                    Success = true
+                };
                 var stopwatch = Stopwatch.StartNew();
 
                 try
                 {
                     await Delete(id);
-                    result.Success = true;
                 }
                 catch (Exception ex)
                 {
@@ -115,14 +124,17 @@ namespace TesterApp
 
             for (var i = 0; i < repeat; i++)
             {
-                var result = new TestResult { Method = "InsertAndGetId" };
+                var result = new TestResult
+                {
+                    Method = "InsertAndGetId",
+                    Success = true
+                };
                 var randomString = RandomString(15);
                 var stopwatch = Stopwatch.StartNew();
                 try
                 {
                     var id = await InsertAndGetId(randomString, "666666");
                     idList.Add(id);
-                    result.Success = true;
                 }
                 catch (Exception ex)
                 {

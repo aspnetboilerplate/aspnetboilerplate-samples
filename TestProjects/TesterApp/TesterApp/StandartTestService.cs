@@ -19,7 +19,6 @@ namespace TesterApp
             {
                 return;
             }
-
             throw new Exception(response.ReasonPhrase);
         }
 

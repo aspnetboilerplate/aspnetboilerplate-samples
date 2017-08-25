@@ -37,23 +37,23 @@ namespace TesterApp
         {
             Log("\n" + DateTime.UtcNow + "\nThread Count = " + _args.ThreadCount + "\n", "Repeat Count = " + _args.RepeatCount + "\n");
 
+            if (_args.TestType == (int)Both || _args.TestType == (int)WithoutAbp)
+            {
+                await TestThatMethod(TestInsertGetDeletefromDatabase, _standartTester);
+                await TestThatMethod(TestGetConstant, _standartTester);
+
+            }
+
             if (_args.TestType == (int)Both || _args.TestType == (int)WithAbp)
             {
                 await TestThatMethod(TestInsertGetDeletefromDatabase, _abpTester);
                 await TestThatMethod(TestGetConstant, _abpTester);
 
             }
-
-            if (_args.TestType == (int)Both || _args.TestType == (int)WithoutAbp)
-            {
-                await TestThatMethod(TestInsertGetDeletefromDatabase, _standartTester);
-                await TestThatMethod(TestGetConstant, _standartTester);
-                
-            }
             
-             new ResultAnalyzer(_abpTester.Results,_standartTester.Results).AnalyzeResults(_args.TestType);
-
-
+           
+        new ResultAnalyzer(_abpTester.Results,_standartTester.Results).AnalyzeResults(_args.TestType);
+            
             Console.ReadLine();
         }
 
@@ -72,6 +72,12 @@ namespace TesterApp
 
         static async Task TestInsertGetDeletefromDatabase(TestService testService)
         {
+            var idListForTest = await testService.InsertAndGetId_Timer(_args.RepeatCount/5);
+            await testService.Delete_Timer(idListForTest);
+            await testService.GetPeople_Timer(_args.RepeatCount/5);
+
+            testService.Results.Clear();
+
             var idList = await testService.InsertAndGetId_Timer(_args.RepeatCount);
             await testService.Delete_Timer(idList);
             await testService.GetPeople_Timer(_args.RepeatCount);
