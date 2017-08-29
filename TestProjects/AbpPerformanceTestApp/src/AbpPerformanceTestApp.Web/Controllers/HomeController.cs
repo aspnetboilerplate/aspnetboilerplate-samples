@@ -1,7 +1,10 @@
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
+using Abp.Logging;
 using AbpPerformanceTestApp.Dto;
+using Castle.Core.Logging;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AbpPerformanceTestApp.Web.Controllers
@@ -10,16 +13,18 @@ namespace AbpPerformanceTestApp.Web.Controllers
     {
 
         private readonly PersonAppService _personService;
-
+        public ILogger Logger { get; set; }
 
         public HomeController(PersonAppService personService)
         {
             _personService = personService;
+            Logger = NullLogger.Instance;
         }
 
         public async Task<int> InsertAndGetId(string name, string phoneNumber)
         {
-            return await _personService.InsertAndGetId(new InsertAndGetIdInput() { Name = name, PhoneNumber = phoneNumber });
+            var id = await _personService.InsertAndGetId( new InsertAndGetIdInput() {Name = name, PhoneNumber = phoneNumber});
+            return id;
         }
 
         public async Task Delete(int id)

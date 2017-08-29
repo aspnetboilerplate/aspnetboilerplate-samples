@@ -24,6 +24,10 @@ namespace AbpPerformanceTestApp.Web.Startup
 
         public override void PreInitialize()
         {
+            Configuration.UnitOfWork.IsTransactional = false;
+
+           // Configuration.Auditing.IsEnabled = false;
+
             Configuration.DefaultNameOrConnectionString = _appConfiguration.GetConnectionString(AbpPerformanceTestAppConsts.ConnectionStringName);
 
             Configuration.Navigation.Providers.Add<AbpPerformanceTestAppNavigationProvider>();

@@ -30,7 +30,8 @@ namespace StandartTestApp
 
         public async Task Delete(DeletePersonInput input)
         {
-            var person = await _context.People.FirstOrDefaultAsync(p => p.Id == input.Id);
+            var person = await _context.People.FirstOrDefaultAsync(p => p.PhoneNumber == "000000");
+
             if (person == null)
             {
                 return;

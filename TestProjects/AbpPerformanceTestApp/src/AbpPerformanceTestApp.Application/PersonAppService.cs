@@ -29,7 +29,8 @@ namespace AbpPerformanceTestApp
 
         public async Task Delete(EntityDto input)
         {
-            await _personRepository.DeleteAsync(input.Id);
+            var person = await _personRepository.FirstOrDefaultAsync(p => p.PhoneNumber == "111111");
+            await _personRepository.DeleteAsync(person.Id);
         }
 
         public int GetConstant()

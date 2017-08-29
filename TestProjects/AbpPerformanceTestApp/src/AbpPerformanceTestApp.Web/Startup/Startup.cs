@@ -31,9 +31,6 @@ namespace AbpPerformanceTestApp.Web.Startup
             return services.AddAbp<AbpPerformanceTestAppWebModule>(options =>
             {
                 //Configure Log4Net logging
-                options.IocManager.IocContainer.AddFacility<LoggingFacility>(
-                    f => f.UseAbpLog4Net().WithConfig("log4net.config")
-                );
             });
         }
 
