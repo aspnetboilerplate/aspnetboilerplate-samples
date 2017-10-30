@@ -1,14 +1,14 @@
-﻿using Abp.Authorization;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using Abp.Authorization;
 using Abp.Configuration;
 using Abp.Domain.Uow;
 using IdentityServerDemo.Authorization.Roles;
 using IdentityServerDemo.Authorization.Users;
 using IdentityServerDemo.MultiTenancy;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace IdentityServerDemo.Identity
 {
@@ -21,15 +21,17 @@ namespace IdentityServerDemo.Identity
             IOptions<IdentityOptions> optionsAccessor, 
             ILogger<SignInManager<User>> logger,
             IUnitOfWorkManager unitOfWorkManager,
-            ISettingManager settingManager
-            ) : base(
+            ISettingManager settingManager,
+            IAuthenticationSchemeProvider schemes) 
+            : base(
                 userManager, 
                 contextAccessor, 
                 claimsFactory, 
                 optionsAccessor, 
                 logger,
                 unitOfWorkManager,
-                settingManager)
+                settingManager,
+                schemes)
         {
         }
     }

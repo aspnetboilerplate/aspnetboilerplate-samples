@@ -1,7 +1,7 @@
-﻿using Abp.Authorization;
-using IdentityServerDemo.Authorization.Roles;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
+using Abp.Authorization;
+using IdentityServerDemo.Authorization.Roles;
 
 namespace IdentityServerDemo.Authorization.Users
 {

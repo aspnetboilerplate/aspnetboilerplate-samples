@@ -4,9 +4,10 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Abp.Authorization;
 using Abp.Authorization.Users;
-using Abp.AutoMapper;
 using Abp.MultiTenancy;
 using Abp.Runtime.Security;
 using Abp.UI;
@@ -16,8 +17,6 @@ using IdentityServerDemo.Authorization;
 using IdentityServerDemo.Authorization.Users;
 using IdentityServerDemo.Models.TokenAuth;
 using IdentityServerDemo.MultiTenancy;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 
 namespace IdentityServerDemo.Controllers
 {
@@ -65,7 +64,8 @@ namespace IdentityServerDemo.Controllers
             {
                 AccessToken = accessToken,
                 EncryptedAccessToken = GetEncrpyedAccessToken(accessToken),
-                ExpireInSeconds = (int)_configuration.Expiration.TotalSeconds
+                ExpireInSeconds = (int)_configuration.Expiration.TotalSeconds,
+                UserId = loginResult.User.Id
             };
         }
 
@@ -105,7 +105,7 @@ namespace IdentityServerDemo.Controllers
                             };
                         }
 
-                        //Try to login again with newly registered user!
+                        // Try to login again with newly registered user!
                         loginResult = await _logInManager.LoginAsync(new UserLoginInfo(model.AuthProvider, model.ProviderKey, model.AuthProvider), GetTenancyNameOrNull());
                         if (loginResult.Result != AbpLoginResultType.Success)
                         {

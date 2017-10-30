@@ -2,12 +2,12 @@
 using Abp.Reflection.Extensions;
 using Abp.Timing;
 using Abp.Zero;
-using IdentityServerDemo.Localization;
 using Abp.Zero.Configuration;
-using IdentityServerDemo.MultiTenancy;
 using IdentityServerDemo.Authorization.Roles;
 using IdentityServerDemo.Authorization.Users;
 using IdentityServerDemo.Configuration;
+using IdentityServerDemo.Localization;
+using IdentityServerDemo.MultiTenancy;
 using IdentityServerDemo.Timing;
 
 namespace IdentityServerDemo
@@ -19,17 +19,17 @@ namespace IdentityServerDemo
         {
             Configuration.Auditing.IsEnabledForAnonymousUsers = true;
 
-            //Declare entity types
+            // Declare entity types
             Configuration.Modules.Zero().EntityTypes.Tenant = typeof(Tenant);
             Configuration.Modules.Zero().EntityTypes.Role = typeof(Role);
             Configuration.Modules.Zero().EntityTypes.User = typeof(User);
 
             IdentityServerDemoLocalizationConfigurer.Configure(Configuration.Localization);
 
-            //Enable this line to create a multi-tenant application.
+            // Enable this line to create a multi-tenant application.
             Configuration.MultiTenancy.IsEnabled = IdentityServerDemoConsts.MultiTenancyEnabled;
 
-            //Configure roles
+            // Configure roles
             AppRoleConfig.Configure(Configuration.Modules.Zero().RoleManagement);
 
             Configuration.Settings.Providers.Add<AppSettingProvider>();

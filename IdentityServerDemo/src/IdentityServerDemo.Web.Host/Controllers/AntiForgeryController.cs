@@ -1,5 +1,5 @@
-using IdentityServerDemo.Controllers;
 using Microsoft.AspNetCore.Antiforgery;
+using IdentityServerDemo.Controllers;
 
 namespace IdentityServerDemo.Web.Host.Controllers
 {

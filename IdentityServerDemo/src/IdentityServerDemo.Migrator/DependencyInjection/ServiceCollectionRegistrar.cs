@@ -1,7 +1,7 @@
-﻿using Abp.Dependency;
-using IdentityServerDemo.Identity;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Castle.Windsor.MsDependencyInjection;
-using Microsoft.Extensions.DependencyInjection;
+using Abp.Dependency;
+using IdentityServerDemo.Identity;
 
 namespace IdentityServerDemo.Migrator.DependencyInjection
 {

@@ -1,13 +1,12 @@
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Logging;
 using Abp.Authorization;
 using Abp.Authorization.Roles;
 using Abp.Domain.Uow;
 using Abp.Runtime.Caching;
 using Abp.Zero.Configuration;
 using IdentityServerDemo.Authorization.Users;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Logging;
 
 namespace IdentityServerDemo.Authorization.Roles
 {
@@ -19,7 +18,6 @@ namespace IdentityServerDemo.Authorization.Roles
             ILookupNormalizer keyNormalizer, 
             IdentityErrorDescriber errors, 
             ILogger<AbpRoleManager<Role, User>> logger,
-            IHttpContextAccessor contextAccessor, 
             IPermissionManager permissionManager, 
             ICacheManager cacheManager, 
             IUnitOfWorkManager unitOfWorkManager,
@@ -29,7 +27,6 @@ namespace IdentityServerDemo.Authorization.Roles
                   roleValidators, 
                   keyNormalizer, 
                   errors, logger, 
-                  contextAccessor, 
                   permissionManager,
                   cacheManager, 
                   unitOfWorkManager,

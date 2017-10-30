@@ -1,9 +1,8 @@
-﻿using System.Reflection;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 using IdentityServerDemo.Configuration;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 
 namespace IdentityServerDemo.Web.Host.Startup
 {

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Abp.Application.Services;
-using IdentityServerDemo.MultiTenancy;
-using Abp.Runtime.Session;
-using Abp.IdentityFramework;
-using IdentityServerDemo.Authorization.Users;
 using Microsoft.AspNetCore.Identity;
+using Abp.Application.Services;
+using Abp.IdentityFramework;
+using Abp.Runtime.Session;
+using IdentityServerDemo.MultiTenancy;
+using IdentityServerDemo.Authorization.Users;
 
 namespace IdentityServerDemo
 {

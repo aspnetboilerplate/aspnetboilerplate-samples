@@ -9,7 +9,6 @@ using Abp.MultiTenancy;
 using Abp.Runtime.Security;
 using IdentityServerDemo.EntityFrameworkCore;
 using IdentityServerDemo.EntityFrameworkCore.Seed;
-using IdentityServerDemo.Migrator;
 using IdentityServerDemo.MultiTenancy;
 
 namespace IdentityServerDemo.Migrator
@@ -75,7 +74,7 @@ namespace IdentityServerDemo.Migrator
 
             var migratedDatabases = new HashSet<string>();
             var tenants = _tenantRepository.GetAllList(t => t.ConnectionString != null && t.ConnectionString != "");
-            for (int i = 0; i < tenants.Count; i++)
+            for (var i = 0; i < tenants.Count; i++)
             {
                 var tenant = tenants[i];
                 Log.Write(string.Format("Tenant database migration started... ({0} / {1})", (i + 1), tenants.Count));

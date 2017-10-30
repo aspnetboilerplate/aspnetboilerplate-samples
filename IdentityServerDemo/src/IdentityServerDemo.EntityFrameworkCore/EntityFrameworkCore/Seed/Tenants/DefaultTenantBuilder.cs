@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using IdentityServerDemo.Editions;
 using IdentityServerDemo.MultiTenancy;
 
@@ -20,14 +21,14 @@ namespace IdentityServerDemo.EntityFrameworkCore.Seed.Tenants
 
         private void CreateDefaultTenant()
         {
-            //Default tenant
+            // Default tenant
 
-            var defaultTenant = _context.Tenants.FirstOrDefault(t => t.TenancyName == Tenant.DefaultTenantName);
+            var defaultTenant = _context.Tenants.IgnoreQueryFilters().FirstOrDefault(t => t.TenancyName == Tenant.DefaultTenantName);
             if (defaultTenant == null)
             {
                 defaultTenant = new Tenant(Tenant.DefaultTenantName, Tenant.DefaultTenantName);
 
-                var defaultEdition = _context.Editions.FirstOrDefault(e => e.Name == EditionManager.DefaultEditionName);
+                var defaultEdition = _context.Editions.IgnoreQueryFilters().FirstOrDefault(e => e.Name == EditionManager.DefaultEditionName);
                 if (defaultEdition != null)
                 {
                     defaultTenant.EditionId = defaultEdition.Id;

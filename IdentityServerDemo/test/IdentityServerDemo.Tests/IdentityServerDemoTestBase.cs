@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Abp;
 using Abp.Authorization.Users;
 using Abp.Events.Bus;
@@ -12,8 +13,6 @@ using IdentityServerDemo.EntityFrameworkCore;
 using IdentityServerDemo.EntityFrameworkCore.Seed.Host;
 using IdentityServerDemo.EntityFrameworkCore.Seed.Tenants;
 using IdentityServerDemo.MultiTenancy;
-using Microsoft.EntityFrameworkCore;
-
 
 namespace IdentityServerDemo.Tests
 {
@@ -28,7 +27,7 @@ namespace IdentityServerDemo.Tests
                 context.SuppressAutoSetTenantId = true;
             }
 
-            //Seed initial data for host
+            // Seed initial data for host
             AbpSession.TenantId = null;
             UsingDbContext(context =>
             {
@@ -37,7 +36,7 @@ namespace IdentityServerDemo.Tests
                 new DefaultTenantBuilder(context).Create();
             });
 
-            //Seed initial data for default tenant
+            // Seed initial data for default tenant
             AbpSession.TenantId = 1;
             UsingDbContext(context =>
             {

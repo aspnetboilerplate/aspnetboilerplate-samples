@@ -9,7 +9,6 @@ namespace IdentityServerDemo.Authorization
         public PermissionChecker(UserManager userManager)
             : base(userManager)
         {
-
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using Abp.Localization;
 
 namespace IdentityServerDemo.EntityFrameworkCore.Seed.Host
@@ -23,7 +24,8 @@ namespace IdentityServerDemo.EntityFrameworkCore.Seed.Host
                 new ApplicationLanguage(null, "tr", "Türkçe", "famfamfam-flags tr"),
                 new ApplicationLanguage(null, "ru", "Русский", "famfamfam-flags ru"),
                 new ApplicationLanguage(null, "zh-CN", "简体中文", "famfamfam-flags cn"),
-                new ApplicationLanguage(null, "es-MX", "Español México", "famfamfam-flags mx")
+                new ApplicationLanguage(null, "es-MX", "Español México", "famfamfam-flags mx"),
+                new ApplicationLanguage(null, "ja", "日本語", "famfamfam-flags jp")
             };
         }
 
@@ -47,7 +49,7 @@ namespace IdentityServerDemo.EntityFrameworkCore.Seed.Host
 
         private void AddLanguageIfNotExists(ApplicationLanguage language)
         {
-            if (_context.Languages.Any(l => l.TenantId == language.TenantId && l.Name == language.Name))
+            if (_context.Languages.IgnoreQueryFilters().Any(l => l.TenantId == language.TenantId && l.Name == language.Name))
             {
                 return;
             }

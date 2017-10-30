@@ -1,7 +1,6 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using IdentityServerDemo.Authorization.Users;
-using IdentityServerDemo.Users;
 
 namespace IdentityServerDemo.Sessions.Dto
 {

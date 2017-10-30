@@ -1,11 +1,11 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Castle.MicroKernel.Registration;
+using Castle.Windsor.MsDependencyInjection;
 using Abp.Dependency;
 using IdentityServerDemo.EntityFrameworkCore;
 using IdentityServerDemo.Identity;
-using Castle.MicroKernel.Registration;
-using Castle.Windsor.MsDependencyInjection;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace IdentityServerDemo.Tests.DependencyInjection
 {

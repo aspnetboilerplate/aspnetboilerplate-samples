@@ -13,8 +13,7 @@ namespace IdentityServerDemo.Editions
             IAbpZeroFeatureValueStore featureValueStore)
             : base(
                 editionRepository,
-                featureValueStore
-            )
+                featureValueStore)
         {
         }
     }

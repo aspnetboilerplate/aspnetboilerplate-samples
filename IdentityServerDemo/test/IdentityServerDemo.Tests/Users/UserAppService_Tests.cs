@@ -1,9 +1,10 @@
 ﻿using System.Threading.Tasks;
-using IdentityServerDemo.Users;
-using IdentityServerDemo.Users.Dto;
 using Microsoft.EntityFrameworkCore;
 using Shouldly;
 using Xunit;
+using Abp.Application.Services.Dto;
+using IdentityServerDemo.Users;
+using IdentityServerDemo.Users.Dto;
 
 namespace IdentityServerDemo.Tests.Users
 {
@@ -19,19 +20,19 @@ namespace IdentityServerDemo.Tests.Users
         [Fact]
         public async Task GetUsers_Test()
         {
-            //Act
-            var output = await _userAppService.GetUsers();
+            // Act
+            var output = await _userAppService.GetAll(new PagedResultRequestDto{MaxResultCount=20, SkipCount=0} );
 
-            //Assert
+            // Assert
             output.Items.Count.ShouldBeGreaterThan(0);
         }
 
         [Fact]
         public async Task CreateUser_Test()
         {
-            //Act
-            await _userAppService.CreateUser(
-                new CreateUserInput
+            // Act
+            await _userAppService.Create(
+                new CreateUserDto
                 {
                     EmailAddress = "john@volosoft.com",
                     IsActive = true,

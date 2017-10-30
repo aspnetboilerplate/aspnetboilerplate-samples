@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Abp.Authorization.Users;
 using Abp.Domain.Services;
 using Abp.IdentityFramework;
@@ -9,8 +11,6 @@ using Abp.Runtime.Session;
 using Abp.UI;
 using IdentityServerDemo.Authorization.Roles;
 using IdentityServerDemo.MultiTenancy;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 
 namespace IdentityServerDemo.Authorization.Users
 {
@@ -51,7 +51,7 @@ namespace IdentityServerDemo.Authorization.Users
                 EmailAddress = emailAddress,
                 IsActive = true,
                 UserName = userName,
-                IsEmailConfirmed = true,
+                IsEmailConfirmed = isEmailConfirmed,
                 Roles = new List<UserRole>()
             };
 

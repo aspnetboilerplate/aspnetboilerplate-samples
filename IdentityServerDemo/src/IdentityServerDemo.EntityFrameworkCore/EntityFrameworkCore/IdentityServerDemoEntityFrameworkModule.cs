@@ -1,5 +1,4 @@
 ﻿using Abp.EntityFrameworkCore.Configuration;
-using Abp.IdentityServer4;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 using Abp.Zero.EntityFrameworkCore;
@@ -9,8 +8,7 @@ namespace IdentityServerDemo.EntityFrameworkCore
 {
     [DependsOn(
         typeof(IdentityServerDemoCoreModule), 
-        typeof(AbpZeroCoreEntityFrameworkCoreModule),
-        typeof(AbpZeroCoreIdentityServerEntityFrameworkCoreModule))]
+        typeof(AbpZeroCoreEntityFrameworkCoreModule))]
     public class IdentityServerDemoEntityFrameworkModule : AbpModule
     {
         /* Used it tests to skip dbcontext registration, in order to use in-memory database of EF Core */
@@ -18,14 +16,20 @@ namespace IdentityServerDemo.EntityFrameworkCore
 
         public bool SkipDbSeed { get; set; }
 
-
         public override void PreInitialize()
         {
             if (!SkipDbContextRegistration)
             {
-                Configuration.Modules.AbpEfCore().AddDbContext<IdentityServerDemoDbContext>(configuration =>
+                Configuration.Modules.AbpEfCore().AddDbContext<IdentityServerDemoDbContext>(options =>
                 {
-                    IdentityServerDemoDbContextConfigurer.Configure(configuration.DbContextOptions, configuration.ConnectionString);
+                    if (options.ExistingConnection != null)
+                    {
+                        IdentityServerDemoDbContextConfigurer.Configure(options.DbContextOptions, options.ExistingConnection);
+                    }
+                    else
+                    {
+                        IdentityServerDemoDbContextConfigurer.Configure(options.DbContextOptions, options.ConnectionString);
+                    }
                 });
             }
         }

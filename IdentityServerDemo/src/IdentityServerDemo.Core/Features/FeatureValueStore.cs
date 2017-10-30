@@ -17,7 +17,8 @@ namespace IdentityServerDemo.Features
             IRepository<EditionFeatureSetting, long> editionFeatureRepository, 
             IFeatureManager featureManager, 
             IUnitOfWorkManager unitOfWorkManager) 
-            : base(cacheManager, 
+            : base(
+                  cacheManager, 
                   tenantFeatureRepository, 
                   tenantRepository, 
                   editionFeatureRepository, 

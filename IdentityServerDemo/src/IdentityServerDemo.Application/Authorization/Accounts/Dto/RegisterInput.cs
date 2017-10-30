@@ -2,20 +2,19 @@
 using System.ComponentModel.DataAnnotations;
 using Abp.Auditing;
 using Abp.Authorization.Users;
-using IdentityServerDemo.Authorization.Users;
-using IdentityServerDemo.Validation;
 using Abp.Extensions;
+using IdentityServerDemo.Validation;
 
 namespace IdentityServerDemo.Authorization.Accounts.Dto
 {
     public class RegisterInput : IValidatableObject
     {
         [Required]
-        [StringLength(User.MaxNameLength)]
+        [StringLength(AbpUserBase.MaxNameLength)]
         public string Name { get; set; }
 
         [Required]
-        [StringLength(User.MaxSurnameLength)]
+        [StringLength(AbpUserBase.MaxSurnameLength)]
         public string Surname { get; set; }
 
         [Required]
@@ -28,7 +27,7 @@ namespace IdentityServerDemo.Authorization.Accounts.Dto
         public string EmailAddress { get; set; }
 
         [Required]
-        [StringLength(User.MaxPlainPasswordLength)]
+        [StringLength(AbpUserBase.MaxPlainPasswordLength)]
         [DisableAuditing]
         public string Password { get; set; }
 

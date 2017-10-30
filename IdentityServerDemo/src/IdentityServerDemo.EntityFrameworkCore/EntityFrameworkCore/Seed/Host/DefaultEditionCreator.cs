@@ -1,4 +1,5 @@
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using Abp.Application.Editions;
 using Abp.Application.Features;
 using IdentityServerDemo.Editions;
@@ -21,7 +22,7 @@ namespace IdentityServerDemo.EntityFrameworkCore.Seed.Host
 
         private void CreateEditions()
         {
-            var defaultEdition = _context.Editions.FirstOrDefault(e => e.Name == EditionManager.DefaultEditionName);
+            var defaultEdition = _context.Editions.IgnoreQueryFilters().FirstOrDefault(e => e.Name == EditionManager.DefaultEditionName);
             if (defaultEdition == null)
             {
                 defaultEdition = new Edition { Name = EditionManager.DefaultEditionName, DisplayName = EditionManager.DefaultEditionName };
@@ -34,8 +35,7 @@ namespace IdentityServerDemo.EntityFrameworkCore.Seed.Host
 
         private void CreateFeatureIfNotExists(int editionId, string featureName, bool isEnabled)
         {
-            var defaultEditionChatFeature = _context.EditionFeatureSettings
-                                                        .FirstOrDefault(ef => ef.EditionId == editionId && ef.Name == featureName);
+            var defaultEditionChatFeature = _context.EditionFeatureSettings.IgnoreQueryFilters().FirstOrDefault(ef => ef.EditionId == editionId && ef.Name == featureName);
 
             if (defaultEditionChatFeature == null)
             {
