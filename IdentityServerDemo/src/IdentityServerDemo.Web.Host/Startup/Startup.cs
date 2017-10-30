@@ -11,7 +11,9 @@ using Swashbuckle.AspNetCore.Swagger;
 using Abp.AspNetCore;
 using Abp.Castle.Logging.Log4Net;
 using Abp.Extensions;
+using Abp.IdentityServer4;
 using IdentityServerDemo.Authentication.JwtBearer;
+using IdentityServerDemo.Authorization.Users;
 using IdentityServerDemo.Configuration;
 using IdentityServerDemo.Identity;
 
@@ -46,6 +48,20 @@ namespace IdentityServerDemo.Web.Host.Startup
 
             IdentityRegistrar.Register(services);
             AuthConfigurer.Configure(services, _appConfiguration);
+
+            services.AddIdentityServer()
+                .AddDeveloperSigningCredential()
+                .AddInMemoryIdentityResources(IdentityServerConfig.GetIdentityResources())
+                .AddInMemoryApiResources(IdentityServerConfig.GetApiResources())
+                .AddInMemoryClients(IdentityServerConfig.GetClients())
+                .AddAbpPersistedGrants<IAbpPersistedGrantDbContext>()
+                .AddAbpIdentityServer<User>(); ;
+
+            services.AddAuthentication().AddIdentityServerAuthentication("IdentityBearer", options =>
+            {
+                options.Authority = "http://localhost:62114/";
+                options.RequireHttpsMetadata = false;
+            });
 
             // Configure CORS for angular2 UI
             services.AddCors(options =>
@@ -99,7 +115,8 @@ namespace IdentityServerDemo.Web.Host.Startup
             app.UseStaticFiles();
 
             app.UseAuthentication();
-            app.UseJwtTokenMiddleware();
+            app.UseJwtTokenMiddleware("IdentityBearer");
+            app.UseIdentityServer();
 
 #if FEATURE_SIGNALR
             // Integrate to OWIN

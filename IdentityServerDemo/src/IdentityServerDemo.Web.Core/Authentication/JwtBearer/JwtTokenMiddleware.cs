@@ -8,11 +8,16 @@ namespace IdentityServerDemo.Authentication.JwtBearer
     {
         public static IApplicationBuilder UseJwtTokenMiddleware(this IApplicationBuilder app)
         {
+            return UseJwtTokenMiddleware(app, JwtBearerDefaults.AuthenticationScheme);
+        }
+
+        public static IApplicationBuilder UseJwtTokenMiddleware(this IApplicationBuilder app, string authenticationScheme)
+        {
             return app.Use(async (ctx, next) =>
             {
                 if (ctx.User.Identity?.IsAuthenticated != true)
                 {
-                    var result = await ctx.AuthenticateAsync(JwtBearerDefaults.AuthenticationScheme);
+                    var result = await ctx.AuthenticateAsync(authenticationScheme);
                     if (result.Succeeded && result.Principal != null)
                     {
                         ctx.User = result.Principal;
