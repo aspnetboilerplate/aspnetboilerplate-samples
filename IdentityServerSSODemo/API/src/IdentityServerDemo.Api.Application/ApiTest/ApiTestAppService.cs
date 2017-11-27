@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using Abp.Authorization;
-using Microsoft.AspNetCore.Mvc;
 
 namespace IdentityServerDemo.Api.ApiTest
 {
