@@ -11,9 +11,13 @@ using Swashbuckle.AspNetCore.Swagger;
 using Abp.AspNetCore;
 using Abp.Castle.Logging.Log4Net;
 using Abp.Extensions;
+using Abp.IdentityServer4;
 using IdentityServerDemo.SSO.Authentication.JwtBearer;
+using IdentityServerDemo.SSO.Authorization.Users;
 using IdentityServerDemo.SSO.Configuration;
+using IdentityServerDemo.SSO.EntityFrameworkCore;
 using IdentityServerDemo.SSO.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 #if FEATURE_SIGNALR
 using Microsoft.AspNet.SignalR;
@@ -62,6 +66,24 @@ namespace IdentityServerDemo.SSO.Web.Host.Startup
                 });
             });
 
+            services.AddIdentityServer()
+                .AddDeveloperSigningCredential()
+                .AddInMemoryIdentityResources(IdentityServerConfig.GetIdentityResources())
+                .AddInMemoryApiResources(IdentityServerConfig.GetApiResources())
+                .AddInMemoryClients(IdentityServerConfig.GetClients())
+                .AddAbpPersistedGrants<SSODbContext>()
+                .AddAbpIdentityServer<User>();
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddIdentityServerAuthentication("IdentityBearer", options =>
+            {
+                options.Authority = _appConfiguration["Identity:IdServer"];
+                options.RequireHttpsMetadata = false;
+            });
+
             // Swagger - Enable this line and the related lines in Configure method to enable swagger UI
             services.AddSwaggerGen(options =>
             {
@@ -98,8 +120,10 @@ namespace IdentityServerDemo.SSO.Web.Host.Startup
 
             app.UseStaticFiles();
 
+            app.UseIdentityServer();
+
             app.UseAuthentication();
-            app.UseJwtTokenMiddleware();
+            app.UseJwtTokenMiddleware("IdentityBearer");
 
             app.UseAbpRequestLocalization();
 

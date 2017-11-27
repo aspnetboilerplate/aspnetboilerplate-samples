@@ -6,12 +6,7 @@ namespace IdentityServerDemo.Api.Web.Controllers
     {
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            return View();
+            return Redirect("swagger");
         }
     }
 }
