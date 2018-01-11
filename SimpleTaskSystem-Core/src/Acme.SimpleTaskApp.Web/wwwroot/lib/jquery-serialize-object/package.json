@@ -1,0 +1,34 @@
+{
+  "name": "form-serializer",
+  "version": "2.5.0",
+  "description": "serialize form fields into an object or JSON",
+  "main": "./jquery.serialize-object.js",
+  "scripts": {
+    "test": "npm run build && open ./test/test.html",
+    "build": "npm run minify",
+    "minify": "uglifyjs jquery.serialize-object.js -m -c --comments > dist/jquery.serialize-object.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/macek/jquery-serialize-object"
+  },
+  "keywords": [
+    "form",
+    "serialize",
+    "json",
+    "object",
+    "jquery-plugin"
+  ],
+  "plugin": {
+    "type": "jQuery",
+    "name": "jQuery serializeObject"
+  },
+  "author": "macek <paulmacek@gmail.com>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/macek/jquery-serialize-object/issues"
+  },
+  "devDependencies": {
+    "uglify-js": "^2.4.16"
+  }
+}
