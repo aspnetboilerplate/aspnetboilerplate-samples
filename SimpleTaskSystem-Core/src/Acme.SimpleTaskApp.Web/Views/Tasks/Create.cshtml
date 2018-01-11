@@ -4,11 +4,13 @@
 @section scripts
 {
     <environment names="Development">
-        <script src="~/js/views/tasks/create.js" asp-append-version="true"></script>
+        <script src="~/lib/jquery-serialize-object/jquery.serialize-object.js"></script>
+        <script src="~/js/views/tasks/create.js"></script>
     </environment>
 
     <environment names="Staging,Production">
-        <script src="~/js/views/tasks/create.min.js" asp-append-version="true"></script>
+        <script src="~/lib/jquery-serialize-object/dist/jquery.serialize-object.min.js"></script>
+        <script src="~/js/views/tasks/create.min.js"></script>
     </environment>
 }
 
