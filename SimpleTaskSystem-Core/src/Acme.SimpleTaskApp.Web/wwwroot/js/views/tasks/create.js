@@ -15,7 +15,7 @@
                     return;
                 }
 
-                var input = _$form.serializeFormToObject();
+                var input = _$form.serializeObject();
                 abp.services.app.task.create(input)
                     .done(function() {
                         location.href = '/Tasks';
