@@ -2,10 +2,10 @@
 using Abp.Modules;
 using AbpHangfireConsole.Core;
 
-namespace AbpHangfireConsoleApp
+namespace AbpHangfireConsole.Application
 {
     [DependsOn(typeof(AbpHangfireConsoleCoreModule))]
-    public class HangfireConsoleAppApplicationModule : AbpModule
+    public class AbpHangfireConsoleApplicationModule : AbpModule
     {
         public override void Initialize()
         {
