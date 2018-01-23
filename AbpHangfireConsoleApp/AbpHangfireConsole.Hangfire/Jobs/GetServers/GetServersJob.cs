@@ -7,6 +7,9 @@ using Hangfire.Server;
 
 namespace AbpHangfireConsole.Hangfire.Jobs.GetServers
 {
+    /// <summary>
+    ///     Hangfire job to list the servers hangfire knows about directly from its database table Hangfire.Server
+    /// </summary>
     public class GetServersJob : HangfireJobBase<GetServersParamsInput>
     {
         private readonly IHangfireMetaService _HangfireMetaService;

@@ -20,6 +20,8 @@ namespace AbpHangfireConsoleApp
                 {
                     Console.WriteLine("Hangfire Server started on http://127.0.0.1:8111/hangfire");
                     Console.WriteLine("");
+                    Console.WriteLine("In 10s the job GetServersJob will execute.");
+                    Console.WriteLine("");
                     Console.WriteLine("Press any key to terminate...");
           
                     //Kick off a sample job for 10 seconds from now
