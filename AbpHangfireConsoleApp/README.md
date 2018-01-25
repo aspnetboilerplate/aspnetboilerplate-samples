@@ -25,4 +25,6 @@ If you descend your input parameters from `HangfireParamsInputBase` then they wi
 
 # Installation #
 
+- Make sure you are running Visual Studio in Administrator mode
 - Amend the `Default` connection string to point at the database of your choice.
+- Run the solution. Hangfire will create its tables in the database from the conenction string `Default`
