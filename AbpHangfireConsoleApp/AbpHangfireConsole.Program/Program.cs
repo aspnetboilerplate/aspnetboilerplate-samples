@@ -22,12 +22,10 @@ namespace AbpHangfireConsoleApp
                     Console.WriteLine("");
                     Console.WriteLine("In 10s the job GetServersJob will execute.");
                     Console.WriteLine("");
-                    Console.WriteLine("Press any key to terminate...");
-          
                     //Kick off a sample job for 10 seconds from now
                     BackgroundJob.Schedule<GetServersJob>(x => x.ExecuteJob(null, new GetServersParamsInput()), TimeSpan.FromSeconds(10));
+                    Console.WriteLine("Wait for the job to execute. Otherwise press any key to terminate....");
 
-                    
                     Console.ReadKey();
                 }
             }
