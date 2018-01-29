@@ -6,65 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <Compile Remove="ClientApp\**" />
+    <Content Remove="ClientApp\**" />
+    <EmbeddedResource Remove="ClientApp\**" />
+    <None Remove="ClientApp\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="ClientApp\.git\COMMIT_EDITMSG" />
-    <None Include="ClientApp\.git\config" />
-    <None Include="ClientApp\.git\description" />
-    <None Include="ClientApp\.git\HEAD" />
-    <None Include="ClientApp\.git\hooks\applypatch-msg.sample" />
-    <None Include="ClientApp\.git\hooks\commit-msg.sample" />
-    <None Include="ClientApp\.git\hooks\post-update.sample" />
-    <None Include="ClientApp\.git\hooks\pre-applypatch.sample" />
-    <None Include="ClientApp\.git\hooks\pre-commit.sample" />
-    <None Include="ClientApp\.git\hooks\pre-push.sample" />
-    <None Include="ClientApp\.git\hooks\pre-rebase.sample" />
-    <None Include="ClientApp\.git\hooks\pre-receive.sample" />
-    <None Include="ClientApp\.git\hooks\prepare-commit-msg.sample" />
-    <None Include="ClientApp\.git\hooks\update.sample" />
-    <None Include="ClientApp\.git\index" />
-    <None Include="ClientApp\.git\info\exclude" />
-    <None Include="ClientApp\.git\logs\HEAD" />
-    <None Include="ClientApp\.git\logs\refs\heads\master" />
-    <None Include="ClientApp\.git\objects\0e\02b7b374da56a3324a75a6190632e67b85c421" />
-    <None Include="ClientApp\.git\objects\16\317897b1c50a3a71bc775a8d6429f2b4c6cf98" />
-    <None Include="ClientApp\.git\objects\1d\9e5edf0965125ddb36005861f4c4b8cb0ddff1" />
-    <None Include="ClientApp\.git\objects\29\8d6937277371df0caf29dc242403d5a79b1940" />
-    <None Include="ClientApp\.git\objects\2b\2c303b25a3d72a4c0f84597e29df44da1baa4d" />
-    <None Include="ClientApp\.git\objects\36\12073bc31cd4c1f5d6cbb00318521e9a61bd8a" />
-    <None Include="ClientApp\.git\objects\39\affaff8a74c9715ab76e6520ed6309adad16fc" />
-    <None Include="ClientApp\.git\objects\39\ba8dbacbbe051fdd02481b07af43219296a075" />
-    <None Include="ClientApp\.git\objects\4a\e2c37916a5f29fbc9ed28277be56c30e0b58aa" />
-    <None Include="ClientApp\.git\objects\53\e421110461374f6e0d3c2ec477307feca940a5" />
-    <None Include="ClientApp\.git\objects\61\601c93e93ec4d96feabc43abcfa9dbcd7d6b8f" />
-    <None Include="ClientApp\.git\objects\6e\87a003da89defd554080af5af93600cc9f91fe" />
-    <None Include="ClientApp\.git\objects\7b\0f67283151427327b47fed20bcea1ea943cf2f" />
-    <None Include="ClientApp\.git\objects\7b\31da9b2e3c420a8df7c1dcc2f78c783a160ed2" />
-    <None Include="ClientApp\.git\objects\7e\e3b5ee863a74c87dbc4f4bee10b1fd1016cbf4" />
-    <None Include="ClientApp\.git\objects\80\81c7ceaf2be08bf59010158c586170d9d2d517" />
-    <None Include="ClientApp\.git\objects\82\ea75ba504ab2726e4bd08d89e69e99b7a711ba" />
-    <None Include="ClientApp\.git\objects\90\d4ee0072ce3fc41812f8af910219f9eea3c3de" />
-    <None Include="ClientApp\.git\objects\91\ec6da5f07886cf1d97b5d4212f4ddaa3eb2c9c" />
-    <None Include="ClientApp\.git\objects\92\6975afe8af84aa7aceeae19ab963015e1e0675" />
-    <None Include="ClientApp\.git\objects\98\ed400143618762fc74b7c5b9bc2b8fa6786fa5" />
-    <None Include="ClientApp\.git\objects\99\63d6c3954caaaced81c9015113cb579316c32a" />
-    <None Include="ClientApp\.git\objects\a6\c016bf38ad7b4c02385b2e5797752c227bb2e0" />
-    <None Include="ClientApp\.git\objects\ac\22a298acaa44fe4e75c8031c33c06dff965fb6" />
-    <None Include="ClientApp\.git\objects\af\139fada36378cce65d0765aadb93260ff1b1f2" />
-    <None Include="ClientApp\.git\objects\b5\92bc012136fbb59f62bc15bc3212971a89fbf3" />
-    <None Include="ClientApp\.git\objects\b7\f639aecac5c903f5449c7d14846f92b0a9b342" />
-    <None Include="ClientApp\.git\objects\bc\bdf36b3e50ee8bcbcb3fe8bac83aca85fb10b8" />
-    <None Include="ClientApp\.git\objects\cc\b2fc2247278e1b288ebdd99584c516484f73a8" />
-    <None Include="ClientApp\.git\objects\d4\f9f8af3824ed622e324f53900b230486abe7ef" />
-    <None Include="ClientApp\.git\objects\d5\64d0bc3dd917926892c55e3706cc116d5b165e" />
-    <None Include="ClientApp\.git\objects\d6\8672ffe4a38caa33dcec312055e5e02d30fbe0" />
-    <None Include="ClientApp\.git\objects\e6\9de29bb2d1d6434b8b29ae775ad8c2e48c5391" />
-    <None Include="ClientApp\.git\objects\e9\b5582aa527c96f4405a63a8641296d5a9c17e2" />
-    <None Include="ClientApp\.git\objects\ef\5c7bd620579296a1290b1a0b04c96d72e57bc6" />
-    <None Include="ClientApp\.git\objects\fa\2706a406ba65e05f8e23003ce6e9df291fa146" />
-    <None Include="ClientApp\.git\refs\heads\master" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
