@@ -15,9 +15,10 @@ using System;
 namespace Acme.HeroShop.Migrations
 {
     [DbContext(typeof(HeroShopDbContext))]
-    partial class HeroShopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180129134149_Added_Hero_Entities")]
+    partial class Added_Hero_Entities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
