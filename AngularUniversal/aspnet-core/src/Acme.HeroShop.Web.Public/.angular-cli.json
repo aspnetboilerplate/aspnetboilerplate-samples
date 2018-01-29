@@ -5,7 +5,7 @@
     },
     "apps": [
         {
-            "root": "ClientApp/src",
+            "root": "HeroApp/src",
             "outDir": "dist",
             "assets": [
                 "assets",
@@ -30,8 +30,8 @@
         },
         {
             "platform": "server",
-            "root": "ClientApp/src",
-            "outDir": "ClientApp/dist-server",
+            "root": "HeroApp/src",
+            "outDir": "HeroApp/dist-server",
             "assets": [
                 "assets",
                 "favicon.ico"

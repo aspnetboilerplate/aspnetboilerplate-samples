@@ -52,7 +52,7 @@ namespace Acme.HeroShop.Web.Public.Controllers
                 nodeService,
                 //Request.HttpContext.RequestServices.GetRequiredService<INodeServices>(), // nodeServices
                 cancelToken,
-                new JavaScriptModuleExport(applicationBasePath + "/ClientApp/dist-server/main.bundle"),
+                new JavaScriptModuleExport(applicationBasePath + "/HeroApp/dist-server/main.bundle"),
                 unencodedAbsoluteUrl,
                 unencodedPathAndQuery,
                 transferData, // Our simplified Request object & any other CustommData you want to send!
