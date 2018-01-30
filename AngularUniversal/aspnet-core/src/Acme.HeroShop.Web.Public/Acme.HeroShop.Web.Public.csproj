@@ -31,4 +31,9 @@
     <ProjectReference Include="..\Acme.HeroShop.Web.Core\Acme.HeroShop.Web.Core.csproj" />
   </ItemGroup>
 
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="ng build --prod --app 0 --output-hashing=false" />
+    <Exec Command="ng build --prod --app 1 --output-hashing=false" />
+  </Target>
+
 </Project>
