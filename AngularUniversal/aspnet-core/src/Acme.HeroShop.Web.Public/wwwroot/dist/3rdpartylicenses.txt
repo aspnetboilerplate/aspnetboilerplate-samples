@@ -24,10 +24,6 @@ THE SOFTWARE.
 MIT
 MIT
 
-@angular/router@4.4.6
-MIT
-MIT
-
 @angular/common@4.4.6
 MIT
 MIT
