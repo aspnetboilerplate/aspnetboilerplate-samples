@@ -155,6 +155,10 @@
     <Compile Include="EntityFramework\AbpHangfireConsoleDbContext.cs" />
     <Compile Include="EntityFramework\Repositories\HangfireServerRepository.cs" />
     <Compile Include="EntityFramework\Repositories\HangfireConsoleAppRepositoryBase.cs" />
+    <Compile Include="Migrations\201801300843227_InitialCreate.cs" />
+    <Compile Include="Migrations\201801300843227_InitialCreate.Designer.cs">
+      <DependentUpon>201801300843227_InitialCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -167,6 +171,11 @@
       <Project>{6F025D37-520B-4B7E-BB84-1C8E3965E3EB}</Project>
       <Name>AbpHangfireConsole.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201801300843227_InitialCreate.resx">
+      <DependentUpon>201801300843227_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
