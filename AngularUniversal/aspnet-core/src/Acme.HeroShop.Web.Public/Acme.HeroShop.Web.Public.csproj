@@ -32,6 +32,7 @@
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="yarn" />
     <Exec Command="ng build --prod --app 0 --output-hashing=false" />
     <Exec Command="ng build --prod --app 1 --output-hashing=false" />
   </Target>
