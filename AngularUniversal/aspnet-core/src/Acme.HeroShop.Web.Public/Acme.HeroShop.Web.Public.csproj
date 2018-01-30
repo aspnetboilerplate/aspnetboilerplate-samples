@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="HeroApp\src\assets\images\heroes\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

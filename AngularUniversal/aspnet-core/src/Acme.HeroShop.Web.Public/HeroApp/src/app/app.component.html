@@ -1,32 +1,47 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-        <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+<header>
+  <div class="navbar navbar-dark bg-dark box-shadow">
+    <div class="container d-flex justify-content-between">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <strong>Acme.HeroShop</strong>
+      </a>
+    </div>
   </div>
-</nav>
+</header>
+
+<main role="main">
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <a href="#" (click)="filterHeroes(null)">All</a>
+            </li>
+            <li class="list-group-item" *ngFor="let heroCompany of heroCompanies">
+              <a href="#" (click)="filterHeroes(heroCompany.id)">{{heroCompany.name}}</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-4" *ngFor="let hero of heroes">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" style="height: 225px; width: 100%; display: block;" [src]="'/HeroApp/dist-server/assets/images/heroes/' + hero.name + '.png'">
+                <div class="card-body">
+                  <p class="card-text">{{hero.name}}</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Like</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>

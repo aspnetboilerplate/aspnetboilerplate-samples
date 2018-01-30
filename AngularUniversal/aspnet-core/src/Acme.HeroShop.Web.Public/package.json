@@ -24,7 +24,7 @@
         "@angular/router": "4.4.6",
         "@nguniversal/aspnetcore-engine": "^1.0.0-beta.3",
         "aspnet-prerendering": "^3.0.1",
-        "bootstrap": "^4.0.0",
+        "bootstrap": "4.0.0",
         "core-js": "^2.4.1",
         "install": "^0.10.2",
         "jquery": "^3.2.1",
