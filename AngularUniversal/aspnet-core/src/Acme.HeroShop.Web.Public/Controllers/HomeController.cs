@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Acme.HeroShop.Controllers;
+using Acme.HeroShop.Heroes;
 using Acme.HeroShop.Web.Public.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -13,12 +12,17 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Acme.HeroShop.Web.Public.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : HeroShopControllerBase
     {
         private readonly IHostingEnvironment _hostingEnvironment;
-        public HomeController(IHostingEnvironment hostingEnvironment)
+        private readonly IHeroAppService _heroAppService;
+
+        public HomeController(
+            IHostingEnvironment hostingEnvironment, 
+            IHeroAppService heroAppService)
         {
             _hostingEnvironment = hostingEnvironment;
+            _heroAppService = heroAppService;
         }
 
         [HttpGet]
@@ -35,12 +39,14 @@ namespace Acme.HeroShop.Web.Public.Controllers
 
             TransferData transferData = new TransferData
             {
-                // By default we're passing down Cookies, Headers, Host from the Request object here
-                request = AbstractHttpContextRequestInfo(Request)
-                // ex:
-                // transferData.thisCameFromDotNET = "Hi Angular it's asp.net :)";
-                // Add more customData here, add it to the TransferData class
+                request = AbstractHttpContextRequestInfo(Request),
+                thisCameFromDotNET = new
+                {
+                    heroCompanies = _heroAppService.GetHeroCompanies(),
+                    heroes = _heroAppService.GetHeroes(null)
+                }
             };
+
             var nodeService = Request.HttpContext.RequestServices.GetRequiredService<INodeServices>(); // nodeServices
                                                                                                        //Prerender now needs CancellationToken
             System.Threading.CancellationTokenSource cancelSource = new System.Threading.CancellationTokenSource();

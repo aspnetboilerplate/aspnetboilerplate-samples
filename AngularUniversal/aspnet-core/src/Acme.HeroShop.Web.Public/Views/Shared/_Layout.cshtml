@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <base href="/" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    @Html.Raw(ViewData["Meta"])
+    @Html.Raw(ViewData["Links"])
+    @Html.Raw(ViewData["Styles"])
+    <link href="~/HeroApp/dist-server/styles.bundle.css" rel="stylesheet" asp-append-version="true" />
+</head>
+<body>
+    @RenderBody()
+
+    @Html.Raw(ViewData["TransferData"])
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

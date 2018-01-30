@@ -1,5 +1,4 @@
-﻿using System.Linq.Dynamic.Core;
-using Acme.HeroShop.Heros;
+﻿using Acme.HeroShop.Heros;
 using System.Linq;
 
 namespace Acme.HeroShop.EntityFrameworkCore.Seed.Host
@@ -40,7 +39,7 @@ namespace Acme.HeroShop.EntityFrameworkCore.Seed.Host
                 _context.Heroes.Add(new Hero
                 {
                     HeroCompanyId = marvel.Id,
-                    Name = "Thor"
+                    Name = "Iron Man"
                 });
 
                 _context.Heroes.Add(new Hero

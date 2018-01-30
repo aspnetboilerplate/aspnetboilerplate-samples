@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ORIGIN_URL, REQUEST } from '@nguniversal/aspnetcore-engine';
+import { HttpClientModule } from '@angular/common/http';
 
 export function getOriginUrl() {
   return window.location.origin;
@@ -22,6 +23,7 @@ export function getRequest() {
     // To support Universal rendering. The application ID can be any identifier which is unique on the page.
     BrowserModule.withServerTransition({ appId: 'my-app-site' }),
     BrowserModule,
+    HttpClientModule,
     BrowserTransferStateModule,
     AppRoutingModule,
     FormsModule

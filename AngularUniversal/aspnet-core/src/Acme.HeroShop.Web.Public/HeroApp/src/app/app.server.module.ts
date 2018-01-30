@@ -5,6 +5,7 @@ import { AppModule } from './app.module';
 import { AppComponent } from './app.component';
 import { ServerTransferStateModule } from '../modules/transfer-state/server-transfer-state.module';
 import { TransferState } from '../modules/transfer-state/transfer-state';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { TransferState } from '../modules/transfer-state/transfer-state';
     // by the ServerModule from @angular/platform-server.
     AppModule,
     ServerModule,
-    ServerTransferStateModule
+    ServerTransferStateModule,
+    HttpClientModule
   ],
   // Since the bootstrapped component is not inherited from your
   // imported AppModule, it needs to be repeated here.

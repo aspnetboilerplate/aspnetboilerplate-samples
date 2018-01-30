@@ -5,6 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Abp.AspNetCore;
+using Castle.Facilities.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -15,14 +17,18 @@ namespace Acme.HeroShop.Web.Public
 {
     public class Startup
     {
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
             services.AddNodeServices();
+
+            return services.AddAbp<HeroShopPublicModule>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseAbp(options => { options.UseAbpRequestLocalization = false; });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

@@ -6,7 +6,7 @@
     "apps": [
         {
             "root": "HeroApp/src",
-            "outDir": "dist",
+            "outDir": "wwwroot/dist",
             "assets": [
                 "assets",
                 "favicon.ico"
