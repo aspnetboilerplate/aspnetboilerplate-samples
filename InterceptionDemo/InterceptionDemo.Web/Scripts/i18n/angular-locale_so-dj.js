@@ -35,14 +35,14 @@ $provide.value("$locale", {
       "Sabti"
     ],
     "ERANAMES": [
-      "Ciise ka hor (CS)",
-      "Ciise ka dib (CS)"
+      "CK",
+      "CD"
     ],
     "ERAS": [
       "CK",
       "CD"
     ],
-    "FIRSTDAYOFWEEK": 0,
+    "FIRSTDAYOFWEEK": 5,
     "MONTH": [
       "Bisha Koobaad",
       "Bisha Labaad",
@@ -80,6 +80,20 @@ $provide.value("$locale", {
       "KIT",
       "LIT"
     ],
+    "STANDALONEMONTH": [
+      "Bisha Koobaad",
+      "Bisha Labaad",
+      "Bisha Saddexaad",
+      "Bisha Afraad",
+      "Bisha Shanaad",
+      "Bisha Lixaad",
+      "Bisha Todobaad",
+      "Bisha Sideedaad",
+      "Bisha Sagaalaad",
+      "Bisha Tobnaad",
+      "Bisha Kow iyo Tobnaad",
+      "Bisha Laba iyo Tobnaad"
+    ],
     "WEEKENDRANGE": [
       5,
       6
@@ -112,8 +126,8 @@ $provide.value("$locale", {
       {
         "gSize": 3,
         "lgSize": 3,
-        "maxFrac": 2,
-        "minFrac": 2,
+        "maxFrac": 0,
+        "minFrac": 0,
         "minInt": 1,
         "negPre": "-\u00a4",
         "negSuf": "",
@@ -123,6 +137,7 @@ $provide.value("$locale", {
     ]
   },
   "id": "so-dj",
+  "localeID": "so_DJ",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (i == 1 && vf.v == 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

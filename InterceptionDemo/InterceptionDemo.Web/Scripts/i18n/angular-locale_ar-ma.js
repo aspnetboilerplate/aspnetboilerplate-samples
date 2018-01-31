@@ -62,18 +62,32 @@ $provide.value("$locale", {
       "\u0646\u0648\u0646\u0628\u0631",
       "\u062f\u062c\u0646\u0628\u0631"
     ],
+    "STANDALONEMONTH": [
+      "\u064a\u0646\u0627\u064a\u0631",
+      "\u0641\u0628\u0631\u0627\u064a\u0631",
+      "\u0645\u0627\u0631\u0633",
+      "\u0623\u0628\u0631\u064a\u0644",
+      "\u0645\u0627\u064a",
+      "\u064a\u0648\u0646\u064a\u0648",
+      "\u064a\u0648\u0644\u064a\u0648\u0632",
+      "\u063a\u0634\u062a",
+      "\u0634\u062a\u0646\u0628\u0631",
+      "\u0623\u0643\u062a\u0648\u0628\u0631",
+      "\u0646\u0648\u0646\u0628\u0631",
+      "\u062f\u062c\u0646\u0628\u0631"
+    ],
     "WEEKENDRANGE": [
       4,
       5
     ],
     "fullDate": "EEEE\u060c d MMMM\u060c y",
     "longDate": "d MMMM\u060c y",
-    "medium": "dd\u200f/MM\u200f/y h:mm:ss a",
+    "medium": "dd\u200f/MM\u200f/y HH:mm:ss",
     "mediumDate": "dd\u200f/MM\u200f/y",
-    "mediumTime": "h:mm:ss a",
-    "short": "d\u200f/M\u200f/y h:mm a",
+    "mediumTime": "HH:mm:ss",
+    "short": "d\u200f/M\u200f/y HH:mm",
     "shortDate": "d\u200f/M\u200f/y",
-    "shortTime": "h:mm a"
+    "shortTime": "HH:mm"
   },
   "NUMBER_FORMATS": {
     "CURRENCY_SYM": "dh",
@@ -105,6 +119,7 @@ $provide.value("$locale", {
     ]
   },
   "id": "ar-ma",
+  "localeID": "ar_MA",
   "pluralCat": function(n, opt_precision) {  if (n == 0) {    return PLURAL_CATEGORY.ZERO;  }  if (n == 1) {    return PLURAL_CATEGORY.ONE;  }  if (n == 2) {    return PLURAL_CATEGORY.TWO;  }  if (n % 100 >= 3 && n % 100 <= 10) {    return PLURAL_CATEGORY.FEW;  }  if (n % 100 >= 11 && n % 100 <= 99) {    return PLURAL_CATEGORY.MANY;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

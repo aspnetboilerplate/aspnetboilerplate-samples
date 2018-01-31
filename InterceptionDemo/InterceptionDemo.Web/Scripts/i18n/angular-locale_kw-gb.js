@@ -80,17 +80,31 @@ $provide.value("$locale", {
       "Du",
       "Kev"
     ],
+    "STANDALONEMONTH": [
+      "mis Genver",
+      "mis Hwevrer",
+      "mis Meurth",
+      "mis Ebrel",
+      "mis Me",
+      "mis Metheven",
+      "mis Gortheren",
+      "mis Est",
+      "mis Gwynngala",
+      "mis Hedra",
+      "mis Du",
+      "mis Kevardhu"
+    ],
     "WEEKENDRANGE": [
       5,
       6
     ],
-    "fullDate": "EEEE d MMMM y",
-    "longDate": "d MMMM y",
-    "medium": "d MMM y HH:mm:ss",
-    "mediumDate": "d MMM y",
+    "fullDate": "y MMMM d, EEEE",
+    "longDate": "y MMMM d",
+    "medium": "y MMM d HH:mm:ss",
+    "mediumDate": "y MMM d",
     "mediumTime": "HH:mm:ss",
-    "short": "dd/MM/y HH:mm",
-    "shortDate": "dd/MM/y",
+    "short": "y-MM-dd HH:mm",
+    "shortDate": "y-MM-dd",
     "shortTime": "HH:mm"
   },
   "NUMBER_FORMATS": {
@@ -123,6 +137,7 @@ $provide.value("$locale", {
     ]
   },
   "id": "kw-gb",
+  "localeID": "kw_GB",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (i == 1 && vf.v == 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

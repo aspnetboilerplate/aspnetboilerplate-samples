@@ -57,10 +57,24 @@ $provide.value("$locale", {
       "jun.",
       "jul.",
       "ago.",
-      "sept.",
+      "sep.",
       "oct.",
       "nov.",
       "dic."
+    ],
+    "STANDALONEMONTH": [
+      "enero",
+      "febrero",
+      "marzo",
+      "abril",
+      "mayo",
+      "junio",
+      "julio",
+      "agosto",
+      "septiembre",
+      "octubre",
+      "noviembre",
+      "diciembre"
     ],
     "WEEKENDRANGE": [
       5,
@@ -105,6 +119,7 @@ $provide.value("$locale", {
     ]
   },
   "id": "es-pa",
+  "localeID": "es_PA",
   "pluralCat": function(n, opt_precision) {  if (n == 1) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

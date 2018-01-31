@@ -80,17 +80,31 @@ $provide.value("$locale", {
       "ugu.",
       "uku."
     ],
+    "STANDALONEMONTH": [
+      "Mutarama",
+      "Gashyantare",
+      "Werurwe",
+      "Mata",
+      "Gicuransi",
+      "Kamena",
+      "Nyakanga",
+      "Kanama",
+      "Nzeli",
+      "Ukwakira",
+      "Ugushyingo",
+      "Ukuboza"
+    ],
     "WEEKENDRANGE": [
       5,
       6
     ],
-    "fullDate": "EEEE, y MMMM dd",
+    "fullDate": "y MMMM d, EEEE",
     "longDate": "y MMMM d",
     "medium": "y MMM d HH:mm:ss",
     "mediumDate": "y MMM d",
     "mediumTime": "HH:mm:ss",
-    "short": "yy/MM/dd HH:mm",
-    "shortDate": "yy/MM/dd",
+    "short": "y-MM-dd HH:mm",
+    "shortDate": "y-MM-dd",
     "shortTime": "HH:mm"
   },
   "NUMBER_FORMATS": {
@@ -123,6 +137,7 @@ $provide.value("$locale", {
     ]
   },
   "id": "rw",
+  "localeID": "rw",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (i == 1 && vf.v == 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

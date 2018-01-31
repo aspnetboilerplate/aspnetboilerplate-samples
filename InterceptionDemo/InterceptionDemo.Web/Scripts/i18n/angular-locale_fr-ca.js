@@ -4,8 +4,8 @@ var PLURAL_CATEGORY = {ZERO: "zero", ONE: "one", TWO: "two", FEW: "few", MANY: "
 $provide.value("$locale", {
   "DATETIME_FORMATS": {
     "AMPMS": [
-      "AM",
-      "PM"
+      "a.m.",
+      "p.m."
     ],
     "DAY": [
       "dimanche",
@@ -55,12 +55,26 @@ $provide.value("$locale", {
       "avr.",
       "mai",
       "juin",
-      "juil.",
+      "juill.",
       "ao\u00fbt",
       "sept.",
       "oct.",
       "nov.",
       "d\u00e9c."
+    ],
+    "STANDALONEMONTH": [
+      "janvier",
+      "f\u00e9vrier",
+      "mars",
+      "avril",
+      "mai",
+      "juin",
+      "juillet",
+      "ao\u00fbt",
+      "septembre",
+      "octobre",
+      "novembre",
+      "d\u00e9cembre"
     ],
     "WEEKENDRANGE": [
       5,
@@ -71,9 +85,9 @@ $provide.value("$locale", {
     "medium": "d MMM y HH:mm:ss",
     "mediumDate": "d MMM y",
     "mediumTime": "HH:mm:ss",
-    "short": "yy-MM-dd HH:mm",
+    "short": "yy-MM-dd HH 'h' mm",
     "shortDate": "yy-MM-dd",
-    "shortTime": "HH:mm"
+    "shortTime": "HH 'h' mm"
   },
   "NUMBER_FORMATS": {
     "CURRENCY_SYM": "$",
@@ -105,6 +119,7 @@ $provide.value("$locale", {
     ]
   },
   "id": "fr-ca",
+  "localeID": "fr_CA",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  if (i == 0 || i == 1) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);
