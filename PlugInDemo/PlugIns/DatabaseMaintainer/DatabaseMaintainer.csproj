@@ -32,7 +32,6 @@
   <ItemGroup>
     <Reference Include="Abp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Abp.1.0.0.0\lib\net452\Abp.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="Abp.Zero, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Abp.Zero.1.0.0.0\lib\net452\Abp.Zero.dll</HintPath>
