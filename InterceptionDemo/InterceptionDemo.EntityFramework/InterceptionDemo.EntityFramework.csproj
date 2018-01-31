@@ -237,6 +237,10 @@
     <Compile Include="Migrations\201706281107507_Upgraded_To_Abp_v2_1_3.Designer.cs">
       <DependentUpon>201706281107507_Upgraded_To_Abp_v2_1_3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801311156239_Upgraded_To_Abp_3.4.0.cs" />
+    <Compile Include="Migrations\201801311156239_Upgraded_To_Abp_3.4.0.Designer.cs">
+      <DependentUpon>201801311156239_Upgraded_To_Abp_3.4.0.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="InterceptionDemoDataModule.cs" />
     <Compile Include="Migrations\SeedData\DefaultEditionsBuilder.cs" />
@@ -285,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706281107507_Upgraded_To_Abp_v2_1_3.resx">
       <DependentUpon>201706281107507_Upgraded_To_Abp_v2_1_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801311156239_Upgraded_To_Abp_3.4.0.resx">
+      <DependentUpon>201801311156239_Upgraded_To_Abp_3.4.0.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

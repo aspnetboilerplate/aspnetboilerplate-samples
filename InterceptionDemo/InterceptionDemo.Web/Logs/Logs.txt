@@ -17951,3 +17951,251 @@ System.TypeLoadException: Method 'ExecuteActionFilterAsync' in type 'Abp.WebApi.
    at System.Collections.Generic.List`1.ForEach(Action`1 action)
    at Abp.Modules.AbpModuleManager.StartModules() in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
    at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 155
+DEBUG 2018-01-31 14:54:21,057 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-01-31 14:54:21,073 [1    ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2018-01-31 14:54:21,080 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Web.InterceptionDemoWebModule, InterceptionDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:21,082 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoDataModule, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:21,082 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:21,082 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:21,082 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:21,083 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:21,083 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:21,083 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:21,083 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoCoreModule, InterceptionDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:21,083 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoApplicationModule, InterceptionDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:21,084 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:21,084 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Api.InterceptionDemoWebApiModule, InterceptionDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:21,084 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:21,084 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:21,084 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:21,084 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:21,085 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:21,085 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:21,088 [1    ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2018-01-31 14:54:21,259 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 14:54:21,260 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 14:54:21,260 [1    ] o.Configuration.LanguageManagementConfig - Converted InterceptionDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 14:54:21,260 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2018-01-31 14:54:21,836 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2018-01-31 14:54:22,092 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2018-01-31 14:54:22,469 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: InterceptionDemo.EntityFramework.InterceptionDemoDbContext, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+FATAL 2018-01-31 14:54:22,622 [1    ] Abp.AbpBootstrapper                      - System.TypeLoadException: Method 'ExecuteActionFilterAsync' in type 'Abp.WebApi.Validation.AbpApiValidationFilter' from assembly 'Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null' does not have an implementation.
+   at System.Reflection.RuntimeAssembly.GetExportedTypes(RuntimeAssembly assembly, ObjectHandleOnStack retTypes)
+   at System.Reflection.RuntimeAssembly.GetExportedTypes()
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypes(Assembly assembly, Boolean includeNonExported)
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypesOrdered(Assembly assembly, Boolean includeNonExported)
+   at Castle.MicroKernel.Registration.FromAssemblyDescriptor.<SelectedTypes>b__5_0(Assembly a)
+   at System.Linq.Enumerable.<SelectManyIterator>d__17`2.MoveNext()
+   at Castle.MicroKernel.Registration.FromDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.Registration.BasedOnDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.DefaultKernel.Register(IRegistration[] registrations)
+   at Castle.Windsor.WindsorContainer.Register(IRegistration[] registrations)
+   at Abp.WebApi.Controllers.ApiControllerConventionalRegistrar.RegisterAssembly(IConventionalRegistrationContext context) in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\Controllers\ApiControllerConventionalRegistrar.cs:line 15
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly, ConventionalRegistrationConfig config) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 79
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 67
+   at Abp.WebApi.AbpWebApiModule.Initialize() in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\AbpWebApiModule.cs:line 57
+   at Abp.Modules.AbpModuleManager.<>c.<StartModules>b__15_1(AbpModuleInfo module) in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.Modules.AbpModuleManager.StartModules() in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 155
+System.TypeLoadException: Method 'ExecuteActionFilterAsync' in type 'Abp.WebApi.Validation.AbpApiValidationFilter' from assembly 'Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null' does not have an implementation.
+   at System.Reflection.RuntimeAssembly.GetExportedTypes(RuntimeAssembly assembly, ObjectHandleOnStack retTypes)
+   at System.Reflection.RuntimeAssembly.GetExportedTypes()
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypes(Assembly assembly, Boolean includeNonExported)
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypesOrdered(Assembly assembly, Boolean includeNonExported)
+   at Castle.MicroKernel.Registration.FromAssemblyDescriptor.<SelectedTypes>b__5_0(Assembly a)
+   at System.Linq.Enumerable.<SelectManyIterator>d__17`2.MoveNext()
+   at Castle.MicroKernel.Registration.FromDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.Registration.BasedOnDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.DefaultKernel.Register(IRegistration[] registrations)
+   at Castle.Windsor.WindsorContainer.Register(IRegistration[] registrations)
+   at Abp.WebApi.Controllers.ApiControllerConventionalRegistrar.RegisterAssembly(IConventionalRegistrationContext context) in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\Controllers\ApiControllerConventionalRegistrar.cs:line 15
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly, ConventionalRegistrationConfig config) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 79
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 67
+   at Abp.WebApi.AbpWebApiModule.Initialize() in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\AbpWebApiModule.cs:line 57
+   at Abp.Modules.AbpModuleManager.<>c.<StartModules>b__15_1(AbpModuleInfo module) in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.Modules.AbpModuleManager.StartModules() in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 155
+DEBUG 2018-01-31 14:54:57,576 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-01-31 14:54:57,596 [1    ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2018-01-31 14:54:57,606 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Web.InterceptionDemoWebModule, InterceptionDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:57,609 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoDataModule, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:57,609 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:57,610 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:57,610 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:57,610 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:57,611 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:57,611 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:57,611 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoCoreModule, InterceptionDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:57,611 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoApplicationModule, InterceptionDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:57,612 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:57,612 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Api.InterceptionDemoWebApiModule, InterceptionDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:57,612 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:57,612 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:57,613 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:57,613 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:57,613 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:57,613 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:54:57,618 [1    ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2018-01-31 14:54:57,827 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 14:54:57,827 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 14:54:57,827 [1    ] o.Configuration.LanguageManagementConfig - Converted InterceptionDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 14:54:57,827 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2018-01-31 14:54:58,615 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2018-01-31 14:54:58,826 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2018-01-31 14:54:59,316 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: InterceptionDemo.EntityFramework.InterceptionDemoDbContext, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:55:02,981 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2018-01-31 14:55:03,021 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2018-01-31 14:55:03,050 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2018-01-31 14:55:03,051 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: InterceptionDemo
+DEBUG 2018-01-31 14:55:03,053 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2018-01-31 14:55:03,062 [1    ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2018-01-31 14:55:03,076 [1    ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2018-01-31 14:55:03,084 [1    ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: localhost@InterceptionDemo'
+INFO  2018-01-31 14:55:03,084 [1    ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2018-01-31 14:55:03,084 [1    ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2018-01-31 14:55:03,084 [1    ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2018-01-31 14:55:03,084 [1    ] Hangfire.BackgroundJobServer             -     Worker count: 20
+INFO  2018-01-31 14:55:03,084 [1    ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'
+INFO  2018-01-31 14:55:03,084 [1    ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15
+INFO  2018-01-31 14:55:03,085 [1    ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15
+DEBUG 2018-01-31 14:55:03,136 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2018-01-31 14:55:03,238 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 4 classes define auto mapping attributes
+DEBUG 2018-01-31 14:55:03,238 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - InterceptionDemo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2018-01-31 14:55:03,243 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - InterceptionDemo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2018-01-31 14:55:03,243 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - InterceptionDemo.MultiTenancy.Dto.TenantListDto
+DEBUG 2018-01-31 14:55:03,244 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - InterceptionDemo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2018-01-31 14:55:03,482 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2018-01-31 14:55:03,489 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2018-01-31 14:55:03,495 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2018-01-31 14:55:03,512 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'AggregatedCounter' table...
+DEBUG 2018-01-31 14:55:03,513 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2018-01-31 14:55:03,521 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2018-01-31 14:55:03,524 [93023] Hangfire.Server.Worker                   - Background process 'Worker #e0193023' started.
+DEBUG 2018-01-31 14:55:03,538 [aff12] Hangfire.Server.Worker                   - Background process 'Worker #4e2aff12' started.
+DEBUG 2018-01-31 14:55:03,566 [7d093] Hangfire.Server.Worker                   - Background process 'Worker #fb67d093' started.
+DEBUG 2018-01-31 14:55:03,589 [2e9bb] Hangfire.Server.Worker                   - Background process 'Worker #c192e9bb' started.
+DEBUG 2018-01-31 14:55:03,619 [2f770] Hangfire.Server.Worker                   - Background process 'Worker #e0d2f770' started.
+DEBUG 2018-01-31 14:55:03,625 [46e6a] Hangfire.Server.Worker                   - Background process 'Worker #fbc46e6a' started.
+DEBUG 2018-01-31 14:55:03,630 [gator] Hangfire.SqlServer.CountersAggregator    - Records from the 'Counter' table aggregated.
+DEBUG 2018-01-31 14:55:03,650 [0b8e4] Hangfire.Server.Worker                   - Background process 'Worker #92f0b8e4' started.
+DEBUG 2018-01-31 14:55:03,718 [92c24] Hangfire.Server.Worker                   - Background process 'Worker #7b392c24' started.
+DEBUG 2018-01-31 14:55:03,759 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'AggregatedCounter' table.
+DEBUG 2018-01-31 14:55:03,760 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'Job' table...
+DEBUG 2018-01-31 14:55:03,763 [d089b] Hangfire.Server.Worker                   - Background process 'Worker #f30d089b' started.
+DEBUG 2018-01-31 14:55:03,771 [bee58] Hangfire.Server.Worker                   - Background process 'Worker #2aebee58' started.
+DEBUG 2018-01-31 14:55:03,832 [6d002] Hangfire.Server.Worker                   - Background process 'Worker #a046d002' started.
+DEBUG 2018-01-31 14:55:03,859 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'Job' table.
+DEBUG 2018-01-31 14:55:03,859 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'List' table...
+DEBUG 2018-01-31 14:55:03,918 [fdc6c] Hangfire.Server.Worker                   - Background process 'Worker #baffdc6c' started.
+DEBUG 2018-01-31 14:55:03,973 [21a27] Hangfire.Server.Worker                   - Background process 'Worker #80b21a27' started.
+DEBUG 2018-01-31 14:55:04,025 [00969] Hangfire.Server.Worker                   - Background process 'Worker #e6900969' started.
+DEBUG 2018-01-31 14:55:04,060 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'List' table.
+DEBUG 2018-01-31 14:55:04,060 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'Set' table...
+DEBUG 2018-01-31 14:55:04,073 [1d6a3] Hangfire.Server.Worker                   - Background process 'Worker #5e01d6a3' started.
+DEBUG 2018-01-31 14:55:04,099 [b9b72] Hangfire.Server.Worker                   - Background process 'Worker #f88b9b72' started.
+DEBUG 2018-01-31 14:55:04,124 [3b390] Hangfire.Server.Worker                   - Background process 'Worker #fd83b390' started.
+DEBUG 2018-01-31 14:55:04,138 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'Set' table.
+DEBUG 2018-01-31 14:55:04,138 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'Hash' table...
+DEBUG 2018-01-31 14:55:04,155 [a3a28] Hangfire.Server.Worker                   - Background process 'Worker #c1fa3a28' started.
+DEBUG 2018-01-31 14:55:04,193 [2e661] Hangfire.Server.Worker                   - Background process 'Worker #5192e661' started.
+DEBUG 2018-01-31 14:55:04,235 [08981] Hangfire.Server.Worker                   - Background process 'Worker #de108981' started.
+DEBUG 2018-01-31 14:55:04,238 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'Hash' table.
+DEBUG 2018-01-31 14:55:04,242 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2018-01-31 14:55:04,274 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2018-01-31 14:55:07,506 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'InterceptionDemo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2018-01-31 14:55:07,508 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'InterceptionDemo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2018-01-31 14:55:07,509 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'InterceptionDemo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2018-01-31 14:55:07,511 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'InterceptionDemo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2018-01-31 14:56:59,581 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-01-31 14:56:59,601 [1    ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2018-01-31 14:56:59,610 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Web.InterceptionDemoWebModule, InterceptionDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:56:59,613 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoDataModule, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:56:59,613 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:56:59,613 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:56:59,614 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:56:59,614 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:56:59,614 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:56:59,615 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:56:59,615 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoCoreModule, InterceptionDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:56:59,615 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoApplicationModule, InterceptionDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:56:59,615 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:56:59,616 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Api.InterceptionDemoWebApiModule, InterceptionDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:56:59,616 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:56:59,616 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:56:59,616 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:56:59,616 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:56:59,617 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:56:59,617 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:56:59,622 [1    ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2018-01-31 14:56:59,833 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 14:56:59,833 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 14:56:59,833 [1    ] o.Configuration.LanguageManagementConfig - Converted InterceptionDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 14:56:59,833 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2018-01-31 14:57:00,635 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2018-01-31 14:57:00,886 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2018-01-31 14:57:01,440 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: InterceptionDemo.EntityFramework.InterceptionDemoDbContext, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 14:57:04,857 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2018-01-31 14:57:04,894 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2018-01-31 14:57:04,904 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2018-01-31 14:57:04,905 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: InterceptionDemo
+DEBUG 2018-01-31 14:57:04,907 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2018-01-31 14:57:04,915 [1    ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2018-01-31 14:57:04,925 [1    ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2018-01-31 14:57:04,932 [1    ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: localhost@InterceptionDemo'
+INFO  2018-01-31 14:57:04,932 [1    ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2018-01-31 14:57:04,933 [1    ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2018-01-31 14:57:04,933 [1    ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2018-01-31 14:57:04,933 [1    ] Hangfire.BackgroundJobServer             -     Worker count: 20
+INFO  2018-01-31 14:57:04,933 [1    ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'
+INFO  2018-01-31 14:57:04,933 [1    ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15
+INFO  2018-01-31 14:57:04,933 [1    ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15
+DEBUG 2018-01-31 14:57:04,972 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2018-01-31 14:57:05,054 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 4 classes define auto mapping attributes
+DEBUG 2018-01-31 14:57:05,054 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - InterceptionDemo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2018-01-31 14:57:05,059 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - InterceptionDemo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2018-01-31 14:57:05,059 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - InterceptionDemo.MultiTenancy.Dto.TenantListDto
+DEBUG 2018-01-31 14:57:05,060 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - InterceptionDemo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2018-01-31 14:57:05,290 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2018-01-31 14:57:05,296 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2018-01-31 14:57:05,304 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2018-01-31 14:57:05,320 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2018-01-31 14:57:05,321 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'AggregatedCounter' table...
+DEBUG 2018-01-31 14:57:05,327 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2018-01-31 14:57:05,328 [488ac] Hangfire.Server.Worker                   - Background process 'Worker #8f6488ac' started.
+DEBUG 2018-01-31 14:57:05,350 [c7a0e] Hangfire.Server.Worker                   - Background process 'Worker #f3fc7a0e' started.
+DEBUG 2018-01-31 14:57:05,384 [03300] Hangfire.Server.Worker                   - Background process 'Worker #c5b03300' started.
+DEBUG 2018-01-31 14:57:05,395 [49871] Hangfire.Server.Worker                   - Background process 'Worker #10249871' started.
+DEBUG 2018-01-31 14:57:05,410 [a2cff] Hangfire.Server.Worker                   - Background process 'Worker #3bba2cff' started.
+DEBUG 2018-01-31 14:57:05,417 [9c69e] Hangfire.Server.Worker                   - Background process 'Worker #cd19c69e' started.
+DEBUG 2018-01-31 14:57:05,418 [gator] Hangfire.SqlServer.CountersAggregator    - Records from the 'Counter' table aggregated.
+DEBUG 2018-01-31 14:57:05,441 [069ec] Hangfire.Server.Worker                   - Background process 'Worker #090069ec' started.
+DEBUG 2018-01-31 14:57:05,462 [6902f] Hangfire.Server.Worker                   - Background process 'Worker #4f26902f' started.
+DEBUG 2018-01-31 14:57:05,468 [fc49a] Hangfire.Server.Worker                   - Background process 'Worker #01afc49a' started.
+DEBUG 2018-01-31 14:57:05,468 [a8a43] Hangfire.Server.Worker                   - Background process 'Worker #b16a8a43' started.
+DEBUG 2018-01-31 14:57:05,603 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'AggregatedCounter' table.
+DEBUG 2018-01-31 14:57:05,604 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'Job' table...
+DEBUG 2018-01-31 14:57:05,603 [35cc4] Hangfire.Server.Worker                   - Background process 'Worker #f8835cc4' started.
+DEBUG 2018-01-31 14:57:05,606 [8ba1f] Hangfire.Server.Worker                   - Background process 'Worker #6b68ba1f' started.
+DEBUG 2018-01-31 14:57:05,652 [36ae5] Hangfire.Server.Worker                   - Background process 'Worker #cc436ae5' started.
+DEBUG 2018-01-31 14:57:05,663 [80f12] Hangfire.Server.Worker                   - Background process 'Worker #65180f12' started.
+DEBUG 2018-01-31 14:57:05,732 [aa79c] Hangfire.Server.Worker                   - Background process 'Worker #32baa79c' started.
+DEBUG 2018-01-31 14:57:05,772 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'Job' table.
+DEBUG 2018-01-31 14:57:05,772 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'List' table...
+DEBUG 2018-01-31 14:57:05,787 [56f33] Hangfire.Server.Worker                   - Background process 'Worker #b4656f33' started.
+DEBUG 2018-01-31 14:57:05,798 [900ff] Hangfire.Server.Worker                   - Background process 'Worker #3d3900ff' started.
+DEBUG 2018-01-31 14:57:05,825 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'List' table.
+DEBUG 2018-01-31 14:57:05,826 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'Set' table...
+DEBUG 2018-01-31 14:57:05,841 [a2281] Hangfire.Server.Worker                   - Background process 'Worker #9f1a2281' started.
+DEBUG 2018-01-31 14:57:05,876 [f207f] Hangfire.Server.Worker                   - Background process 'Worker #0a6f207f' started.
+DEBUG 2018-01-31 14:57:05,876 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'Set' table.
+DEBUG 2018-01-31 14:57:05,877 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'Hash' table...
+DEBUG 2018-01-31 14:57:05,902 [089e5] Hangfire.Server.Worker                   - Background process 'Worker #877089e5' started.
+DEBUG 2018-01-31 14:57:05,927 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2018-01-31 14:57:05,935 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'Hash' table.
+DEBUG 2018-01-31 14:57:05,941 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2018-01-31 14:57:08,611 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'InterceptionDemo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2018-01-31 14:57:08,612 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'InterceptionDemo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2018-01-31 14:57:08,614 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'InterceptionDemo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2018-01-31 14:57:08,616 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'InterceptionDemo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.

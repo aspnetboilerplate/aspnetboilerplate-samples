@@ -52,6 +52,9 @@
     <Reference Include="Abp.AutoMapper, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Abp.AutoMapper.3.4.0\lib\netstandard2.0\Abp.AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="Abp.Castle.Log4Net, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Castle.Log4Net.3.4.0\lib\netstandard2.0\Abp.Castle.Log4Net.dll</HintPath>
+    </Reference>
     <Reference Include="Abp.EntityFramework, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Abp.EntityFramework.3.4.0\lib\net461\Abp.EntityFramework.dll</HintPath>
     </Reference>
