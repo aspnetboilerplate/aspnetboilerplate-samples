@@ -17553,3 +17553,401 @@ DEBUG 2016-02-17 14:40:26,247 [nager] Hangfire.SqlServer.ExpirationManager     -
 DEBUG 2016-02-17 14:40:26,250 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from table 'Hash'...
 DEBUG 2016-02-17 14:40:26,465 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
 DEBUG 2016-02-17 14:45:26,475 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2018-01-31 11:07:17,295 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-01-31 11:07:17,309 [1    ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2018-01-31 11:07:17,316 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Web.InterceptionDemoWebModule, InterceptionDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:07:17,318 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoDataModule, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:07:17,318 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:07:17,318 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:07:17,318 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:07:17,319 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:07:17,319 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:07:17,319 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:07:17,319 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoCoreModule, InterceptionDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:07:17,319 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoApplicationModule, InterceptionDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:07:17,320 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:07:17,320 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Api.InterceptionDemoWebApiModule, InterceptionDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:07:17,320 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:07:17,320 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:07:17,320 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:07:17,320 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:07:17,321 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:07:17,321 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:07:17,324 [1    ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2018-01-31 11:07:17,448 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 11:07:17,448 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 11:07:17,448 [1    ] o.Configuration.LanguageManagementConfig - Converted InterceptionDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 11:07:17,448 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2018-01-31 11:07:17,523 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2018-01-31 11:07:17,683 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2018-01-31 11:07:18,047 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: InterceptionDemo.EntityFramework.InterceptionDemoDbContext, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+FATAL 2018-01-31 11:07:18,162 [1    ] Abp.AbpBootstrapper                      - System.TypeLoadException: Method 'ExecuteActionFilterAsync' in type 'Abp.WebApi.Validation.AbpApiValidationFilter' from assembly 'Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null' does not have an implementation.
+   at System.Reflection.RuntimeAssembly.GetExportedTypes(RuntimeAssembly assembly, ObjectHandleOnStack retTypes)
+   at System.Reflection.RuntimeAssembly.GetExportedTypes()
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypes(Assembly assembly, Boolean includeNonExported)
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypesOrdered(Assembly assembly, Boolean includeNonExported)
+   at Castle.MicroKernel.Registration.FromAssemblyDescriptor.<SelectedTypes>b__5_0(Assembly a)
+   at System.Linq.Enumerable.<SelectManyIterator>d__17`2.MoveNext()
+   at Castle.MicroKernel.Registration.FromDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.Registration.BasedOnDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.DefaultKernel.Register(IRegistration[] registrations)
+   at Castle.Windsor.WindsorContainer.Register(IRegistration[] registrations)
+   at Abp.WebApi.Controllers.ApiControllerConventionalRegistrar.RegisterAssembly(IConventionalRegistrationContext context) in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\Controllers\ApiControllerConventionalRegistrar.cs:line 15
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly, ConventionalRegistrationConfig config) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 79
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 67
+   at Abp.WebApi.AbpWebApiModule.Initialize() in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\AbpWebApiModule.cs:line 57
+   at Abp.Modules.AbpModuleManager.<>c.<StartModules>b__15_1(AbpModuleInfo module) in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.Modules.AbpModuleManager.StartModules() in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 155
+System.TypeLoadException: Method 'ExecuteActionFilterAsync' in type 'Abp.WebApi.Validation.AbpApiValidationFilter' from assembly 'Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null' does not have an implementation.
+   at System.Reflection.RuntimeAssembly.GetExportedTypes(RuntimeAssembly assembly, ObjectHandleOnStack retTypes)
+   at System.Reflection.RuntimeAssembly.GetExportedTypes()
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypes(Assembly assembly, Boolean includeNonExported)
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypesOrdered(Assembly assembly, Boolean includeNonExported)
+   at Castle.MicroKernel.Registration.FromAssemblyDescriptor.<SelectedTypes>b__5_0(Assembly a)
+   at System.Linq.Enumerable.<SelectManyIterator>d__17`2.MoveNext()
+   at Castle.MicroKernel.Registration.FromDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.Registration.BasedOnDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.DefaultKernel.Register(IRegistration[] registrations)
+   at Castle.Windsor.WindsorContainer.Register(IRegistration[] registrations)
+   at Abp.WebApi.Controllers.ApiControllerConventionalRegistrar.RegisterAssembly(IConventionalRegistrationContext context) in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\Controllers\ApiControllerConventionalRegistrar.cs:line 15
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly, ConventionalRegistrationConfig config) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 79
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 67
+   at Abp.WebApi.AbpWebApiModule.Initialize() in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\AbpWebApiModule.cs:line 57
+   at Abp.Modules.AbpModuleManager.<>c.<StartModules>b__15_1(AbpModuleInfo module) in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.Modules.AbpModuleManager.StartModules() in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 155
+DEBUG 2018-01-31 11:27:20,598 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-01-31 11:27:20,618 [1    ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2018-01-31 11:27:20,627 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Web.InterceptionDemoWebModule, InterceptionDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:27:20,630 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoDataModule, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:27:20,630 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:27:20,630 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:27:20,630 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:27:20,630 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:27:20,631 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:27:20,631 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:27:20,631 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoCoreModule, InterceptionDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:27:20,632 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoApplicationModule, InterceptionDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:27:20,632 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:27:20,632 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Api.InterceptionDemoWebApiModule, InterceptionDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:27:20,632 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:27:20,633 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:27:20,633 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:27:20,633 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:27:20,633 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:27:20,633 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:27:20,638 [1    ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2018-01-31 11:27:20,787 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 11:27:20,787 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 11:27:20,788 [1    ] o.Configuration.LanguageManagementConfig - Converted InterceptionDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 11:27:20,788 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2018-01-31 11:27:20,868 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2018-01-31 11:27:21,082 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2018-01-31 11:27:21,563 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: InterceptionDemo.EntityFramework.InterceptionDemoDbContext, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+FATAL 2018-01-31 11:27:21,708 [1    ] Abp.AbpBootstrapper                      - System.TypeLoadException: Method 'ExecuteActionFilterAsync' in type 'Abp.WebApi.Validation.AbpApiValidationFilter' from assembly 'Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null' does not have an implementation.
+   at System.Reflection.RuntimeAssembly.GetExportedTypes(RuntimeAssembly assembly, ObjectHandleOnStack retTypes)
+   at System.Reflection.RuntimeAssembly.GetExportedTypes()
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypes(Assembly assembly, Boolean includeNonExported)
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypesOrdered(Assembly assembly, Boolean includeNonExported)
+   at Castle.MicroKernel.Registration.FromAssemblyDescriptor.<SelectedTypes>b__5_0(Assembly a)
+   at System.Linq.Enumerable.<SelectManyIterator>d__17`2.MoveNext()
+   at Castle.MicroKernel.Registration.FromDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.Registration.BasedOnDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.DefaultKernel.Register(IRegistration[] registrations)
+   at Castle.Windsor.WindsorContainer.Register(IRegistration[] registrations)
+   at Abp.WebApi.Controllers.ApiControllerConventionalRegistrar.RegisterAssembly(IConventionalRegistrationContext context) in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\Controllers\ApiControllerConventionalRegistrar.cs:line 15
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly, ConventionalRegistrationConfig config) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 79
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 67
+   at Abp.WebApi.AbpWebApiModule.Initialize() in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\AbpWebApiModule.cs:line 57
+   at Abp.Modules.AbpModuleManager.<>c.<StartModules>b__15_1(AbpModuleInfo module) in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.Modules.AbpModuleManager.StartModules() in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 155
+System.TypeLoadException: Method 'ExecuteActionFilterAsync' in type 'Abp.WebApi.Validation.AbpApiValidationFilter' from assembly 'Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null' does not have an implementation.
+   at System.Reflection.RuntimeAssembly.GetExportedTypes(RuntimeAssembly assembly, ObjectHandleOnStack retTypes)
+   at System.Reflection.RuntimeAssembly.GetExportedTypes()
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypes(Assembly assembly, Boolean includeNonExported)
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypesOrdered(Assembly assembly, Boolean includeNonExported)
+   at Castle.MicroKernel.Registration.FromAssemblyDescriptor.<SelectedTypes>b__5_0(Assembly a)
+   at System.Linq.Enumerable.<SelectManyIterator>d__17`2.MoveNext()
+   at Castle.MicroKernel.Registration.FromDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.Registration.BasedOnDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.DefaultKernel.Register(IRegistration[] registrations)
+   at Castle.Windsor.WindsorContainer.Register(IRegistration[] registrations)
+   at Abp.WebApi.Controllers.ApiControllerConventionalRegistrar.RegisterAssembly(IConventionalRegistrationContext context) in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\Controllers\ApiControllerConventionalRegistrar.cs:line 15
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly, ConventionalRegistrationConfig config) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 79
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 67
+   at Abp.WebApi.AbpWebApiModule.Initialize() in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\AbpWebApiModule.cs:line 57
+   at Abp.Modules.AbpModuleManager.<>c.<StartModules>b__15_1(AbpModuleInfo module) in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.Modules.AbpModuleManager.StartModules() in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 155
+DEBUG 2018-01-31 11:29:16,027 [10   ] Abp.Modules.AbpModuleManager             - Shutting down has been started
+DEBUG 2018-01-31 11:29:16,029 [10   ] Abp.Modules.AbpModuleManager             - Shutting down completed.
+DEBUG 2018-01-31 11:39:33,210 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-01-31 11:39:33,968 [1    ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2018-01-31 11:39:33,979 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Web.InterceptionDemoWebModule, InterceptionDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:39:33,983 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoDataModule, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:39:33,983 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:39:33,983 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:39:33,983 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:39:33,984 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:39:33,984 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:39:33,984 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:39:33,985 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoCoreModule, InterceptionDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:39:33,985 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoApplicationModule, InterceptionDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:39:33,985 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:39:33,985 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Api.InterceptionDemoWebApiModule, InterceptionDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:39:33,985 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:39:33,986 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:39:33,986 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:39:33,986 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:39:33,986 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:39:33,986 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 11:39:33,989 [1    ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2018-01-31 11:39:34,455 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 11:39:34,455 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 11:39:34,455 [1    ] o.Configuration.LanguageManagementConfig - Converted InterceptionDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 11:39:34,455 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2018-01-31 11:39:34,619 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2018-01-31 11:39:34,720 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2018-01-31 11:39:35,570 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: InterceptionDemo.EntityFramework.InterceptionDemoDbContext, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+FATAL 2018-01-31 11:39:35,677 [1    ] Abp.AbpBootstrapper                      - System.TypeLoadException: Method 'ExecuteActionFilterAsync' in type 'Abp.WebApi.Validation.AbpApiValidationFilter' from assembly 'Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null' does not have an implementation.
+   at System.Reflection.RuntimeAssembly.GetExportedTypes(RuntimeAssembly assembly, ObjectHandleOnStack retTypes)
+   at System.Reflection.RuntimeAssembly.GetExportedTypes()
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypes(Assembly assembly, Boolean includeNonExported)
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypesOrdered(Assembly assembly, Boolean includeNonExported)
+   at Castle.MicroKernel.Registration.FromAssemblyDescriptor.<SelectedTypes>b__5_0(Assembly a)
+   at System.Linq.Enumerable.<SelectManyIterator>d__17`2.MoveNext()
+   at Castle.MicroKernel.Registration.FromDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.Registration.BasedOnDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.DefaultKernel.Register(IRegistration[] registrations)
+   at Castle.Windsor.WindsorContainer.Register(IRegistration[] registrations)
+   at Abp.WebApi.Controllers.ApiControllerConventionalRegistrar.RegisterAssembly(IConventionalRegistrationContext context) in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\Controllers\ApiControllerConventionalRegistrar.cs:line 15
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly, ConventionalRegistrationConfig config) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 79
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 67
+   at Abp.WebApi.AbpWebApiModule.Initialize() in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\AbpWebApiModule.cs:line 57
+   at Abp.Modules.AbpModuleManager.<>c.<StartModules>b__15_1(AbpModuleInfo module) in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.Modules.AbpModuleManager.StartModules() in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 155
+System.TypeLoadException: Method 'ExecuteActionFilterAsync' in type 'Abp.WebApi.Validation.AbpApiValidationFilter' from assembly 'Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null' does not have an implementation.
+   at System.Reflection.RuntimeAssembly.GetExportedTypes(RuntimeAssembly assembly, ObjectHandleOnStack retTypes)
+   at System.Reflection.RuntimeAssembly.GetExportedTypes()
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypes(Assembly assembly, Boolean includeNonExported)
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypesOrdered(Assembly assembly, Boolean includeNonExported)
+   at Castle.MicroKernel.Registration.FromAssemblyDescriptor.<SelectedTypes>b__5_0(Assembly a)
+   at System.Linq.Enumerable.<SelectManyIterator>d__17`2.MoveNext()
+   at Castle.MicroKernel.Registration.FromDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.Registration.BasedOnDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.DefaultKernel.Register(IRegistration[] registrations)
+   at Castle.Windsor.WindsorContainer.Register(IRegistration[] registrations)
+   at Abp.WebApi.Controllers.ApiControllerConventionalRegistrar.RegisterAssembly(IConventionalRegistrationContext context) in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\Controllers\ApiControllerConventionalRegistrar.cs:line 15
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly, ConventionalRegistrationConfig config) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 79
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 67
+   at Abp.WebApi.AbpWebApiModule.Initialize() in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\AbpWebApiModule.cs:line 57
+   at Abp.Modules.AbpModuleManager.<>c.<StartModules>b__15_1(AbpModuleInfo module) in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.Modules.AbpModuleManager.StartModules() in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 155
+DEBUG 2018-01-31 13:43:14,814 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-01-31 13:43:15,983 [1    ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2018-01-31 13:43:15,990 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Web.InterceptionDemoWebModule, InterceptionDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:43:15,992 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoDataModule, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:43:15,993 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:43:15,993 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:43:15,993 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:43:15,993 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:43:15,994 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:43:15,994 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:43:15,994 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoCoreModule, InterceptionDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:43:15,994 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoApplicationModule, InterceptionDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:43:15,994 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:43:15,994 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Api.InterceptionDemoWebApiModule, InterceptionDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:43:15,995 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:43:15,995 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:43:15,995 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:43:15,995 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:43:15,995 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:43:15,996 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:43:15,999 [1    ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2018-01-31 13:43:16,813 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 13:43:16,813 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 13:43:16,813 [1    ] o.Configuration.LanguageManagementConfig - Converted InterceptionDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 13:43:16,813 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2018-01-31 13:43:17,065 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2018-01-31 13:43:17,180 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2018-01-31 13:43:18,351 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: InterceptionDemo.EntityFramework.InterceptionDemoDbContext, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+FATAL 2018-01-31 13:43:18,459 [1    ] Abp.AbpBootstrapper                      - System.TypeLoadException: Method 'ExecuteActionFilterAsync' in type 'Abp.WebApi.Validation.AbpApiValidationFilter' from assembly 'Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null' does not have an implementation.
+   at System.Reflection.RuntimeAssembly.GetExportedTypes(RuntimeAssembly assembly, ObjectHandleOnStack retTypes)
+   at System.Reflection.RuntimeAssembly.GetExportedTypes()
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypes(Assembly assembly, Boolean includeNonExported)
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypesOrdered(Assembly assembly, Boolean includeNonExported)
+   at Castle.MicroKernel.Registration.FromAssemblyDescriptor.<SelectedTypes>b__5_0(Assembly a)
+   at System.Linq.Enumerable.<SelectManyIterator>d__17`2.MoveNext()
+   at Castle.MicroKernel.Registration.FromDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.Registration.BasedOnDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.DefaultKernel.Register(IRegistration[] registrations)
+   at Castle.Windsor.WindsorContainer.Register(IRegistration[] registrations)
+   at Abp.WebApi.Controllers.ApiControllerConventionalRegistrar.RegisterAssembly(IConventionalRegistrationContext context) in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\Controllers\ApiControllerConventionalRegistrar.cs:line 15
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly, ConventionalRegistrationConfig config) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 79
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 67
+   at Abp.WebApi.AbpWebApiModule.Initialize() in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\AbpWebApiModule.cs:line 57
+   at Abp.Modules.AbpModuleManager.<>c.<StartModules>b__15_1(AbpModuleInfo module) in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.Modules.AbpModuleManager.StartModules() in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 155
+System.TypeLoadException: Method 'ExecuteActionFilterAsync' in type 'Abp.WebApi.Validation.AbpApiValidationFilter' from assembly 'Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null' does not have an implementation.
+   at System.Reflection.RuntimeAssembly.GetExportedTypes(RuntimeAssembly assembly, ObjectHandleOnStack retTypes)
+   at System.Reflection.RuntimeAssembly.GetExportedTypes()
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypes(Assembly assembly, Boolean includeNonExported)
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypesOrdered(Assembly assembly, Boolean includeNonExported)
+   at Castle.MicroKernel.Registration.FromAssemblyDescriptor.<SelectedTypes>b__5_0(Assembly a)
+   at System.Linq.Enumerable.<SelectManyIterator>d__17`2.MoveNext()
+   at Castle.MicroKernel.Registration.FromDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.Registration.BasedOnDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.DefaultKernel.Register(IRegistration[] registrations)
+   at Castle.Windsor.WindsorContainer.Register(IRegistration[] registrations)
+   at Abp.WebApi.Controllers.ApiControllerConventionalRegistrar.RegisterAssembly(IConventionalRegistrationContext context) in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\Controllers\ApiControllerConventionalRegistrar.cs:line 15
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly, ConventionalRegistrationConfig config) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 79
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 67
+   at Abp.WebApi.AbpWebApiModule.Initialize() in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\AbpWebApiModule.cs:line 57
+   at Abp.Modules.AbpModuleManager.<>c.<StartModules>b__15_1(AbpModuleInfo module) in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.Modules.AbpModuleManager.StartModules() in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 155
+DEBUG 2018-01-31 13:45:15,052 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-01-31 13:45:15,068 [1    ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2018-01-31 13:45:15,075 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Web.InterceptionDemoWebModule, InterceptionDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:45:15,077 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoDataModule, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:45:15,077 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:45:15,077 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:45:15,078 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:45:15,078 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:45:15,078 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:45:15,078 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:45:15,079 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoCoreModule, InterceptionDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:45:15,079 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoApplicationModule, InterceptionDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:45:15,079 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:45:15,079 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Api.InterceptionDemoWebApiModule, InterceptionDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:45:15,079 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:45:15,079 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:45:15,080 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:45:15,080 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:45:15,080 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:45:15,080 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:45:15,083 [1    ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2018-01-31 13:45:15,206 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 13:45:15,206 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 13:45:15,206 [1    ] o.Configuration.LanguageManagementConfig - Converted InterceptionDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 13:45:15,206 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2018-01-31 13:45:15,273 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2018-01-31 13:45:15,370 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2018-01-31 13:45:15,730 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: InterceptionDemo.EntityFramework.InterceptionDemoDbContext, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+FATAL 2018-01-31 13:45:15,832 [1    ] Abp.AbpBootstrapper                      - System.TypeLoadException: Method 'ExecuteActionFilterAsync' in type 'Abp.WebApi.Validation.AbpApiValidationFilter' from assembly 'Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null' does not have an implementation.
+   at System.Reflection.RuntimeAssembly.GetExportedTypes(RuntimeAssembly assembly, ObjectHandleOnStack retTypes)
+   at System.Reflection.RuntimeAssembly.GetExportedTypes()
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypes(Assembly assembly, Boolean includeNonExported)
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypesOrdered(Assembly assembly, Boolean includeNonExported)
+   at Castle.MicroKernel.Registration.FromAssemblyDescriptor.<SelectedTypes>b__5_0(Assembly a)
+   at System.Linq.Enumerable.<SelectManyIterator>d__17`2.MoveNext()
+   at Castle.MicroKernel.Registration.FromDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.Registration.BasedOnDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.DefaultKernel.Register(IRegistration[] registrations)
+   at Castle.Windsor.WindsorContainer.Register(IRegistration[] registrations)
+   at Abp.WebApi.Controllers.ApiControllerConventionalRegistrar.RegisterAssembly(IConventionalRegistrationContext context) in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\Controllers\ApiControllerConventionalRegistrar.cs:line 15
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly, ConventionalRegistrationConfig config) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 79
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 67
+   at Abp.WebApi.AbpWebApiModule.Initialize() in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\AbpWebApiModule.cs:line 57
+   at Abp.Modules.AbpModuleManager.<>c.<StartModules>b__15_1(AbpModuleInfo module) in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.Modules.AbpModuleManager.StartModules() in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 155
+System.TypeLoadException: Method 'ExecuteActionFilterAsync' in type 'Abp.WebApi.Validation.AbpApiValidationFilter' from assembly 'Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null' does not have an implementation.
+   at System.Reflection.RuntimeAssembly.GetExportedTypes(RuntimeAssembly assembly, ObjectHandleOnStack retTypes)
+   at System.Reflection.RuntimeAssembly.GetExportedTypes()
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypes(Assembly assembly, Boolean includeNonExported)
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypesOrdered(Assembly assembly, Boolean includeNonExported)
+   at Castle.MicroKernel.Registration.FromAssemblyDescriptor.<SelectedTypes>b__5_0(Assembly a)
+   at System.Linq.Enumerable.<SelectManyIterator>d__17`2.MoveNext()
+   at Castle.MicroKernel.Registration.FromDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.Registration.BasedOnDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.DefaultKernel.Register(IRegistration[] registrations)
+   at Castle.Windsor.WindsorContainer.Register(IRegistration[] registrations)
+   at Abp.WebApi.Controllers.ApiControllerConventionalRegistrar.RegisterAssembly(IConventionalRegistrationContext context) in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\Controllers\ApiControllerConventionalRegistrar.cs:line 15
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly, ConventionalRegistrationConfig config) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 79
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 67
+   at Abp.WebApi.AbpWebApiModule.Initialize() in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\AbpWebApiModule.cs:line 57
+   at Abp.Modules.AbpModuleManager.<>c.<StartModules>b__15_1(AbpModuleInfo module) in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.Modules.AbpModuleManager.StartModules() in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 155
+DEBUG 2018-01-31 13:46:52,378 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-01-31 13:46:52,393 [1    ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2018-01-31 13:46:52,400 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Web.InterceptionDemoWebModule, InterceptionDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:46:52,402 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoDataModule, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:46:52,402 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:46:52,402 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:46:52,402 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:46:52,403 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:46:52,403 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:46:52,403 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:46:52,403 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoCoreModule, InterceptionDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:46:52,404 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoApplicationModule, InterceptionDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:46:52,404 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:46:52,404 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Api.InterceptionDemoWebApiModule, InterceptionDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:46:52,404 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:46:52,404 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:46:52,404 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:46:52,405 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:46:52,405 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:46:52,405 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-01-31 13:46:52,408 [1    ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2018-01-31 13:46:52,524 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 13:46:52,524 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 13:46:52,524 [1    ] o.Configuration.LanguageManagementConfig - Converted InterceptionDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-01-31 13:46:52,524 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2018-01-31 13:46:52,586 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2018-01-31 13:46:52,688 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2018-01-31 13:46:53,042 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: InterceptionDemo.EntityFramework.InterceptionDemoDbContext, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+FATAL 2018-01-31 13:46:53,144 [1    ] Abp.AbpBootstrapper                      - System.TypeLoadException: Method 'ExecuteActionFilterAsync' in type 'Abp.WebApi.Validation.AbpApiValidationFilter' from assembly 'Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null' does not have an implementation.
+   at System.Reflection.RuntimeAssembly.GetExportedTypes(RuntimeAssembly assembly, ObjectHandleOnStack retTypes)
+   at System.Reflection.RuntimeAssembly.GetExportedTypes()
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypes(Assembly assembly, Boolean includeNonExported)
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypesOrdered(Assembly assembly, Boolean includeNonExported)
+   at Castle.MicroKernel.Registration.FromAssemblyDescriptor.<SelectedTypes>b__5_0(Assembly a)
+   at System.Linq.Enumerable.<SelectManyIterator>d__17`2.MoveNext()
+   at Castle.MicroKernel.Registration.FromDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.Registration.BasedOnDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.DefaultKernel.Register(IRegistration[] registrations)
+   at Castle.Windsor.WindsorContainer.Register(IRegistration[] registrations)
+   at Abp.WebApi.Controllers.ApiControllerConventionalRegistrar.RegisterAssembly(IConventionalRegistrationContext context) in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\Controllers\ApiControllerConventionalRegistrar.cs:line 15
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly, ConventionalRegistrationConfig config) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 79
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 67
+   at Abp.WebApi.AbpWebApiModule.Initialize() in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\AbpWebApiModule.cs:line 57
+   at Abp.Modules.AbpModuleManager.<>c.<StartModules>b__15_1(AbpModuleInfo module) in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.Modules.AbpModuleManager.StartModules() in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 155
+System.TypeLoadException: Method 'ExecuteActionFilterAsync' in type 'Abp.WebApi.Validation.AbpApiValidationFilter' from assembly 'Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null' does not have an implementation.
+   at System.Reflection.RuntimeAssembly.GetExportedTypes(RuntimeAssembly assembly, ObjectHandleOnStack retTypes)
+   at System.Reflection.RuntimeAssembly.GetExportedTypes()
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypes(Assembly assembly, Boolean includeNonExported)
+   at Castle.Core.Internal.ReflectionUtil.GetAvailableTypesOrdered(Assembly assembly, Boolean includeNonExported)
+   at Castle.MicroKernel.Registration.FromAssemblyDescriptor.<SelectedTypes>b__5_0(Assembly a)
+   at System.Linq.Enumerable.<SelectManyIterator>d__17`2.MoveNext()
+   at Castle.MicroKernel.Registration.FromDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.Registration.BasedOnDescriptor.Castle.MicroKernel.Registration.IRegistration.Register(IKernelInternal kernel)
+   at Castle.MicroKernel.DefaultKernel.Register(IRegistration[] registrations)
+   at Castle.Windsor.WindsorContainer.Register(IRegistration[] registrations)
+   at Abp.WebApi.Controllers.ApiControllerConventionalRegistrar.RegisterAssembly(IConventionalRegistrationContext context) in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\Controllers\ApiControllerConventionalRegistrar.cs:line 15
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly, ConventionalRegistrationConfig config) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 79
+   at Abp.Dependency.IocManager.RegisterAssemblyByConvention(Assembly assembly) in D:\Github\aspnetboilerplate\src\Abp\Dependency\IocManager.cs:line 67
+   at Abp.WebApi.AbpWebApiModule.Initialize() in D:\Github\aspnetboilerplate\src\Abp.Web.Api\WebApi\AbpWebApiModule.cs:line 57
+   at Abp.Modules.AbpModuleManager.<>c.<StartModules>b__15_1(AbpModuleInfo module) in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.Modules.AbpModuleManager.StartModules() in D:\Github\aspnetboilerplate\src\Abp\Modules\AbpModuleManager.cs:line 47
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 155

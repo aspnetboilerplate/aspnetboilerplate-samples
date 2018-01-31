@@ -21,8 +21,8 @@ $provide.value("$locale", {
       "\uc11c\uae30"
     ],
     "ERAS": [
-      "\uae30\uc6d0\uc804",
-      "\uc11c\uae30"
+      "BC",
+      "AD"
     ],
     "FIRSTDAYOFWEEK": 6,
     "MONTH": [
@@ -49,6 +49,20 @@ $provide.value("$locale", {
       "\ud1a0"
     ],
     "SHORTMONTH": [
+      "1\uc6d4",
+      "2\uc6d4",
+      "3\uc6d4",
+      "4\uc6d4",
+      "5\uc6d4",
+      "6\uc6d4",
+      "7\uc6d4",
+      "8\uc6d4",
+      "9\uc6d4",
+      "10\uc6d4",
+      "11\uc6d4",
+      "12\uc6d4"
+    ],
+    "STANDALONEMONTH": [
       "1\uc6d4",
       "2\uc6d4",
       "3\uc6d4",
@@ -105,6 +119,7 @@ $provide.value("$locale", {
     ]
   },
   "id": "ko",
+  "localeID": "ko",
   "pluralCat": function(n, opt_precision) {  return PLURAL_CATEGORY.OTHER;}
 });
 }]);
