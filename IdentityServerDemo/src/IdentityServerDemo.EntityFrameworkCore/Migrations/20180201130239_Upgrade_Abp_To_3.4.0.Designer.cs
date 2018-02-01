@@ -16,9 +16,10 @@ using System;
 namespace IdentityServerDemo.Migrations
 {
     [DbContext(typeof(IdentityServerDemoDbContext))]
-    partial class IdentityServerDemoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180201130239_Upgrade_Abp_To_3.4.0")]
+    partial class Upgrade_Abp_To_340
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
