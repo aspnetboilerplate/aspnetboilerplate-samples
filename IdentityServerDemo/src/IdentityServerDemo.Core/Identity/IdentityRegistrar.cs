@@ -3,17 +3,18 @@ using IdentityServerDemo.Authorization.Roles;
 using IdentityServerDemo.Authorization.Users;
 using IdentityServerDemo.Editions;
 using IdentityServerDemo.MultiTenancy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace IdentityServerDemo.Identity
 {
     public static class IdentityRegistrar
     {
-        public static void Register(IServiceCollection services)
+        public static IdentityBuilder Register(IServiceCollection services)
         {
             services.AddLogging();
 
-            services.AddAbpIdentity<Tenant, User, Role>()
+            return services.AddAbpIdentity<Tenant, User, Role>()
                 .AddAbpTenantManager<TenantManager>()
                 .AddAbpUserManager<UserManager>()
                 .AddAbpRoleManager<RoleManager>()
@@ -24,6 +25,7 @@ namespace IdentityServerDemo.Identity
                 .AddAbpSignInManager<SignInManager>()
                 .AddAbpSecurityStampValidator<SecurityStampValidator>()
                 .AddAbpUserClaimsPrincipalFactory<UserClaimsPrincipalFactory>()
+                .AddPermissionChecker<PermissionChecker>()
                 .AddDefaultTokenProviders();
         }
     }

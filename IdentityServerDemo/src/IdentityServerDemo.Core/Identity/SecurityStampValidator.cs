@@ -2,7 +2,8 @@
 using IdentityServerDemo.Authorization.Roles;
 using IdentityServerDemo.Authorization.Users;
 using IdentityServerDemo.MultiTenancy;
-using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 
 namespace IdentityServerDemo.Identity
@@ -10,9 +11,13 @@ namespace IdentityServerDemo.Identity
     public class SecurityStampValidator : AbpSecurityStampValidator<Tenant, Role, User>
     {
         public SecurityStampValidator(
-            IOptions<IdentityOptions> options, 
-            SignInManager signInManager) 
-            : base(options, signInManager)
+            IOptions<SecurityStampValidatorOptions> options,
+            SignInManager signInManager,
+            ISystemClock systemClock)
+            : base(
+                options,
+                signInManager,
+                systemClock)
         {
         }
     }
