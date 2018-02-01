@@ -9,7 +9,7 @@ namespace AbpWpfDemo.People
 {
     public class PersonAppService : AbpWpfDemoAppServiceBase, IPersonAppService
     {
-        public new ILogger Logger { get; set; }
+        public ILogger Logger { get; set; }
 
         private readonly IRepository<Person> _personRepository;
 
