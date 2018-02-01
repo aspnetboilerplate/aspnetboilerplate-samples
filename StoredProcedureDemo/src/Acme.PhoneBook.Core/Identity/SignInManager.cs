@@ -4,6 +4,7 @@ using Abp.Domain.Uow;
 using Acme.PhoneBook.Authorization.Roles;
 using Acme.PhoneBook.Authorization.Users;
 using Acme.PhoneBook.MultiTenancy;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -21,7 +22,8 @@ namespace Acme.PhoneBook.Identity
             IOptions<IdentityOptions> optionsAccessor, 
             ILogger<SignInManager<User>> logger,
             IUnitOfWorkManager unitOfWorkManager,
-            ISettingManager settingManager
+            ISettingManager settingManager,
+            IAuthenticationSchemeProvider authenticationSchemeProvider
             ) : base(
                 userManager, 
                 contextAccessor, 
@@ -29,7 +31,8 @@ namespace Acme.PhoneBook.Identity
                 optionsAccessor, 
                 logger,
                 unitOfWorkManager,
-                settingManager)
+                settingManager, 
+                authenticationSchemeProvider)
         {
         }
     }

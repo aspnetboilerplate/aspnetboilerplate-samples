@@ -3,6 +3,7 @@ using Acme.PhoneBook.Authorization.Roles;
 using Acme.PhoneBook.Authorization.Users;
 using Acme.PhoneBook.Editions;
 using Acme.PhoneBook.MultiTenancy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Acme.PhoneBook.Identity

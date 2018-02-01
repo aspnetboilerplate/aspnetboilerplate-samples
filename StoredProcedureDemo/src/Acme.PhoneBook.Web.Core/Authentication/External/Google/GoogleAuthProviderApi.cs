@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using Abp.UI;
 using Microsoft.AspNetCore.Authentication.Google;
 using Newtonsoft.Json.Linq;
 
@@ -29,14 +30,7 @@ namespace Acme.PhoneBook.Authentication.External.Google
 
                 var payload = JObject.Parse(await response.Content.ReadAsStringAsync());
 
-                return new ExternalAuthUserInfo
-                {
-                    Name = GoogleHelper.GetName(payload),
-                    EmailAddress = GoogleHelper.GetEmail(payload),
-                    Surname = GoogleHelper.GetFamilyName(payload),
-                    ProviderKey = GoogleHelper.GetId(payload),
-                    Provider = Name
-                };
+                throw new UserFriendlyException("This Feature is not available in this sample.");
             }
         }
     }

@@ -261,29 +261,7 @@ namespace Acme.PhoneBook.Web.Controllers
         #endregion
 
         #region External Login
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult ExternalLogin(string provider, string returnUrl)
-        {
-            var redirectUrl = Url.Action(
-                "ExternalLoginCallback",
-                "Account",
-                new
-                {
-                    ReturnUrl = returnUrl,
-                    authSchema = provider
-                });
-
-            return Challenge(
-                new Microsoft.AspNetCore.Http.Authentication.AuthenticationProperties
-                {
-                    Items = { { "LoginProvider", provider } },
-                    RedirectUri = redirectUrl
-                },
-                provider
-            );
-        }
+        
 
         [UnitOfWork]
         public virtual async Task<ActionResult> ExternalLoginCallback(string returnUrl, string authSchema, string remoteError = null)

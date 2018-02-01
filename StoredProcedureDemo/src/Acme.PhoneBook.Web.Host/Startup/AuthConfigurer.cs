@@ -23,10 +23,6 @@ namespace Acme.PhoneBook.Web.Host.Startup
         /// <param name="configuration">The configuration.</param>
         public static void Configure(IApplicationBuilder app, IConfiguration configuration)
         {
-            if (bool.Parse(configuration["Authentication:JwtBearer:IsEnabled"]))
-            {
-                app.UseJwtBearerAuthentication(CreateJwtBearerAuthenticationOptions(app));
-            }
 
             var externalAuthConfiguration = app.ApplicationServices.GetRequiredService<ExternalAuthConfiguration>();
 
@@ -53,41 +49,6 @@ namespace Acme.PhoneBook.Web.Host.Startup
                     )
                 );
             }
-        }
-
-        private static JwtBearerOptions CreateJwtBearerAuthenticationOptions(IApplicationBuilder app)
-        {
-            var tokenAuthConfig = app.ApplicationServices.GetRequiredService<TokenAuthConfiguration>();
-            return new JwtBearerOptions
-            {
-                AutomaticAuthenticate = true,
-                AutomaticChallenge = true,
-                TokenValidationParameters = new TokenValidationParameters
-                {
-                    // The signing key must match!
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = tokenAuthConfig.SecurityKey,
-
-                    // Validate the JWT Issuer (iss) claim
-                    ValidateIssuer = true,
-                    ValidIssuer = tokenAuthConfig.Issuer,
-
-                    // Validate the JWT Audience (aud) claim
-                    ValidateAudience = true,
-                    ValidAudience = tokenAuthConfig.Audience,
-
-                    // Validate the token expiry
-                    ValidateLifetime = true,
-
-                    // If you want to allow a certain amount of clock drift, set that here
-                    ClockSkew = TimeSpan.Zero
-                },
-
-                Events = new JwtBearerEvents
-                {
-                    OnMessageReceived = QueryStringTokenResolver
-                }
-            };
         }
 
         /* This method is needed to authorize SignalR javascript client.
