@@ -5,7 +5,7 @@ using BackgroundJobAndNotificationsDemo.Users;
 
 namespace BackgroundJobAndNotificationsDemo.Web.Models.Account
 {
-    public class RegisterViewModel : IInputDto
+    public class RegisterViewModel : EntityDto
     {
         /// <summary>
         /// Not required for single-tenant applications.

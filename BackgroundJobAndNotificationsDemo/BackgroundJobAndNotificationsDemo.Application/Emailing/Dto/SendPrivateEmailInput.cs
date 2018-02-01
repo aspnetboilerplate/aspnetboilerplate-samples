@@ -1,13 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Abp.Application.Services.Dto;
-using BackgroundJobAndNotificationsDemo.Users;
+using Abp.Authorization.Users;
 
 namespace BackgroundJobAndNotificationsDemo.Emailing.Dto
 {
-    public class SendPrivateEmailInput : IInputDto
+    public class SendPrivateEmailInput : EntityDto
     {
         [Required]
-        [MaxLength(User.MaxUserNameLength)]
+        [MaxLength(AbpUserBase.MaxUserNameLength)]
         public string UserName { get; set; }
         
         [Required]

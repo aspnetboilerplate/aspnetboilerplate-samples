@@ -49,7 +49,7 @@ namespace BackgroundJobAndNotificationsDemo.Emailing
                         )
                     );
 
-                await _notificationPublisher.PublishAsync(NotificationNames.YouHaveAnEmail, notificationData, userIds: new[] {targetUser.Id});
+                await _notificationPublisher.PublishAsync(NotificationNames.YouHaveAnEmail, notificationData, userIds: new[] { targetUser.ToUserIdentifier() });
             }
         }
     }
