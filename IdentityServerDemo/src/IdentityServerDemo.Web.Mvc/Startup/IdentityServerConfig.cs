@@ -32,7 +32,7 @@ namespace IdentityServerDemo.Web.Startup
                 new Client
                 {
                     ClientId = "client",
-                    AllowedGrantTypes = GrantTypes.ClientCredentials.Union(GrantTypes.ResourceOwnerPassword),
+                    AllowedGrantTypes = GrantTypes.ClientCredentials.Union(GrantTypes.ResourceOwnerPassword).ToList(),
                     AllowedScopes = {"default-api"},
                     ClientSecrets =
                     {

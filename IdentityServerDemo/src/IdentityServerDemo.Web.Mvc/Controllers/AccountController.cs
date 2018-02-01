@@ -264,7 +264,7 @@ namespace IdentityServerDemo.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ExternalLogin(string provider, string returnUrl)
+        public ActionResult ExternalLogin(string provider, string returnUrl, string ss)
         {
             var redirectUrl = Url.Action(
                 "ExternalLoginCallback",
@@ -272,17 +272,13 @@ namespace IdentityServerDemo.Web.Controllers
                 new
                 {
                     ReturnUrl = returnUrl,
-                    authSchema = provider
+                    authSchema = provider,
+                    ss = ss
                 });
 
-            return Challenge(
-                new Microsoft.AspNetCore.Http.Authentication.AuthenticationProperties
-                {
-                    Items = { { "LoginProvider", provider } },
-                    RedirectUri = redirectUrl
-                },
-                provider
-            );
+            var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
+
+            return Challenge(properties, provider);
         }
 
         [UnitOfWork]
