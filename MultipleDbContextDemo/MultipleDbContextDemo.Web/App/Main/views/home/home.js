@@ -10,7 +10,9 @@
 
             function loadPeopleAndCourses() {
                 testService.getPeopleAndCourses().success(function (result) {
+              //      console.log(result);
                     vm.items = result;
+                 
                 });
             }
 
@@ -19,6 +21,13 @@
                     loadPeopleAndCourses();
                 });
             }
+
+            vm.createCourse= function() {
+                testService.createCourseAsync(vm.courseName).success(function() {
+                    loadPeopleAndCourses();
+                });
+            }
+
 
             loadPeopleAndCourses();
         }
