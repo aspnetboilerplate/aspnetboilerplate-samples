@@ -1,10 +1,10 @@
-﻿using System.Reflection;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Abp.Hangfire;
 using Abp.Hangfire.Configuration;
 using Abp.Modules;
+using Abp.Reflection.Extensions;
 using Abp.Web.Mvc;
 using Abp.Web.SignalR;
 using Abp.Zero.Configuration;
@@ -40,7 +40,7 @@ namespace BackgroundJobAndNotificationsDemo.Web
 
         public override void Initialize()
         {
-            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+            IocManager.RegisterAssemblyByConvention(typeof(BackgroundJobAndNotificationsDemoWebModule).GetAssembly());
 
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);

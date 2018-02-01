@@ -1,12 +1,11 @@
-﻿using System.Reflection;
-using Abp.Localization.Dictionaries;
-using Abp.Localization.Dictionaries.Xml;
-using Abp.Modules;
+﻿using Abp.Modules;
+using Abp.Reflection.Extensions;
 using Abp.Threading.BackgroundWorkers;
 using Abp.Zero;
 using Abp.Zero.Configuration;
 using BackgroundJobAndNotificationsDemo.Authorization;
 using BackgroundJobAndNotificationsDemo.Authorization.Roles;
+using BackgroundJobAndNotificationsDemo.Localization;
 using BackgroundJobAndNotificationsDemo.Users;
 
 namespace BackgroundJobAndNotificationsDemo
@@ -19,16 +18,7 @@ namespace BackgroundJobAndNotificationsDemo
             //Remove the following line to disable multi-tenancy.
             Configuration.MultiTenancy.IsEnabled = true;
 
-            //Add/remove localization sources here
-            Configuration.Localization.Sources.Add(
-                new DictionaryBasedLocalizationSource(
-                    BackgroundJobAndNotificationsDemoConsts.LocalizationSourceName,
-                    new XmlEmbeddedFileLocalizationDictionaryProvider(
-                        Assembly.GetExecutingAssembly(),
-                        "BackgroundJobAndNotificationsDemo.Localization.Source"
-                        )
-                    )
-                );
+            BackgroundJobAndNotificationsDemoLocalizationConfigurer.Configure(Configuration.Localization);
 
             AppRoleConfig.Configure(Configuration.Modules.Zero().RoleManagement);
 
@@ -37,7 +27,7 @@ namespace BackgroundJobAndNotificationsDemo
 
         public override void Initialize()
         {
-            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+            IocManager.RegisterAssemblyByConvention(typeof(BackgroundJobAndNotificationsDemoCoreModule).GetAssembly());
         }
 
         public override void PostInitialize()

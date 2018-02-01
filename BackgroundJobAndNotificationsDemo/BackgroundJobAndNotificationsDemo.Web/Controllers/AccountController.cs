@@ -16,7 +16,7 @@ using Abp.Extensions;
 using Abp.Threading;
 using Abp.UI;
 using Abp.Web.Models;
-using Abp.Web.Mvc.Models;
+using BackgroundJobAndNotificationsDemo.Authorization;
 using BackgroundJobAndNotificationsDemo.Authorization.Roles;
 using BackgroundJobAndNotificationsDemo.MultiTenancy;
 using BackgroundJobAndNotificationsDemo.Users;
@@ -31,7 +31,7 @@ namespace BackgroundJobAndNotificationsDemo.Web.Controllers
     public class AccountController : BackgroundJobAndNotificationsDemoControllerBase
     {
         private readonly TenantManager _tenantManager;
-        private readonly AbpLogInManager<Tenant,Role,User> _loginManager;
+        private readonly LogInManager _loginManager;
         private readonly RoleManager _roleManager;
         private readonly IUnitOfWorkManager _unitOfWorkManager;
         private readonly IMultiTenancyConfig _multiTenancyConfig;
@@ -41,7 +41,7 @@ namespace BackgroundJobAndNotificationsDemo.Web.Controllers
 
         public AccountController(
             TenantManager tenantManager,
-            AbpLogInManager<Tenant, Role, User> loginManager,
+            LogInManager loginManager,
             RoleManager roleManager,
             IUnitOfWorkManager unitOfWorkManager,
             IMultiTenancyConfig multiTenancyConfig, 

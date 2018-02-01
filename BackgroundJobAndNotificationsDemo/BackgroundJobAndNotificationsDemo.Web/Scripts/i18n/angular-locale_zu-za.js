@@ -4,17 +4,17 @@ var PLURAL_CATEGORY = {ZERO: "zero", ONE: "one", TWO: "two", FEW: "few", MANY: "
 $provide.value("$locale", {
   "DATETIME_FORMATS": {
     "AMPMS": [
-      "Ekuseni",
-      "Ntambama"
+      "AM",
+      "PM"
     ],
     "DAY": [
-      "Sonto",
-      "Msombuluko",
-      "Lwesibili",
-      "Lwesithathu",
-      "Lwesine",
-      "Lwesihlanu",
-      "Mgqibelo"
+      "ISonto",
+      "UMsombuluko",
+      "ULwesibili",
+      "ULwesithathu",
+      "ULwesine",
+      "ULwesihlanu",
+      "UMgqibelo"
     ],
     "ERANAMES": [
       "BC",
@@ -26,10 +26,10 @@ $provide.value("$locale", {
     ],
     "FIRSTDAYOFWEEK": 6,
     "MONTH": [
-      "Januwari",
+      "UMasingana",
       "Februwari",
       "Mashi",
-      "Apreli",
+      "Ephreli",
       "Meyi",
       "Juni",
       "Julayi",
@@ -52,7 +52,7 @@ $provide.value("$locale", {
       "Jan",
       "Feb",
       "Mas",
-      "Apr",
+      "Eph",
       "Mey",
       "Jun",
       "Jul",
@@ -62,18 +62,32 @@ $provide.value("$locale", {
       "Nov",
       "Dis"
     ],
+    "STANDALONEMONTH": [
+      "Januwari",
+      "Februwari",
+      "Mashi",
+      "Ephreli",
+      "Meyi",
+      "Juni",
+      "Julayi",
+      "Agasti",
+      "Septhemba",
+      "Okthoba",
+      "Novemba",
+      "Disemba"
+    ],
     "WEEKENDRANGE": [
       5,
       6
     ],
     "fullDate": "EEEE, MMMM d, y",
     "longDate": "MMMM d, y",
-    "medium": "MMM d, y h:mm:ss a",
+    "medium": "MMM d, y HH:mm:ss",
     "mediumDate": "MMM d, y",
-    "mediumTime": "h:mm:ss a",
-    "short": "M/d/yy h:mm a",
+    "mediumTime": "HH:mm:ss",
+    "short": "M/d/yy HH:mm",
     "shortDate": "M/d/yy",
-    "shortTime": "h:mm a"
+    "shortTime": "HH:mm"
   },
   "NUMBER_FORMATS": {
     "CURRENCY_SYM": "R",
@@ -105,6 +119,7 @@ $provide.value("$locale", {
     ]
   },
   "id": "zu-za",
+  "localeID": "zu_ZA",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  if (i == 0 || n == 1) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

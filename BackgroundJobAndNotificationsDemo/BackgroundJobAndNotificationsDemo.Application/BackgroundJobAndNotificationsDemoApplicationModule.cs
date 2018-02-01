@@ -1,6 +1,6 @@
-﻿using System.Reflection;
-using Abp.AutoMapper;
+﻿using Abp.AutoMapper;
 using Abp.Modules;
+using Abp.Reflection.Extensions;
 
 namespace BackgroundJobAndNotificationsDemo
 {
@@ -9,7 +9,7 @@ namespace BackgroundJobAndNotificationsDemo
     {
         public override void Initialize()
         {
-            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+            IocManager.RegisterAssemblyByConvention(typeof(BackgroundJobAndNotificationsDemoApplicationModule).GetAssembly());
         }
     }
 }

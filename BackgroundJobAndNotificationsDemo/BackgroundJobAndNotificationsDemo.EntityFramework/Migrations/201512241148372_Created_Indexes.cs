@@ -35,7 +35,6 @@ namespace BackgroundJobAndNotificationsDemo.Migrations
             CreateIndex("AbpUsers", new[] { "IsDeleted", "TenantId", "EmailAddress" });
 
             CreateIndex("AbpOrganizationUnits", new[] { "TenantId", "ParentId" });
-            CreateIndex("AbpOrganizationUnits", new[] { "TenantId", "Code" });
 
             CreateIndex("AbpUserOrganizationUnits", new[] { "TenantId", "UserId" });
             CreateIndex("AbpUserOrganizationUnits", new[] { "TenantId", "OrganizationUnitId" });

@@ -7,7 +7,7 @@ using Abp.UI;
 using Abp.Web.Models;
 using Abp.WebApi.Controllers;
 using BackgroundJobAndNotificationsDemo.Api.Models;
-using BackgroundJobAndNotificationsDemo.Authorization.Roles;
+using BackgroundJobAndNotificationsDemo.Authorization;
 using BackgroundJobAndNotificationsDemo.MultiTenancy;
 using BackgroundJobAndNotificationsDemo.Users;
 using Microsoft.Owin.Infrastructure;
@@ -20,14 +20,14 @@ namespace BackgroundJobAndNotificationsDemo.Api.Controllers
     {
         public static OAuthBearerAuthenticationOptions OAuthBearerOptions { get; private set; }
 
-        private readonly AbpLogInManager<Tenant, Role, User> _abpLogInManager;
+        private readonly LogInManager _abpLogInManager;
 
         static AccountController()
         {
             OAuthBearerOptions = new OAuthBearerAuthenticationOptions();
         }
 
-        public AccountController(AbpLogInManager<Tenant, Role, User> abpLogInManager)
+        public AccountController(LogInManager abpLogInManager)
         {
             _abpLogInManager = abpLogInManager;
         }
