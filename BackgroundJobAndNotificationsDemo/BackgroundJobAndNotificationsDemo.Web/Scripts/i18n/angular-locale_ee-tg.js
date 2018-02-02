@@ -80,32 +80,18 @@ $provide.value("$locale", {
       "ade",
       "dzm"
     ],
-    "STANDALONEMONTH": [
-      "dzove",
-      "dzodze",
-      "tedoxe",
-      "af\u0254f\u0129e",
-      "dama",
-      "masa",
-      "siaml\u0254m",
-      "deasiamime",
-      "any\u0254ny\u0254",
-      "kele",
-      "ade\u025bmekp\u0254xe",
-      "dzome"
-    ],
     "WEEKENDRANGE": [
       5,
       6
     ],
     "fullDate": "EEEE, MMMM d 'lia' y",
     "longDate": "MMMM d 'lia' y",
-    "medium": "MMM d 'lia', y HH:mm:ss",
+    "medium": "MMM d 'lia', y a 'ga' h:mm:ss",
     "mediumDate": "MMM d 'lia', y",
-    "mediumTime": "HH:mm:ss",
-    "short": "M/d/yy HH:mm",
+    "mediumTime": "a 'ga' h:mm:ss",
+    "short": "M/d/yy a 'ga' h:mm",
     "shortDate": "M/d/yy",
-    "shortTime": "HH:mm"
+    "shortTime": "a 'ga' h:mm"
   },
   "NUMBER_FORMATS": {
     "CURRENCY_SYM": "CFA",
@@ -126,8 +112,8 @@ $provide.value("$locale", {
       {
         "gSize": 3,
         "lgSize": 3,
-        "maxFrac": 0,
-        "minFrac": 0,
+        "maxFrac": 2,
+        "minFrac": 2,
         "minInt": 1,
         "negPre": "-\u00a4",
         "negSuf": "",
@@ -137,7 +123,6 @@ $provide.value("$locale", {
     ]
   },
   "id": "ee-tg",
-  "localeID": "ee_TG",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (i == 1 && vf.v == 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

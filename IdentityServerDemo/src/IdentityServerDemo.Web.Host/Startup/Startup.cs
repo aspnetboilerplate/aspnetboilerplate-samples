@@ -59,8 +59,6 @@ namespace IdentityServerDemo.Web.Host.Startup
                 });
             });
 
-            AuthConfigurer.Configure(services, _appConfiguration);
-
             //Swagger - Enable this line and the related lines in Configure method to enable swagger UI
             services.AddSwaggerGen(options =>
             {
@@ -83,6 +81,8 @@ namespace IdentityServerDemo.Web.Host.Startup
             app.UseAbp(); //Initializes ABP framework.
 
             app.UseCors(DefaultCorsPolicyName); //Enable CORS!
+
+            AuthConfigurer.Configure(app, _appConfiguration);
 
             app.UseStaticFiles();
 

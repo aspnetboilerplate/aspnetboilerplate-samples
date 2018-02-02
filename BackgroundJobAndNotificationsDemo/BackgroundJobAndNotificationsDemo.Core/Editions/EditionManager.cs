@@ -10,7 +10,7 @@ namespace BackgroundJobAndNotificationsDemo.Editions
 
         public EditionManager(
             IRepository<Edition> editionRepository, 
-            IAbpZeroFeatureValueStore editionFeatureRepository)
+            IRepository<EditionFeatureSetting, long> editionFeatureRepository)
             : base(
                 editionRepository, 
                 editionFeatureRepository

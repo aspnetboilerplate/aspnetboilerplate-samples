@@ -22,8 +22,8 @@ function getVF(n, opt_precision) {
 $provide.value("$locale", {
   "DATETIME_FORMATS": {
     "AMPMS": [
-      "am",
-      "pm"
+      "AM",
+      "PM"
     ],
     "DAY": [
       "Sunday",
@@ -58,41 +58,27 @@ $provide.value("$locale", {
       "December"
     ],
     "SHORTDAY": [
-      "Sun.",
-      "Mon.",
-      "Tue.",
-      "Wed.",
-      "Thu.",
-      "Fri.",
-      "Sat."
+      "Sun",
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat"
     ],
     "SHORTMONTH": [
-      "Jan.",
-      "Feb.",
-      "Mar.",
-      "Apr.",
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
       "May",
-      "Jun.",
-      "Jul.",
-      "Aug.",
-      "Sep.",
-      "Oct.",
-      "Nov.",
-      "Dec."
-    ],
-    "STANDALONEMONTH": [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December"
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
     ],
     "WEEKENDRANGE": [
       5,
@@ -103,8 +89,8 @@ $provide.value("$locale", {
     "medium": "d MMM y h:mm:ss a",
     "mediumDate": "d MMM y",
     "mediumTime": "h:mm:ss a",
-    "short": "d/M/yy h:mm a",
-    "shortDate": "d/M/yy",
+    "short": "d/MM/y h:mm a",
+    "shortDate": "d/MM/y",
     "shortTime": "h:mm a"
   },
   "NUMBER_FORMATS": {
@@ -137,7 +123,6 @@ $provide.value("$locale", {
     ]
   },
   "id": "en-au",
-  "localeID": "en_AU",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (i == 1 && vf.v == 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

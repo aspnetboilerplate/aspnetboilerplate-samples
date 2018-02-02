@@ -27,7 +27,7 @@ $provide.value("$locale", {
     ],
     "DAY": [
       "Sunndaach",
-      "Mohndaach",
+      "Moondaach",
       "Dinnsdaach",
       "Metwoch",
       "Dunnersdaach",
@@ -35,8 +35,8 @@ $provide.value("$locale", {
       "Samsdaach"
     ],
     "ERANAMES": [
-      "v\u00fcr Krestos",
-      "noh Krestos"
+      "v\u00fcr Chrestus",
+      "noh Chrestus"
     ],
     "ERAS": [
       "v. Chr.",
@@ -48,12 +48,12 @@ $provide.value("$locale", {
       "F\u00e4browa",
       "M\u00e4\u00e4z",
       "Aprell",
-      "Mai",
+      "M\u00e4i",
       "Juuni",
       "Juuli",
       "Oujo\u00df",
       "Sept\u00e4mber",
-      "Oktohber",
+      "Oktoober",
       "Nov\u00e4mber",
       "Dez\u00e4mber"
     ],
@@ -71,7 +71,7 @@ $provide.value("$locale", {
       "F\u00e4b",
       "M\u00e4z",
       "Apr",
-      "Mai",
+      "M\u00e4i",
       "Jun",
       "Jul",
       "Ouj",
@@ -79,20 +79,6 @@ $provide.value("$locale", {
       "Okt",
       "Nov",
       "Dez"
-    ],
-    "STANDALONEMONTH": [
-      "Jannewa",
-      "F\u00e4browa",
-      "M\u00e4\u00e4z",
-      "Aprell",
-      "Mai",
-      "Juuni",
-      "Juuli",
-      "Oujo\u00df",
-      "Sept\u00e4mber",
-      "Oktohber",
-      "Nov\u00e4mber",
-      "Dez\u00e4mber"
     ],
     "WEEKENDRANGE": [
       5,
@@ -137,7 +123,6 @@ $provide.value("$locale", {
     ]
   },
   "id": "ksh-de",
-  "localeID": "ksh_DE",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (i == 1 && vf.v == 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

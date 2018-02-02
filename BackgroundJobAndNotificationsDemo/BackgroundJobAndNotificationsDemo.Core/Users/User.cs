@@ -1,11 +1,12 @@
 ﻿using System;
 using Abp.Authorization.Users;
 using Abp.Extensions;
+using BackgroundJobAndNotificationsDemo.MultiTenancy;
 using Microsoft.AspNet.Identity;
 
 namespace BackgroundJobAndNotificationsDemo.Users
 {
-    public class User : AbpUser<User>
+    public class User : AbpUser<Tenant, User>
     {
         public const string DefaultPassword = "123qwe";
 

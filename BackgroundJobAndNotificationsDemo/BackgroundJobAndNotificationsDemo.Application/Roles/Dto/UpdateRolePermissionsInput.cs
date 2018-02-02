@@ -4,7 +4,7 @@ using Abp.Application.Services.Dto;
 
 namespace BackgroundJobAndNotificationsDemo.Roles.Dto
 {
-    public class UpdateRolePermissionsInput : EntityDto
+    public class UpdateRolePermissionsInput : IInputDto
     {
         [Range(1, int.MaxValue)]
         public int RoleId { get; set; }

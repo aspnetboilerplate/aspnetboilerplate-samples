@@ -22,89 +22,75 @@ function getVF(n, opt_precision) {
 $provide.value("$locale", {
   "DATETIME_FORMATS": {
     "AMPMS": [
-      "Asubuhi",
-      "Mchana"
+      "ya asubuyi",
+      "ya muchana"
     ],
     "DAY": [
-      "Jumapili",
-      "Jumatatu",
-      "Jumanne",
-      "Jumatano",
-      "Alhamisi",
-      "Ijumaa",
-      "Jumamosi"
+      "siku ya yenga",
+      "siku ya kwanza",
+      "siku ya pili",
+      "siku ya tatu",
+      "siku ya ine",
+      "siku ya tanu",
+      "siku ya sita"
     ],
     "ERANAMES": [
       "Kabla ya Kristo",
       "Baada ya Kristo"
     ],
     "ERAS": [
-      "KK",
-      "BK"
+      "BC",
+      "AD"
     ],
     "FIRSTDAYOFWEEK": 0,
     "MONTH": [
-      "Januari",
-      "Februari",
-      "Machi",
-      "Aprili",
-      "Mei",
-      "Juni",
-      "Julai",
-      "Agosti",
-      "Septemba",
-      "Oktoba",
-      "Novemba",
-      "Desemba"
+      "mwezi ya kwanja",
+      "mwezi ya pili",
+      "mwezi ya tatu",
+      "mwezi ya ine",
+      "mwezi ya tanu",
+      "mwezi ya sita",
+      "mwezi ya saba",
+      "mwezi ya munane",
+      "mwezi ya tisa",
+      "mwezi ya kumi",
+      "mwezi ya kumi na moya",
+      "mwezi ya kumi ya mbili"
     ],
     "SHORTDAY": [
-      "Jumapili",
-      "Jumatatu",
-      "Jumanne",
-      "Jumatano",
-      "Alhamisi",
-      "Ijumaa",
-      "Jumamosi"
+      "yen",
+      "kwa",
+      "pil",
+      "tat",
+      "ine",
+      "tan",
+      "sit"
     ],
     "SHORTMONTH": [
-      "Jan",
-      "Feb",
-      "Mac",
-      "Apr",
-      "Mei",
-      "Jun",
-      "Jul",
-      "Ago",
-      "Sep",
-      "Okt",
-      "Nov",
-      "Des"
-    ],
-    "STANDALONEMONTH": [
-      "Januari",
-      "Februari",
-      "Machi",
-      "Aprili",
-      "Mei",
-      "Juni",
-      "Julai",
-      "Agosti",
-      "Septemba",
-      "Oktoba",
-      "Novemba",
-      "Desemba"
+      "mkw",
+      "mpi",
+      "mtu",
+      "min",
+      "mtn",
+      "mst",
+      "msb",
+      "mun",
+      "mts",
+      "mku",
+      "mkm",
+      "mkb"
     ],
     "WEEKENDRANGE": [
       5,
       6
     ],
-    "fullDate": "EEEE, d MMMM y",
+    "fullDate": "EEEE d MMMM y",
     "longDate": "d MMMM y",
     "medium": "d MMM y HH:mm:ss",
     "mediumDate": "d MMM y",
     "mediumTime": "HH:mm:ss",
-    "short": "dd/MM/y HH:mm",
-    "shortDate": "dd/MM/y",
+    "short": "d/M/y HH:mm",
+    "shortDate": "d/M/y",
     "shortTime": "HH:mm"
   },
   "NUMBER_FORMATS": {
@@ -137,7 +123,6 @@ $provide.value("$locale", {
     ]
   },
   "id": "sw-cd",
-  "localeID": "sw_CD",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (i == 1 && vf.v == 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

@@ -62,32 +62,18 @@ $provide.value("$locale", {
       "Kas",
       "Ara"
     ],
-    "STANDALONEMONTH": [
-      "Ocak",
-      "\u015eubat",
-      "Mart",
-      "Nisan",
-      "May\u0131s",
-      "Haziran",
-      "Temmuz",
-      "A\u011fustos",
-      "Eyl\u00fcl",
-      "Ekim",
-      "Kas\u0131m",
-      "Aral\u0131k"
-    ],
     "WEEKENDRANGE": [
       5,
       6
     ],
     "fullDate": "d MMMM y EEEE",
     "longDate": "d MMMM y",
-    "medium": "d MMM y h:mm:ss a",
+    "medium": "d MMM y HH:mm:ss",
     "mediumDate": "d MMM y",
-    "mediumTime": "h:mm:ss a",
-    "short": "d.MM.y h:mm a",
-    "shortDate": "d.MM.y",
-    "shortTime": "h:mm a"
+    "mediumTime": "HH:mm:ss",
+    "short": "d MM y HH:mm",
+    "shortDate": "d MM y",
+    "shortTime": "HH:mm"
   },
   "NUMBER_FORMATS": {
     "CURRENCY_SYM": "\u20ac",
@@ -111,15 +97,14 @@ $provide.value("$locale", {
         "maxFrac": 2,
         "minFrac": 2,
         "minInt": 1,
-        "negPre": "-\u00a4",
-        "negSuf": "",
-        "posPre": "\u00a4",
-        "posSuf": ""
+        "negPre": "-",
+        "negSuf": "\u00a0\u00a4",
+        "posPre": "",
+        "posSuf": "\u00a0\u00a4"
       }
     ]
   },
   "id": "tr-cy",
-  "localeID": "tr_CY",
   "pluralCat": function(n, opt_precision) {  if (n == 1) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

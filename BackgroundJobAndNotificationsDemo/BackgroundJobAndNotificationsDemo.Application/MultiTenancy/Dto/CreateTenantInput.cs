@@ -1,23 +1,22 @@
 using System.ComponentModel.DataAnnotations;
 using Abp.Application.Services.Dto;
-using Abp.Authorization.Users;
-using Abp.MultiTenancy;
+using BackgroundJobAndNotificationsDemo.Users;
 
 namespace BackgroundJobAndNotificationsDemo.MultiTenancy.Dto
 {
-    public class CreateTenantInput : EntityDto
+    public class CreateTenantInput : IInputDto
     {
         [Required]
-        [StringLength(AbpTenantBase.MaxTenancyNameLength)]
-        [RegularExpression(AbpTenantBase.TenancyNameRegex)]
+        [StringLength(Tenant.MaxTenancyNameLength)]
+        [RegularExpression(Tenant.TenancyNameRegex)]
         public string TenancyName { get; set; }
 
         [Required]
-        [StringLength(AbpTenantBase.MaxNameLength)]
+        [StringLength(Tenant.MaxNameLength)]
         public string Name { get; set; }
 
         [Required]
-        [StringLength(AbpUserBase.MaxEmailAddressLength)]
+        [StringLength(User.MaxEmailAddressLength)]
         public string AdminEmailAddress { get; set; }
     }
 }

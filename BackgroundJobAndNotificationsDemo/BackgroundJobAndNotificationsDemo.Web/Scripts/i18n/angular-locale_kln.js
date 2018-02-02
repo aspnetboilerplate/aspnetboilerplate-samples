@@ -42,7 +42,7 @@ $provide.value("$locale", {
       "AM",
       "KO"
     ],
-    "FIRSTDAYOFWEEK": 6,
+    "FIRSTDAYOFWEEK": 0,
     "MONTH": [
       "Mulgul",
       "Ng\u2019atyaato",
@@ -80,32 +80,18 @@ $provide.value("$locale", {
       "Kpt",
       "Kpa"
     ],
-    "STANDALONEMONTH": [
-      "Mulgul",
-      "Ng\u2019atyaato",
-      "Kiptaamo",
-      "Iwootkuut",
-      "Mamuut",
-      "Paagi",
-      "Ng\u2019eiyeet",
-      "Rooptui",
-      "Bureet",
-      "Epeeso",
-      "Kipsuunde ne taai",
-      "Kipsuunde nebo aeng\u2019"
-    ],
     "WEEKENDRANGE": [
       5,
       6
     ],
     "fullDate": "EEEE, d MMMM y",
     "longDate": "d MMMM y",
-    "medium": "d MMM y HH:mm:ss",
+    "medium": "d MMM y h:mm:ss a",
     "mediumDate": "d MMM y",
-    "mediumTime": "HH:mm:ss",
-    "short": "dd/MM/y HH:mm",
+    "mediumTime": "h:mm:ss a",
+    "short": "dd/MM/y h:mm a",
     "shortDate": "dd/MM/y",
-    "shortTime": "HH:mm"
+    "shortTime": "h:mm a"
   },
   "NUMBER_FORMATS": {
     "CURRENCY_SYM": "Ksh",
@@ -137,7 +123,6 @@ $provide.value("$locale", {
     ]
   },
   "id": "kln",
-  "localeID": "kln",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (i == 1 && vf.v == 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

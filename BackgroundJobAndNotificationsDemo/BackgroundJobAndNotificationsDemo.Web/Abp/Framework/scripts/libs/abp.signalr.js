@@ -42,17 +42,4 @@
         abp.signalr.connect();
     }
 
-    //reconnect if hub disconnects
-    $.connection.hub.disconnected(function () {
-        if (!abp.signalr.autoConnect) {
-            return;
-        }
-
-        setTimeout(function () {
-            if ($.connection.hub.state === $.signalR.connectionState.disconnected) {
-                $.connection.hub.start();
-            }
-        }, 5000);
-    });
-
 })(jQuery);

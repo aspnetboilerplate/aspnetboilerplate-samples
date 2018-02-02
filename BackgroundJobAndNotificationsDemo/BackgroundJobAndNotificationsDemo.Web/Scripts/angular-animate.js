@@ -1,9 +1,22 @@
 /**
- * @license AngularJS v1.6.6
- * (c) 2010-2017 Google, Inc. http://angularjs.org
+ * @license AngularJS v1.4.8
+ * (c) 2010-2015 Google, Inc. http://angularjs.org
  * License: MIT
  */
-(function(window, angular) {'use strict';
+(function(window, angular, undefined) {'use strict';
+
+/* jshint ignore:start */
+var noop        = angular.noop;
+var extend      = angular.extend;
+var jqLite      = angular.element;
+var forEach     = angular.forEach;
+var isArray     = angular.isArray;
+var isString    = angular.isString;
+var isObject    = angular.isObject;
+var isUndefined = angular.isUndefined;
+var isDefined   = angular.isDefined;
+var isFunction  = angular.isFunction;
+var isElement   = angular.isElement;
 
 var ELEMENT_NODE = 1;
 var COMMENT_NODE = 8;
@@ -12,7 +25,6 @@ var ADD_CLASS_SUFFIX = '-add';
 var REMOVE_CLASS_SUFFIX = '-remove';
 var EVENT_CLASS_PREFIX = 'ng-';
 var ACTIVE_CLASS_SUFFIX = '-active';
-var PREPARE_CLASS_SUFFIX = '-prepare';
 
 var NG_ANIMATE_CLASSNAME = 'ng-animate';
 var NG_ANIMATE_CHILDREN_DATA = '$$ngAnimateChildren';
@@ -29,7 +41,7 @@ var CSS_PREFIX = '', TRANSITION_PROP, TRANSITIONEND_EVENT, ANIMATION_PROP, ANIMA
 // Also, the only modern browser that uses vendor prefixes for transitions/keyframes is webkit
 // therefore there is no reason to test anymore for other vendor prefixes:
 // http://caniuse.com/#search=transition
-if ((window.ontransitionend === undefined) && (window.onwebkittransitionend !== undefined)) {
+if (isUndefined(window.ontransitionend) && isDefined(window.onwebkittransitionend)) {
   CSS_PREFIX = '-webkit-';
   TRANSITION_PROP = 'WebkitTransition';
   TRANSITIONEND_EVENT = 'webkitTransitionEnd transitionend';
@@ -38,7 +50,7 @@ if ((window.ontransitionend === undefined) && (window.onwebkittransitionend !== 
   TRANSITIONEND_EVENT = 'transitionend';
 }
 
-if ((window.onanimationend === undefined) && (window.onwebkitanimationend !== undefined)) {
+if (isUndefined(window.onanimationend) && isDefined(window.onwebkitanimationend)) {
   CSS_PREFIX = '-webkit-';
   ANIMATION_PROP = 'WebkitAnimation';
   ANIMATIONEND_EVENT = 'webkitAnimationEnd animationend';
@@ -60,10 +72,13 @@ var ANIMATION_DURATION_PROP = ANIMATION_PROP + DURATION_KEY;
 var TRANSITION_DELAY_PROP = TRANSITION_PROP + DELAY_KEY;
 var TRANSITION_DURATION_PROP = TRANSITION_PROP + DURATION_KEY;
 
-var ngMinErr = angular.$$minErr('ng');
+var isPromiseLike = function(p) {
+  return p && p.then ? true : false;
+};
+
 function assertArg(arg, name, reason) {
   if (!arg) {
-    throw ngMinErr('areq', 'Argument \'{0}\' is {1}', (name || '?'), (reason || 'required'));
+    throw ngMinErr('areq', "Argument '{0}' is {1}", (name || '?'), (reason || "required"));
   }
   return arg;
 }
@@ -114,7 +129,8 @@ function stripCommentsFromElement(element) {
   if (element instanceof jqLite) {
     switch (element.length) {
       case 0:
-        return element;
+        return [];
+        break;
 
       case 1:
         // there is no point of stripping anything if the element
@@ -127,6 +143,7 @@ function stripCommentsFromElement(element) {
 
       default:
         return jqLite(extractElementNode(element));
+        break;
     }
   }
 
@@ -139,7 +156,7 @@ function extractElementNode(element) {
   if (!element[0]) return element;
   for (var i = 0; i < element.length; i++) {
     var elm = element[i];
-    if (elm.nodeType === ELEMENT_NODE) {
+    if (elm.nodeType == ELEMENT_NODE) {
       return elm;
     }
   }
@@ -167,7 +184,7 @@ function applyAnimationClassesFactory($$jqLite) {
       $$removeClass($$jqLite, element, options.removeClass);
       options.removeClass = null;
     }
-  };
+  }
 }
 
 function prepareAnimationOptions(options) {
@@ -203,10 +220,7 @@ function applyAnimationToStyles(element, options) {
   }
 }
 
-function mergeAnimationDetails(element, oldAnimation, newAnimation) {
-  var target = oldAnimation.options || {};
-  var newOptions = newAnimation.options || {};
-
+function mergeAnimationOptions(element, target, newOptions) {
   var toAdd = (target.addClass || '') + ' ' + (newOptions.addClass || '');
   var toRemove = (target.removeClass || '') + ' ' + (newOptions.removeClass || '');
   var classes = resolveElementClasses(element.attr('class'), toAdd, toRemove);
@@ -238,9 +252,6 @@ function mergeAnimationDetails(element, oldAnimation, newAnimation) {
     target.removeClass = null;
   }
 
-  oldAnimation.addClass = target.addClass;
-  oldAnimation.removeClass = target.removeClass;
-
   return target;
 }
 
@@ -270,10 +281,10 @@ function resolveElementClasses(existing, toAdd, toRemove) {
     var prop, allow;
     if (val === ADD_CLASS) {
       prop = 'addClass';
-      allow = !existing[klass] || existing[klass + REMOVE_CLASS_SUFFIX];
+      allow = !existing[klass];
     } else if (val === REMOVE_CLASS) {
       prop = 'removeClass';
-      allow = existing[klass] || existing[klass + ADD_CLASS_SUFFIX];
+      allow = existing[klass];
     }
     if (allow) {
       if (classes[prop].length) {
@@ -303,7 +314,7 @@ function resolveElementClasses(existing, toAdd, toRemove) {
 }
 
 function getDomNode(element) {
-  return (element instanceof jqLite) ? element[0] : element;
+  return (element instanceof angular.element) ? element[0] : element;
 }
 
 function applyGeneratedPreparationClasses(element, event, options) {
@@ -376,7 +387,7 @@ var $$rAFSchedulerFactory = ['$$rAF', function($$rAF) {
   queue = scheduler.queue = [];
 
   /* waitUntilQuiet does two things:
-   * 1. It will run the FINAL `fn` value only when an uncanceled RAF has passed through
+   * 1. It will run the FINAL `fn` value only when an uncancelled RAF has passed through
    * 2. It will delay the next wave of tasks from running until the quiet `fn` has run.
    *
    * The motivation here is that animation code can request more time from the scheduler
@@ -411,106 +422,19 @@ var $$rAFSchedulerFactory = ['$$rAF', function($$rAF) {
   }
 }];
 
-/**
- * @ngdoc directive
- * @name ngAnimateChildren
- * @restrict AE
- * @element ANY
- *
- * @description
- *
- * ngAnimateChildren allows you to specify that children of this element should animate even if any
- * of the children's parents are currently animating. By default, when an element has an active `enter`, `leave`, or `move`
- * (structural) animation, child elements that also have an active structural animation are not animated.
- *
- * Note that even if `ngAnimateChildren` is set, no child animations will run when the parent element is removed from the DOM (`leave` animation).
- *
- *
- * @param {string} ngAnimateChildren If the value is empty, `true` or `on`,
- *     then child animations are allowed. If the value is `false`, child animations are not allowed.
- *
- * @example
- * <example module="ngAnimateChildren" name="ngAnimateChildren" deps="angular-animate.js" animations="true">
-     <file name="index.html">
-       <div ng-controller="MainController as main">
-         <label>Show container? <input type="checkbox" ng-model="main.enterElement" /></label>
-         <label>Animate children? <input type="checkbox" ng-model="main.animateChildren" /></label>
-         <hr>
-         <div ng-animate-children="{{main.animateChildren}}">
-           <div ng-if="main.enterElement" class="container">
-             List of items:
-             <div ng-repeat="item in [0, 1, 2, 3]" class="item">Item {{item}}</div>
-           </div>
-         </div>
-       </div>
-     </file>
-     <file name="animations.css">
-
-      .container.ng-enter,
-      .container.ng-leave {
-        transition: all ease 1.5s;
-      }
-
-      .container.ng-enter,
-      .container.ng-leave-active {
-        opacity: 0;
-      }
-
-      .container.ng-leave,
-      .container.ng-enter-active {
-        opacity: 1;
-      }
-
-      .item {
-        background: firebrick;
-        color: #FFF;
-        margin-bottom: 10px;
-      }
-
-      .item.ng-enter,
-      .item.ng-leave {
-        transition: transform 1.5s ease;
-      }
-
-      .item.ng-enter {
-        transform: translateX(50px);
-      }
-
-      .item.ng-enter-active {
-        transform: translateX(0);
-      }
-    </file>
-    <file name="script.js">
-      angular.module('ngAnimateChildren', ['ngAnimate'])
-        .controller('MainController', function MainController() {
-          this.animateChildren = false;
-          this.enterElement = false;
-        });
-    </file>
-  </example>
- */
-var $$AnimateChildrenDirective = ['$interpolate', function($interpolate) {
-  return {
-    link: function(scope, element, attrs) {
-      var val = attrs.ngAnimateChildren;
-      if (isString(val) && val.length === 0) { //empty attribute
-        element.data(NG_ANIMATE_CHILDREN_DATA, true);
-      } else {
-        // Interpolate and set the value, so that it is available to
-        // animations that run right after compilation
-        setData($interpolate(val)(scope));
-        attrs.$observe('ngAnimateChildren', setData);
-      }
-
-      function setData(value) {
+var $$AnimateChildrenDirective = [function() {
+  return function(scope, element, attrs) {
+    var val = attrs.ngAnimateChildren;
+    if (angular.isString(val) && val.length === 0) { //empty attribute
+      element.data(NG_ANIMATE_CHILDREN_DATA, true);
+    } else {
+      attrs.$observe('ngAnimateChildren', function(value) {
         value = value === 'on' || value === 'true';
         element.data(NG_ANIMATE_CHILDREN_DATA, value);
-      }
+      });
     }
   };
 }];
-
-/* exported $AnimateCssProvider */
 
 var ANIMATE_TIMER_KEY = '$$animateCss';
 
@@ -679,7 +603,7 @@ var ANIMATE_TIMER_KEY = '$$animateCss';
  * ```
  *
  * To actually start the animation we need to run `animation.start()` which will then return a promise that we can hook into to detect when the animation ends.
- * If we choose not to run the animation then we MUST run `animation.end()` to perform a cleanup on the element (since some CSS classes and styles may have been
+ * If we choose not to run the animation then we MUST run `animation.end()` to perform a cleanup on the element (since some CSS classes and stlyes may have been
  * applied to the element during the preparation phase). Note that all other properties such as duration, delay, transitions and keyframes are just properties
  * and that changing them will not reconfigure the parameters of the animation.
  *
@@ -716,11 +640,11 @@ var ANIMATE_TIMER_KEY = '$$animateCss';
  * * `stagger` - A numeric time value representing the delay between successively animated elements
  * ({@link ngAnimate#css-staggering-animations Click here to learn how CSS-based staggering works in ngAnimate.})
  * * `staggerIndex` - The numeric index representing the stagger item (e.g. a value of 5 is equal to the sixth item in the stagger; therefore when a
- *   `stagger` option value of `0.1` is used then there will be a stagger delay of `600ms`)
- * * `applyClassesEarly` - Whether or not the classes being added or removed will be used when detecting the animation. This is set by `$animate` when enter/leave/move animations are fired to ensure that the CSS classes are resolved in time. (Note that this will prevent any transitions from occurring on the classes being added and removed.)
+ * * `stagger` option value of `0.1` is used then there will be a stagger delay of `600ms`)
+ * * `applyClassesEarly` - Whether or not the classes being added or removed will be used when detecting the animation. This is set by `$animate` when enter/leave/move animations are fired to ensure that the CSS classes are resolved in time. (Note that this will prevent any transitions from occuring on the classes being added and removed.)
  * * `cleanupStyles` - Whether or not the provided `from` and `to` styles will be removed once
  *    the animation is closed. This is useful for when the styles are used purely for the sake of
- *    the animation and do not have a lasting visual effect on the element (e.g. a collapse and open animation).
+ *    the animation and do not have a lasting visual effect on the element (e.g. a colapse and open animation).
  *    By default this value is set to `false`.
  *
  * @return {object} an object with start and end methods and details about the animation.
@@ -729,6 +653,7 @@ var ANIMATE_TIMER_KEY = '$$animateCss';
  * * `end` - This method will cancel the animation and remove all applied CSS classes and styles.
  */
 var ONE_SECOND = 1000;
+var BASE_TEN = 10;
 
 var ELAPSED_TIME_MAX_DECIMAL_PLACES = 3;
 var CLOSING_TIME_BUFFER = 1.5;
@@ -772,7 +697,7 @@ function computeCssStyles($window, element, properties) {
       }
 
       // by setting this to null in the event that the delay is not set or is set directly as 0
-      // then we can still allow for negative values to be used later on and not mistake this
+      // then we can still allow for zegative values to be used later on and not mistake this
       // value for being greater than any other negative value.
       if (val === 0) {
         val = null;
@@ -790,7 +715,7 @@ function parseMaxTime(str) {
   forEach(values, function(value) {
     // it's always safe to consider only second values and omit `ms` values since
     // getComputedStyle will always handle the conversion for us
-    if (value.charAt(value.length - 1) === 's') {
+    if (value.charAt(value.length - 1) == 's') {
       value = value.substring(0, value.length - 1);
     }
     value = parseFloat(value) || 0;
@@ -858,20 +783,20 @@ function registerRestorableStyles(backup, node, properties) {
   });
 }
 
-var $AnimateCssProvider = ['$animateProvider', /** @this */ function($animateProvider) {
+var $AnimateCssProvider = ['$animateProvider', function($animateProvider) {
   var gcsLookup = createLocalCacheLookup();
   var gcsStaggerLookup = createLocalCacheLookup();
 
   this.$get = ['$window', '$$jqLite', '$$AnimateRunner', '$timeout',
-               '$$forceReflow', '$sniffer', '$$rAFScheduler', '$$animateQueue',
+               '$$forceReflow', '$sniffer', '$$rAFScheduler', '$animate',
        function($window,   $$jqLite,   $$AnimateRunner,   $timeout,
-                $$forceReflow,   $sniffer,   $$rAFScheduler, $$animateQueue) {
+                $$forceReflow,   $sniffer,   $$rAFScheduler, $animate) {
 
     var applyAnimationClasses = applyAnimationClassesFactory($$jqLite);
 
     var parentCounter = 0;
     function gcsHashFn(node, extraClasses) {
-      var KEY = '$$ngAnimateParentKey';
+      var KEY = "$$ngAnimateParentKey";
       var parentNode = node.parentNode;
       var parentID = parentNode[KEY] || (parentNode[KEY] = ++parentCounter);
       return parentID + '-' + node.getAttribute('class') + '-' + extraClasses;
@@ -888,7 +813,7 @@ var $AnimateCssProvider = ['$animateProvider', /** @this */ function($animatePro
       }
 
       // we keep putting this in multiple times even though the value and the cacheKey are the same
-      // because we're keeping an internal tally of how many duplicate animations are detected.
+      // because we're keeping an interal tally of how many duplicate animations are detected.
       gcsLookup.put(cacheKey, timings);
       return timings;
     }
@@ -922,6 +847,7 @@ var $AnimateCssProvider = ['$animateProvider', /** @this */ function($animatePro
       return stagger || {};
     }
 
+    var cancelLastRAFRequest;
     var rafWaitQueue = [];
     function waitUntilQuiet(callback) {
       rafWaitQueue.push(callback);
@@ -956,23 +882,16 @@ var $AnimateCssProvider = ['$animateProvider', /** @this */ function($animatePro
       return timings;
     }
 
-    return function init(element, initialOptions) {
-      // all of the animation functions should create
-      // a copy of the options data, however, if a
-      // parent service has already created a copy then
-      // we should stick to using that
-      var options = initialOptions || {};
-      if (!options.$$prepared) {
-        options = prepareAnimationOptions(copy(options));
-      }
-
+    return function init(element, options) {
       var restoreStyles = {};
       var node = getDomNode(element);
       if (!node
           || !node.parentNode
-          || !$$animateQueue.enabled()) {
+          || !$animate.enabled()) {
         return closeAndReturnNoopAnimator();
       }
+
+      options = prepareAnimationOptions(options);
 
       var temporaryStyles = [];
       var classes = element.attr('class');
@@ -986,8 +905,6 @@ var $AnimateCssProvider = ['$animateProvider', /** @this */ function($animatePro
       var maxDelayTime;
       var maxDuration;
       var maxDurationTime;
-      var startTime;
-      var events = [];
 
       if (options.duration === 0 || (!$sniffer.animations && !$sniffer.transitions)) {
         return closeAndReturnNoopAnimator();
@@ -1110,7 +1027,7 @@ var $AnimateCssProvider = ['$animateProvider', /** @this */ function($animatePro
       var flags = {};
       flags.hasTransitions          = timings.transitionDuration > 0;
       flags.hasAnimations           = timings.animationDuration > 0;
-      flags.hasTransitionAll        = flags.hasTransitions && timings.transitionProperty === 'all';
+      flags.hasTransitionAll        = flags.hasTransitions && timings.transitionProperty == 'all';
       flags.applyTransitionDuration = hasToStyles && (
                                         (flags.hasTransitions && !flags.hasTransitionAll)
                                          || (flags.hasAnimations && !flags.hasTransitions));
@@ -1141,12 +1058,7 @@ var $AnimateCssProvider = ['$animateProvider', /** @this */ function($animatePro
       }
 
       if (options.delay != null) {
-        var delayStyle;
-        if (typeof options.delay !== 'boolean') {
-          delayStyle = parseFloat(options.delay);
-          // number in options.delay means we have to recalculate the delay for the closing timeout
-          maxDelay = Math.max(delayStyle, 0);
-        }
+        var delayStyle = parseFloat(options.delay);
 
         if (flags.applyTransitionDelay) {
           temporaryStyles.push(getCssDelayStyle(delayStyle));
@@ -1220,7 +1132,7 @@ var $AnimateCssProvider = ['$animateProvider', /** @this */ function($animatePro
         close(true);
       }
 
-      function close(rejected) {
+      function close(rejected) { // jshint ignore:line
         // if the promise has been called already then we shouldn't close
         // the animation again
         if (animationClosed || (animationCompleted && animationPaused)) return;
@@ -1247,11 +1159,8 @@ var $AnimateCssProvider = ['$animateProvider', /** @this */ function($animatePro
 
         if (Object.keys(restoreStyles).length) {
           forEach(restoreStyles, function(value, prop) {
-            if (value) {
-              node.style.setProperty(prop, value);
-            } else {
-              node.style.removeProperty(prop);
-            }
+            value ? node.style.setProperty(prop, value)
+                  : node.style.removeProperty(prop);
           });
         }
 
@@ -1262,18 +1171,6 @@ var $AnimateCssProvider = ['$animateProvider', /** @this */ function($animatePro
         // will appear on screen for one animation frame causing an overbearing flicker.
         if (options.onDone) {
           options.onDone();
-        }
-
-        if (events && events.length) {
-          // Remove the transitionend / animationend listener(s)
-          element.off(events.join(' '), onAnimationProgress);
-        }
-
-        //Cancel the fallback closing timeout and remove the timer data
-        var animationTimerData = element.data(ANIMATE_TIMER_KEY);
-        if (animationTimerData) {
-          $timeout.cancel(animationTimerData[0].timer);
-          element.removeData(ANIMATE_TIMER_KEY);
         }
 
         // if the preparation function fails then the promise is not setup
@@ -1311,39 +1208,14 @@ var $AnimateCssProvider = ['$animateProvider', /** @this */ function($animatePro
         };
       }
 
-      function onAnimationProgress(event) {
-        event.stopPropagation();
-        var ev = event.originalEvent || event;
-
-        // we now always use `Date.now()` due to the recent changes with
-        // event.timeStamp in Firefox, Webkit and Chrome (see #13494 for more info)
-        var timeStamp = ev.$manualTimeStamp || Date.now();
-
-        /* Firefox (or possibly just Gecko) likes to not round values up
-         * when a ms measurement is used for the animation */
-        var elapsedTime = parseFloat(ev.elapsedTime.toFixed(ELAPSED_TIME_MAX_DECIMAL_PLACES));
-
-        /* $manualTimeStamp is a mocked timeStamp value which is set
-         * within browserTrigger(). This is only here so that tests can
-         * mock animations properly. Real events fallback to event.timeStamp,
-         * or, if they don't, then a timeStamp is automatically created for them.
-         * We're checking to see if the timeStamp surpasses the expected delay,
-         * but we're using elapsedTime instead of the timeStamp on the 2nd
-         * pre-condition since animationPauseds sometimes close off early */
-        if (Math.max(timeStamp - startTime, 0) >= maxDelayTime && elapsedTime >= maxDuration) {
-          // we set this flag to ensure that if the transition is paused then, when resumed,
-          // the animation will automatically close itself since transitions cannot be paused.
-          animationCompleted = true;
-          close();
-        }
-      }
-
       function start() {
         if (animationClosed) return;
         if (!node.parentNode) {
           close();
           return;
         }
+
+        var startTime, events = [];
 
         // even though we only pause keyframe animations here the pause flag
         // will still happen when transitions are used. Only the transition will
@@ -1354,11 +1226,9 @@ var $AnimateCssProvider = ['$animateProvider', /** @this */ function($animatePro
             animationPaused = !playAnimation;
             if (timings.animationDuration) {
               var value = blockKeyframeAnimations(node, animationPaused);
-              if (animationPaused) {
-                temporaryStyles.push(value);
-              } else {
-                removeFromArray(temporaryStyles, value);
-              }
+              animationPaused
+                  ? temporaryStyles.push(value)
+                  : removeFromArray(temporaryStyles, value);
             }
           } else if (animationPaused && playAnimation) {
             animationPaused = false;
@@ -1366,9 +1236,9 @@ var $AnimateCssProvider = ['$animateProvider', /** @this */ function($animatePro
           }
         };
 
-        // checking the stagger duration prevents an accidentally cascade of the CSS delay style
+        // checking the stagger duration prevents an accidently cascade of the CSS delay style
         // being inherited from the parent. If the transition duration is zero then we can safely
-        // rely that the delay value is an intentional stagger delay style.
+        // rely that the delay value is an intential stagger delay style.
         var maxStagger = itemIndex > 0
                          && ((timings.transitionDuration && stagger.transitionDuration === 0) ||
                             (timings.animationDuration && stagger.animationDuration === 0))
@@ -1407,7 +1277,7 @@ var $AnimateCssProvider = ['$animateProvider', /** @this */ function($animatePro
           $$jqLite.addClass(element, activeClasses);
 
           if (flags.recalculateTimingStyles) {
-            fullClassName = node.getAttribute('class') + ' ' + preparationClasses;
+            fullClassName = node.className + ' ' + preparationClasses;
             cacheKey = gcsHashFn(node, fullClassName);
 
             timings = computeTimings(node, fullClassName, cacheKey);
@@ -1425,7 +1295,7 @@ var $AnimateCssProvider = ['$animateProvider', /** @this */ function($animatePro
           }
 
           if (flags.applyAnimationDelay) {
-            relativeDelay = typeof options.delay !== 'boolean' && truthyTimingValue(options.delay)
+            relativeDelay = typeof options.delay !== "boolean" && truthyTimingValue(options.delay)
                   ? parseFloat(options.delay)
                   : relativeDelay;
 
@@ -1487,10 +1357,7 @@ var $AnimateCssProvider = ['$animateProvider', /** @this */ function($animatePro
             element.data(ANIMATE_TIMER_KEY, animationsData);
           }
 
-          if (events.length) {
-            element.on(events.join(' '), onAnimationProgress);
-          }
-
+          element.on(events.join(' '), onAnimationProgress);
           if (options.to) {
             if (options.cleanupStyles) {
               registerRestorableStyles(restoreStyles, node, Object.keys(options.to));
@@ -1512,12 +1379,36 @@ var $AnimateCssProvider = ['$animateProvider', /** @this */ function($animatePro
             element.removeData(ANIMATE_TIMER_KEY);
           }
         }
+
+        function onAnimationProgress(event) {
+          event.stopPropagation();
+          var ev = event.originalEvent || event;
+          var timeStamp = ev.$manualTimeStamp || ev.timeStamp || Date.now();
+
+          /* Firefox (or possibly just Gecko) likes to not round values up
+           * when a ms measurement is used for the animation */
+          var elapsedTime = parseFloat(ev.elapsedTime.toFixed(ELAPSED_TIME_MAX_DECIMAL_PLACES));
+
+          /* $manualTimeStamp is a mocked timeStamp value which is set
+           * within browserTrigger(). This is only here so that tests can
+           * mock animations properly. Real events fallback to event.timeStamp,
+           * or, if they don't, then a timeStamp is automatically created for them.
+           * We're checking to see if the timeStamp surpasses the expected delay,
+           * but we're using elapsedTime instead of the timeStamp on the 2nd
+           * pre-condition since animations sometimes close off early */
+          if (Math.max(timeStamp - startTime, 0) >= maxDelayTime && elapsedTime >= maxDuration) {
+            // we set this flag to ensure that if the transition is paused then, when resumed,
+            // the animation will automatically close itself since transitions cannot be paused.
+            animationCompleted = true;
+            close();
+          }
+        }
       }
     };
   }];
 }];
 
-var $$AnimateCssDriverProvider = ['$$animationProvider', /** @this */ function($$animationProvider) {
+var $$AnimateCssDriverProvider = ['$$animationProvider', function($$animationProvider) {
   $$animationProvider.drivers.push('$$animateCssDriver');
 
   var NG_ANIMATE_SHIM_CLASS_NAME = 'ng-animate-shim';
@@ -1541,10 +1432,12 @@ var $$AnimateCssDriverProvider = ['$$animationProvider', /** @this */ function($
 
     var rootBodyElement = jqLite(
       // this is to avoid using something that exists outside of the body
-      // we also special case the doc fragment case because our unit test code
+      // we also special case the doc fragement case because our unit test code
       // appends the $rootElement to the body after the app has been bootstrapped
       isDocumentFragment(rootNode) || bodyNode.contains(rootNode) ? rootNode : bodyNode
     );
+
+    var applyAnimationClasses = applyAnimationClassesFactory($$jqLite);
 
     return function initDriverFn(animationDetails) {
       return animationDetails.from && animationDetails.to
@@ -1639,7 +1532,7 @@ var $$AnimateCssDriverProvider = ['$$animationProvider', /** @this */ function($
         var coords = getDomNode(anchor).getBoundingClientRect();
 
         // we iterate directly since safari messes up and doesn't return
-        // all the keys for the coords object when iterated
+        // all the keys for the coods object when iterated
         forEach(['width','height','top','left'], function(key) {
           var value = coords[key];
           switch (key) {
@@ -1787,15 +1680,13 @@ var $$AnimateCssDriverProvider = ['$$animationProvider', /** @this */ function($
 // TODO(matsko): add documentation
 //  by the time...
 
-var $$AnimateJsProvider = ['$animateProvider', /** @this */ function($animateProvider) {
+var $$AnimateJsProvider = ['$animateProvider', function($animateProvider) {
   this.$get = ['$injector', '$$AnimateRunner', '$$jqLite',
        function($injector,   $$AnimateRunner,   $$jqLite) {
 
     var applyAnimationClasses = applyAnimationClassesFactory($$jqLite);
          // $animateJs(element, 'enter');
     return function(element, event, classes, options) {
-      var animationClosed = false;
-
       // the `classes` argument is optional and if it is not used
       // then the classes will be resolved from the element's className
       // property as well as options.addClass/options.removeClass.
@@ -1826,7 +1717,7 @@ var $$AnimateJsProvider = ['$animateProvider', /** @this */ function($animatePro
       var before, after;
       if (animations.length) {
         var afterFn, beforeFn;
-        if (event === 'leave') {
+        if (event == 'leave') {
           beforeFn = 'leave';
           afterFn = 'afterLeave'; // TODO(matsko): get rid of this
         } else {
@@ -1848,32 +1739,8 @@ var $$AnimateJsProvider = ['$animateProvider', /** @this */ function($animatePro
         applyAnimationClasses(element, options);
       }
 
-      function close() {
-        animationClosed = true;
-        applyOptions();
-        applyAnimationStyles(element, options);
-      }
-
-      var runner;
-
       return {
-        $$willAnimate: true,
-        end: function() {
-          if (runner) {
-            runner.end();
-          } else {
-            close();
-            runner = new $$AnimateRunner();
-            runner.complete(true);
-          }
-          return runner;
-        },
         start: function() {
-          if (runner) {
-            return runner;
-          }
-
-          runner = new $$AnimateRunner();
           var closeActiveAnimations;
           var chain = [];
 
@@ -1898,7 +1765,8 @@ var $$AnimateJsProvider = ['$animateProvider', /** @this */ function($animatePro
             });
           }
 
-          runner.setHost({
+          var animationClosed = false;
+          var runner = new $$AnimateRunner({
             end: function() {
               endAnimations();
             },
@@ -1911,7 +1779,9 @@ var $$AnimateJsProvider = ['$animateProvider', /** @this */ function($animatePro
           return runner;
 
           function onComplete(success) {
-            close(success);
+            animationClosed = true;
+            applyOptions();
+            applyAnimationStyles(element, options);
             runner.complete(success);
           }
 
@@ -2011,7 +1881,7 @@ var $$AnimateJsProvider = ['$animateProvider', /** @this */ function($animatePro
       function packageAnimations(element, event, options, animations, fnName) {
         var operations = groupEventedAnimations(element, event, options, animations, fnName);
         if (operations.length === 0) {
-          var a, b;
+          var a,b;
           if (fnName === 'beforeSetClass') {
             a = groupEventedAnimations(element, 'removeClass', options, animations, 'beforeRemoveClass');
             b = groupEventedAnimations(element, 'addClass', options, animations, 'beforeAddClass');
@@ -2039,19 +1909,11 @@ var $$AnimateJsProvider = ['$animateProvider', /** @this */ function($animatePro
             });
           }
 
-          if (runners.length) {
-            $$AnimateRunner.all(runners, callback);
-          }  else {
-            callback();
-          }
+          runners.length ? $$AnimateRunner.all(runners, callback) : callback();
 
           return function endFn(reject) {
             forEach(runners, function(runner) {
-              if (reject) {
-                runner.cancel();
-              } else {
-                runner.end();
-              }
+              reject ? runner.cancel() : runner.end();
             });
           };
         };
@@ -2061,7 +1923,7 @@ var $$AnimateJsProvider = ['$animateProvider', /** @this */ function($animatePro
     function lookupAnimations(classes) {
       classes = isArray(classes) ? classes : classes.split(' ');
       var matches = [], flagMap = {};
-      for (var i = 0; i < classes.length; i++) {
+      for (var i=0; i < classes.length; i++) {
         var klass = classes[i],
             animationFactory = $animateProvider.$$registeredAnimations[klass];
         if (animationFactory && !flagMap[klass]) {
@@ -2074,7 +1936,7 @@ var $$AnimateJsProvider = ['$animateProvider', /** @this */ function($animatePro
   }];
 }];
 
-var $$AnimateJsDriverProvider = ['$$animationProvider', /** @this */ function($$animationProvider) {
+var $$AnimateJsDriverProvider = ['$$animationProvider', function($$animationProvider) {
   $$animationProvider.drivers.push('$$animateJsDriver');
   this.$get = ['$$animateJs', '$$AnimateRunner', function($$animateJs, $$AnimateRunner) {
     return function initDriverFn(animationDetails) {
@@ -2136,10 +1998,9 @@ var $$AnimateJsDriverProvider = ['$$animationProvider', /** @this */ function($$
 
 var NG_ANIMATE_ATTR_NAME = 'data-ng-animate';
 var NG_ANIMATE_PIN_DATA = '$ngAnimatePin';
-var $$AnimateQueueProvider = ['$animateProvider', /** @this */ function($animateProvider) {
+var $$AnimateQueueProvider = ['$animateProvider', function($animateProvider) {
   var PRE_DIGEST_STATE = 1;
   var RUNNING_STATE = 2;
-  var ONE_SPACE = ' ';
 
   var rules = this.rules = {
     skip: [],
@@ -2147,102 +2008,67 @@ var $$AnimateQueueProvider = ['$animateProvider', /** @this */ function($animate
     join: []
   };
 
-  function makeTruthyCssClassMap(classString) {
-    if (!classString) {
-      return null;
-    }
-
-    var keys = classString.split(ONE_SPACE);
-    var map = Object.create(null);
-
-    forEach(keys, function(key) {
-      map[key] = true;
-    });
-    return map;
-  }
-
-  function hasMatchingClasses(newClassString, currentClassString) {
-    if (newClassString && currentClassString) {
-      var currentClassMap = makeTruthyCssClassMap(currentClassString);
-      return newClassString.split(ONE_SPACE).some(function(className) {
-        return currentClassMap[className];
-      });
-    }
-  }
-
-  function isAllowed(ruleType, currentAnimation, previousAnimation) {
+  function isAllowed(ruleType, element, currentAnimation, previousAnimation) {
     return rules[ruleType].some(function(fn) {
-      return fn(currentAnimation, previousAnimation);
+      return fn(element, currentAnimation, previousAnimation);
     });
   }
 
-  function hasAnimationClasses(animation, and) {
-    var a = (animation.addClass || '').length > 0;
-    var b = (animation.removeClass || '').length > 0;
+  function hasAnimationClasses(options, and) {
+    options = options || {};
+    var a = (options.addClass || '').length > 0;
+    var b = (options.removeClass || '').length > 0;
     return and ? a && b : a || b;
   }
 
-  rules.join.push(function(newAnimation, currentAnimation) {
+  rules.join.push(function(element, newAnimation, currentAnimation) {
     // if the new animation is class-based then we can just tack that on
-    return !newAnimation.structural && hasAnimationClasses(newAnimation);
+    return !newAnimation.structural && hasAnimationClasses(newAnimation.options);
   });
 
-  rules.skip.push(function(newAnimation, currentAnimation) {
+  rules.skip.push(function(element, newAnimation, currentAnimation) {
     // there is no need to animate anything if no classes are being added and
     // there is no structural animation that will be triggered
-    return !newAnimation.structural && !hasAnimationClasses(newAnimation);
+    return !newAnimation.structural && !hasAnimationClasses(newAnimation.options);
   });
 
-  rules.skip.push(function(newAnimation, currentAnimation) {
+  rules.skip.push(function(element, newAnimation, currentAnimation) {
     // why should we trigger a new structural animation if the element will
     // be removed from the DOM anyway?
-    return currentAnimation.event === 'leave' && newAnimation.structural;
+    return currentAnimation.event == 'leave' && newAnimation.structural;
   });
 
-  rules.skip.push(function(newAnimation, currentAnimation) {
+  rules.skip.push(function(element, newAnimation, currentAnimation) {
     // if there is an ongoing current animation then don't even bother running the class-based animation
     return currentAnimation.structural && currentAnimation.state === RUNNING_STATE && !newAnimation.structural;
   });
 
-  rules.cancel.push(function(newAnimation, currentAnimation) {
+  rules.cancel.push(function(element, newAnimation, currentAnimation) {
     // there can never be two structural animations running at the same time
     return currentAnimation.structural && newAnimation.structural;
   });
 
-  rules.cancel.push(function(newAnimation, currentAnimation) {
+  rules.cancel.push(function(element, newAnimation, currentAnimation) {
     // if the previous animation is already running, but the new animation will
     // be triggered, but the new animation is structural
     return currentAnimation.state === RUNNING_STATE && newAnimation.structural;
   });
 
-  rules.cancel.push(function(newAnimation, currentAnimation) {
-    // cancel the animation if classes added / removed in both animation cancel each other out,
-    // but only if the current animation isn't structural
+  rules.cancel.push(function(element, newAnimation, currentAnimation) {
+    var nO = newAnimation.options;
+    var cO = currentAnimation.options;
 
-    if (currentAnimation.structural) return false;
-
-    var nA = newAnimation.addClass;
-    var nR = newAnimation.removeClass;
-    var cA = currentAnimation.addClass;
-    var cR = currentAnimation.removeClass;
-
-    // early detection to save the global CPU shortage :)
-    if ((isUndefined(nA) && isUndefined(nR)) || (isUndefined(cA) && isUndefined(cR))) {
-      return false;
-    }
-
-    return hasMatchingClasses(nA, cR) || hasMatchingClasses(nR, cA);
+    // if the exact same CSS class is added/removed then it's safe to cancel it
+    return (nO.addClass && nO.addClass === cO.removeClass) || (nO.removeClass && nO.removeClass === cO.addClass);
   });
 
-  this.$get = ['$$rAF', '$rootScope', '$rootElement', '$document', '$$Map',
+  this.$get = ['$$rAF', '$rootScope', '$rootElement', '$document', '$$HashMap',
                '$$animation', '$$AnimateRunner', '$templateRequest', '$$jqLite', '$$forceReflow',
-               '$$isDocumentHidden',
-       function($$rAF,   $rootScope,   $rootElement,   $document,   $$Map,
-                $$animation,   $$AnimateRunner,   $templateRequest,   $$jqLite,   $$forceReflow,
-                $$isDocumentHidden) {
+       function($$rAF,   $rootScope,   $rootElement,   $document,   $$HashMap,
+                $$animation,   $$AnimateRunner,   $templateRequest,   $$jqLite,   $$forceReflow) {
 
-    var activeAnimationsLookup = new $$Map();
-    var disabledElementsLookup = new $$Map();
+    var activeAnimationsLookup = new $$HashMap();
+    var disabledElementsLookup = new $$HashMap();
     var animationsEnabled = null;
 
     function postDigestTaskFactory() {
@@ -2292,40 +2118,34 @@ var $$AnimateQueueProvider = ['$animateProvider', /** @this */ function($animate
       }
     );
 
-    var callbackRegistry = Object.create(null);
+    var callbackRegistry = {};
 
-    // remember that the `customFilter`/`classNameFilter` are set during the
-    // provider/config stage therefore we can optimize here and setup helper functions
-    var customFilter = $animateProvider.customFilter();
+    // remember that the classNameFilter is set during the provider/config
+    // stage therefore we can optimize here and setup a helper function
     var classNameFilter = $animateProvider.classNameFilter();
-    var returnTrue = function() { return true; };
-
-    var isAnimatableByFilter = customFilter || returnTrue;
-    var isAnimatableClassName = !classNameFilter ? returnTrue : function(node, options) {
-      var className = [node.getAttribute('class'), options.addClass, options.removeClass].join(' ');
-      return classNameFilter.test(className);
-    };
+    var isAnimatableClassName = !classNameFilter
+              ? function() { return true; }
+              : function(className) {
+                return classNameFilter.test(className);
+              };
 
     var applyAnimationClasses = applyAnimationClassesFactory($$jqLite);
 
-    function normalizeAnimationDetails(element, animation) {
-      return mergeAnimationDetails(element, animation, {});
+    function normalizeAnimationOptions(element, options) {
+      return mergeAnimationOptions(element, options, {});
     }
 
-    // IE9-11 has no method "contains" in SVG element and in Node.prototype. Bug #10259.
-    var contains = window.Node.prototype.contains || /** @this */ function(arg) {
-      // eslint-disable-next-line no-bitwise
-      return this === arg || !!(this.compareDocumentPosition(arg) & 16);
-    };
+    function findCallbacks(parent, element, event) {
+      var targetNode = getDomNode(element);
+      var targetParentNode = getDomNode(parent);
 
-    function findCallbacks(targetParentNode, targetNode, event) {
       var matches = [];
       var entries = callbackRegistry[event];
       if (entries) {
         forEach(entries, function(entry) {
-          if (contains.call(entry.node, targetNode)) {
+          if (entry.node.contains(targetNode)) {
             matches.push(entry.callback);
-          } else if (event === 'leave' && contains.call(entry.node, targetParentNode)) {
+          } else if (event === 'leave' && entry.node.contains(targetParentNode)) {
             matches.push(entry.callback);
           }
         });
@@ -2334,24 +2154,7 @@ var $$AnimateQueueProvider = ['$animateProvider', /** @this */ function($animate
       return matches;
     }
 
-    function filterFromRegistry(list, matchContainer, matchCallback) {
-      var containerNode = extractElementNode(matchContainer);
-      return list.filter(function(entry) {
-        var isMatch = entry.node === containerNode &&
-                        (!matchCallback || entry.callback === matchCallback);
-        return !isMatch;
-      });
-    }
-
-    function cleanupEventListeners(phase, node) {
-      if (phase === 'close' && !node.parentNode) {
-        // If the element is not attached to a parentNode, it has been removed by
-        // the domOperation, and we can safely remove the event callbacks
-        $animate.off(node);
-      }
-    }
-
-    var $animate = {
+    return {
       on: function(event, container, callback) {
         var node = extractElementNode(container);
         callbackRegistry[event] = callbackRegistry[event] || [];
@@ -2359,36 +2162,24 @@ var $$AnimateQueueProvider = ['$animateProvider', /** @this */ function($animate
           node: node,
           callback: callback
         });
-
-        // Remove the callback when the element is removed from the DOM
-        jqLite(container).on('$destroy', function() {
-          var animationDetails = activeAnimationsLookup.get(node);
-
-          if (!animationDetails) {
-            // If there's an animation ongoing, the callback calling code will remove
-            // the event listeners. If we'd remove here, the callbacks would be removed
-            // before the animation ends
-            $animate.off(event, container, callback);
-          }
-        });
       },
 
       off: function(event, container, callback) {
-        if (arguments.length === 1 && !isString(arguments[0])) {
-          container = arguments[0];
-          for (var eventType in callbackRegistry) {
-            callbackRegistry[eventType] = filterFromRegistry(callbackRegistry[eventType], container);
-          }
-
-          return;
-        }
-
         var entries = callbackRegistry[event];
         if (!entries) return;
 
         callbackRegistry[event] = arguments.length === 1
             ? null
             : filterFromRegistry(entries, container, callback);
+
+        function filterFromRegistry(list, matchContainer, matchCallback) {
+          var containerNode = extractElementNode(matchContainer);
+          return list.filter(function(entry) {
+            var isMatch = entry.node === containerNode &&
+                            (!matchCallback || entry.callback === matchCallback);
+            return !isMatch;
+          });
+        }
       },
 
       pin: function(element, parentElement) {
@@ -2422,13 +2213,19 @@ var $$AnimateQueueProvider = ['$animateProvider', /** @this */ function($animate
             bool = animationsEnabled = !!element;
           } else {
             var node = getDomNode(element);
+            var recordExists = disabledElementsLookup.get(node);
 
             if (argCount === 1) {
               // (element) - Element getter
-              bool = !disabledElementsLookup.get(node);
+              bool = !recordExists;
             } else {
               // (element, bool) - Element setter
-              disabledElementsLookup.set(node, !bool);
+              bool = !!bool;
+              if (!bool) {
+                disabledElementsLookup.put(node, true);
+              } else if (recordExists) {
+                disabledElementsLookup.remove(node);
+              }
             }
           }
         }
@@ -2437,17 +2234,13 @@ var $$AnimateQueueProvider = ['$animateProvider', /** @this */ function($animate
       }
     };
 
-    return $animate;
-
-    function queueAnimation(originalElement, event, initialOptions) {
-      // we always make a copy of the options since
-      // there should never be any side effects on
-      // the input data when running `$animateCss`.
-      var options = copy(initialOptions);
-
-      var element = stripCommentsFromElement(originalElement);
-      var node = getDomNode(element);
-      var parentNode = node && node.parentNode;
+    function queueAnimation(element, event, options) {
+      var node, parent;
+      element = stripCommentsFromElement(element);
+      if (element) {
+        node = getDomNode(element);
+        parent = element.parent();
+      }
 
       options = prepareAnimationOptions(options);
 
@@ -2482,70 +2275,66 @@ var $$AnimateQueueProvider = ['$animateProvider', /** @this */ function($animate
         options.to = null;
       }
 
-      // If animations are hard-disabled for the whole application there is no need to continue.
-      // There are also situations where a directive issues an animation for a jqLite wrapper that
-      // contains only comment nodes. In this case, there is no way we can perform an animation.
-      if (!animationsEnabled ||
-          !node ||
-          !isAnimatableByFilter(node, event, initialOptions) ||
-          !isAnimatableClassName(node, options)) {
+      // there are situations where a directive issues an animation for
+      // a jqLite wrapper that contains only comment nodes... If this
+      // happens then there is no way we can perform an animation
+      if (!node) {
+        close();
+        return runner;
+      }
+
+      var className = [node.className, options.addClass, options.removeClass].join(' ');
+      if (!isAnimatableClassName(className)) {
         close();
         return runner;
       }
 
       var isStructural = ['enter', 'move', 'leave'].indexOf(event) >= 0;
 
-      var documentHidden = $$isDocumentHidden();
-
-      // This is a hard disable of all animations the element itself, therefore  there is no need to
-      // continue further past this point if not enabled
-      // Animations are also disabled if the document is currently hidden (page is not visible
-      // to the user), because browsers slow down or do not flush calls to requestAnimationFrame
-      var skipAnimations = documentHidden || disabledElementsLookup.get(node);
+      // this is a hard disable of all animations for the application or on
+      // the element itself, therefore  there is no need to continue further
+      // past this point if not enabled
+      var skipAnimations = !animationsEnabled || disabledElementsLookup.get(node);
       var existingAnimation = (!skipAnimations && activeAnimationsLookup.get(node)) || {};
       var hasExistingAnimation = !!existingAnimation.state;
 
       // there is no point in traversing the same collection of parent ancestors if a followup
       // animation will be run on the same element that already did all that checking work
-      if (!skipAnimations && (!hasExistingAnimation || existingAnimation.state !== PRE_DIGEST_STATE)) {
-        skipAnimations = !areAnimationsAllowed(node, parentNode, event);
+      if (!skipAnimations && (!hasExistingAnimation || existingAnimation.state != PRE_DIGEST_STATE)) {
+        skipAnimations = !areAnimationsAllowed(element, parent, event);
       }
 
       if (skipAnimations) {
-        // Callbacks should fire even if the document is hidden (regression fix for issue #14120)
-        if (documentHidden) notifyProgress(runner, event, 'start');
         close();
-        if (documentHidden) notifyProgress(runner, event, 'close');
         return runner;
       }
 
       if (isStructural) {
-        closeChildAnimations(node);
+        closeChildAnimations(element);
       }
 
       var newAnimation = {
         structural: isStructural,
         element: element,
         event: event,
-        addClass: options.addClass,
-        removeClass: options.removeClass,
         close: close,
         options: options,
         runner: runner
       };
 
       if (hasExistingAnimation) {
-        var skipAnimationFlag = isAllowed('skip', newAnimation, existingAnimation);
+        var skipAnimationFlag = isAllowed('skip', element, newAnimation, existingAnimation);
         if (skipAnimationFlag) {
           if (existingAnimation.state === RUNNING_STATE) {
             close();
             return runner;
           } else {
-            mergeAnimationDetails(element, existingAnimation, newAnimation);
+            mergeAnimationOptions(element, existingAnimation.options, options);
             return existingAnimation.runner;
           }
         }
-        var cancelAnimationFlag = isAllowed('cancel', newAnimation, existingAnimation);
+
+        var cancelAnimationFlag = isAllowed('cancel', element, newAnimation, existingAnimation);
         if (cancelAnimationFlag) {
           if (existingAnimation.state === RUNNING_STATE) {
             // this will end the animation right away and it is safe
@@ -2559,23 +2348,22 @@ var $$AnimateQueueProvider = ['$animateProvider', /** @this */ function($animate
             existingAnimation.close();
           } else {
             // this will merge the new animation options into existing animation options
-            mergeAnimationDetails(element, existingAnimation, newAnimation);
-
+            mergeAnimationOptions(element, existingAnimation.options, newAnimation.options);
             return existingAnimation.runner;
           }
         } else {
           // a joined animation means that this animation will take over the existing one
           // so an example would involve a leave animation taking over an enter. Then when
           // the postDigest kicks in the enter will be ignored.
-          var joinAnimationFlag = isAllowed('join', newAnimation, existingAnimation);
+          var joinAnimationFlag = isAllowed('join', element, newAnimation, existingAnimation);
           if (joinAnimationFlag) {
             if (existingAnimation.state === RUNNING_STATE) {
-              normalizeAnimationDetails(element, newAnimation);
+              normalizeAnimationOptions(element, options);
             } else {
               applyGeneratedPreparationClasses(element, isStructural ? event : null, options);
 
               event = newAnimation.event = existingAnimation.event;
-              options = mergeAnimationDetails(element, existingAnimation, newAnimation);
+              options = mergeAnimationOptions(element, existingAnimation.options, newAnimation.options);
 
               //we return the same runner since only the option values of this animation will
               //be fed into the `existingAnimation`.
@@ -2586,7 +2374,7 @@ var $$AnimateQueueProvider = ['$animateProvider', /** @this */ function($animate
       } else {
         // normalization in this case means that it removes redundant CSS classes that
         // already exist (addClass) or do not exist (removeClass) on the element
-        normalizeAnimationDetails(element, newAnimation);
+        normalizeAnimationOptions(element, options);
       }
 
       // when the options are merged and cleaned up we may end up not having to do
@@ -2596,12 +2384,12 @@ var $$AnimateQueueProvider = ['$animateProvider', /** @this */ function($animate
       if (!isValidAnimation) {
         // animate (from/to) can be quickly checked first, otherwise we check if any classes are present
         isValidAnimation = (newAnimation.event === 'animate' && Object.keys(newAnimation.options.to || {}).length > 0)
-                            || hasAnimationClasses(newAnimation);
+                            || hasAnimationClasses(newAnimation.options);
       }
 
       if (!isValidAnimation) {
         close();
-        clearElementAnimationState(node);
+        clearElementAnimationState(element);
         return runner;
       }
 
@@ -2609,18 +2397,9 @@ var $$AnimateQueueProvider = ['$animateProvider', /** @this */ function($animate
       var counter = (existingAnimation.counter || 0) + 1;
       newAnimation.counter = counter;
 
-      markElementAnimationState(node, PRE_DIGEST_STATE, newAnimation);
+      markElementAnimationState(element, PRE_DIGEST_STATE, newAnimation);
 
       $rootScope.$$postDigest(function() {
-        // It is possible that the DOM nodes inside `originalElement` have been replaced. This can
-        // happen if the animated element is a transcluded clone and also has a `templateUrl`
-        // directive on it. Therefore, we must recreate `element` in order to interact with the
-        // actual DOM nodes.
-        // Note: We still need to use the old `node` for certain things, such as looking up in
-        //       HashMaps where it was used as the key.
-
-        element = stripCommentsFromElement(originalElement);
-
         var animationDetails = activeAnimationsLookup.get(node);
         var animationCancelled = !animationDetails;
         animationDetails = animationDetails || {};
@@ -2635,7 +2414,7 @@ var $$AnimateQueueProvider = ['$animateProvider', /** @this */ function($animate
         var isValidAnimation = parentElement.length > 0
                                 && (animationDetails.event === 'animate'
                                     || animationDetails.structural
-                                    || hasAnimationClasses(animationDetails));
+                                    || hasAnimationClasses(animationDetails.options));
 
         // this means that the previous animation was cancelled
         // even if the follow-up animation is the same event
@@ -2659,7 +2438,7 @@ var $$AnimateQueueProvider = ['$animateProvider', /** @this */ function($animate
           // isn't allowed to animate from here then we need to clear the state of the element
           // so that any future animations won't read the expired animation data.
           if (!isValidAnimation) {
-            clearElementAnimationState(node);
+            clearElementAnimationState(element);
           }
 
           return;
@@ -2667,33 +2446,33 @@ var $$AnimateQueueProvider = ['$animateProvider', /** @this */ function($animate
 
         // this combined multiple class to addClass / removeClass into a setClass event
         // so long as a structural event did not take over the animation
-        event = !animationDetails.structural && hasAnimationClasses(animationDetails, true)
+        event = !animationDetails.structural && hasAnimationClasses(animationDetails.options, true)
             ? 'setClass'
             : animationDetails.event;
 
-        markElementAnimationState(node, RUNNING_STATE);
+        markElementAnimationState(element, RUNNING_STATE);
         var realRunner = $$animation(element, event, animationDetails.options);
-
-        // this will update the runner's flow-control events based on
-        // the `realRunner` object.
-        runner.setHost(realRunner);
-        notifyProgress(runner, event, 'start', {});
 
         realRunner.done(function(status) {
           close(!status);
           var animationDetails = activeAnimationsLookup.get(node);
           if (animationDetails && animationDetails.counter === counter) {
-            clearElementAnimationState(node);
+            clearElementAnimationState(getDomNode(element));
           }
           notifyProgress(runner, event, 'close', {});
         });
+
+        // this will update the runner's flow-control events based on
+        // the `realRunner` object.
+        runner.setHost(realRunner);
+        notifyProgress(runner, event, 'start', {});
       });
 
       return runner;
 
       function notifyProgress(runner, event, phase, data) {
         runInNextPostDigestOrNow(function() {
-          var callbacks = findCallbacks(parentNode, node, event);
+          var callbacks = findCallbacks(parent, element, event);
           if (callbacks.length) {
             // do not optimize this call here to RAF because
             // we don't know how heavy the callback code here will
@@ -2703,16 +2482,13 @@ var $$AnimateQueueProvider = ['$animateProvider', /** @this */ function($animate
               forEach(callbacks, function(callback) {
                 callback(element, phase, data);
               });
-              cleanupEventListeners(phase, node);
             });
-          } else {
-            cleanupEventListeners(phase, node);
           }
         });
         runner.progress(event, phase, data);
       }
 
-      function close(reject) {
+      function close(reject) { // jshint ignore:line
         clearGeneratedClasses(element, options);
         applyAnimationClasses(element, options);
         applyAnimationStyles(element, options);
@@ -2721,58 +2497,55 @@ var $$AnimateQueueProvider = ['$animateProvider', /** @this */ function($animate
       }
     }
 
-    function closeChildAnimations(node) {
+    function closeChildAnimations(element) {
+      var node = getDomNode(element);
       var children = node.querySelectorAll('[' + NG_ANIMATE_ATTR_NAME + ']');
       forEach(children, function(child) {
-        var state = parseInt(child.getAttribute(NG_ANIMATE_ATTR_NAME), 10);
+        var state = parseInt(child.getAttribute(NG_ANIMATE_ATTR_NAME));
         var animationDetails = activeAnimationsLookup.get(child);
-        if (animationDetails) {
-          switch (state) {
-            case RUNNING_STATE:
-              animationDetails.runner.end();
-              /* falls through */
-            case PRE_DIGEST_STATE:
-              activeAnimationsLookup.delete(child);
-              break;
-          }
+        switch (state) {
+          case RUNNING_STATE:
+            animationDetails.runner.end();
+            /* falls through */
+          case PRE_DIGEST_STATE:
+            if (animationDetails) {
+              activeAnimationsLookup.remove(child);
+            }
+            break;
         }
       });
     }
 
-    function clearElementAnimationState(node) {
+    function clearElementAnimationState(element) {
+      var node = getDomNode(element);
       node.removeAttribute(NG_ANIMATE_ATTR_NAME);
-      activeAnimationsLookup.delete(node);
+      activeAnimationsLookup.remove(node);
     }
 
-    /**
-     * This fn returns false if any of the following is true:
-     * a) animations on any parent element are disabled, and animations on the element aren't explicitly allowed
-     * b) a parent element has an ongoing structural animation, and animateChildren is false
-     * c) the element is not a child of the body
-     * d) the element is not a child of the $rootElement
-     */
-    function areAnimationsAllowed(node, parentNode, event) {
-      var bodyNode = $document[0].body;
-      var rootNode = getDomNode($rootElement);
+    function isMatchingElement(nodeOrElmA, nodeOrElmB) {
+      return getDomNode(nodeOrElmA) === getDomNode(nodeOrElmB);
+    }
 
-      var bodyNodeDetected = (node === bodyNode) || node.nodeName === 'HTML';
-      var rootNodeDetected = (node === rootNode);
+    function areAnimationsAllowed(element, parentElement, event) {
+      var bodyElement = jqLite($document[0].body);
+      var bodyElementDetected = isMatchingElement(element, bodyElement) || element[0].nodeName === 'HTML';
+      var rootElementDetected = isMatchingElement(element, $rootElement);
       var parentAnimationDetected = false;
-      var elementDisabled = disabledElementsLookup.get(node);
       var animateChildren;
 
-      var parentHost = jqLite.data(node, NG_ANIMATE_PIN_DATA);
+      var parentHost = element.data(NG_ANIMATE_PIN_DATA);
       if (parentHost) {
-        parentNode = getDomNode(parentHost);
+        parentElement = parentHost;
       }
 
-      while (parentNode) {
-        if (!rootNodeDetected) {
+      while (parentElement && parentElement.length) {
+        if (!rootElementDetected) {
           // angular doesn't want to attempt to animate elements outside of the application
           // therefore we need to ensure that the rootElement is an ancestor of the current element
-          rootNodeDetected = (parentNode === rootNode);
+          rootElementDetected = isMatchingElement(parentElement, $rootElement);
         }
 
+        var parentNode = parentElement[0];
         if (parentNode.nodeType !== ELEMENT_NODE) {
           // no point in inspecting the #document element
           break;
@@ -2783,22 +2556,11 @@ var $$AnimateQueueProvider = ['$animateProvider', /** @this */ function($animate
         // therefore we can't allow any animations to take place
         // but if a parent animation is class-based then that's ok
         if (!parentAnimationDetected) {
-          var parentNodeDisabled = disabledElementsLookup.get(parentNode);
-
-          if (parentNodeDisabled === true && elementDisabled !== false) {
-            // disable animations if the user hasn't explicitly enabled animations on the
-            // current element
-            elementDisabled = true;
-            // element is disabled via parent element, no need to check anything else
-            break;
-          } else if (parentNodeDisabled === false) {
-            elementDisabled = false;
-          }
-          parentAnimationDetected = details.structural;
+          parentAnimationDetected = details.structural || disabledElementsLookup.get(parentNode);
         }
 
         if (isUndefined(animateChildren) || animateChildren === true) {
-          var value = jqLite.data(parentNode, NG_ANIMATE_CHILDREN_DATA);
+          var value = parentElement.data(NG_ANIMATE_CHILDREN_DATA);
           if (isDefined(value)) {
             animateChildren = value;
           }
@@ -2807,53 +2569,213 @@ var $$AnimateQueueProvider = ['$animateProvider', /** @this */ function($animate
         // there is no need to continue traversing at this point
         if (parentAnimationDetected && animateChildren === false) break;
 
-        if (!bodyNodeDetected) {
-          // we also need to ensure that the element is or will be a part of the body element
-          // otherwise it is pointless to even issue an animation to be rendered
-          bodyNodeDetected = (parentNode === bodyNode);
-        }
-
-        if (bodyNodeDetected && rootNodeDetected) {
-          // If both body and root have been found, any other checks are pointless,
-          // as no animation data should live outside the application
-          break;
-        }
-
-        if (!rootNodeDetected) {
-          // If `rootNode` is not detected, check if `parentNode` is pinned to another element
-          parentHost = jqLite.data(parentNode, NG_ANIMATE_PIN_DATA);
-          if (parentHost) {
-            // The pin target element becomes the next parent element
-            parentNode = getDomNode(parentHost);
-            continue;
+        if (!rootElementDetected) {
+          // angular doesn't want to attempt to animate elements outside of the application
+          // therefore we need to ensure that the rootElement is an ancestor of the current element
+          rootElementDetected = isMatchingElement(parentElement, $rootElement);
+          if (!rootElementDetected) {
+            parentHost = parentElement.data(NG_ANIMATE_PIN_DATA);
+            if (parentHost) {
+              parentElement = parentHost;
+            }
           }
         }
 
-        parentNode = parentNode.parentNode;
+        if (!bodyElementDetected) {
+          // we also need to ensure that the element is or will be apart of the body element
+          // otherwise it is pointless to even issue an animation to be rendered
+          bodyElementDetected = isMatchingElement(parentElement, bodyElement);
+        }
+
+        parentElement = parentElement.parent();
       }
 
-      var allowAnimation = (!parentAnimationDetected || animateChildren) && elementDisabled !== true;
-      return allowAnimation && rootNodeDetected && bodyNodeDetected;
+      var allowAnimation = !parentAnimationDetected || animateChildren;
+      return allowAnimation && rootElementDetected && bodyElementDetected;
     }
 
-    function markElementAnimationState(node, state, details) {
+    function markElementAnimationState(element, state, details) {
       details = details || {};
       details.state = state;
 
+      var node = getDomNode(element);
       node.setAttribute(NG_ANIMATE_ATTR_NAME, state);
 
       var oldValue = activeAnimationsLookup.get(node);
       var newValue = oldValue
           ? extend(oldValue, details)
           : details;
-      activeAnimationsLookup.set(node, newValue);
+      activeAnimationsLookup.put(node, newValue);
     }
   }];
 }];
 
-/* exported $$AnimationProvider */
+var $$AnimateAsyncRunFactory = ['$$rAF', function($$rAF) {
+  var waitQueue = [];
 
-var $$AnimationProvider = ['$animateProvider', /** @this */ function($animateProvider) {
+  function waitForTick(fn) {
+    waitQueue.push(fn);
+    if (waitQueue.length > 1) return;
+    $$rAF(function() {
+      for (var i = 0; i < waitQueue.length; i++) {
+        waitQueue[i]();
+      }
+      waitQueue = [];
+    });
+  }
+
+  return function() {
+    var passed = false;
+    waitForTick(function() {
+      passed = true;
+    });
+    return function(callback) {
+      passed ? callback() : waitForTick(callback);
+    };
+  };
+}];
+
+var $$AnimateRunnerFactory = ['$q', '$sniffer', '$$animateAsyncRun',
+                      function($q,   $sniffer,   $$animateAsyncRun) {
+
+  var INITIAL_STATE = 0;
+  var DONE_PENDING_STATE = 1;
+  var DONE_COMPLETE_STATE = 2;
+
+  AnimateRunner.chain = function(chain, callback) {
+    var index = 0;
+
+    next();
+    function next() {
+      if (index === chain.length) {
+        callback(true);
+        return;
+      }
+
+      chain[index](function(response) {
+        if (response === false) {
+          callback(false);
+          return;
+        }
+        index++;
+        next();
+      });
+    }
+  };
+
+  AnimateRunner.all = function(runners, callback) {
+    var count = 0;
+    var status = true;
+    forEach(runners, function(runner) {
+      runner.done(onProgress);
+    });
+
+    function onProgress(response) {
+      status = status && response;
+      if (++count === runners.length) {
+        callback(status);
+      }
+    }
+  };
+
+  function AnimateRunner(host) {
+    this.setHost(host);
+
+    this._doneCallbacks = [];
+    this._runInAnimationFrame = $$animateAsyncRun();
+    this._state = 0;
+  }
+
+  AnimateRunner.prototype = {
+    setHost: function(host) {
+      this.host = host || {};
+    },
+
+    done: function(fn) {
+      if (this._state === DONE_COMPLETE_STATE) {
+        fn();
+      } else {
+        this._doneCallbacks.push(fn);
+      }
+    },
+
+    progress: noop,
+
+    getPromise: function() {
+      if (!this.promise) {
+        var self = this;
+        this.promise = $q(function(resolve, reject) {
+          self.done(function(status) {
+            status === false ? reject() : resolve();
+          });
+        });
+      }
+      return this.promise;
+    },
+
+    then: function(resolveHandler, rejectHandler) {
+      return this.getPromise().then(resolveHandler, rejectHandler);
+    },
+
+    'catch': function(handler) {
+      return this.getPromise()['catch'](handler);
+    },
+
+    'finally': function(handler) {
+      return this.getPromise()['finally'](handler);
+    },
+
+    pause: function() {
+      if (this.host.pause) {
+        this.host.pause();
+      }
+    },
+
+    resume: function() {
+      if (this.host.resume) {
+        this.host.resume();
+      }
+    },
+
+    end: function() {
+      if (this.host.end) {
+        this.host.end();
+      }
+      this._resolve(true);
+    },
+
+    cancel: function() {
+      if (this.host.cancel) {
+        this.host.cancel();
+      }
+      this._resolve(false);
+    },
+
+    complete: function(response) {
+      var self = this;
+      if (self._state === INITIAL_STATE) {
+        self._state = DONE_PENDING_STATE;
+        self._runInAnimationFrame(function() {
+          self._resolve(response);
+        });
+      }
+    },
+
+    _resolve: function(response) {
+      if (this._state !== DONE_COMPLETE_STATE) {
+        forEach(this._doneCallbacks, function(fn) {
+          fn(response);
+        });
+        this._doneCallbacks.length = 0;
+        this._state = DONE_COMPLETE_STATE;
+      }
+    }
+  };
+
+  return AnimateRunner;
+}];
+
+var $$AnimationProvider = ['$animateProvider', function($animateProvider) {
   var NG_ANIMATE_REF_ATTR = 'ng-animate-ref';
 
   var drivers = this.drivers = [];
@@ -2872,21 +2794,21 @@ var $$AnimationProvider = ['$animateProvider', /** @this */ function($animatePro
     return element.data(RUNNER_STORAGE_KEY);
   }
 
-  this.$get = ['$$jqLite', '$rootScope', '$injector', '$$AnimateRunner', '$$Map', '$$rAFScheduler',
-       function($$jqLite,   $rootScope,   $injector,   $$AnimateRunner,   $$Map,   $$rAFScheduler) {
+  this.$get = ['$$jqLite', '$rootScope', '$injector', '$$AnimateRunner', '$$HashMap', '$$rAFScheduler',
+       function($$jqLite,   $rootScope,   $injector,   $$AnimateRunner,   $$HashMap,   $$rAFScheduler) {
 
     var animationQueue = [];
     var applyAnimationClasses = applyAnimationClassesFactory($$jqLite);
 
     function sortAnimations(animations) {
       var tree = { children: [] };
-      var i, lookup = new $$Map();
+      var i, lookup = new $$HashMap();
 
-      // this is done first beforehand so that the map
+      // this is done first beforehand so that the hashmap
       // is filled with a list of the elements that will be animated
       for (i = 0; i < animations.length; i++) {
         var animation = animations[i];
-        lookup.set(animation.domNode, animations[i] = {
+        lookup.put(animation.domNode, animations[i] = {
           domNode: animation.domNode,
           fn: animation.fn,
           children: []
@@ -2905,7 +2827,7 @@ var $$AnimationProvider = ['$animateProvider', /** @this */ function($animatePro
 
         var elementNode = entry.domNode;
         var parentNode = elementNode.parentNode;
-        lookup.set(elementNode, entry);
+        lookup.put(elementNode, entry);
 
         var parentEntry;
         while (parentNode) {
@@ -2986,12 +2908,6 @@ var $$AnimationProvider = ['$animateProvider', /** @this */ function($animatePro
       if (tempClasses) {
         classes += ' ' + tempClasses;
         options.tempClasses = null;
-      }
-
-      var prepareClassName;
-      if (isStructural) {
-        prepareClassName = 'ng-' + event + PREPARE_CLASS_SUFFIX;
-        $$jqLite.addClass(element, prepareClassName);
       }
 
       animationQueue.push({
@@ -3158,7 +3074,7 @@ var $$AnimationProvider = ['$animateProvider', /** @this */ function($animatePro
             };
 
             // the anchor animations require that the from and to elements both have at least
-            // one shared CSS class which effectively marries the two elements together to use
+            // one shared CSS class which effictively marries the two elements together to use
             // the same animation driver and to properly sequence the anchor animation.
             if (group.classes.length) {
               preparedAnimations.push(group);
@@ -3201,6 +3117,8 @@ var $$AnimationProvider = ['$animateProvider', /** @this */ function($animatePro
         // may attempt more elements, but custom drivers are more particular
         for (var i = drivers.length - 1; i >= 0; i--) {
           var driverName = drivers[i];
+          if (!$injector.has(driverName)) continue; // TODO(matsko): remove this check
+
           var factory = $injector.get(driverName);
           var driver = factory(animationDetails);
           if (driver) {
@@ -3214,10 +3132,6 @@ var $$AnimationProvider = ['$animateProvider', /** @this */ function($animatePro
         if (tempClasses) {
           $$jqLite.addClass(element, tempClasses);
         }
-        if (prepareClassName) {
-          $$jqLite.removeClass(element, prepareClassName);
-          prepareClassName = null;
-        }
       }
 
       function updateAnimationRunners(animation, newRunner) {
@@ -3229,8 +3143,7 @@ var $$AnimationProvider = ['$animateProvider', /** @this */ function($animatePro
         }
 
         function update(element) {
-          var runner = getRunner(element);
-          if (runner) runner.setHost(newRunner);
+          getRunner(element).setHost(newRunner);
         }
       }
 
@@ -3241,7 +3154,7 @@ var $$AnimationProvider = ['$animateProvider', /** @this */ function($animatePro
         }
       }
 
-      function close(rejected) {
+      function close(rejected) { // jshint ignore:line
         element.off('$destroy', handleDestroyedElement);
         removeRunner(element);
 
@@ -3260,120 +3173,19 @@ var $$AnimationProvider = ['$animateProvider', /** @this */ function($animatePro
   }];
 }];
 
-/**
- * @ngdoc directive
- * @name ngAnimateSwap
- * @restrict A
- * @scope
- *
- * @description
- *
- * ngAnimateSwap is a animation-oriented directive that allows for the container to
- * be removed and entered in whenever the associated expression changes. A
- * common usecase for this directive is a rotating banner or slider component which
- * contains one image being present at a time. When the active image changes
- * then the old image will perform a `leave` animation and the new element
- * will be inserted via an `enter` animation.
- *
- * @animations
- * | Animation                        | Occurs                               |
- * |----------------------------------|--------------------------------------|
- * | {@link ng.$animate#enter enter}  | when the new element is inserted to the DOM  |
- * | {@link ng.$animate#leave leave}  | when the old element is removed from the DOM |
- *
- * @example
- * <example name="ngAnimateSwap-directive" module="ngAnimateSwapExample"
- *          deps="angular-animate.js"
- *          animations="true" fixBase="true">
- *   <file name="index.html">
- *     <div class="container" ng-controller="AppCtrl">
- *       <div ng-animate-swap="number" class="cell swap-animation" ng-class="colorClass(number)">
- *         {{ number }}
- *       </div>
- *     </div>
- *   </file>
- *   <file name="script.js">
- *     angular.module('ngAnimateSwapExample', ['ngAnimate'])
- *       .controller('AppCtrl', ['$scope', '$interval', function($scope, $interval) {
- *         $scope.number = 0;
- *         $interval(function() {
- *           $scope.number++;
- *         }, 1000);
- *
- *         var colors = ['red','blue','green','yellow','orange'];
- *         $scope.colorClass = function(number) {
- *           return colors[number % colors.length];
- *         };
- *       }]);
- *   </file>
- *  <file name="animations.css">
- *  .container {
- *    height:250px;
- *    width:250px;
- *    position:relative;
- *    overflow:hidden;
- *    border:2px solid black;
- *  }
- *  .container .cell {
- *    font-size:150px;
- *    text-align:center;
- *    line-height:250px;
- *    position:absolute;
- *    top:0;
- *    left:0;
- *    right:0;
- *    border-bottom:2px solid black;
- *  }
- *  .swap-animation.ng-enter, .swap-animation.ng-leave {
- *    transition:0.5s linear all;
- *  }
- *  .swap-animation.ng-enter {
- *    top:-250px;
- *  }
- *  .swap-animation.ng-enter-active {
- *    top:0px;
- *  }
- *  .swap-animation.ng-leave {
- *    top:0px;
- *  }
- *  .swap-animation.ng-leave-active {
- *    top:250px;
- *  }
- *  .red { background:red; }
- *  .green { background:green; }
- *  .blue { background:blue; }
- *  .yellow { background:yellow; }
- *  .orange { background:orange; }
- *  </file>
- * </example>
- */
-var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $rootScope) {
-  return {
-    restrict: 'A',
-    transclude: 'element',
-    terminal: true,
-    priority: 600, // we use 600 here to ensure that the directive is caught before others
-    link: function(scope, $element, attrs, ctrl, $transclude) {
-      var previousElement, previousScope;
-      scope.$watchCollection(attrs.ngAnimateSwap || attrs['for'], function(value) {
-        if (previousElement) {
-          $animate.leave(previousElement);
-        }
-        if (previousScope) {
-          previousScope.$destroy();
-          previousScope = null;
-        }
-        if (value || value === 0) {
-          previousScope = scope.$new();
-          $transclude(previousScope, function(element) {
-            previousElement = element;
-            $animate.enter(element, null, $element);
-          });
-        }
-      });
-    }
-  };
-}];
+/* global angularAnimateModule: true,
+
+   $$AnimateAsyncRunFactory,
+   $$rAFSchedulerFactory,
+   $$AnimateChildrenDirective,
+   $$AnimateRunnerFactory,
+   $$AnimateQueueProvider,
+   $$AnimationProvider,
+   $AnimateCssProvider,
+   $$AnimateCssDriverProvider,
+   $$AnimateJsProvider,
+   $$AnimateJsDriverProvider,
+*/
 
 /**
  * @ngdoc module
@@ -3412,7 +3224,7 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
  * ## CSS-based Animations
  *
  * CSS-based animations with ngAnimate are unique since they require no JavaScript code at all. By using a CSS class that we reference between our HTML
- * and CSS code we can create an animation that will be picked up by Angular when an underlying directive performs an operation.
+ * and CSS code we can create an animation that will be picked up by Angular when an the underlying directive performs an operation.
  *
  * The example below shows how an `enter` animation can be made possible on an element using `ng-if`:
  *
@@ -3491,7 +3303,7 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
  * <div ng-show="bool" class="fade">
  *   Show and hide me
  * </div>
- * <button ng-click="bool=!bool">Toggle</button>
+ * <button ng-click="bool=true">Toggle</button>
  *
  * <style>
  * .fade.ng-hide {
@@ -3552,10 +3364,6 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
  *   /&#42; As of 1.4.4, this must always be set: it signals ngAnimate
  *     to not accidentally inherit a delay property from another CSS class &#42;/
  *   transition-duration: 0s;
- *
- *   /&#42; if you are using animations instead of transitions you should configure as follows:
- *     animation-delay: 0.1s;
- *     animation-duration: 0s; &#42;/
  * }
  * .my-animation.ng-enter.ng-enter-active {
  *   /&#42; standard transition styles &#42;/
@@ -3619,39 +3427,11 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
  * the CSS class once an animation has completed.)
  *
  *
- * ### The `ng-[event]-prepare` class
- *
- * This is a special class that can be used to prevent unwanted flickering / flash of content before
- * the actual animation starts. The class is added as soon as an animation is initialized, but removed
- * before the actual animation starts (after waiting for a $digest).
- * It is also only added for *structural* animations (`enter`, `move`, and `leave`).
- *
- * In practice, flickering can appear when nesting elements with structural animations such as `ngIf`
- * into elements that have class-based animations such as `ngClass`.
- *
- * ```html
- * <div ng-class="{red: myProp}">
- *   <div ng-class="{blue: myProp}">
- *     <div class="message" ng-if="myProp"></div>
- *   </div>
- * </div>
- * ```
- *
- * It is possible that during the `enter` animation, the `.message` div will be briefly visible before it starts animating.
- * In that case, you can add styles to the CSS that make sure the element stays hidden before the animation starts:
- *
- * ```css
- * .message.ng-enter-prepare {
- *   opacity: 0;
- * }
- *
- * ```
- *
  * ## JavaScript-based Animations
  *
  * ngAnimate also allows for animations to be consumed by JavaScript code. The approach is similar to CSS-based animations (where there is a shared
  * CSS class that is referenced in our HTML code) but in addition we need to register the JavaScript animation on the module. By making use of the
- * `module.animation()` module function we can register the animation.
+ * `module.animation()` module function we can register the ainmation.
  *
  * Let's see an example of a enter/leave animation using `ngRepeat`:
  *
@@ -3911,7 +3691,7 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
            deps="angular-animate.js;angular-route.js"
            animations="true">
     <file name="index.html">
-      <a href="#!/">Home</a>
+      <a href="#/">Home</a>
       <hr />
       <div class="view-container">
         <div ng-view class="view"></div>
@@ -3931,23 +3711,22 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
         }])
         .run(['$rootScope', function($rootScope) {
           $rootScope.records = [
-            { id: 1, title: 'Miss Beulah Roob' },
-            { id: 2, title: 'Trent Morissette' },
-            { id: 3, title: 'Miss Ava Pouros' },
-            { id: 4, title: 'Rod Pouros' },
-            { id: 5, title: 'Abdul Rice' },
-            { id: 6, title: 'Laurie Rutherford Sr.' },
-            { id: 7, title: 'Nakia McLaughlin' },
-            { id: 8, title: 'Jordon Blanda DVM' },
-            { id: 9, title: 'Rhoda Hand' },
-            { id: 10, title: 'Alexandrea Sauer' }
+            { id:1, title: "Miss Beulah Roob" },
+            { id:2, title: "Trent Morissette" },
+            { id:3, title: "Miss Ava Pouros" },
+            { id:4, title: "Rod Pouros" },
+            { id:5, title: "Abdul Rice" },
+            { id:6, title: "Laurie Rutherford Sr." },
+            { id:7, title: "Nakia McLaughlin" },
+            { id:8, title: "Jordon Blanda DVM" },
+            { id:9, title: "Rhoda Hand" },
+            { id:10, title: "Alexandrea Sauer" }
           ];
         }])
         .controller('HomeController', [function() {
           //empty
         }])
-        .controller('ProfileController', ['$rootScope', '$routeParams',
-            function ProfileController($rootScope, $routeParams) {
+        .controller('ProfileController', ['$rootScope', '$routeParams', function($rootScope, $routeParams) {
           var index = parseInt($routeParams.id, 10);
           var record = $rootScope.records[index - 1];
 
@@ -3959,7 +3738,7 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
       <h2>Welcome to the home page</h1>
       <p>Please click on an element</p>
       <a class="record"
-         ng-href="#!/profile/{{ record.id }}"
+         ng-href="#/profile/{{ record.id }}"
          ng-animate-ref="{{ record.id }}"
          ng-repeat="record in records">
         {{ record.title }}
@@ -4065,6 +3844,31 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
  * possible be sure to visit the {@link ng.$animate $animate service API page}.
  *
  *
+ * ### Preventing Collisions With Third Party Libraries
+ *
+ * Some third-party frameworks place animation duration defaults across many element or className
+ * selectors in order to make their code small and reuseable. This can lead to issues with ngAnimate, which
+ * is expecting actual animations on these elements and has to wait for their completion.
+ *
+ * You can prevent this unwanted behavior by using a prefix on all your animation classes:
+ *
+ * ```css
+ * /&#42; prefixed with animate- &#42;/
+ * .animate-fade-add.animate-fade-add-active {
+ *   transition:1s linear all;
+ *   opacity:0;
+ * }
+ * ```
+ *
+ * You then configure `$animate` to enforce this prefix:
+ *
+ * ```js
+ * $animateProvider.classNameFilter(/animate-/);
+ * ```
+ *
+ * This also may provide your application with a speed boost since only specific elements containing CSS class prefix
+ * will be evaluated for animation when any DOM changes occur in the application.
+ *
  * ## Callbacks and Promises
  *
  * When `$animate` is called it returns a promise that can be used to capture when the animation has ended. Therefore if we were to trigger
@@ -4096,19 +3900,6 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
  * (Note that you will need to trigger a digest within the callback to get angular to notice any scope-related changes.)
  */
 
-var copy;
-var extend;
-var forEach;
-var isArray;
-var isDefined;
-var isElement;
-var isFunction;
-var isObject;
-var isString;
-var isUndefined;
-var jqLite;
-var noop;
-
 /**
  * @ngdoc service
  * @name $animate
@@ -4119,27 +3910,12 @@ var noop;
  *
  * Click here {@link ng.$animate to learn more about animations with `$animate`}.
  */
-angular.module('ngAnimate', [], function initAngularHelpers() {
-  // Access helpers from angular core.
-  // Do it inside a `config` block to ensure `window.angular` is available.
-  noop        = angular.noop;
-  copy        = angular.copy;
-  extend      = angular.extend;
-  jqLite      = angular.element;
-  forEach     = angular.forEach;
-  isArray     = angular.isArray;
-  isString    = angular.isString;
-  isObject    = angular.isObject;
-  isUndefined = angular.isUndefined;
-  isDefined   = angular.isDefined;
-  isFunction  = angular.isFunction;
-  isElement   = angular.isElement;
-})
-  .info({ angularVersion: '1.6.6' })
-  .directive('ngAnimateSwap', ngAnimateSwapDirective)
-
+angular.module('ngAnimate', [])
   .directive('ngAnimateChildren', $$AnimateChildrenDirective)
   .factory('$$rAFScheduler', $$rAFSchedulerFactory)
+
+  .factory('$$AnimateRunner', $$AnimateRunnerFactory)
+  .factory('$$animateAsyncRun', $$AnimateAsyncRunFactory)
 
   .provider('$$animateQueue', $$AnimateQueueProvider)
   .provider('$$animation', $$AnimationProvider)

@@ -80,20 +80,6 @@ $provide.value("$locale", {
       "11",
       "\u0253ul\u0253us\u025b"
     ],
-    "STANDALONEMONTH": [
-      "pamba",
-      "wanja",
-      "mbiy\u0254 m\u025bndo\u014bg\u0254",
-      "Ny\u0254l\u0254mb\u0254\u014bg\u0254",
-      "M\u0254n\u0254 \u014bgbanja",
-      "Nya\u014bgw\u025b \u014bgbanja",
-      "ku\u014bgw\u025b",
-      "f\u025b",
-      "njapi",
-      "nyukul",
-      "11",
-      "\u0253ul\u0253us\u025b"
-    ],
     "WEEKENDRANGE": [
       5,
       6
@@ -126,8 +112,8 @@ $provide.value("$locale", {
       {
         "gSize": 3,
         "lgSize": 3,
-        "maxFrac": 0,
-        "minFrac": 0,
+        "maxFrac": 2,
+        "minFrac": 2,
         "minInt": 1,
         "negPre": "-\u00a4\u00a0",
         "negSuf": "",
@@ -137,7 +123,6 @@ $provide.value("$locale", {
     ]
   },
   "id": "kkj-cm",
-  "localeID": "kkj_CM",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (i == 1 && vf.v == 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

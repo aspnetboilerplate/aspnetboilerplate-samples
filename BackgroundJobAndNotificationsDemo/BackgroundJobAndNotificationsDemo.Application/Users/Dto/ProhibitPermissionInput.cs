@@ -3,7 +3,7 @@ using Abp.Application.Services.Dto;
 
 namespace BackgroundJobAndNotificationsDemo.Users.Dto
 {
-    public class ProhibitPermissionInput : EntityDto
+    public class ProhibitPermissionInput : IInputDto
     {
         [Range(1, long.MaxValue)]
         public int UserId { get; set; }

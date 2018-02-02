@@ -35,14 +35,14 @@ $provide.value("$locale", {
       "Sanbata"
     ],
     "ERANAMES": [
-      "Dheengadda Jeesu",
-      "CE"
+      "KD",
+      "KB"
     ],
     "ERAS": [
       "KD",
-      "CE"
+      "KB"
     ],
-    "FIRSTDAYOFWEEK": 6,
+    "FIRSTDAYOFWEEK": 0,
     "MONTH": [
       "Amajjii",
       "Guraandhala",
@@ -80,32 +80,18 @@ $provide.value("$locale", {
       "Sad",
       "Mud"
     ],
-    "STANDALONEMONTH": [
-      "Amajjii",
-      "Guraandhala",
-      "Bitooteessa",
-      "Elba",
-      "Caamsa",
-      "Waxabajjii",
-      "Adooleessa",
-      "Hagayya",
-      "Fuulbana",
-      "Onkololeessa",
-      "Sadaasa",
-      "Muddee"
-    ],
     "WEEKENDRANGE": [
       5,
       6
     ],
     "fullDate": "EEEE, MMMM d, y",
     "longDate": "dd MMMM y",
-    "medium": "dd-MMM-y HH:mm:ss",
+    "medium": "dd-MMM-y h:mm:ss a",
     "mediumDate": "dd-MMM-y",
-    "mediumTime": "HH:mm:ss",
-    "short": "dd/MM/yy HH:mm",
+    "mediumTime": "h:mm:ss a",
+    "short": "dd/MM/yy h:mm a",
     "shortDate": "dd/MM/yy",
-    "shortTime": "HH:mm"
+    "shortTime": "h:mm a"
   },
   "NUMBER_FORMATS": {
     "CURRENCY_SYM": "Ksh",
@@ -137,7 +123,6 @@ $provide.value("$locale", {
     ]
   },
   "id": "om-ke",
-  "localeID": "om_KE",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (i == 1 && vf.v == 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

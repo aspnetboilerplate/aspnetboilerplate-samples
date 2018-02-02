@@ -1,123 +1,11 @@
 /**
- * @license AngularJS v1.6.6
- * (c) 2010-2017 Google, Inc. http://angularjs.org
+ * @license AngularJS v1.4.8
+ * (c) 2010-2015 Google, Inc. http://angularjs.org
  * License: MIT
  */
 
 (function() {'use strict';
-    // NOTE:
-    // These functions are copied here from `src/Angular.js`, because they are needed inside the
-    // `angular-loader.js` closure and need to be available before the main `angular.js` script has
-    // been loaded.
-    function isFunction(value) {return typeof value === 'function';}
-    function isDefined(value) {return typeof value !== 'undefined';}
-    function isNumber(value) {return typeof value === 'number';}
-    function isObject(value) {return value !== null && typeof value === 'object';}
-    function isScope(obj) {return obj && obj.$evalAsync && obj.$watch;}
-    function isUndefined(value) {return typeof value === 'undefined';}
-    function isWindow(obj) {return obj && obj.window === obj;}
-    function sliceArgs(args, startIndex) {return Array.prototype.slice.call(args, startIndex || 0);}
-    function toJsonReplacer(key, value) {
-      var val = value;
-
-      if (typeof key === 'string' && key.charAt(0) === '$' && key.charAt(1) === '$') {
-        val = undefined;
-      } else if (isWindow(value)) {
-        val = '$WINDOW';
-      } else if (value &&  window.document === value) {
-        val = '$DOCUMENT';
-      } else if (isScope(value)) {
-        val = '$SCOPE';
-      }
-
-      return val;
-    }
-
-/* exported toDebugString */
-
-function serializeObject(obj, maxDepth) {
-  var seen = [];
-
-  // There is no direct way to stringify object until reaching a specific depth
-  // and a very deep object can cause a performance issue, so we copy the object
-  // based on this specific depth and then stringify it.
-  if (isValidObjectMaxDepth(maxDepth)) {
-    // This file is also included in `angular-loader`, so `copy()` might not always be available in
-    // the closure. Therefore, it is lazily retrieved as `angular.copy()` when needed.
-    obj = angular.copy(obj, null, maxDepth);
-  }
-  return JSON.stringify(obj, function(key, val) {
-    val = toJsonReplacer(key, val);
-    if (isObject(val)) {
-
-      if (seen.indexOf(val) >= 0) return '...';
-
-      seen.push(val);
-    }
-    return val;
-  });
-}
-
-function toDebugString(obj, maxDepth) {
-  if (typeof obj === 'function') {
-    return obj.toString().replace(/ \{[\s\S]*$/, '');
-  } else if (isUndefined(obj)) {
-    return 'undefined';
-  } else if (typeof obj !== 'string') {
-    return serializeObject(obj, maxDepth);
-  }
-  return obj;
-}
-
-/* exported
-  minErrConfig,
-  errorHandlingConfig,
-  isValidObjectMaxDepth
-*/
-
-var minErrConfig = {
-  objectMaxDepth: 5
-};
-
-/**
- * @ngdoc function
- * @name angular.errorHandlingConfig
- * @module ng
- * @kind function
- *
- * @description
- * Configure several aspects of error handling in AngularJS if used as a setter or return the
- * current configuration if used as a getter. The following options are supported:
- *
- * - **objectMaxDepth**: The maximum depth to which objects are traversed when stringified for error messages.
- *
- * Omitted or undefined options will leave the corresponding configuration values unchanged.
- *
- * @param {Object=} config - The configuration object. May only contain the options that need to be
- *     updated. Supported keys:
- *
- * * `objectMaxDepth`  **{Number}** - The max depth for stringifying objects. Setting to a
- *   non-positive or non-numeric value, removes the max depth limit.
- *   Default: 5
- */
-function errorHandlingConfig(config) {
-  if (isObject(config)) {
-    if (isDefined(config.objectMaxDepth)) {
-      minErrConfig.objectMaxDepth = isValidObjectMaxDepth(config.objectMaxDepth) ? config.objectMaxDepth : NaN;
-    }
-  } else {
-    return minErrConfig;
-  }
-}
-
-/**
- * @private
- * @param {Number} maxDepth
- * @return {boolean}
- */
-function isValidObjectMaxDepth(maxDepth) {
-  return isNumber(maxDepth) && maxDepth > 0;
-}
+    function isFunction(value) {return typeof value === 'function';};
 
 /**
  * @description
@@ -152,29 +40,31 @@ function isValidObjectMaxDepth(maxDepth) {
 function minErr(module, ErrorConstructor) {
   ErrorConstructor = ErrorConstructor || Error;
   return function() {
-    var code = arguments[0],
-      template = arguments[1],
+    var SKIP_INDEXES = 2;
+
+    var templateArgs = arguments,
+      code = templateArgs[0],
       message = '[' + (module ? module + ':' : '') + code + '] ',
-      templateArgs = sliceArgs(arguments, 2).map(function(arg) {
-        return toDebugString(arg, minErrConfig.objectMaxDepth);
-      }),
+      template = templateArgs[1],
       paramPrefix, i;
 
     message += template.replace(/\{\d+\}/g, function(match) {
-      var index = +match.slice(1, -1);
+      var index = +match.slice(1, -1),
+        shiftedIndex = index + SKIP_INDEXES;
 
-      if (index < templateArgs.length) {
-        return templateArgs[index];
+      if (shiftedIndex < templateArgs.length) {
+        return toDebugString(templateArgs[shiftedIndex]);
       }
 
       return match;
     });
 
-    message += '\nhttp://errors.angularjs.org/1.6.6/' +
+    message += '\nhttp://errors.angularjs.org/1.4.8/' +
       (module ? module + '/' : '') + code;
 
-    for (i = 0, paramPrefix = '?'; i < templateArgs.length; i++, paramPrefix = '&') {
-      message += paramPrefix + 'p' + i + '=' + encodeURIComponent(templateArgs[i]);
+    for (i = SKIP_INDEXES, paramPrefix = '?'; i < templateArgs.length; i++, paramPrefix = '&') {
+      message += paramPrefix + 'p' + (i - SKIP_INDEXES) + '=' +
+        encodeURIComponent(toDebugString(templateArgs[i]));
     }
 
     return new ErrorConstructor(message);
@@ -257,12 +147,9 @@ function setupModuleLoader(window) {
      *        unspecified then the module is being retrieved for further configuration.
      * @param {Function=} configFn Optional configuration function for the module. Same as
      *        {@link angular.Module#config Module#config()}.
-     * @returns {angular.Module} new module with the {@link angular.Module} api.
+     * @returns {module} new module with the {@link angular.Module} api.
      */
     return function module(name, requires, configFn) {
-
-      var info = {};
-
       var assertNotHasOwnProperty = function(name, context) {
         if (name === 'hasOwnProperty') {
           throw ngMinErr('badname', 'hasOwnProperty is not a valid {0} name', context);
@@ -275,9 +162,9 @@ function setupModuleLoader(window) {
       }
       return ensure(modules, name, function() {
         if (!requires) {
-          throw $injectorMinErr('nomod', 'Module \'{0}\' is not available! You either misspelled ' +
-             'the module name or forgot to load it. If registering a module ensure that you ' +
-             'specify the dependencies as the second argument.', name);
+          throw $injectorMinErr('nomod', "Module '{0}' is not available! You either misspelled " +
+             "the module name or forgot to load it. If registering a module ensure that you " +
+             "specify the dependencies as the second argument.", name);
         }
 
         /** @type {!Array.<Array.<*>>} */
@@ -297,45 +184,6 @@ function setupModuleLoader(window) {
           _invokeQueue: invokeQueue,
           _configBlocks: configBlocks,
           _runBlocks: runBlocks,
-
-          /**
-           * @ngdoc method
-           * @name angular.Module#info
-           * @module ng
-           *
-           * @param {Object=} info Information about the module
-           * @returns {Object|Module} The current info object for this module if called as a getter,
-           *                          or `this` if called as a setter.
-           *
-           * @description
-           * Read and write custom information about this module.
-           * For example you could put the version of the module in here.
-           *
-           * ```js
-           * angular.module('myModule', []).info({ version: '1.0.0' });
-           * ```
-           *
-           * The version could then be read back out by accessing the module elsewhere:
-           *
-           * ```
-           * var version = angular.module('myModule').info().version;
-           * ```
-           *
-           * You can also retrieve this information during runtime via the
-           * {@link $injector#modules `$injector.modules`} property:
-           *
-           * ```js
-           * var version = $injector.modules['myModule'].info().version;
-           * ```
-           */
-          info: function(value) {
-            if (isDefined(value)) {
-              if (!isObject(value)) throw ngMinErr('aobj', 'Argument \'{0}\' must be an object', 'value');
-              info = value;
-              return this;
-            }
-            return info;
-          },
 
           /**
            * @ngdoc property
@@ -420,13 +268,13 @@ function setupModuleLoader(window) {
            * @ngdoc method
            * @name angular.Module#decorator
            * @module ng
-           * @param {string} name The name of the service to decorate.
-           * @param {Function} decorFn This function will be invoked when the service needs to be
-           *                           instantiated and should return the decorated service instance.
+           * @param {string} The name of the service to decorate.
+           * @param {Function} This function will be invoked when the service needs to be
+           *                                    instantiated and should return the decorated service instance.
            * @description
            * See {@link auto.$provide#decorator $provide.decorator()}.
            */
-          decorator: invokeLaterAndSetModuleName('$provide', 'decorator', configBlocks),
+          decorator: invokeLaterAndSetModuleName('$provide', 'decorator'),
 
           /**
            * @ngdoc method
@@ -507,19 +355,6 @@ function setupModuleLoader(window) {
 
           /**
            * @ngdoc method
-           * @name angular.Module#component
-           * @module ng
-           * @param {string} name Name of the component in camel-case (i.e. myComp which will match as my-comp)
-           * @param {Object} options Component definition object (a simplified
-           *    {@link ng.$compile#directive-definition-object directive definition object})
-           *
-           * @description
-           * See {@link ng.$compileProvider#component $compileProvider.component()}.
-           */
-          component: invokeLaterAndSetModuleName('$compileProvider', 'component'),
-
-          /**
-           * @ngdoc method
            * @name angular.Module#config
            * @module ng
            * @param {Function} configFn Execute this function on module load. Useful for service
@@ -572,11 +407,10 @@ function setupModuleLoader(window) {
          * @param {string} method
          * @returns {angular.Module}
          */
-        function invokeLaterAndSetModuleName(provider, method, queue) {
-          if (!queue) queue = invokeQueue;
+        function invokeLaterAndSetModuleName(provider, method) {
           return function(recipeName, factoryFunction) {
             if (factoryFunction && isFunction(factoryFunction)) factoryFunction.$$moduleName = name;
-            queue.push([provider, method, arguments]);
+            invokeQueue.push([provider, method, arguments]);
             return moduleInstance;
           };
         }

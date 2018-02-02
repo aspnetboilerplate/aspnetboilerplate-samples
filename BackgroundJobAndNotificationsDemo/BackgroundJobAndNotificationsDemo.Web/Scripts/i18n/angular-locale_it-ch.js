@@ -35,12 +35,12 @@ $provide.value("$locale", {
       "sabato"
     ],
     "ERANAMES": [
-      "avanti Cristo",
-      "dopo Cristo"
-    ],
-    "ERAS": [
       "a.C.",
       "d.C."
+    ],
+    "ERAS": [
+      "aC",
+      "dC"
     ],
     "FIRSTDAYOFWEEK": 0,
     "MONTH": [
@@ -80,28 +80,14 @@ $provide.value("$locale", {
       "nov",
       "dic"
     ],
-    "STANDALONEMONTH": [
-      "gennaio",
-      "febbraio",
-      "marzo",
-      "aprile",
-      "maggio",
-      "giugno",
-      "luglio",
-      "agosto",
-      "settembre",
-      "ottobre",
-      "novembre",
-      "dicembre"
-    ],
     "WEEKENDRANGE": [
       5,
       6
     ],
     "fullDate": "EEEE, d MMMM y",
     "longDate": "d MMMM y",
-    "medium": "d MMM y HH:mm:ss",
-    "mediumDate": "d MMM y",
+    "medium": "d-MMM-y HH:mm:ss",
+    "mediumDate": "d-MMM-y",
     "mediumTime": "HH:mm:ss",
     "short": "dd.MM.yy HH:mm",
     "shortDate": "dd.MM.yy",
@@ -110,7 +96,7 @@ $provide.value("$locale", {
   "NUMBER_FORMATS": {
     "CURRENCY_SYM": "CHF",
     "DECIMAL_SEP": ".",
-    "GROUP_SEP": "\u2019",
+    "GROUP_SEP": "'",
     "PATTERNS": [
       {
         "gSize": 3,
@@ -137,7 +123,6 @@ $provide.value("$locale", {
     ]
   },
   "id": "it-ch",
-  "localeID": "it_CH",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (i == 1 && vf.v == 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

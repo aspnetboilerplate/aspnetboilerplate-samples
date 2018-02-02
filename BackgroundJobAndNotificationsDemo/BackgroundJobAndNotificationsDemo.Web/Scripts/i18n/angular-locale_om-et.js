@@ -35,14 +35,14 @@ $provide.value("$locale", {
       "Sanbata"
     ],
     "ERANAMES": [
-      "Dheengadda Jeesu",
-      "CE"
+      "KD",
+      "KB"
     ],
     "ERAS": [
-      "BCE",
-      "CE"
+      "KD",
+      "KB"
     ],
-    "FIRSTDAYOFWEEK": 6,
+    "FIRSTDAYOFWEEK": 0,
     "MONTH": [
       "Amajjii",
       "Guraandhala",
@@ -79,20 +79,6 @@ $provide.value("$locale", {
       "Onk",
       "Sad",
       "Mud"
-    ],
-    "STANDALONEMONTH": [
-      "Amajjii",
-      "Guraandhala",
-      "Bitooteessa",
-      "Elba",
-      "Caamsa",
-      "Waxabajjii",
-      "Adooleessa",
-      "Hagayya",
-      "Fuulbana",
-      "Onkololeessa",
-      "Sadaasa",
-      "Muddee"
     ],
     "WEEKENDRANGE": [
       5,
@@ -137,7 +123,6 @@ $provide.value("$locale", {
     ]
   },
   "id": "om-et",
-  "localeID": "om_ET",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (i == 1 && vf.v == 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

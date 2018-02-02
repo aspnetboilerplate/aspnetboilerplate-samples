@@ -1,22 +1,19 @@
 ﻿using System.Reflection;
 using Abp.Modules;
-using Abp.AutoMapper;
+using AbpWpfDemo.People;
+using AbpWpfDemo.People.Dto;
+using AutoMapper;
 
 namespace AbpWpfDemo
 {
-    [DependsOn(typeof(AbpWpfDemoCoreModule),
-        typeof(AbpAutoMapperModule))]
+    [DependsOn(typeof(AbpWpfDemoCoreModule))]
     public class AbpWpfDemoApplicationModule : AbpModule
     {
-        public override void PreInitialize()
-        {
-            //Adding custom AutoMapper configuration
-            Configuration.Modules.AbpAutoMapper().Configurators.Add(CustomDtoMapper.CreateMappings);
-        }
-
         public override void Initialize()
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+
+            Mapper.CreateMap<Person, PersonDto>();
         }
     }
 }

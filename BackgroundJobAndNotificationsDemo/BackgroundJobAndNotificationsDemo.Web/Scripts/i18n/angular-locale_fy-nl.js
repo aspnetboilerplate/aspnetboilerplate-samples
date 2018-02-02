@@ -44,18 +44,18 @@ $provide.value("$locale", {
     ],
     "FIRSTDAYOFWEEK": 0,
     "MONTH": [
-      "Jannewaris",
-      "Febrewaris",
-      "Maart",
-      "April",
-      "Maaie",
-      "Juny",
-      "July",
-      "Augustus",
-      "Septimber",
-      "Oktober",
-      "Novimber",
-      "Desimber"
+      "jannewaris",
+      "febrewaris",
+      "maart",
+      "april",
+      "maaie",
+      "juny",
+      "july",
+      "augustus",
+      "septimber",
+      "oktober",
+      "novimber",
+      "desimber"
     ],
     "SHORTDAY": [
       "si",
@@ -67,32 +67,18 @@ $provide.value("$locale", {
       "so"
     ],
     "SHORTMONTH": [
-      "Jan",
-      "Feb",
-      "Mrt",
-      "Apr",
-      "Mai",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Okt",
-      "Nov",
-      "Des"
-    ],
-    "STANDALONEMONTH": [
-      "Jannewaris",
-      "Febrewaris",
-      "Maart",
-      "April",
-      "Maaie",
-      "Juny",
-      "July",
-      "Augustus",
-      "Septimber",
-      "Oktober",
-      "Novimber",
-      "Desimber"
+      "jan.",
+      "feb.",
+      "mrt.",
+      "apr.",
+      "mai",
+      "jun.",
+      "jul.",
+      "aug.",
+      "sep.",
+      "okt.",
+      "nov.",
+      "des."
     ],
     "WEEKENDRANGE": [
       5,
@@ -137,7 +123,6 @@ $provide.value("$locale", {
     ]
   },
   "id": "fy-nl",
-  "localeID": "fy_NL",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (i == 1 && vf.v == 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

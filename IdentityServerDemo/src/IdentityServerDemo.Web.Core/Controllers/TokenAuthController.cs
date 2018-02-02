@@ -6,6 +6,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Abp.Authorization;
 using Abp.Authorization.Users;
+using Abp.AutoMapper;
 using Abp.MultiTenancy;
 using Abp.Runtime.Security;
 using Abp.UI;

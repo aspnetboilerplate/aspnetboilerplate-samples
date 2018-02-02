@@ -5,7 +5,7 @@ $provide.value("$locale", {
   "DATETIME_FORMATS": {
     "AMPMS": [
       "\u0442\u0430\u04a3\u043a\u044b",
-      "\u0442\u04af\u0448\u0442\u04e9\u043d \u043a\u0438\u0439\u0438\u043d\u043a\u0438"
+      "\u0442\u04af\u0448\u0442\u04e9\u043d \u043a\u0438\u0439\u0438\u043d"
     ],
     "DAY": [
       "\u0436\u0435\u043a\u0448\u0435\u043c\u0431\u0438",
@@ -62,31 +62,17 @@ $provide.value("$locale", {
       "\u043d\u043e\u044f.",
       "\u0434\u0435\u043a."
     ],
-    "STANDALONEMONTH": [
-      "\u042f\u043d\u0432\u0430\u0440\u044c",
-      "\u0424\u0435\u0432\u0440\u0430\u043b\u044c",
-      "\u041c\u0430\u0440\u0442",
-      "\u0410\u043f\u0440\u0435\u043b\u044c",
-      "\u041c\u0430\u0439",
-      "\u0418\u044e\u043d\u044c",
-      "\u0418\u044e\u043b\u044c",
-      "\u0410\u0432\u0433\u0443\u0441\u0442",
-      "\u0421\u0435\u043d\u0442\u044f\u0431\u0440\u044c",
-      "\u041e\u043a\u0442\u044f\u0431\u0440\u044c",
-      "\u041d\u043e\u044f\u0431\u0440\u044c",
-      "\u0414\u0435\u043a\u0430\u0431\u0440\u044c"
-    ],
     "WEEKENDRANGE": [
       5,
       6
     ],
-    "fullDate": "y-'\u0436'., d-MMMM, EEEE",
-    "longDate": "y-'\u0436'., d-MMMM",
-    "medium": "y-'\u0436'., d-MMM HH:mm:ss",
-    "mediumDate": "y-'\u0436'., d-MMM",
+    "fullDate": "EEEE, d-MMMM, y-'\u0436'.",
+    "longDate": "y MMMM d",
+    "medium": "y MMM d HH:mm:ss",
+    "mediumDate": "y MMM d",
     "mediumTime": "HH:mm:ss",
-    "short": "d/M/yy HH:mm",
-    "shortDate": "d/M/yy",
+    "short": "dd.MM.yy HH:mm",
+    "shortDate": "dd.MM.yy",
     "shortTime": "HH:mm"
   },
   "NUMBER_FORMATS": {
@@ -119,7 +105,6 @@ $provide.value("$locale", {
     ]
   },
   "id": "ky",
-  "localeID": "ky",
   "pluralCat": function(n, opt_precision) {  if (n == 1) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

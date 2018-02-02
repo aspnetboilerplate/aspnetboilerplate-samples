@@ -67,32 +67,18 @@ $provide.value("$locale", {
       "la"
     ],
     "SHORTMONTH": [
-      "tammik.",
-      "helmik.",
-      "maalisk.",
-      "huhtik.",
-      "toukok.",
-      "kes\u00e4k.",
-      "hein\u00e4k.",
-      "elok.",
-      "syysk.",
-      "lokak.",
-      "marrask.",
-      "jouluk."
-    ],
-    "STANDALONEMONTH": [
-      "tammikuu",
-      "helmikuu",
-      "maaliskuu",
-      "huhtikuu",
-      "toukokuu",
-      "kes\u00e4kuu",
-      "hein\u00e4kuu",
-      "elokuu",
-      "syyskuu",
-      "lokakuu",
-      "marraskuu",
-      "joulukuu"
+      "tammikuuta",
+      "helmikuuta",
+      "maaliskuuta",
+      "huhtikuuta",
+      "toukokuuta",
+      "kes\u00e4kuuta",
+      "hein\u00e4kuuta",
+      "elokuuta",
+      "syyskuuta",
+      "lokakuuta",
+      "marraskuuta",
+      "joulukuuta"
     ],
     "WEEKENDRANGE": [
       5,
@@ -137,7 +123,6 @@ $provide.value("$locale", {
     ]
   },
   "id": "fi",
-  "localeID": "fi",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (i == 1 && vf.v == 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

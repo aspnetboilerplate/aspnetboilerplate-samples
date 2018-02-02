@@ -41,12 +41,12 @@ namespace CallApiFromConsole
 
         public void TokenBasedAuth()
         {
-            TokenBasedAuth(BaseUrl + "api/TokenAuth/Authenticate");
+            TokenBasedAuth(BaseUrl + "api/Account/Authenticate");
         }
 
-        public async Task<ListResultDto<RoleListDto>> GetRolesAsync()
+        public async Task<ListResultOutput<RoleListDto>> GetRolesAsync()
         {
-            return await _abpWebApiClient.PostAsync<ListResultDto<RoleListDto>>(
+            return await _abpWebApiClient.PostAsync<ListResultOutput<RoleListDto>>(
                 BaseUrl + "api/services/app/role/GetRoles",
                 new GetRolesInput()
             );

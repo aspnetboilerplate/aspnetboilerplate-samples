@@ -57,24 +57,10 @@ $provide.value("$locale", {
       "jun.",
       "jul.",
       "ago.",
-      "sep.",
+      "sept.",
       "oct.",
       "nov.",
       "dic."
-    ],
-    "STANDALONEMONTH": [
-      "enero",
-      "febrero",
-      "marzo",
-      "abril",
-      "mayo",
-      "junio",
-      "julio",
-      "agosto",
-      "septiembre",
-      "octubre",
-      "noviembre",
-      "diciembre"
     ],
     "WEEKENDRANGE": [
       5,
@@ -82,12 +68,12 @@ $provide.value("$locale", {
     ],
     "fullDate": "EEEE, d 'de' MMMM 'de' y",
     "longDate": "d 'de' MMMM 'de' y",
-    "medium": "d MMM y HH:mm:ss",
+    "medium": "d MMM y h:mm:ss a",
     "mediumDate": "d MMM y",
-    "mediumTime": "HH:mm:ss",
-    "short": "d/M/yy HH:mm",
+    "mediumTime": "h:mm:ss a",
+    "short": "d/M/yy h:mm a",
     "shortDate": "d/M/yy",
-    "shortTime": "HH:mm"
+    "shortTime": "h:mm a"
   },
   "NUMBER_FORMATS": {
     "CURRENCY_SYM": "$",
@@ -119,7 +105,6 @@ $provide.value("$locale", {
     ]
   },
   "id": "es-ec",
-  "localeID": "es_EC",
   "pluralCat": function(n, opt_precision) {  if (n == 1) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

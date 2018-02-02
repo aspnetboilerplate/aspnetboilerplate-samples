@@ -40,41 +40,27 @@ $provide.value("$locale", {
       "Desember"
     ],
     "SHORTDAY": [
-      "So.",
-      "Ma.",
-      "Di.",
-      "Wo.",
-      "Do.",
-      "Vr.",
-      "Sa."
+      "So",
+      "Ma",
+      "Di",
+      "Wo",
+      "Do",
+      "Vr",
+      "Sa"
     ],
     "SHORTMONTH": [
       "Jan.",
       "Feb.",
       "Mrt.",
-      "Apr.",
+      "Apr",
       "Mei",
-      "Jun.",
-      "Jul.",
-      "Aug.",
-      "Sep.",
-      "Okt.",
-      "Nov.",
-      "Des."
-    ],
-    "STANDALONEMONTH": [
-      "Januarie",
-      "Februarie",
-      "Maart",
-      "April",
-      "Mei",
-      "Junie",
-      "Julie",
-      "Augustus",
-      "September",
-      "Oktober",
-      "November",
-      "Desember"
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Okt",
+      "Nov",
+      "Des"
     ],
     "WEEKENDRANGE": [
       5,
@@ -82,12 +68,12 @@ $provide.value("$locale", {
     ],
     "fullDate": "EEEE, dd MMMM y",
     "longDate": "dd MMMM y",
-    "medium": "dd MMM y HH:mm:ss",
+    "medium": "dd MMM y h:mm:ss a",
     "mediumDate": "dd MMM y",
-    "mediumTime": "HH:mm:ss",
-    "short": "y-MM-dd HH:mm",
+    "mediumTime": "h:mm:ss a",
+    "short": "y-MM-dd h:mm a",
     "shortDate": "y-MM-dd",
-    "shortTime": "HH:mm"
+    "shortTime": "h:mm a"
   },
   "NUMBER_FORMATS": {
     "CURRENCY_SYM": "R",
@@ -119,7 +105,6 @@ $provide.value("$locale", {
     ]
   },
   "id": "af-za",
-  "localeID": "af_ZA",
   "pluralCat": function(n, opt_precision) {  if (n == 1) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

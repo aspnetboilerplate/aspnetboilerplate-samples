@@ -7,7 +7,7 @@ namespace BackgroundJobAndNotificationsDemo.MultiTenancy
 {
     public interface ITenantAppService : IApplicationService
     {
-        ListResultDto<TenantListDto> GetTenants();
+        ListResultOutput<TenantListDto> GetTenants();
 
         Task CreateTenant(CreateTenantInput input);
     }

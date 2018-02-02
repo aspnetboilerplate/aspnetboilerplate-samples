@@ -5,7 +5,7 @@ using Castle.Facilities.Logging;
 
 namespace BackgroundJobAndNotificationsDemo.Web
 {
-    public class MvcApplication : AbpWebApplication<BackgroundJobAndNotificationsDemoWebModule>
+    public class MvcApplication : AbpWebApplication
     {
         protected override void Application_Start(object sender, EventArgs e)
         {

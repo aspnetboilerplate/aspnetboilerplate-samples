@@ -24,9 +24,9 @@ namespace BackgroundJobAndNotificationsDemo.MultiTenancy
             _editionManager = editionManager;
         }
 
-        public ListResultDto<TenantListDto> GetTenants()
+        public ListResultOutput<TenantListDto> GetTenants()
         {
-            return new ListResultDto<TenantListDto>(
+            return new ListResultOutput<TenantListDto>(
                 _tenantManager.Tenants
                     .OrderBy(t => t.TenancyName)
                     .ToList()
@@ -44,7 +44,7 @@ namespace BackgroundJobAndNotificationsDemo.MultiTenancy
                 tenant.EditionId = defaultEdition.Id;
             }
 
-            await TenantManager.CreateAsync(tenant);
+            CheckErrors(await TenantManager.CreateAsync(tenant));
             await CurrentUnitOfWork.SaveChangesAsync(); //To get new tenant's id.
 
             //We are working entities of new tenant, so changing tenant filter

@@ -77,34 +77,20 @@ $provide.value("$locale", {
       "Luanistyn",
       "M-fouyir",
       "J-fouyir",
-      "M-Houney",
-      "M-Nollick"
-    ],
-    "STANDALONEMONTH": [
-      "Jerrey-geuree",
-      "Toshiaght-arree",
-      "Mayrnt",
-      "Averil",
-      "Boaldyn",
-      "Mean-souree",
-      "Jerrey-souree",
-      "Luanistyn",
-      "Mean-fouyir",
-      "Jerrey-fouyir",
-      "Mee Houney",
-      "Mee ny Nollick"
+      "M.Houney",
+      "M.Nollick"
     ],
     "WEEKENDRANGE": [
       5,
       6
     ],
-    "fullDate": "y MMMM d, EEEE",
-    "longDate": "y MMMM d",
-    "medium": "y MMM d HH:mm:ss",
-    "mediumDate": "y MMM d",
+    "fullDate": "EEEE dd MMMM y",
+    "longDate": "dd MMMM y",
+    "medium": "MMM dd, y HH:mm:ss",
+    "mediumDate": "MMM dd, y",
     "mediumTime": "HH:mm:ss",
-    "short": "y-MM-dd HH:mm",
-    "shortDate": "y-MM-dd",
+    "short": "dd/MM/yy HH:mm",
+    "shortDate": "dd/MM/yy",
     "shortTime": "HH:mm"
   },
   "NUMBER_FORMATS": {
@@ -137,7 +123,6 @@ $provide.value("$locale", {
     ]
   },
   "id": "gv",
-  "localeID": "gv",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (i == 1 && vf.v == 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

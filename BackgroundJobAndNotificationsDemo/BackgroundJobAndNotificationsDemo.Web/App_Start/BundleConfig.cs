@@ -30,8 +30,8 @@ namespace BackgroundJobAndNotificationsDemo.Web
 
                         "~/Scripts/modernizr-2.8.3.js",
                         
-                        "~/Scripts/jquery-3.3.1.min.js",
-                        "~/Scripts/jquery-ui-1.12.1.min.js",
+                        "~/Scripts/jquery-2.2.0.min.js",
+                        "~/Scripts/jquery-ui-1.11.4.min.js",
 
                         "~/Scripts/bootstrap.min.js",
 
@@ -50,7 +50,7 @@ namespace BackgroundJobAndNotificationsDemo.Web
                         "~/Scripts/angular-ui/ui-bootstrap-tpls.min.js",
                         "~/Scripts/angular-ui/ui-utils.min.js",
 
-                        "~/Scripts/jquery.signalR-2.2.2.min.js",
+                        "~/Scripts/jquery.signalR-2.2.0.min.js",
 
                         "~/Abp/Framework/scripts/abp.js",
                         "~/Abp/Framework/scripts/libs/abp.jquery.js",

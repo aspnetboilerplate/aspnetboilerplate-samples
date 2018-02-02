@@ -34,7 +34,7 @@ namespace AbpSwagger.Application.Students
             }
         }
 
-        public async Task<GetStudentForEditOutput> GetStudent(EntityDto input)
+        public async Task<GetStudentForEditOutput> GetStudent(NullableIdInput input)
         {
             if (input?.Id == null)
                 throw new UserFriendlyException("Id is invalid.");
@@ -44,11 +44,6 @@ namespace AbpSwagger.Application.Students
             var output = await Task.FromResult(info.MapTo<GetStudentForEditOutput>());
             
             return output;
-        }
-
-        public Task<GetStudentForEditOutput> GetStudent(EntityDto<int?> input)
-        {
-            throw new System.NotImplementedException();
         }
 
         public async Task<GetStudentForEditOutput> GetStudentById(int input)
@@ -66,19 +61,14 @@ namespace AbpSwagger.Application.Students
             return output;
         }
 
-        Task<PagedResultDto<StudentListDto>> IStudentAppService.GetStudentForPaging(GetStudentInput input)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public async Task<PagedResultDto<StudentListDto>> GetStudentForPaging(GetStudentInput input)
+        public async Task<PagedResultOutput<StudentListDto>> GetStudentForPaging(GetStudentInput input)
         {
             var lst = _list.AsQueryable().WhereIf(!input.Filter.IsNullOrWhiteSpace(), x => x.FirstName.Contains(input.Filter)).
                    OrderBy(input.Sorting).PageBy(input);
 
             var dtos = await Task.FromResult(lst.ToList());
 
-            return new PagedResultDto<StudentListDto>(
+            return new PagedResultOutput<StudentListDto>(
                 _list.Count,
                 dtos
                 );

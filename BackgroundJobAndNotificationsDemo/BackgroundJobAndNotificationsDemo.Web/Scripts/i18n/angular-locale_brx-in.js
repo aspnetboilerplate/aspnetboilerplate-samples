@@ -42,7 +42,7 @@ $provide.value("$locale", {
       "\u0908\u0938\u093e.\u092a\u0942\u0930\u094d\u0935",
       "\u0938\u0928"
     ],
-    "FIRSTDAYOFWEEK": 6,
+    "FIRSTDAYOFWEEK": 0,
     "MONTH": [
       "\u091c\u093e\u0928\u0941\u0935\u093e\u0930\u0940",
       "\u092b\u0947\u092c\u094d\u0930\u0941\u0935\u093e\u0930\u0940",
@@ -80,22 +80,8 @@ $provide.value("$locale", {
       "\u0928\u092c\u0947\u091c\u094d\u092c\u093c\u0930",
       "\u0926\u093f\u0938\u0947\u091c\u094d\u092c\u093c\u0930"
     ],
-    "STANDALONEMONTH": [
-      "\u091c\u093e\u0928\u0941\u0935\u093e\u0930\u0940",
-      "\u092b\u0947\u092c\u094d\u0930\u0941\u0935\u093e\u0930\u0940",
-      "\u092e\u093e\u0930\u094d\u0938",
-      "\u090f\u092b\u094d\u0930\u093f\u0932",
-      "\u092e\u0947",
-      "\u091c\u0941\u0928",
-      "\u091c\u0941\u0932\u093e\u0907",
-      "\u0906\u0917\u0938\u094d\u0925",
-      "\u0938\u0947\u092c\u0925\u0947\u091c\u094d\u092c\u093c\u0930",
-      "\u0905\u0916\u0925\u092c\u0930",
-      "\u0928\u092c\u0947\u091c\u094d\u092c\u093c\u0930",
-      "\u0926\u093f\u0938\u0947\u091c\u094d\u092c\u093c\u0930"
-    ],
     "WEEKENDRANGE": [
-      6,
+      5,
       6
     ],
     "fullDate": "EEEE, MMMM d, y",
@@ -137,7 +123,6 @@ $provide.value("$locale", {
     ]
   },
   "id": "brx-in",
-  "localeID": "brx_IN",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (i == 1 && vf.v == 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

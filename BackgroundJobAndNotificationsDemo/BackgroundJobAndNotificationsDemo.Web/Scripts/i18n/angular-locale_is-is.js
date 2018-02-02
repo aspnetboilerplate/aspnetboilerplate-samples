@@ -93,20 +93,6 @@ $provide.value("$locale", {
       "n\u00f3v.",
       "des."
     ],
-    "STANDALONEMONTH": [
-      "jan\u00faar",
-      "febr\u00faar",
-      "mars",
-      "apr\u00edl",
-      "ma\u00ed",
-      "j\u00fan\u00ed",
-      "j\u00fal\u00ed",
-      "\u00e1g\u00fast",
-      "september",
-      "okt\u00f3ber",
-      "n\u00f3vember",
-      "desember"
-    ],
     "WEEKENDRANGE": [
       5,
       6
@@ -139,8 +125,8 @@ $provide.value("$locale", {
       {
         "gSize": 3,
         "lgSize": 3,
-        "maxFrac": 0,
-        "minFrac": 0,
+        "maxFrac": 2,
+        "minFrac": 2,
         "minInt": 1,
         "negPre": "-",
         "negSuf": "\u00a0\u00a4",
@@ -150,7 +136,6 @@ $provide.value("$locale", {
     ]
   },
   "id": "is-is",
-  "localeID": "is_IS",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  var wt = getWT(vf.v, vf.f);  if (wt.t == 0 && i % 10 == 1 && i % 100 != 11 || wt.t != 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

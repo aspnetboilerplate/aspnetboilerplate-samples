@@ -62,20 +62,6 @@ $provide.value("$locale", {
       "nov.",
       "d\u00e9c."
     ],
-    "STANDALONEMONTH": [
-      "janvier",
-      "f\u00e9vrier",
-      "mars",
-      "avril",
-      "mai",
-      "juin",
-      "juillet",
-      "ao\u00fbt",
-      "septembre",
-      "octobre",
-      "novembre",
-      "d\u00e9cembre"
-    ],
     "WEEKENDRANGE": [
       5,
       6
@@ -91,7 +77,7 @@ $provide.value("$locale", {
   },
   "NUMBER_FORMATS": {
     "CURRENCY_SYM": "CHF",
-    "DECIMAL_SEP": ",",
+    "DECIMAL_SEP": ".",
     "GROUP_SEP": "\u00a0",
     "PATTERNS": [
       {
@@ -111,15 +97,14 @@ $provide.value("$locale", {
         "maxFrac": 2,
         "minFrac": 2,
         "minInt": 1,
-        "negPre": "-",
-        "negSuf": "\u00a0\u00a4",
-        "posPre": "",
-        "posSuf": "\u00a0\u00a4"
+        "negPre": "\u00a4-",
+        "negSuf": "",
+        "posPre": "\u00a4\u00a0",
+        "posSuf": ""
       }
     ]
   },
   "id": "fr-ch",
-  "localeID": "fr_CH",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  if (i == 0 || i == 1) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

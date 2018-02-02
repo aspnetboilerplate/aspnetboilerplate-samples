@@ -1,9 +1,10 @@
-﻿using System.Web.Http;
+﻿using System.Reflection;
+using System.Web.Http;
 using Abp.Application.Services;
 using Abp.Configuration.Startup;
 using Abp.Modules;
-using Abp.Reflection.Extensions;
 using Abp.WebApi;
+using Abp.WebApi.Controllers.Dynamic.Builders;
 
 namespace BackgroundJobAndNotificationsDemo.Api
 {
@@ -12,9 +13,9 @@ namespace BackgroundJobAndNotificationsDemo.Api
     {
         public override void Initialize()
         {
-            IocManager.RegisterAssemblyByConvention(typeof(BackgroundJobAndNotificationsDemoWebApiModule).GetAssembly());
+            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
 
-            Configuration.Modules.AbpWebApi().DynamicApiControllerBuilder
+            DynamicApiControllerBuilder
                 .ForAll<IApplicationService>(typeof(BackgroundJobAndNotificationsDemoApplicationModule).Assembly, "app")
                 .Build();
 

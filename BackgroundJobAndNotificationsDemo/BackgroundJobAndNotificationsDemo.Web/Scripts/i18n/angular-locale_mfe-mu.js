@@ -80,20 +80,6 @@ $provide.value("$locale", {
       "nov",
       "des"
     ],
-    "STANDALONEMONTH": [
-      "zanvie",
-      "fevriye",
-      "mars",
-      "avril",
-      "me",
-      "zin",
-      "zilye",
-      "out",
-      "septam",
-      "oktob",
-      "novam",
-      "desam"
-    ],
     "WEEKENDRANGE": [
       5,
       6
@@ -126,8 +112,8 @@ $provide.value("$locale", {
       {
         "gSize": 3,
         "lgSize": 3,
-        "maxFrac": 0,
-        "minFrac": 0,
+        "maxFrac": 2,
+        "minFrac": 2,
         "minInt": 1,
         "negPre": "-\u00a4\u00a0",
         "negSuf": "",
@@ -137,7 +123,6 @@ $provide.value("$locale", {
     ]
   },
   "id": "mfe-mu",
-  "localeID": "mfe_MU",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (i == 1 && vf.v == 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

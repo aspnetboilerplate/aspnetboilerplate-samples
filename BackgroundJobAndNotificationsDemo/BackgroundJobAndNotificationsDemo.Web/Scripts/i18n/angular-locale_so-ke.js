@@ -35,14 +35,14 @@ $provide.value("$locale", {
       "Sabti"
     ],
     "ERANAMES": [
-      "CK",
-      "CD"
+      "Ciise ka hor (CS)",
+      "Ciise ka dib (CS)"
     ],
     "ERAS": [
       "CK",
       "CD"
     ],
-    "FIRSTDAYOFWEEK": 6,
+    "FIRSTDAYOFWEEK": 0,
     "MONTH": [
       "Bisha Koobaad",
       "Bisha Labaad",
@@ -80,32 +80,18 @@ $provide.value("$locale", {
       "KIT",
       "LIT"
     ],
-    "STANDALONEMONTH": [
-      "Bisha Koobaad",
-      "Bisha Labaad",
-      "Bisha Saddexaad",
-      "Bisha Afraad",
-      "Bisha Shanaad",
-      "Bisha Lixaad",
-      "Bisha Todobaad",
-      "Bisha Sideedaad",
-      "Bisha Sagaalaad",
-      "Bisha Tobnaad",
-      "Bisha Kow iyo Tobnaad",
-      "Bisha Laba iyo Tobnaad"
-    ],
     "WEEKENDRANGE": [
       5,
       6
     ],
     "fullDate": "EEEE, MMMM dd, y",
     "longDate": "dd MMMM y",
-    "medium": "dd-MMM-y HH:mm:ss",
+    "medium": "dd-MMM-y h:mm:ss a",
     "mediumDate": "dd-MMM-y",
-    "mediumTime": "HH:mm:ss",
-    "short": "dd/MM/yy HH:mm",
+    "mediumTime": "h:mm:ss a",
+    "short": "dd/MM/yy h:mm a",
     "shortDate": "dd/MM/yy",
-    "shortTime": "HH:mm"
+    "shortTime": "h:mm a"
   },
   "NUMBER_FORMATS": {
     "CURRENCY_SYM": "Ksh",
@@ -137,7 +123,6 @@ $provide.value("$locale", {
     ]
   },
   "id": "so-ke",
-  "localeID": "so_KE",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (i == 1 && vf.v == 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

@@ -80,32 +80,18 @@ $provide.value("$locale", {
       "Nwa",
       "Duj"
     ],
-    "STANDALONEMONTH": [
-      "Yennayer",
-      "Yebrayer",
-      "Mars",
-      "Ibrir",
-      "Mayyu",
-      "Yunyu",
-      "Yulyuz",
-      "\u0194uct",
-      "Cutanbir",
-      "K\u1e6duber",
-      "Nwanbir",
-      "Dujanbir"
-    ],
     "WEEKENDRANGE": [
       4,
       5
     ],
     "fullDate": "EEEE, d MMMM y",
     "longDate": "d MMMM y",
-    "medium": "d MMM y HH:mm:ss",
+    "medium": "d MMM y h:mm:ss a",
     "mediumDate": "d MMM y",
-    "mediumTime": "HH:mm:ss",
-    "short": "dd/MM/y HH:mm",
+    "mediumTime": "h:mm:ss a",
+    "short": "dd/MM/y h:mm a",
     "shortDate": "dd/MM/y",
-    "shortTime": "HH:mm"
+    "shortTime": "h:mm a"
   },
   "NUMBER_FORMATS": {
     "CURRENCY_SYM": "dh",
@@ -137,7 +123,6 @@ $provide.value("$locale", {
     ]
   },
   "id": "tzm",
-  "localeID": "tzm",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (i == 1 && vf.v == 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);
