@@ -168,9 +168,9 @@ namespace InterceptionDemo.Interceptors
 
 <h2 id="ArticleRegisterInterceptor">Registering Interceptors</h2>
 
-<p>After we created an interceptor, we can <strong>register</strong> it for desired classes. For example, we may want to register <code>MeasureDurationInterceptor</code> for all methods of all <strong>application service</strong> classes. We can easily identify application service classes since all application service classes implement <code>IApplicationService</code> in ABP framework.</p>
+<p>After we create an interceptor, we can <strong>register</strong> it for desired classes. For example, we may want to register <code>MeasureDurationInterceptor</code> for all methods of all <strong>application service</strong> classes. We can easily identify application service classes since all application service classes implement <code>IApplicationService</code> in ABP framework.</p>
 
-<p>There are some alternative ways of registering interceptors. But, it&#39;s most proper way in ABP to handle <code>ComponentRegistered</code> event of Castle Windsors <code>Kernel</code>:</p>
+<p>There are some alternative ways of registering interceptors. But, it&#39;s the most proper way in ABP to handle <code>ComponentRegistered</code> event of Castle Windsors <code>Kernel</code>:</p>
 
 <pre lang="cs">
 public static class MeasureDurationInterceptorRegistrar
