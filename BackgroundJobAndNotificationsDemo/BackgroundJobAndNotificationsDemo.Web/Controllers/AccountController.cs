@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Abp.Auditing;
+using Abp.Authorization;
 using Abp.Authorization.Users;
 using Abp.AutoMapper;
 using Abp.Configuration.Startup;
@@ -14,7 +15,8 @@ using Abp.Domain.Uow;
 using Abp.Extensions;
 using Abp.Threading;
 using Abp.UI;
-using Abp.Web.Mvc.Models;
+using Abp.Web.Models;
+using BackgroundJobAndNotificationsDemo.Authorization;
 using BackgroundJobAndNotificationsDemo.Authorization.Roles;
 using BackgroundJobAndNotificationsDemo.MultiTenancy;
 using BackgroundJobAndNotificationsDemo.Users;
@@ -29,31 +31,28 @@ namespace BackgroundJobAndNotificationsDemo.Web.Controllers
     public class AccountController : BackgroundJobAndNotificationsDemoControllerBase
     {
         private readonly TenantManager _tenantManager;
-        private readonly UserManager _userManager;
+        private readonly LogInManager _loginManager;
         private readonly RoleManager _roleManager;
         private readonly IUnitOfWorkManager _unitOfWorkManager;
         private readonly IMultiTenancyConfig _multiTenancyConfig;
+        private readonly UserManager _userManager;
 
-        private IAuthenticationManager AuthenticationManager
-        {
-            get
-            {
-                return HttpContext.GetOwinContext().Authentication;
-            }
-        }
+        private IAuthenticationManager AuthenticationManager => HttpContext.GetOwinContext().Authentication;
 
         public AccountController(
             TenantManager tenantManager,
-            UserManager userManager,
+            LogInManager loginManager,
             RoleManager roleManager,
             IUnitOfWorkManager unitOfWorkManager,
-            IMultiTenancyConfig multiTenancyConfig)
+            IMultiTenancyConfig multiTenancyConfig, 
+            UserManager userManager)
         {
             _tenantManager = tenantManager;
-            _userManager = userManager;
+            _loginManager = loginManager;
             _roleManager = roleManager;
             _unitOfWorkManager = unitOfWorkManager;
             _multiTenancyConfig = multiTenancyConfig;
+            _userManager = userManager;
         }
 
         #region Login / Logout
@@ -97,12 +96,12 @@ namespace BackgroundJobAndNotificationsDemo.Web.Controllers
                 returnUrl = returnUrl + returnUrlHash;
             }
 
-            return Json(new MvcAjaxResponse { TargetUrl = returnUrl });
+            return Json(new AjaxResponse { TargetUrl = returnUrl });
         }
 
-        private async Task<AbpUserManager<Tenant, Role, User>.AbpLoginResult> GetLoginResultAsync(string usernameOrEmailAddress, string password, string tenancyName)
+        private async Task<AbpLoginResult<Tenant, User>> GetLoginResultAsync(string usernameOrEmailAddress, string password, string tenancyName)
         {
-            var loginResult = await _userManager.LoginAsync(usernameOrEmailAddress, password, tenancyName);
+            var loginResult = await _loginManager.LoginAsync(usernameOrEmailAddress, password, tenancyName);
 
             switch (loginResult.Result)
             {
@@ -260,10 +259,10 @@ namespace BackgroundJobAndNotificationsDemo.Web.Controllers
                 //Directly login if possible
                 if (user.IsActive)
                 {
-                    AbpUserManager<Tenant, Role, User>.AbpLoginResult loginResult;
+                    AbpLoginResult<Tenant,User> loginResult;
                     if (externalLoginInfo != null)
                     {
-                        loginResult = await _userManager.LoginAsync(externalLoginInfo.Login, tenant.TenancyName);
+                        loginResult = await _loginManager.LoginAsync(externalLoginInfo.Login, tenant.TenancyName);
                     }
                     else
                     {
@@ -347,7 +346,7 @@ namespace BackgroundJobAndNotificationsDemo.Web.Controllers
                 }
             }
 
-            var loginResult = await _userManager.LoginAsync(loginInfo.Login, tenancyName);
+            var loginResult = await _loginManager.LoginAsync(loginInfo.Login, tenancyName);
 
             switch (loginResult.Result)
             {

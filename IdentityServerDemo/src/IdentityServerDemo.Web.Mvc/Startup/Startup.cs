@@ -44,7 +44,7 @@ namespace IdentityServerDemo.Web.Startup
             IdentityRegistrar.Register(services);
 
             services.AddIdentityServer()
-                .AddTemporarySigningCredential()
+                .AddDeveloperSigningCredential()
                 .AddInMemoryIdentityResources(IdentityServerConfig.GetIdentityResources())
                 .AddInMemoryApiResources(IdentityServerConfig.GetApiResources())
                 .AddInMemoryClients(IdentityServerConfig.GetClients())
@@ -52,6 +52,8 @@ namespace IdentityServerDemo.Web.Startup
                 .AddAbpIdentityServer<User>();
 
             services.AddScoped<IWebResourceManager, WebResourceManager>();
+
+            AuthConfigurer.Configure(services, _appConfiguration);
 
             //Configure Abp and Dependency Injection
             return services.AddAbp<IdentityServerDemoWebMvcModule>(options =>
@@ -76,18 +78,9 @@ namespace IdentityServerDemo.Web.Startup
                 app.UseExceptionHandler("/Error");
             }
 
-            AuthConfigurer.Configure(app, _appConfiguration);
-
             app.UseIdentityServer();
 
-            app.UseIdentityServerAuthentication(
-                new IdentityServerAuthenticationOptions
-                {
-                    Authority = "http://localhost:62114/",
-                    RequireHttpsMetadata = false,
-                    AutomaticAuthenticate = true,
-                    AutomaticChallenge = true
-                });
+            app.UseAuthentication();
 
             app.UseStaticFiles();
 

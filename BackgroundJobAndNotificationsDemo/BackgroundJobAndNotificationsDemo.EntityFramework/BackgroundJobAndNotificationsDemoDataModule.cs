@@ -1,8 +1,6 @@
-﻿using System.Data.Entity;
-using System.Reflection;
-using Abp.Modules;
+﻿using Abp.Modules;
+using Abp.Reflection.Extensions;
 using Abp.Zero.EntityFramework;
-using BackgroundJobAndNotificationsDemo.EntityFramework;
 
 namespace BackgroundJobAndNotificationsDemo
 {
@@ -16,7 +14,7 @@ namespace BackgroundJobAndNotificationsDemo
 
         public override void Initialize()
         {
-            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+            IocManager.RegisterAssemblyByConvention(typeof(BackgroundJobAndNotificationsDemoDataModule).GetAssembly());
         }
     }
 }

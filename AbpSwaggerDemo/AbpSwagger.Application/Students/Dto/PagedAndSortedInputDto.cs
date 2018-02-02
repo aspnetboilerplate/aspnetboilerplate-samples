@@ -8,7 +8,7 @@ namespace AbpSwagger.Application.Students.Dto
         public string Filter { get; set; }
     }
 
-    public class PagedAndSortedInputDto : PagedAndSortedBaseInputDto, IInputDto, IPagedResultRequest, ISortedResultRequest
+    public class PagedAndSortedInputDto : PagedAndSortedBaseInputDto, IEntityDto, IPagedResultRequest, ISortedResultRequest
     {
         [Range(1, 1000)]
         public int MaxResultCount { get; set; }
@@ -25,5 +25,7 @@ namespace AbpSwagger.Application.Students.Dto
         {
             MaxResultCount = 10;
         }
+
+        public int Id { get; set; }
     }
 }

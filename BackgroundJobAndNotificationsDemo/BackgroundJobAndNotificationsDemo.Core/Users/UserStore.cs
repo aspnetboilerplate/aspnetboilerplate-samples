@@ -2,11 +2,10 @@ using Abp.Authorization.Users;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
 using BackgroundJobAndNotificationsDemo.Authorization.Roles;
-using BackgroundJobAndNotificationsDemo.MultiTenancy;
 
 namespace BackgroundJobAndNotificationsDemo.Users
 {
-    public class UserStore : AbpUserStore<Tenant, Role, User>
+    public class UserStore : AbpUserStore<Role, User>
     {
         public UserStore(
             IRepository<User, long> userRepository,
@@ -14,14 +13,17 @@ namespace BackgroundJobAndNotificationsDemo.Users
             IRepository<UserRole, long> userRoleRepository,
             IRepository<Role> roleRepository,
             IRepository<UserPermissionSetting, long> userPermissionSettingRepository,
-            IUnitOfWorkManager unitOfWorkManager)
+            IUnitOfWorkManager unitOfWorkManager,
+            IRepository<UserClaim, long> userClaimRepository
+            )
             : base(
-              userRepository,
-              userLoginRepository,
-              userRoleRepository,
-              roleRepository,
-              userPermissionSettingRepository,
-              unitOfWorkManager)
+                userRepository,
+                userLoginRepository,
+                userRoleRepository,
+                roleRepository,
+                userPermissionSettingRepository,
+                unitOfWorkManager,
+                userClaimRepository)
         {
         }
     }

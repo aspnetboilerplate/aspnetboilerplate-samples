@@ -6,7 +6,7 @@ using Abp.AutoMapper;
 namespace AbpSwagger.Application.Students.Dto
 {
     [AutoMap(typeof(StudentListDto))]
-    public class GetStudentForEditOutput : IOutputDto
+    public class GetStudentForEditOutput : EntityDto
     {
         [Description("Customer Id")]
         public int Id { get; set; }

@@ -44,16 +44,13 @@ namespace BackgroundJobAndNotificationsDemo.Migrations.SeedData
 
                 foreach (var permission in permissions)
                 {
-                    if (!permission.IsGrantedByDefault)
-                    {
-                        _context.Permissions.Add(
-                            new RolePermissionSetting
-                            {
-                                Name = permission.Name,
-                                IsGranted = true,
-                                RoleId = adminRoleForHost.Id
-                            });
-                    }
+                    _context.Permissions.Add(
+                        new RolePermissionSetting
+                        {
+                            Name = permission.Name,
+                            IsGranted = true,
+                            RoleId = adminRoleForHost.Id
+                        });
                 }
 
                 _context.SaveChanges();
@@ -78,7 +75,7 @@ namespace BackgroundJobAndNotificationsDemo.Migrations.SeedData
 
                 _context.SaveChanges();
 
-                _context.UserRoles.Add(new UserRole(adminUserForHost.Id, adminRoleForHost.Id));
+                _context.UserRoles.Add(new UserRole(null, adminUserForHost.Id, adminRoleForHost.Id));
 
                 _context.SaveChanges();
             }
@@ -108,16 +105,13 @@ namespace BackgroundJobAndNotificationsDemo.Migrations.SeedData
 
                 foreach (var permission in permissions)
                 {
-                    if (!permission.IsGrantedByDefault)
-                    {
-                        _context.Permissions.Add(
-                            new RolePermissionSetting
-                            {
-                                Name = permission.Name,
-                                IsGranted = true,
-                                RoleId = adminRoleForDefaultTenant.Id
-                            });
-                    }
+                    _context.Permissions.Add(
+                        new RolePermissionSetting
+                        {
+                            Name = permission.Name,
+                            IsGranted = true,
+                            RoleId = adminRoleForDefaultTenant.Id
+                        });
                 }
 
                 _context.SaveChanges();
@@ -141,7 +135,7 @@ namespace BackgroundJobAndNotificationsDemo.Migrations.SeedData
                     });
                 _context.SaveChanges();
 
-                _context.UserRoles.Add(new UserRole(adminUserForDefaultTenant.Id, adminRoleForDefaultTenant.Id));
+                _context.UserRoles.Add(new UserRole(defaultTenant.Id,adminUserForDefaultTenant.Id, adminRoleForDefaultTenant.Id));
                 _context.SaveChanges();
             }
         }

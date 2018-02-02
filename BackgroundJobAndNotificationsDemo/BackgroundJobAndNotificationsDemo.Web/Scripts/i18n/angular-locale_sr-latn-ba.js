@@ -22,21 +22,21 @@ function getVF(n, opt_precision) {
 $provide.value("$locale", {
   "DATETIME_FORMATS": {
     "AMPMS": [
-      "pre podne",
+      "prije podne",
       "po podne"
     ],
     "DAY": [
-      "nedelja",
+      "nedjelja",
       "ponedeljak",
       "utorak",
-      "sreda",
+      "srijeda",
       "\u010detvrtak",
       "petak",
       "subota"
     ],
     "ERANAMES": [
-      "Pre nove ere",
-      "Nove ere"
+      "prije nove ere",
+      "nove ere"
     ],
     "ERAS": [
       "p. n. e.",
@@ -58,27 +58,41 @@ $provide.value("$locale", {
       "decembar"
     ],
     "SHORTDAY": [
-      "ned",
-      "pon",
-      "uto",
-      "sre",
-      "\u010det",
-      "pet",
-      "sub"
+      "ned.",
+      "pon.",
+      "ut.",
+      "sr.",
+      "\u010det.",
+      "pet.",
+      "sub."
     ],
     "SHORTMONTH": [
-      "jan",
-      "feb",
-      "mar",
-      "apr",
+      "jan.",
+      "feb.",
+      "mart",
+      "apr.",
       "maj",
       "jun",
       "jul",
-      "avg",
-      "sep",
-      "okt",
-      "nov",
-      "dec"
+      "avg.",
+      "sept.",
+      "okt.",
+      "nov.",
+      "dec."
+    ],
+    "STANDALONEMONTH": [
+      "januar",
+      "februar",
+      "mart",
+      "april",
+      "maj",
+      "jun",
+      "jul",
+      "avgust",
+      "septembar",
+      "oktobar",
+      "novembar",
+      "decembar"
     ],
     "WEEKENDRANGE": [
       5,
@@ -123,6 +137,7 @@ $provide.value("$locale", {
     ]
   },
   "id": "sr-latn-ba",
+  "localeID": "sr_Latn_BA",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (vf.v == 0 && i % 10 == 1 && i % 100 != 11 || vf.f % 10 == 1 && vf.f % 100 != 11) {    return PLURAL_CATEGORY.ONE;  }  if (vf.v == 0 && i % 10 >= 2 && i % 10 <= 4 && (i % 100 < 12 || i % 100 > 14) || vf.f % 10 >= 2 && vf.f % 10 <= 4 && (vf.f % 100 < 12 || vf.f % 100 > 14)) {    return PLURAL_CATEGORY.FEW;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

@@ -1,24 +1,26 @@
 using Abp.Authorization;
 using Abp.Authorization.Roles;
+using Abp.Domain.Uow;
 using Abp.Runtime.Caching;
 using Abp.Zero.Configuration;
-using BackgroundJobAndNotificationsDemo.MultiTenancy;
 using BackgroundJobAndNotificationsDemo.Users;
 
 namespace BackgroundJobAndNotificationsDemo.Authorization.Roles
 {
-    public class RoleManager : AbpRoleManager<Tenant, Role, User>
+    public class RoleManager : AbpRoleManager<Role, User>
     {
         public RoleManager(
             RoleStore store,
             IPermissionManager permissionManager,
             IRoleManagementConfig roleManagementConfig,
-            ICacheManager cacheManager)
+            ICacheManager cacheManager,
+            IUnitOfWorkManager unitOfWorkManager)
             : base(
                 store,
                 permissionManager,
                 roleManagementConfig,
-                cacheManager)
+                cacheManager,
+                unitOfWorkManager)
         {
         }
     }

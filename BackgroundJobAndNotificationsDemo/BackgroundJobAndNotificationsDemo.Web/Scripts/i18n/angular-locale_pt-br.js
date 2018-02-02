@@ -17,8 +17,8 @@ $provide.value("$locale", {
       "s\u00e1bado"
     ],
     "ERANAMES": [
-      "Antes de Cristo",
-      "Ano do Senhor"
+      "antes de Cristo",
+      "depois de Cristo"
     ],
     "ERAS": [
       "a.C.",
@@ -62,6 +62,20 @@ $provide.value("$locale", {
       "nov",
       "dez"
     ],
+    "STANDALONEMONTH": [
+      "janeiro",
+      "fevereiro",
+      "mar\u00e7o",
+      "abril",
+      "maio",
+      "junho",
+      "julho",
+      "agosto",
+      "setembro",
+      "outubro",
+      "novembro",
+      "dezembro"
+    ],
     "WEEKENDRANGE": [
       5,
       6
@@ -71,8 +85,8 @@ $provide.value("$locale", {
     "medium": "d 'de' MMM 'de' y HH:mm:ss",
     "mediumDate": "d 'de' MMM 'de' y",
     "mediumTime": "HH:mm:ss",
-    "short": "dd/MM/yy HH:mm",
-    "shortDate": "dd/MM/yy",
+    "short": "dd/MM/y HH:mm",
+    "shortDate": "dd/MM/y",
     "shortTime": "HH:mm"
   },
   "NUMBER_FORMATS": {
@@ -105,6 +119,7 @@ $provide.value("$locale", {
     ]
   },
   "id": "pt-br",
-  "pluralCat": function(n, opt_precision) {  if (n >= 0 && n <= 2 && n != 2) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
+  "localeID": "pt_BR",
+  "pluralCat": function(n, opt_precision) {  var i = n | 0;  if (i >= 0 && i <= 1) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

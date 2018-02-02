@@ -67,18 +67,32 @@ $provide.value("$locale", {
       "ds."
     ],
     "SHORTMONTH": [
-      "gen.",
-      "febr.",
+      "de gen.",
+      "de febr.",
+      "de mar\u00e7",
+      "d\u2019abr.",
+      "de maig",
+      "de juny",
+      "de jul.",
+      "d\u2019ag.",
+      "de set.",
+      "d\u2019oct.",
+      "de nov.",
+      "de des."
+    ],
+    "STANDALONEMONTH": [
+      "gener",
+      "febrer",
       "mar\u00e7",
-      "abr.",
+      "abril",
       "maig",
       "juny",
-      "jul.",
-      "ag.",
-      "set.",
-      "oct.",
-      "nov.",
-      "des."
+      "juliol",
+      "agost",
+      "setembre",
+      "octubre",
+      "novembre",
+      "desembre"
     ],
     "WEEKENDRANGE": [
       5,
@@ -123,6 +137,7 @@ $provide.value("$locale", {
     ]
   },
   "id": "ca",
+  "localeID": "ca",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (i == 1 && vf.v == 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

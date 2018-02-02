@@ -18,7 +18,7 @@ $provide.value("$locale", {
     ],
     "ERANAMES": [
       "Sebelum Masehi",
-      "M"
+      "Masehi"
     ],
     "ERAS": [
       "SM",
@@ -61,6 +61,20 @@ $provide.value("$locale", {
       "Okt",
       "Nov",
       "Des"
+    ],
+    "STANDALONEMONTH": [
+      "Januari",
+      "Februari",
+      "Maret",
+      "April",
+      "Mei",
+      "Juni",
+      "Juli",
+      "Agustus",
+      "September",
+      "Oktober",
+      "November",
+      "Desember"
     ],
     "WEEKENDRANGE": [
       5,
@@ -105,6 +119,7 @@ $provide.value("$locale", {
     ]
   },
   "id": "id",
+  "localeID": "id",
   "pluralCat": function(n, opt_precision) {  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

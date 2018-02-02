@@ -2,7 +2,7 @@
 
 namespace BackgroundJobAndNotificationsDemo.Sessions.Dto
 {
-    public class GetCurrentLoginInformationsOutput : IOutputDto
+    public class GetCurrentLoginInformationsOutput : EntityDto
     {
         public UserLoginInfoDto User { get; set; }
 
