@@ -45,6 +45,7 @@ namespace Acme.ProjectName.Web.Host.Startup
             });
 
             IdentityRegistrar.Register(services);
+            AuthConfigurer.Configure(services, _appConfiguration);
 
             //Configure CORS for angular2 UI
             services.AddCors(options =>
@@ -81,8 +82,6 @@ namespace Acme.ProjectName.Web.Host.Startup
             app.UseAbp(); //Initializes ABP framework.
 
             app.UseCors(DefaultCorsPolicyName); //Enable CORS!
-
-            AuthConfigurer.Configure(app, _appConfiguration);
 
             app.UseStaticFiles();
 

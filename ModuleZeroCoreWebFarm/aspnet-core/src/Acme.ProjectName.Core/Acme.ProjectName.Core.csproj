@@ -15,12 +15,12 @@
     <EmbeddedResource Include="Localization\SourceFiles\*.xml" Exclude="bin\**;obj\**;**\*.xproj;packages\**;@(EmbeddedResource)" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Abp.AutoMapper" Version="2.1.2" />
-    <PackageReference Include="Abp.ZeroCore.EntityFrameworkCore" Version="2.1.2" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="1.1.2" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="1.1.2" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="1.1.2" />
-    <PackageReference Include="Castle.Windsor.MsDependencyInjection" Version="2.0.0" />
+    <PackageReference Include="Abp.AutoMapper" Version="3.4.0" />
+    <PackageReference Include="Abp.ZeroCore.EntityFrameworkCore" Version="3.4.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="2.0.0" />
+    <PackageReference Include="Castle.Windsor.MsDependencyInjection" Version="3.3.0" />
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
     <Reference Include="System" />

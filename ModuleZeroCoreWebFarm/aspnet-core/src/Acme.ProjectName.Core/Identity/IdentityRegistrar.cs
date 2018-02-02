@@ -3,21 +3,18 @@ using Acme.ProjectName.Authorization.Roles;
 using Acme.ProjectName.Authorization.Users;
 using Acme.ProjectName.Editions;
 using Acme.ProjectName.MultiTenancy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Acme.ProjectName.Identity
 {
     public static class IdentityRegistrar
     {
-        public static void Register(IServiceCollection services)
+        public static IdentityBuilder Register(IServiceCollection services)
         {
             services.AddLogging();
 
-            services.AddAbpIdentity<Tenant, User, Role>(options =>
-                {
-                    options.Cookies.ApplicationCookie.AuthenticationScheme = "AbpZeroTemplateAuthSchema";
-                    options.Cookies.ApplicationCookie.CookieName = "AbpZeroTemplateAuth";
-                })
+            return services.AddAbpIdentity<Tenant, User, Role>()
                 .AddAbpTenantManager<TenantManager>()
                 .AddAbpUserManager<UserManager>()
                 .AddAbpRoleManager<RoleManager>()
@@ -28,6 +25,7 @@ namespace Acme.ProjectName.Identity
                 .AddAbpSignInManager<SignInManager>()
                 .AddAbpSecurityStampValidator<SecurityStampValidator>()
                 .AddAbpUserClaimsPrincipalFactory<UserClaimsPrincipalFactory>()
+                .AddPermissionChecker<PermissionChecker>()
                 .AddDefaultTokenProviders();
         }
     }
