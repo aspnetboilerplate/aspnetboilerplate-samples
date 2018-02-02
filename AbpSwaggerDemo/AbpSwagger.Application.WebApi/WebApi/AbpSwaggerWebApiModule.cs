@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
 using Abp.Application.Services;
+using Abp.Configuration.Startup;
 using Abp.Modules;
 using Abp.WebApi;
-using Abp.WebApi.Controllers.Dynamic.Builders;
 using OtherApp.Application;
 
 namespace AbpSwagger.Application.WebApi.WebApi
@@ -17,12 +17,11 @@ namespace AbpSwagger.Application.WebApi.WebApi
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
 
-            DynamicApiControllerBuilder
+            Configuration.Modules.AbpWebApi().DynamicApiControllerBuilder
                 .ForAll<IApplicationService>(typeof(AbpSwaggerAppModule).Assembly, "app")
-                .WithConventionalVerbs()
                 .Build();
 
-            DynamicApiControllerBuilder
+            Configuration.Modules.AbpWebApi().DynamicApiControllerBuilder
                 .ForAll<IApplicationService>(typeof(OtherAppModule).Assembly, "app")
                 .Build();
         }

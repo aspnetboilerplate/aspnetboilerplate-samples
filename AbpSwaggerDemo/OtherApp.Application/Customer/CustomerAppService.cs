@@ -39,7 +39,7 @@ namespace OtherApp.Application.Customer
             return list;
         }
 
-        public async Task<CustomerListDto> GetCustomerById(IdInput input)
+        public async Task<CustomerListDto> GetCustomerById(EntityDto input)
         {
             var lst = _list.FirstOrDefault(x => x.Id == input.Id);
 
