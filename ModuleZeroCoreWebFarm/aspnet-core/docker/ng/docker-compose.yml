@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+
+    abp_redis:
+        image: redis
+        ports:
+            - "6379:6379"
+
+    abp_host:
+        image: abp/host
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Staging
+        volumes:
+            - "./Host-Logs:/app/App_Data/Logs"
+
+    abp_ng:
+        image: abp/ng
+        ports:
+            - "9902:80"
+            
+    load_balancer:
+        image: haproxy:1.7.1
+        volumes:
+            - "./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg"
+        ports:
+            - "9904:8080"

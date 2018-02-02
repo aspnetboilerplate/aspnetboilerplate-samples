@@ -1,0 +1,228 @@
+﻿DEBUG 2017-06-15 06:05:42,620 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-06-15 06:05:42,660 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2017-06-15 06:05:42,675 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.Web.Host.Startup.ProjectNameWebHostModule, Acme.ProjectName.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:42,678 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.ProjectNameWebCoreModule, Acme.ProjectName.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:42,678 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.ProjectNameApplicationModule, Acme.ProjectName.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:42,678 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.ProjectNameCoreModule, Acme.ProjectName.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:42,679 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:42,679 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:42,679 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:42,680 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:42,680 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.EntityFrameworkCore.ProjectNameEntityFrameworkModule, Acme.ProjectName.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:42,680 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:42,681 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:42,681 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:42,681 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:42,681 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:42,682 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Runtime.Caching.Redis.AbpRedisCacheModule, Abp.RedisCache, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:42,685 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2017-06-15 06:05:42,745 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-06-15 06:05:42,745 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-06-15 06:05:42,745 [1    ] o.Configuration.LanguageManagementConfig - Converted ProjectName (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-06-15 06:05:42,745 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+FATAL 2017-06-15 06:05:42,975 [1    ] Abp.AbpBootstrapper                      - System.Net.Internals.SocketExceptionFactory+ExtendedSocketException: No such device or address
+   at System.Net.Dns.HostResolutionEndHelper(IAsyncResult asyncResult)
+   at System.Net.Dns.EndGetHostAddresses(IAsyncResult asyncResult)
+   at System.Net.Dns.<>c.<GetHostAddressesAsync>b__14_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Acme.ProjectName.ProjectNameWebCoreModule.<PreInitialize>b__3_0(AbpRedisCacheOptions options) in D:\GitHub\ModuleZeroCoreTemplateWebFarm\aspnet-core\src\Acme.ProjectName.Web.Core\ProjectNameWebCoreModule.cs:line 65
+   at Acme.ProjectName.ProjectNameWebCoreModule.PreInitialize() in D:\GitHub\ModuleZeroCoreTemplateWebFarm\aspnet-core\src\Acme.ProjectName.Web.Core\ProjectNameWebCoreModule.cs:line 60
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.Modules.AbpModuleManager.StartModules()
+   at Abp.AbpBootstrapper.Initialize()
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException: No such device or address
+   at System.Net.Dns.HostResolutionEndHelper(IAsyncResult asyncResult)
+   at System.Net.Dns.EndGetHostAddresses(IAsyncResult asyncResult)
+   at System.Net.Dns.<>c.<GetHostAddressesAsync>b__14_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Acme.ProjectName.ProjectNameWebCoreModule.<PreInitialize>b__3_0(AbpRedisCacheOptions options) in D:\GitHub\ModuleZeroCoreTemplateWebFarm\aspnet-core\src\Acme.ProjectName.Web.Core\ProjectNameWebCoreModule.cs:line 65
+   at Acme.ProjectName.ProjectNameWebCoreModule.PreInitialize() in D:\GitHub\ModuleZeroCoreTemplateWebFarm\aspnet-core\src\Acme.ProjectName.Web.Core\ProjectNameWebCoreModule.cs:line 60
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.Modules.AbpModuleManager.StartModules()
+   at Abp.AbpBootstrapper.Initialize()
+DEBUG 2017-06-15 06:05:46,788 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-06-15 06:05:46,820 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2017-06-15 06:05:46,836 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.Web.Host.Startup.ProjectNameWebHostModule, Acme.ProjectName.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:46,839 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.ProjectNameWebCoreModule, Acme.ProjectName.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:46,840 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.ProjectNameApplicationModule, Acme.ProjectName.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:46,841 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.ProjectNameCoreModule, Acme.ProjectName.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:46,842 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:46,842 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:46,843 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:46,845 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:46,845 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.EntityFrameworkCore.ProjectNameEntityFrameworkModule, Acme.ProjectName.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:46,846 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:46,847 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:46,847 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:46,848 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:46,849 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:46,850 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Runtime.Caching.Redis.AbpRedisCacheModule, Abp.RedisCache, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:46,854 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2017-06-15 06:05:46,925 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-06-15 06:05:46,925 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-06-15 06:05:46,925 [1    ] o.Configuration.LanguageManagementConfig - Converted ProjectName (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-06-15 06:05:46,926 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-06-15 06:05:47,526 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-06-15 06:05:47,552 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2017-06-15 06:05:47,565 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.Web.Host.Startup.ProjectNameWebHostModule, Acme.ProjectName.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:47,570 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.ProjectNameWebCoreModule, Acme.ProjectName.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:47,570 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.ProjectNameApplicationModule, Acme.ProjectName.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:47,571 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.ProjectNameCoreModule, Acme.ProjectName.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:47,571 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:47,571 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:47,571 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:47,572 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:47,572 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.EntityFrameworkCore.ProjectNameEntityFrameworkModule, Acme.ProjectName.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:47,573 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:47,573 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:47,573 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:47,574 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:47,574 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:47,575 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Runtime.Caching.Redis.AbpRedisCacheModule, Abp.RedisCache, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:05:47,578 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2017-06-15 06:05:47,644 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-06-15 06:05:47,644 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-06-15 06:05:47,644 [1    ] o.Configuration.LanguageManagementConfig - Converted ProjectName (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-06-15 06:05:47,644 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+FATAL 2017-06-15 06:05:47,771 [1    ] Abp.AbpBootstrapper                      - System.Net.Internals.SocketExceptionFactory+ExtendedSocketException: No such device or address
+   at System.Net.Dns.HostResolutionEndHelper(IAsyncResult asyncResult)
+   at System.Net.Dns.EndGetHostAddresses(IAsyncResult asyncResult)
+   at System.Net.Dns.<>c.<GetHostAddressesAsync>b__14_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Acme.ProjectName.ProjectNameWebCoreModule.<PreInitialize>b__3_0(AbpRedisCacheOptions options) in D:\GitHub\ModuleZeroCoreTemplateWebFarm\aspnet-core\src\Acme.ProjectName.Web.Core\ProjectNameWebCoreModule.cs:line 65
+   at Acme.ProjectName.ProjectNameWebCoreModule.PreInitialize() in D:\GitHub\ModuleZeroCoreTemplateWebFarm\aspnet-core\src\Acme.ProjectName.Web.Core\ProjectNameWebCoreModule.cs:line 60
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.Modules.AbpModuleManager.StartModules()
+   at Abp.AbpBootstrapper.Initialize()
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException: No such device or address
+   at System.Net.Dns.HostResolutionEndHelper(IAsyncResult asyncResult)
+   at System.Net.Dns.EndGetHostAddresses(IAsyncResult asyncResult)
+   at System.Net.Dns.<>c.<GetHostAddressesAsync>b__14_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Acme.ProjectName.ProjectNameWebCoreModule.<PreInitialize>b__3_0(AbpRedisCacheOptions options) in D:\GitHub\ModuleZeroCoreTemplateWebFarm\aspnet-core\src\Acme.ProjectName.Web.Core\ProjectNameWebCoreModule.cs:line 65
+   at Acme.ProjectName.ProjectNameWebCoreModule.PreInitialize() in D:\GitHub\ModuleZeroCoreTemplateWebFarm\aspnet-core\src\Acme.ProjectName.Web.Core\ProjectNameWebCoreModule.cs:line 60
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.Modules.AbpModuleManager.StartModules()
+   at Abp.AbpBootstrapper.Initialize()
+DEBUG 2017-06-15 06:07:41,686 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-06-15 06:07:41,714 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2017-06-15 06:07:41,733 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.Web.Host.Startup.ProjectNameWebHostModule, Acme.ProjectName.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:41,749 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.ProjectNameWebCoreModule, Acme.ProjectName.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:41,750 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.ProjectNameApplicationModule, Acme.ProjectName.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:41,750 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.ProjectNameCoreModule, Acme.ProjectName.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:41,751 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:41,752 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:41,753 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:41,755 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:41,759 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.EntityFrameworkCore.ProjectNameEntityFrameworkModule, Acme.ProjectName.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:41,761 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:41,762 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:41,763 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:41,763 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:41,765 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:41,767 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Runtime.Caching.Redis.AbpRedisCacheModule, Abp.RedisCache, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:41,779 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2017-06-15 06:07:41,864 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-06-15 06:07:41,865 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-06-15 06:07:41,865 [1    ] o.Configuration.LanguageManagementConfig - Converted ProjectName (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-06-15 06:07:41,865 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-06-15 06:07:42,217 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: Acme.ProjectName.EntityFrameworkCore.ProjectNameDbContext, Acme.ProjectName.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:42,782 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-06-15 06:07:42,827 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-06-15 06:07:42,835 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-06-15 06:07:42,837 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: ProjectName
+DEBUG 2017-06-15 06:07:42,838 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-06-15 06:07:42,892 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-06-15 06:07:42,968 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes define auto mapping attributes
+DEBUG 2017-06-15 06:07:42,969 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Acme.ProjectName.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2017-06-15 06:07:42,975 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Acme.ProjectName.Users.Dto.CreateUserInput
+DEBUG 2017-06-15 06:07:42,976 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Acme.ProjectName.Users.Dto.UserListDto
+DEBUG 2017-06-15 06:07:42,976 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Acme.ProjectName.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2017-06-15 06:07:42,976 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Acme.ProjectName.Sessions.Dto.UserLoginInfoDto
+DEBUG 2017-06-15 06:07:42,976 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Acme.ProjectName.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2017-06-15 06:07:42,977 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Acme.ProjectName.MultiTenancy.Dto.TenantListDto
+DEBUG 2017-06-15 06:07:46,872 [1    ] soft.AspNetCore.Hosting.Internal.WebHost - Hosting starting
+DEBUG 2017-06-15 06:07:46,928 [1    ] soft.AspNetCore.Hosting.Internal.WebHost - Hosting started
+DEBUG 2017-06-15 06:57:06,893 [1    ] soft.AspNetCore.Hosting.Internal.WebHost - Hosting shutdown
+  - Loaded module: Acme.ProjectName.Web.Host.Startup.ProjectNameWebHostModule, Acme.ProjectName.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:46,850 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.ProjectNameWebCoreModule, Acme.ProjectName.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:46,851 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.ProjectNameApplicationModule, Acme.ProjectName.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:46,851 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.ProjectNameCoreModule, Acme.ProjectName.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:46,852 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:46,852 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:46,852 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:46,853 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:46,853 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Acme.ProjectName.EntityFrameworkCore.ProjectNameEntityFrameworkModule, Acme.ProjectName.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:46,853 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:46,854 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:46,854 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:46,854 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:46,855 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:46,855 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Runtime.Caching.Redis.AbpRedisCacheModule, Abp.RedisCache, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:46,858 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2017-06-15 06:07:46,923 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-06-15 06:07:46,923 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-06-15 06:07:46,923 [1    ] o.Configuration.LanguageManagementConfig - Converted ProjectName (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-06-15 06:07:46,923 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-06-15 06:07:47,246 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: Acme.ProjectName.EntityFrameworkCore.ProjectNameDbContext, Acme.ProjectName.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-06-15 06:07:47,857 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-06-15 06:07:47,928 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-06-15 06:07:47,936 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-06-15 06:07:47,938 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: ProjectName
+DEBUG 2017-06-15 06:07:47,939 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-06-15 06:07:47,990 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-06-15 06:07:48,045 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes define auto mapping attributes
+DEBUG 2017-06-15 06:07:48,045 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Acme.ProjectName.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2017-06-15 06:07:48,050 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Acme.ProjectName.Users.Dto.CreateUserInput
+DEBUG 2017-06-15 06:07:48,051 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Acme.ProjectName.Users.Dto.UserListDto
+DEBUG 2017-06-15 06:07:48,051 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Acme.ProjectName.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2017-06-15 06:07:48,051 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Acme.ProjectName.Sessions.Dto.UserLoginInfoDto
+DEBUG 2017-06-15 06:07:48,051 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Acme.ProjectName.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2017-06-15 06:07:48,052 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Acme.ProjectName.MultiTenancy.Dto.TenantListDto
+DEBUG 2017-06-15 06:07:51,171 [1    ] soft.AspNetCore.Hosting.Internal.WebHost - Hosting starting
+DEBUG 2017-06-15 06:07:51,222 [1    ] soft.AspNetCore.Hosting.Internal.WebHost - Hosting started
+DEBUG 2017-06-15 06:57:06,926 [1    ] soft.AspNetCore.Hosting.Internal.WebHost - Hosting shutdown
