@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
 using Abp.Application.Services;
+using Abp.Configuration.Startup;
 using Abp.Modules;
 using Abp.WebApi;
-using Abp.WebApi.Controllers.Dynamic.Builders;
 
 namespace MultipleDbContextDemo
 {
@@ -13,7 +13,7 @@ namespace MultipleDbContextDemo
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
 
-            DynamicApiControllerBuilder
+            Configuration.Modules.AbpWebApi().DynamicApiControllerBuilder
                 .ForAll<IApplicationService>(typeof(MultipleDbContextDemoApplicationModule).Assembly, "app")
                 .Build();
         }

@@ -4,7 +4,8 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Abp.Localization;
-using Abp.Localization.Sources.Xml;
+using Abp.Localization.Dictionaries;
+using Abp.Localization.Dictionaries.Xml;
 using Abp.Modules;
 using Abp.Web.Mvc;
 
@@ -26,11 +27,14 @@ namespace MultipleDbContextDemo.Web
 
             //Add/remove localization sources here
             Configuration.Localization.Sources.Add(
-                new XmlLocalizationSource(
-                    MultipleDbContextDemoConsts.LocalizationSourceName,
-                    HttpContext.Current.Server.MapPath("~/Localization/MultipleDbContextDemo")
+                new DictionaryBasedLocalizationSource(
+                    "MultipleDbContextDemo",
+                    new XmlEmbeddedFileLocalizationDictionaryProvider(
+                        Assembly.GetExecutingAssembly(),
+                        "MultipleDbContextDemo.Web.Localization.MultipleDbContextDemo"
                     )
-                );
+                )
+            );
 
             //Configure navigation/menu
             Configuration.Navigation.Providers.Add<MultipleDbContextDemoNavigationProvider>();
