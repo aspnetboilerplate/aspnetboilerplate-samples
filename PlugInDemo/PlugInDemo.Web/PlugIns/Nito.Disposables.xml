@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nito.Disposables</name>
+    </assembly>
+    <members>
+        <member name="T:Nito.Disposables.SingleDisposable`1">
+            <summary>
+            A base class for disposables that need exactly-once semantics in a threadsafe way.
+            </summary>
+            <typeparam name="T">The type of "context" for the derived disposable.</typeparam>
+        </member>
+        <member name="F:Nito.Disposables.SingleDisposable`1._context">
+            <summary>
+            The context. This may be <c>null</c>.
+            </summary>
+        </member>
+        <member name="M:Nito.Disposables.SingleDisposable`1.#ctor(`0)">
+            <summary>
+            Creates a disposable for the specified context.
+            </summary>
+            <param name="context">The context passed to <see cref="M:Nito.Disposables.SingleDisposable`1.Dispose(`0)"/>. If this is <c>null</c>, then <see cref="M:Nito.Disposables.SingleDisposable`1.Dispose(`0)"/> will never be called.</param>
+        </member>
+        <member name="M:Nito.Disposables.SingleDisposable`1.Dispose(`0)">
+            <summary>
+            The actul disposal method, called only once from <see cref="M:Nito.Disposables.SingleDisposable`1.Dispose"/>. If the context passed to the constructor of this instance is <c>null</c>, then this method is never called.
+            </summary>
+            <param name="context">The context for the disposal operation. This is never <c>null</c>.</param>
+        </member>
+        <member name="M:Nito.Disposables.SingleDisposable`1.Dispose">
+            <summary>
+            Disposes this instance.
+            </summary>
+        </member>
+    </members>
+</doc>

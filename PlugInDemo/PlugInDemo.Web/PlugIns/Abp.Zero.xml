@@ -1,0 +1,346 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Abp.Zero</name>
+    </assembly>
+    <members>
+        <member name="T:Abp.Authorization.PermissionChecker`2">
+            <summary>
+            Application should inherit this class to implement <see cref="T:Abp.Authorization.IPermissionChecker"/>.
+            </summary>
+            <typeparam name="TRole"></typeparam>
+            <typeparam name="TUser"></typeparam>
+        </member>
+        <member name="M:Abp.Authorization.PermissionChecker`2.#ctor(Abp.Authorization.Users.AbpUserManager{`0,`1})">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="T:Abp.Authorization.Roles.AbpRole`1">
+            <summary>
+            Represents a role in an application. A role is used to group permissions.
+            </summary>
+            <remarks> 
+            Application should use permissions to check if user is granted to perform an operation.
+            Checking 'if a user has a role' is not possible until the role is static (<see cref="P:Abp.Authorization.Roles.AbpRoleBase.IsStatic"/>).
+            Static roles can be used in the code and can not be deleted by users.
+            Non-static (dynamic) roles can be added/removed by users and we can not know their name while coding.
+            A user can have multiple roles. Thus, user will have all permissions of all assigned roles.
+            </remarks>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRole`1.#ctor(System.Nullable{System.Int32},System.String)">
+            <summary>
+            Creates a new <see cref="T:Abp.Authorization.Roles.AbpRole`1"/> object.
+            </summary>
+            <param name="tenantId">TenantId or null (if this is not a tenant-level role)</param>
+            <param name="displayName">Display name of the role</param>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRole`1.#ctor(System.Nullable{System.Int32},System.String,System.String)">
+            <summary>
+            Creates a new <see cref="T:Abp.Authorization.Roles.AbpRole`1"/> object.
+            </summary>
+            <param name="tenantId">TenantId or null (if this is not a tenant-level role)</param>
+            <param name="name">Unique role name</param>
+            <param name="displayName">Display name of the role</param>
+        </member>
+        <member name="T:Abp.Authorization.Roles.AbpRoleManager`2">
+            <summary>
+            Extends <see cref="T:Microsoft.AspNet.Identity.RoleManager`2"/> of ASP.NET Identity Framework.
+            Applications should derive this class with appropriate generic arguments.
+            </summary>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleManager`2.#ctor(Abp.Authorization.Roles.AbpRoleStore{`0,`1},Abp.Authorization.IPermissionManager,Abp.Zero.Configuration.IRoleManagementConfig,Abp.Runtime.Caching.ICacheManager,Abp.Domain.Uow.IUnitOfWorkManager)">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleManager`2.IsGrantedAsync(System.String,System.String)">
+            <summary>
+            Checks if a role is granted for a permission.
+            </summary>
+            <param name="roleName">The role's name to check it's permission</param>
+            <param name="permissionName">Name of the permission</param>
+            <returns>True, if the role has the permission</returns>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleManager`2.IsGrantedAsync(System.Int32,System.String)">
+            <summary>
+            Checks if a role has a permission.
+            </summary>
+            <param name="roleId">The role's id to check it's permission</param>
+            <param name="permissionName">Name of the permission</param>
+            <returns>True, if the role has the permission</returns>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleManager`2.IsGrantedAsync(`0,Abp.Authorization.Permission)">
+            <summary>
+            Checks if a role is granted for a permission.
+            </summary>
+            <param name="role">The role</param>
+            <param name="permission">The permission</param>
+            <returns>True, if the role has the permission</returns>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleManager`2.IsGrantedAsync(System.Int32,Abp.Authorization.Permission)">
+            <summary>
+            Checks if a role is granted for a permission.
+            </summary>
+            <param name="roleId">role id</param>
+            <param name="permission">The permission</param>
+            <returns>True, if the role has the permission</returns>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleManager`2.GetGrantedPermissionsAsync(System.Int32)">
+            <summary>
+            Gets granted permission names for a role.
+            </summary>
+            <param name="roleId">Role id</param>
+            <returns>List of granted permissions</returns>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleManager`2.GetGrantedPermissionsAsync(System.String)">
+            <summary>
+            Gets granted permission names for a role.
+            </summary>
+            <param name="roleName">Role name</param>
+            <returns>List of granted permissions</returns>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleManager`2.GetGrantedPermissionsAsync(`0)">
+            <summary>
+            Gets granted permissions for a role.
+            </summary>
+            <param name="role">Role</param>
+            <returns>List of granted permissions</returns>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleManager`2.SetGrantedPermissionsAsync(System.Int32,System.Collections.Generic.IEnumerable{Abp.Authorization.Permission})">
+            <summary>
+            Sets all granted permissions of a role at once.
+            Prohibits all other permissions.
+            </summary>
+            <param name="roleId">Role id</param>
+            <param name="permissions">Permissions</param>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleManager`2.SetGrantedPermissionsAsync(`0,System.Collections.Generic.IEnumerable{Abp.Authorization.Permission})">
+            <summary>
+            Sets all granted permissions of a role at once.
+            Prohibits all other permissions.
+            </summary>
+            <param name="role">The role</param>
+            <param name="permissions">Permissions</param>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleManager`2.GrantPermissionAsync(`0,Abp.Authorization.Permission)">
+            <summary>
+            Grants a permission for a role.
+            </summary>
+            <param name="role">Role</param>
+            <param name="permission">Permission</param>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleManager`2.ProhibitPermissionAsync(`0,Abp.Authorization.Permission)">
+            <summary>
+            Prohibits a permission for a role.
+            </summary>
+            <param name="role">Role</param>
+            <param name="permission">Permission</param>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleManager`2.ProhibitAllPermissionsAsync(`0)">
+            <summary>
+            Prohibits all permissions for a role.
+            </summary>
+            <param name="role">Role</param>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleManager`2.ResetAllPermissionsAsync(`0)">
+            <summary>
+            Resets all permission settings for a role.
+            It removes all permission settings for the role.
+            Role will have permissions those have <see cref="!:Permission.IsGrantedByDefault"/> set to true.
+            </summary>
+            <param name="role">Role</param>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleManager`2.CreateAsync(`0)">
+            <summary>
+            Creates a role.
+            </summary>
+            <param name="role">Role</param>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleManager`2.DeleteAsync(`0)">
+            <summary>
+            Deletes a role.
+            </summary>
+            <param name="role">Role</param>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleManager`2.GetRoleByIdAsync(System.Int32)">
+            <summary>
+            Gets a role by given id.
+            Throws exception if no role with given id.
+            </summary>
+            <param name="roleId">Role id</param>
+            <returns>Role</returns>
+            <exception cref="T:Abp.AbpException">Throws exception if no role with given id</exception>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleManager`2.GetRoleByNameAsync(System.String)">
+            <summary>
+            Gets a role by given name.
+            Throws exception if no role with given roleName.
+            </summary>
+            <param name="roleName">Role name</param>
+            <returns>Role</returns>
+            <exception cref="T:Abp.AbpException">Throws exception if no role with given roleName</exception>
+        </member>
+        <member name="T:Abp.Authorization.Roles.AbpRoleStore`2">
+            <summary>
+            Implements 'Role Store' of ASP.NET Identity Framework.
+            </summary>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleStore`2.#ctor(Abp.Domain.Repositories.IRepository{`0},Abp.Domain.Repositories.IRepository{Abp.Authorization.Users.UserRole,System.Int64},Abp.Domain.Repositories.IRepository{Abp.Authorization.Roles.RolePermissionSetting,System.Int64})">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleStore`2.AddPermissionAsync(`0,Abp.Authorization.PermissionGrantInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleStore`2.RemovePermissionAsync(`0,Abp.Authorization.PermissionGrantInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleStore`2.GetPermissionsAsync(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleStore`2.HasPermissionAsync(System.Int32,Abp.Authorization.PermissionGrantInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Abp.Authorization.Roles.AbpRoleStore`2.RemoveAllPermissionSettingsAsync(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Abp.Authorization.Users.AbpUser`1">
+            <summary>
+            Represents a user.
+            </summary>
+        </member>
+        <member name="T:Abp.Authorization.Users.AbpUserManager`2">
+            <summary>
+            Extends <see cref="T:Microsoft.AspNet.Identity.UserManager`2"/> of ASP.NET Identity Framework.
+            </summary>
+        </member>
+        <member name="M:Abp.Authorization.Users.AbpUserManager`2.IsGrantedAsync(System.Int64,System.String)">
+            <summary>
+            Check whether a user is granted for a permission.
+            </summary>
+            <param name="userId">User id</param>
+            <param name="permissionName">Permission name</param>
+        </member>
+        <member name="M:Abp.Authorization.Users.AbpUserManager`2.IsGrantedAsync(`1,Abp.Authorization.Permission)">
+            <summary>
+            Check whether a user is granted for a permission.
+            </summary>
+            <param name="user">User</param>
+            <param name="permission">Permission</param>
+        </member>
+        <member name="M:Abp.Authorization.Users.AbpUserManager`2.IsGrantedAsync(System.Int64,Abp.Authorization.Permission)">
+            <summary>
+            Check whether a user is granted for a permission.
+            </summary>
+            <param name="userId">User id</param>
+            <param name="permission">Permission</param>
+        </member>
+        <member name="M:Abp.Authorization.Users.AbpUserManager`2.GetGrantedPermissionsAsync(`1)">
+            <summary>
+            Gets granted permissions for a user.
+            </summary>
+            <param name="user">Role</param>
+            <returns>List of granted permissions</returns>
+        </member>
+        <member name="M:Abp.Authorization.Users.AbpUserManager`2.SetGrantedPermissionsAsync(`1,System.Collections.Generic.IEnumerable{Abp.Authorization.Permission})">
+            <summary>
+            Sets all granted permissions of a user at once.
+            Prohibits all other permissions.
+            </summary>
+            <param name="user">The user</param>
+            <param name="permissions">Permissions</param>
+        </member>
+        <member name="M:Abp.Authorization.Users.AbpUserManager`2.ProhibitAllPermissionsAsync(`1)">
+            <summary>
+            Prohibits all permissions for a user.
+            </summary>
+            <param name="user">User</param>
+        </member>
+        <member name="M:Abp.Authorization.Users.AbpUserManager`2.ResetAllPermissionsAsync(`1)">
+            <summary>
+            Resets all permission settings for a user.
+            It removes all permission settings for the user.
+            User will have permissions according to his roles.
+            This method does not prohibit all permissions.
+            For that, use <see cref="M:Abp.Authorization.Users.AbpUserManager`2.ProhibitAllPermissionsAsync(`1)"/>.
+            </summary>
+            <param name="user">User</param>
+        </member>
+        <member name="M:Abp.Authorization.Users.AbpUserManager`2.GrantPermissionAsync(`1,Abp.Authorization.Permission)">
+            <summary>
+            Grants a permission for a user if not already granted.
+            </summary>
+            <param name="user">User</param>
+            <param name="permission">Permission</param>
+        </member>
+        <member name="M:Abp.Authorization.Users.AbpUserManager`2.ProhibitPermissionAsync(`1,Abp.Authorization.Permission)">
+            <summary>
+            Prohibits a permission for a user if it's granted.
+            </summary>
+            <param name="user">User</param>
+            <param name="permission">Permission</param>
+        </member>
+        <member name="M:Abp.Authorization.Users.AbpUserManager`2.GetUserByIdAsync(System.Int64)">
+            <summary>
+            Gets a user by given id.
+            Throws exception if no user found with given id.
+            </summary>
+            <param name="userId">User id</param>
+            <returns>User</returns>
+            <exception cref="T:Abp.AbpException">Throws exception if no user found with given id</exception>
+        </member>
+        <member name="T:Abp.Authorization.Users.AbpUserManagerExtensions">
+            <summary>
+            Extension methods for <see cref="T:Abp.Authorization.Users.AbpUserManager`2"/>.
+            </summary>
+        </member>
+        <member name="M:Abp.Authorization.Users.AbpUserManagerExtensions.IsGranted``2(Abp.Authorization.Users.AbpUserManager{``0,``1},System.Int64,System.String)">
+            <summary>
+            Check whether a user is granted for a permission.
+            </summary>
+            <param name="manager">User manager</param>
+            <param name="userId">User id</param>
+            <param name="permissionName">Permission name</param>
+        </member>
+        <member name="T:Abp.Authorization.Users.AbpUserStore`2">
+            <summary>
+            Implements 'User Store' of ASP.NET Identity Framework.
+            </summary>
+        </member>
+        <member name="M:Abp.Authorization.Users.AbpUserStore`2.#ctor(Abp.Domain.Repositories.IRepository{`1,System.Int64},Abp.Domain.Repositories.IRepository{Abp.Authorization.Users.UserLogin,System.Int64},Abp.Domain.Repositories.IRepository{Abp.Authorization.Users.UserRole,System.Int64},Abp.Domain.Repositories.IRepository{`0},Abp.Domain.Repositories.IRepository{Abp.Authorization.Users.UserPermissionSetting,System.Int64},Abp.Domain.Uow.IUnitOfWorkManager,Abp.Domain.Repositories.IRepository{Abp.Authorization.Users.UserClaim,System.Int64})">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Abp.Authorization.Users.AbpUserStore`2.FindByNameOrEmailAsync(System.String)">
+            <summary>
+            Tries to find a user with user name or email address in current tenant.
+            </summary>
+            <param name="userNameOrEmailAddress">User name or email address</param>
+            <returns>User or null</returns>
+        </member>
+        <member name="M:Abp.Authorization.Users.AbpUserStore`2.FindByNameOrEmailAsync(System.Nullable{System.Int32},System.String)">
+            <summary>
+            Tries to find a user with user name or email address in given tenant.
+            </summary>
+            <param name="tenantId">Tenant Id</param>
+            <param name="userNameOrEmailAddress">User name or email address</param>
+            <returns>User or null</returns>
+        </member>
+        <member name="M:Abp.IdentityFramework.IdentityResultExtensions.CheckErrors(Microsoft.AspNet.Identity.IdentityResult)">
+            <summary>
+            Checks errors of given <see cref="T:Microsoft.AspNet.Identity.IdentityResult"/> and throws <see cref="T:Abp.UI.UserFriendlyException"/> if it's not succeeded.
+            </summary>
+            <param name="identityResult">Identity result to check</param>
+        </member>
+        <member name="M:Abp.IdentityFramework.IdentityResultExtensions.CheckErrors(Microsoft.AspNet.Identity.IdentityResult,Abp.Localization.ILocalizationManager)">
+            <summary>
+            Checks errors of given <see cref="T:Microsoft.AspNet.Identity.IdentityResult"/> and throws <see cref="T:Abp.UI.UserFriendlyException"/> if it's not succeeded.
+            </summary>
+            <param name="identityResult">Identity result to check</param>
+            <param name="localizationManager">Localization manager to localize error messages</param>
+        </member>
+    </members>
+</doc>

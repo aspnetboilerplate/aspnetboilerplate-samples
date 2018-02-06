@@ -1,0 +1,310 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nito.AsyncEx.Tasks</name>
+    </assembly>
+    <members>
+        <member name="T:Nito.AsyncEx.CancellationTokenTaskSource`1">
+            <summary>
+            Holds the task for a cancellation token, as well as the token registration. The registration is disposed when this instance is disposed.
+            </summary>
+        </member>
+        <member name="F:Nito.AsyncEx.CancellationTokenTaskSource`1._registration">
+            <summary>
+            The cancellation token registration, if any. This is <c>null</c> if the registration was not necessary.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.CancellationTokenTaskSource`1.#ctor(System.Threading.CancellationToken)">
+            <summary>
+            Creates a task for the specified cancellation token, registering with the token if necessary.
+            </summary>
+            <param name="cancellationToken">The cancellation token to observe.</param>
+        </member>
+        <member name="P:Nito.AsyncEx.CancellationTokenTaskSource`1.Task">
+            <summary>
+            Gets the task for the source cancellation token.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.CancellationTokenTaskSource`1.Dispose">
+            <summary>
+            Disposes the cancellation token registration, if any. Note that this may cause <see cref="P:Nito.AsyncEx.CancellationTokenTaskSource`1.Task"/> to never complete.
+            </summary>
+        </member>
+        <member name="T:Nito.AsyncEx.SingleDisposable`1">
+            <summary>
+            A base class for disposables that need exactly-once semantics in a threadsafe way.
+            </summary>
+            <typeparam name="T">The type of "context" for the derived disposable.</typeparam>
+        </member>
+        <member name="M:Nito.AsyncEx.SingleDisposable`1.#ctor(`0)">
+            <summary>
+            Creates a disposable for the specified context.
+            </summary>
+            <param name="context">The context passed to <see cref="M:Nito.Disposables.SingleDisposable`1.Dispose(`0)"/>. If this is <c>null</c>, then <see cref="M:Nito.Disposables.SingleDisposable`1.Dispose(`0)"/> will never be called.</param>
+        </member>
+        <member name="T:Nito.AsyncEx.SynchronizationContextSwitcher">
+            <summary>
+            Utility class for temporarily switching <see cref="T:System.Threading.SynchronizationContext"/> implementations.
+            </summary>
+        </member>
+        <member name="F:Nito.AsyncEx.SynchronizationContextSwitcher._oldContext">
+            <summary>
+            The previous <see cref="T:System.Threading.SynchronizationContext"/>.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.SynchronizationContextSwitcher.#ctor(System.Threading.SynchronizationContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nito.AsyncEx.SynchronizationContextSwitcher"/> class, installing the new <see cref="T:System.Threading.SynchronizationContext"/>.
+            </summary>
+            <param name="newContext">The new <see cref="T:System.Threading.SynchronizationContext"/>. This can be <c>null</c> to remove an existing <see cref="T:System.Threading.SynchronizationContext"/>.</param>
+        </member>
+        <member name="M:Nito.AsyncEx.SynchronizationContextSwitcher.Dispose(System.Object)">
+            <summary>
+            Restores the old <see cref="T:System.Threading.SynchronizationContext"/>.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.SynchronizationContextSwitcher.NoContext">
+            <summary>
+            Removes the current <see cref="T:System.Threading.SynchronizationContext"/> and restores it when the returned disposable is disposed.
+            </summary>
+        </member>
+        <member name="T:Nito.AsyncEx.Synchronous.TaskExtensions">
+            <summary>
+            Provides synchronous extension methods for tasks.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(System.Threading.Tasks.Task)">
+            <summary>
+            Waits for the task to complete, unwrapping any exceptions.
+            </summary>
+            <param name="task">The task. May not be <c>null</c>.</param>
+        </member>
+        <member name="M:Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(System.Threading.Tasks.Task,System.Threading.CancellationToken)">
+            <summary>
+            Waits for the task to complete, unwrapping any exceptions.
+            </summary>
+            <param name="task">The task. May not be <c>null</c>.</param>
+            <param name="cancellationToken">A cancellation token to observe while waiting for the task to complete.</param>
+            <exception cref="T:System.OperationCanceledException">The <paramref name="cancellationToken"/> was cancelled before the <paramref name="task"/> completed, or the <paramref name="task"/> raised an <see cref="T:System.OperationCanceledException"/>.</exception>
+        </member>
+        <member name="M:Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException``1(System.Threading.Tasks.Task{``0})">
+            <summary>
+            Waits for the task to complete, unwrapping any exceptions.
+            </summary>
+            <typeparam name="TResult">The type of the result of the task.</typeparam>
+            <param name="task">The task. May not be <c>null</c>.</param>
+            <returns>The result of the task.</returns>
+        </member>
+        <member name="M:Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException``1(System.Threading.Tasks.Task{``0},System.Threading.CancellationToken)">
+            <summary>
+            Waits for the task to complete, unwrapping any exceptions.
+            </summary>
+            <typeparam name="TResult">The type of the result of the task.</typeparam>
+            <param name="task">The task. May not be <c>null</c>.</param>
+            <param name="cancellationToken">A cancellation token to observe while waiting for the task to complete.</param>
+            <returns>The result of the task.</returns>
+            <exception cref="T:System.OperationCanceledException">The <paramref name="cancellationToken"/> was cancelled before the <paramref name="task"/> completed, or the <paramref name="task"/> raised an <see cref="T:System.OperationCanceledException"/>.</exception>
+        </member>
+        <member name="M:Nito.AsyncEx.Synchronous.TaskExtensions.WaitWithoutException(System.Threading.Tasks.Task)">
+            <summary>
+            Waits for the task to complete, but does not raise task exceptions. The task exception (if any) is unobserved.
+            </summary>
+            <param name="task">The task. May not be <c>null</c>.</param>
+        </member>
+        <member name="M:Nito.AsyncEx.Synchronous.TaskExtensions.WaitWithoutException(System.Threading.Tasks.Task,System.Threading.CancellationToken)">
+            <summary>
+            Waits for the task to complete, but does not raise task exceptions. The task exception (if any) is unobserved.
+            </summary>
+            <param name="task">The task. May not be <c>null</c>.</param>
+            <param name="cancellationToken">A cancellation token to observe while waiting for the task to complete.</param>
+            <exception cref="T:System.OperationCanceledException">The <paramref name="cancellationToken"/> was cancelled before the <paramref name="task"/> completed.</exception>
+        </member>
+        <member name="T:Nito.AsyncEx.TaskCompletionSourceExtensions">
+            <summary>
+            Provides extension methods for <see cref="T:System.Threading.Tasks.TaskCompletionSource`1"/>.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.TaskCompletionSourceExtensions.TryCompleteFromCompletedTask``2(System.Threading.Tasks.TaskCompletionSource{``0},System.Threading.Tasks.Task{``1})">
+            <summary>
+            Attempts to complete a <see cref="T:System.Threading.Tasks.TaskCompletionSource`1"/>, propagating the completion of <paramref name="task"/>.
+            </summary>
+            <typeparam name="TResult">The type of the result of the target asynchronous operation.</typeparam>
+            <typeparam name="TSourceResult">The type of the result of the source asynchronous operation.</typeparam>
+            <param name="this">The task completion source. May not be <c>null</c>.</param>
+            <param name="task">The task. May not be <c>null</c>.</param>
+            <returns><c>true</c> if this method completed the task completion source; <c>false</c> if it was already completed.</returns>
+        </member>
+        <member name="M:Nito.AsyncEx.TaskCompletionSourceExtensions.TryCompleteFromCompletedTask``1(System.Threading.Tasks.TaskCompletionSource{``0},System.Threading.Tasks.Task,System.Func{``0})">
+            <summary>
+            Attempts to complete a <see cref="T:System.Threading.Tasks.TaskCompletionSource`1"/>, propagating the completion of <paramref name="task"/> but using the result value from <paramref name="resultFunc"/> if the task completed successfully.
+            </summary>
+            <typeparam name="TResult">The type of the result of the target asynchronous operation.</typeparam>
+            <param name="this">The task completion source. May not be <c>null</c>.</param>
+            <param name="task">The task. May not be <c>null</c>.</param>
+            <param name="resultFunc">A delegate that returns the result with which to complete the task completion source, if the task completed successfully. May not be <c>null</c>.</param>
+            <returns><c>true</c> if this method completed the task completion source; <c>false</c> if it was already completed.</returns>
+        </member>
+        <member name="M:Nito.AsyncEx.TaskCompletionSourceExtensions.CreateAsyncTaskSource``1">
+            <summary>
+            Creates a new TCS for use with async code, and which forces its continuations to execute asynchronously.
+            </summary>
+            <typeparam name="TResult">The type of the result of the TCS.</typeparam>
+        </member>
+        <member name="T:Nito.AsyncEx.TaskConstants">
+            <summary>
+            Provides completed task constants.
+            </summary>
+        </member>
+        <member name="P:Nito.AsyncEx.TaskConstants.BooleanTrue">
+            <summary>
+            A task that has been completed with the value <c>true</c>.
+            </summary>
+        </member>
+        <member name="P:Nito.AsyncEx.TaskConstants.BooleanFalse">
+            <summary>
+            A task that has been completed with the value <c>false</c>.
+            </summary>
+        </member>
+        <member name="P:Nito.AsyncEx.TaskConstants.Int32Zero">
+            <summary>
+            A task that has been completed with the value <c>0</c>.
+            </summary>
+        </member>
+        <member name="P:Nito.AsyncEx.TaskConstants.Int32NegativeOne">
+            <summary>
+            A task that has been completed with the value <c>-1</c>.
+            </summary>
+        </member>
+        <member name="P:Nito.AsyncEx.TaskConstants.Completed">
+            <summary>
+            A <see cref="T:System.Threading.Tasks.Task"/> that has been completed.
+            </summary>
+        </member>
+        <member name="P:Nito.AsyncEx.TaskConstants.Canceled">
+            <summary>
+            A task that has been canceled.
+            </summary>
+        </member>
+        <member name="T:Nito.AsyncEx.TaskConstants`1">
+            <summary>
+            Provides completed task constants.
+            </summary>
+            <typeparam name="T">The type of the task result.</typeparam>
+        </member>
+        <member name="P:Nito.AsyncEx.TaskConstants`1.Default">
+            <summary>
+            A task that has been completed with the default value of <typeparamref name="T"/>.
+            </summary>
+        </member>
+        <member name="P:Nito.AsyncEx.TaskConstants`1.Canceled">
+            <summary>
+            A task that has been canceled.
+            </summary>
+        </member>
+        <member name="T:Nito.AsyncEx.TaskExtensions">
+            <summary>
+            Provides extension methods for the <see cref="T:System.Threading.Tasks.Task"/> and <see cref="T:System.Threading.Tasks.Task`1"/> types.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.TaskExtensions.WaitAsync(System.Threading.Tasks.Task,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously waits for the task to complete, or for the cancellation token to be canceled.
+            </summary>
+            <param name="this">The task to wait for. May not be <c>null</c>.</param>
+            <param name="cancellationToken">The cancellation token that cancels the wait.</param>
+        </member>
+        <member name="M:Nito.AsyncEx.TaskExtensions.WhenAny(System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task},System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously waits for any of the source tasks to complete, or for the cancellation token to be canceled.
+            </summary>
+            <param name="this">The tasks to wait for. May not be <c>null</c>.</param>
+            <param name="cancellationToken">The cancellation token that cancels the wait.</param>
+        </member>
+        <member name="M:Nito.AsyncEx.TaskExtensions.WhenAny(System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task})">
+            <summary>
+            Asynchronously waits for any of the source tasks to complete.
+            </summary>
+            <param name="this">The tasks to wait for. May not be <c>null</c>.</param>
+        </member>
+        <member name="M:Nito.AsyncEx.TaskExtensions.WhenAll(System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task})">
+            <summary>
+            Asynchronously waits for all of the source tasks to complete.
+            </summary>
+            <param name="this">The tasks to wait for. May not be <c>null</c>.</param>
+        </member>
+        <member name="M:Nito.AsyncEx.TaskExtensions.WaitAsync``1(System.Threading.Tasks.Task{``0},System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously waits for the task to complete, or for the cancellation token to be canceled.
+            </summary>
+            <typeparam name="TResult">The type of the task result.</typeparam>
+            <param name="this">The task to wait for. May not be <c>null</c>.</param>
+            <param name="cancellationToken">The cancellation token that cancels the wait.</param>
+        </member>
+        <member name="M:Nito.AsyncEx.TaskExtensions.WhenAny``1(System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously waits for any of the source tasks to complete, or for the cancellation token to be canceled.
+            </summary>
+            <typeparam name="TResult">The type of the task results.</typeparam>
+            <param name="this">The tasks to wait for. May not be <c>null</c>.</param>
+            <param name="cancellationToken">The cancellation token that cancels the wait.</param>
+        </member>
+        <member name="M:Nito.AsyncEx.TaskExtensions.WhenAny``1(System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task{``0}})">
+            <summary>
+            Asynchronously waits for any of the source tasks to complete.
+            </summary>
+            <typeparam name="TResult">The type of the task results.</typeparam>
+            <param name="this">The tasks to wait for. May not be <c>null</c>.</param>
+        </member>
+        <member name="M:Nito.AsyncEx.TaskExtensions.WhenAll``1(System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task{``0}})">
+            <summary>
+            Asynchronously waits for all of the source tasks to complete.
+            </summary>
+            <typeparam name="TResult">The type of the task results.</typeparam>
+            <param name="this">The tasks to wait for. May not be <c>null</c>.</param>
+        </member>
+        <member name="T:Nito.AsyncEx.TaskFactoryExtensions">
+            <summary>
+            Provides extension methods for task factories.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.TaskFactoryExtensions.Run(System.Threading.Tasks.TaskFactory,System.Action)">
+            <summary>
+            Queues work to the task factory and returns a <see cref="T:System.Threading.Tasks.Task"/> representing that work. If the task factory does not specify a task scheduler, the thread pool task scheduler is used.
+            </summary>
+            <param name="this">The <see cref="T:System.Threading.Tasks.TaskFactory"/>. May not be <c>null</c>.</param>
+            <param name="action">The action delegate to execute. May not be <c>null</c>.</param>
+            <returns>The started task.</returns>
+        </member>
+        <member name="M:Nito.AsyncEx.TaskFactoryExtensions.Run``1(System.Threading.Tasks.TaskFactory,System.Func{``0})">
+            <summary>
+            Queues work to the task factory and returns a <see cref="T:System.Threading.Tasks.Task`1"/> representing that work. If the task factory does not specify a task scheduler, the thread pool task scheduler is used.
+            </summary>
+            <param name="this">The <see cref="T:System.Threading.Tasks.TaskFactory"/>. May not be <c>null</c>.</param>
+            <param name="action">The action delegate to execute. May not be <c>null</c>.</param>
+            <returns>The started task.</returns>
+        </member>
+        <member name="M:Nito.AsyncEx.TaskFactoryExtensions.Run(System.Threading.Tasks.TaskFactory,System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            Queues work to the task factory and returns a proxy <see cref="T:System.Threading.Tasks.Task"/> representing that work. If the task factory does not specify a task scheduler, the thread pool task scheduler is used.
+            </summary>
+            <param name="this">The <see cref="T:System.Threading.Tasks.TaskFactory"/>. May not be <c>null</c>.</param>
+            <param name="action">The action delegate to execute. May not be <c>null</c>.</param>
+            <returns>The started task.</returns>
+        </member>
+        <member name="M:Nito.AsyncEx.TaskFactoryExtensions.Run``1(System.Threading.Tasks.TaskFactory,System.Func{System.Threading.Tasks.Task{``0}})">
+            <summary>
+            Queues work to the task factory and returns a proxy <see cref="T:System.Threading.Tasks.Task`1"/> representing that work. If the task factory does not specify a task scheduler, the thread pool task scheduler is used.
+            </summary>
+            <param name="this">The <see cref="T:System.Threading.Tasks.TaskFactory"/>. May not be <c>null</c>.</param>
+            <param name="action">The action delegate to execute. May not be <c>null</c>.</param>
+            <returns>The started task.</returns>
+        </member>
+        <member name="M:ExceptionHelpers.PrepareForRethrow(System.Exception)">
+            <summary>
+            Attempts to prepare the exception for re-throwing by preserving the stack trace. The returned exception should be immediately thrown.
+            </summary>
+            <param name="exception">The exception. May not be <c>null</c>.</param>
+            <returns>The <see cref="T:System.Exception"/> that was passed into this method.</returns>
+        </member>
+    </members>
+</doc>

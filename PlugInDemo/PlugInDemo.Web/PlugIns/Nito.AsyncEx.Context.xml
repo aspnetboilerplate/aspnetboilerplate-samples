@@ -1,0 +1,336 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nito.AsyncEx.Context</name>
+    </assembly>
+    <members>
+        <member name="T:Nito.AsyncEx.AsyncContext">
+            <summary>
+            Provides a context for asynchronous operations. This class is threadsafe.
+            </summary>
+            <remarks>
+            <para><see cref="M:Nito.AsyncEx.AsyncContext.Execute"/> may only be called once. After <see cref="M:Nito.AsyncEx.AsyncContext.Execute"/> returns, the async context should be disposed.</para>
+            </remarks>
+        </member>
+        <member name="F:Nito.AsyncEx.AsyncContext._queue">
+            <summary>
+            The queue holding the actions to run.
+            </summary>
+        </member>
+        <member name="F:Nito.AsyncEx.AsyncContext._synchronizationContext">
+            <summary>
+            The <see cref="P:Nito.AsyncEx.AsyncContext.SynchronizationContext"/> for this <see cref="T:Nito.AsyncEx.AsyncContext"/>.
+            </summary>
+        </member>
+        <member name="F:Nito.AsyncEx.AsyncContext._taskScheduler">
+            <summary>
+            The <see cref="T:System.Threading.Tasks.TaskScheduler"/> for this <see cref="T:Nito.AsyncEx.AsyncContext"/>.
+            </summary>
+        </member>
+        <member name="F:Nito.AsyncEx.AsyncContext._taskFactory">
+            <summary>
+            The <see cref="T:System.Threading.Tasks.TaskFactory"/> for this <see cref="T:Nito.AsyncEx.AsyncContext"/>.
+            </summary>
+        </member>
+        <member name="F:Nito.AsyncEx.AsyncContext._outstandingOperations">
+            <summary>
+            The number of outstanding operations, including actions in the queue.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nito.AsyncEx.AsyncContext"/> class. This is an advanced operation; most people should use one of the static <c>Run</c> methods instead.
+            </summary>
+        </member>
+        <member name="P:Nito.AsyncEx.AsyncContext.Id">
+            <summary>
+            Gets a semi-unique identifier for this asynchronous context. This is the same identifier as the context's <see cref="T:System.Threading.Tasks.TaskScheduler"/>.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.OperationStarted">
+            <summary>
+            Increments the outstanding asynchronous operation count.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.OperationCompleted">
+            <summary>
+            Decrements the outstanding asynchronous operation count.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.Enqueue(System.Threading.Tasks.Task,System.Boolean)">
+            <summary>
+            Queues a task for execution by <see cref="M:Nito.AsyncEx.AsyncContext.Execute"/>. If all tasks have been completed and the outstanding asynchronous operation count is zero, then this method has undefined behavior.
+            </summary>
+            <param name="task">The task to queue. May not be <c>null</c>.</param>
+            <param name="propagateExceptions">A value indicating whether exceptions on this task should be propagated out of the main loop.</param>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.Dispose">
+            <summary>
+            Disposes all resources used by this class. This method should NOT be called while <see cref="M:Nito.AsyncEx.AsyncContext.Execute"/> is executing.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.Execute">
+            <summary>
+            Executes all queued actions. This method returns when all tasks have been completed and the outstanding asynchronous operation count is zero. This method will unwrap and propagate errors from tasks that are supposed to propagate errors.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.Run(System.Action)">
+            <summary>
+            Queues a task for execution, and begins executing all tasks in the queue. This method returns when all tasks have been completed and the outstanding asynchronous operation count is zero. This method will unwrap and propagate errors from the task.
+            </summary>
+            <param name="action">The action to execute. May not be <c>null</c>.</param>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.Run``1(System.Func{``0})">
+            <summary>
+            Queues a task for execution, and begins executing all tasks in the queue. This method returns when all tasks have been completed and the outstanding asynchronous operation count is zero. Returns the result of the task. This method will unwrap and propagate errors from the task.
+            </summary>
+            <typeparam name="TResult">The result type of the task.</typeparam>
+            <param name="action">The action to execute. May not be <c>null</c>.</param>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.Run(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            Queues a task for execution, and begins executing all tasks in the queue. This method returns when all tasks have been completed and the outstanding asynchronous operation count is zero. This method will unwrap and propagate errors from the task proxy.
+            </summary>
+            <param name="action">The action to execute. May not be <c>null</c>.</param>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.Run``1(System.Func{System.Threading.Tasks.Task{``0}})">
+            <summary>
+            Queues a task for execution, and begins executing all tasks in the queue. This method returns when all tasks have been completed and the outstanding asynchronous operation count is zero. Returns the result of the task proxy. This method will unwrap and propagate errors from the task proxy.
+            </summary>
+            <typeparam name="TResult">The result type of the task.</typeparam>
+            <param name="action">The action to execute. May not be <c>null</c>.</param>
+        </member>
+        <member name="P:Nito.AsyncEx.AsyncContext.Current">
+            <summary>
+            Gets the current <see cref="T:Nito.AsyncEx.AsyncContext"/> for this thread, or <c>null</c> if this thread is not currently running in an <see cref="T:Nito.AsyncEx.AsyncContext"/>.
+            </summary>
+        </member>
+        <member name="P:Nito.AsyncEx.AsyncContext.SynchronizationContext">
+            <summary>
+            Gets the <see cref="P:Nito.AsyncEx.AsyncContext.SynchronizationContext"/> for this <see cref="T:Nito.AsyncEx.AsyncContext"/>. From inside <see cref="M:Nito.AsyncEx.AsyncContext.Execute"/>, this value is always equal to <see cref="P:System.Threading.SynchronizationContext.Current"/>.
+            </summary>
+        </member>
+        <member name="P:Nito.AsyncEx.AsyncContext.Scheduler">
+            <summary>
+            Gets the <see cref="T:System.Threading.Tasks.TaskScheduler"/> for this <see cref="T:Nito.AsyncEx.AsyncContext"/>. From inside <see cref="M:Nito.AsyncEx.AsyncContext.Execute"/>, this value is always equal to <see cref="P:System.Threading.Tasks.TaskScheduler.Current"/>.
+            </summary>
+        </member>
+        <member name="P:Nito.AsyncEx.AsyncContext.Factory">
+            <summary>
+            Gets the <see cref="T:System.Threading.Tasks.TaskFactory"/> for this <see cref="T:Nito.AsyncEx.AsyncContext"/>. Note that this factory has the <see cref="F:System.Threading.Tasks.TaskCreationOptions.HideScheduler"/> option set. Be careful with async delegates; you may need to call <see cref="M:System.Threading.SynchronizationContext.OperationStarted"/> and <see cref="M:System.Threading.SynchronizationContext.OperationCompleted"/> to prevent early termination of this <see cref="T:Nito.AsyncEx.AsyncContext"/>.
+            </summary>
+        </member>
+        <member name="T:Nito.AsyncEx.AsyncContext.AsyncContextSynchronizationContext">
+            <summary>
+            The <see cref="P:Nito.AsyncEx.AsyncContext.SynchronizationContext"/> implementation used by <see cref="T:Nito.AsyncEx.AsyncContext"/>.
+            </summary>
+        </member>
+        <member name="F:Nito.AsyncEx.AsyncContext.AsyncContextSynchronizationContext._context">
+            <summary>
+            The async context.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.AsyncContextSynchronizationContext.#ctor(Nito.AsyncEx.AsyncContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nito.AsyncEx.AsyncContext.AsyncContextSynchronizationContext"/> class.
+            </summary>
+            <param name="context">The async context.</param>
+        </member>
+        <member name="P:Nito.AsyncEx.AsyncContext.AsyncContextSynchronizationContext.Context">
+            <summary>
+            Gets the async context.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.AsyncContextSynchronizationContext.Post(System.Threading.SendOrPostCallback,System.Object)">
+            <summary>
+            Dispatches an asynchronous message to the async context. If all tasks have been completed and the outstanding asynchronous operation count is zero, then this method has undefined behavior.
+            </summary>
+            <param name="d">The <see cref="T:System.Threading.SendOrPostCallback"/> delegate to call. May not be <c>null</c>.</param>
+            <param name="state">The object passed to the delegate.</param>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.AsyncContextSynchronizationContext.Send(System.Threading.SendOrPostCallback,System.Object)">
+            <summary>
+            Dispatches an asynchronous message to the async context, and waits for it to complete.
+            </summary>
+            <param name="d">The <see cref="T:System.Threading.SendOrPostCallback"/> delegate to call. May not be <c>null</c>.</param>
+            <param name="state">The object passed to the delegate.</param>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.AsyncContextSynchronizationContext.OperationStarted">
+            <summary>
+            Responds to the notification that an operation has started by incrementing the outstanding asynchronous operation count.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.AsyncContextSynchronizationContext.OperationCompleted">
+            <summary>
+            Responds to the notification that an operation has completed by decrementing the outstanding asynchronous operation count.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.AsyncContextSynchronizationContext.CreateCopy">
+            <summary>
+            Creates a copy of the synchronization context.
+            </summary>
+            <returns>A new <see cref="T:System.Threading.SynchronizationContext"/> object.</returns>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.AsyncContextSynchronizationContext.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.AsyncContextSynchronizationContext.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to this instance. It is considered equal if it refers to the same underlying async context as this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"/> to compare with this instance.</param>
+            <returns><c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:Nito.AsyncEx.AsyncContext.TaskQueue">
+            <summary>
+            A blocking queue.
+            </summary>
+        </member>
+        <member name="F:Nito.AsyncEx.AsyncContext.TaskQueue._queue">
+            <summary>
+            The underlying blocking collection.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.TaskQueue.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nito.AsyncEx.AsyncContext.TaskQueue"/> class.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.TaskQueue.GetConsumingEnumerable">
+            <summary>
+            Gets a blocking enumerable that removes items from the queue. This enumerable only completes after <see cref="M:Nito.AsyncEx.AsyncContext.TaskQueue.CompleteAdding"/> has been called.
+            </summary>
+            <returns>A blocking enumerable that removes items from the queue.</returns>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.TaskQueue.GetScheduledTasks">
+            <summary>
+            Generates an enumerable of <see cref="T:System.Threading.Tasks.Task"/> instances currently queued to the scheduler waiting to be executed.
+            </summary>
+            <returns>An enumerable that allows traversal of tasks currently queued to this scheduler.</returns>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.TaskQueue.TryAdd(System.Threading.Tasks.Task,System.Boolean)">
+            <summary>
+            Attempts to add the item to the queue. If the queue has been marked as complete for adding, this method returns <c>false</c>.
+            </summary>
+            <param name="item">The item to enqueue.</param>
+            <param name="propagateExceptions">A value indicating whether exceptions on this task should be propagated out of the main loop.</param>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.TaskQueue.CompleteAdding">
+            <summary>
+            Marks the queue as complete for adding, allowing the enumerator returned from <see cref="M:Nito.AsyncEx.AsyncContext.TaskQueue.GetConsumingEnumerable"/> to eventually complete. This method may be called several times.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.TaskQueue.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:Nito.AsyncEx.AsyncContext.AsyncContextTaskScheduler">
+            <summary>
+            A task scheduler which schedules tasks to an async context.
+            </summary>
+        </member>
+        <member name="F:Nito.AsyncEx.AsyncContext.AsyncContextTaskScheduler._context">
+            <summary>
+            The async context for this task scheduler.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.AsyncContextTaskScheduler.#ctor(Nito.AsyncEx.AsyncContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nito.AsyncEx.AsyncContext.AsyncContextTaskScheduler"/> class.
+            </summary>
+            <param name="context">The async context for this task scheduler. May not be <c>null</c>.</param>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.AsyncContextTaskScheduler.GetScheduledTasks">
+            <summary>
+            Generates an enumerable of <see cref="T:System.Threading.Tasks.Task"/> instances currently queued to the scheduler waiting to be executed.
+            </summary>
+            <returns>An enumerable that allows traversal of tasks currently queued to this scheduler.</returns>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.AsyncContextTaskScheduler.QueueTask(System.Threading.Tasks.Task)">
+            <summary>
+            Queues a <see cref="T:System.Threading.Tasks.Task"/> to the scheduler. If all tasks have been completed and the outstanding asynchronous operation count is zero, then this method has undefined behavior.
+            </summary>
+            <param name="task">The <see cref="T:System.Threading.Tasks.Task"/> to be queued.</param>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.AsyncContextTaskScheduler.TryExecuteTaskInline(System.Threading.Tasks.Task,System.Boolean)">
+            <summary>
+            Determines whether the provided <see cref="T:System.Threading.Tasks.Task"/> can be executed synchronously in this call, and if it can, executes it.
+            </summary>
+            <param name="task">The <see cref="T:System.Threading.Tasks.Task"/> to be executed.</param>
+            <param name="taskWasPreviouslyQueued">A Boolean denoting whether or not task has previously been queued. If this parameter is True, then the task may have been previously queued (scheduled); if False, then the task is known not to have been queued, and this call is being made in order to execute the task inline without queuing it.</param>
+            <returns>A Boolean value indicating whether the task was executed inline.</returns>
+            <exception cref="T:System.InvalidOperationException">The <paramref name="task"/> was already executed.</exception>
+        </member>
+        <member name="P:Nito.AsyncEx.AsyncContext.AsyncContextTaskScheduler.MaximumConcurrencyLevel">
+            <summary>
+            Indicates the maximum concurrency level this <see cref="T:System.Threading.Tasks.TaskScheduler"/> is able to support.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContext.AsyncContextTaskScheduler.DoTryExecuteTask(System.Threading.Tasks.Task)">
+            <summary>
+            Exposes the base <see cref="M:System.Threading.Tasks.TaskScheduler.TryExecuteTask(System.Threading.Tasks.Task)"/> method.
+            </summary>
+            <param name="task">The task to attempt to execute.</param>
+        </member>
+        <member name="T:Nito.AsyncEx.AsyncContextThread">
+            <summary>
+            A thread that executes actions within an <see cref="T:Nito.AsyncEx.AsyncContext"/>.
+            </summary>
+        </member>
+        <member name="F:Nito.AsyncEx.AsyncContextThread._thread">
+            <summary>
+            The child thread.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContextThread.CreateAsyncContext">
+            <summary>
+            Creates a new <see cref="T:Nito.AsyncEx.AsyncContext"/> and increments its operation count.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContextThread.#ctor(Nito.AsyncEx.AsyncContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nito.AsyncEx.AsyncContextThread"/> class, creating a child thread waiting for commands.
+            </summary>
+            <param name="context">The context for this thread.</param>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContextThread.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nito.AsyncEx.AsyncContextThread"/> class, creating a child thread waiting for commands.
+            </summary>
+        </member>
+        <member name="P:Nito.AsyncEx.AsyncContextThread.Context">
+            <summary>
+            Gets the <see cref="T:Nito.AsyncEx.AsyncContext"/> executed by this thread.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContextThread.AllowThreadToExit">
+            <summary>
+            Permits the thread to exit, if we have not already done so.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContextThread.JoinAsync">
+            <summary>
+            Requests the thread to exit and returns a task representing the exit of the thread. The thread will exit when all outstanding asynchronous operations complete.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContextThread.Join">
+            <summary>
+            Requests the thread to exit and blocks until the thread exits. The thread will exit when all outstanding asynchronous operations complete.
+            </summary>
+        </member>
+        <member name="M:Nito.AsyncEx.AsyncContextThread.Dispose(Nito.AsyncEx.AsyncContext)">
+            <summary>
+            Requests the thread to exit.
+            </summary>
+        </member>
+        <member name="P:Nito.AsyncEx.AsyncContextThread.Factory">
+            <summary>
+            Gets the <see cref="T:System.Threading.Tasks.TaskFactory"/> for this thread, which can be used to schedule work to this thread.
+            </summary>
+        </member>
+    </members>
+</doc>

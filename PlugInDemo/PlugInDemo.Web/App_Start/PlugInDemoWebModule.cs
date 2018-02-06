@@ -13,6 +13,8 @@ using Hangfire;
 
 namespace PlugInDemo.Web
 {
+
+
     [DependsOn(
         typeof(PlugInDemoDataModule),
         typeof(PlugInDemoApplicationModule),

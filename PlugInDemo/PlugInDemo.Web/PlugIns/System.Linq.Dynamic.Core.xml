@@ -1,0 +1,1435 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>System.Linq.Dynamic.Core</name>
+    </assembly>
+    <members>
+        <member name="M:System.Linq.Dynamic.Core.AssemblyBuilderFactory.DefineDynamicAssembly(System.Reflection.AssemblyName,System.Reflection.Emit.AssemblyBuilderAccess)">
+            <summary>
+            Defines a dynamic assembly that has the specified name and access rights.
+            </summary>
+            <param name="name">The name of the assembly.</param>
+            <param name="access">The access rights of the assembly.</param>
+            <returns>An object that represents the new assembly.</returns>
+        </member>
+        <member name="T:System.Linq.Dynamic.Core.CustomTypeProviders.AbstractDynamicLinqCustomTypeProvider">
+            <summary>
+            The abstract <see cref="T:System.Linq.Dynamic.Core.CustomTypeProviders.AbstractDynamicLinqCustomTypeProvider"/>. Find all types marked with <see cref="T:System.Linq.Dynamic.Core.CustomTypeProviders.DynamicLinqTypeAttribute"/>.
+            </summary>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.CustomTypeProviders.AbstractDynamicLinqCustomTypeProvider.FindTypesMarkedWithDynamicLinqTypeAttribute(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})">
+            <summary>
+            Finds the types marked with DynamicLinqTypeAttribute.
+            </summary>
+            <param name="assemblies">The assemblies to process.</param>
+            <returns>IEnumerable{Type}</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.CustomTypeProviders.AbstractDynamicLinqCustomTypeProvider.GetAssemblyTypes(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})">
+            <summary>
+            Gets the assembly types in an Exception friendly way.
+            </summary>
+            <param name="assemblies">The assemblies to process.</param>
+            <returns>IEnumerable{Type}</returns>
+        </member>
+        <member name="T:System.Linq.Dynamic.Core.CustomTypeProviders.DefaultDynamicLinqCustomTypeProvider">
+            <summary>
+            The default <see cref="T:System.Linq.Dynamic.Core.CustomTypeProviders.IDynamicLinkCustomTypeProvider"/>. Scans the current AppDomain for all types marked with <see cref="T:System.Linq.Dynamic.Core.CustomTypeProviders.DynamicLinqTypeAttribute"/>, and adds them as custom Dynamic Link types.
+            </summary>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.CustomTypeProviders.DefaultDynamicLinqCustomTypeProvider.GetCustomTypes">
+            <summary>
+            Returns a list of custom types that System.Linq.Dynamic.Core will understand.
+            </summary>
+            <returns>
+            A <see cref="T:System.Collections.Generic.HashSet`1" /> list of custom types.
+            </returns>
+        </member>
+        <member name="T:System.Linq.Dynamic.Core.CustomTypeProviders.DynamicLinqTypeAttribute">
+            <summary>
+            Indicates to Dynamic Linq to consider the Type as a valid dynamic linq type.
+            </summary>
+        </member>
+        <member name="T:System.Linq.Dynamic.Core.CustomTypeProviders.IDynamicLinkCustomTypeProvider">
+            <summary>
+            Interface for providing custom types for System.Linq.Dynamic.Core.
+            </summary>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.CustomTypeProviders.IDynamicLinkCustomTypeProvider.GetCustomTypes">
+            <summary>
+            Returns a list of custom types that System.Linq.Dynamic.Core will understand.
+            </summary>
+            <returns>A <see cref="T:System.Collections.Generic.HashSet`1" /> list of custom types.</returns>
+        </member>
+        <member name="T:System.Linq.Dynamic.Core.DynamicClass">
+            <summary>
+            Provides a base class for dynamic objects.
+            
+            In addition to the methods defined here, the following items are added using reflection:
+            - default constructor
+            - constructor with all the properties as parameters (if not linq-to-entities)
+            - all properties (also with getter and setters)
+            - ToString() method
+            - Equals() method
+            - GetHashCode() method
+            </summary>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicClass.GetDynamicPropertyValue``1(System.String)">
+            <summary>
+            Gets the dynamic property by name.
+            </summary>
+            <typeparam name="T">The type.</typeparam>
+            <param name="propertyName">Name of the property.</param>
+            <returns>T</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicClass.GetDynamicPropertyValue(System.String)">
+            <summary>
+            Gets the dynamic property value by name.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+            <returns>value</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicClass.SetDynamicPropertyValue``1(System.String,``0)">
+            <summary>
+            Sets the dynamic property value by name.
+            </summary>
+            <typeparam name="T">The type.</typeparam>
+            <param name="propertyName">Name of the property.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicClass.SetDynamicPropertyValue(System.String,System.Object)">
+            <summary>
+            Sets the dynamic property value by name.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="P:System.Linq.Dynamic.Core.DynamicClass.Item(System.String)">
+            <summary>
+            Gets or sets the <see cref="T:System.Object"/> with the specified name.
+            </summary>
+            <value>
+            The <see cref="T:System.Object"/>.
+            </value>
+            <param name="name">The name.</param>
+            <returns>Value from the property.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicClass.GetDynamicMemberNames">
+            <summary>
+            Returns the enumeration of all dynamic member names.
+            </summary>
+            <returns>
+            A sequence that contains dynamic member names.
+            </returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicClass.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)">
+            <summary>
+            Provides the implementation for operations that get member values. Classes derived from the <see cref="T:System.Dynamic.DynamicObject" /> class can override this method to specify dynamic behavior for operations such as getting a value for a property.
+            </summary>
+            <param name="binder">Provides information about the object that called the dynamic operation. The binder.Name property provides the name of the member on which the dynamic operation is performed. For example, for the Console.WriteLine(sampleObject.SampleProperty) statement, where sampleObject is an instance of the class derived from the <see cref="T:System.Dynamic.DynamicObject" /> class, binder.Name returns "SampleProperty". The binder.IgnoreCase property specifies whether the member name is case-sensitive.</param>
+            <param name="result">The result of the get operation. For example, if the method is called for a property, you can assign the property value to <paramref name="result" />.</param>
+            <returns>
+            true if the operation is successful; otherwise, false. If this method returns false, the run-time binder of the language determines the behavior. (In most cases, a run-time exception is thrown.)
+            </returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicClass.TrySetMember(System.Dynamic.SetMemberBinder,System.Object)">
+            <summary>
+            Provides the implementation for operations that set member values. Classes derived from the <see cref="T:System.Dynamic.DynamicObject" /> class can override this method to specify dynamic behavior for operations such as setting a value for a property.
+            </summary>
+            <param name="binder">Provides information about the object that called the dynamic operation. The binder.Name property provides the name of the member to which the value is being assigned. For example, for the statement sampleObject.SampleProperty = "Test", where sampleObject is an instance of the class derived from the <see cref="T:System.Dynamic.DynamicObject" /> class, binder.Name returns "SampleProperty". The binder.IgnoreCase property specifies whether the member name is case-sensitive.</param>
+            <param name="value">The value to set to the member. For example, for sampleObject.SampleProperty = "Test", where sampleObject is an instance of the class derived from the <see cref="T:System.Dynamic.DynamicObject" /> class, the <paramref name="value" /> is "Test".</param>
+            <returns>
+            true if the operation is successful; otherwise, false. If this method returns false, the run-time binder of the language determines the behavior. (In most cases, a language-specific run-time exception is thrown.)
+            </returns>
+        </member>
+        <member name="T:System.Linq.Dynamic.Core.DynamicClassFactory">
+            <summary>
+            A factory to create dynamic classes, based on <see href="http://stackoverflow.com/questions/29413942/c-sharp-anonymous-object-with-properties-from-dictionary" />.
+            </summary>
+        </member>
+        <member name="F:System.Linq.Dynamic.Core.DynamicClassFactory.DynamicAssemblyName">
+            <summary>
+            The AssemblyName
+            </summary>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicClassFactory.#cctor">
+            <summary>
+            Initializes the <see cref="T:System.Linq.Dynamic.Core.DynamicClassFactory"/> class.
+            </summary>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicClassFactory.CreateType(System.Collections.Generic.IList{System.Linq.Dynamic.Core.DynamicProperty},System.Boolean)">
+            <summary>
+            The CreateType method creates a new data class with a given set of public properties and returns the System.Type object for the newly created class. If a data class with an identical sequence of properties has already been created, the System.Type object for this class is returned.        
+            Data classes implement private instance variables and read/write property accessors for the specified properties.Data classes also override the Equals and GetHashCode members to implement by-value equality.
+            Data classes are created in an in-memory assembly in the current application domain. All data classes inherit from <see cref="T:System.Linq.Dynamic.Core.DynamicClass"/> and are given automatically generated names that should be considered private (the names will be unique within the application domain but not across multiple invocations of the application). Note that once created, a data class stays in memory for the lifetime of the current application domain. There is currently no way to unload a dynamically created data class.
+            The dynamic expression parser uses the CreateClass methods to generate classes from data object initializers. This feature in turn is often used with the dynamic Select method to create projections.
+            </summary>
+            <param name="properties">The DynamicProperties</param>
+            <param name="createParameterCtor">Create a constructor with parameters. Default set to true. Note that for Linq-to-Database objects, this needs to be set to false.</param>
+            <returns>Type</returns>
+            <example>
+            <code>
+            <![CDATA[
+            DynamicProperty[] props = new DynamicProperty[] { new DynamicProperty("Name", typeof(string)), new DynamicProperty("Birthday", typeof(DateTime)) };
+            Type type = DynamicClassFactory.CreateType(props);
+            DynamicClass dynamicClass = Activator.CreateInstance(type) as DynamicClass;
+            dynamicClass.SetDynamicProperty("Name", "Albert");
+            dynamicClass.SetDynamicProperty("Birthday", new DateTime(1879, 3, 14));
+            Console.WriteLine(dynamicClass);
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicClassFactory.GenerateKey(System.Collections.Generic.IEnumerable{System.Linq.Dynamic.Core.DynamicProperty},System.Boolean)">
+            <summary>
+            Generates the key.
+            Anonymous classes are generics based. The generic classes are distinguished by number of parameters and name of parameters. The specific types of the parameters are the generic arguments.
+            </summary>
+            <param name="dynamicProperties">The dynamic propertys.</param>
+            <param name="createParameterCtor">if set to <c>true</c> [create parameter ctor].</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Linq.Dynamic.Core.DynamicEnumerableAsyncExtensions">
+            <summary>
+            Define async extensions on <see cref="T:System.Collections.IEnumerable"/>.
+            </summary>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicEnumerableAsyncExtensions.ToDynamicArrayAsync(System.Collections.IEnumerable,System.Type)">
+            <summary>
+            Async creates an array of dynamic objects from a <see cref="T:System.Collections.IEnumerable"/>.
+            </summary>
+            <param name="source">A <see cref="T:System.Collections.IEnumerable"/> to create an array from.</param>
+            <param name="type">A <see cref="T:System.Type"/> cast to.</param>
+            <returns>An Array that contains the elements from the input sequence.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicEnumerableAsyncExtensions.ToDynamicArrayAsync(System.Collections.IEnumerable)">
+            <summary>
+            Async creates an array of dynamic objects from a <see cref="T:System.Collections.IEnumerable"/>.
+            </summary>
+            <param name="source">A <see cref="T:System.Collections.IEnumerable"/> to create an array from.</param>
+            <returns>An array that contains the elements from the input sequence.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicEnumerableAsyncExtensions.ToDynamicArrayAsync``1(System.Collections.IEnumerable)">
+            <summary>
+            Async creates an array of dynamic objects from a <see cref="T:System.Collections.IEnumerable"/>.
+            </summary>
+            <typeparam name="T">The generic type.</typeparam>
+            <param name="source">A <see cref="T:System.Collections.IEnumerable"/> to create an array from.</param>
+            <returns>An Array{T} that contains the elements from the input sequence.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicEnumerableAsyncExtensions.ToDynamicListAsync(System.Collections.IEnumerable,System.Type)">
+            <summary>
+            Async creates a list of dynamic objects from a <see cref="T:System.Collections.IEnumerable"/>.
+            </summary>
+            <param name="source">A <see cref="T:System.Collections.IEnumerable"/> to create an array from.</param>
+            <param name="type">A <see cref="T:System.Type"/> cast to.</param>
+            <returns>An List that contains the elements from the input sequence.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicEnumerableAsyncExtensions.ToDynamicListAsync(System.Collections.IEnumerable)">
+            <summary>
+            Async creates a list of dynamic objects from a <see cref="T:System.Collections.IEnumerable"/>.
+            </summary>
+            <param name="source">A <see cref="T:System.Collections.IEnumerable"/> to create an array from.</param>
+            <returns>A List that contains the elements from the input sequence.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicEnumerableAsyncExtensions.ToDynamicListAsync``1(System.Collections.IEnumerable)">
+            <summary>
+            Async creates a list of dynamic objects from an <see cref="T:System.Collections.IEnumerable"/>.
+            </summary>
+            <typeparam name="T">Generic Type</typeparam>
+            <param name="source">A <see cref="T:System.Collections.IEnumerable"/> to create an array from.</param>
+            <returns>A List{T} that contains the elements from the input sequence.</returns>
+        </member>
+        <member name="T:System.Linq.Dynamic.Core.DynamicEnumerableExtensions">
+            <summary>
+            Define extensions on <see cref="T:System.Collections.IEnumerable"/>.
+            </summary>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicEnumerableExtensions.ToDynamicArray(System.Collections.IEnumerable)">
+            <summary>
+            Creates an array of dynamic objects from a <see cref="T:System.Collections.IEnumerable"/>.
+            </summary>
+            <param name="source">A <see cref="T:System.Collections.IEnumerable"/> to create an array from.</param>
+            <returns>An array that contains the elements from the input sequence.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicEnumerableExtensions.ToDynamicArray``1(System.Collections.IEnumerable)">
+            <summary>
+            Creates an array of dynamic objects from a <see cref="T:System.Collections.IEnumerable"/>.
+            </summary>
+            <typeparam name="T">The generic type.</typeparam>
+            <param name="source">A <see cref="T:System.Collections.IEnumerable"/> to create an array from.</param>
+            <returns>An Array{T} that contains the elements from the input sequence.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicEnumerableExtensions.ToDynamicArray(System.Collections.IEnumerable,System.Type)">
+            <summary>
+            Creates an array of dynamic objects from a <see cref="T:System.Collections.IEnumerable"/>.
+            </summary>
+            <param name="source">A <see cref="T:System.Collections.IEnumerable"/> to create an array from.</param>
+            <param name="type">A <see cref="T:System.Type"/> cast to.</param>
+            <returns>An Array that contains the elements from the input sequence.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicEnumerableExtensions.ToDynamicList(System.Collections.IEnumerable)">
+            <summary>
+            Creates a list of dynamic objects from a <see cref="T:System.Collections.IEnumerable"/>.
+            </summary>
+            <param name="source">A <see cref="T:System.Collections.IEnumerable"/> to create an array from.</param>
+            <returns>A List that contains the elements from the input sequence.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicEnumerableExtensions.ToDynamicList(System.Collections.IEnumerable,System.Type)">
+            <summary>
+            Creates a list of dynamic objects from a <see cref="T:System.Collections.IEnumerable"/>.
+            </summary>
+            <param name="source">A <see cref="T:System.Collections.IEnumerable"/> to create an array from.</param>
+            <param name="type">A <see cref="T:System.Type"/> cast to.</param>
+            <returns>A List that contains the elements from the input sequence.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicEnumerableExtensions.ToDynamicList``1(System.Collections.IEnumerable)">
+            <summary>
+            Creates a list of dynamic objects from a <see cref="T:System.Collections.IEnumerable"/>.
+            </summary>
+            <typeparam name="T">Generic Type</typeparam>
+            <param name="source">A <see cref="T:System.Collections.IEnumerable"/> to create an array from.</param>
+            <returns>A List{T} that contains the elements from the input sequence.</returns>
+        </member>
+        <member name="T:System.Linq.Dynamic.Core.DynamicExpressionParser">
+            <summary>
+            Helper class to convert an expression into an LambdaExpression
+            </summary>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicExpressionParser.ParseLambda(System.Linq.Dynamic.Core.ParsingConfig,System.Type,System.String,System.Object[])">
+            <summary>
+            Parses an expression into a LambdaExpression. (Also create a constructor for all the parameters. Note that this doesn't work for Linq-to-Database entities.)
+            </summary>
+            <param name="resultType">Type of the result. If not specified, it will be generated dynamically.</param>
+            <param name="expression">The expression.</param>
+            <param name="parsingConfig">The Configuration for the parsing.</param>
+            <param name="values">An object array that contains zero or more objects which are used as replacement values.</param>
+            <returns>The generated <see cref="T:System.Linq.Expressions.LambdaExpression"/></returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicExpressionParser.ParseLambda(System.Type,System.String,System.Object[])">
+            <summary>
+            Parses an expression into a LambdaExpression. (Also create a constructor for all the parameters. Note that this doesn't work for Linq-to-Database entities.)
+            </summary>
+            <param name="resultType">Type of the result. If not specified, it will be generated dynamically.</param>
+            <param name="expression">The expression.</param>
+            <param name="values">An object array that contains zero or more objects which are used as replacement values.</param>
+            <returns>The generated <see cref="T:System.Linq.Expressions.LambdaExpression"/></returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicExpressionParser.ParseLambda(System.Linq.Dynamic.Core.ParsingConfig,System.Boolean,System.Type,System.String,System.Object[])">
+            <summary>
+            Parses an expression into a LambdaExpression.
+            </summary>
+            <param name="parsingConfig">The Configuration for the parsing.</param>
+            <param name="createParameterCtor">if set to <c>true</c> then also create a constructor for all the parameters. Note that this doesn't work for Linq-to-Database entities.</param>
+            <param name="resultType">Type of the result. If not specified, it will be generated dynamically.</param>
+            <param name="expression">The expression.</param>
+            <param name="values">An object array that contains zero or more objects which are used as replacement values.</param>
+            <returns>The generated <see cref="T:System.Linq.Expressions.LambdaExpression"/></returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicExpressionParser.ParseLambda(System.Type,System.Type,System.String,System.Object[])">
+            <summary>
+            Parses an expression into a LambdaExpression. (Also create a constructor for all the parameters. Note that this doesn't work for Linq-to-Database entities.)
+            </summary>
+            <param name="itType">The main type from the dynamic class expression.</param>
+            <param name="resultType">Type of the result. If not specified, it will be generated dynamically.</param>
+            <param name="expression">The expression.</param>
+            <param name="values">An object array that contains zero or more objects which are used as replacement values.</param>
+            <returns>The generated <see cref="T:System.Linq.Expressions.LambdaExpression"/></returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicExpressionParser.ParseLambda(System.Linq.Dynamic.Core.ParsingConfig,System.Type,System.Type,System.String,System.Object[])">
+            <summary>
+            Parses an expression into a LambdaExpression. (Also create a constructor for all the parameters. Note that this doesn't work for Linq-to-Database entities.)
+            </summary>
+            <param name="itType">The main type from the dynamic class expression.</param>
+            <param name="resultType">Type of the result. If not specified, it will be generated dynamically.</param>
+            <param name="expression">The expression.</param>
+            <param name="parsingConfig">The Configuration for the parsing.</param>
+            <param name="values">An object array that contains zero or more objects which are used as replacement values.</param>
+            <returns>The generated <see cref="T:System.Linq.Expressions.LambdaExpression"/></returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicExpressionParser.ParseLambda(System.Boolean,System.Type,System.Type,System.String,System.Object[])">
+            <summary>
+            Parses an expression into a LambdaExpression.
+            </summary>
+            <param name="createParameterCtor">if set to <c>true</c> then also create a constructor for all the parameters. Note that this doesn't work for Linq-to-Database entities.</param>
+            <param name="itType">The main type from the dynamic class expression.</param>
+            <param name="resultType">Type of the result. If not specified, it will be generated dynamically.</param>
+            <param name="expression">The expression.</param>
+            <param name="values">An object array that contains zero or more objects which are used as replacement values.</param>
+            <returns>The generated <see cref="T:System.Linq.Expressions.LambdaExpression"/></returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicExpressionParser.ParseLambda(System.Linq.Dynamic.Core.ParsingConfig,System.Boolean,System.Type,System.Type,System.String,System.Object[])">
+            <summary>
+            Parses an expression into a LambdaExpression.
+            </summary>
+            <param name="parsingConfig">The Configuration for the parsing.</param>
+            <param name="createParameterCtor">if set to <c>true</c> then also create a constructor for all the parameters. Note that this doesn't work for Linq-to-Database entities.</param>
+            <param name="itType">The main type from the dynamic class expression.</param>
+            <param name="resultType">Type of the result. If not specified, it will be generated dynamically.</param>
+            <param name="expression">The expression.</param>
+            <param name="values">An object array that contains zero or more objects which are used as replacement values.</param>
+            <returns>The generated <see cref="T:System.Linq.Expressions.LambdaExpression"/></returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicExpressionParser.ParseLambda(System.Linq.Expressions.ParameterExpression[],System.Type,System.String,System.Object[])">
+            <summary>
+            Parses an expression into a LambdaExpression. (Also create a constructor for all the parameters. Note that this doesn't work for Linq-to-Database entities.)
+            </summary>
+            <param name="parameters">A array from ParameterExpressions.</param>
+            <param name="resultType">Type of the result. If not specified, it will be generated dynamically.</param>
+            <param name="expression">The expression.</param>
+            <param name="values">An object array that contains zero or more objects which are used as replacement values.</param>
+            <returns>The generated <see cref="T:System.Linq.Expressions.LambdaExpression"/></returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicExpressionParser.ParseLambda(System.Linq.Dynamic.Core.ParsingConfig,System.Linq.Expressions.ParameterExpression[],System.Type,System.String,System.Object[])">
+            <summary>
+            Parses an expression into a LambdaExpression. (Also create a constructor for all the parameters. Note that this doesn't work for Linq-to-Database entities.)
+            </summary>
+            <param name="parsingConfig">The Configuration for the parsing.</param>
+            <param name="parameters">A array from ParameterExpressions.</param>
+            <param name="resultType">Type of the result. If not specified, it will be generated dynamically.</param>
+            <param name="expression">The expression.</param>
+            <param name="values">An object array that contains zero or more objects which are used as replacement values.</param>
+            <returns>The generated <see cref="T:System.Linq.Expressions.LambdaExpression"/></returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicExpressionParser.ParseLambda(System.Boolean,System.Linq.Expressions.ParameterExpression[],System.Type,System.String,System.Object[])">
+            <summary>
+            Parses an expression into a LambdaExpression.
+            </summary>
+            <param name="createParameterCtor">if set to <c>true</c> then also create a constructor for all the parameters. Note that this doesn't work for Linq-to-Database entities.</param>
+            <param name="parameters">A array from ParameterExpressions.</param>
+            <param name="resultType">Type of the result. If not specified, it will be generated dynamically.</param>
+            <param name="expression">The expression.</param>
+            <param name="values">An object array that contains zero or more objects which are used as replacement values.</param>
+            <returns>The generated <see cref="T:System.Linq.Expressions.LambdaExpression"/></returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicExpressionParser.ParseLambda(System.Linq.Dynamic.Core.ParsingConfig,System.Boolean,System.Linq.Expressions.ParameterExpression[],System.Type,System.String,System.Object[])">
+            <summary>
+            Parses an expression into a LambdaExpression.
+            </summary>
+            <param name="parsingConfig">The Configuration for the parsing.</param>
+            <param name="createParameterCtor">if set to <c>true</c> then also create a constructor for all the parameters. Note that this doesn't work for Linq-to-Database entities.</param>
+            <param name="parameters">A array from ParameterExpressions.</param>
+            <param name="resultType">Type of the result. If not specified, it will be generated dynamically.</param>
+            <param name="expression">The expression.</param>
+            <param name="values">An object array that contains zero or more objects which are used as replacement values.</param>
+            <returns>The generated <see cref="T:System.Linq.Expressions.LambdaExpression"/></returns>
+        </member>
+        <member name="T:System.Linq.Dynamic.Core.DynamicProperty">
+            <summary>
+            DynamicProperty
+            </summary>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicProperty.#ctor(System.String,System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Linq.Dynamic.Core.DynamicProperty"/> class.
+            </summary>
+            <param name="name">The name from the property.</param>
+            <param name="type">The type from the property.</param>
+        </member>
+        <member name="P:System.Linq.Dynamic.Core.DynamicProperty.Name">
+            <summary>
+            Gets the name from the property.
+            </summary>
+            <value>
+            The name from the property.
+            </value>
+        </member>
+        <member name="P:System.Linq.Dynamic.Core.DynamicProperty.Type">
+            <summary>
+            Gets the type from the property.
+            </summary>
+            <value>
+            The type from the property.
+            </value>
+        </member>
+        <member name="T:System.Linq.Dynamic.Core.DynamicQueryableExtensions">
+            <summary>
+            Provides a set of static (Shared in Visual Basic) methods for querying data structures that implement <see cref="T:System.Linq.IQueryable"/>.
+            It allows dynamic string based querying. Very handy when, at compile time, you don't know the type of queries that will be generated,
+            or when downstream components only return column names to sort and filter by.
+            </summary>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Aggregate(System.Linq.IQueryable,System.String,System.String)">
+            <summary>
+            Dynamically runs an aggregate function on the IQueryable.
+            </summary>
+            <param name="source">The IQueryable data source.</param>
+            <param name="function">The name of the function to run. Can be Sum, Average, Min or Max.</param>
+            <param name="member">The name of the property to aggregate over.</param>
+            <returns>The value of the aggregate function run over the specified property.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Any(System.Linq.IQueryable)">
+            <summary>
+            Determines whether a sequence contains any elements.
+            </summary>
+            <param name="source">A sequence to check for being empty.</param>
+            <example>
+            <code language="cs">
+            IQueryable queryable = employees.AsQueryable();
+            var result = queryable.Any();
+            </code>
+            </example>
+            <returns>true if the source sequence contains any elements; otherwise, false.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Any(System.Linq.IQueryable,System.Linq.Dynamic.Core.ParsingConfig,System.String,System.Object[])">
+            <summary>
+            Determines whether a sequence contains any elements.
+            </summary>
+            <param name="source">A sequence to check for being empty.</param>
+            <param name="config">The <see cref="T:System.Linq.Dynamic.Core.ParsingConfig"/>.</param>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters. Similar to the way String.Format formats strings.</param>
+            <example>
+            <code language="cs">
+            IQueryable queryable = employees.AsQueryable();
+            var result1 = queryable.Any("Income > 50");
+            var result2 = queryable.Any("Income > @0", 50);
+            var result3 = queryable.Select("Roles.Any()");
+            </code>
+            </example>
+            <returns>true if the source sequence contains any elements; otherwise, false.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Any(System.Linq.IQueryable,System.String,System.Object[])">
+            <inheritdoc cref="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Any(System.Linq.IQueryable,System.Linq.Dynamic.Core.ParsingConfig,System.String,System.Object[])"/>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Any(System.Linq.IQueryable,System.Linq.Expressions.LambdaExpression)">
+            <summary>
+            Determines whether a sequence contains any elements.
+            </summary>
+            <param name="source">A sequence to check for being empty.</param>
+            <param name="lambda">A cached Lambda Expression.</param>
+            <returns>true if the source sequence contains any elements; otherwise, false.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.AsEnumerable(System.Linq.IQueryable)">
+            <summary>
+            Returns the input typed as <see cref="T:System.Collections.Generic.IEnumerable`1"/> of dynamic.
+            </summary>
+            <param name="source">The sequence to type as <see cref="T:System.Collections.Generic.IEnumerable`1"/> of dynamic.</param>
+            <returns>The input typed as <see cref="T:System.Collections.Generic.IEnumerable`1"/> of dynamic.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Count(System.Linq.IQueryable)">
+            <summary>
+            Returns the number of elements in a sequence.
+            </summary>
+            <param name="source">The <see cref="T:System.Linq.IQueryable"/> that contains the elements to be counted.</param>
+            <example>
+            <code language="cs">
+            IQueryable queryable = employees.AsQueryable();
+            var result = queryable.Count();
+            </code>
+            </example>
+            <returns>The number of elements in the input sequence.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Count(System.Linq.IQueryable,System.Linq.Dynamic.Core.ParsingConfig,System.String,System.Object[])">
+            <summary>
+            Returns the number of elements in a sequence.
+            </summary>
+            <param name="source">The <see cref="T:System.Linq.IQueryable"/> that contains the elements to be counted.</param>
+            <param name="config">The <see cref="T:System.Linq.Dynamic.Core.ParsingConfig"/>.</param>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters. Similar to the way String.Format formats strings.</param>
+            <example>
+            <code language="cs">
+            IQueryable queryable = employees.AsQueryable();
+            var result1 = queryable.Count("Income > 50");
+            var result2 = queryable.Count("Income > @0", 50);
+            var result3 = queryable.Select("Roles.Count()");
+            </code>
+            </example>
+            <returns>The number of elements in the specified sequence that satisfies a condition.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Count(System.Linq.IQueryable,System.String,System.Object[])">
+            <inheritdoc cref="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Count(System.Linq.IQueryable,System.Linq.Dynamic.Core.ParsingConfig,System.String,System.Object[])"/>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Count(System.Linq.IQueryable,System.Linq.Expressions.LambdaExpression)">
+            <summary>
+            Returns the number of elements in a sequence.
+            </summary>
+            <param name="source">The <see cref="T:System.Linq.IQueryable"/> that contains the elements to be counted.</param>
+            <param name="lambda">A cached Lambda Expression.</param>
+            <returns>The number of elements in the specified sequence that satisfies a condition.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.DefaultIfEmpty(System.Linq.IQueryable)">
+            <summary>
+            Returns the elements of the specified sequence or the type parameter's default value in a singleton collection if the sequence is empty.
+            </summary>
+            <param name="source">The <see cref="T:System.Linq.IQueryable"/> to return a default value for if empty.</param>
+            <example>
+            <code language="cs">
+            IQueryable queryable = employees.DefaultIfEmpty();
+            </code>
+            </example>
+            <returns>An <see cref="T:System.Linq.IQueryable"/> that contains default if source is empty; otherwise, source.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.DefaultIfEmpty(System.Linq.IQueryable,System.Object)">
+            <summary>
+            Returns the elements of the specified sequence or the type parameter's default value in a singleton collection if the sequence is empty.
+            </summary>
+            <param name="source">The <see cref="T:System.Linq.IQueryable"/> to return a default value for if empty.</param>
+            <param name="defaultValue">The value to return if the sequence is empty.</param>
+            <example>
+            <code language="cs">
+            IQueryable queryable = employees.DefaultIfEmpty(new Employee());
+            </code>
+            </example>
+            <returns>An <see cref="T:System.Linq.IQueryable"/> that contains defaultValue if source is empty; otherwise, source.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Distinct(System.Linq.IQueryable)">
+            <summary>
+            Returns distinct elements from a sequence by using the default equality comparer to compare values.
+            </summary>
+            <param name="source">The sequence to remove duplicate elements from.</param>
+            <example>
+            <code language="cs">
+            IQueryable queryable = employees.AsQueryable();
+            var result1 = queryable.Distinct();
+            var result2 = queryable.Select("Roles.Distinct()");
+            </code>
+            </example>
+            <returns>An <see cref="T:System.Linq.IQueryable"/> that contains distinct elements from the source sequence.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.First(System.Linq.IQueryable)">
+            <summary>
+            Returns the first element of a sequence.
+            </summary>
+            <param name="source">The <see cref="T:System.Linq.IQueryable"/> to return the first element of.</param>
+            <returns>The first element in source.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.First(System.Linq.IQueryable,System.String,System.Object[])">
+            <summary>
+            Returns the first element of a sequence that satisfies a specified condition.
+            </summary>
+            <param name="source">The <see cref="T:System.Linq.IQueryable"/> to return the first element of.</param>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters. Similar to the way String.Format formats strings.</param>
+            <returns>The first element in source that passes the test in predicate.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.First(System.Linq.IQueryable,System.Linq.Expressions.LambdaExpression)">
+            <summary>
+            Returns the first element of a sequence that satisfies a specified condition.
+            </summary>
+            <param name="source">The <see cref="T:System.Linq.IQueryable"/> to return the first element of.</param>
+            <param name="lambda">A cached Lambda Expression.</param>
+            <returns>The first element in source that passes the test in predicate.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.FirstOrDefault(System.Linq.IQueryable)">
+            <summary>
+            Returns the first element of a sequence, or a default value if the sequence contains no elements.
+            </summary>
+            <param name="source">The <see cref="T:System.Linq.IQueryable"/> to return the first element of.</param>
+            <returns>default if source is empty; otherwise, the first element in source.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.FirstOrDefault(System.Linq.IQueryable,System.String,System.Object[])">
+            <summary>
+            Returns the first element of a sequence that satisfies a specified condition or a default value if no such element is found.
+            </summary>
+            <param name="source">The <see cref="T:System.Linq.IQueryable"/> to return the first element of.</param>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters. Similar to the way String.Format formats strings.</param>
+            <returns>default if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.FirstOrDefault(System.Linq.IQueryable,System.Linq.Expressions.LambdaExpression)">
+            <summary>
+            Returns the first element of a sequence that satisfies a specified condition or a default value if no such element is found.
+            </summary>
+            <param name="source">The <see cref="T:System.Linq.IQueryable"/> to return the first element of.</param>
+            <param name="lambda">A cached Lambda Expression.</param>
+            <returns>default if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.GroupBy(System.Linq.IQueryable,System.String,System.String,System.Object[])">
+            <summary>
+            Groups the elements of a sequence according to a specified key string function 
+            and creates a result value from each group and its key.
+            </summary>
+            <param name="source">A <see cref="T:System.Linq.IQueryable"/> whose elements to group.</param>
+            <param name="keySelector">A string expression to specify the key for each element.</param>
+            <param name="resultSelector">A string expression to specify a result value from each group.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters.  Similar to the way String.Format formats strings.</param>
+            <returns>A <see cref="T:System.Linq.IQueryable"/> where each element represents a projection over a group and its key.</returns>
+            <example>
+            <code>
+            var groupResult1 = queryable.GroupBy("NumberPropertyAsKey", "StringProperty");
+            var groupResult2 = queryable.GroupBy("new (NumberPropertyAsKey, StringPropertyAsKey)", "new (StringProperty1, StringProperty2)");
+            </code>
+            </example>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.GroupBy(System.Linq.IQueryable,System.String,System.String)">
+            <summary>
+            Groups the elements of a sequence according to a specified key string function 
+            and creates a result value from each group and its key.
+            </summary>
+            <param name="source">A <see cref="T:System.Linq.IQueryable"/> whose elements to group.</param>
+            <param name="keySelector">A string expression to specify the key for each element.</param>
+            <param name="resultSelector">A string expression to specify a result value from each group.</param>
+            <returns>A <see cref="T:System.Linq.IQueryable"/> where each element represents a projection over a group and its key.</returns>
+            <example>
+            <code>
+            var groupResult1 = queryable.GroupBy("NumberPropertyAsKey", "StringProperty");
+            var groupResult2 = queryable.GroupBy("new (NumberPropertyAsKey, StringPropertyAsKey)", "new (StringProperty1, StringProperty2)");
+            </code>
+            </example>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.GroupBy(System.Linq.IQueryable,System.String,System.Object[])">
+            <summary>
+            Groups the elements of a sequence according to a specified key string function 
+            and creates a result value from each group and its key.
+            </summary>
+            <param name="source">A <see cref="T:System.Linq.IQueryable"/> whose elements to group.</param>
+            <param name="keySelector">A string expression to specify the key for each element.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters. Similar to the way String.Format formats strings.</param>
+            <returns>A <see cref="T:System.Linq.IQueryable"/> where each element represents a projection over a group and its key.</returns>
+            <example>
+            <code>
+            var groupResult1 = queryable.GroupBy("NumberPropertyAsKey");
+            var groupResult2 = queryable.GroupBy("new (NumberPropertyAsKey, StringPropertyAsKey)");
+            </code>
+            </example>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.GroupByMany``1(System.Collections.Generic.IEnumerable{``0},System.String[])">
+            <summary>
+            Groups the elements of a sequence according to multiple specified key string functions 
+            and creates a result value from each group (and subgroups) and its key.
+            </summary>
+            <typeparam name="TElement"></typeparam>
+            <param name="source">A <see cref="T:System.Collections.Generic.IEnumerable`1"/> whose elements to group.</param>
+            <param name="keySelectors"><see cref="T:System.String"/> expressions to specify the keys for each element.</param>
+            <returns>A <see cref="T:System.Collections.Generic.IEnumerable`1"/> of type <see cref="T:System.Linq.Dynamic.Core.GroupResult"/> where each element represents a projection over a group, its key, and its subgroups.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.GroupByMany``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Object}[])">
+            <summary>
+            Groups the elements of a sequence according to multiple specified key functions 
+            and creates a result value from each group (and subgroups) and its key.
+            </summary>
+            <typeparam name="TElement"></typeparam>
+            <param name="source">A <see cref="T:System.Collections.Generic.IEnumerable`1"/> whose elements to group.</param>
+            <param name="keySelectors">Lambda expressions to specify the keys for each element.</param>
+            <returns>A <see cref="T:System.Collections.Generic.IEnumerable`1"/> of type <see cref="T:System.Linq.Dynamic.Core.GroupResult"/> where each element represents a projection over a group, its key, and its subgroups.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.GroupJoin(System.Linq.IQueryable,System.Collections.IEnumerable,System.String,System.String,System.String,System.Object[])">
+            <summary>
+            Correlates the elements of two sequences based on equality of keys and groups the results. The default equality comparer is used to compare keys.
+            </summary>
+            <param name="outer">The first sequence to join.</param>
+            <param name="inner">The sequence to join to the first sequence.</param>
+            <param name="outerKeySelector">A dynamic function to extract the join key from each element of the first sequence.</param>
+            <param name="innerKeySelector">A dynamic function to extract the join key from each element of the second sequence.</param>
+            <param name="resultSelector">A dynamic function to create a result element from an element from the first sequence and a collection of matching elements from the second sequence.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicates as parameters. Similar to the way String.Format formats strings.</param>
+            <returns>An <see cref="T:System.Linq.IQueryable"/> obtained by performing a grouped join on two sequences.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Join(System.Linq.IQueryable,System.Collections.IEnumerable,System.String,System.String,System.String,System.Object[])">
+            <summary>
+            Correlates the elements of two sequences based on matching keys. The default equality comparer is used to compare keys.
+            </summary>
+            <param name="outer">The first sequence to join.</param>
+            <param name="inner">The sequence to join to the first sequence.</param>
+            <param name="outerKeySelector">A dynamic function to extract the join key from each element of the first sequence.</param>
+            <param name="innerKeySelector">A dynamic function to extract the join key from each element of the second sequence.</param>
+            <param name="resultSelector">A dynamic function to create a result element from two matching elements.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicates as parameters.  Similar to the way String.Format formats strings.</param>
+            <returns>An <see cref="T:System.Linq.IQueryable"/> obtained by performing an inner join on two sequences.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Join``1(System.Linq.IQueryable{``0},System.Collections.Generic.IEnumerable{``0},System.String,System.String,System.String,System.Object[])">
+            <summary>
+            Correlates the elements of two sequences based on matching keys. The default equality comparer is used to compare keys.
+            </summary>
+            <typeparam name="TElement">The type of the elements of both sequences, and the result.</typeparam>
+            <param name="outer">The first sequence to join.</param>
+            <param name="inner">The sequence to join to the first sequence.</param>
+            <param name="outerKeySelector">A dynamic function to extract the join key from each element of the first sequence.</param>
+            <param name="innerKeySelector">A dynamic function to extract the join key from each element of the second sequence.</param>
+            <param name="resultSelector">A dynamic function to create a result element from two matching elements.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicates as parameters.  Similar to the way String.Format formats strings.</param>
+            <remarks>This overload only works on elements where both sequences and the resulting element match.</remarks>
+            <returns>An <see cref="T:System.Linq.IQueryable`1"/> that has elements of type TResult obtained by performing an inner join on two sequences.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Last(System.Linq.IQueryable)">
+            <summary>
+            Returns the last element of a sequence.
+            </summary>
+            <param name="source">The <see cref="T:System.Linq.IQueryable"/> to return the last element of.</param>
+            <returns>The last element in source.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Last(System.Linq.IQueryable,System.String,System.Object[])">
+            <summary>
+            Returns the last element of a sequence that satisfies a specified condition.
+            </summary>
+            <param name="source">The <see cref="T:System.Linq.IQueryable"/> to return the last element of.</param>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters. Similar to the way String.Format formats strings.</param>
+            <returns>The first element in source that passes the test in predicate.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Last(System.Linq.IQueryable,System.Linq.Expressions.LambdaExpression)">
+            <summary>
+            Returns the last element of a sequence that satisfies a specified condition.
+            </summary>
+            <param name="source">The <see cref="T:System.Linq.IQueryable"/> to return the last element of.</param>
+            <param name="lambda">A cached Lambda Expression.</param>
+            <returns>The first element in source that passes the test in predicate.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.LastOrDefault(System.Linq.IQueryable)">
+            <summary>
+            Returns the last element of a sequence, or a default value if the sequence contains no elements.
+            </summary>
+            <param name="source">The <see cref="T:System.Linq.IQueryable"/> to return the last element of.</param>
+            <returns>default if source is empty; otherwise, the last element in source.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.LastOrDefault(System.Linq.IQueryable,System.String,System.Object[])">
+            <summary>
+            Returns the last element of a sequence that satisfies a specified condition, or a default value if the sequence contains no elements.
+            </summary>
+            <param name="source">The <see cref="T:System.Linq.IQueryable"/> to return the last element of.</param>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters. Similar to the way String.Format formats strings.</param>
+            <returns>The first element in source that passes the test in predicate.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.LastOrDefault(System.Linq.IQueryable,System.Linq.Expressions.LambdaExpression)">
+            <summary>
+            Returns the last element of a sequence that satisfies a specified condition, or a default value if the sequence contains no elements.
+            </summary>
+            <param name="source">The <see cref="T:System.Linq.IQueryable"/> to return the last element of.</param>
+            <param name="lambda">A cached Lambda Expression.</param>
+            <returns>The first element in source that passes the test in predicate.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.OrderBy``1(System.Linq.IQueryable{``0},System.String,System.Object[])">
+            <summary>
+            Sorts the elements of a sequence in ascending or descending order according to a key.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values to order.</param>
+            <param name="ordering">An expression string to indicate values to order by.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters. Similar to the way String.Format formats strings.</param>
+            <returns>A <see cref="T:System.Linq.IQueryable`1"/> whose elements are sorted according to the specified <paramref name="ordering"/>.</returns>
+            <example>
+            <code>
+            <![CDATA[
+            var resultSingle = queryable.OrderBy<User>("NumberProperty");
+            var resultSingleDescending = queryable.OrderBy<User>("NumberProperty DESC");
+            var resultMultiple = queryable.OrderBy<User>("NumberProperty, StringProperty");
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.OrderBy(System.Linq.IQueryable,System.String,System.Object[])">
+            <summary>
+            Sorts the elements of a sequence in ascending or descending order according to a key.
+            </summary>
+            <param name="source">A sequence of values to order.</param>
+            <param name="ordering">An expression string to indicate values to order by.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters.  Similar to the way String.Format formats strings.</param>
+            <returns>A <see cref="T:System.Linq.IQueryable"/> whose elements are sorted according to the specified <paramref name="ordering"/>.</returns>
+            <example>
+            <code>
+            var resultSingle = queryable.OrderBy("NumberProperty");
+            var resultSingleDescending = queryable.OrderBy("NumberProperty DESC");
+            var resultMultiple = queryable.OrderBy("NumberProperty, StringProperty DESC");
+            </code>
+            </example>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Page(System.Linq.IQueryable,System.Int32,System.Int32)">
+            <summary>
+            Returns the elements as paged.
+            </summary>
+            <param name="source">The IQueryable to return elements from.</param>
+            <param name="page">The page to return.</param>
+            <param name="pageSize">The number of elements per page.</param>
+            <returns>A <see cref="T:System.Linq.IQueryable"/> that contains the paged elements.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Page``1(System.Linq.IQueryable{``0},System.Int32,System.Int32)">
+            <summary>
+            Returns the elements as paged.
+            </summary>
+            <typeparam name="TSource">The type of the source.</typeparam>
+            <param name="source">The IQueryable to return elements from.</param>
+            <param name="page">The page to return.</param>
+            <param name="pageSize">The number of elements per page.</param>
+            <returns>A <see cref="T:System.Linq.IQueryable`1"/> that contains the paged elements.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.PageResult(System.Linq.IQueryable,System.Int32,System.Int32)">
+            <summary>
+            Returns the elements as paged and include the CurrentPage, PageCount, PageSize and RowCount.
+            </summary>
+            <param name="source">The IQueryable to return elements from.</param>
+            <param name="page">The page to return.</param>
+            <param name="pageSize">The number of elements per page.</param>
+            <returns>PagedResult</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.PageResult``1(System.Linq.IQueryable{``0},System.Int32,System.Int32)">
+            <summary>
+            Returns the elements as paged and include the CurrentPage, PageCount, PageSize and RowCount.
+            </summary>
+            <typeparam name="TSource">The type of the source.</typeparam>
+            <param name="source">The IQueryable to return elements from.</param>
+            <param name="page">The page to return.</param>
+            <param name="pageSize">The number of elements per page.</param>
+            <returns>PagedResult{TSource}</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Reverse(System.Linq.IQueryable)">
+            <summary>
+            Inverts the order of the elements in a sequence.
+            </summary>
+            <param name="source">A sequence of values to reverse.</param>
+            <returns>A <see cref="T:System.Linq.IQueryable"/> whose elements correspond to those of the input sequence in reverse order.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Select(System.Linq.IQueryable,System.String,System.Object[])">
+            <summary>
+            Projects each element of a sequence into a new form.
+            </summary>
+            <param name="source">A sequence of values to project.</param>
+            <param name="selector">A projection string expression to apply to each element.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters.  Similar to the way String.Format formats strings.</param>
+            <returns>An <see cref="T:System.Linq.IQueryable"/> whose elements are the result of invoking a projection string on each element of source.</returns>
+            <example>
+            <code>
+            var singleField = queryable.Select("StringProperty");
+            var dynamicObject = queryable.Select("new (StringProperty1, StringProperty2 as OtherStringPropertyName)");
+            </code>
+            </example>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Select``1(System.Linq.IQueryable,System.String,System.Object[])">
+            <summary>
+            Projects each element of a sequence into a new class of type TResult.
+            Details see <see href="http://solutionizing.net/category/linq/"/>.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <param name="source">A sequence of values to project.</param>
+            <param name="selector">A projection string expression to apply to each element.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters.</param>
+            <returns>An <see cref="T:System.Linq.IQueryable`1"/> whose elements are the result of invoking a projection string on each element of source.</returns>
+            <example>
+            <code language="cs">
+            <![CDATA[
+            var users = queryable.Select<User>("new (Username, Pwd as Password)");
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Select(System.Linq.IQueryable,System.Type,System.String,System.Object[])">
+            <summary>
+            Projects each element of a sequence into a new class of type TResult.
+            Details see http://solutionizing.net/category/linq/ 
+            </summary>
+            <param name="source">A sequence of values to project.</param>
+            <param name="resultType">The result type.</param>
+            <param name="selector">A projection string expression to apply to each element.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters.</param>
+            <returns>An <see cref="T:System.Linq.IQueryable`1"/> whose elements are the result of invoking a projection string on each element of source.</returns>
+            <example>
+            <code>
+            var users = queryable.Select(typeof(User), "new (Username, Pwd as Password)");
+            </code>
+            </example>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.SelectMany(System.Linq.IQueryable,System.String,System.Object[])">
+            <summary>
+            Projects each element of a sequence to an <see cref="T:System.Linq.IQueryable"/> and combines the resulting sequences into one sequence.
+            </summary>
+            <param name="source">A sequence of values to project.</param>
+            <param name="selector">A projection string expression to apply to each element.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters.  Similar to the way String.Format formats strings.</param>
+            <returns>An <see cref="T:System.Linq.IQueryable"/> whose elements are the result of invoking a one-to-many projection function on each element of the input sequence.</returns>
+            <example>
+            <code>
+            var roles = users.SelectMany("Roles");
+            </code>
+            </example>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.SelectMany(System.Linq.IQueryable,System.Type,System.String,System.Object[])">
+            <summary>
+            Projects each element of a sequence to an <see cref="T:System.Linq.IQueryable"/> and combines the resulting sequences into one sequence.
+            </summary>
+            <param name="source">A sequence of values to project.</param>
+            <param name="selector">A projection string expression to apply to each element.</param>
+            <param name="resultType">The result type.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters. Similar to the way String.Format formats strings.</param>
+            <returns>An <see cref="T:System.Linq.IQueryable"/> whose elements are the result of invoking a one-to-many projection function on each element of the input sequence.</returns>
+            <example>
+            <code>
+            var permissions = users.SelectMany(typeof(Permission), "Roles.SelectMany(Permissions)");
+            </code>
+            </example>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.SelectMany``1(System.Linq.IQueryable,System.String,System.Object[])">
+            <summary>
+            Projects each element of a sequence to an <see cref="T:System.Linq.IQueryable`1"/> and combines the resulting sequences into one sequence.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <param name="source">A sequence of values to project.</param>
+            <param name="selector">A projection string expression to apply to each element.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters. Similar to the way String.Format formats strings.</param>
+            <returns>An <see cref="T:System.Linq.IQueryable`1"/> whose elements are the result of invoking a one-to-many projection function on each element of the input sequence.</returns>
+            <example>
+            <code>
+            <![CDATA[
+            var permissions = users.SelectMany<Permission>("Roles.SelectMany(Permissions)");
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.SelectMany(System.Linq.IQueryable,System.String,System.String,System.Object[],System.Object[])">
+            <summary>
+            Projects each element of a sequence to an <see cref="T:System.Linq.IQueryable"/>
+            and invokes a result selector function on each element therein. The resulting
+            values from each intermediate sequence are combined into a single, one-dimensional
+            sequence and returned.
+            </summary>
+            <param name="source">A sequence of values to project.</param>
+            <param name="collectionSelector">A projection function to apply to each element of the input sequence.</param>
+            <param name="resultSelector">A projection function to apply to each element of each intermediate sequence. Should only use x and y as parameter names.</param>
+            <param name="collectionSelectorArgs">An object array that contains zero or more objects to insert into the predicate as parameters. Similar to the way String.Format formats strings.</param>
+            <param name="resultSelectorArgs">An object array that contains zero or more objects to insert into the predicate as parameters. Similar to the way String.Format formats strings.</param>
+            <returns>
+            An <see cref="T:System.Linq.IQueryable"/> whose elements are the result of invoking the one-to-many 
+            projection function <paramref name="collectionSelector"/> on each element of source and then mapping
+            each of those sequence elements and their corresponding source element to a result element.
+            </returns>
+            <example>
+            <code>
+            <![CDATA[
+            // TODO
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.SelectMany(System.Linq.IQueryable,System.String,System.String,System.String,System.String,System.Object[],System.Object[])">
+            <summary>
+            Projects each element of a sequence to an <see cref="T:System.Linq.IQueryable"/>
+            and invokes a result selector function on each element therein. The resulting
+            values from each intermediate sequence are combined into a single, one-dimensional
+            sequence and returned.
+            </summary>
+            <param name="source">A sequence of values to project.</param>
+            <param name="collectionSelector">A projection function to apply to each element of the input sequence.</param>
+            <param name="collectionParameterName">The name from collectionParameter to use. Default is x.</param>
+            <param name="resultSelector">A projection function to apply to each element of each intermediate sequence.</param>
+            <param name="resultParameterName">The name from resultParameterName to use. Default is y.</param>
+            <param name="collectionSelectorArgs">An object array that contains zero or more objects to insert into the predicate as parameters. Similar to the way String.Format formats strings.</param>
+            <param name="resultSelectorArgs">An object array that contains zero or more objects to insert into the predicate as parameters. Similar to the way String.Format formats strings.</param>
+            <returns>
+            An <see cref="T:System.Linq.IQueryable"/> whose elements are the result of invoking the one-to-many 
+            projection function <paramref name="collectionSelector"/> on each element of source and then mapping
+            each of those sequence elements and their corresponding source element to a result element.
+            </returns>
+            <example>
+            <code>
+            <![CDATA[
+            // TODO
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Single(System.Linq.IQueryable)">
+            <summary>
+            Returns the only element of a sequence, and throws an exception if there
+            is not exactly one element in the sequence.
+            </summary>
+            <param name="source">A <see cref="T:System.Linq.IQueryable"/> to return the single element of.</param>
+            <returns>The single element of the input sequence.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Single(System.Linq.IQueryable,System.String,System.Object[])">
+            <summary>
+            Returns the only element of a sequence that satisfies a specified condition, and throws an exception if there
+            is not exactly one element in the sequence.
+            </summary>
+            <param name="source">The <see cref="T:System.Linq.IQueryable"/> to return the last element of.</param>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters. Similar to the way String.Format formats strings.</param>
+            <returns>The first element in source that passes the test in predicate.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Single(System.Linq.IQueryable,System.Linq.Expressions.LambdaExpression)">
+            <summary>
+            Returns the only element of a sequence that satisfies a specified condition, and throws an exception if there
+            is not exactly one element in the sequence.
+            </summary>
+            <param name="source">The <see cref="T:System.Linq.IQueryable"/> to return the last element of.</param>
+            <param name="lambda">A cached Lambda Expression.</param>
+            <returns>The first element in source that passes the test in predicate.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.SingleOrDefault(System.Linq.IQueryable)">
+            <summary>
+            Returns the only element of a sequence, or a default value if the sequence
+            is empty; this method throws an exception if there is more than one element
+            in the sequence.
+            </summary>
+            <param name="source">A <see cref="T:System.Linq.IQueryable"/> to return the single element of.</param>
+            <returns>The single element of the input sequence, or default if the sequence contains no elements.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.SingleOrDefault(System.Linq.IQueryable,System.String,System.Object[])">
+            <summary>
+            Returns the only element of a sequence that satisfies a specified condition or a default value if the sequence
+            is empty; and throws an exception if there is not exactly one element in the sequence.
+            </summary>
+            <param name="source">The <see cref="T:System.Linq.IQueryable"/> to return the last element of.</param>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters. Similar to the way String.Format formats strings.</param>
+            <returns>The first element in source that passes the test in predicate.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.SingleOrDefault(System.Linq.IQueryable,System.Linq.Expressions.LambdaExpression)">
+            <summary>
+            Returns the only element of a sequence that satisfies a specified condition or a default value if the sequence
+            is empty; and throws an exception if there is not exactly one element in the sequence.
+            </summary>
+            <param name="source">The <see cref="T:System.Linq.IQueryable"/> to return the last element of.</param>
+            <param name="lambda">A cached Lambda Expression.</param>
+            <returns>The first element in source that passes the test in predicate.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Skip(System.Linq.IQueryable,System.Int32)">
+            <summary>
+            Bypasses a specified number of elements in a sequence and then returns the remaining elements.
+            </summary>
+            <param name="source">A <see cref="T:System.Linq.IQueryable"/> to return elements from.</param>
+            <param name="count">The number of elements to skip before returning the remaining elements.</param>
+            <returns>A <see cref="T:System.Linq.IQueryable"/> that contains elements that occur after the specified index in the input sequence.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.SkipWhile(System.Linq.IQueryable,System.String,System.Object[])">
+            <summary>
+            Bypasses elements in a sequence as long as a specified condition is true and then returns the remaining elements.
+            </summary>
+            <param name="source">A sequence to check for being empty.</param>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters. Similar to the way String.Format formats strings.</param>
+            <example>
+            <code language="cs">
+            IQueryable queryable = employees.AsQueryable();
+            var result1 = queryable.SkipWhile("Income > 50");
+            var result2 = queryable.SkipWhile("Income > @0", 50);
+            </code>
+            </example>
+            <returns>An <see cref="T:System.Linq.IQueryable"/> that contains elements from source starting at the first element in the linear series that does not pass the test specified by predicate.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Sum(System.Linq.IQueryable)">
+            <summary>
+            Computes the sum of a sequence of numeric values.
+            </summary>
+            <param name="source">A sequence of numeric values to calculate the sum of.</param>
+            <returns>The sum of the values in the sequence.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Take(System.Linq.IQueryable,System.Int32)">
+            <summary>
+            Returns a specified number of contiguous elements from the start of a sequence.
+            </summary>
+            <param name="source">The sequence to return elements from.</param>
+            <param name="count">The number of elements to return.</param>
+            <returns>A <see cref="T:System.Linq.IQueryable"/> that contains the specified number of elements from the start of source.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.TakeWhile(System.Linq.IQueryable,System.String,System.Object[])">
+            <summary>
+            Returns elements from a sequence as long as a specified condition is true.
+            </summary>
+            <param name="source">A sequence to check for being empty.</param>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters. Similar to the way String.Format formats strings.</param>
+            <example>
+            <code language="cs">
+            IQueryable queryable = employees.AsQueryable();
+            var result1 = queryable.TakeWhile("Income > 50");
+            var result2 = queryable.TakeWhile("Income > @0", 50);
+            </code>
+            </example>
+            <returns>An <see cref="T:System.Linq.IQueryable"/> that contains elements from the input sequence occurring before the element at which the test specified by predicate no longer passes.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.ThenBy``1(System.Linq.IOrderedQueryable{``0},System.String,System.Object[])">
+            <summary>
+            Performs a subsequent ordering of the elements in a sequence in ascending order according to a key.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values to order.</param>
+            <param name="ordering">An expression string to indicate values to order by.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters. Similar to the way String.Format formats strings.</param>
+            <returns>A <see cref="T:System.Linq.IOrderedQueryable`1"/> whose elements are sorted according to the specified <paramref name="ordering"/>.</returns>
+            <example>
+            <code>
+            <![CDATA[
+            var result = queryable.OrderBy<User>("LastName");
+            var resultSingle = result.ThenBy<User>("NumberProperty");
+            var resultSingleDescending = result.ThenBy<User>("NumberProperty DESC");
+            var resultMultiple = result.ThenBy<User>("NumberProperty, StringProperty");
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.ThenBy(System.Linq.IOrderedQueryable,System.String,System.Object[])">
+            <summary>
+            Performs a subsequent ordering of the elements in a sequence in ascending order according to a key.
+            </summary>
+            <param name="source">A sequence of values to order.</param>
+            <param name="ordering">An expression string to indicate values to order by.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters.  Similar to the way String.Format formats strings.</param>
+            <returns>A <see cref="T:System.Linq.IQueryable"/> whose elements are sorted according to the specified <paramref name="ordering"/>.</returns>
+            <example>
+            <code>
+            var result = queryable.OrderBy("LastName");
+            var resultSingle = result.OrderBy("NumberProperty");
+            var resultSingleDescending = result.OrderBy("NumberProperty DESC");
+            var resultMultiple = result.OrderBy("NumberProperty, StringProperty DESC");
+            </code>
+            </example>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Where``1(System.Linq.IQueryable{``0},System.Linq.Dynamic.Core.ParsingConfig,System.String,System.Object[])">
+            <summary>
+            Filters a sequence of values based on a predicate.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A <see cref="T:System.Linq.IQueryable`1"/> to filter.</param>
+            <param name="config">The <see cref="T:System.Linq.Dynamic.Core.ParsingConfig"/>.</param>
+            <param name="predicate">An expression string to test each element for a condition.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters. Similar to the way String.Format formats strings.</param>
+            <returns>A <see cref="T:System.Linq.IQueryable`1"/> that contains elements from the input sequence that satisfy the condition specified by predicate.</returns>
+            <example>
+            <code language="cs">
+            var result1 = queryable.Where("NumberProperty = 1");
+            var result2 = queryable.Where("NumberProperty = @0", 1);
+            var result3 = queryable.Where("StringProperty = null");
+            var result4 = queryable.Where("StringProperty = \"abc\"");
+            var result5 = queryable.Where("StringProperty = @0", "abc");
+            </code>
+            </example>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Where``1(System.Linq.IQueryable{``0},System.String,System.Object[])">
+            <inheritdoc cref="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Where``1(System.Linq.IQueryable{``0},System.Linq.Dynamic.Core.ParsingConfig,System.String,System.Object[])"/>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Where(System.Linq.IQueryable,System.Linq.Dynamic.Core.ParsingConfig,System.String,System.Object[])">
+            <summary>
+            Filters a sequence of values based on a predicate.
+            </summary>
+            <param name="source">A <see cref="T:System.Linq.IQueryable"/> to filter.</param>
+            <param name="config">The <see cref="T:System.Linq.Dynamic.Core.ParsingConfig"/>.</param>
+            <param name="predicate">An expression string to test each element for a condition.</param>
+            <param name="args">An object array that contains zero or more objects to insert into the predicate as parameters. Similar to the way String.Format formats strings.</param>
+            <returns>A <see cref="T:System.Linq.IQueryable"/> that contains elements from the input sequence that satisfy the condition specified by predicate.</returns>
+            <example>
+            <code>
+            var result1 = queryable.Where("NumberProperty = 1");
+            var result2 = queryable.Where("NumberProperty = @0", 1);
+            var result3 = queryable.Where("StringProperty = null");
+            var result4 = queryable.Where("StringProperty = \"abc\"");
+            var result5 = queryable.Where("StringProperty = @0", "abc");
+            </code>
+            </example>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Where(System.Linq.IQueryable,System.String,System.Object[])">
+            <inheritdoc cref="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Where(System.Linq.IQueryable,System.Linq.Dynamic.Core.ParsingConfig,System.String,System.Object[])"/>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.DynamicQueryableExtensions.Where(System.Linq.IQueryable,System.Linq.Expressions.LambdaExpression)">
+            <summary>
+            Filters a sequence of values based on a predicate.
+            </summary>
+            <param name="source">A <see cref="T:System.Linq.IQueryable"/> to filter.</param>
+            <param name="lambda">A cached Lambda Expression.</param>
+        </member>
+        <member name="T:System.Linq.Dynamic.Core.Exceptions.ParseException">
+            <summary>
+            Represents errors that occur while parsing dynamic linq string expressions.
+            </summary>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.Exceptions.ParseException.#ctor(System.String,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Linq.Dynamic.Core.Exceptions.ParseException"/> class with a specified error message and position.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+            <param name="position">The location in the parsed string that produced the <see cref="T:System.Linq.Dynamic.Core.Exceptions.ParseException"/></param>
+        </member>
+        <member name="P:System.Linq.Dynamic.Core.Exceptions.ParseException.Position">
+            <summary>
+            The location in the parsed string that produced the <see cref="T:System.Linq.Dynamic.Core.Exceptions.ParseException"/>.
+            </summary>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.Exceptions.ParseException.ToString">
+            <summary>
+            Creates and returns a string representation of the current exception.
+            </summary>
+            <returns>A string representation of the current exception.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.Exceptions.ParseException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            When overridden in a derived class, sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+            <PermissionSet>
+              <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Read="*AllFiles*" PathDiscovery="*AllFiles*" />
+              <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="SerializationFormatter" />
+            </PermissionSet>
+        </member>
+        <member name="T:System.Linq.Dynamic.Core.ExtensibilityPoint">
+            <summary>
+            Extensibility point: If you want to modify expanded queries before executing them
+            set your own functionality to override empty QueryOptimizer
+            </summary>
+        </member>
+        <member name="F:System.Linq.Dynamic.Core.ExtensibilityPoint.QueryOptimizer">
+            <summary>
+            Place to optimize your queries. Example: Add a reference to Nuget package Linq.Expression.Optimizer 
+            and in your program initializers set Extensibility.QueryOptimizer = ExpressionOptimizer.visit;
+            </summary>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.Extensions.LinqProviderExtensions.IsLinqToObjects(System.Linq.IQueryable)">
+            <summary>
+            Check if the Provider from IQueryable is a LinqToObjects provider.
+            </summary>
+            <param name="source">The IQueryable</param>
+            <returns>true if provider is LinqToObjects, else false</returns>
+        </member>
+        <member name="T:System.Linq.Dynamic.Core.GroupResult">
+            <summary>
+            The result of a call to a <see cref="T:System.Linq.Dynamic.Core.DynamicQueryableExtensions"/>.GroupByMany() overload.
+            </summary>
+        </member>
+        <member name="P:System.Linq.Dynamic.Core.GroupResult.Key">
+            <summary>
+            The key value of the group.
+            </summary>
+        </member>
+        <member name="P:System.Linq.Dynamic.Core.GroupResult.Count">
+            <summary>
+            The number of resulting elements in the group.
+            </summary>
+        </member>
+        <member name="P:System.Linq.Dynamic.Core.GroupResult.Items">
+            <summary>
+            The resulting elements in the group.
+            </summary>
+        </member>
+        <member name="P:System.Linq.Dynamic.Core.GroupResult.Subgroups">
+            <summary>
+            The resulting subgroups in the group.
+            </summary>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.GroupResult.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> showing the key of the group and the number of items in the group.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="T:System.Linq.Dynamic.Core.IAssemblyHelper">
+            <summary>
+            IAssemblyHelper interface which is used to retrieve assemblies that have been loaded into the execution context of this application domain.
+            </summary>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.IAssemblyHelper.GetAssemblies">
+            <summary>
+            Gets the assemblies that have been loaded into the execution context of this application domain.
+            </summary>
+            
+            <returns>
+            An array of assemblies in this application domain.
+            </returns>
+        </member>
+        <member name="T:System.Linq.Dynamic.Core.PagedResult">
+            <summary>
+            PagedResult
+            </summary>
+        </member>
+        <member name="P:System.Linq.Dynamic.Core.PagedResult.Queryable">
+            <summary>
+            Gets or sets the queryable.
+            </summary>
+            <value>
+            The queryable.
+            </value>
+        </member>
+        <member name="P:System.Linq.Dynamic.Core.PagedResult.CurrentPage">
+            <summary>
+            Gets or sets the current page.
+            </summary>
+            <value>
+            The current page.
+            </value>
+        </member>
+        <member name="P:System.Linq.Dynamic.Core.PagedResult.PageCount">
+            <summary>
+            Gets or sets the page count.
+            </summary>
+            <value>
+            The page count.
+            </value>
+        </member>
+        <member name="P:System.Linq.Dynamic.Core.PagedResult.PageSize">
+            <summary>
+            Gets or sets the size of the page.
+            </summary>
+            <value>
+            The size of the page.
+            </value>
+        </member>
+        <member name="P:System.Linq.Dynamic.Core.PagedResult.RowCount">
+            <summary>
+            Gets or sets the row count.
+            </summary>
+            <value>
+            The row count.
+            </value>
+        </member>
+        <member name="T:System.Linq.Dynamic.Core.PagedResult`1">
+            <summary>
+            PagedResult{TSource}
+            </summary>
+            <typeparam name="TSource">The type of the source.</typeparam>
+        </member>
+        <member name="P:System.Linq.Dynamic.Core.PagedResult`1.Queryable">
+            <summary>
+            Gets or sets the queryable.
+            </summary>
+            <value>
+            The queryable.
+            </value>
+        </member>
+        <member name="T:System.Linq.Dynamic.Core.ParsingConfig">
+            <summary>
+            Configuration class for Dynamic Linq.
+            </summary>
+        </member>
+        <member name="P:System.Linq.Dynamic.Core.ParsingConfig.CustomTypeProvider">
+            <summary>
+            Gets or sets the <see cref="T:System.Linq.Dynamic.Core.CustomTypeProviders.IDynamicLinkCustomTypeProvider"/>.
+            </summary>
+        </member>
+        <member name="P:System.Linq.Dynamic.Core.ParsingConfig.AreContextKeywordsEnabled">
+            <summary>
+            Determines if the context keywords (it, parent, and root) are valid and usable inside a Dynamic Linq string expression.  
+            Does not affect the usability of the equivalent context symbols ($, ^ and ~).
+            </summary>
+        </member>
+        <member name="P:System.Linq.Dynamic.Core.ParsingConfig.UseDynamicObjectClassForAnonymousTypes">
+            <summary>
+            Gets or sets a value indicating whether to use dynamic object class for anonymous types.
+            </summary>
+            <value>
+            <c>true</c> if wether to use dynamic object class for anonymous types; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.TypeConverterFactory.GetConverter(System.Type)">
+            <summary>
+            Returns a type converter for the specified type.
+            </summary>
+            <param name="type">The System.Type of the target component.</param>
+            <returns>A System.ComponentModel.TypeConverter for the specified type.</returns>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.Validation.CoreStrings.ArgumentPropertyNull(System.String,System.String)">
+            <summary>
+            The property '{property}' of the argument '{argument}' cannot be null.
+            </summary>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.Validation.CoreStrings.ArgumentIsEmpty(System.String)">
+            <summary>
+            The string argument '{argumentName}' cannot be empty.
+            </summary>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.Validation.CoreStrings.InvalidEntityType(System.Type,System.String)">
+            <summary>
+            The entity type '{type}' provided for the argument '{argumentName}' must be a reference type.
+            </summary>
+        </member>
+        <member name="M:System.Linq.Dynamic.Core.Validation.CoreStrings.CollectionArgumentIsEmpty(System.String)">
+            <summary>
+            The collection argument '{argumentName}' must contain at least one element.
+            </summary>
+        </member>
+        <member name="T:System.Reflection.CustomIntrospectionExtensions">
+            <summary>
+            https://github.com/castleproject/Core/blob/netcore/src/Castle.Core/Compatibility/IntrospectionExtensions.cs
+            </summary>
+        </member>
+    </members>
+</doc>
