@@ -15,7 +15,7 @@ namespace PlugInDemo.Web
                     .WithConfig(Server.MapPath("log4net.config"))
                 );
 
-            //AbpBootstrapper.PlugInSources.AddFolder(Server.MapPath("/PlugIns"));
+            AbpBootstrapper.PlugInSources.AddFolder(Server.MapPath("/PlugIns"));
 
             base.Application_Start(sender, e);
         }
