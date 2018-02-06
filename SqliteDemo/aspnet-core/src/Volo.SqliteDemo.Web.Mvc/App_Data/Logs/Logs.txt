@@ -1,0 +1,447 @@
+DEBUG 2018-02-06 15:28:54,174 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-02-06 15:28:54,220 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2018-02-06 15:28:54,239 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Volo.SqliteDemo.Web.Startup.SqliteDemoWebMvcModule, Volo.SqliteDemo.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:28:54,243 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Volo.SqliteDemo.SqliteDemoWebCoreModule, Volo.SqliteDemo.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:28:54,243 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Volo.SqliteDemo.SqliteDemoApplicationModule, Volo.SqliteDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:28:54,244 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Volo.SqliteDemo.SqliteDemoCoreModule, Volo.SqliteDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:28:54,244 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:28:54,245 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:28:54,246 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:28:54,246 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:28:54,247 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Volo.SqliteDemo.EntityFrameworkCore.SqliteDemoEntityFrameworkModule, Volo.SqliteDemo.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:28:54,247 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:28:54,247 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:28:54,248 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:28:54,248 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:28:54,248 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:28:54,249 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:28:54,252 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2018-02-06 15:28:54,310 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-02-06 15:28:54,310 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-02-06 15:28:54,310 [1    ] o.Configuration.LanguageManagementConfig - Converted SqliteDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-02-06 15:28:54,310 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-02-06 15:28:54,590 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: Volo.SqliteDemo.EntityFrameworkCore.SqliteDemoDbContext, Volo.SqliteDemo.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:28:55,047 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2018-02-06 15:28:55,059 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2018-02-06 15:28:55,066 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2018-02-06 15:28:55,069 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: SqliteDemo
+DEBUG 2018-02-06 15:28:55,070 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2018-02-06 15:28:55,124 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-02-06 15:28:55,173 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 11 classes define auto mapping attributes
+DEBUG 2018-02-06 15:28:55,173 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2018-02-06 15:28:55,176 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Users.Dto.CreateUserDto
+DEBUG 2018-02-06 15:28:55,177 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Users.Dto.UserDto
+DEBUG 2018-02-06 15:28:55,177 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2018-02-06 15:28:55,177 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2018-02-06 15:28:55,177 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Roles.Dto.CreateRoleDto
+DEBUG 2018-02-06 15:28:55,177 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Roles.Dto.PermissionDto
+DEBUG 2018-02-06 15:28:55,177 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Roles.Dto.RoleDto
+DEBUG 2018-02-06 15:28:55,178 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2018-02-06 15:28:55,178 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.MultiTenancy.Dto.TenantDto
+DEBUG 2018-02-06 15:28:55,178 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+FATAL 2018-02-06 15:28:56,211 [1    ] Abp.AbpBootstrapper                      - Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: AbpEditions'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(Boolean buffer)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure , QueryContext )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass17_1`1.<CompileQueryCore>b__0(QueryContext qc)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.Host.DefaultEditionCreator.CreateEditions() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\Host\DefaultEditionCreator.cs:line 25
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.Host.DefaultEditionCreator.Create() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\Host\DefaultEditionCreator.cs:line 20
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.Host.InitialHostDbBuilder.Create() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\Host\InitialHostDbBuilder.cs:line 14
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.SeedHelper.SeedHostDb(SqliteDemoDbContext context) in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 25
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.SeedHelper.WithDbContext[TDbContext](IIocResolver iocResolver, Action`1 contextAction) in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 41
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.SeedHelper.SeedHostDb(IIocResolver iocResolver) in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 17
+   at Volo.SqliteDemo.EntityFrameworkCore.SqliteDemoEntityFrameworkModule.PostInitialize() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\SqliteDemoEntityFrameworkModule.cs:line 46
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 155
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: AbpEditions'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(Boolean buffer)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure , QueryContext )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass17_1`1.<CompileQueryCore>b__0(QueryContext qc)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.Host.DefaultEditionCreator.CreateEditions() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\Host\DefaultEditionCreator.cs:line 25
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.Host.DefaultEditionCreator.Create() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\Host\DefaultEditionCreator.cs:line 20
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.Host.InitialHostDbBuilder.Create() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\Host\InitialHostDbBuilder.cs:line 14
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.SeedHelper.SeedHostDb(SqliteDemoDbContext context) in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 25
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.SeedHelper.WithDbContext[TDbContext](IIocResolver iocResolver, Action`1 contextAction) in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 41
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.SeedHelper.SeedHostDb(IIocResolver iocResolver) in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 17
+   at Volo.SqliteDemo.EntityFrameworkCore.SqliteDemoEntityFrameworkModule.PostInitialize() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\SqliteDemoEntityFrameworkModule.cs:line 46
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 155
+FATAL 2018-02-06 15:28:56,264 [1    ] soft.AspNetCore.Hosting.Internal.WebHost - Application startup exception
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: AbpEditions'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(Boolean buffer)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure , QueryContext )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass17_1`1.<CompileQueryCore>b__0(QueryContext qc)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.Host.DefaultEditionCreator.CreateEditions() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\Host\DefaultEditionCreator.cs:line 25
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.Host.DefaultEditionCreator.Create() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\Host\DefaultEditionCreator.cs:line 20
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.Host.InitialHostDbBuilder.Create() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\Host\InitialHostDbBuilder.cs:line 14
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.SeedHelper.SeedHostDb(SqliteDemoDbContext context) in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 25
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.SeedHelper.WithDbContext[TDbContext](IIocResolver iocResolver, Action`1 contextAction) in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 41
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.SeedHelper.SeedHostDb(IIocResolver iocResolver) in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 17
+   at Volo.SqliteDemo.EntityFrameworkCore.SqliteDemoEntityFrameworkModule.PostInitialize() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\SqliteDemoEntityFrameworkModule.cs:line 46
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 160
+   at Abp.AspNetCore.AbpApplicationBuilderExtensions.UseAbp(IApplicationBuilder app, Action`1 optionsAction) in D:\Github\aspnetboilerplate\src\Abp.AspNetCore\AspNetCore\AbpApplicationBuilderExtensions.cs:line 37
+   at Volo.SqliteDemo.Web.Startup.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory) in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\Startup\Startup.cs:line 62
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.AutoRequestServicesStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+DEBUG 2018-02-06 15:29:20,001 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-02-06 15:29:20,026 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2018-02-06 15:29:20,042 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Volo.SqliteDemo.Web.Startup.SqliteDemoWebMvcModule, Volo.SqliteDemo.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:29:20,046 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Volo.SqliteDemo.SqliteDemoWebCoreModule, Volo.SqliteDemo.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:29:20,046 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Volo.SqliteDemo.SqliteDemoApplicationModule, Volo.SqliteDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:29:20,046 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Volo.SqliteDemo.SqliteDemoCoreModule, Volo.SqliteDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:29:20,047 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:29:20,047 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:29:20,047 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:29:20,048 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:29:20,048 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Volo.SqliteDemo.EntityFrameworkCore.SqliteDemoEntityFrameworkModule, Volo.SqliteDemo.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:29:20,048 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:29:20,049 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:29:20,049 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:29:20,049 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:29:20,049 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:29:20,050 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:29:20,053 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2018-02-06 15:29:20,116 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-02-06 15:29:20,116 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-02-06 15:29:20,116 [1    ] o.Configuration.LanguageManagementConfig - Converted SqliteDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-02-06 15:29:20,116 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-02-06 15:29:20,370 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: Volo.SqliteDemo.EntityFrameworkCore.SqliteDemoDbContext, Volo.SqliteDemo.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:29:20,861 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2018-02-06 15:29:20,874 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2018-02-06 15:29:20,879 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2018-02-06 15:29:20,881 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: SqliteDemo
+DEBUG 2018-02-06 15:29:20,882 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2018-02-06 15:29:20,931 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-02-06 15:29:20,978 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 11 classes define auto mapping attributes
+DEBUG 2018-02-06 15:29:20,978 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2018-02-06 15:29:20,981 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Users.Dto.CreateUserDto
+DEBUG 2018-02-06 15:29:20,982 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Users.Dto.UserDto
+DEBUG 2018-02-06 15:29:20,982 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2018-02-06 15:29:20,983 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2018-02-06 15:29:20,983 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Roles.Dto.CreateRoleDto
+DEBUG 2018-02-06 15:29:20,983 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Roles.Dto.PermissionDto
+DEBUG 2018-02-06 15:29:20,983 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Roles.Dto.RoleDto
+DEBUG 2018-02-06 15:29:20,983 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2018-02-06 15:29:20,984 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.MultiTenancy.Dto.TenantDto
+DEBUG 2018-02-06 15:29:20,984 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+FATAL 2018-02-06 15:29:21,868 [1    ] Abp.AbpBootstrapper                      - Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: AbpEditions'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(Boolean buffer)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure , QueryContext )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass17_1`1.<CompileQueryCore>b__0(QueryContext qc)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.Host.DefaultEditionCreator.CreateEditions() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\Host\DefaultEditionCreator.cs:line 25
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.Host.DefaultEditionCreator.Create() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\Host\DefaultEditionCreator.cs:line 20
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.Host.InitialHostDbBuilder.Create() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\Host\InitialHostDbBuilder.cs:line 14
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.SeedHelper.SeedHostDb(SqliteDemoDbContext context) in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 25
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.SeedHelper.WithDbContext[TDbContext](IIocResolver iocResolver, Action`1 contextAction) in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 41
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.SeedHelper.SeedHostDb(IIocResolver iocResolver) in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 17
+   at Volo.SqliteDemo.EntityFrameworkCore.SqliteDemoEntityFrameworkModule.PostInitialize() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\SqliteDemoEntityFrameworkModule.cs:line 46
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 155
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: AbpEditions'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(Boolean buffer)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure , QueryContext )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass17_1`1.<CompileQueryCore>b__0(QueryContext qc)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.Host.DefaultEditionCreator.CreateEditions() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\Host\DefaultEditionCreator.cs:line 25
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.Host.DefaultEditionCreator.Create() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\Host\DefaultEditionCreator.cs:line 20
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.Host.InitialHostDbBuilder.Create() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\Host\InitialHostDbBuilder.cs:line 14
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.SeedHelper.SeedHostDb(SqliteDemoDbContext context) in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 25
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.SeedHelper.WithDbContext[TDbContext](IIocResolver iocResolver, Action`1 contextAction) in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 41
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.SeedHelper.SeedHostDb(IIocResolver iocResolver) in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 17
+   at Volo.SqliteDemo.EntityFrameworkCore.SqliteDemoEntityFrameworkModule.PostInitialize() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\SqliteDemoEntityFrameworkModule.cs:line 46
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 155
+FATAL 2018-02-06 15:29:21,922 [1    ] soft.AspNetCore.Hosting.Internal.WebHost - Application startup exception
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: AbpEditions'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(Boolean buffer)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure , QueryContext )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass17_1`1.<CompileQueryCore>b__0(QueryContext qc)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.Host.DefaultEditionCreator.CreateEditions() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\Host\DefaultEditionCreator.cs:line 25
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.Host.DefaultEditionCreator.Create() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\Host\DefaultEditionCreator.cs:line 20
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.Host.InitialHostDbBuilder.Create() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\Host\InitialHostDbBuilder.cs:line 14
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.SeedHelper.SeedHostDb(SqliteDemoDbContext context) in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 25
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.SeedHelper.WithDbContext[TDbContext](IIocResolver iocResolver, Action`1 contextAction) in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 41
+   at Volo.SqliteDemo.EntityFrameworkCore.Seed.SeedHelper.SeedHostDb(IIocResolver iocResolver) in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\Seed\SeedHelper.cs:line 17
+   at Volo.SqliteDemo.EntityFrameworkCore.SqliteDemoEntityFrameworkModule.PostInitialize() in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.EntityFrameworkCore\EntityFrameworkCore\SqliteDemoEntityFrameworkModule.cs:line 46
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Abp.AbpBootstrapper.Initialize() in D:\Github\aspnetboilerplate\src\Abp\AbpBootstrapper.cs:line 160
+   at Abp.AspNetCore.AbpApplicationBuilderExtensions.UseAbp(IApplicationBuilder app, Action`1 optionsAction) in D:\Github\aspnetboilerplate\src\Abp.AspNetCore\AspNetCore\AbpApplicationBuilderExtensions.cs:line 37
+   at Volo.SqliteDemo.Web.Startup.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory) in C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\Startup\Startup.cs:line 62
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.AutoRequestServicesStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+DEBUG 2018-02-06 15:48:56,109 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-02-06 15:48:56,143 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2018-02-06 15:48:56,161 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Volo.SqliteDemo.Web.Startup.SqliteDemoWebMvcModule, Volo.SqliteDemo.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:48:56,165 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Volo.SqliteDemo.SqliteDemoWebCoreModule, Volo.SqliteDemo.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:48:56,165 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Volo.SqliteDemo.SqliteDemoApplicationModule, Volo.SqliteDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:48:56,166 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Volo.SqliteDemo.SqliteDemoCoreModule, Volo.SqliteDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:48:56,166 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:48:56,166 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:48:56,167 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:48:56,167 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:48:56,167 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Volo.SqliteDemo.EntityFrameworkCore.SqliteDemoEntityFrameworkModule, Volo.SqliteDemo.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:48:56,168 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:48:56,168 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:48:56,168 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:48:56,169 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:48:56,169 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:48:56,169 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:48:56,173 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2018-02-06 15:48:56,245 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-02-06 15:48:56,246 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-02-06 15:48:56,246 [1    ] o.Configuration.LanguageManagementConfig - Converted SqliteDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-02-06 15:48:56,246 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-02-06 15:48:56,559 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: Volo.SqliteDemo.EntityFrameworkCore.SqliteDemoDbContext, Volo.SqliteDemo.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-02-06 15:48:56,995 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2018-02-06 15:48:57,008 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2018-02-06 15:48:57,013 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2018-02-06 15:48:57,015 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: SqliteDemo
+DEBUG 2018-02-06 15:48:57,017 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2018-02-06 15:48:57,057 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-02-06 15:48:57,110 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 11 classes define auto mapping attributes
+DEBUG 2018-02-06 15:48:57,110 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2018-02-06 15:48:57,114 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Users.Dto.CreateUserDto
+DEBUG 2018-02-06 15:48:57,115 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Users.Dto.UserDto
+DEBUG 2018-02-06 15:48:57,115 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2018-02-06 15:48:57,115 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2018-02-06 15:48:57,115 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Roles.Dto.CreateRoleDto
+DEBUG 2018-02-06 15:48:57,115 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Roles.Dto.PermissionDto
+DEBUG 2018-02-06 15:48:57,115 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Roles.Dto.RoleDto
+DEBUG 2018-02-06 15:48:57,116 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2018-02-06 15:48:57,116 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.MultiTenancy.Dto.TenantDto
+DEBUG 2018-02-06 15:48:57,116 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Volo.SqliteDemo.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+INFO  2018-02-06 15:48:59,603 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/  
+INFO  2018-02-06 15:48:59,671 [11   ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+WARN  2018-02-06 15:49:00,763 [11   ] Mvc.Authorization.AbpAuthorizationFilter - Abp.Authorization.AbpAuthorizationException: Current user did not login to the application!
+   at Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__19.MoveNext() in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 43
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Authorization.AuthorizationHelper.<CheckPermissions>d__22.MoveNext() in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 98
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__20.MoveNext() in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 57
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.AspNetCore.Mvc.Authorization.AbpAuthorizationFilter.<OnAuthorizationAsync>d__8.MoveNext() in D:\Github\aspnetboilerplate\src\Abp.AspNetCore\AspNetCore\Mvc\Authorization\AbpAuthorizationFilter.cs:line 53
+Abp.Authorization.AbpAuthorizationException: Current user did not login to the application!
+   at Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__19.MoveNext() in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 43
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Authorization.AuthorizationHelper.<CheckPermissions>d__22.MoveNext() in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 98
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__20.MoveNext() in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 57
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.AspNetCore.Mvc.Authorization.AbpAuthorizationFilter.<OnAuthorizationAsync>d__8.MoveNext() in D:\Github\aspnetboilerplate\src\Abp.AspNetCore\AspNetCore\Mvc\Authorization\AbpAuthorizationFilter.cs:line 53
+INFO  2018-02-06 15:49:00,770 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Authorization failed for the request at filter 'Abp.AspNetCore.Mvc.Authorization.AbpAuthorizationFilter'.
+INFO  2018-02-06 15:49:00,772 [11   ] Microsoft.AspNetCore.Mvc.ChallengeResult - Executing ChallengeResult with authentication schemes ().
+INFO  2018-02-06 15:49:00,785 [11   ] tion.Cookies.CookieAuthenticationHandler - AuthenticationScheme: Identity.Application was challenged.
+INFO  2018-02-06 15:49:00,791 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Volo.SqliteDemo.Web.Controllers.HomeController.Index (Volo.SqliteDemo.Web.Mvc) in 180.9952ms
+INFO  2018-02-06 15:49:00,806 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1231.3913ms 302 
+INFO  2018-02-06 15:49:00,834 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/Account/Login?ReturnUrl=%2F  
+INFO  2018-02-06 15:49:00,837 [6    ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2018-02-06 15:49:01,773 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Volo.SqliteDemo.Web.Controllers.AccountController.Login (Volo.SqliteDemo.Web.Mvc) with arguments (, /, ) - ModelState is Valid
+INFO  2018-02-06 15:49:04,376 [6    ] ViewFeatures.Internal.ViewResultExecutor - Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+INFO  2018-02-06 15:49:05,642 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Volo.SqliteDemo.Web.Controllers.AccountController.Login (Volo.SqliteDemo.Web.Mvc) in 4765.7437ms
+INFO  2018-02-06 15:49:05,647 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4812.7114ms 200 text/html; charset=utf-8
+INFO  2018-02-06 15:49:05,673 [26   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/fonts/roboto/roboto.css?v=DWPiEyLnt8XZ68WQeudmZPGSejowhmQNUUhaX8dYF1Q  
+INFO  2018-02-06 15:49:05,677 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/fonts/material-icons/materialicons.css?v=2SsVsQpWRHM3EJ4D4MT4RRpiEXbEuK0vEjPxVr5P7Ek  
+INFO  2018-02-06 15:49:05,678 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/bootstrap/dist/css/bootstrap.css?v=fmMNkMcjSw3xcp9iuPnku_ryk9kaWgrEbfJfKmdZ45o  
+INFO  2018-02-06 15:49:05,681 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/toastr/toastr.css?v=W8a9WvLyUO7CXtOC4f9LoUMwkywM7JSq-Xm5kNsYW08  
+INFO  2018-02-06 15:49:05,684 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/famfamfam-flags/dist/sprite/famfamfam-flags.css?v=l7wu43l7XpKWzFn29hiH8AFe4I_CNzbCPmaAQivPYMg  
+INFO  2018-02-06 15:49:05,686 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/font-awesome/css/font-awesome.css?v=NuCn4IvuZXdBaFKJOAcsU2Q3ZpwbdFisd5dux4jkQ5w  
+INFO  2018-02-06 15:49:05,697 [26   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/fonts/roboto/roboto.css'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\fonts\roboto\roboto.css'
+INFO  2018-02-06 15:49:05,697 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/font-awesome/css/font-awesome.css'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\font-awesome\css\font-awesome.css'
+INFO  2018-02-06 15:49:05,697 [15   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/fonts/material-icons/materialicons.css'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\fonts\material-icons\materialicons.css'
+INFO  2018-02-06 15:49:05,697 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/famfamfam-flags/dist/sprite/famfamfam-flags.css'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\famfamfam-flags\dist\sprite\famfamfam-flags.css'
+INFO  2018-02-06 15:49:05,697 [16   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFO  2018-02-06 15:49:05,697 [11   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/toastr/toastr.css'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\toastr\toastr.css'
+INFO  2018-02-06 15:49:05,723 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 39.1324ms 200 text/css
+INFO  2018-02-06 15:49:05,723 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 37.2815ms 200 text/css
+INFO  2018-02-06 15:49:05,723 [26   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 49.5194ms 200 text/css
+INFO  2018-02-06 15:49:05,723 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 45.1014ms 200 text/css
+INFO  2018-02-06 15:49:05,723 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 46.3229ms 200 text/css
+INFO  2018-02-06 15:49:05,724 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 42.7701ms 200 text/css
+INFO  2018-02-06 15:49:05,724 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/Waves/dist/waves.css?v=0zP86LzXedNkkBjePtKrMTAPuIy6EzHfGlyYvsmGLBw  
+INFO  2018-02-06 15:49:05,725 [15   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/Waves/dist/waves.css'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\Waves\dist\waves.css'
+INFO  2018-02-06 15:49:05,727 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.7072ms 200 text/css
+INFO  2018-02-06 15:49:05,728 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/animate.css/animate.css?v=00w68NO3TLuHjKRHJmjrrgJBDtG_6OhbJEu1gtHcsuo  
+INFO  2018-02-06 15:49:05,731 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/css/style.css?v=151KUrNx-cFGpjXC7QZ8WbWSo-mQTLO0htvGyBUR_i8  
+INFO  2018-02-06 15:49:05,732 [16   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/animate.css/animate.css'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\animate.css\animate.css'
+INFO  2018-02-06 15:49:05,733 [5    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/style.css'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\css\style.css'
+INFO  2018-02-06 15:49:05,734 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 7.1087ms 200 text/css
+INFO  2018-02-06 15:49:05,740 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/css/materialize.css?v=OdWlipUYj8b9Oa4RyT45njteIcxH-4pGocqe0r0V8js  
+INFO  2018-02-06 15:49:05,742 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 10.9289ms 200 text/css
+INFO  2018-02-06 15:49:05,742 [14   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/materialize.css'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\css\materialize.css'
+INFO  2018-02-06 15:49:05,743 [26   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Account/_Layout.css?v=vIEtxnpR3ZrYbYcueRr_mJ9XuJJzDprh4sMCwvRBcqk  
+INFO  2018-02-06 15:49:05,743 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.9495ms 200 text/css
+INFO  2018-02-06 15:49:05,743 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Account/Login.css?v=j_16MTiQNlUrKdjTrCjLCSGkIIjHvt8tFUyucW02Vqw  
+INFO  2018-02-06 15:49:05,745 [16   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Account/Login.css'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\view-resources\Views\Account\Login.css'
+INFO  2018-02-06 15:49:05,746 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.9542ms 200 text/css
+INFO  2018-02-06 15:49:05,749 [26   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Account/_Layout.css'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\view-resources\Views\Account\_Layout.css'
+INFO  2018-02-06 15:49:05,752 [26   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 8.7873ms 200 text/css
+INFO  2018-02-06 15:49:05,755 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/jquery/dist/jquery.js?v=DZAnKJ_6XZ9si04Hgrsxu_8s717jcIzLy3oi35EouyE  
+INFO  2018-02-06 15:49:05,759 [16   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\jquery\dist\jquery.js'
+INFO  2018-02-06 15:49:05,761 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/json2/json2.js?v=EZJ68U7eUi8uSP0MRRUalYten2eOlhREE9kJOIbIeYg  
+INFO  2018-02-06 15:49:05,762 [11   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/json2/json2.js'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\json2\json2.js'
+INFO  2018-02-06 15:49:05,765 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.0533ms 200 application/javascript
+INFO  2018-02-06 15:49:05,770 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 15.0779ms 200 application/javascript
+INFO  2018-02-06 15:49:05,777 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/blockUI/jquery.blockUI.js?v=oQaw-JJuUcJQ9QVYMcFnPxICDT-hv8-kuxT2FNzTGhc  
+INFO  2018-02-06 15:49:05,777 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/moment/min/moment-with-locales.js?v=7CN4bWPV0U57HDA4YjdCBKCAynhqdWErjNn-5rrsW_I  
+INFO  2018-02-06 15:49:05,779 [14   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/moment/min/moment-with-locales.js'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\moment\min\moment-with-locales.js'
+INFO  2018-02-06 15:49:05,780 [16   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/blockUI/jquery.blockUI.js'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\blockUI\jquery.blockUI.js'
+INFO  2018-02-06 15:49:05,780 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/jquery-validation/dist/jquery.validate.js?v=KuzD50lDGNI5jq_ipt4hwDpSJk3fhseTR1jdvaBoZLs  
+INFO  2018-02-06 15:49:05,780 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.727ms 200 application/javascript
+INFO  2018-02-06 15:49:05,782 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/bootstrap/dist/js/bootstrap.js?v=Cr6N6zNN4bp0OwTQOZ6Z66M2r-2dpy_EwKMCyZ-SOMg  
+INFO  2018-02-06 15:49:05,783 [16   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/jquery-validation/dist/jquery.validate.js'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\jquery-validation\dist\jquery.validate.js'
+INFO  2018-02-06 15:49:05,784 [15   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.js'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\bootstrap\dist\js\bootstrap.js'
+INFO  2018-02-06 15:49:05,784 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.6594ms 200 application/javascript
+INFO  2018-02-06 15:49:05,787 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.9169ms 200 application/javascript
+INFO  2018-02-06 15:49:05,796 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 15.0186ms 200 application/javascript
+INFO  2018-02-06 15:49:05,797 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/toastr/toastr.js?v=C7DJ6LzTt1Hvj9fd-yRnySs3I4T2B8XmQ3TqXQjc00g  
+INFO  2018-02-06 15:49:05,803 [11   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/toastr/toastr.js'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\toastr\toastr.js'
+INFO  2018-02-06 15:49:05,806 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 8.3709ms 200 application/javascript
+INFO  2018-02-06 15:49:05,814 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/sweetalert/dist/sweetalert.min.js?v=aPktydUv1rN3mouQeXoKi3ioFTIQlULuqYeoTAA2ihY  
+INFO  2018-02-06 15:49:05,816 [11   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/sweetalert/dist/sweetalert.min.js'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\sweetalert\dist\sweetalert.min.js'
+INFO  2018-02-06 15:49:05,818 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.6163ms 200 application/javascript
+INFO  2018-02-06 15:49:05,825 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/spin.js/spin.js?v=GySbz3oZXNlwoawo5PpYy0iM38B-q3jyi_HLw00uxy0  
+INFO  2018-02-06 15:49:05,827 [11   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/spin.js/spin.js'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\spin.js\spin.js'
+INFO  2018-02-06 15:49:05,828 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/spin.js/jquery.spin.js?v=EG38bUU5b2M64hy9cNAzu_cQBEsiBYsDifOcoHqNd2k  
+INFO  2018-02-06 15:49:05,834 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/spin.js/jquery.spin.js'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\spin.js\jquery.spin.js'
+INFO  2018-02-06 15:49:05,834 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 7.3311ms 200 application/javascript
+INFO  2018-02-06 15:49:05,839 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/Waves/dist/waves.js?v=Lar7zQhqgdoUsaqhuwkgnWgsC-eRWIxHhJPV-QtrDog  
+INFO  2018-02-06 15:49:05,828 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.1375ms 200 application/javascript
+INFO  2018-02-06 15:49:05,844 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/abp-web-resources/Abp/Framework/scripts/abp.js?v=FGfi3RfHf06ftjVdq2JaO16cF9CPZNPvujmuYBacXxg  
+INFO  2018-02-06 15:49:05,844 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/Waves/dist/waves.js'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\Waves\dist\waves.js'
+INFO  2018-02-06 15:49:05,848 [11   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/abp-web-resources/Abp/Framework/scripts/abp.js'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\abp-web-resources\Abp\Framework\scripts\abp.js'
+INFO  2018-02-06 15:49:05,849 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.455ms 200 application/javascript
+INFO  2018-02-06 15:49:05,850 [26   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 8.4622ms 200 application/javascript
+INFO  2018-02-06 15:49:05,850 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js?v=ImopdkB8alCil1HigOwW3CDqWKsLZXyplf7TXBbjRnE  
+INFO  2018-02-06 15:49:05,851 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js?v=lMgLZMlGsipWDxpvEPxfKVREzRedV_ygRnTj2kvADpw  
+INFO  2018-02-06 15:49:05,851 [26   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js?v=Y3zoG-hSFKmbS3BHKo_wFWRPbyzJXKoNrnF73uFdtqU  
+INFO  2018-02-06 15:49:05,852 [5    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\abp-web-resources\Abp\Framework\scripts\libs\abp.toastr.js'
+INFO  2018-02-06 15:49:05,853 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\abp-web-resources\Abp\Framework\scripts\libs\abp.jquery.js'
+INFO  2018-02-06 15:49:05,853 [26   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\abp-web-resources\Abp\Framework\scripts\libs\abp.blockUI.js'
+INFO  2018-02-06 15:49:05,853 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.8057ms 200 application/javascript
+INFO  2018-02-06 15:49:05,853 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 7.6598ms 200 application/javascript
+INFO  2018-02-06 15:49:05,856 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.9142ms 200 application/javascript
+INFO  2018-02-06 15:49:05,863 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js?v=RJuGDX616JN_UziXsmKnth0alpECKCx0gtxKZVrZWxY  
+INFO  2018-02-06 15:49:05,865 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/js/admin.js?v=EVe7kfOaz9IIbzAxojHn8QU2lv1sAlpN_v_9R5MU9mg  
+INFO  2018-02-06 15:49:05,866 [14   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\abp-web-resources\Abp\Framework\scripts\libs\abp.spin.js'
+INFO  2018-02-06 15:49:05,866 [15   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/admin.js'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\js\admin.js'
+INFO  2018-02-06 15:49:05,867 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.5083ms 200 application/javascript
+INFO  2018-02-06 15:49:05,867 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js?v=guLvtVJMvLobKpGAlQigrGWMQ1sGQo4yTL46zjGQUUY  
+INFO  2018-02-06 15:49:05,867 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.8265ms 200 application/javascript
+INFO  2018-02-06 15:49:05,868 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\abp-web-resources\Abp\Framework\scripts\libs\abp.sweet-alert.js'
+INFO  2018-02-06 15:49:05,870 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.3755ms 200 application/javascript
+INFO  2018-02-06 15:49:05,870 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/js/main.js?v=loD0f0QzZGZiFA5g4LuN5IuhweX_a6Dm9qFlORpSt9E  
+INFO  2018-02-06 15:49:05,876 [16   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/main.js'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\js\main.js'
+INFO  2018-02-06 15:49:05,877 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.795ms 200 application/javascript
+INFO  2018-02-06 15:49:05,881 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Shared/Components/TenantChange/Default.js?v=636535289456400849  
+INFO  2018-02-06 15:49:05,881 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Account/Login.js?v=o2PUQBkwW7VjtzD5RNxKPa3oShr3fMFHds_2dwIAV5M  
+INFO  2018-02-06 15:49:05,881 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=636535289370601914  
+INFO  2018-02-06 15:49:05,882 [11   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Account/Login.js'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\view-resources\Views\Account\Login.js'
+INFO  2018-02-06 15:49:05,882 [5    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Shared/Components/TenantChange/Default.js'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\view-resources\Views\Shared\Components\TenantChange\Default.js'
+INFO  2018-02-06 15:49:05,883 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=636535289370601914  
+INFO  2018-02-06 15:49:05,883 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.6754ms 200 application/javascript
+INFO  2018-02-06 15:49:05,883 [14   ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2018-02-06 15:49:05,883 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.982ms 200 application/javascript
+INFO  2018-02-06 15:49:05,885 [6    ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2018-02-06 15:49:05,906 [26   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/famfamfam-flags/dist/sprite/famfamfam-flags.png  
+INFO  2018-02-06 15:49:05,907 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments () - ModelState is Valid
+INFO  2018-02-06 15:49:05,908 [26   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/famfamfam-flags/dist/sprite/famfamfam-flags.png'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\lib\famfamfam-flags\dist\sprite\famfamfam-flags.png'
+INFO  2018-02-06 15:49:05,911 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.6076ms 200 image/png
+INFO  2018-02-06 15:49:05,912 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/fonts/roboto/CWB0XYA8bzo0kSThX0UTuA.woff2  
+INFO  2018-02-06 15:49:05,913 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/fonts/roboto/CWB0XYA8bzo0kSThX0UTuA.woff2'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\fonts\roboto\CWB0XYA8bzo0kSThX0UTuA.woff2'
+INFO  2018-02-06 15:49:05,914 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.9081ms 200 font/woff2
+INFO  2018-02-06 15:49:05,916 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/fonts/roboto/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2  
+INFO  2018-02-06 15:49:05,917 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/fonts/roboto/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\fonts\roboto\d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2'
+INFO  2018-02-06 15:49:05,918 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.8062ms 200 font/woff2
+INFO  2018-02-06 15:49:05,926 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/fonts/material-icons/materialicons.woff2  
+INFO  2018-02-06 15:49:05,927 [11   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/fonts/material-icons/materialicons.woff2'. Physical path: 'C:\Users\aliriza\Desktop\SqliteDemo\aspnet-core\src\Volo.SqliteDemo.Web.Mvc\wwwroot\fonts\material-icons\materialicons.woff2'
+INFO  2018-02-06 15:49:05,928 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.869ms 200 font/woff2
+INFO  2018-02-06 15:49:05,933 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - ModelState is Valid
+INFO  2018-02-06 15:49:06,078 [14   ] tCore.Mvc.Internal.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2018-02-06 15:49:06,079 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 179.9471ms
+INFO  2018-02-06 15:49:06,079 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 197.7446ms 200 application/x-javascript; charset=utf-8
+INFO  2018-02-06 15:49:06,086 [6    ] tCore.Mvc.Internal.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2018-02-06 15:49:06,086 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 177.5182ms
+INFO  2018-02-06 15:49:06,086 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 203.4035ms 200 application/x-javascript
