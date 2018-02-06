@@ -7,18 +7,12 @@ namespace Acme.MySqlDemo.EntityFrameworkCore
     {
         public static void Configure(DbContextOptionsBuilder<MySqlDemoDbContext> builder, string connectionString)
         {
-            builder.UseMySql(connectionString, mySqlOptionsAction =>
-            {
-                mySqlOptionsAction.MigrationsAssembly(typeof(MySqlDemoDbContextConfigurer).Assembly.GetName().Name);
-            });
+            builder.UseMySql(connectionString);
         }
 
         public static void Configure(DbContextOptionsBuilder<MySqlDemoDbContext> builder, DbConnection connection)
         {
-            builder.UseMySql(connection, mySqlOptionsAction =>
-            {
-                mySqlOptionsAction.MigrationsAssembly(typeof(MySqlDemoDbContextConfigurer).Assembly.GetName().Name);
-            });
+            builder.UseMySql(connection);
         }
     }
 }
