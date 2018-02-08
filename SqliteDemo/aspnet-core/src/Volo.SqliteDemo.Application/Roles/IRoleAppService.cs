@@ -1,0 +1,12 @@
+﻿using System.Threading.Tasks;
+using Abp.Application.Services;
+using Abp.Application.Services.Dto;
+using Volo.SqliteDemo.Roles.Dto;
+
+namespace Volo.SqliteDemo.Roles
+{
+    public interface IRoleAppService : IAsyncCrudAppService<RoleDto, int, PagedResultRequestDto, CreateRoleDto, RoleDto>
+    {
+        Task<ListResultDto<PermissionDto>> GetAllPermissions();
+    }
+}
