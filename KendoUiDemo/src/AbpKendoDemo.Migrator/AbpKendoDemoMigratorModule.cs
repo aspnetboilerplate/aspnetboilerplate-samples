@@ -1,12 +1,11 @@
-using System.Data.Entity;
-using System.Reflection;
+using Microsoft.Extensions.Configuration;
+using Castle.MicroKernel.Registration;
 using Abp.Events.Bus;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
-using Castle.MicroKernel.Registration;
-using Microsoft.Extensions.Configuration;
 using AbpKendoDemo.Configuration;
-using AbpKendoDemo.EntityFramework;
+using AbpKendoDemo.EntityFrameworkCore;
+using AbpKendoDemo.Migrator.DependencyInjection;
 
 namespace AbpKendoDemo.Migrator
 {
@@ -15,33 +14,34 @@ namespace AbpKendoDemo.Migrator
     {
         private readonly IConfigurationRoot _appConfiguration;
 
-        public AbpKendoDemoMigratorModule()
+        public AbpKendoDemoMigratorModule(AbpKendoDemoEntityFrameworkModule abpProjectNameEntityFrameworkModule)
         {
+            abpProjectNameEntityFrameworkModule.SkipDbSeed = true;
+
             _appConfiguration = AppConfigurations.Get(
-                typeof(AbpKendoDemoMigratorModule).Assembly.GetDirectoryPathOrNull()
+                typeof(AbpKendoDemoMigratorModule).GetAssembly().GetDirectoryPathOrNull()
             );
         }
 
         public override void PreInitialize()
         {
-            Database.SetInitializer<AbpKendoDemoDbContext>(null);
-
             Configuration.DefaultNameOrConnectionString = _appConfiguration.GetConnectionString(
                 AbpKendoDemoConsts.ConnectionStringName
-                );
+            );
 
             Configuration.BackgroundJobs.IsJobExecutionEnabled = false;
-            Configuration.ReplaceService(typeof(IEventBus), () =>
-            {
-                IocManager.IocContainer.Register(
+            Configuration.ReplaceService(
+                typeof(IEventBus), 
+                () => IocManager.IocContainer.Register(
                     Component.For<IEventBus>().Instance(NullEventBus.Instance)
-                );
-            });
+                )
+            );
         }
 
         public override void Initialize()
         {
-            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+            IocManager.RegisterAssemblyByConvention(typeof(AbpKendoDemoMigratorModule).GetAssembly());
+            ServiceCollectionRegistrar.Register(IocManager);
         }
     }
 }

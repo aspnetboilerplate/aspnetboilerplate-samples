@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using Abp.Reflection.Extensions;
 
 namespace AbpKendoDemo.Web
 {
@@ -12,10 +13,10 @@ namespace AbpKendoDemo.Web
     {
         public static string CalculateContentRootFolder()
         {
-            var coreAssemblyDirectoryPath = Path.GetDirectoryName(typeof(AbpKendoDemoCoreModule).Assembly.Location);
+            var coreAssemblyDirectoryPath = Path.GetDirectoryName(typeof(AbpKendoDemoCoreModule).GetAssembly().Location);
             if (coreAssemblyDirectoryPath == null)
             {
-                throw new ApplicationException("Could not find location of AbpKendoDemo.Core assembly!");
+                throw new Exception("Could not find location of AbpKendoDemo.Core assembly!");
             }
 
             var directoryInfo = new DirectoryInfo(coreAssemblyDirectoryPath);
@@ -23,13 +24,25 @@ namespace AbpKendoDemo.Web
             {
                 if (directoryInfo.Parent == null)
                 {
-                    throw new ApplicationException("Could not find content root folder!");
+                    throw new Exception("Could not find content root folder!");
                 }
 
                 directoryInfo = directoryInfo.Parent;
             }
 
-            return Path.Combine(directoryInfo.FullName, @"src\AbpKendoDemo.Web");
+            var webMvcFolder = Path.Combine(directoryInfo.FullName, "src", "AbpKendoDemo.Web.Mvc");
+            if (Directory.Exists(webMvcFolder))
+            {
+                return webMvcFolder;
+            }
+
+            var webHostFolder = Path.Combine(directoryInfo.FullName, "src", "AbpKendoDemo.Web.Host");
+            if (Directory.Exists(webHostFolder))
+            {
+                return webHostFolder;
+            }
+
+            throw new Exception("Could not find root folder of the web project!");
         }
 
         private static bool DirectoryContains(string directory, string fileName)

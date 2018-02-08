@@ -1,4 +1,5 @@
-﻿using Abp.Authorization;
+﻿using Microsoft.AspNetCore.Identity;
+using Abp.Authorization;
 using Abp.Authorization.Users;
 using Abp.Configuration;
 using Abp.Configuration.Startup;
@@ -7,32 +8,37 @@ using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
 using Abp.Zero.Configuration;
 using AbpKendoDemo.Authorization.Roles;
+using AbpKendoDemo.Authorization.Users;
 using AbpKendoDemo.MultiTenancy;
-using AbpKendoDemo.Users;
 
 namespace AbpKendoDemo.Authorization
 {
     public class LogInManager : AbpLogInManager<Tenant, Role, User>
     {
         public LogInManager(
-            UserManager userManager,
+            UserManager userManager, 
             IMultiTenancyConfig multiTenancyConfig,
             IRepository<Tenant> tenantRepository,
             IUnitOfWorkManager unitOfWorkManager,
-            ISettingManager settingManager,
-            IRepository<UserLoginAttempt, long> userLoginAttemptRepository,
-            IUserManagementConfig userManagementConfig, IIocResolver iocResolver,
-            RoleManager roleManager)
+            ISettingManager settingManager, 
+            IRepository<UserLoginAttempt, long> userLoginAttemptRepository, 
+            IUserManagementConfig userManagementConfig,
+            IIocResolver iocResolver,
+            IPasswordHasher<User> passwordHasher, 
+            RoleManager roleManager,
+            UserClaimsPrincipalFactory claimsPrincipalFactory) 
             : base(
-                  userManager,
+                  userManager, 
                   multiTenancyConfig,
-                  tenantRepository,
-                  unitOfWorkManager,
-                  settingManager,
-                  userLoginAttemptRepository,
-                  userManagementConfig,
-                  iocResolver,
-                  roleManager)
+                  tenantRepository, 
+                  unitOfWorkManager, 
+                  settingManager, 
+                  userLoginAttemptRepository, 
+                  userManagementConfig, 
+                  iocResolver, 
+                  passwordHasher, 
+                  roleManager, 
+                  claimsPrincipalFactory)
         {
         }
     }

@@ -1,8 +1,8 @@
 ﻿using Abp.Application.Features;
 using Abp.Domain.Repositories;
 using Abp.MultiTenancy;
+using AbpKendoDemo.Authorization.Users;
 using AbpKendoDemo.Editions;
-using AbpKendoDemo.Users;
 
 namespace AbpKendoDemo.MultiTenancy
 {
@@ -12,14 +12,12 @@ namespace AbpKendoDemo.MultiTenancy
             IRepository<Tenant> tenantRepository, 
             IRepository<TenantFeatureSetting, long> tenantFeatureRepository, 
             EditionManager editionManager,
-            IAbpZeroFeatureValueStore featureValueStore
-            ) 
+            IAbpZeroFeatureValueStore featureValueStore) 
             : base(
                 tenantRepository, 
                 tenantFeatureRepository, 
                 editionManager,
-                featureValueStore
-            )
+                featureValueStore)
         {
         }
     }
