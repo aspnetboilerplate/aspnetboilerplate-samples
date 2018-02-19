@@ -35,13 +35,14 @@ $provide.value("$locale", {
       "sobota"
     ],
     "ERANAMES": [
-      "pred na\u0161im \u0161tetjem",
-      "na\u0161e \u0161tetje"
+      "pred Kristusom",
+      "po Kristusu"
     ],
     "ERAS": [
-      "pr. n. \u0161t.",
+      "pr. Kr.",
       "po Kr."
     ],
+    "FIRSTDAYOFWEEK": 0,
     "MONTH": [
       "januar",
       "februar",
@@ -79,14 +80,32 @@ $provide.value("$locale", {
       "nov.",
       "dec."
     ],
+    "STANDALONEMONTH": [
+      "januar",
+      "februar",
+      "marec",
+      "april",
+      "maj",
+      "junij",
+      "julij",
+      "avgust",
+      "september",
+      "oktober",
+      "november",
+      "december"
+    ],
+    "WEEKENDRANGE": [
+      5,
+      6
+    ],
     "fullDate": "EEEE, dd. MMMM y",
     "longDate": "dd. MMMM y",
-    "medium": "d. MMM y HH.mm.ss",
+    "medium": "d. MMM y HH:mm:ss",
     "mediumDate": "d. MMM y",
-    "mediumTime": "HH.mm.ss",
-    "short": "d. MM. yy HH.mm",
+    "mediumTime": "HH:mm:ss",
+    "short": "d. MM. yy HH:mm",
     "shortDate": "d. MM. yy",
-    "shortTime": "HH.mm"
+    "shortTime": "HH:mm"
   },
   "NUMBER_FORMATS": {
     "CURRENCY_SYM": "\u20ac",
@@ -118,6 +137,7 @@ $provide.value("$locale", {
     ]
   },
   "id": "sl-si",
+  "localeID": "sl_SI",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (vf.v == 0 && i % 100 == 1) {    return PLURAL_CATEGORY.ONE;  }  if (vf.v == 0 && i % 100 == 2) {    return PLURAL_CATEGORY.TWO;  }  if (vf.v == 0 && i % 100 >= 3 && i % 100 <= 4 || vf.v != 0) {    return PLURAL_CATEGORY.FEW;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

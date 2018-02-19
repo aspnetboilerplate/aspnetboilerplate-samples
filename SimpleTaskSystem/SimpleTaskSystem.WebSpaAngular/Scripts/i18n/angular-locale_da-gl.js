@@ -55,6 +55,7 @@ $provide.value("$locale", {
       "f.Kr.",
       "e.Kr."
     ],
+    "FIRSTDAYOFWEEK": 0,
     "MONTH": [
       "januar",
       "februar",
@@ -92,17 +93,35 @@ $provide.value("$locale", {
       "nov.",
       "dec."
     ],
+    "STANDALONEMONTH": [
+      "januar",
+      "februar",
+      "marts",
+      "april",
+      "maj",
+      "juni",
+      "juli",
+      "august",
+      "september",
+      "oktober",
+      "november",
+      "december"
+    ],
+    "WEEKENDRANGE": [
+      5,
+      6
+    ],
     "fullDate": "EEEE 'den' d. MMMM y",
     "longDate": "d. MMMM y",
-    "medium": "dd/MM/y HH.mm.ss",
-    "mediumDate": "dd/MM/y",
-    "mediumTime": "HH.mm.ss",
-    "short": "dd/MM/yy HH.mm",
-    "shortDate": "dd/MM/yy",
-    "shortTime": "HH.mm"
+    "medium": "d. MMM y h.mm.ss a",
+    "mediumDate": "d. MMM y",
+    "mediumTime": "h.mm.ss a",
+    "short": "dd/MM/y h.mm a",
+    "shortDate": "dd/MM/y",
+    "shortTime": "h.mm a"
   },
   "NUMBER_FORMATS": {
-    "CURRENCY_SYM": "kr",
+    "CURRENCY_SYM": "kr.",
     "DECIMAL_SEP": ",",
     "GROUP_SEP": ".",
     "PATTERNS": [
@@ -131,6 +150,7 @@ $provide.value("$locale", {
     ]
   },
   "id": "da-gl",
+  "localeID": "da_GL",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  var wt = getWT(vf.v, vf.f);  if (n == 1 || wt.t != 0 && (i == 0 || i == 1)) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);
