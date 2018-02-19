@@ -25,7 +25,7 @@ namespace SimpleTaskSystem.WebSpaAngular
                     new MenuItemDefinition(
                         "NewTask",
                         new LocalizableString("NewTask", SimpleTaskSystemConsts.LocalizationSourceName),
-                        url: "#/new",
+                        url: "#!/new",
                         icon: "fa fa-asterisk"
                         )
                 );

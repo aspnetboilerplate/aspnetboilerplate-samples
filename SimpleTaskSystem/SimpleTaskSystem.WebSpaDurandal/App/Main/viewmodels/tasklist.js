@@ -22,8 +22,8 @@
                     null,
                     taskService.getTasks({ //Call application service method directly from javascript
                         state: $scope.selectedTaskState > 0 ? $scope.selectedTaskState : null
-                    }).success(function (data) {
-                        vm.tasks = data.tasks;
+                    }).then(function (data) {
+                        vm.tasks = data.data.tasks;
                     })
                 );
             };
@@ -39,7 +39,7 @@
                 taskService.updateTask({
                     taskId: task.id,
                     state: newState
-                }).success(function () {
+                }).then(function () {
                     task.state = newState;
                     abp.notify.info(vm.localize('TaskUpdatedMessage'));
                 });
