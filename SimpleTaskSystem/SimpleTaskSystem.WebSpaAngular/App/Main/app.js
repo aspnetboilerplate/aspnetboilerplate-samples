@@ -14,8 +14,8 @@
 
     //Configuration for Angular UI routing.
     app.config([
-        '$stateProvider', '$urlRouterProvider',
-        function ($stateProvider, $urlRouterProvider) {
+        '$stateProvider', '$urlRouterProvider', '$qProvider',
+        function ($stateProvider, $urlRouterProvider, $qProvider) {
             $urlRouterProvider.otherwise('/');
             $stateProvider
                 .state('tasklist', {
@@ -28,6 +28,9 @@
                     templateUrl: '/App/Main/views/task/new.cshtml',
                     menu: 'NewTask' //Matches to name of 'NewTask' menu in SimpleTaskSystemNavigationProvider
                 });
+
+            //$qProvider settings
+            $qProvider.errorOnUnhandledRejections(false);
         }
     ]);
 })();

@@ -16,8 +16,8 @@
 
             vm.people = []; //TODO: Move Person combo to a directive?
 
-            personService.getAllPeople().success(function(data) {
-                vm.people = data.people;
+            personService.getAllPeople().then(function(data) {
+                vm.people = data.data.people;
             });
 
             vm.saveTask = function() {
@@ -25,7 +25,7 @@
                     null,
                     taskService.createTask(
                         vm.task
-                    ).success(function() {
+                    ).then(function() {
                         abp.notify.info(abp.utils.formatString(localize("TaskCreatedMessage"), vm.task.description));
                         $location.path('/');
                     })

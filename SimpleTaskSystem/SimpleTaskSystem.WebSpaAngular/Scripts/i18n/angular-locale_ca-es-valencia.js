@@ -42,19 +42,20 @@ $provide.value("$locale", {
       "aC",
       "dC"
     ],
+    "FIRSTDAYOFWEEK": 0,
     "MONTH": [
-      "gener",
-      "febrer",
-      "mar\u00e7",
-      "abril",
-      "maig",
-      "juny",
-      "juliol",
-      "agost",
-      "setembre",
-      "octubre",
-      "novembre",
-      "desembre"
+      "de gener",
+      "de febrer",
+      "de mar\u00e7",
+      "d\u2019abril",
+      "de maig",
+      "de juny",
+      "de juliol",
+      "d\u2019agost",
+      "de setembre",
+      "d\u2019octubre",
+      "de novembre",
+      "de desembre"
     ],
     "SHORTDAY": [
       "dg.",
@@ -78,6 +79,24 @@ $provide.value("$locale", {
       "oct.",
       "nov.",
       "des."
+    ],
+    "STANDALONEMONTH": [
+      "gener",
+      "febrer",
+      "mar\u00e7",
+      "abril",
+      "maig",
+      "juny",
+      "juliol",
+      "agost",
+      "setembre",
+      "octubre",
+      "novembre",
+      "desembre"
+    ],
+    "WEEKENDRANGE": [
+      5,
+      6
     ],
     "fullDate": "EEEE, d MMMM 'de' y",
     "longDate": "d MMMM 'de' y",
@@ -118,6 +137,7 @@ $provide.value("$locale", {
     ]
   },
   "id": "ca-es-valencia",
+  "localeID": "ca_ES_VALENCIA",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (i == 1 && vf.v == 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

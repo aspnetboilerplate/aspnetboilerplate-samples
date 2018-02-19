@@ -42,6 +42,7 @@ $provide.value("$locale", {
       "BCE",
       "d.C."
     ],
+    "FIRSTDAYOFWEEK": 0,
     "MONTH": [
       "Qulla puquy",
       "Hatun puquy",
@@ -79,14 +80,32 @@ $provide.value("$locale", {
       "Aya",
       "Kap"
     ],
+    "STANDALONEMONTH": [
+      "Qulla puquy",
+      "Hatun puquy",
+      "Pauqar waray",
+      "Ayriwa",
+      "Aymuray",
+      "Inti raymi",
+      "Anta Sitwa",
+      "Qhapaq Sitwa",
+      "Uma raymi",
+      "Kantaray",
+      "Ayamarq\u02bca",
+      "Kapaq Raymi"
+    ],
+    "WEEKENDRANGE": [
+      5,
+      6
+    ],
     "fullDate": "EEEE, d MMMM, y",
-    "longDate": "y MMMM d",
-    "medium": "y MMM d hh:mm:ss a",
-    "mediumDate": "y MMM d",
-    "mediumTime": "hh:mm:ss a",
-    "short": "dd/MM/y hh:mm a",
+    "longDate": "d MMMM y",
+    "medium": "d MMM y HH:mm:ss",
+    "mediumDate": "d MMM y",
+    "mediumTime": "HH:mm:ss",
+    "short": "dd/MM/y HH:mm",
     "shortDate": "dd/MM/y",
-    "shortTime": "hh:mm a"
+    "shortTime": "HH:mm"
   },
   "NUMBER_FORMATS": {
     "CURRENCY_SYM": "$",
@@ -110,7 +129,7 @@ $provide.value("$locale", {
         "maxFrac": 2,
         "minFrac": 2,
         "minInt": 1,
-        "negPre": "\u00a4\u00a0-",
+        "negPre": "-\u00a4\u00a0",
         "negSuf": "",
         "posPre": "\u00a4\u00a0",
         "posSuf": ""
@@ -118,6 +137,7 @@ $provide.value("$locale", {
     ]
   },
   "id": "qu-ec",
+  "localeID": "qu_EC",
   "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (i == 1 && vf.v == 0) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);
