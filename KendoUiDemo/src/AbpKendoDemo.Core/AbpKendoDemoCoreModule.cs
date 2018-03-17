@@ -1,12 +1,13 @@
-﻿using System.Reflection;
-using Abp.Modules;
+﻿using Abp.Modules;
+using Abp.Reflection.Extensions;
 using Abp.Timing;
 using Abp.Zero;
-using AbpKendoDemo.Localization;
 using Abp.Zero.Configuration;
-using AbpKendoDemo.MultiTenancy;
 using AbpKendoDemo.Authorization.Roles;
-using AbpKendoDemo.Users;
+using AbpKendoDemo.Authorization.Users;
+using AbpKendoDemo.Configuration;
+using AbpKendoDemo.Localization;
+using AbpKendoDemo.MultiTenancy;
 using AbpKendoDemo.Timing;
 
 namespace AbpKendoDemo
@@ -18,23 +19,25 @@ namespace AbpKendoDemo
         {
             Configuration.Auditing.IsEnabledForAnonymousUsers = true;
 
-            //Declare entity types
+            // Declare entity types
             Configuration.Modules.Zero().EntityTypes.Tenant = typeof(Tenant);
             Configuration.Modules.Zero().EntityTypes.Role = typeof(Role);
             Configuration.Modules.Zero().EntityTypes.User = typeof(User);
 
             AbpKendoDemoLocalizationConfigurer.Configure(Configuration.Localization);
 
-            //Enable this line to create a multi-tenant application.
-            Configuration.MultiTenancy.IsEnabled = true;
+            // Enable this line to create a multi-tenant application.
+            Configuration.MultiTenancy.IsEnabled = AbpKendoDemoConsts.MultiTenancyEnabled;
 
-            //Configure roles
+            // Configure roles
             AppRoleConfig.Configure(Configuration.Modules.Zero().RoleManagement);
+
+            Configuration.Settings.Providers.Add<AppSettingProvider>();
         }
 
         public override void Initialize()
         {
-            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+            IocManager.RegisterAssemblyByConvention(typeof(AbpKendoDemoCoreModule).GetAssembly());
         }
 
         public override void PostInitialize()

@@ -3,8 +3,8 @@ using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
 using Abp.MultiTenancy;
 using Abp.Runtime.Caching;
+using AbpKendoDemo.Authorization.Users;
 using AbpKendoDemo.MultiTenancy;
-using AbpKendoDemo.Users;
 
 namespace AbpKendoDemo.Features
 {
@@ -17,7 +17,8 @@ namespace AbpKendoDemo.Features
             IRepository<EditionFeatureSetting, long> editionFeatureRepository, 
             IFeatureManager featureManager, 
             IUnitOfWorkManager unitOfWorkManager) 
-            : base(cacheManager, 
+            : base(
+                  cacheManager, 
                   tenantFeatureRepository, 
                   tenantRepository, 
                   editionFeatureRepository, 

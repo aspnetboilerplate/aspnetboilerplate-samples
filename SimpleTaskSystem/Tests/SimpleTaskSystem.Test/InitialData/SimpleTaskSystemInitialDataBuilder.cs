@@ -10,20 +10,17 @@ namespace SimpleTaskSystem.Test.InitialData
     {
         public void Build(SimpleTaskSystemDbContext context)
         {
-            //Add some people
-            
+            //Add some people            
             context.People.AddOrUpdate(
                 p => p.Name,
-                new Person {Name = "Isaac Asimov"},
-                new Person {Name = "Thomas More"},
-                new Person {Name = "George Orwell"},
-                new Person {Name = "Douglas Adams"}
-                );
-
+                new Person { Name = "Isaac Asimov" },
+                new Person { Name = "Thomas More" },
+                new Person { Name = "George Orwell" },
+                new Person { Name = "Douglas Adams" }
+            );
             context.SaveChanges();
 
             //Add some tasks
-
             context.Tasks.AddOrUpdate(
                 t => t.Description,
                 new Task
@@ -46,7 +43,6 @@ namespace SimpleTaskSystem.Test.InitialData
                     AssignedPerson = context.People.Single(p => p.Name == "Isaac Asimov"),
                     State = TaskState.Completed
                 });
-
             context.SaveChanges();
         }
     }

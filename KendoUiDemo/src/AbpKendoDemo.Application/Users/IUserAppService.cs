@@ -1,18 +1,15 @@
 using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
+using AbpKendoDemo.Roles.Dto;
 using AbpKendoDemo.Users.Dto;
 
 namespace AbpKendoDemo.Users
 {
-    public interface IUserAppService : IApplicationService
+    public interface IUserAppService : IAsyncCrudAppService<UserDto, long, PagedResultRequestDto, CreateUserDto, UserDto>
     {
-        Task ProhibitPermission(ProhibitPermissionInput input);
+        Task<ListResultDto<RoleDto>> GetRoles();
 
-        Task RemoveFromRole(long userId, string roleName);
-
-        Task<ListResultDto<UserListDto>> GetUsers();
-
-        Task CreateUser(CreateUserInput input);
+        Task ChangeLanguage(ChangeUserLanguageDto input);
     }
 }

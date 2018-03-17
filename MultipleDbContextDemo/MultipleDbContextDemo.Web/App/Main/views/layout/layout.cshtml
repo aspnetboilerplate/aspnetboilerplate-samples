@@ -1,5 +1,8 @@
 ﻿@using System.Threading
 @using System.Web.Optimization
+@{
+    SetAntiForgeryCookie();
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +42,7 @@
     <script src="~/AbpScripts/GetScripts" type="text/javascript"></script>
 
     @Scripts.Render("~/Bundles/App/Main/js")
-    
+
     <script src="~/Abp/Framework/scripts/libs/abp.sweet-alert.js"></script>
 </head>
 <body>

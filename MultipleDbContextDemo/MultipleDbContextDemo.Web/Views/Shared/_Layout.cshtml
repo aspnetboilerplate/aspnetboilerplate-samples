@@ -1,12 +1,14 @@
 ﻿@*
     IMPORTANT NOTES FROM ASP.NET BOILERPLATE:
-    
+
     This _Layout.cshtml is not used actually. It's left here if you want to add some classic style (MPA)
     pages to your application.
-    
+
     See App/Main/views/layout/layout.cshtml for Angular application's layout page.
 *@
-
+@{
+    SetAntiForgeryCookie();
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>

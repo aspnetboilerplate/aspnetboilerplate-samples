@@ -13,14 +13,17 @@ namespace OrganizationUnitsDemo.Users
             IRepository<UserRole, long> userRoleRepository,
             IRepository<Role> roleRepository,
             IRepository<UserPermissionSetting, long> userPermissionSettingRepository,
-            IUnitOfWorkManager unitOfWorkManager)
+            IUnitOfWorkManager unitOfWorkManager,
+            IRepository<UserClaim, long> userCliamRepository
+        )
             : base(
-              userRepository,
-              userLoginRepository,
-              userRoleRepository,
-              roleRepository,
-              userPermissionSettingRepository,
-              unitOfWorkManager)
+                userRepository,
+                userLoginRepository,
+                userRoleRepository,
+                roleRepository,
+                userPermissionSettingRepository,
+                unitOfWorkManager,
+                userCliamRepository)
         {
         }
     }

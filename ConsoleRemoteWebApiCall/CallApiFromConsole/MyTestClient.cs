@@ -41,7 +41,7 @@ namespace CallApiFromConsole
 
         public void TokenBasedAuth()
         {
-            TokenBasedAuth(BaseUrl + "api/Account/Authenticate");
+            TokenBasedAuth(BaseUrl + "api/TokenAuth/Authenticate");
         }
 
         public async Task<ListResultOutput<RoleListDto>> GetRolesAsync()

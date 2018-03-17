@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Abp.Application.Services;
-using AbpKendoDemo.MultiTenancy;
-using AbpKendoDemo.Users;
-using Microsoft.AspNet.Identity;
-using Abp.Runtime.Session;
 using Abp.IdentityFramework;
+using Abp.Runtime.Session;
+using AbpKendoDemo.Authorization.Users;
+using AbpKendoDemo.MultiTenancy;
 
 namespace AbpKendoDemo
 {
@@ -25,10 +25,10 @@ namespace AbpKendoDemo
 
         protected virtual Task<User> GetCurrentUserAsync()
         {
-            var user = UserManager.FindByIdAsync(AbpSession.GetUserId());
+            var user = UserManager.FindByIdAsync(AbpSession.GetUserId().ToString());
             if (user == null)
             {
-                throw new ApplicationException("There is no current user!");
+                throw new Exception("There is no current user!");
             }
 
             return user;

@@ -13,8 +13,7 @@ namespace AbpKendoDemo.Editions
             IAbpZeroFeatureValueStore featureValueStore)
             : base(
                 editionRepository,
-                featureValueStore
-            )
+                featureValueStore)
         {
         }
     }

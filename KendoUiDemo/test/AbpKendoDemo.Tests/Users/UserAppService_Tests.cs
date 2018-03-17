@@ -1,9 +1,10 @@
-﻿using System.Data.Entity;
-using System.Threading.Tasks;
-using AbpKendoDemo.Users;
-using AbpKendoDemo.Users.Dto;
+﻿using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Shouldly;
 using Xunit;
+using Abp.Application.Services.Dto;
+using AbpKendoDemo.Users;
+using AbpKendoDemo.Users.Dto;
 
 namespace AbpKendoDemo.Tests.Users
 {
@@ -19,19 +20,19 @@ namespace AbpKendoDemo.Tests.Users
         [Fact]
         public async Task GetUsers_Test()
         {
-            //Act
-            var output = await _userAppService.GetUsers();
+            // Act
+            var output = await _userAppService.GetAll(new PagedResultRequestDto{MaxResultCount=20, SkipCount=0} );
 
-            //Assert
+            // Assert
             output.Items.Count.ShouldBeGreaterThan(0);
         }
 
         [Fact]
         public async Task CreateUser_Test()
         {
-            //Act
-            await _userAppService.CreateUser(
-                new CreateUserInput
+            // Act
+            await _userAppService.Create(
+                new CreateUserDto
                 {
                     EmailAddress = "john@volosoft.com",
                     IsActive = true,

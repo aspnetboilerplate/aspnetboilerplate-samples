@@ -3,13 +3,12 @@ using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
 using Abp.MultiTenancy;
 using Abp.Runtime.Caching;
-using OrganizationUnitsDemo.Authorization.Roles;
 using OrganizationUnitsDemo.MultiTenancy;
 using OrganizationUnitsDemo.Users;
 
 namespace OrganizationUnitsDemo.Features
 {
-    public class FeatureValueStore : AbpFeatureValueStore<Tenant, Role, User>
+    public class FeatureValueStore : AbpFeatureValueStore<Tenant, User>
     {
         public FeatureValueStore(
             ICacheManager cacheManager,

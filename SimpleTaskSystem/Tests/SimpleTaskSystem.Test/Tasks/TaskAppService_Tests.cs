@@ -48,7 +48,7 @@ namespace SimpleTaskSystem.Test.Tasks
                     Description = "my test task 2",
                     AssignedPersonId = thomasMore.Id
                 });
-            
+
             //Check results
             UsingDbContext(context =>
             {
@@ -66,7 +66,7 @@ namespace SimpleTaskSystem.Test.Tasks
             //Description is not set
             Assert.Throws<AbpValidationException>(() => _taskAppService.CreateTask(new CreateTaskInput()));
         }
-        
+
         //Trying to assign a task of Isaac Asimov to Thomas More
         [Fact]
         public void Should_Change_Assigned_People()

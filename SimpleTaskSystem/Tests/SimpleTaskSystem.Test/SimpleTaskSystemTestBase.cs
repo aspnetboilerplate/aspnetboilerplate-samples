@@ -29,7 +29,7 @@ namespace SimpleTaskSystem.Test
                 Component.For<DbConnection>()
                     .UsingFactoryMethod(Effort.DbConnectionFactory.CreateTransient)
                     .LifestyleSingleton()
-                );
+            );
 
             base.PreInitialize();
         }
