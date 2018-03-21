@@ -1,15 +1,15 @@
 # Multiple DbContext Demo
 
-A sample project to show multiple EF DbContext working together.
+A sample project to show multiple Entity Framework Core DbContexts working together.
 
 ## How To Run
 
 * Open project in Visual Studio 2017+.
-* Select MultipleDbContextDemo.Web as start project.
+* Select MultipleDbContextEfCoreDemo.Web as start project.
 
 ### Run Migrations
 
-* Open Package Manager Console, select MultipleDbContextDemo.EntityFramework as default project.
+* Open Package Manager Console, select MultipleDbContextEfCoreDemo.EntityFrameworkCore as default project.
 * Run command to create first db: **Update-Database -Context MultipleDbContextEfCoreDemoDbContext**
 * Run command to create second db: **Update-Database -Context MultipleDbContextEfCoreDemoSecondDbContext**
 
