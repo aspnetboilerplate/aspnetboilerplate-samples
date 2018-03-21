@@ -4,7 +4,7 @@ A sample project to show multiple EF DbContext working together.
 
 ## How To Run
 
-* Open project in Visual Studio 2013+.
+* Open project in Visual Studio 2017+.
 * Select MultipleDbContextDemo.Web as start project.
 
 ### Run Migrations
