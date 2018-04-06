@@ -1,6 +1,6 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
-using AbpKendoDemo.Users;
+using AbpKendoDemo.Authorization.Users;
 
 namespace AbpKendoDemo.Sessions.Dto
 {

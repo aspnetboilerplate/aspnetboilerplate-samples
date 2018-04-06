@@ -1,12 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Abp.Auditing;
-using Abp.Authorization;
-using Abp.AutoMapper;
 using AbpKendoDemo.Sessions.Dto;
+using AbpKendoDemo.SignalR;
 
 namespace AbpKendoDemo.Sessions
 {
-    [AbpAuthorize]
     public class SessionAppService : AbpKendoDemoAppServiceBase, ISessionAppService
     {
         [DisableAuditing]
@@ -14,12 +13,26 @@ namespace AbpKendoDemo.Sessions
         {
             var output = new GetCurrentLoginInformationsOutput
             {
-                User = (await GetCurrentUserAsync()).MapTo<UserLoginInfoDto>()
+                Application = new ApplicationInfoDto
+                {
+                    Version = AppVersionHelper.Version,
+                    ReleaseDate = AppVersionHelper.ReleaseDate,
+                    Features = new Dictionary<string, bool>
+                    {
+                        { "SignalR", SignalRFeature.IsAvailable },
+                        { "SignalR.AspNetCore", SignalRFeature.IsAspNetCore }
+                    }
+                }
             };
 
             if (AbpSession.TenantId.HasValue)
             {
-                output.Tenant = (await GetCurrentTenantAsync()).MapTo<TenantLoginInfoDto>();
+                output.Tenant = ObjectMapper.Map<TenantLoginInfoDto>(await GetCurrentTenantAsync());
+            }
+
+            if (AbpSession.UserId.HasValue)
+            {
+                output.User = ObjectMapper.Map<UserLoginInfoDto>(await GetCurrentUserAsync());
             }
 
             return output;

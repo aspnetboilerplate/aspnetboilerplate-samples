@@ -1,11 +1,16 @@
 using System;
-using Abp.Modules;
-using Abp.MultiTenancy;
-using Abp.TestBase;
-using Abp.Zero.Configuration;
-using AbpKendoDemo.EntityFramework;
 using Castle.MicroKernel.Registration;
 using NSubstitute;
+using Abp.AutoMapper;
+using Abp.Dependency;
+using Abp.Modules;
+using Abp.Configuration.Startup;
+using Abp.Net.Mail;
+using Abp.TestBase;
+using Abp.Zero.Configuration;
+using Abp.Zero.EntityFrameworkCore;
+using AbpKendoDemo.EntityFrameworkCore;
+using AbpKendoDemo.Tests.DependencyInjection;
 
 namespace AbpKendoDemo.Tests
 {
@@ -16,16 +21,32 @@ namespace AbpKendoDemo.Tests
         )]
     public class AbpKendoDemoTestModule : AbpModule
     {
+        public AbpKendoDemoTestModule(AbpKendoDemoEntityFrameworkModule abpProjectNameEntityFrameworkModule)
+        {
+            abpProjectNameEntityFrameworkModule.SkipDbContextRegistration = true;
+        }
+
         public override void PreInitialize()
         {
             Configuration.UnitOfWork.Timeout = TimeSpan.FromMinutes(30);
+            Configuration.UnitOfWork.IsTransactional = false;
+
+            // Disable static mapper usage since it breaks unit tests (see https://github.com/aspnetboilerplate/aspnetboilerplate/issues/2052)
+            Configuration.Modules.AbpAutoMapper().UseStaticMapper = false;
 
             Configuration.BackgroundJobs.IsJobExecutionEnabled = false;
 
-            //Use database for language management
+            // Use database for language management
             Configuration.Modules.Zero().LanguageManagement.EnableDbLocalization();
 
-            RegisterFakeService<IAbpZeroDbMigrator>();
+            RegisterFakeService<AbpZeroDbMigrator<AbpKendoDemoDbContext>>();
+
+            Configuration.ReplaceService<IEmailSender, NullEmailSender>(DependencyLifeStyle.Transient);
+        }
+
+        public override void Initialize()
+        {
+            ServiceCollectionRegistrar.Register(IocManager);
         }
 
         private void RegisterFakeService<TService>() where TService : class

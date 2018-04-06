@@ -1,13 +1,12 @@
 ﻿using Abp.MultiTenancy;
-using AbpKendoDemo.Users;
+using AbpKendoDemo.Authorization.Users;
 
 namespace AbpKendoDemo.MultiTenancy
 {
     public class Tenant : AbpTenant<User>
     {
         public Tenant()
-        {
-            
+        {            
         }
 
         public Tenant(string tenancyName, string name)

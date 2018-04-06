@@ -1,7 +1,7 @@
-﻿using System.Reflection;
-using Abp.Configuration.Startup;
+﻿using Abp.Configuration.Startup;
 using Abp.Localization.Dictionaries;
 using Abp.Localization.Dictionaries.Xml;
+using Abp.Reflection.Extensions;
 
 namespace AbpKendoDemo.Localization
 {
@@ -12,8 +12,8 @@ namespace AbpKendoDemo.Localization
             localizationConfiguration.Sources.Add(
                 new DictionaryBasedLocalizationSource(AbpKendoDemoConsts.LocalizationSourceName,
                     new XmlEmbeddedFileLocalizationDictionaryProvider(
-                        Assembly.GetExecutingAssembly(),
-                        "AbpKendoDemo.Core.Localization.SourceFiles"
+                        typeof(AbpKendoDemoLocalizationConfigurer).GetAssembly(),
+                        "AbpKendoDemo.Localization.SourceFiles"
                     )
                 )
             );

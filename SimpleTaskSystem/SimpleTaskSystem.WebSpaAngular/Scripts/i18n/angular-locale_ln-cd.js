@@ -24,6 +24,7 @@ $provide.value("$locale", {
       "lib\u00f3so ya",
       "nsima ya Y"
     ],
+    "FIRSTDAYOFWEEK": 0,
     "MONTH": [
       "s\u00e1nz\u00e1 ya yambo",
       "s\u00e1nz\u00e1 ya m\u00edbal\u00e9",
@@ -60,6 +61,24 @@ $provide.value("$locale", {
       "\u0254tb",
       "nvb",
       "dsb"
+    ],
+    "STANDALONEMONTH": [
+      "s\u00e1nz\u00e1 ya yambo",
+      "s\u00e1nz\u00e1 ya m\u00edbal\u00e9",
+      "s\u00e1nz\u00e1 ya m\u00eds\u00e1to",
+      "s\u00e1nz\u00e1 ya m\u00ednei",
+      "s\u00e1nz\u00e1 ya m\u00edt\u00e1no",
+      "s\u00e1nz\u00e1 ya mot\u00f3b\u00e1",
+      "s\u00e1nz\u00e1 ya nsambo",
+      "s\u00e1nz\u00e1 ya mwambe",
+      "s\u00e1nz\u00e1 ya libwa",
+      "s\u00e1nz\u00e1 ya z\u00f3mi",
+      "s\u00e1nz\u00e1 ya z\u00f3mi na m\u0254\u030ck\u0254\u0301",
+      "s\u00e1nz\u00e1 ya z\u00f3mi na m\u00edbal\u00e9"
+    ],
+    "WEEKENDRANGE": [
+      5,
+      6
     ],
     "fullDate": "EEEE d MMMM y",
     "longDate": "d MMMM y",
@@ -100,6 +119,7 @@ $provide.value("$locale", {
     ]
   },
   "id": "ln-cd",
+  "localeID": "ln_CD",
   "pluralCat": function(n, opt_precision) {  if (n >= 0 && n <= 1) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

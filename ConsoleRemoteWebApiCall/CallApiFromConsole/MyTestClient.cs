@@ -1,10 +1,16 @@
 ﻿using System;
+using System.Linq;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Web;
 using Abp;
 using Abp.Application.Services.Dto;
 using Abp.Dependency;
+using Abp.Extensions;
 using Abp.IO.Extensions;
 using Abp.Threading;
 using Abp.Web.Models;
@@ -41,12 +47,12 @@ namespace CallApiFromConsole
 
         public void TokenBasedAuth()
         {
-            TokenBasedAuth(BaseUrl + "api/Account/Authenticate");
+            TokenBasedAuth(BaseUrl + "api/TokenAuth/Authenticate");
         }
 
         public async Task<ListResultOutput<RoleListDto>> GetRolesAsync()
         {
-            return await _abpWebApiClient.PostAsync<ListResultOutput<RoleListDto>>(
+            return await GetAsync<ListResultOutput<RoleListDto>>(
                 BaseUrl + "api/services/app/role/GetRoles",
                 new GetRolesInput()
             );
@@ -87,11 +93,11 @@ namespace CallApiFromConsole
                 }
             }
         }
-        
+
         private void TokenBasedAuth(string url)
         {
-            var token = AsyncHelper.RunSync(() =>
-                _abpWebApiClient.PostAsync<string>(
+            var result = AsyncHelper.RunSync(() =>
+                _abpWebApiClient.PostAsync<AuthenticateResultDto>(
                     url,
                     new
                     {
@@ -100,7 +106,7 @@ namespace CallApiFromConsole
                         Password = Password
                     }));
 
-            _abpWebApiClient.RequestHeaders.Add(new NameValue("Authorization", "Bearer " + token));
+            _abpWebApiClient.RequestHeaders.Add(new NameValue("Authorization", "Bearer " + result.AccessToken));
 
             #region Alternative implementation: Manual HTTP request
 
@@ -139,6 +145,84 @@ namespace CallApiFromConsole
             //}
 
             #endregion
+        }
+
+        private async Task<TResult> GetAsync<TResult>(string url, object input, int? timeout = null)
+            where TResult : class
+        {
+            var cookieContainer = new CookieContainer();
+            using (var handler = new HttpClientHandler { CookieContainer = cookieContainer })
+            {
+                using (var client = new HttpClient(handler))
+                {
+                    client.Timeout = timeout.HasValue ? TimeSpan.FromMilliseconds(timeout.Value) : TimeSpan.FromSeconds(90);
+
+                    if (!BaseUrl.IsNullOrEmpty())
+                    {
+                        client.BaseAddress = new Uri(BaseUrl);
+                    }
+
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    foreach (var header in _abpWebApiClient.RequestHeaders)
+                    {
+                        client.DefaultRequestHeaders.Add(header.Name, header.Value);
+                    }
+
+                    using (var requestContent = new StringContent(Object2JsonString(input), Encoding.UTF8, "application/json"))
+                    {
+                        foreach (var cookie in _abpWebApiClient.Cookies)
+                        {
+                            if (!BaseUrl.IsNullOrEmpty())
+                            {
+                                cookieContainer.Add(new Uri(BaseUrl), cookie);
+                            }
+                            else
+                            {
+                                cookieContainer.Add(cookie);
+                            }
+                        }
+
+                        using (var response = await client.GetAsync(url + "?" + Object2QueryString(requestContent)))
+                        {
+                            if (!response.IsSuccessStatusCode)
+                            {
+                                throw new AbpException("Could not made request to " + url + "! StatusCode: " + response.StatusCode + ", ReasonPhrase: " + response.ReasonPhrase);
+                            }
+
+                            var ajaxResponse = JsonString2Object<AjaxResponse<TResult>>(await response.Content.ReadAsStringAsync());
+                            if (!ajaxResponse.Success)
+                            {
+                                throw new AbpRemoteCallException(ajaxResponse.Error);
+                            }
+
+                            return ajaxResponse.Result;
+                        }
+                    }
+                }
+            }
+        }
+
+        private string Object2QueryString(StringContent requestContent)
+        {
+            var properties = from p in requestContent.GetType().GetProperties()
+                             where p.GetValue(requestContent, null) != null
+                             select p.Name + "=" + HttpUtility.UrlEncode(p.GetValue(requestContent, null).ToString());
+
+            return String.Join("&", properties.ToArray());
+        }
+
+        private static string Object2JsonString(object obj)
+        {
+            if (obj == null)
+            {
+                return "";
+            }
+
+            return JsonConvert.SerializeObject(obj,
+                new JsonSerializerSettings
+                {
+                    ContractResolver = new CamelCasePropertyNamesContractResolver()
+                });
         }
 
         private static TObj JsonString2Object<TObj>(string str)

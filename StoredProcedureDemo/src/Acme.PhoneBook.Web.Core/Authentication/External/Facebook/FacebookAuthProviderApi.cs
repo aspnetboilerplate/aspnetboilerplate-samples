@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authentication.Facebook;
 using Microsoft.AspNetCore.WebUtilities;
 using Newtonsoft.Json.Linq;
 using Abp.Extensions;
+using Abp.UI;
 using Microsoft.AspNetCore.Identity;
 
 namespace Acme.PhoneBook.Authentication.External.Facebook
@@ -35,21 +36,7 @@ namespace Acme.PhoneBook.Authentication.External.Facebook
 
                 var payload = JObject.Parse(await response.Content.ReadAsStringAsync());
 
-                var name = FacebookHelper.GetFirstName(payload);
-                var middleName = FacebookHelper.GetMiddleName(payload);
-                if (!middleName.IsNullOrEmpty())
-                {
-                    name += middleName;
-                }
-
-                return new ExternalAuthUserInfo
-                {
-                    Name = name,
-                    EmailAddress = FacebookHelper.GetEmail(payload),
-                    Surname = FacebookHelper.GetLastName(payload),
-                    Provider = Name,
-                    ProviderKey = FacebookHelper.GetId(payload)
-                };
+                throw new UserFriendlyException("This Feature is not available in this sample.");
             }
         }
 

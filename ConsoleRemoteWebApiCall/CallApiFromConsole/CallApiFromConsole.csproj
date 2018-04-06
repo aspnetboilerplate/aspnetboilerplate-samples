@@ -111,6 +111,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthenticateResultDto.cs" />
     <Compile Include="MyModule.cs" />
     <Compile Include="MyTestClient.cs" />
     <Compile Include="Program.cs" />
