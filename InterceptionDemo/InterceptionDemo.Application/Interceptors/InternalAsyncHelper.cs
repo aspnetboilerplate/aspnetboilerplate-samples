@@ -26,14 +26,14 @@ namespace InterceptionDemo.Interceptors
             }
         }
 
-        public static async Task<T> AwaitTaskWithPostActionAndFinallyAndGetResult<T>(Task<T> actualReturnValue, Func<Task> postAction, Action<Exception> finalAction)
+        public static async Task<T> AwaitTaskWithPostActionAndFinallyAndGetResult<T>(Task<T> actualReturnValue, Func<T, Task> postAction, Action<Exception> finalAction)
         {
             Exception exception = null;
 
             try
             {
                 var result = await actualReturnValue;
-                await postAction();
+                await postAction(result);
                 return result;
             }
             catch (Exception ex)

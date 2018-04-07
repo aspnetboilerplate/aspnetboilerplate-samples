@@ -51,7 +51,7 @@ namespace InterceptionDemo.Interceptors
                 invocation.ReturnValue = InternalAsyncHelper.CallAwaitTaskWithPostActionAndFinallyAndGetResult(
                     invocation.Method.ReturnType.GenericTypeArguments[0],
                     invocation.ReturnValue,
-                    async () => await TestActionAsync(invocation),
+                    async (object methodResult) => await TestActionAsync(invocation, methodResult),
                     ex =>
                     {
                         LogExecutionTime(invocation, stopwatch);
