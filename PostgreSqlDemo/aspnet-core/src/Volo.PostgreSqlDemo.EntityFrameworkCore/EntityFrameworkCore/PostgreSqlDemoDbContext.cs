@@ -18,6 +18,8 @@ namespace Volo.PostgreSqlDemo.EntityFrameworkCore
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<ApplicationLanguageText>()
                 .Property(p=>p.Value)
                 .HasMaxLength(100);
