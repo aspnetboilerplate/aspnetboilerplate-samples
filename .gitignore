@@ -113,3 +113,7 @@ AbpSwaggerDemo/.vs/config/applicationhost.config
 InterceptionDemo/InterceptionDemo.Web/Logs/Logs.txt
 .vs
 !nuget.exe
+PostgreSqlDemo/aspnet-core/src/Volo.PostgreSqlDemo.Web.Host/App_Data/Logs/Logs.txt
+PlugInDemo/PlugInDemo.Web/App_Data/Logs/Logs.txt
+PlugInDemo/PlugInDemo.Web/App_Data/Logs/Logs.txt
+PlugInDemo/PlugInDemo.Web/App_Data/Logs/Logs.txt
