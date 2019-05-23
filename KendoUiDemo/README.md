@@ -1,1 +1,1 @@
-See kendo ui grid initialization code: https://github.com/aspnetboilerplate/aspnetboilerplate-samples/blob/master/KendoUiDemo/src/AbpKendoDemo.Web/wwwroot/view-resources/Views/Users/Index.js#L32
+See kendo ui grid initialization code: https://github.com/aspnetboilerplate/aspnetboilerplate-samples/blob/master/KendoUiDemo/src/AbpKendoDemo.Web.Mvc/wwwroot/view-resources/Views/Users/Index.js#L92
