@@ -30,8 +30,8 @@ namespace InterceptionDemo.Web
 
                         "~/Scripts/modernizr-2.8.3.js",
                         
-                        "~/Scripts/jquery-2.2.0.min.js",
-                        "~/Scripts/jquery-ui-1.11.4.min.js",
+                        "~/Scripts/jquery-3.3.1.min.js",
+                        "~/Scripts/jquery-ui-1.12.1.min.js",
 
                         "~/Scripts/bootstrap.min.js",
 
@@ -58,7 +58,7 @@ namespace InterceptionDemo.Web
                         "~/Abp/Framework/scripts/libs/abp.sweet-alert.js",
                         "~/Abp/Framework/scripts/libs/angularjs/abp.ng.js",
 
-                        "~/Scripts/jquery.signalR-2.2.0.min.js"
+                        "~/Scripts/jquery.signalR-2.2.2.min.js"
                     )
                 );
 

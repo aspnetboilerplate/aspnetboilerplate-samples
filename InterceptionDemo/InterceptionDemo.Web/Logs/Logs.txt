@@ -18199,3 +18199,569 @@ DEBUG 2018-01-31 14:57:08,611 [1    ] Abp.Logging.LogHelper                    -
 DEBUG 2018-01-31 14:57:08,612 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'InterceptionDemo.Users.IUserAppService' with service name 'app/user'.
 DEBUG 2018-01-31 14:57:08,614 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'InterceptionDemo.Roles.IRoleAppService' with service name 'app/role'.
 DEBUG 2018-01-31 14:57:08,616 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'InterceptionDemo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2019-06-13 18:09:27,862 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-06-13 18:09:27,876 [1    ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2019-06-13 18:09:27,881 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Web.InterceptionDemoWebModule, InterceptionDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:09:27,883 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoDataModule, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:09:27,883 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:09:27,883 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:09:27,883 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:09:27,883 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:09:27,884 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:09:27,884 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:09:27,884 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoCoreModule, InterceptionDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:09:27,884 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoApplicationModule, InterceptionDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:09:27,884 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:09:27,884 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Api.InterceptionDemoWebApiModule, InterceptionDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:09:27,884 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:09:27,885 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:09:27,885 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:09:27,885 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:09:27,885 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:09:27,885 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:09:27,888 [1    ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2019-06-13 18:09:28,017 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-06-13 18:09:28,017 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-06-13 18:09:28,017 [1    ] o.Configuration.LanguageManagementConfig - Converted InterceptionDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-06-13 18:09:28,017 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2019-06-13 18:09:28,500 [1    ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2019-06-13 18:09:28,656 [1    ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2019-06-13 18:09:28,987 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: InterceptionDemo.EntityFramework.InterceptionDemoDbContext, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:09:30,781 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-06-13 18:09:30,806 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-06-13 18:09:30,812 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-06-13 18:09:30,813 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: InterceptionDemo
+DEBUG 2019-06-13 18:09:30,814 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-06-13 18:09:30,819 [1    ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2019-06-13 18:09:30,827 [1    ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2019-06-13 18:09:30,831 [1    ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: localhost@InterceptionDemo'
+INFO  2019-06-13 18:09:30,831 [1    ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2019-06-13 18:09:30,831 [1    ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2019-06-13 18:09:30,831 [1    ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2019-06-13 18:09:30,831 [1    ] Hangfire.BackgroundJobServer             -     Worker count: 20
+INFO  2019-06-13 18:09:30,831 [1    ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'
+INFO  2019-06-13 18:09:30,831 [1    ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15
+INFO  2019-06-13 18:09:30,831 [1    ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15
+DEBUG 2019-06-13 18:09:30,843 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2019-06-13 18:09:30,899 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 4 classes define auto mapping attributes
+DEBUG 2019-06-13 18:09:30,900 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - InterceptionDemo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-06-13 18:09:30,905 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - InterceptionDemo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-06-13 18:09:30,905 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - InterceptionDemo.MultiTenancy.Dto.TenantListDto
+DEBUG 2019-06-13 18:09:30,905 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - InterceptionDemo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2019-06-13 18:09:31,027 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2019-06-13 18:09:31,028 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2019-06-13 18:09:31,029 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2019-06-13 18:09:31,030 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2019-06-13 18:09:31,031 [25a9f] Hangfire.Server.Worker                   - Background process 'Worker #c8d25a9f' started.
+DEBUG 2019-06-13 18:09:31,031 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'AggregatedCounter' table...
+DEBUG 2019-06-13 18:09:31,031 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2019-06-13 18:09:31,031 [34b6b] Hangfire.Server.Worker                   - Background process 'Worker #9e234b6b' started.
+DEBUG 2019-06-13 18:09:31,032 [768bd] Hangfire.Server.Worker                   - Background process 'Worker #22c768bd' started.
+DEBUG 2019-06-13 18:09:31,033 [b9f24] Hangfire.Server.Worker                   - Background process 'Worker #cd7b9f24' started.
+DEBUG 2019-06-13 18:09:31,036 [59ce3] Hangfire.Server.Worker                   - Background process 'Worker #ddb59ce3' started.
+DEBUG 2019-06-13 18:09:31,037 [2ec68] Hangfire.Server.Worker                   - Background process 'Worker #9bb2ec68' started.
+DEBUG 2019-06-13 18:09:31,038 [20b52] Hangfire.Server.Worker                   - Background process 'Worker #26e20b52' started.
+DEBUG 2019-06-13 18:09:31,039 [8289a] Hangfire.Server.Worker                   - Background process 'Worker #f468289a' started.
+DEBUG 2019-06-13 18:09:31,040 [d4418] Hangfire.Server.Worker                   - Background process 'Worker #01bd4418' started.
+DEBUG 2019-06-13 18:09:31,041 [e31f0] Hangfire.Server.Worker                   - Background process 'Worker #d8fe31f0' started.
+DEBUG 2019-06-13 18:09:31,042 [ecfe2] Hangfire.Server.Worker                   - Background process 'Worker #8e9ecfe2' started.
+DEBUG 2019-06-13 18:09:31,043 [528d3] Hangfire.Server.Worker                   - Background process 'Worker #cba528d3' started.
+DEBUG 2019-06-13 18:09:31,044 [3d7f7] Hangfire.Server.Worker                   - Background process 'Worker #f2e3d7f7' started.
+DEBUG 2019-06-13 18:09:31,045 [40fa0] Hangfire.Server.Worker                   - Background process 'Worker #ab140fa0' started.
+DEBUG 2019-06-13 18:09:31,046 [9bd3b] Hangfire.Server.Worker                   - Background process 'Worker #c4c9bd3b' started.
+DEBUG 2019-06-13 18:09:31,047 [4acb5] Hangfire.Server.Worker                   - Background process 'Worker #9f94acb5' started.
+DEBUG 2019-06-13 18:09:31,048 [5370b] Hangfire.Server.Worker                   - Background process 'Worker #b875370b' started.
+DEBUG 2019-06-13 18:09:31,049 [cfb70] Hangfire.Server.Worker                   - Background process 'Worker #0e4cfb70' started.
+DEBUG 2019-06-13 18:09:31,050 [43152] Hangfire.Server.Worker                   - Background process 'Worker #48a43152' started.
+DEBUG 2019-06-13 18:09:31,051 [751e4] Hangfire.Server.Worker                   - Background process 'Worker #055751e4' started.
+DEBUG 2019-06-13 18:09:31,054 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2019-06-13 18:09:31,058 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2019-06-13 18:09:31,066 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'AggregatedCounter' table.
+DEBUG 2019-06-13 18:09:31,066 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'Job' table...
+DEBUG 2019-06-13 18:09:31,074 [gator] Hangfire.SqlServer.CountersAggregator    - Records from the 'Counter' table aggregated.
+DEBUG 2019-06-13 18:09:31,097 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'Job' table.
+DEBUG 2019-06-13 18:09:31,097 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'List' table...
+DEBUG 2019-06-13 18:09:31,100 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'List' table.
+DEBUG 2019-06-13 18:09:31,100 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'Set' table...
+DEBUG 2019-06-13 18:09:31,102 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'Set' table.
+DEBUG 2019-06-13 18:09:31,102 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'Hash' table...
+DEBUG 2019-06-13 18:09:31,104 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'Hash' table.
+DEBUG 2019-06-13 18:09:31,846 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'InterceptionDemo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2019-06-13 18:09:31,847 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'InterceptionDemo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2019-06-13 18:09:31,848 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'InterceptionDemo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2019-06-13 18:09:31,849 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'InterceptionDemo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+WARN  2019-06-13 18:09:35,179 [33   ] Abp.Logging.LogHelper                    - Abp.Authorization.AbpAuthorizationException: Kullanici girisi yapilmamis!
+   konum: Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__19.MoveNext()
+--- Özel durumun olusturuldugu önceki konumdan baslayan yigin izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: Abp.Authorization.AuthorizationHelper.<CheckPermissions>d__22.MoveNext()
+--- Özel durumun olusturuldugu önceki konumdan baslayan yigin izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__20.MoveNext()
+--- Özel durumun olusturuldugu önceki konumdan baslayan yigin izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   konum: Nito.AsyncEx.AsyncContext.<>c__DisplayClass15_0.<Run>b__0(Task t)
+   konum: System.Threading.Tasks.ContinuationTaskFromTask.InnerInvoke()
+   konum: System.Threading.Tasks.Task.Execute()
+--- Özel durumun olusturuldugu önceki konumdan baslayan yigin izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   konum: Nito.AsyncEx.AsyncContext.Run(Func`1 action)
+   konum: Abp.Authorization.AuthorizationHelperExtensions.Authorize(IAuthorizationHelper authorizationHelper, MethodInfo methodInfo, Type type)
+   konum: Abp.Web.Mvc.Authorization.AbpMvcAuthorizeFilter.OnAuthorization(AuthorizationContext filterContext)
+Abp.Authorization.AbpAuthorizationException: Kullanici girisi yapilmamis!
+   konum: Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__19.MoveNext()
+--- Özel durumun olusturuldugu önceki konumdan baslayan yigin izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: Abp.Authorization.AuthorizationHelper.<CheckPermissions>d__22.MoveNext()
+--- Özel durumun olusturuldugu önceki konumdan baslayan yigin izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__20.MoveNext()
+--- Özel durumun olusturuldugu önceki konumdan baslayan yigin izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   konum: Nito.AsyncEx.AsyncContext.<>c__DisplayClass15_0.<Run>b__0(Task t)
+   konum: System.Threading.Tasks.ContinuationTaskFromTask.InnerInvoke()
+   konum: System.Threading.Tasks.Task.Execute()
+--- Özel durumun olusturuldugu önceki konumdan baslayan yigin izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   konum: Nito.AsyncEx.AsyncContext.Run(Func`1 action)
+   konum: Abp.Authorization.AuthorizationHelperExtensions.Authorize(IAuthorizationHelper authorizationHelper, MethodInfo methodInfo, Type type)
+   konum: Abp.Web.Mvc.Authorization.AbpMvcAuthorizeFilter.OnAuthorization(AuthorizationContext filterContext)
+ERROR 2019-06-13 18:09:39,586 [35   ] Abp.Logging.LogHelper                    - Can not find file for: ~/Scripts/jquery-2.2.0.min.js! System.NullReferenceException: Nesne basvurusu bir nesnenin örnegine ayarlanmadi.
+   konum: Abp.Web.Mvc.Extensions.HtmlHelperResourceExtensions.GetPathWithVersioningForEmbeddedFile(String path)
+   konum: Abp.Web.Mvc.Extensions.HtmlHelperResourceExtensions.GetPathWithVersioning(String path)
+ERROR 2019-06-13 18:09:39,586 [35   ] Abp.Logging.LogHelper                    - Can not find file for: ~/Scripts/jquery-ui-1.11.4.min.js! System.NullReferenceException: Nesne basvurusu bir nesnenin örnegine ayarlanmadi.
+   konum: Abp.Web.Mvc.Extensions.HtmlHelperResourceExtensions.GetPathWithVersioningForEmbeddedFile(String path)
+   konum: Abp.Web.Mvc.Extensions.HtmlHelperResourceExtensions.GetPathWithVersioning(String path)
+WARN  2019-06-13 18:09:56,284 [42   ] onDemo.Web.Controllers.AccountController - Method arguments are not valid! See ValidationErrors for details.
+Abp.Runtime.Validation.AbpValidationException: Method arguments are not valid! See ValidationErrors for details.
+   konum: Abp.Runtime.Validation.Interception.MethodInvocationValidator.ThrowValidationError()
+   konum: Abp.Runtime.Validation.Interception.MethodInvocationValidator.Validate()
+   konum: Abp.Web.Mvc.Validation.AbpMvcValidationFilter.OnActionExecuting(ActionExecutingContext filterContext)
+   konum: System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.InvokeActionMethodFilterAsynchronouslyRecursive(Int32 filterIndex)
+   konum: System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.InvokeActionMethodFilterAsynchronouslyRecursive(Int32 filterIndex)
+   konum: System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.InvokeActionMethodFilterAsynchronouslyRecursive(Int32 filterIndex)
+   konum: System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__31(AsyncCallback asyncCallback, Object asyncState)
+   konum: System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallBeginDelegate(AsyncCallback callback, Object callbackState)
+   konum: System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   konum: System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters, AsyncCallback callback, Object state)
+   konum: System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+WARN  2019-06-13 18:09:56,286 [42   ] onDemo.Web.Controllers.AccountController - There are 2 validation errors:
+WARN  2019-06-13 18:09:56,286 [42   ] onDemo.Web.Controllers.AccountController - UsernameOrEmailAddress alani gereklidir. (UsernameOrEmailAddress)
+WARN  2019-06-13 18:09:56,286 [42   ] onDemo.Web.Controllers.AccountController - Password alani gereklidir. (Password)
+WARN  2019-06-13 18:13:16,395 [63   ] Abp.Logging.LogHelper                    - Abp.Authorization.AbpAuthorizationException: Kullanici girisi yapilmamis!
+   konum: Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__19.MoveNext()
+--- Özel durumun olusturuldugu önceki konumdan baslayan yigin izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: Abp.Authorization.AuthorizationHelper.<CheckPermissions>d__22.MoveNext()
+--- Özel durumun olusturuldugu önceki konumdan baslayan yigin izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__20.MoveNext()
+--- Özel durumun olusturuldugu önceki konumdan baslayan yigin izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   konum: Nito.AsyncEx.AsyncContext.<>c__DisplayClass15_0.<Run>b__0(Task t)
+   konum: System.Threading.Tasks.ContinuationTaskFromTask.InnerInvoke()
+   konum: System.Threading.Tasks.Task.Execute()
+--- Özel durumun olusturuldugu önceki konumdan baslayan yigin izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   konum: Nito.AsyncEx.AsyncContext.Run(Func`1 action)
+   konum: Abp.Authorization.AuthorizationHelperExtensions.Authorize(IAuthorizationHelper authorizationHelper, MethodInfo methodInfo, Type type)
+   konum: Abp.Web.Mvc.Authorization.AbpMvcAuthorizeFilter.OnAuthorization(AuthorizationContext filterContext)
+Abp.Authorization.AbpAuthorizationException: Kullanici girisi yapilmamis!
+   konum: Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__19.MoveNext()
+--- Özel durumun olusturuldugu önceki konumdan baslayan yigin izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: Abp.Authorization.AuthorizationHelper.<CheckPermissions>d__22.MoveNext()
+--- Özel durumun olusturuldugu önceki konumdan baslayan yigin izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__20.MoveNext()
+--- Özel durumun olusturuldugu önceki konumdan baslayan yigin izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   konum: Nito.AsyncEx.AsyncContext.<>c__DisplayClass15_0.<Run>b__0(Task t)
+   konum: System.Threading.Tasks.ContinuationTaskFromTask.InnerInvoke()
+   konum: System.Threading.Tasks.Task.Execute()
+--- Özel durumun olusturuldugu önceki konumdan baslayan yigin izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   konum: Nito.AsyncEx.AsyncContext.Run(Func`1 action)
+   konum: Abp.Authorization.AuthorizationHelperExtensions.Authorize(IAuthorizationHelper authorizationHelper, MethodInfo methodInfo, Type type)
+   konum: Abp.Web.Mvc.Authorization.AbpMvcAuthorizeFilter.OnAuthorization(AuthorizationContext filterContext)
+ERROR 2019-06-13 18:14:30,292 [36   ] Abp.Logging.LogHelper                    - Can not find file for: /Scripts/jquery-2.2.0.min.js! System.NullReferenceException: Nesne basvurusu bir nesnenin örnegine ayarlanmadi.
+   konum: Abp.Web.Mvc.Extensions.HtmlHelperResourceExtensions.GetPathWithVersioningForEmbeddedFile(String path)
+   konum: Abp.Web.Mvc.Extensions.HtmlHelperResourceExtensions.GetPathWithVersioning(String path)
+DEBUG 2019-06-13 18:14:31,074 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2019-06-13 18:14:31,085 [gator] Hangfire.SqlServer.CountersAggregator    - Records from the 'Counter' table aggregated.
+DEBUG 2019-06-13 18:17:38,791 [96   ] Abp.Modules.AbpModuleManager             - Shutting down has been started
+DEBUG 2019-06-13 18:17:38,791 [96   ] bp.Hangfire.HangfireBackgroundJobManager - Stop background worker: Abp.Hangfire.HangfireBackgroundJobManager
+DEBUG 2019-06-13 18:17:38,792 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' stopped.
+DEBUG 2019-06-13 18:17:38,792 [751e4] Hangfire.Server.Worker                   - Background process 'Worker #055751e4' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:17:38,792 [751e4] Hangfire.Server.Worker                   - Background process 'Worker #055751e4' stopped.
+DEBUG 2019-06-13 18:17:38,792 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' stopped.
+DEBUG 2019-06-13 18:17:38,792 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' stopped.
+DEBUG 2019-06-13 18:17:38,792 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' stopped.
+DEBUG 2019-06-13 18:17:38,792 [b9f24] Hangfire.Server.Worker                   - Background process 'Worker #cd7b9f24' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:17:38,792 [b9f24] Hangfire.Server.Worker                   - Background process 'Worker #cd7b9f24' stopped.
+DEBUG 2019-06-13 18:17:38,792 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' stopped.
+DEBUG 2019-06-13 18:17:38,793 [40fa0] Hangfire.Server.Worker                   - Background process 'Worker #ab140fa0' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:17:38,793 [40fa0] Hangfire.Server.Worker                   - Background process 'Worker #ab140fa0' stopped.
+DEBUG 2019-06-13 18:17:38,793 [4acb5] Hangfire.Server.Worker                   - Background process 'Worker #9f94acb5' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:17:38,793 [4acb5] Hangfire.Server.Worker                   - Background process 'Worker #9f94acb5' stopped.
+DEBUG 2019-06-13 18:17:38,793 [25a9f] Hangfire.Server.Worker                   - Background process 'Worker #c8d25a9f' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:17:38,793 [25a9f] Hangfire.Server.Worker                   - Background process 'Worker #c8d25a9f' stopped.
+DEBUG 2019-06-13 18:17:38,793 [43152] Hangfire.Server.Worker                   - Background process 'Worker #48a43152' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:17:38,793 [43152] Hangfire.Server.Worker                   - Background process 'Worker #48a43152' stopped.
+DEBUG 2019-06-13 18:17:38,793 [59ce3] Hangfire.Server.Worker                   - Background process 'Worker #ddb59ce3' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:17:38,793 [59ce3] Hangfire.Server.Worker                   - Background process 'Worker #ddb59ce3' stopped.
+DEBUG 2019-06-13 18:17:38,793 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:17:38,793 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' stopped.
+DEBUG 2019-06-13 18:17:38,793 [768bd] Hangfire.Server.Worker                   - Background process 'Worker #22c768bd' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:17:38,794 [768bd] Hangfire.Server.Worker                   - Background process 'Worker #22c768bd' stopped.
+DEBUG 2019-06-13 18:17:38,794 [34b6b] Hangfire.Server.Worker                   - Background process 'Worker #9e234b6b' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:17:38,794 [34b6b] Hangfire.Server.Worker                   - Background process 'Worker #9e234b6b' stopped.
+DEBUG 2019-06-13 18:17:38,794 [20b52] Hangfire.Server.Worker                   - Background process 'Worker #26e20b52' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:17:38,794 [20b52] Hangfire.Server.Worker                   - Background process 'Worker #26e20b52' stopped.
+DEBUG 2019-06-13 18:17:38,794 [ecfe2] Hangfire.Server.Worker                   - Background process 'Worker #8e9ecfe2' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:17:38,794 [e31f0] Hangfire.Server.Worker                   - Background process 'Worker #d8fe31f0' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:17:38,794 [e31f0] Hangfire.Server.Worker                   - Background process 'Worker #d8fe31f0' stopped.
+DEBUG 2019-06-13 18:17:38,794 [5370b] Hangfire.Server.Worker                   - Background process 'Worker #b875370b' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:17:38,794 [5370b] Hangfire.Server.Worker                   - Background process 'Worker #b875370b' stopped.
+DEBUG 2019-06-13 18:17:38,794 [3d7f7] Hangfire.Server.Worker                   - Background process 'Worker #f2e3d7f7' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:17:38,794 [3d7f7] Hangfire.Server.Worker                   - Background process 'Worker #f2e3d7f7' stopped.
+DEBUG 2019-06-13 18:17:38,794 [528d3] Hangfire.Server.Worker                   - Background process 'Worker #cba528d3' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:17:38,794 [528d3] Hangfire.Server.Worker                   - Background process 'Worker #cba528d3' stopped.
+DEBUG 2019-06-13 18:17:38,794 [cfb70] Hangfire.Server.Worker                   - Background process 'Worker #0e4cfb70' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:17:38,794 [cfb70] Hangfire.Server.Worker                   - Background process 'Worker #0e4cfb70' stopped.
+DEBUG 2019-06-13 18:17:38,794 [d4418] Hangfire.Server.Worker                   - Background process 'Worker #01bd4418' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:17:38,794 [8289a] Hangfire.Server.Worker                   - Background process 'Worker #f468289a' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:17:38,795 [d4418] Hangfire.Server.Worker                   - Background process 'Worker #01bd4418' stopped.
+DEBUG 2019-06-13 18:17:38,795 [8289a] Hangfire.Server.Worker                   - Background process 'Worker #f468289a' stopped.
+DEBUG 2019-06-13 18:17:38,795 [2ec68] Hangfire.Server.Worker                   - Background process 'Worker #9bb2ec68' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:17:38,795 [2ec68] Hangfire.Server.Worker                   - Background process 'Worker #9bb2ec68' stopped.
+DEBUG 2019-06-13 18:17:38,794 [9bd3b] Hangfire.Server.Worker                   - Background process 'Worker #c4c9bd3b' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:17:38,795 [9bd3b] Hangfire.Server.Worker                   - Background process 'Worker #c4c9bd3b' stopped.
+DEBUG 2019-06-13 18:17:38,794 [ecfe2] Hangfire.Server.Worker                   - Background process 'Worker #8e9ecfe2' stopped.
+DEBUG 2019-06-13 18:17:38,798 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' stopped.
+INFO  2019-06-13 18:17:38,798 [96   ] Hangfire.BackgroundJobServer             - Hangfire Server stopped.
+DEBUG 2019-06-13 18:17:38,798 [96   ] bp.Hangfire.HangfireBackgroundJobManager - WaitToStop background worker: Abp.Hangfire.HangfireBackgroundJobManager
+DEBUG 2019-06-13 18:17:38,798 [96   ] Abp.Modules.AbpModuleManager             - Shutting down completed.
+DEBUG 2019-06-13 18:17:43,322 [62   ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-06-13 18:17:43,335 [62   ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2019-06-13 18:17:43,341 [62   ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Web.InterceptionDemoWebModule, InterceptionDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:17:43,343 [62   ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoDataModule, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:17:43,343 [62   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:17:43,343 [62   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:17:43,343 [62   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:17:43,343 [62   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:17:43,343 [62   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:17:43,343 [62   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:17:43,344 [62   ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoCoreModule, InterceptionDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:17:43,344 [62   ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoApplicationModule, InterceptionDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:17:43,344 [62   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:17:43,344 [62   ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Api.InterceptionDemoWebApiModule, InterceptionDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:17:43,344 [62   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:17:43,344 [62   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:17:43,344 [62   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:17:43,345 [62   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:17:43,345 [62   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:17:43,345 [62   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:17:43,347 [62   ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2019-06-13 18:17:43,444 [62   ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-06-13 18:17:43,445 [62   ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-06-13 18:17:43,445 [62   ] o.Configuration.LanguageManagementConfig - Converted InterceptionDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-06-13 18:17:43,445 [62   ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2019-06-13 18:17:43,473 [62   ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2019-06-13 18:17:43,520 [62   ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2019-06-13 18:17:43,857 [62   ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: InterceptionDemo.EntityFramework.InterceptionDemoDbContext, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:17:45,024 [62   ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-06-13 18:17:45,029 [62   ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-06-13 18:17:45,034 [62   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-06-13 18:17:45,035 [62   ] Abp.Localization.LocalizationManager     - Initialized localization source: InterceptionDemo
+DEBUG 2019-06-13 18:17:45,036 [62   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-06-13 18:17:45,040 [62   ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2019-06-13 18:17:45,046 [62   ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2019-06-13 18:17:45,048 [62   ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: localhost@InterceptionDemo'
+INFO  2019-06-13 18:17:45,048 [62   ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2019-06-13 18:17:45,048 [62   ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2019-06-13 18:17:45,048 [62   ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2019-06-13 18:17:45,048 [62   ] Hangfire.BackgroundJobServer             -     Worker count: 20
+INFO  2019-06-13 18:17:45,049 [62   ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'
+INFO  2019-06-13 18:17:45,049 [62   ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15
+INFO  2019-06-13 18:17:45,049 [62   ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15
+DEBUG 2019-06-13 18:17:45,058 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2019-06-13 18:17:45,099 [62   ] Abp.AutoMapper.AbpAutoMapperModule       - Found 4 classes define auto mapping attributes
+DEBUG 2019-06-13 18:17:45,099 [62   ] Abp.AutoMapper.AbpAutoMapperModule       - InterceptionDemo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-06-13 18:17:45,102 [62   ] Abp.AutoMapper.AbpAutoMapperModule       - InterceptionDemo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-06-13 18:17:45,102 [62   ] Abp.AutoMapper.AbpAutoMapperModule       - InterceptionDemo.MultiTenancy.Dto.TenantListDto
+DEBUG 2019-06-13 18:17:45,102 [62   ] Abp.AutoMapper.AbpAutoMapperModule       - InterceptionDemo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2019-06-13 18:17:45,186 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2019-06-13 18:17:45,186 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2019-06-13 18:17:45,187 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2019-06-13 18:17:45,187 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2019-06-13 18:17:45,188 [b80e0] Hangfire.Server.Worker                   - Background process 'Worker #c9cb80e0' started.
+DEBUG 2019-06-13 18:17:45,189 [b6ccc] Hangfire.Server.Worker                   - Background process 'Worker #1d4b6ccc' started.
+DEBUG 2019-06-13 18:17:45,189 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'AggregatedCounter' table...
+DEBUG 2019-06-13 18:17:45,189 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2019-06-13 18:17:45,189 [d8b6c] Hangfire.Server.Worker                   - Background process 'Worker #df9d8b6c' started.
+DEBUG 2019-06-13 18:17:45,191 [a91d3] Hangfire.Server.Worker                   - Background process 'Worker #41aa91d3' started.
+DEBUG 2019-06-13 18:17:45,192 [313bf] Hangfire.Server.Worker                   - Background process 'Worker #e55313bf' started.
+DEBUG 2019-06-13 18:17:45,197 [40709] Hangfire.Server.Worker                   - Background process 'Worker #b8940709' started.
+DEBUG 2019-06-13 18:17:45,198 [64ded] Hangfire.Server.Worker                   - Background process 'Worker #7da64ded' started.
+DEBUG 2019-06-13 18:17:45,199 [bb18d] Hangfire.Server.Worker                   - Background process 'Worker #877bb18d' started.
+DEBUG 2019-06-13 18:17:45,200 [7cccf] Hangfire.Server.Worker                   - Background process 'Worker #85e7cccf' started.
+DEBUG 2019-06-13 18:17:45,200 [775b6] Hangfire.Server.Worker                   - Background process 'Worker #01b775b6' started.
+DEBUG 2019-06-13 18:17:45,201 [29a13] Hangfire.Server.Worker                   - Background process 'Worker #10c29a13' started.
+DEBUG 2019-06-13 18:17:45,202 [8725e] Hangfire.Server.Worker                   - Background process 'Worker #30a8725e' started.
+DEBUG 2019-06-13 18:17:45,203 [f3608] Hangfire.Server.Worker                   - Background process 'Worker #660f3608' started.
+DEBUG 2019-06-13 18:17:45,204 [dd74f] Hangfire.Server.Worker                   - Background process 'Worker #096dd74f' started.
+DEBUG 2019-06-13 18:17:45,204 [gator] Hangfire.SqlServer.CountersAggregator    - Records from the 'Counter' table aggregated.
+DEBUG 2019-06-13 18:17:45,205 [2e88d] Hangfire.Server.Worker                   - Background process 'Worker #6072e88d' started.
+DEBUG 2019-06-13 18:17:45,206 [c8c52] Hangfire.Server.Worker                   - Background process 'Worker #805c8c52' started.
+DEBUG 2019-06-13 18:17:45,207 [3c8e7] Hangfire.Server.Worker                   - Background process 'Worker #2093c8e7' started.
+DEBUG 2019-06-13 18:17:45,208 [3eef7] Hangfire.Server.Worker                   - Background process 'Worker #4c33eef7' started.
+DEBUG 2019-06-13 18:17:45,209 [4ae6e] Hangfire.Server.Worker                   - Background process 'Worker #ebe4ae6e' started.
+DEBUG 2019-06-13 18:17:45,211 [9a647] Hangfire.Server.Worker                   - Background process 'Worker #efe9a647' started.
+DEBUG 2019-06-13 18:17:45,212 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2019-06-13 18:17:45,215 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2019-06-13 18:17:45,216 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'AggregatedCounter' table.
+DEBUG 2019-06-13 18:17:45,216 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'Job' table...
+DEBUG 2019-06-13 18:17:45,236 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'Job' table.
+DEBUG 2019-06-13 18:17:45,236 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'List' table...
+DEBUG 2019-06-13 18:17:45,238 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'List' table.
+DEBUG 2019-06-13 18:17:45,238 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'Set' table...
+DEBUG 2019-06-13 18:17:45,240 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'Set' table.
+DEBUG 2019-06-13 18:17:45,240 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'Hash' table...
+DEBUG 2019-06-13 18:17:45,241 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'Hash' table.
+DEBUG 2019-06-13 18:17:45,973 [62   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'InterceptionDemo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2019-06-13 18:17:45,974 [62   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'InterceptionDemo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2019-06-13 18:17:45,975 [62   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'InterceptionDemo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2019-06-13 18:17:45,976 [62   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'InterceptionDemo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+INFO  2019-06-13 18:17:53,446 [92   ] .Interceptors.MeasureDurationInterceptor - MeasureDurationInterceptor: GetCurrentUserAsync executed in 4,390 milliseconds.
+INFO  2019-06-13 18:17:53,446 [92   ] .Interceptors.MeasureDurationInterceptor - MeasureDurationInterceptor: GetCurrentLoginInformations executed in 7,126 milliseconds.
+INFO  2019-06-13 18:17:53,455 [69   ] reDurationWithPostAsyncActionInterceptor - Waiting after method execution for GetCurrentUserAsync
+INFO  2019-06-13 18:17:53,657 [91   ] reDurationWithPostAsyncActionInterceptor - Waited after method execution for GetCurrentUserAsync
+INFO  2019-06-13 18:17:53,657 [91   ] reDurationWithPostAsyncActionInterceptor - MeasureDurationWithPostAsyncActionInterceptor: GetCurrentUserAsync executed in 215,308 milliseconds.
+INFO  2019-06-13 18:17:53,658 [93   ] rceptors.MeasureDurationAsyncInterceptor - MeasureDurationAsyncInterceptor: GetCurrentUserAsync executed in 215,663 milliseconds.
+INFO  2019-06-13 18:17:53,696 [91   ] .Interceptors.MeasureDurationInterceptor - MeasureDurationInterceptor: GetCurrentTenantAsync executed in 13,434 milliseconds.
+INFO  2019-06-13 18:17:53,696 [91   ] reDurationWithPostAsyncActionInterceptor - Waiting after method execution for GetCurrentTenantAsync
+INFO  2019-06-13 18:17:53,910 [74   ] reDurationWithPostAsyncActionInterceptor - Waited after method execution for GetCurrentTenantAsync
+INFO  2019-06-13 18:17:53,910 [74   ] reDurationWithPostAsyncActionInterceptor - MeasureDurationWithPostAsyncActionInterceptor: GetCurrentTenantAsync executed in 227,526 milliseconds.
+INFO  2019-06-13 18:17:53,910 [93   ] rceptors.MeasureDurationAsyncInterceptor - MeasureDurationAsyncInterceptor: GetCurrentTenantAsync executed in 227,713 milliseconds.
+INFO  2019-06-13 18:17:53,913 [74   ] reDurationWithPostAsyncActionInterceptor - Waiting after method execution for GetCurrentLoginInformations
+INFO  2019-06-13 18:17:54,114 [78   ] reDurationWithPostAsyncActionInterceptor - Waited after method execution for GetCurrentLoginInformations
+INFO  2019-06-13 18:17:54,114 [78   ] reDurationWithPostAsyncActionInterceptor - MeasureDurationWithPostAsyncActionInterceptor: GetCurrentLoginInformations executed in 673,133 milliseconds.
+INFO  2019-06-13 18:17:54,114 [81   ] rceptors.MeasureDurationAsyncInterceptor - MeasureDurationAsyncInterceptor: GetCurrentLoginInformations executed in 673,687 milliseconds.
+INFO  2019-06-13 18:18:03,502 [69   ] .Interceptors.MeasureDurationInterceptor - MeasureDurationInterceptor: GetCurrentUserAsync executed in 1,736 milliseconds.
+INFO  2019-06-13 18:18:03,502 [69   ] .Interceptors.MeasureDurationInterceptor - MeasureDurationInterceptor: GetCurrentLoginInformations executed in 1,914 milliseconds.
+INFO  2019-06-13 18:18:03,504 [90   ] reDurationWithPostAsyncActionInterceptor - Waiting after method execution for GetCurrentUserAsync
+INFO  2019-06-13 18:18:03,714 [78   ] reDurationWithPostAsyncActionInterceptor - Waited after method execution for GetCurrentUserAsync
+INFO  2019-06-13 18:18:03,714 [78   ] reDurationWithPostAsyncActionInterceptor - MeasureDurationWithPostAsyncActionInterceptor: GetCurrentUserAsync executed in 213,731 milliseconds.
+INFO  2019-06-13 18:18:03,714 [92   ] rceptors.MeasureDurationAsyncInterceptor - MeasureDurationAsyncInterceptor: GetCurrentUserAsync executed in 213,781 milliseconds.
+INFO  2019-06-13 18:18:03,715 [78   ] .Interceptors.MeasureDurationInterceptor - MeasureDurationInterceptor: GetCurrentTenantAsync executed in 0,704 milliseconds.
+INFO  2019-06-13 18:18:03,717 [95   ] reDurationWithPostAsyncActionInterceptor - Waiting after method execution for GetCurrentTenantAsync
+INFO  2019-06-13 18:18:03,918 [91   ] reDurationWithPostAsyncActionInterceptor - Waited after method execution for GetCurrentTenantAsync
+INFO  2019-06-13 18:18:03,918 [91   ] reDurationWithPostAsyncActionInterceptor - MeasureDurationWithPostAsyncActionInterceptor: GetCurrentTenantAsync executed in 202,889 milliseconds.
+INFO  2019-06-13 18:18:03,918 [90   ] rceptors.MeasureDurationAsyncInterceptor - MeasureDurationAsyncInterceptor: GetCurrentTenantAsync executed in 202,936 milliseconds.
+INFO  2019-06-13 18:18:03,918 [91   ] reDurationWithPostAsyncActionInterceptor - Waiting after method execution for GetCurrentLoginInformations
+INFO  2019-06-13 18:18:04,129 [82   ] reDurationWithPostAsyncActionInterceptor - Waited after method execution for GetCurrentLoginInformations
+INFO  2019-06-13 18:18:04,129 [82   ] reDurationWithPostAsyncActionInterceptor - MeasureDurationWithPostAsyncActionInterceptor: GetCurrentLoginInformations executed in 628,463 milliseconds.
+INFO  2019-06-13 18:18:04,129 [78   ] rceptors.MeasureDurationAsyncInterceptor - MeasureDurationAsyncInterceptor: GetCurrentLoginInformations executed in 628,521 milliseconds.
+DEBUG 2019-06-13 18:18:25,262 [78   ] Abp.Modules.AbpModuleManager             - Shutting down has been started
+DEBUG 2019-06-13 18:18:25,262 [78   ] bp.Hangfire.HangfireBackgroundJobManager - Stop background worker: Abp.Hangfire.HangfireBackgroundJobManager
+DEBUG 2019-06-13 18:18:25,263 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' stopped.
+DEBUG 2019-06-13 18:18:25,263 [3c8e7] Hangfire.Server.Worker                   - Background process 'Worker #2093c8e7' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:18:25,263 [3c8e7] Hangfire.Server.Worker                   - Background process 'Worker #2093c8e7' stopped.
+DEBUG 2019-06-13 18:18:25,263 [8725e] Hangfire.Server.Worker                   - Background process 'Worker #30a8725e' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:18:25,263 [8725e] Hangfire.Server.Worker                   - Background process 'Worker #30a8725e' stopped.
+DEBUG 2019-06-13 18:18:25,263 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' stopped.
+DEBUG 2019-06-13 18:18:25,264 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' stopped.
+DEBUG 2019-06-13 18:18:25,263 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' stopped.
+DEBUG 2019-06-13 18:18:25,264 [4ae6e] Hangfire.Server.Worker                   - Background process 'Worker #ebe4ae6e' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:18:25,264 [4ae6e] Hangfire.Server.Worker                   - Background process 'Worker #ebe4ae6e' stopped.
+DEBUG 2019-06-13 18:18:25,264 [b6ccc] Hangfire.Server.Worker                   - Background process 'Worker #1d4b6ccc' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:18:25,264 [29a13] Hangfire.Server.Worker                   - Background process 'Worker #10c29a13' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:18:25,264 [29a13] Hangfire.Server.Worker                   - Background process 'Worker #10c29a13' stopped.
+DEBUG 2019-06-13 18:18:25,264 [b6ccc] Hangfire.Server.Worker                   - Background process 'Worker #1d4b6ccc' stopped.
+DEBUG 2019-06-13 18:18:25,264 [bb18d] Hangfire.Server.Worker                   - Background process 'Worker #877bb18d' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:18:25,264 [bb18d] Hangfire.Server.Worker                   - Background process 'Worker #877bb18d' stopped.
+DEBUG 2019-06-13 18:18:25,264 [2e88d] Hangfire.Server.Worker                   - Background process 'Worker #6072e88d' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:18:25,264 [2e88d] Hangfire.Server.Worker                   - Background process 'Worker #6072e88d' stopped.
+DEBUG 2019-06-13 18:18:25,264 [c8c52] Hangfire.Server.Worker                   - Background process 'Worker #805c8c52' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:18:25,264 [c8c52] Hangfire.Server.Worker                   - Background process 'Worker #805c8c52' stopped.
+DEBUG 2019-06-13 18:18:25,264 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' stopped.
+DEBUG 2019-06-13 18:18:25,265 [7cccf] Hangfire.Server.Worker                   - Background process 'Worker #85e7cccf' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:18:25,265 [3eef7] Hangfire.Server.Worker                   - Background process 'Worker #4c33eef7' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:18:25,265 [3eef7] Hangfire.Server.Worker                   - Background process 'Worker #4c33eef7' stopped.
+DEBUG 2019-06-13 18:18:25,265 [7cccf] Hangfire.Server.Worker                   - Background process 'Worker #85e7cccf' stopped.
+DEBUG 2019-06-13 18:18:25,265 [9a647] Hangfire.Server.Worker                   - Background process 'Worker #efe9a647' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:18:25,265 [9a647] Hangfire.Server.Worker                   - Background process 'Worker #efe9a647' stopped.
+DEBUG 2019-06-13 18:18:25,265 [a91d3] Hangfire.Server.Worker                   - Background process 'Worker #41aa91d3' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:18:25,265 [40709] Hangfire.Server.Worker                   - Background process 'Worker #b8940709' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:18:25,265 [a91d3] Hangfire.Server.Worker                   - Background process 'Worker #41aa91d3' stopped.
+DEBUG 2019-06-13 18:18:25,265 [40709] Hangfire.Server.Worker                   - Background process 'Worker #b8940709' stopped.
+DEBUG 2019-06-13 18:18:25,265 [64ded] Hangfire.Server.Worker                   - Background process 'Worker #7da64ded' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:18:25,265 [64ded] Hangfire.Server.Worker                   - Background process 'Worker #7da64ded' stopped.
+DEBUG 2019-06-13 18:18:25,265 [b80e0] Hangfire.Server.Worker                   - Background process 'Worker #c9cb80e0' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:18:25,265 [b80e0] Hangfire.Server.Worker                   - Background process 'Worker #c9cb80e0' stopped.
+DEBUG 2019-06-13 18:18:25,265 [d8b6c] Hangfire.Server.Worker                   - Background process 'Worker #df9d8b6c' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:18:25,265 [d8b6c] Hangfire.Server.Worker                   - Background process 'Worker #df9d8b6c' stopped.
+DEBUG 2019-06-13 18:18:25,265 [313bf] Hangfire.Server.Worker                   - Background process 'Worker #e55313bf' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:18:25,265 [313bf] Hangfire.Server.Worker                   - Background process 'Worker #e55313bf' stopped.
+DEBUG 2019-06-13 18:18:25,265 [f3608] Hangfire.Server.Worker                   - Background process 'Worker #660f3608' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:18:25,265 [f3608] Hangfire.Server.Worker                   - Background process 'Worker #660f3608' stopped.
+DEBUG 2019-06-13 18:18:25,266 [775b6] Hangfire.Server.Worker                   - Background process 'Worker #01b775b6' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:18:25,266 [775b6] Hangfire.Server.Worker                   - Background process 'Worker #01b775b6' stopped.
+DEBUG 2019-06-13 18:18:25,265 [dd74f] Hangfire.Server.Worker                   - Background process 'Worker #096dd74f' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:18:25,266 [dd74f] Hangfire.Server.Worker                   - Background process 'Worker #096dd74f' stopped.
+DEBUG 2019-06-13 18:18:25,264 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' was stopped due to a shutdown request.
+DEBUG 2019-06-13 18:18:25,267 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' stopped.
+DEBUG 2019-06-13 18:18:25,270 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' stopped.
+INFO  2019-06-13 18:18:25,270 [78   ] Hangfire.BackgroundJobServer             - Hangfire Server stopped.
+DEBUG 2019-06-13 18:18:25,271 [78   ] bp.Hangfire.HangfireBackgroundJobManager - WaitToStop background worker: Abp.Hangfire.HangfireBackgroundJobManager
+DEBUG 2019-06-13 18:18:25,271 [78   ] Abp.Modules.AbpModuleManager             - Shutting down completed.
+DEBUG 2019-06-13 18:18:31,156 [73   ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-06-13 18:18:31,168 [73   ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2019-06-13 18:18:31,174 [73   ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Web.InterceptionDemoWebModule, InterceptionDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:18:31,176 [73   ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoDataModule, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:18:31,176 [73   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:18:31,176 [73   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:18:31,176 [73   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:18:31,176 [73   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:18:31,177 [73   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:18:31,177 [73   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:18:31,177 [73   ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoCoreModule, InterceptionDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:18:31,177 [73   ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.InterceptionDemoApplicationModule, InterceptionDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:18:31,177 [73   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:18:31,177 [73   ] Abp.Modules.AbpModuleManager             - Loaded module: InterceptionDemo.Api.InterceptionDemoWebApiModule, InterceptionDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:18:31,177 [73   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:18:31,178 [73   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:18:31,178 [73   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:18:31,178 [73   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:18:31,178 [73   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:18:31,178 [73   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:18:31,180 [73   ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2019-06-13 18:18:31,282 [73   ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-06-13 18:18:31,282 [73   ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-06-13 18:18:31,282 [73   ] o.Configuration.LanguageManagementConfig - Converted InterceptionDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-06-13 18:18:31,282 [73   ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+INFO  2019-06-13 18:18:31,311 [73   ] Hangfire.SqlServer.SqlServerStorage      - Start installing Hangfire SQL objects...
+INFO  2019-06-13 18:18:31,349 [73   ] Hangfire.SqlServer.SqlServerStorage      - Hangfire SQL objects installed.
+DEBUG 2019-06-13 18:18:31,737 [73   ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: InterceptionDemo.EntityFramework.InterceptionDemoDbContext, InterceptionDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-13 18:18:33,176 [73   ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-06-13 18:18:33,181 [73   ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-06-13 18:18:33,187 [73   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-06-13 18:18:33,188 [73   ] Abp.Localization.LocalizationManager     - Initialized localization source: InterceptionDemo
+DEBUG 2019-06-13 18:18:33,189 [73   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-06-13 18:18:33,195 [73   ] bp.Hangfire.HangfireBackgroundJobManager - Start background worker: Abp.Hangfire.HangfireBackgroundJobManager
+INFO  2019-06-13 18:18:33,200 [73   ] Hangfire.BackgroundJobServer             - Starting Hangfire Server
+INFO  2019-06-13 18:18:33,202 [73   ] Hangfire.BackgroundJobServer             - Using job storage: 'SQL Server: localhost@InterceptionDemo'
+INFO  2019-06-13 18:18:33,202 [73   ] Hangfire.BackgroundJobServer             - Using the following options for SQL Server job storage:
+INFO  2019-06-13 18:18:33,202 [73   ] Hangfire.BackgroundJobServer             -     Queue poll interval: 00:00:15.
+INFO  2019-06-13 18:18:33,202 [73   ] Hangfire.BackgroundJobServer             - Using the following options for Hangfire Server:
+INFO  2019-06-13 18:18:33,202 [73   ] Hangfire.BackgroundJobServer             -     Worker count: 20
+INFO  2019-06-13 18:18:33,203 [73   ] Hangfire.BackgroundJobServer             -     Listening queues: 'default'
+INFO  2019-06-13 18:18:33,203 [73   ] Hangfire.BackgroundJobServer             -     Shutdown timeout: 00:00:15
+INFO  2019-06-13 18:18:33,203 [73   ] Hangfire.BackgroundJobServer             -     Schedule polling interval: 00:00:15
+DEBUG 2019-06-13 18:18:33,212 [erver] ngfire.Server.BackgroundProcessingServer - Background process 'BackgroundProcessingServer' started.
+DEBUG 2019-06-13 18:18:33,261 [73   ] Abp.AutoMapper.AbpAutoMapperModule       - Found 4 classes define auto mapping attributes
+DEBUG 2019-06-13 18:18:33,261 [73   ] Abp.AutoMapper.AbpAutoMapperModule       - InterceptionDemo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-06-13 18:18:33,264 [73   ] Abp.AutoMapper.AbpAutoMapperModule       - InterceptionDemo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-06-13 18:18:33,264 [73   ] Abp.AutoMapper.AbpAutoMapperModule       - InterceptionDemo.MultiTenancy.Dto.TenantListDto
+DEBUG 2019-06-13 18:18:33,264 [73   ] Abp.AutoMapper.AbpAutoMapperModule       - InterceptionDemo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2019-06-13 18:18:33,346 [tbeat] Hangfire.Server.ServerHeartbeat          - Background process 'ServerHeartbeat' started.
+DEBUG 2019-06-13 18:18:33,347 [chdog] Hangfire.Server.ServerWatchdog           - Background process 'ServerWatchdog' started.
+DEBUG 2019-06-13 18:18:33,348 [nager] Hangfire.SqlServer.ExpirationManager     - Background process 'Hangfire.SqlServer.ExpirationManager' started.
+DEBUG 2019-06-13 18:18:33,349 [gator] Hangfire.SqlServer.CountersAggregator    - Background process 'Hangfire.SqlServer.CountersAggregator' started.
+DEBUG 2019-06-13 18:18:33,350 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'AggregatedCounter' table...
+DEBUG 2019-06-13 18:18:33,350 [e6c0b] Hangfire.Server.Worker                   - Background process 'Worker #5a8e6c0b' started.
+DEBUG 2019-06-13 18:18:33,350 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2019-06-13 18:18:33,351 [477fa] Hangfire.Server.Worker                   - Background process 'Worker #8bb477fa' started.
+DEBUG 2019-06-13 18:18:33,352 [9ee1f] Hangfire.Server.Worker                   - Background process 'Worker #0559ee1f' started.
+DEBUG 2019-06-13 18:18:33,355 [aacd2] Hangfire.Server.Worker                   - Background process 'Worker #afcaacd2' started.
+DEBUG 2019-06-13 18:18:33,357 [4b2b4] Hangfire.Server.Worker                   - Background process 'Worker #da04b2b4' started.
+DEBUG 2019-06-13 18:18:33,357 [0a09c] Hangfire.Server.Worker                   - Background process 'Worker #2b10a09c' started.
+DEBUG 2019-06-13 18:18:33,358 [ff719] Hangfire.Server.Worker                   - Background process 'Worker #2c6ff719' started.
+DEBUG 2019-06-13 18:18:33,359 [bfefe] Hangfire.Server.Worker                   - Background process 'Worker #d9abfefe' started.
+DEBUG 2019-06-13 18:18:33,361 [6ae89] Hangfire.Server.Worker                   - Background process 'Worker #0d86ae89' started.
+DEBUG 2019-06-13 18:18:33,362 [da2cb] Hangfire.Server.Worker                   - Background process 'Worker #014da2cb' started.
+DEBUG 2019-06-13 18:18:33,363 [0d20c] Hangfire.Server.Worker                   - Background process 'Worker #73a0d20c' started.
+DEBUG 2019-06-13 18:18:33,364 [4e5e1] Hangfire.Server.Worker                   - Background process 'Worker #56d4e5e1' started.
+DEBUG 2019-06-13 18:18:33,365 [54b84] Hangfire.Server.Worker                   - Background process 'Worker #38354b84' started.
+DEBUG 2019-06-13 18:18:33,366 [e4626] Hangfire.Server.Worker                   - Background process 'Worker #d3ee4626' started.
+DEBUG 2019-06-13 18:18:33,367 [60d01] Hangfire.Server.Worker                   - Background process 'Worker #cf560d01' started.
+DEBUG 2019-06-13 18:18:33,368 [cd0d7] Hangfire.Server.Worker                   - Background process 'Worker #a97cd0d7' started.
+DEBUG 2019-06-13 18:18:33,369 [c8d7d] Hangfire.Server.Worker                   - Background process 'Worker #569c8d7d' started.
+DEBUG 2019-06-13 18:18:33,369 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'AggregatedCounter' table.
+DEBUG 2019-06-13 18:18:33,369 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'Job' table...
+DEBUG 2019-06-13 18:18:33,373 [f56ab] Hangfire.Server.Worker                   - Background process 'Worker #6c4f56ab' started.
+DEBUG 2019-06-13 18:18:33,374 [gator] Hangfire.SqlServer.CountersAggregator    - Records from the 'Counter' table aggregated.
+DEBUG 2019-06-13 18:18:33,374 [b840b] Hangfire.Server.Worker                   - Background process 'Worker #c5db840b' started.
+DEBUG 2019-06-13 18:18:33,376 [404e9] Hangfire.Server.Worker                   - Background process 'Worker #ba8404e9' started.
+DEBUG 2019-06-13 18:18:33,387 [duler] Hangfire.Server.DelayedJobScheduler      - Background process 'DelayedJobScheduler' started.
+DEBUG 2019-06-13 18:18:33,388 [duler] Hangfire.Server.RecurringJobScheduler    - Background process 'RecurringJobScheduler' started.
+DEBUG 2019-06-13 18:18:33,394 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'Job' table.
+DEBUG 2019-06-13 18:18:33,394 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'List' table...
+DEBUG 2019-06-13 18:18:33,396 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'List' table.
+DEBUG 2019-06-13 18:18:33,396 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'Set' table...
+DEBUG 2019-06-13 18:18:33,398 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'Set' table.
+DEBUG 2019-06-13 18:18:33,398 [nager] Hangfire.SqlServer.ExpirationManager     - Removing outdated records from the 'Hash' table...
+DEBUG 2019-06-13 18:18:33,400 [nager] Hangfire.SqlServer.ExpirationManager     - Outdated records removed from the 'Hash' table.
+DEBUG 2019-06-13 18:18:34,179 [73   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'InterceptionDemo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2019-06-13 18:18:34,180 [73   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'InterceptionDemo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2019-06-13 18:18:34,181 [73   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'InterceptionDemo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2019-06-13 18:18:34,182 [73   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'InterceptionDemo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+INFO  2019-06-13 18:18:42,481 [90   ] .Interceptors.MeasureDurationInterceptor - MeasureDurationInterceptor: GetCurrentUserAsync executed in 4,112 milliseconds.
+INFO  2019-06-13 18:18:42,481 [90   ] .Interceptors.MeasureDurationInterceptor - MeasureDurationInterceptor: GetCurrentLoginInformations executed in 6,994 milliseconds.
+INFO  2019-06-13 18:18:42,490 [95   ] reDurationWithPostAsyncActionInterceptor - Waiting after method execution for GetCurrentUserAsync
+INFO  2019-06-13 18:18:42,691 [93   ] reDurationWithPostAsyncActionInterceptor - Waited after method execution for GetCurrentUserAsync
+INFO  2019-06-13 18:18:42,691 [93   ] reDurationWithPostAsyncActionInterceptor - MeasureDurationWithPostAsyncActionInterceptor: GetCurrentUserAsync executed in 214,386 milliseconds.
+INFO  2019-06-13 18:18:42,692 [65   ] rceptors.MeasureDurationAsyncInterceptor - MeasureDurationAsyncInterceptor: GetCurrentUserAsync executed in 214,774 milliseconds.
+INFO  2019-06-13 18:18:42,738 [93   ] .Interceptors.MeasureDurationInterceptor - MeasureDurationInterceptor: GetCurrentTenantAsync executed in 28,443 milliseconds.
+INFO  2019-06-13 18:18:42,738 [74   ] reDurationWithPostAsyncActionInterceptor - Waiting after method execution for GetCurrentTenantAsync
+INFO  2019-06-13 18:18:42,953 [95   ] reDurationWithPostAsyncActionInterceptor - Waited after method execution for GetCurrentTenantAsync
+INFO  2019-06-13 18:18:42,953 [95   ] reDurationWithPostAsyncActionInterceptor - MeasureDurationWithPostAsyncActionInterceptor: GetCurrentTenantAsync executed in 243,666 milliseconds.
+INFO  2019-06-13 18:18:42,953 [36   ] rceptors.MeasureDurationAsyncInterceptor - MeasureDurationAsyncInterceptor: GetCurrentTenantAsync executed in 243,788 milliseconds.
+INFO  2019-06-13 18:18:42,957 [95   ] reDurationWithPostAsyncActionInterceptor - Waiting after method execution for GetCurrentLoginInformations
+INFO  2019-06-13 18:18:43,171 [65   ] reDurationWithPostAsyncActionInterceptor - Waited after method execution for GetCurrentLoginInformations
+INFO  2019-06-13 18:18:43,171 [65   ] reDurationWithPostAsyncActionInterceptor - MeasureDurationWithPostAsyncActionInterceptor: GetCurrentLoginInformations executed in 695,403 milliseconds.
+INFO  2019-06-13 18:18:43,171 [85   ] rceptors.MeasureDurationAsyncInterceptor - MeasureDurationAsyncInterceptor: GetCurrentLoginInformations executed in 696,027 milliseconds.
+DEBUG 2019-06-13 18:18:43,353 [96   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"19b24a61-fb76-495d-a923-3685906f4b0a","IpAddress":"10.0.75.1","TenantId":1,"UserId":2,"ConnectTime":"2019-06-13T18:18:43.3462607+03:00","Properties":{}}
+DEBUG 2019-06-13 18:18:43,397 [36   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 19b24a61-fb76-495d-a923-3685906f4b0a
+INFO  2019-06-13 18:19:32,897 [94   ] .Interceptors.MeasureDurationInterceptor - MeasureDurationInterceptor: GetCurrentUserAsync executed in 3,018 milliseconds.
+INFO  2019-06-13 18:19:32,897 [94   ] .Interceptors.MeasureDurationInterceptor - MeasureDurationInterceptor: GetCurrentLoginInformations executed in 3,284 milliseconds.
+INFO  2019-06-13 18:19:32,900 [67   ] reDurationWithPostAsyncActionInterceptor - Waiting after method execution for GetCurrentUserAsync
+INFO  2019-06-13 18:19:33,100 [95   ] reDurationWithPostAsyncActionInterceptor - Waited after method execution for GetCurrentUserAsync
+INFO  2019-06-13 18:19:33,100 [95   ] reDurationWithPostAsyncActionInterceptor - MeasureDurationWithPostAsyncActionInterceptor: GetCurrentUserAsync executed in 206,372 milliseconds.
+INFO  2019-06-13 18:19:33,100 [46   ] rceptors.MeasureDurationAsyncInterceptor - MeasureDurationAsyncInterceptor: GetCurrentUserAsync executed in 206,405 milliseconds.
+INFO  2019-06-13 18:19:33,102 [95   ] .Interceptors.MeasureDurationInterceptor - MeasureDurationInterceptor: GetCurrentTenantAsync executed in 1,017 milliseconds.
+INFO  2019-06-13 18:19:33,104 [97   ] reDurationWithPostAsyncActionInterceptor - Waiting after method execution for GetCurrentTenantAsync
+INFO  2019-06-13 18:19:33,317 [72   ] reDurationWithPostAsyncActionInterceptor - Waited after method execution for GetCurrentTenantAsync
+INFO  2019-06-13 18:19:33,317 [72   ] reDurationWithPostAsyncActionInterceptor - MeasureDurationWithPostAsyncActionInterceptor: GetCurrentTenantAsync executed in 216,192 milliseconds.
+INFO  2019-06-13 18:19:33,317 [76   ] rceptors.MeasureDurationAsyncInterceptor - MeasureDurationAsyncInterceptor: GetCurrentTenantAsync executed in 216,251 milliseconds.
+INFO  2019-06-13 18:19:33,317 [72   ] reDurationWithPostAsyncActionInterceptor - Waiting after method execution for GetCurrentLoginInformations
+INFO  2019-06-13 18:19:33,527 [82   ] reDurationWithPostAsyncActionInterceptor - Waited after method execution for GetCurrentLoginInformations
+INFO  2019-06-13 18:19:33,527 [82   ] reDurationWithPostAsyncActionInterceptor - MeasureDurationWithPostAsyncActionInterceptor: GetCurrentLoginInformations executed in 633,424 milliseconds.
+INFO  2019-06-13 18:19:33,527 [43   ] rceptors.MeasureDurationAsyncInterceptor - MeasureDurationAsyncInterceptor: GetCurrentLoginInformations executed in 633,475 milliseconds.
+DEBUG 2019-06-13 18:19:33,586 [94   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"f389da54-6f7b-4651-bf06-ce12e6e5256c","IpAddress":"10.0.75.1","TenantId":1,"UserId":2,"ConnectTime":"2019-06-13T18:19:33.5866556+03:00","Properties":{}}
+DEBUG 2019-06-13 18:19:33,593 [82   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: f389da54-6f7b-4651-bf06-ce12e6e5256c
