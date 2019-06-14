@@ -1,6 +1,7 @@
 using Abp.Authorization.Users;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
+using Abp.Organizations;
 using InterceptionDemo.Authorization.Roles;
 
 namespace InterceptionDemo.Users
@@ -14,15 +15,18 @@ namespace InterceptionDemo.Users
             IRepository<Role> roleRepository, 
             IRepository<UserPermissionSetting, long> userPermissionSettingRepository, 
             IUnitOfWorkManager unitOfWorkManager, 
-            IRepository<UserClaim, long> userClaimRepository
-            ) : base(
+            IRepository<UserClaim, long> userClaimRepository,
+            IRepository<UserOrganizationUnit, long> userOrganizationUnitRepository,
+            IRepository<OrganizationUnitRole, long> organizationUnitRoleRepository) : base(
                 userRepository, 
                 userLoginRepository, 
                 userRoleRepository, 
                 roleRepository, 
                 userPermissionSettingRepository, 
                 unitOfWorkManager, 
-                userClaimRepository)
+                userClaimRepository,
+                userOrganizationUnitRepository,
+                organizationUnitRoleRepository)
         {
         }
     }

@@ -9,6 +9,10 @@
     See App/Main/views/layout/layout.cshtml for Angular application's layout page.
 *@
 
+@{
+    
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +31,6 @@
     @Html.IncludeStyle("~/Content/font-awesome.min.css")
     @Html.IncludeStyle("~/Content/toastr.min.css")
     @Html.IncludeStyle("~/Content/flags/famfamfam-flags.css")
-    @Html.IncludeStyle("~/Scripts/sweetalert/sweet-alert.css")
 
     @RenderSection("Styles", false)
 
@@ -47,7 +50,7 @@
     @Html.IncludeScript("~/Scripts/modernizr-2.8.3.js")
 
     @Html.IncludeScript("~/Scripts/json2.min.js")
-    @Html.IncludeScript("~/Scripts/jquery-3.3.1.min.js")
+    @Html.IncludeScript("~/Scripts/jquery-3.4.1.min.js")
     @Html.IncludeScript("~/Scripts/jquery-ui-1.12.1.min.js")
     @Html.IncludeScript("~/Scripts/bootstrap.min.js")
 
@@ -55,7 +58,7 @@
     @Html.IncludeScript("~/Scripts/toastr.min.js")
     @Html.IncludeScript("~/Scripts/others/spinjs/spin.js")
     @Html.IncludeScript("~/Scripts/others/spinjs/jquery.spin.js")
-    @Html.IncludeScript("~/Scripts/sweetalert/sweet-alert.min.js")
+    @Html.IncludeScript("~/Scripts/sweetalert/dist/sweetalert.min.js")
 
     @Html.IncludeScript("~/Abp/Framework/scripts/abp.js")
     @Html.IncludeScript("~/Abp/Framework/scripts/libs/abp.jquery.js")

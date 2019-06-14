@@ -16,7 +16,6 @@ namespace InterceptionDemo.Web
                     .Include("~/Content/themes/base/all.css", new CssRewriteUrlTransform())
                     .Include("~/Content/bootstrap-cosmo.min.css", new CssRewriteUrlTransform())
                     .Include("~/Content/toastr.min.css", new CssRewriteUrlTransform())
-                    .Include("~/Scripts/sweetalert/sweet-alert.css", new CssRewriteUrlTransform())
                     .Include("~/Content/flags/famfamfam-flags.css", new CssRewriteUrlTransform())
                     .Include("~/Content/font-awesome.min.css", new CssRewriteUrlTransform())
                 );
@@ -30,7 +29,7 @@ namespace InterceptionDemo.Web
 
                         "~/Scripts/modernizr-2.8.3.js",
                         
-                        "~/Scripts/jquery-3.3.1.min.js",
+                        "~/Scripts/jquery-3.4.1.min.js",
                         "~/Scripts/jquery-ui-1.12.1.min.js",
 
                         "~/Scripts/bootstrap.min.js",
@@ -38,7 +37,7 @@ namespace InterceptionDemo.Web
                         "~/Scripts/moment-with-locales.min.js",
                         "~/Scripts/jquery.blockUI.js",
                         "~/Scripts/toastr.min.js",
-                        "~/Scripts/sweetalert/sweet-alert.min.js",
+                        "~/Scripts/sweetalert/dist/sweetalert.min.js",
                         "~/Scripts/others/spinjs/spin.js",
                         "~/Scripts/others/spinjs/jquery.spin.js",
 
@@ -58,7 +57,7 @@ namespace InterceptionDemo.Web
                         "~/Abp/Framework/scripts/libs/abp.sweet-alert.js",
                         "~/Abp/Framework/scripts/libs/angularjs/abp.ng.js",
 
-                        "~/Scripts/jquery.signalR-2.2.2.min.js"
+                        "~/Scripts/jquery.signalR-2.4.1.min.js"
                     )
                 );
 

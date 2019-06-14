@@ -33,7 +33,13 @@ namespace InterceptionDemo.Migrations.SeedData
             var adminRoleForHost = _context.Roles.FirstOrDefault(r => r.TenantId == null && r.Name == StaticRoleNames.Host.Admin);
             if (adminRoleForHost == null)
             {
-                adminRoleForHost = _context.Roles.Add(new Role { Name = StaticRoleNames.Host.Admin, DisplayName = StaticRoleNames.Host.Admin, IsStatic = true });
+                adminRoleForHost = _context.Roles.Add(new Role
+                {
+                    Name = StaticRoleNames.Host.Admin,
+                    NormalizedName = StaticRoleNames.Host.Admin.ToUpperInvariant(),
+                    DisplayName = StaticRoleNames.Host.Admin,
+                    IsStatic = true
+                });
                 _context.SaveChanges();
 
                 //Grant all tenant permissions
@@ -66,9 +72,11 @@ namespace InterceptionDemo.Migrations.SeedData
                     {
                         TenantId = null,
                         UserName = User.AdminUserName,
+                        NormalizedUserName = User.AdminUserName.ToUpperInvariant(),
                         Name = "System",
                         Surname = "Administrator",
                         EmailAddress = "admin@aspnetboilerplate.com",
+                        NormalizedEmailAddress = "admin@aspnetboilerplate.com".ToUpperInvariant(),
                         IsEmailConfirmed = true,
                         Password = new PasswordHasher().HashPassword(User.DefaultPassword)
                     });
@@ -94,7 +102,14 @@ namespace InterceptionDemo.Migrations.SeedData
             var adminRoleForDefaultTenant = _context.Roles.FirstOrDefault(r => r.TenantId == defaultTenant.Id && r.Name == StaticRoleNames.Tenants.Admin);
             if (adminRoleForDefaultTenant == null)
             {
-                adminRoleForDefaultTenant = _context.Roles.Add(new Role { TenantId = defaultTenant.Id, Name = StaticRoleNames.Tenants.Admin, DisplayName = StaticRoleNames.Tenants.Admin, IsStatic = true });
+                adminRoleForDefaultTenant = _context.Roles.Add(new Role
+                {
+                    TenantId = defaultTenant.Id,
+                    Name = StaticRoleNames.Tenants.Admin,
+                    NormalizedName = StaticRoleNames.Tenants.Admin.ToUpperInvariant(),
+                    DisplayName = StaticRoleNames.Tenants.Admin,
+                    IsStatic = true
+                });
                 _context.SaveChanges();
 
                 //Grant all tenant permissions
@@ -127,9 +142,11 @@ namespace InterceptionDemo.Migrations.SeedData
                     {
                         TenantId = defaultTenant.Id,
                         UserName = User.AdminUserName,
+                        NormalizedUserName = User.AdminUserName.ToUpperInvariant(),
                         Name = "System",
                         Surname = "Administrator",
                         EmailAddress = "admin@aspnetboilerplate.com",
+                        NormalizedEmailAddress = "admin@aspnetboilerplate.com".ToUpperInvariant(),
                         IsEmailConfirmed = true,
                         Password = new PasswordHasher().HashPassword(User.DefaultPassword)
                     });

@@ -2,6 +2,9 @@
 @using System.Web.Optimization
 @using Abp.Timing
 @using Abp.Web.Mvc.Extensions
+@{
+    SetAntiForgeryCookie();
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <base href="/">
 
     <title>InterceptionDemo</title>
 
@@ -45,7 +49,7 @@
     @Html.IncludeScript("~/Abp/Framework/scripts/libs/abp.signalr.js")
 
     @Scripts.Render("~/Bundles/App/Main/js")
-    
+
 </head>
 <body>
     <div ng-app="app">
