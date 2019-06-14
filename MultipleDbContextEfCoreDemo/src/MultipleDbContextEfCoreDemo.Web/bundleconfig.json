@@ -8,7 +8,8 @@
   {
     "outputFileName": "wwwroot/view-resources/Views/_Bundles/layout-libs.min.css",
     "inputFiles": [
-      "wwwroot/lib/bootstrap-paper/bootstrap.css",
+      "wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "wwwroot/lib/bootstrap-theme-paper/paper.css",
       "wwwroot/lib/toastr/toastr.css",
       "wwwroot/lib/sweetalert/dist/sweetalert.css",
       "wwwroot/lib/famfamfam-flags/dist/sprite/famfamfam-flags.css",
