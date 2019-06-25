@@ -4,7 +4,6 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.Json;
-using Abp.MultiTenancy;
 using Abp.Web.Models;
 using IdentityModel.Client;
 using IdentityServerDemo.Users.Dto;
@@ -14,6 +13,8 @@ namespace IdentityServerDemo.ConsoleApiTester
 {
     class Program
     {
+        private const string ServerUrlBase = "http://localhost:62114/";
+
         static void Main(string[] args)
         {
             RunDemoAsync().Wait();
@@ -28,12 +29,27 @@ namespace IdentityServerDemo.ConsoleApiTester
 
         private static async Task<string> GetAccessTokenViaOwnerPasswordAsync()
         {
-            var disco = await DiscoveryClient.GetAsync("http://localhost:62114");
+            var client = new HttpClient();
 
-            var httpHandler = new HttpClientHandler();
-            httpHandler.CookieContainer.Add(new Uri("http://localhost:62114/"), new Cookie(MultiTenancyConsts.TenantIdResolveKey, "1")); //Set TenantId
-            var tokenClient = new TokenClient(disco.TokenEndpoint, "client", "secret", httpHandler);
-            var tokenResponse = await tokenClient.RequestResourceOwnerPasswordAsync("admin", "123qwe");
+            var disco = await client.GetDiscoveryDocumentAsync(ServerUrlBase);
+            if (disco.IsError)
+            {
+                throw new Exception(disco.Error);
+            }
+
+            client.DefaultRequestHeaders.Add("Abp.TenantId", "1");  //Set TenantId
+            var tokenResponse = await client.RequestPasswordTokenAsync(new PasswordTokenRequest
+            {
+                Address = disco.TokenEndpoint,
+
+                ClientId = "client",
+                ClientSecret = "def2edf7-5d42-4edc-a84a-30136c340e13",
+
+                Scope = "default-api",
+
+                UserName = "admin",
+                Password = "123qwe"
+            });
 
             if (tokenResponse.IsError)
             {
@@ -51,7 +67,7 @@ namespace IdentityServerDemo.ConsoleApiTester
             var client = new HttpClient();
             client.SetBearerToken(accessToken);
 
-            var response = await client.GetAsync("http://localhost:62114/api/services/app/user/getUsers");
+            var response = await client.GetAsync($"{ServerUrlBase}api/services/app/user/getUsers");
             if (!response.IsSuccessStatusCode)
             {
                 Console.WriteLine(response.StatusCode);

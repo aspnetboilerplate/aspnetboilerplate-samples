@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using Abp.Authorization;
 using Abp.Authorization.Roles;
+using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
+using Abp.Organizations;
 using Abp.Runtime.Caching;
 using Abp.Zero.Configuration;
 using IdentityServerDemo.Authorization.Users;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 
@@ -19,21 +20,24 @@ namespace IdentityServerDemo.Authorization.Roles
             ILookupNormalizer keyNormalizer, 
             IdentityErrorDescriber errors, 
             ILogger<AbpRoleManager<Role, User>> logger,
-            IHttpContextAccessor contextAccessor, 
             IPermissionManager permissionManager, 
             ICacheManager cacheManager, 
             IUnitOfWorkManager unitOfWorkManager,
-            IRoleManagementConfig roleManagementConfig)
+            IRoleManagementConfig roleManagementConfig,
+            IRepository<OrganizationUnit, long> organizationUnitRepository,
+            IRepository<OrganizationUnitRole, long> organizationUnitRoleRepository)
             : base(
-                  store,
-                  roleValidators, 
-                  keyNormalizer, 
-                  errors, logger, 
-                  contextAccessor, 
-                  permissionManager,
-                  cacheManager, 
-                  unitOfWorkManager,
-                  roleManagementConfig)
+                store,
+                roleValidators,
+                keyNormalizer,
+                errors,
+                logger,
+                permissionManager,
+                cacheManager,
+                unitOfWorkManager,
+                roleManagementConfig,
+                organizationUnitRepository,
+                organizationUnitRoleRepository)
         {
         }
     }

@@ -1,0 +1,246 @@
+DEBUG 2019-06-25 15:51:05,195 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-06-25 15:51:05,243 [1    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2019-06-25 15:51:05,279 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IdentityServerDemo.Web.Host.Startup.IdentityServerDemoWebHostModule, IdentityServerDemo.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 15:51:05,284 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IdentityServerDemo.IdentityServerDemoWebCoreModule, IdentityServerDemo.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 15:51:05,284 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IdentityServerDemo.IdentityServerDemoApplicationModule, IdentityServerDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 15:51:05,285 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IdentityServerDemo.IdentityServerDemoCoreModule, IdentityServerDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 15:51:05,286 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 15:51:05,286 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 15:51:05,286 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 15:51:05,287 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 15:51:05,288 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IdentityServerDemo.EntityFrameworkCore.IdentityServerDemoEntityFrameworkModule, IdentityServerDemo.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 15:51:05,288 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 15:51:05,288 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 15:51:05,289 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 15:51:05,289 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.IdentityServer4.AbpZeroCoreIdentityServerEntityFrameworkCoreModule, Abp.ZeroCore.IdentityServer4.EntityFrameworkCore, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 15:51:05,290 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.IdentityServer4.AbpZeroCoreIdentityServerModule, Abp.ZeroCore.IdentityServer4, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 15:51:05,290 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 15:51:05,291 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 15:51:05,295 [1    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2019-06-25 15:51:05,394 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-06-25 15:51:05,395 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-06-25 15:51:05,395 [1    ] o.Configuration.LanguageManagementConfig - Converted IdentityServerDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-06-25 15:51:05,395 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-06-25 15:51:05,822 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: IdentityServerDemo.EntityFrameworkCore.IdentityServerDemoDbContext, IdentityServerDemo.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 15:51:06,256 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-06-25 15:51:06,327 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-06-25 15:51:06,375 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-06-25 15:51:06,406 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: IdentityServerDemo
+DEBUG 2019-06-25 15:51:06,442 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-06-25 15:51:06,490 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2019-06-25 15:51:06,536 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes define auto mapping attributes
+DEBUG 2019-06-25 15:51:06,536 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IdentityServerDemo.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-06-25 15:51:06,544 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IdentityServerDemo.Users.Dto.CreateUserInput
+DEBUG 2019-06-25 15:51:06,545 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IdentityServerDemo.Users.Dto.UserListDto
+DEBUG 2019-06-25 15:51:06,545 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IdentityServerDemo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-06-25 15:51:06,545 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IdentityServerDemo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-06-25 15:51:06,545 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IdentityServerDemo.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2019-06-25 15:51:06,550 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IdentityServerDemo.MultiTenancy.Dto.TenantListDto
+INFO  2019-06-25 15:51:11,330 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/  
+INFO  2019-06-25 15:51:12,723 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing action IdentityServerDemo.Web.Host.Controllers.HomeController.Index (IdentityServerDemo.Web.Host)
+INFO  2019-06-25 15:51:13,123 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method IdentityServerDemo.Web.Host.Controllers.HomeController.Index (IdentityServerDemo.Web.Host) - Validation state: Valid
+INFO  2019-06-25 15:51:13,128 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method IdentityServerDemo.Web.Host.Controllers.HomeController.Index (IdentityServerDemo.Web.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 1.9947ms.
+INFO  2019-06-25 15:51:13,237 [13   ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2019-06-25 15:51:13,254 [13   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action IdentityServerDemo.Web.Host.Controllers.HomeController.Index (IdentityServerDemo.Web.Host) in 525.857ms
+INFO  2019-06-25 15:51:13,343 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2012.6554ms 302 
+INFO  2019-06-25 15:51:13,360 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger  
+INFO  2019-06-25 15:51:13,388 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 27.9118ms 301 
+INFO  2019-06-25 15:51:13,392 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2019-06-25 15:51:13,621 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 228.1677ms 200 text/html
+INFO  2019-06-25 15:51:13,636 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/swagger-ui.css  
+INFO  2019-06-25 15:51:13,685 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+INFO  2019-06-25 15:51:13,688 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 51.802ms 200 text/css
+INFO  2019-06-25 15:51:13,752 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/swagger-ui-bundle.js  
+INFO  2019-06-25 15:51:13,756 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/swagger-ui-standalone-preset.js  
+INFO  2019-06-25 15:51:13,768 [12   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+INFO  2019-06-25 15:51:13,768 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 12.5831ms 200 application/javascript
+INFO  2019-06-25 15:51:13,775 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+INFO  2019-06-25 15:51:13,775 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 22.8457ms 200 application/javascript
+INFO  2019-06-25 15:51:14,708 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2019-06-25 15:51:14,748 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/favicon-32x32.png  
+INFO  2019-06-25 15:51:14,751 [12   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+INFO  2019-06-25 15:51:14,751 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.6072ms 200 image/png
+INFO  2019-06-25 15:51:14,906 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 198.4786ms 200 application/json;charset=utf-8
+INFO  2019-06-25 15:51:39,671 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/.well-known/openid-configuration  
+INFO  2019-06-25 15:51:39,673 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.3434ms 404 
+DEBUG 2019-06-25 17:01:14,218 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-06-25 17:01:14,250 [1    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2019-06-25 17:01:14,273 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IdentityServerDemo.Web.Host.Startup.IdentityServerDemoWebHostModule, IdentityServerDemo.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:14,276 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IdentityServerDemo.IdentityServerDemoWebCoreModule, IdentityServerDemo.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:14,276 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IdentityServerDemo.IdentityServerDemoApplicationModule, IdentityServerDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:14,276 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IdentityServerDemo.IdentityServerDemoCoreModule, IdentityServerDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:14,277 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:14,277 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:14,278 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:14,279 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:14,279 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IdentityServerDemo.EntityFrameworkCore.IdentityServerDemoEntityFrameworkModule, IdentityServerDemo.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:14,279 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:14,279 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:14,280 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:14,280 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.IdentityServer4.AbpZeroCoreIdentityServerEntityFrameworkCoreModule, Abp.ZeroCore.IdentityServer4.EntityFrameworkCore, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:14,280 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.IdentityServer4.AbpZeroCoreIdentityServerModule, Abp.ZeroCore.IdentityServer4, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:14,280 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:14,280 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:14,284 [1    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2019-06-25 17:01:14,358 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-06-25 17:01:14,358 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-06-25 17:01:14,358 [1    ] o.Configuration.LanguageManagementConfig - Converted IdentityServerDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-06-25 17:01:14,358 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-06-25 17:01:14,665 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: IdentityServerDemo.EntityFrameworkCore.IdentityServerDemoDbContext, IdentityServerDemo.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:15,062 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-06-25 17:01:15,139 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-06-25 17:01:15,205 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-06-25 17:01:15,254 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: IdentityServerDemo
+DEBUG 2019-06-25 17:01:15,408 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-06-25 17:01:15,542 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2019-06-25 17:01:15,602 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes define auto mapping attributes
+DEBUG 2019-06-25 17:01:15,602 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IdentityServerDemo.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-06-25 17:01:15,609 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IdentityServerDemo.Users.Dto.CreateUserInput
+DEBUG 2019-06-25 17:01:15,610 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IdentityServerDemo.Users.Dto.UserListDto
+DEBUG 2019-06-25 17:01:15,611 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IdentityServerDemo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-06-25 17:01:15,611 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IdentityServerDemo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-06-25 17:01:15,611 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IdentityServerDemo.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2019-06-25 17:01:15,613 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IdentityServerDemo.MultiTenancy.Dto.TenantListDto
+INFO  2019-06-25 17:01:19,902 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/  
+INFO  2019-06-25 17:01:21,155 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing action IdentityServerDemo.Web.Host.Controllers.HomeController.Index (IdentityServerDemo.Web.Host)
+INFO  2019-06-25 17:01:21,537 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method IdentityServerDemo.Web.Host.Controllers.HomeController.Index (IdentityServerDemo.Web.Host) - Validation state: Valid
+INFO  2019-06-25 17:01:21,541 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method IdentityServerDemo.Web.Host.Controllers.HomeController.Index (IdentityServerDemo.Web.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 1.7525ms.
+INFO  2019-06-25 17:01:21,640 [5    ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2019-06-25 17:01:21,653 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action IdentityServerDemo.Web.Host.Controllers.HomeController.Index (IdentityServerDemo.Web.Host) in 494.6988ms
+INFO  2019-06-25 17:01:21,726 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1827.9465ms 302 
+INFO  2019-06-25 17:01:21,727 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger  
+INFO  2019-06-25 17:01:21,757 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 29.3119ms 301 
+INFO  2019-06-25 17:01:21,759 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2019-06-25 17:01:21,841 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 81.4874ms 200 text/html
+DEBUG 2019-06-25 17:01:50,414 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-06-25 17:01:50,437 [1    ] Abp.Modules.AbpModuleManager             - Found 16 ABP modules in total.
+DEBUG 2019-06-25 17:01:50,461 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IdentityServerDemo.Web.Host.Startup.IdentityServerDemoWebHostModule, IdentityServerDemo.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:50,464 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IdentityServerDemo.IdentityServerDemoWebCoreModule, IdentityServerDemo.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:50,465 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IdentityServerDemo.IdentityServerDemoApplicationModule, IdentityServerDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:50,465 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IdentityServerDemo.IdentityServerDemoCoreModule, IdentityServerDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:50,465 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:50,465 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:50,466 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:50,466 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:50,466 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IdentityServerDemo.EntityFrameworkCore.IdentityServerDemoEntityFrameworkModule, IdentityServerDemo.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:50,467 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:50,467 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:50,467 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:50,467 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.IdentityServer4.AbpZeroCoreIdentityServerEntityFrameworkCoreModule, Abp.ZeroCore.IdentityServer4.EntityFrameworkCore, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:50,467 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.IdentityServer4.AbpZeroCoreIdentityServerModule, Abp.ZeroCore.IdentityServer4, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:50,468 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:50,468 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.6.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:50,472 [1    ] Abp.Modules.AbpModuleManager             - 16 modules loaded.
+DEBUG 2019-06-25 17:01:50,540 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-06-25 17:01:50,540 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-06-25 17:01:50,540 [1    ] o.Configuration.LanguageManagementConfig - Converted IdentityServerDemo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-06-25 17:01:50,540 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-06-25 17:01:50,863 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: IdentityServerDemo.EntityFrameworkCore.IdentityServerDemoDbContext, IdentityServerDemo.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-06-25 17:01:51,277 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-06-25 17:01:51,351 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-06-25 17:01:51,399 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-06-25 17:01:51,433 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: IdentityServerDemo
+DEBUG 2019-06-25 17:01:51,469 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-06-25 17:01:51,527 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2019-06-25 17:01:51,583 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 7 classes define auto mapping attributes
+DEBUG 2019-06-25 17:01:51,583 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IdentityServerDemo.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-06-25 17:01:51,594 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IdentityServerDemo.Users.Dto.CreateUserInput
+DEBUG 2019-06-25 17:01:51,596 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IdentityServerDemo.Users.Dto.UserListDto
+DEBUG 2019-06-25 17:01:51,596 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IdentityServerDemo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-06-25 17:01:51,596 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IdentityServerDemo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-06-25 17:01:51,596 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IdentityServerDemo.MultiTenancy.Dto.CreateTenantInput
+DEBUG 2019-06-25 17:01:51,597 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IdentityServerDemo.MultiTenancy.Dto.TenantListDto
+INFO  2019-06-25 17:01:55,573 [1    ] IdentityServer4.Startup                  - Starting IdentityServer4 version 2.3.2.0
+INFO  2019-06-25 17:01:55,647 [1    ] IdentityServer4.Startup                  - Using the default authentication scheme Identity.Application for IdentityServer
+INFO  2019-06-25 17:01:56,289 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/  
+INFO  2019-06-25 17:01:56,502 [11   ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-06-25 17:01:56,539 [11   ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-06-25 17:01:56,557 [11   ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-06-25 17:01:58,146 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing action IdentityServerDemo.Web.Host.Controllers.HomeController.Index (IdentityServerDemo.Web.Host)
+INFO  2019-06-25 17:01:58,678 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method IdentityServerDemo.Web.Host.Controllers.HomeController.Index (IdentityServerDemo.Web.Host) - Validation state: Valid
+INFO  2019-06-25 17:01:58,684 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method IdentityServerDemo.Web.Host.Controllers.HomeController.Index (IdentityServerDemo.Web.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 3.4165ms.
+INFO  2019-06-25 17:01:58,792 [8    ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2019-06-25 17:01:58,803 [8    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action IdentityServerDemo.Web.Host.Controllers.HomeController.Index (IdentityServerDemo.Web.Host) in 651.2198ms
+INFO  2019-06-25 17:01:58,872 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2585.5692ms 302 
+INFO  2019-06-25 17:01:58,873 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger  
+INFO  2019-06-25 17:01:58,874 [8    ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-06-25 17:01:58,874 [8    ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-06-25 17:01:58,874 [8    ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-06-25 17:01:58,897 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 24.4654ms 301 
+INFO  2019-06-25 17:01:58,902 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2019-06-25 17:01:58,903 [12   ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-06-25 17:01:58,903 [12   ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-06-25 17:01:58,904 [12   ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-06-25 17:01:59,021 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 118.3707ms 200 text/html
+INFO  2019-06-25 17:01:59,036 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/swagger-ui.css  
+INFO  2019-06-25 17:01:59,038 [4    ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-06-25 17:01:59,038 [4    ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-06-25 17:01:59,038 [4    ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-06-25 17:01:59,087 [8    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+INFO  2019-06-25 17:01:59,089 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 53.11ms 200 text/css
+INFO  2019-06-25 17:01:59,148 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/swagger-ui-bundle.js  
+INFO  2019-06-25 17:01:59,150 [4    ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-06-25 17:01:59,150 [4    ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-06-25 17:01:59,150 [4    ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-06-25 17:01:59,152 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/swagger-ui-standalone-preset.js  
+INFO  2019-06-25 17:01:59,154 [11   ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-06-25 17:01:59,154 [11   ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-06-25 17:01:59,154 [11   ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-06-25 17:01:59,165 [8    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+INFO  2019-06-25 17:01:59,165 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 13.1087ms 200 application/javascript
+INFO  2019-06-25 17:01:59,182 [8    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+INFO  2019-06-25 17:01:59,182 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 33.5795ms 200 application/javascript
+INFO  2019-06-25 17:01:59,677 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2019-06-25 17:01:59,678 [8    ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-06-25 17:01:59,678 [8    ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-06-25 17:01:59,678 [8    ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-06-25 17:01:59,888 [8    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 211.0932ms 200 application/json;charset=utf-8
+INFO  2019-06-25 17:02:26,507 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/.well-known/openid-configuration  
+INFO  2019-06-25 17:02:26,615 [4    ] Server4.Hosting.IdentityServerMiddleware - Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+INFO  2019-06-25 17:02:26,673 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 165.8277ms 200 application/json; charset=UTF-8
+INFO  2019-06-25 17:02:26,831 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/.well-known/openid-configuration/jwks  
+INFO  2019-06-25 17:02:26,837 [17   ] Server4.Hosting.IdentityServerMiddleware - Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+INFO  2019-06-25 17:02:26,860 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 29.0582ms 200 application/jwk-set+json; charset=UTF-8
+INFO  2019-06-25 17:02:27,295 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:21021/connect/token application/x-www-form-urlencoded 136
+INFO  2019-06-25 17:02:27,327 [17   ] Server4.Hosting.IdentityServerMiddleware - Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+INFO  2019-06-25 17:02:27,619 [17   ] tIdentity.ResourceOwnerPasswordValidator - Credentials validated for username: admin
+INFO  2019-06-25 17:02:27,686 [18   ] Server4.Validation.TokenRequestValidator - Token request validation success
+{
+  "ClientId": "client",
+  "GrantType": "password",
+  "Scopes": "default-api",
+  "UserName": "admin",
+  "Raw": {
+    "grant_type": "password",
+    "username": "admin",
+    "password": "***REDACTED***",
+    "scope": "default-api",
+    "client_id": "client",
+    "client_secret": "***REDACTED***"
+  }
+}
+INFO  2019-06-25 17:02:28,160 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 864.0614ms 200 application/json; charset=UTF-8
+INFO  2019-06-25 17:02:28,301 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/user/getUsers  
+INFO  2019-06-25 17:02:28,375 [17   ] uthentication.JwtBearer.JwtBearerHandler - Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10501: Signature validation failed. Unable to match keys: 
+kid: 'f542b4cac6cd9beae2cfeeb904ec1fee', 
+token: '{"alg":"RS256","kid":"f542b4cac6cd9beae2cfeeb904ec1fee","typ":"JWT"}.{"nbf":1561471348,"exp":1561474948,"iss":"http://localhost:21021","aud":["http://localhost:21021/resources","default-api"],"client_id":"client","sub":"2","auth_time":1561471347,"idp":"local","http://www.aspnetboilerplate.com/identity/claims/tenantId":"1","scope":["default-api"],"amr":["pwd"]}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters) in C:\agent2\_work\56\s\src\System.IdentityModel.Tokens.Jwt\JwtSecurityTokenHandler.cs:line 968
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken) in C:\agent2\_work\56\s\src\System.IdentityModel.Tokens.Jwt\JwtSecurityTokenHandler.cs:line 718
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+INFO  2019-06-25 17:02:28,378 [17   ] uthentication.JwtBearer.JwtBearerHandler - Bearer was not authenticated. Failure message: IDX10501: Signature validation failed. Unable to match keys: 
+kid: 'f542b4cac6cd9beae2cfeeb904ec1fee', 
+token: '{"alg":"RS256","kid":"f542b4cac6cd9beae2cfeeb904ec1fee","typ":"JWT"}.{"nbf":1561471348,"exp":1561474948,"iss":"http://localhost:21021","aud":["http://localhost:21021/resources","default-api"],"client_id":"client","sub":"2","auth_time":1561471347,"idp":"local","http://www.aspnetboilerplate.com/identity/claims/tenantId":"1","scope":["default-api"],"amr":["pwd"]}'.
+INFO  2019-06-25 17:02:28,463 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/.well-known/openid-configuration  
+INFO  2019-06-25 17:02:28,467 [15   ] Server4.Hosting.IdentityServerMiddleware - Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+INFO  2019-06-25 17:02:28,468 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.6122ms 200 application/json; charset=UTF-8
+INFO  2019-06-25 17:02:28,522 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/.well-known/openid-configuration/jwks  
+INFO  2019-06-25 17:02:28,528 [4    ] Server4.Hosting.IdentityServerMiddleware - Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+INFO  2019-06-25 17:02:28,529 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.6577ms 200 application/jwk-set+json; charset=UTF-8
+INFO  2019-06-25 17:02:28,579 [15   ] uthentication.JwtBearer.JwtBearerHandler - Successfully validated the token.
+INFO  2019-06-25 17:02:28,618 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetUsers", controller = "User"}. Executing action IdentityServerDemo.Users.UserAppService.GetUsers (IdentityServerDemo.Application)
+INFO  2019-06-25 17:02:28,929 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method IdentityServerDemo.Users.UserAppService.GetUsers (IdentityServerDemo.Application) - Validation state: Valid
+INFO  2019-06-25 17:02:28,995 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method IdentityServerDemo.Users.UserAppService.GetUsers (IdentityServerDemo.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 66.5727ms.
+INFO  2019-06-25 17:02:29,022 [17   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-06-25 17:02:29,053 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action IdentityServerDemo.Users.UserAppService.GetUsers (IdentityServerDemo.Application) in 435.0328ms
+INFO  2019-06-25 17:02:29,054 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 752.8108ms 200 application/json; charset=utf-8

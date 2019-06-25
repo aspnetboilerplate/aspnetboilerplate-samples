@@ -8,6 +8,7 @@ using IdentityServerDemo.Web.Resources;
 using Castle.Facilities.Logging;
 using IdentityServerDemo.Authorization.Users;
 using IdentityServerDemo.EntityFrameworkCore;
+using IdentityServerDemo.IdentityServer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -42,15 +43,10 @@ namespace IdentityServerDemo.Web.Startup
             });
 
             IdentityRegistrar.Register(services);
+            IdentityServerRegistrar.Register(services, _appConfiguration);
 
-            services.AddIdentityServer()
-                .AddTemporarySigningCredential()
-                .AddInMemoryIdentityResources(IdentityServerConfig.GetIdentityResources())
-                .AddInMemoryApiResources(IdentityServerConfig.GetApiResources())
-                .AddInMemoryClients(IdentityServerConfig.GetClients())
-                .AddAbpPersistedGrants<IdentityServerDemoDbContext>()
-                .AddAbpIdentityServer<User>();
-
+            AuthConfigurer.Configure(services, _appConfiguration);
+            
             services.AddScoped<IWebResourceManager, WebResourceManager>();
 
             //Configure Abp and Dependency Injection
@@ -76,18 +72,18 @@ namespace IdentityServerDemo.Web.Startup
                 app.UseExceptionHandler("/Error");
             }
 
-            AuthConfigurer.Configure(app, _appConfiguration);
+            app.UseAuthentication();
+            
+            if (bool.Parse(_appConfiguration["Authentication:JwtBearer:IsEnabled"]))
+            {
+                app.UseJwtTokenMiddleware();
+            }
 
-            app.UseIdentityServer();
-
-            app.UseIdentityServerAuthentication(
-                new IdentityServerAuthenticationOptions
-                {
-                    Authority = "http://localhost:62114/",
-                    RequireHttpsMetadata = false,
-                    AutomaticAuthenticate = true,
-                    AutomaticChallenge = true
-                });
+            if (bool.Parse(_appConfiguration["IdentityServer:IsEnabled"]))
+            {
+                app.UseJwtTokenMiddleware("IdentityBearer");
+                app.UseIdentityServer();
+            }
 
             app.UseStaticFiles();
 

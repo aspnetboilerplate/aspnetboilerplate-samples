@@ -3,6 +3,7 @@ using IdentityServerDemo.Authorization.Roles;
 using IdentityServerDemo.Authorization.Users;
 using IdentityServerDemo.Editions;
 using IdentityServerDemo.MultiTenancy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace IdentityServerDemo.Identity

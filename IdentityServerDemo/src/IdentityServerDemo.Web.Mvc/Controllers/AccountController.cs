@@ -275,14 +275,9 @@ namespace IdentityServerDemo.Web.Controllers
                     authSchema = provider
                 });
 
-            return Challenge(
-                new Microsoft.AspNetCore.Http.Authentication.AuthenticationProperties
-                {
-                    Items = { { "LoginProvider", provider } },
-                    RedirectUri = redirectUrl
-                },
-                provider
-            );
+            var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
+
+            return Challenge(properties, provider);
         }
 
         [UnitOfWork]

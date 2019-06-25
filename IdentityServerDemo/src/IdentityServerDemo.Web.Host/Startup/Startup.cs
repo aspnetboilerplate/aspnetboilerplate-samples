@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Swagger;
 using Abp.Extensions;
+using IdentityServerDemo.IdentityServer;
 
 #if FEATURE_SIGNALR
 using Owin;
@@ -45,6 +46,13 @@ namespace IdentityServerDemo.Web.Host.Startup
             });
 
             IdentityRegistrar.Register(services);
+            AuthConfigurer.Configure(services, _appConfiguration);
+
+            //Identity server
+            if (bool.Parse(_appConfiguration["IdentityServer:IsEnabled"]))
+            {
+                IdentityServerRegistrar.Register(services, _appConfiguration);
+            }
 
             //Configure CORS for angular2 UI
             services.AddCors(options =>
@@ -82,7 +90,14 @@ namespace IdentityServerDemo.Web.Host.Startup
 
             app.UseCors(DefaultCorsPolicyName); //Enable CORS!
 
-            AuthConfigurer.Configure(app, _appConfiguration);
+            app.UseAuthentication();
+            app.UseJwtTokenMiddleware();
+
+            if (bool.Parse(_appConfiguration["IdentityServer:IsEnabled"]))
+            {
+                app.UseJwtTokenMiddleware("IdentityBearer");
+                app.UseIdentityServer();
+            }
 
             app.UseStaticFiles();
 

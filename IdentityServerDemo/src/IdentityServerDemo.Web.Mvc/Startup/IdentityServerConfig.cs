@@ -11,6 +11,10 @@ namespace IdentityServerDemo.Web.Startup
             return new List<ApiResource>
             {
                 new ApiResource("default-api", "Default (all) API")
+                {
+                    Description = "AllFunctionalityYouHaveInTheApplication",
+                    ApiSecrets= {new Secret("secret") }
+                }
             };
         }
 
@@ -32,7 +36,7 @@ namespace IdentityServerDemo.Web.Startup
                 new Client
                 {
                     ClientId = "client",
-                    AllowedGrantTypes = GrantTypes.ClientCredentials.Union(GrantTypes.ResourceOwnerPassword),
+                    AllowedGrantTypes = GrantTypes.ClientCredentials.Union(GrantTypes.ResourceOwnerPassword).ToArray(),
                     AllowedScopes = {"default-api"},
                     ClientSecrets =
                     {
