@@ -1,0 +1,69 @@
+DEBUG 2019-07-29 16:13:27,463 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-07-29 16:13:27,489 [1    ] Abp.Modules.AbpModuleManager             - Found 13 ABP modules in total.
+DEBUG 2019-07-29 16:13:27,502 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpWcfDemo.Web.WcfWebModule, AbpWcfDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:13:27,505 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:13:27,505 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:13:27,511 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:13:27,511 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:13:27,511 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpWcfDemo.WcfDataModule, AbpWcfDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:13:27,512 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:13:27,512 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:13:27,512 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpWcfDemo.WcfCoreModule, AbpWcfDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:13:27,512 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpWcfDemo.WcfApplicationModule, AbpWcfDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:13:27,513 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpWcfDemo.WcfWebApiModule, AbpWcfDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:13:27,513 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:13:27,513 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpWcfDemo.WcfSoapModule, AbpWcfDemo.Soap, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:13:27,535 [1    ] Abp.Modules.AbpModuleManager             - 13 modules loaded.
+DEBUG 2019-07-29 16:13:28,260 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: AbpWcfDemo.EntityFramework.WcfDbContext, AbpWcfDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:13:32,303 [1    ] Abp.Localization.LocalizationManager     - Initializing 3 localization sources.
+DEBUG 2019-07-29 16:13:32,417 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-07-29 16:13:32,431 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-07-29 16:13:32,462 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Soap
+DEBUG 2019-07-29 16:13:32,664 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-07-29 16:13:32,701 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'AbpWcfDemo.Events.IEventsAppService' with service name 'app/events'.
+DEBUG 2019-07-29 16:15:14,223 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-07-29 16:15:14,974 [1    ] Abp.Modules.AbpModuleManager             - Found 13 ABP modules in total.
+DEBUG 2019-07-29 16:15:14,983 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpWcfDemo.Web.WcfWebModule, AbpWcfDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:15:14,986 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:15:14,986 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:15:14,986 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:15:14,987 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:15:14,987 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpWcfDemo.WcfDataModule, AbpWcfDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:15:14,987 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:15:14,988 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:15:14,988 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpWcfDemo.WcfCoreModule, AbpWcfDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:15:14,988 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpWcfDemo.WcfApplicationModule, AbpWcfDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:15:14,988 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpWcfDemo.WcfWebApiModule, AbpWcfDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:15:14,989 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:15:14,989 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpWcfDemo.WcfSoapModule, AbpWcfDemo.Soap, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:15:14,994 [1    ] Abp.Modules.AbpModuleManager             - 13 modules loaded.
+DEBUG 2019-07-29 16:15:16,182 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: AbpWcfDemo.EntityFramework.WcfDbContext, AbpWcfDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:15:16,927 [1    ] Abp.Localization.LocalizationManager     - Initializing 3 localization sources.
+DEBUG 2019-07-29 16:15:17,059 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-07-29 16:15:17,070 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-07-29 16:15:17,073 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Soap
+DEBUG 2019-07-29 16:15:17,747 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-07-29 16:15:17,818 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'AbpWcfDemo.Events.IEventsAppService' with service name 'app/events'.
+DEBUG 2019-07-29 16:55:28,579 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-07-29 16:55:28,602 [1    ] Abp.Modules.AbpModuleManager             - Found 13 ABP modules in total.
+DEBUG 2019-07-29 16:55:28,616 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpWcfDemo.Web.WcfWebModule, AbpWcfDemo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:55:28,619 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:55:28,619 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:55:28,619 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:55:28,619 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:55:28,620 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpWcfDemo.WcfDataModule, AbpWcfDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:55:28,620 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:55:28,621 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:55:28,621 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpWcfDemo.WcfCoreModule, AbpWcfDemo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:55:28,621 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpWcfDemo.WcfApplicationModule, AbpWcfDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:55:28,621 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpWcfDemo.WcfWebApiModule, AbpWcfDemo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:55:28,622 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:55:28,622 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AbpWcfDemo.WcfSoapModule, AbpWcfDemo.Soap, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:55:28,627 [1    ] Abp.Modules.AbpModuleManager             - 13 modules loaded.
+DEBUG 2019-07-29 16:55:29,139 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: AbpWcfDemo.EntityFramework.WcfDbContext, AbpWcfDemo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-29 16:55:32,460 [1    ] Abp.Localization.LocalizationManager     - Initializing 3 localization sources.
+DEBUG 2019-07-29 16:55:32,561 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-07-29 16:55:32,578 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-07-29 16:55:32,581 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Soap
+DEBUG 2019-07-29 16:55:32,800 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-07-29 16:55:32,844 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'AbpWcfDemo.Events.IEventsAppService' with service name 'app/events'.

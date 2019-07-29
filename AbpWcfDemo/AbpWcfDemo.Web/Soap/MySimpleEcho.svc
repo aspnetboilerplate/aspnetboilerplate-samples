@@ -1,0 +1,2 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" 
+	Service="AbpWcfDemo.Services.SimpleService" %>

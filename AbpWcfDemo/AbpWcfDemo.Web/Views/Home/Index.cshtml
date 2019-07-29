@@ -1,0 +1,48 @@
+﻿@model AbpWcfDemo.Web.Models.HomePageVM
+
+
+@{
+	ViewBag.ActiveMenu = "Home"; //The menu item will be active for this page.
+}
+
+
+	<div>
+		<h1>@L("WelcomeMessage")!</h1>
+		<p class="lead">@L("Home_ThisIsATemplate")</p>
+		<div class="row">
+			<div class="col-md-4">
+				<h3>ASP.NET MVC</h3>
+				<p>
+					@L("Home_AspNetDescription")
+				</p>
+				<a class="btn btn-primary btn-sm" href="http://asp.net/mvc">@L("LearnMore")..</a>
+			</div>
+			<div class="col-md-4">
+				<h3>ASP.NET Boilerplate</h3>
+				<p>
+					@L("Home_AspNetBoilerplateDescription")
+				</p>
+				<a class="btn btn-primary btn-sm" href="http://aspnetboilerplate.com">@L("LearnMore")..</a>
+			</div>
+			<div class="col-md-4">
+				<h3>@L("Others")</h3>
+				<p>
+					@L("Home_OtherTools")
+				</p>
+			</div>
+		</div>
+
+		<hr />
+
+		<div class="row">
+			<div class="col-md-12">
+				<h3>This is the next event</h3>
+				<dl>
+					<dt>Name</dt>
+					<dd>@Model.NextEvent.Title</dd>
+					<dt>Start</dt>
+					<dd>@Model.NextEvent.Start</dd>
+				</dl>
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<localizationDictionary culture="ja">
+  <texts>
+    <text name="HomePage" value="ホームーページ" />
+    <text name="About" value="About" />
+    <text name="WelcomeMessage" value="ようこそ Soap!へ" />
+    <text name="Home_ThisIsATemplate" value="このプロジェクトテンプレートは、ウェブアプリケーションを開発する出発点です…" />
+    <text name="Home_AspNetDescription" value="ASP.NET MVCは、あなたの関心事の明確な分離を可能にするダイナミックなWebサイトを構築するための強力で、パターンベースの方法を提供し、楽しいアジャイル開発のためのマークアップ上で、あなたは完全に制御することができます" />
+    <text name="Home_AspNetBoilerplateDescription" value="ASP.NETボイラープレートは、最もよい習慣および最もポピュラーなツールで、ウェブベースのアプリケーションを組み立てる枠組である" />
+    <text name="Others" value="その他" />
+    <text name="LearnMore" value="もっと詳しく知る" />
+    <text name="Home_OtherTools" value="ASP.NET Web API、EntityFramework/NHibernate、Castle Windsor、Log4Net、Twitter Bootstrap、jQueryなどの多くの他の枠組／ライブラリ…" />
+    <text name="AboutFormat" value="{0} について" />
+    <text name="About_AspNetBoilerplateDescription" value="ASP.NETボイラープレートは、最もよい習慣および最もポピュラーなツールを持つ新しいウェブアプリケーションのための出発点である！ASP.NETボイラープレートはインフラストラクチャーを提供する for &lt;strong&gt;NLayer architecture&lt;/strong&gt; and &lt;strong&gt;Domain Driven Design&lt;/strong&gt;." />
+    <text name="ForMoreInformation" value="もっと情報を得るには" />
+  </texts>
+</localizationDictionary>
