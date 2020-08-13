@@ -1,0 +1,57 @@
+﻿@using Abp.Configuration.Startup
+@using Abp.Web.Security.AntiForgery
+@using IdentityServervNextDemo
+@using IdentityServervNextDemo.Web.Resources
+@inject IAbpAntiForgeryManager AbpAntiForgeryManager
+@inject IWebResourceManager WebResourceManager
+@inject ILanguageManager LanguageManager
+@inject IMultiTenancyConfig MultiTenancyConfig
+@{
+    Layout = null;
+    AbpAntiForgeryManager.SetCookie(Context);
+
+    var pageTitle = !string.IsNullOrWhiteSpace(ViewBag.Title) ? ViewBag.Title + " / " : "";
+    pageTitle += "IdentityServervNextDemo";
+}
+<!DOCTYPE html>
+<html lang="@LanguageManager.CurrentLanguage.Name">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>@pageTitle</title>
+
+    @await Html.PartialAsync("_Styles.cshtml")
+    @RenderSection("styles", required: false)
+</head>
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="/"><b>IdentityServervNextDemo</b></a>
+        </div>
+        <div class="card">
+            @if (MultiTenancyConfig.IsEnabled)
+            {
+                <div class="card-header">
+                    <vc:tenant-change></vc:tenant-change>
+                </div>
+            }
+            <div class="card-body login-card-body">
+                @RenderBody()
+            </div>
+            <div class="card-footer">
+                <vc:account-languages></vc:account-languages>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <small>&copy; @DateTime.Now.Year IdentityServervNextDemo. <b>Version </b> @AppVersionHelper.Version [@AppVersionHelper.ReleaseDate.ToString("yyyyMMdd")]</small>
+            </div>
+        </div>
+    </div>
+    @await Html.PartialAsync("_Scripts.cshtml")
+    @RenderSection("scripts", required: false)
+    @WebResourceManager.RenderScripts()
+</body>
+</html>
