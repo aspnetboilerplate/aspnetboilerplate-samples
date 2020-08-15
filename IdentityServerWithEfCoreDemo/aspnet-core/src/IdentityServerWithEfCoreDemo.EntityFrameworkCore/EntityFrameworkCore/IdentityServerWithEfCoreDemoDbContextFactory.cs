@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using IdentityServerWithEfCoreDemo.Configuration;
-using IdentityServerWithEfCoreDemo.EntityFrameworkCore.IdentityServer;
 using IdentityServerWithEfCoreDemo.Web;
 
 namespace IdentityServerWithEfCoreDemo.EntityFrameworkCore
@@ -17,10 +16,7 @@ namespace IdentityServerWithEfCoreDemo.EntityFrameworkCore
 
             IdentityServerWithEfCoreDemoDbContextConfigurer.Configure(builder, configuration.GetConnectionString(IdentityServerWithEfCoreDemoConsts.ConnectionStringName));
 
-            return new IdentityServerWithEfCoreDemoDbContext(
-                builder.Options,
-                IdentityServerStoreOptionsProvider.Instance.ConfigurationStoreOptions,
-                IdentityServerStoreOptionsProvider.Instance.OperationalStoreOptions);
+            return new IdentityServerWithEfCoreDemoDbContext(builder.Options);
         }
     }
 }

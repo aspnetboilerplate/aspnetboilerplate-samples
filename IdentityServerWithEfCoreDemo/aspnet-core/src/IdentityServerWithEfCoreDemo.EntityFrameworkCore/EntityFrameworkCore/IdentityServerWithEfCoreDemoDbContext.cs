@@ -6,6 +6,7 @@ using IdentityServer4.EntityFramework.Interfaces;
 using IdentityServer4.EntityFramework.Options;
 using IdentityServerWithEfCoreDemo.Authorization.Roles;
 using IdentityServerWithEfCoreDemo.Authorization.Users;
+using IdentityServerWithEfCoreDemo.EntityFrameworkCore.IdentityServer;
 using IdentityServerWithEfCoreDemo.MultiTenancy;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,42 +18,33 @@ namespace IdentityServerWithEfCoreDemo.EntityFrameworkCore
         IPersistedGrantDbContext
     {
         /* Define a DbSet for each entity of the application */
+
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<IdentityResource> IdentityResources { get; set; }
+        public DbSet<ApiResource> ApiResources { get; set; }
+        public DbSet<PersistedGrant> PersistedGrants { get; set; }
+        public DbSet<DeviceFlowCodes> DeviceFlowCodes { get; set; }
+
         async Task<int> IPersistedGrantDbContext.SaveChangesAsync()
         {
             return await base.SaveChangesAsync();
         }
-
-        public DbSet<PersistedGrant> PersistedGrants { get; set; }
-        public DbSet<DeviceFlowCodes> DeviceFlowCodes { get; set; }
 
         async Task<int> IConfigurationDbContext.SaveChangesAsync()
         {
             return await base.SaveChangesAsync();
         }
 
-        public DbSet<Client> Clients { get; set; }
-        public DbSet<IdentityResource> IdentityResources { get; set; }
-        public DbSet<ApiResource> ApiResources { get; set; }
-
-        protected ConfigurationStoreOptions ConfigurationStoreOptions { get; }
-        protected OperationalStoreOptions OperationalStoreOptions { get; }
-
-        public IdentityServerWithEfCoreDemoDbContext(
-            DbContextOptions<IdentityServerWithEfCoreDemoDbContext> options,
-            ConfigurationStoreOptions configurationStoreOptions,
-            OperationalStoreOptions operationalStoreOptions)
+        public IdentityServerWithEfCoreDemoDbContext(DbContextOptions<IdentityServerWithEfCoreDemoDbContext> options)
             : base(options)
         {
-            ConfigurationStoreOptions = configurationStoreOptions;
-            OperationalStoreOptions = operationalStoreOptions;
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ConfigureClientContext(ConfigurationStoreOptions);
-            modelBuilder.ConfigureResourcesContext(ConfigurationStoreOptions);
-
-            modelBuilder.ConfigurePersistedGrantContext(OperationalStoreOptions);
+            modelBuilder.ConfigureClientContext(IdentityServerStoreOptionsProvider.Instance.ConfigurationStoreOptions);
+            modelBuilder.ConfigureResourcesContext(IdentityServerStoreOptionsProvider.Instance.ConfigurationStoreOptions);
+            modelBuilder.ConfigurePersistedGrantContext(IdentityServerStoreOptionsProvider.Instance.OperationalStoreOptions);
 
             base.OnModelCreating(modelBuilder);
         }
