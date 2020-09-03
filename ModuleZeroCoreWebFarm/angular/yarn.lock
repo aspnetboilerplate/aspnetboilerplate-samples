@@ -662,11 +662,9 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
-bootstrap-select@^1.12.2:
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/bootstrap-select/-/bootstrap-select-1.12.2.tgz#58d095b3fd584b31443866fbe39b6fdd4e4e12a4"
-  dependencies:
-    jquery ">=1.8"
+bootstrap-select@^1.13.6:
+  version "1.13.6"
+  resolved "https://registry.yarnpkg.com/bootstrap-select/-/bootstrap-select-1.13.6.tgz#dc41f8a7385ab4e385562b400d4cf2422f5ef852"
 
 bootstrap@^3.3.7:
   version "3.3.7"
@@ -2946,7 +2944,7 @@ jquery-sparkline@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/jquery-sparkline/-/jquery-sparkline-2.4.0.tgz#1be8b7b704dd3857152708aefb1d4a4b3a69fb33"
 
-"jquery@>= 1.7", jquery@>=1.6.4, jquery@>=1.7.x, jquery@>=1.8, jquery@^3.1.1:
+"jquery@>= 1.7", jquery@>=1.6.4, jquery@>=1.7.x, jquery@^3.1.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
 
