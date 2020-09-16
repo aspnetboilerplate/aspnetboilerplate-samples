@@ -1,0 +1,23 @@
+﻿@using IdentityServerWithEfCoreDemo.Web.Views.Shared.Components.RightNavbarLanguageSwitch
+@model RightNavbarLanguageSwitchViewModel
+
+<li class="nav-item dropdown">
+    <a href="javascript:void(0);" class="nav-link" data-toggle="dropdown" role="button">
+        <i class="@Model.CurrentLanguage.Icon" title="@Model.CurrentLanguage.DisplayName"></i>
+        <span class="d-none d-md-inline-block">@Model.CurrentLanguage.DisplayName</span>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right p-0">
+        @foreach (var languageInfo in Model.Languages)
+        {
+            if (languageInfo.Name != Model.CurrentLanguage.Name)
+            {
+                <a class="dropdown-item" href="@Url.Action("ChangeCulture", "AbpLocalization", new {
+                                                  cultureName = languageInfo.Name,
+                                                  returnUrl = Context.Request.Path + Context.Request.QueryString
+                                              })">
+                    <i class="mr-2 @languageInfo.Icon"></i> @languageInfo.DisplayName
+                </a>
+            }
+        }
+    </div>
+</li>
