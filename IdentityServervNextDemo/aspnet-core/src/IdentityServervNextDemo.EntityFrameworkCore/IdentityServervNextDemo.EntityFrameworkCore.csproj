@@ -28,6 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="D:\Github\volo\aspnetboilerplate\src\Abp.ZeroCore.IdentityServer4.vNext.EntityFrameworkCore\Abp.ZeroCore.IdentityServer4.vNext.EntityFrameworkCore.csproj" />
+    <PackageReference Include="Abp.ZeroCore.IdentityServer4.vNext.EntityFrameworkCore" Version="5.13.0" />
   </ItemGroup>
 </Project>

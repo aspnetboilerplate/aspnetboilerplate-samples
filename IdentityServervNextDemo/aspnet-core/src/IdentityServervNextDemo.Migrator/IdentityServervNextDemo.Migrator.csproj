@@ -15,7 +15,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Abp.Castle.Log4Net" Version="5.10.1" />
+    <PackageReference Include="Abp.Castle.Log4Net" Version="5.13.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IdentityServervNextDemo.Core\IdentityServervNextDemo.Core.csproj" />
