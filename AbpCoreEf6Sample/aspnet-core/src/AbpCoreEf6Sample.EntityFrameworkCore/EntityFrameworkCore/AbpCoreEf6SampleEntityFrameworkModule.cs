@@ -1,7 +1,7 @@
 ﻿using Abp.EntityFrameworkCore.Configuration;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
-using Abp.Zero.EntityFrameworkCore;
+using Abp.Zero.EntityFramework;
 using AbpCoreEf6Sample.EntityFrameworkCore.Seed;
 
 namespace AbpCoreEf6Sample.EntityFrameworkCore

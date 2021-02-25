@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity;
-using Abp.Zero.EntityFrameworkCore;
+using Abp.Zero.EntityFramework;
 using AbpCoreEf6Sample.Authorization.Roles;
 using AbpCoreEf6Sample.Authorization.Users;
 using AbpCoreEf6Sample.MultiTenancy;

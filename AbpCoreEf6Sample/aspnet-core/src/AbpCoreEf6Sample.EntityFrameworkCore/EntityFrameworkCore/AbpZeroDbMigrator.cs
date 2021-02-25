@@ -1,7 +1,7 @@
 ﻿using Abp.Domain.Uow;
 using Abp.EntityFrameworkCore;
 using Abp.MultiTenancy;
-using Abp.Zero.EntityFrameworkCore;
+using Abp.Zero.EntityFramework;
 
 namespace AbpCoreEf6Sample.EntityFrameworkCore
 {
