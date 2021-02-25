@@ -16,8 +16,6 @@ namespace AbpCoreEf6Sample.Migrator
 
         public AbpCoreEf6SampleMigratorModule(AbpCoreEf6SampleEntityFrameworkModule abpProjectNameEntityFrameworkModule)
         {
-            abpProjectNameEntityFrameworkModule.SkipDbSeed = true;
-
             _appConfiguration = AppConfigurations.Get(
                 typeof(AbpCoreEf6SampleMigratorModule).GetAssembly().GetDirectoryPathOrNull()
             );

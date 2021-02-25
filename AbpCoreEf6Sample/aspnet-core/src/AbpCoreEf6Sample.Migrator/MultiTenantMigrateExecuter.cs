@@ -59,7 +59,7 @@ namespace AbpCoreEf6Sample.Migrator
 
             try
             {
-                _migrator.CreateOrMigrateForHost(SeedHelper.SeedHostDb);
+                _migrator.CreateOrMigrateForHost();
             }
             catch (Exception ex)
             {
