@@ -30,7 +30,7 @@ namespace AbpCoreEf6Sample.EntityFrameworkCore.Seed.Host
         {
             // Admin role for host
 
-            var adminRoleForHost = _context.Roles.IgnoreQueryFilters().FirstOrDefault(r => r.TenantId == null && r.Name == StaticRoleNames.Host.Admin);
+            var adminRoleForHost = _context.Roles.FirstOrDefault(r => r.TenantId == null && r.Name == StaticRoleNames.Host.Admin);
             if (adminRoleForHost == null)
             {
                 adminRoleForHost = _context.Roles.Add(new Role(null, StaticRoleNames.Host.Admin, StaticRoleNames.Host.Admin) { IsStatic = true, IsDefault = true }).Entity;
@@ -39,7 +39,7 @@ namespace AbpCoreEf6Sample.EntityFrameworkCore.Seed.Host
 
             // Grant all permissions to admin role for host
 
-            var grantedPermissions = _context.Permissions.IgnoreQueryFilters()
+            var grantedPermissions = _context.Permissions
                 .OfType<RolePermissionSetting>()
                 .Where(p => p.TenantId == null && p.RoleId == adminRoleForHost.Id)
                 .Select(p => p.Name)
@@ -67,7 +67,7 @@ namespace AbpCoreEf6Sample.EntityFrameworkCore.Seed.Host
 
             // Admin user for host
 
-            var adminUserForHost = _context.Users.IgnoreQueryFilters().FirstOrDefault(u => u.TenantId == null && u.UserName == AbpUserBase.AdminUserName);
+            var adminUserForHost = _context.Users.FirstOrDefault(u => u.TenantId == null && u.UserName == AbpUserBase.AdminUserName);
             if (adminUserForHost == null)
             {
                 var user = new User

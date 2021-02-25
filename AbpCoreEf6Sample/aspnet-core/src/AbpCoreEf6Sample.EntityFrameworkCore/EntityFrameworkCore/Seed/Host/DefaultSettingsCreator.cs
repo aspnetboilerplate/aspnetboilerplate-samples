@@ -35,7 +35,7 @@ namespace AbpCoreEf6Sample.EntityFrameworkCore.Seed.Host
 
         private void AddSettingIfNotExists(string name, string value, int? tenantId = null)
         {
-            if (_context.Settings.IgnoreQueryFilters().Any(s => s.Name == name && s.TenantId == tenantId && s.UserId == null))
+            if (_context.Settings.Any(s => s.Name == name && s.TenantId == tenantId && s.UserId == null))
             {
                 return;
             }
