@@ -33,7 +33,7 @@ namespace AbpCoreEf6Sample.EntityFrameworkCore.Seed.Host
             var adminRoleForHost = _context.Roles.FirstOrDefault(r => r.TenantId == null && r.Name == StaticRoleNames.Host.Admin);
             if (adminRoleForHost == null)
             {
-                adminRoleForHost = _context.Roles.Add(new Role(null, StaticRoleNames.Host.Admin, StaticRoleNames.Host.Admin) { IsStatic = true, IsDefault = true }).Entity;
+                adminRoleForHost = _context.Roles.Add(new Role(null, StaticRoleNames.Host.Admin, StaticRoleNames.Host.Admin) { IsStatic = true, IsDefault = true });
                 _context.SaveChanges();
             }
 
@@ -84,7 +84,7 @@ namespace AbpCoreEf6Sample.EntityFrameworkCore.Seed.Host
                 user.Password = new PasswordHasher<User>(new OptionsWrapper<PasswordHasherOptions>(new PasswordHasherOptions())).HashPassword(user, "123qwe");
                 user.SetNormalizedNames();
 
-                adminUserForHost = _context.Users.Add(user).Entity;
+                adminUserForHost = _context.Users.Add(user);
                 _context.SaveChanges();
 
                 // Assign Admin role to admin user
