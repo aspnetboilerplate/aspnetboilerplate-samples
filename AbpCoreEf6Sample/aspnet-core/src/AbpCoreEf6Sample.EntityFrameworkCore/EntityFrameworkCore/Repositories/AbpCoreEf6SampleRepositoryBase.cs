@@ -1,7 +1,7 @@
 ﻿using Abp.Domain.Entities;
 using Abp.Domain.Repositories;
-using Abp.EntityFrameworkCore;
-using Abp.EntityFrameworkCore.Repositories;
+using Abp.EntityFramework;
+using Abp.EntityFramework.Repositories;
 
 namespace AbpCoreEf6Sample.EntityFrameworkCore.Repositories
 {
@@ -10,7 +10,7 @@ namespace AbpCoreEf6Sample.EntityFrameworkCore.Repositories
     /// </summary>
     /// <typeparam name="TEntity">Entity type</typeparam>
     /// <typeparam name="TPrimaryKey">Primary key type of the entity</typeparam>
-    public abstract class AbpCoreEf6SampleRepositoryBase<TEntity, TPrimaryKey> : EfCoreRepositoryBase<AbpCoreEf6SampleDbContext, TEntity, TPrimaryKey>
+    public abstract class AbpCoreEf6SampleRepositoryBase<TEntity, TPrimaryKey> : EfRepositoryBase<AbpCoreEf6SampleDbContext, TEntity, TPrimaryKey>
         where TEntity : class, IEntity<TPrimaryKey>
     {
         protected AbpCoreEf6SampleRepositoryBase(IDbContextProvider<AbpCoreEf6SampleDbContext> dbContextProvider)
