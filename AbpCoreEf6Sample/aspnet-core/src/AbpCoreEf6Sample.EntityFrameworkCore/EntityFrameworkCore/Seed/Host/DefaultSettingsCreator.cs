@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Microsoft.EntityFrameworkCore;
+using System.Data.Entity;
 using Abp.Configuration;
 using Abp.Localization;
 using Abp.MultiTenancy;

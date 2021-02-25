@@ -1,5 +1,5 @@
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
+using System.Data.Entity;
 using Abp.Authorization;
 using Abp.Authorization.Roles;
 using Abp.Authorization.Users;

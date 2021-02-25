@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Transactions;
-using Microsoft.EntityFrameworkCore;
+using System.Data.Entity;
 using Abp.Dependency;
 using Abp.Domain.Uow;
 using Abp.EntityFrameworkCore.Uow;

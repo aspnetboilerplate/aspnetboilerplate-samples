@@ -13,7 +13,7 @@ using AbpCoreEf6Sample.Authorization.Roles;
 using AbpCoreEf6Sample.Authorization.Users;
 using AbpCoreEf6Sample.Roles.Dto;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+using System.Data.Entity;
 
 namespace AbpCoreEf6Sample.Roles
 {

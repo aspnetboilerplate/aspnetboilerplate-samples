@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+using System.Data.Entity;
 using Shouldly;
 using Xunit;
 using Abp.Application.Services.Dto;

@@ -1,5 +1,5 @@
 using System.Data.Common;
-using Microsoft.EntityFrameworkCore;
+using System.Data.Entity;
 
 namespace AbpCoreEf6Sample.EntityFrameworkCore
 {

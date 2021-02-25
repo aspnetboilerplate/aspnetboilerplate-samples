@@ -1,5 +1,5 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore;
+using System.Data.Entity;
 using Microsoft.Extensions.DependencyInjection;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor.MsDependencyInjection;

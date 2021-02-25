@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Microsoft.EntityFrameworkCore;
+using System.Data.Entity;
 using Abp.MultiTenancy;
 using AbpCoreEf6Sample.Editions;
 using AbpCoreEf6Sample.MultiTenancy;

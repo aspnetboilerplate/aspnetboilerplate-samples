@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+using System.Data.Entity;
 using Microsoft.Extensions.Options;
 using Abp.Authorization;
 using Abp.Authorization.Roles;

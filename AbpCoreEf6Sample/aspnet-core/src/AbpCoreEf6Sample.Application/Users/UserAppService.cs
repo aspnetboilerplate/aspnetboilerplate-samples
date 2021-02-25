@@ -20,7 +20,7 @@ using AbpCoreEf6Sample.Authorization.Users;
 using AbpCoreEf6Sample.Roles.Dto;
 using AbpCoreEf6Sample.Users.Dto;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+using System.Data.Entity;
 
 namespace AbpCoreEf6Sample.Users
 {

@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Data.Entity;
 using Abp.Zero.EntityFrameworkCore;
 using AbpCoreEf6Sample.Authorization.Roles;
 using AbpCoreEf6Sample.Authorization.Users;

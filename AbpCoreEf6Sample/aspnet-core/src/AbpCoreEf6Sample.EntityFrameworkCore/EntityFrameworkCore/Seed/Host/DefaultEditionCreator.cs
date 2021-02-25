@@ -1,5 +1,5 @@
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
+using System.Data.Entity;
 using Abp.Application.Editions;
 using Abp.Application.Features;
 using AbpCoreEf6Sample.Editions;

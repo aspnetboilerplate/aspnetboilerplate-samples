@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+using System.Data.Entity;
 using Abp;
 using Abp.Authorization.Users;
 using Abp.Events.Bus;
