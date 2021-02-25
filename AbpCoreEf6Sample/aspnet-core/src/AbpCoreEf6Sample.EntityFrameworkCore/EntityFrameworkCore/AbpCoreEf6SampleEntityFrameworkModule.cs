@@ -10,10 +10,14 @@ namespace AbpCoreEf6Sample.EntityFrameworkCore
         typeof(AbpZeroCoreEntityFrameworkModule))]
     public class AbpCoreEf6SampleEntityFrameworkModule : AbpModule
     {
- 
+        public bool SkipSetInitializer = false;
+
         public override void PreInitialize()
         {
-            Database.SetInitializer(new CreateDatabaseIfNotExists<AbpCoreEf6SampleDbContext>());
+            if (!SkipSetInitializer)
+            {
+                Database.SetInitializer(new CreateDatabaseIfNotExists<AbpCoreEf6SampleDbContext>());
+            }
 
             Configuration.DefaultNameOrConnectionString = "Default";
         }

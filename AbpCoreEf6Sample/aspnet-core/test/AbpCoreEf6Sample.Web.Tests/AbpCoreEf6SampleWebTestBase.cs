@@ -12,6 +12,7 @@ using Abp.Json;
 using Abp.MultiTenancy;
 using Abp.Web.Models;
 using AbpCoreEf6Sample.EntityFrameworkCore;
+using AbpCoreEf6Sample.EntityFrameworkCore.Seed;
 using AbpCoreEf6Sample.Models.TokenAuth;
 using AbpCoreEf6Sample.Web.Startup;
 using AngleSharp.Html.Dom;
@@ -31,7 +32,15 @@ namespace AbpCoreEf6Sample.Web.Tests
         {
             ContentRootFolder = new Lazy<string>(WebContentDirectoryFinder.CalculateContentRootFolder, true);
         }
-        
+
+        public AbpCoreEf6SampleWebTestBase()
+        {
+            UsingDbContext(context =>
+            {
+                SeedHelper.SeedHostDb(context);
+            });
+        }
+
         protected override IWebHostBuilder CreateWebHostBuilder()
         {
             return base
@@ -81,7 +90,7 @@ namespace AbpCoreEf6Sample.Web.Tests
         protected async Task AuthenticateAsync(string tenancyName, AuthenticateModel input)
         {
             if (tenancyName.IsNullOrWhiteSpace())
-            { 
+            {
                 var tenant = UsingDbContext(context => context.Tenants.FirstOrDefault(t => t.TenancyName == tenancyName));
                 if (tenant != null)
                 {
@@ -185,7 +194,7 @@ namespace AbpCoreEf6Sample.Web.Tests
             using (var context = IocManager.Resolve<AbpCoreEf6SampleDbContext>())
             {
                 await action(context);
-                await context.SaveChangesAsync(true);
+                await context.SaveChangesAsync();
             }
         }
 
@@ -196,7 +205,7 @@ namespace AbpCoreEf6Sample.Web.Tests
             using (var context = IocManager.Resolve<AbpCoreEf6SampleDbContext>())
             {
                 result = await func(context);
-                await context.SaveChangesAsync(true);
+                await context.SaveChangesAsync();
             }
 
             return result;

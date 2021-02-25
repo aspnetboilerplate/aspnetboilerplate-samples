@@ -4,17 +4,17 @@ using Abp.AspNetCore.TestBase;
 using Abp.Dependency;
 using AbpCoreEf6Sample.Authentication.JwtBearer;
 using AbpCoreEf6Sample.Configuration;
-using AbpCoreEf6Sample.EntityFrameworkCore;
 using AbpCoreEf6Sample.Identity;
 using AbpCoreEf6Sample.Web.Resources;
 using AbpCoreEf6Sample.Web.Startup;
 using Castle.MicroKernel.Registration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using System.Data.Entity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Effort;
+using System.Data.Common;
 
 namespace AbpCoreEf6Sample.Web.Tests
 {
@@ -29,8 +29,6 @@ namespace AbpCoreEf6Sample.Web.Tests
 
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            services.AddEntityFrameworkInMemoryDatabase();
-
             services.AddMvc();
             
             IdentityRegistrar.Register(services);
@@ -70,17 +68,14 @@ namespace AbpCoreEf6Sample.Web.Tests
 
         private void UseInMemoryDb(IServiceProvider serviceProvider)
         {
-            var builder = new DbContextOptionsBuilder<AbpCoreEf6SampleDbContext>();
-            builder.UseInMemoryDatabase(Guid.NewGuid().ToString()).UseInternalServiceProvider(serviceProvider);
-            var options = builder.Options;
-
+            var _hostDb = DbConnectionFactory.CreateTransient();
             var iocManager = serviceProvider.GetRequiredService<IIocManager>();
-            iocManager.IocContainer
-                .Register(
-                    Component.For<DbContextOptions<AbpCoreEf6SampleDbContext>>()
-                        .Instance(options)
-                        .LifestyleSingleton()
-                );
+
+            iocManager.IocContainer.Register(
+               Component.For<DbConnection>()
+                   .UsingFactoryMethod(() => _hostDb)
+                   .LifestyleSingleton()
+               );
         }
     }
 }

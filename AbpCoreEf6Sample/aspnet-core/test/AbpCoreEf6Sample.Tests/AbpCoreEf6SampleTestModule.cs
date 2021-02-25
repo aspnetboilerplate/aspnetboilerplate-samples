@@ -21,10 +21,9 @@ namespace AbpCoreEf6Sample.Tests
         )]
     public class AbpCoreEf6SampleTestModule : AbpModule
     {
-        public AbpCoreEf6SampleTestModule(AbpCoreEf6SampleEntityFrameworkModule abpProjectNameEntityFrameworkModule)
+        public AbpCoreEf6SampleTestModule(AbpCoreEf6SampleEntityFrameworkModule abpCoreEf6SampleEntityFrameworkModule)
         {
-            abpProjectNameEntityFrameworkModule.SkipDbContextRegistration = true;
-            abpProjectNameEntityFrameworkModule.SkipDbSeed = true;
+            abpCoreEf6SampleEntityFrameworkModule.SkipSetInitializer = true;
         }
 
         public override void PreInitialize()
@@ -40,7 +39,7 @@ namespace AbpCoreEf6Sample.Tests
             // Use database for language management
             Configuration.Modules.Zero().LanguageManagement.EnableDbLocalization();
 
-            RegisterFakeService<AbpZeroDbMigrator<AbpCoreEf6SampleDbContext>>();
+            RegisterFakeService<AbpZeroDbMigrator<AbpCoreEf6SampleDbContext, AbpCoreEf6SampleDbContextConfiguration>>();
 
             Configuration.ReplaceService<IEmailSender, NullEmailSender>(DependencyLifeStyle.Transient);
         }

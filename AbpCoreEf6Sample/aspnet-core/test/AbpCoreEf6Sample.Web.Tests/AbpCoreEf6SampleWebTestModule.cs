@@ -14,11 +14,11 @@ namespace AbpCoreEf6Sample.Web.Tests
     )]
     public class AbpCoreEf6SampleWebTestModule : AbpModule
     {
-        public AbpCoreEf6SampleWebTestModule(AbpCoreEf6SampleEntityFrameworkModule abpProjectNameEntityFrameworkModule)
+        public AbpCoreEf6SampleWebTestModule(AbpCoreEf6SampleEntityFrameworkModule abpCoreEf6SampleEntityFrameworkModule)
         {
-            abpProjectNameEntityFrameworkModule.SkipDbContextRegistration = true;
-        } 
-        
+            abpCoreEf6SampleEntityFrameworkModule.SkipSetInitializer = true;
+        }
+
         public override void PreInitialize()
         {
             Configuration.UnitOfWork.IsTransactional = false; //EF Core InMemory DB does not support transactions.

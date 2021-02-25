@@ -1,11 +1,10 @@
-﻿using System;
-using System.Data.Entity;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor.MsDependencyInjection;
 using Abp.Dependency;
-using AbpCoreEf6Sample.EntityFrameworkCore;
 using AbpCoreEf6Sample.Identity;
+using Effort;
+using System.Data.Common;
 
 namespace AbpCoreEf6Sample.Tests.DependencyInjection
 {
@@ -17,19 +16,15 @@ namespace AbpCoreEf6Sample.Tests.DependencyInjection
 
             IdentityRegistrar.Register(services);
 
-            services.AddEntityFrameworkInMemoryDatabase();
-
             var serviceProvider = WindsorRegistrationHelper.CreateServiceProvider(iocManager.IocContainer, services);
 
-            var builder = new DbContextOptionsBuilder<AbpCoreEf6SampleDbContext>();
-            builder.UseInMemoryDatabase(Guid.NewGuid().ToString()).UseInternalServiceProvider(serviceProvider);
+            var _hostDb = DbConnectionFactory.CreateTransient();
 
             iocManager.IocContainer.Register(
-                Component
-                    .For<DbContextOptions<AbpCoreEf6SampleDbContext>>()
-                    .Instance(builder.Options)
-                    .LifestyleSingleton()
-            );
+               Component.For<DbConnection>()
+                   .UsingFactoryMethod(() => _hostDb)
+                   .LifestyleSingleton()
+               );
         }
     }
 }
