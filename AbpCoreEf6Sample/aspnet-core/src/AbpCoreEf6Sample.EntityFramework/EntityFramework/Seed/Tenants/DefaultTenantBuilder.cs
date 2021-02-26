@@ -1,10 +1,9 @@
 ﻿using System.Linq;
-using System.Data.Entity;
 using Abp.MultiTenancy;
 using AbpCoreEf6Sample.Editions;
 using AbpCoreEf6Sample.MultiTenancy;
 
-namespace AbpCoreEf6Sample.EntityFrameworkCore.Seed.Tenants
+namespace AbpCoreEf6Sample.EntityFramework.Seed.Tenants
 {
     public class DefaultTenantBuilder
     {

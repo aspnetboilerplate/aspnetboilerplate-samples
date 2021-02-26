@@ -10,9 +10,9 @@ using Abp.MultiTenancy;
 using Abp.Runtime.Session;
 using Abp.TestBase;
 using AbpCoreEf6Sample.Authorization.Users;
-using AbpCoreEf6Sample.EntityFrameworkCore;
-using AbpCoreEf6Sample.EntityFrameworkCore.Seed.Host;
-using AbpCoreEf6Sample.EntityFrameworkCore.Seed.Tenants;
+using AbpCoreEf6Sample.EntityFramework;
+using AbpCoreEf6Sample.EntityFramework.Seed.Host;
+using AbpCoreEf6Sample.EntityFramework.Seed.Tenants;
 using AbpCoreEf6Sample.MultiTenancy;
 
 namespace AbpCoreEf6Sample.Tests

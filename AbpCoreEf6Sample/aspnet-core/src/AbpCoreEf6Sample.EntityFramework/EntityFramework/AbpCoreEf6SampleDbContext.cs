@@ -6,7 +6,7 @@ using AbpCoreEf6Sample.Authorization.Roles;
 using AbpCoreEf6Sample.Authorization.Users;
 using AbpCoreEf6Sample.MultiTenancy;
 
-namespace AbpCoreEf6Sample.EntityFrameworkCore
+namespace AbpCoreEf6Sample.EntityFramework
 {
     public class AbpCoreEf6SampleDbContext : AbpZeroDbContext<Tenant, Role, User, AbpCoreEf6SampleDbContext>
     {

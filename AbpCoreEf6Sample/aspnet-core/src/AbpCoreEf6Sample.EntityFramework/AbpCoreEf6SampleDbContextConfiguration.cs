@@ -1,9 +1,9 @@
 ﻿using Abp.MultiTenancy;
 using Abp.Zero.EntityFramework;
-using AbpCoreEf6Sample.EntityFrameworkCore;
-using AbpCoreEf6Sample.EntityFrameworkCore.Seed;
 using EntityFramework.DynamicFilters;
 using System.Data.Entity.Migrations;
+using AbpCoreEf6Sample.EntityFramework;
+using AbpCoreEf6Sample.EntityFramework.Seed;
 
 namespace AbpCoreEf6Sample
 {

@@ -8,8 +8,7 @@ using Abp.Domain.Uow;
 using Abp.Extensions;
 using Abp.MultiTenancy;
 using Abp.Runtime.Security;
-using AbpCoreEf6Sample.EntityFrameworkCore;
-using AbpCoreEf6Sample.EntityFrameworkCore.Seed;
+using AbpCoreEf6Sample.EntityFramework;
 using AbpCoreEf6Sample.MultiTenancy;
 
 namespace AbpCoreEf6Sample.Migrator

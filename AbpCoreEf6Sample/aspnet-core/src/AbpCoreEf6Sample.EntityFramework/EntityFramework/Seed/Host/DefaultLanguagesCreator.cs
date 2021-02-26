@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Data.Entity;
 using Abp.Localization;
 using Abp.MultiTenancy;
 
-namespace AbpCoreEf6Sample.EntityFrameworkCore.Seed.Host
+namespace AbpCoreEf6Sample.EntityFramework.Seed.Host
 {
     public class DefaultLanguagesCreator
     {

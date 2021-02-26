@@ -4,7 +4,7 @@ using Abp.Events.Bus;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 using AbpCoreEf6Sample.Configuration;
-using AbpCoreEf6Sample.EntityFrameworkCore;
+using AbpCoreEf6Sample.EntityFramework;
 using AbpCoreEf6Sample.Migrator.DependencyInjection;
 
 namespace AbpCoreEf6Sample.Migrator

@@ -19,7 +19,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\AbpCoreEf6Sample.Application\AbpCoreEf6Sample.Application.csproj" />
-    <ProjectReference Include="..\AbpCoreEf6Sample.EntityFrameworkCore\AbpCoreEf6Sample.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\AbpCoreEf6Sample.EntityFramework\AbpCoreEf6Sample.EntityFramework.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.0" />

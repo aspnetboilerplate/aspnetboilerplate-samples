@@ -1,7 +1,7 @@
-﻿using AbpCoreEf6Sample.EntityFrameworkCore.Seed.Host;
-using AbpCoreEf6Sample.EntityFrameworkCore.Seed.Tenants;
+﻿using AbpCoreEf6Sample.EntityFramework.Seed.Host;
+using AbpCoreEf6Sample.EntityFramework.Seed.Tenants;
 
-namespace AbpCoreEf6Sample.EntityFrameworkCore.Seed
+namespace AbpCoreEf6Sample.EntityFramework.Seed
 {
     public static class SeedHelper
     {

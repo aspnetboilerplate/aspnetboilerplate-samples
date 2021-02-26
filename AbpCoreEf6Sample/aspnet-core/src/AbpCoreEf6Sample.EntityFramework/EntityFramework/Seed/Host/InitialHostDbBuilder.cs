@@ -1,4 +1,4 @@
-﻿namespace AbpCoreEf6Sample.EntityFrameworkCore.Seed.Host
+﻿namespace AbpCoreEf6Sample.EntityFramework.Seed.Host
 {
     public class InitialHostDbBuilder
     {

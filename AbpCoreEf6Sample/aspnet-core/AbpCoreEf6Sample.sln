@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbpCoreEf6Sample.Web.Core",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbpCoreEf6Sample.Web.Mvc", "src\AbpCoreEf6Sample.Web.Mvc\AbpCoreEf6Sample.Web.Mvc.csproj", "{A2213374-BB48-48FD-BBD4-81E6A961D866}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbpCoreEf6Sample.EntityFrameworkCore", "src\AbpCoreEf6Sample.EntityFrameworkCore\AbpCoreEf6Sample.EntityFrameworkCore.csproj", "{E0580562-F8F2-4EBB-B07A-ABFC6F2C314F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbpCoreEf6Sample.EntityFramework", "src\AbpCoreEf6Sample.EntityFramework\AbpCoreEf6Sample.EntityFramework.csproj", "{E0580562-F8F2-4EBB-B07A-ABFC6F2C314F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbpCoreEf6Sample.Web.Tests", "test\AbpCoreEf6Sample.Web.Tests\AbpCoreEf6Sample.Web.Tests.csproj", "{CA86CF6F-5D9E-4DAC-9CCB-0F87B519E087}"
 EndProject

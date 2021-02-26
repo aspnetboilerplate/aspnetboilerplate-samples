@@ -6,6 +6,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <AssemblyName>AbpCoreEf6Sample.EntityFramework</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Migrations\20180726102624_Upgrade_ABP_380.cs" />
@@ -17,5 +18,8 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AbpCoreEf6Sample.Core\AbpCoreEf6Sample.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Migrations" />
   </ItemGroup>
 </Project>

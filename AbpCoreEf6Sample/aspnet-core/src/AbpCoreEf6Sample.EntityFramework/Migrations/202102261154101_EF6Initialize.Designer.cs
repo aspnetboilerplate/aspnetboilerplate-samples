@@ -13,7 +13,7 @@ namespace AbpCoreEf6Sample
         
         string IMigrationMetadata.Id
         {
-            get { return "202102251308360_EF6Initialize"; }
+            get { return "202102261154101_EF6Initialize"; }
         }
         
         string IMigrationMetadata.Source

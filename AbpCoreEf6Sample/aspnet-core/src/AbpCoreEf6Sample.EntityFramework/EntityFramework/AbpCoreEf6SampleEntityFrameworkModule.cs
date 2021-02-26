@@ -1,9 +1,9 @@
-﻿using Abp.Modules;
+﻿using System.Data.Entity;
+using Abp.Modules;
 using Abp.Reflection.Extensions;
 using Abp.Zero.EntityFramework;
-using System.Data.Entity;
 
-namespace AbpCoreEf6Sample.EntityFrameworkCore
+namespace AbpCoreEf6Sample.EntityFramework
 {
     [DependsOn(
         typeof(AbpCoreEf6SampleCoreModule), 

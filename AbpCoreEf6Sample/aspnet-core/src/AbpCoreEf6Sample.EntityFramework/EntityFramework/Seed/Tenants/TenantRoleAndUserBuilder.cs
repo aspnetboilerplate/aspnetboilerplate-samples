@@ -1,7 +1,4 @@
 ﻿using System.Linq;
-using Microsoft.AspNetCore.Identity;
-using System.Data.Entity;
-using Microsoft.Extensions.Options;
 using Abp.Authorization;
 using Abp.Authorization.Roles;
 using Abp.Authorization.Users;
@@ -9,8 +6,10 @@ using Abp.MultiTenancy;
 using AbpCoreEf6Sample.Authorization;
 using AbpCoreEf6Sample.Authorization.Roles;
 using AbpCoreEf6Sample.Authorization.Users;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
 
-namespace AbpCoreEf6Sample.EntityFrameworkCore.Seed.Tenants
+namespace AbpCoreEf6Sample.EntityFramework.Seed.Tenants
 {
     public class TenantRoleAndUserBuilder
     {

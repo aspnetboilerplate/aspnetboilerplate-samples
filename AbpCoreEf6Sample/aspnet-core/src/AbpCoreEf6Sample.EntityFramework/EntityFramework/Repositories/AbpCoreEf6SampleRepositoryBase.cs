@@ -3,7 +3,7 @@ using Abp.Domain.Repositories;
 using Abp.EntityFramework;
 using Abp.EntityFramework.Repositories;
 
-namespace AbpCoreEf6Sample.EntityFrameworkCore.Repositories
+namespace AbpCoreEf6Sample.EntityFramework.Repositories
 {
     /// <summary>
     /// Base class for custom repositories of the application.

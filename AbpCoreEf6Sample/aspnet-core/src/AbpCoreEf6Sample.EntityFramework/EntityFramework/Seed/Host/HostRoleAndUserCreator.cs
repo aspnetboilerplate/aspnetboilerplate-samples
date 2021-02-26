@@ -1,5 +1,4 @@
 using System.Linq;
-using System.Data.Entity;
 using Abp.Authorization;
 using Abp.Authorization.Roles;
 using Abp.Authorization.Users;
@@ -10,7 +9,7 @@ using AbpCoreEf6Sample.Authorization.Users;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 
-namespace AbpCoreEf6Sample.EntityFrameworkCore.Seed.Host
+namespace AbpCoreEf6Sample.EntityFramework.Seed.Host
 {
     public class HostRoleAndUserCreator
     {

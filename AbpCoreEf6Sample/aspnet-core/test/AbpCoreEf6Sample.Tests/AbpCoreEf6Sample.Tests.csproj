@@ -12,7 +12,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\AbpCoreEf6Sample.Application\AbpCoreEf6Sample.Application.csproj" />
-    <ProjectReference Include="..\..\src\AbpCoreEf6Sample.EntityFrameworkCore\AbpCoreEf6Sample.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\src\AbpCoreEf6Sample.EntityFramework\AbpCoreEf6Sample.EntityFramework.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Effort.EF6" Version="2.2.12" />

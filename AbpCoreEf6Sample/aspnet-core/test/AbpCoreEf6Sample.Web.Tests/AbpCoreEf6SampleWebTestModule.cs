@@ -2,7 +2,7 @@
 using Abp.AspNetCore.TestBase;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
-using AbpCoreEf6Sample.EntityFrameworkCore;
+using AbpCoreEf6Sample.EntityFramework;
 using AbpCoreEf6Sample.Web.Startup;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 

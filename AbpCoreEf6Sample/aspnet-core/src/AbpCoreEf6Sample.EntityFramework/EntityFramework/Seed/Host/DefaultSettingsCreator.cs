@@ -1,11 +1,10 @@
 ﻿using System.Linq;
-using System.Data.Entity;
 using Abp.Configuration;
 using Abp.Localization;
 using Abp.MultiTenancy;
 using Abp.Net.Mail;
 
-namespace AbpCoreEf6Sample.EntityFrameworkCore.Seed.Host
+namespace AbpCoreEf6Sample.EntityFramework.Seed.Host
 {
     public class DefaultSettingsCreator
     {

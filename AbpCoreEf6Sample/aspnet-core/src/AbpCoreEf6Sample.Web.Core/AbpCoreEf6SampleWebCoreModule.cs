@@ -11,7 +11,7 @@ using Abp.Reflection.Extensions;
 using Abp.Zero.Configuration;
 using AbpCoreEf6Sample.Authentication.JwtBearer;
 using AbpCoreEf6Sample.Configuration;
-using AbpCoreEf6Sample.EntityFrameworkCore;
+using AbpCoreEf6Sample.EntityFramework;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 
 namespace AbpCoreEf6Sample
