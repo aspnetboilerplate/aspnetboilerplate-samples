@@ -1,37 +1,9 @@
-# Important
+# Using MassTransit with RabbitMQ in ASP.NET Boilerplate
 
-Issues of this repository are tracked on https://github.com/aspnetboilerplate/aspnetboilerplate. Please create your issues on https://github.com/aspnetboilerplate/aspnetboilerplate/issues.
+In order to test this project, follow the steps below;
 
-# Introduction
-
-This is a template to create **ASP.NET Core MVC / Angular** based startup projects for [ASP.NET Boilerplate](https://aspnetboilerplate.com/Pages/Documents). It has 2 different versions:
-
-1. [ASP.NET Core MVC & jQuery](https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Core) (server rendered multi-page application).
-2. [ASP.NET Core & Angular](https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Angular) (single page application).
- 
-User Interface is based on [AdminLTE theme](https://github.com/ColorlibHQ/AdminLTE).
- 
-# Download
-
-Create & download your project from https://aspnetboilerplate.com/Templates
-
-# Screenshots
-
-#### Sample Dashboard Page
-![](_screenshots/module-zero-core-template-ui-home.png)
-
-#### User Creation Modal
-![](_screenshots/module-zero-core-template-ui-user-create-modal.png)
-
-#### Login Page
-
-![](_screenshots/module-zero-core-template-ui-login.png)
-
-# Documentation
-
-* [ASP.NET Core MVC & jQuery version.](https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Core)
-* [ASP.NET Core & Angular  version.](https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Angular)
-
-# License
-
-[MIT](LICENSE).
+1. Install RabbitMQ, see [https://www.rabbitmq.com/install-windows.html](https://www.rabbitmq.com/install-windows.html)
+2. Follow the [Getting Started document](https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Core) to create the database and run the project.
+3. Run the Publisher app.
+4. Run the MVC app.
+5. Send messages via Publisher app using the /swagger endpoint.
