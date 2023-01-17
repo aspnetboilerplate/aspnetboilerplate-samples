@@ -120,3 +120,4 @@ PlugInDemo/PlugInDemo.Web/App_Data/Logs/Logs.txt
 PostgreSqlDemo/aspnet-core/src/Volo.PostgreSqlDemo.Web.Mvc/App_Data/Logs/Logs.txt
 
 IdentityServervNextDemo/aspnet-core/src/IdentityServervNextDemo.Web.Mvc/App_Data/Logs/Logs.txt
+MassTransitSample/aspnet-core/src/MassTransitSample.Web.Mvc/App_Data/Logs/Logs.txt
