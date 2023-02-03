@@ -1,0 +1,15 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using Abp.AspNetCore.Mvc.Authorization;
+using AbpCoreEf7JsonColumnDemo.Controllers;
+
+namespace AbpCoreEf7JsonColumnDemo.Web.Controllers
+{
+    [AbpMvcAuthorize]
+    public class AboutController : AbpCoreEf7JsonColumnDemoControllerBase
+    {
+        public ActionResult Index()
+        {
+            return View();
+        }
+	}
+}
