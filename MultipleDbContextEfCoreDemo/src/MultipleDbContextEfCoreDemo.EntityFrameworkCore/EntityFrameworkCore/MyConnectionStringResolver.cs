@@ -25,9 +25,9 @@ public class MyConnectionStringResolver : DefaultConnectionStringResolver
 
     public override string GetNameOrConnectionString(ConnectionStringResolveArgs args)
     {
-        if (args["DbContextConcreteType"] as Type == typeof(PlaygroundSecondDbContext))
+        if (args["DbContextConcreteType"] as Type == typeof(MultipleDbContextEfCoreDemoSecondDbContext))
         {
-            return _appConfiguration.GetConnectionString(PlaygroundConsts.SecondDbConnectionStringName);
+            return _appConfiguration.GetConnectionString(MultipleDbContextEfCoreDemoConsts.SecondDbConnectionStringName);
         }
 
         return base.GetNameOrConnectionString(args);
