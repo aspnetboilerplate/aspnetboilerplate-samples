@@ -94,7 +94,6 @@ namespace AbpCoreEf7JsonColumnDemo.MultiTenancy
         protected override IQueryable<Tenant> CreateFilteredQuery(PagedTenantResultRequestDto input)
         {
             return Repository.GetAll()
-                .Where(t=>string.IsNullOrEmpty(t.Metadata.LogoId))
                 .WhereIf(!input.Keyword.IsNullOrWhiteSpace(), x => x.TenancyName.Contains(input.Keyword) || x.Name.Contains(input.Keyword))
                 .WhereIf(input.IsActive.HasValue, x => x.IsActive == input.IsActive);
         }
@@ -105,6 +104,7 @@ namespace AbpCoreEf7JsonColumnDemo.MultiTenancy
             entity.Name = updateInput.Name;
             entity.TenancyName = updateInput.TenancyName;
             entity.IsActive = updateInput.IsActive;
+            entity.Metadata = ObjectMapper.Map<TenantMetadata>(updateInput.Metadata);
         }
 
         public override async Task DeleteAsync(EntityDto<int> input)

@@ -6,7 +6,7 @@
 }
 @await Html.PartialAsync("~/Views/Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(L("EditTenant")))
 <form name="TenantEditForm" role="form" class="form-horizontal">
-    <input type="hidden" name="Id" value="@Model.Id" />
+    <input type="hidden" name="Id" value="@Model.Id"/>
     <div class="modal-body">
         <div class="form-group row required">
             <label class="col-md-3 col-form-label" for="tenancy-name">@L("TenancyName")</label>
@@ -23,7 +23,27 @@
         <div class="form-group row">
             <label class="col-md-3 col-form-label" for="isactive">@L("IsActive")</label>
             <div class="col-md-9">
-                <input id="isactive" type="checkbox" name="IsActive" value="true" @(Model.IsActive ? "checked" : "") />
+                <input id="isactive" type="checkbox" name="IsActive" value="true" @(Model.IsActive ? "checked" : "")/>
+            </div>
+        </div>
+        <h6>Metadata</h6>
+        <hr/>
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label">@L("LogoId")</label>
+            <div class="col-md-9">
+                <input asp-for="Metadata.LogoId"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label">@L("Address")</label>
+            <div class="col-md-9">
+                <input asp-for="Metadata.Address"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label">@L("Description")</label>
+            <div class="col-md-9">
+                <input asp-for="Metadata.Description"/>
             </div>
         </div>
     </div>

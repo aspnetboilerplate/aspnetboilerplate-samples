@@ -24,6 +24,8 @@ namespace AbpCoreEf7JsonColumnDemo.MultiTenancy.Dto
         [StringLength(AbpTenantBase.MaxConnectionStringLength)]
         public string ConnectionString { get; set; }
 
-        public bool IsActive {get; set;}
+        public bool IsActive { get; set; }
+
+        public TenantMetadataDto Metadata { get; set; }
     }
 }

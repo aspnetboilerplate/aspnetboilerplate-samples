@@ -48,6 +48,26 @@
                             <p>@L("DefaultPasswordIs", AbpCoreEf7JsonColumnDemo.Authorization.Users.User.DefaultPassword)</p>
                         </div>
                     </div>
+                    <h6>Metadata</h6>
+                    <hr/>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">@L("LogoId")</label>
+                        <div class="col-md-9">
+                            <input type="text" id="Metadata_LogoId" name="Metadata.LogoId" class="form-control">
+                        </div>
+                    </div>
+                     <div class="form-group row">
+                        <label class="col-md-3 col-form-label">@L("Address")</label>
+                        <div class="col-md-9">
+                            <input type="text" id="Metadata_Address" name="Metadata.Address" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">@L("Description")</label>
+                        <div class="col-md-9">
+                            <input type="text" id="Metadata_Description" name="Metadata.Description" class="form-control">
+                        </div>
+                    </div>
                 </div>
                 @await Html.PartialAsync("~/Views/Shared/Modals/_ModalFooterWithSaveAndCancel.cshtml")
             </form>

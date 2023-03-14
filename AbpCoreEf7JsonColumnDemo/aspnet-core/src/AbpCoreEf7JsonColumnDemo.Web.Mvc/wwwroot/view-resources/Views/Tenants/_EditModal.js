@@ -11,6 +11,12 @@
 
         var tenant = _$form.serializeFormToObject();
 
+        // JSON column sample code
+        tenant.metadata = {};
+        tenant.metadata.LogoId = _$form.find('#Metadata_LogoId').val();
+        tenant.metadata.Address = _$form.find('#Metadata_Address').val();
+        tenant.metadata.Description = _$form.find('#Metadata_Description').val();
+        
         abp.ui.setBusy(_$form);
         _tenantService.update(tenant).done(function () {
             _$modal.modal('hide');

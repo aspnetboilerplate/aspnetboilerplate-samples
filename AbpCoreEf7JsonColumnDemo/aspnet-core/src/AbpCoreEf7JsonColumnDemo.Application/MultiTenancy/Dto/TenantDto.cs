@@ -18,5 +18,7 @@ namespace AbpCoreEf7JsonColumnDemo.MultiTenancy.Dto
         public string Name { get; set; }        
         
         public bool IsActive {get; set;}
+        
+        public TenantMetadataDto Metadata { get; set; }
     }
 }
