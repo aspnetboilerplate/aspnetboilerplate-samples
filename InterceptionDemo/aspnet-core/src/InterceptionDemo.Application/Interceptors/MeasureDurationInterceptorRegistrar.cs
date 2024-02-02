@@ -1,4 +1,5 @@
-﻿using Abp.Dependency;
+﻿using Abp.Application.Services;
+using Abp.Dependency;
 using Castle.Core;
 
 namespace InterceptionDemo.Interceptors
@@ -9,9 +10,10 @@ namespace InterceptionDemo.Interceptors
         {
             iocManager.IocContainer.Kernel.ComponentRegistered += (key, handler) =>
             {
-                handler.ComponentModel.Interceptors.Add(
-                    new InterceptorReference(typeof(AbpAsyncDeterminationInterceptor<MeasureDurationAsyncInterceptor>))
-                );
+                if (typeof (IApplicationService).IsAssignableFrom(handler.ComponentModel.Implementation))
+                {
+                    handler.ComponentModel.Interceptors.Add(new InterceptorReference(typeof(AbpAsyncDeterminationInterceptor<MeasureDurationAsyncInterceptor>)));
+                }
             };
         }
     }
