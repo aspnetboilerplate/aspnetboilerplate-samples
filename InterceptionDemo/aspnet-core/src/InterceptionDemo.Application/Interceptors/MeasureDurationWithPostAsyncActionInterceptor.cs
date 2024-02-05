@@ -38,6 +38,7 @@ namespace InterceptionDemo.Interceptors
 
             proceedInfo.Invoke();
             var task = (Task)invocation.ReturnValue;
+            await TestActionAsync(invocation.MethodInvocationTarget.Name);
             await task;
 
             //After method execution
@@ -54,6 +55,7 @@ namespace InterceptionDemo.Interceptors
             proceedInfo.Invoke();
 
             var taskResult = (Task<TResult>)invocation.ReturnValue;
+            await TestActionAsync(invocation.MethodInvocationTarget.Name);
             var result = await taskResult;
 
             //After method execution

@@ -1,10 +1,12 @@
-﻿using Castle.Core.Logging;
+﻿using Abp.Dependency;
+using Castle.Core.Logging;
 using Castle.DynamicProxy;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace InterceptionDemo.Interceptors
 {
-    public class MeasureDurationInterceptor : IInterceptor
+    public class MeasureDurationInterceptor : AbpInterceptorBase, ITransientDependency
     {
         public ILogger Logger { get; set; }
 
@@ -13,7 +15,7 @@ namespace InterceptionDemo.Interceptors
             Logger = NullLogger.Instance;
         }
 
-        public void Intercept(IInvocation invocation)
+        public override void InterceptSynchronous(IInvocation invocation)
         {
             //Before method execution
             var stopwatch = Stopwatch.StartNew();
@@ -28,6 +30,16 @@ namespace InterceptionDemo.Interceptors
                 invocation.MethodInvocationTarget.Name,
                 stopwatch.Elapsed.TotalMilliseconds.ToString("0.000")
                 );
+        }
+
+        protected override Task InternalInterceptAsynchronous(IInvocation invocation)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        protected override Task<TResult> InternalInterceptAsynchronous<TResult>(IInvocation invocation)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

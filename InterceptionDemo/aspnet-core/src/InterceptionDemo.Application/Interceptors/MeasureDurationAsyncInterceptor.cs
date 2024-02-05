@@ -15,7 +15,7 @@ namespace InterceptionDemo.Interceptors
         {
             Logger = NullLogger.Instance;
         }
-
+        
         public override void InterceptSynchronous(IInvocation invocation)
         {
             //Before method execution
@@ -41,6 +41,7 @@ namespace InterceptionDemo.Interceptors
             var stopwatch = Stopwatch.StartNew();
 
             proceedInfo.Invoke();
+
             var task = (Task)invocation.ReturnValue;
             await task;
 
@@ -74,6 +75,6 @@ namespace InterceptionDemo.Interceptors
                 );
 
             return result;
-        }       
+        }
     }
 }

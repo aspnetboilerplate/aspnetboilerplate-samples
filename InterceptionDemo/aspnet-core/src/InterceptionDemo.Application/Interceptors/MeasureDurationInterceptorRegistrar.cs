@@ -12,7 +12,9 @@ namespace InterceptionDemo.Interceptors
             {
                 if (typeof (IApplicationService).IsAssignableFrom(handler.ComponentModel.Implementation))
                 {
-                    handler.ComponentModel.Interceptors.Add(new InterceptorReference(typeof(AbpAsyncDeterminationInterceptor<MeasureDurationAsyncInterceptor>)));
+                    //handler.ComponentModel.Interceptors.Add(new InterceptorReference(typeof(AbpAsyncDeterminationInterceptor<MeasureDurationInterceptor>)));
+                    //handler.ComponentModel.Interceptors.Add(new InterceptorReference(typeof(AbpAsyncDeterminationInterceptor<MeasureDurationAsyncInterceptor>)));
+                    handler.ComponentModel.Interceptors.Add(new InterceptorReference(typeof(AbpAsyncDeterminationInterceptor<MeasureDurationWithPostAsyncActionInterceptor>)));
                 }
             };
         }

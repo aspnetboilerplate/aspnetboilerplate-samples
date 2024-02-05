@@ -29,7 +29,9 @@ namespace InterceptionDemo
                 cfg => cfg.AddMaps(thisAssembly)
             );
 
-            IocManager.Register(typeof(AbpAsyncDeterminationInterceptor<MeasureDurationAsyncInterceptor>), DependencyLifeStyle.Transient);
+            //IocManager.Register(typeof(AbpAsyncDeterminationInterceptor<MeasureDurationInterceptor>), DependencyLifeStyle.Transient);
+            //IocManager.Register(typeof(AbpAsyncDeterminationInterceptor<MeasureDurationAsyncInterceptor>), DependencyLifeStyle.Transient);
+            IocManager.Register(typeof(AbpAsyncDeterminationInterceptor<MeasureDurationWithPostAsyncActionInterceptor>), DependencyLifeStyle.Transient);
         }
     }
 }
