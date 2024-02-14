@@ -1,13 +1,37 @@
-A 'Simple Task System' application built with ASP.NET Boilerplate.
+# Important
 
-This is the most complete example project. Includes three web projects:
+Issues of this repository are tracked on https://github.com/aspnetboilerplate/aspnetboilerplate. Please create your issues on https://github.com/aspnetboilerplate/aspnetboilerplate/issues.
 
-* One uses **AngularJs** as frontend framework and **EntityFramework** as ORM.
-* One uses **DurandalJs** as frontend framework and **Nhibernate** as ORM.
-* And a console application (SimpleTaskSystem.ConsoleApp) to simply show how to bootstrap ABP and use an application service in a Console application.
+# Introduction
 
-All projects share same Domain ve Application layers. Sample projects are documented in detail in these Codeproject articles:
+This is a template to create **ASP.NET Core MVC / Angular** based startup projects for [ASP.NET Boilerplate](https://aspnetboilerplate.com/Pages/Documents). It has 2 different versions:
 
-* Angular&EF version: http://www.codeproject.com/Articles/791740/Using-AngularJs-ASP-NET-MVC-Web-API-and-EntityFram
-* Durandal&NH version: http://www.codeproject.com/Articles/768664/Introduction-to-ASP-NET-Boilerplate
-* Unit Testing for this project: http://www.codeproject.com/Articles/871786/Unit-testing-in-Csharp-using-xUnit-Entity-Framewor
+1. [ASP.NET Core MVC & jQuery](https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Core) (server rendered multi-page application).
+2. [ASP.NET Core & Angular](https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Angular) (single page application).
+ 
+User Interface is based on [AdminLTE theme](https://github.com/ColorlibHQ/AdminLTE).
+ 
+# Download
+
+Create & download your project from https://aspnetboilerplate.com/Templates
+
+# Screenshots
+
+#### Sample Dashboard Page
+![](_screenshots/module-zero-core-template-ui-home.png)
+
+#### User Creation Modal
+![](_screenshots/module-zero-core-template-ui-user-create-modal.png)
+
+#### Login Page
+
+![](_screenshots/module-zero-core-template-ui-login.png)
+
+# Documentation
+
+* [ASP.NET Core MVC & jQuery version.](https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Core)
+* [ASP.NET Core & Angular  version.](https://aspnetboilerplate.com/Pages/Documents/Zero/Startup-Template-Angular)
+
+# License
+
+[MIT](LICENSE).
