@@ -50,6 +50,12 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
                 'Pages.Roles'
             ),
             new MenuItem(
+                "Tasks",
+                '/app/tasks',
+                'fas fa-tasks',
+                'Pages.Tasks'
+            ),
+            new MenuItem(
                 this.l('Tenants'),
                 '/app/tenants',
                 'fas fa-building',

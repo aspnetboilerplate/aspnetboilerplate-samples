@@ -38,6 +38,9 @@ import { SidebarComponent } from './layout/sidebar.component';
 import { SidebarLogoComponent } from './layout/sidebar-logo.component';
 import { SidebarUserPanelComponent } from './layout/sidebar-user-panel.component';
 import { SidebarMenuComponent } from './layout/sidebar-menu.component';
+//tasks
+import { TasksComponent } from '@app/tasks/task.component'
+import { CreateTaskComponent } from '@app/tasks/create-task/create-task.component'
 
 @NgModule({
     declarations: [
@@ -67,7 +70,11 @@ import { SidebarMenuComponent } from './layout/sidebar-menu.component';
         SidebarComponent,
         SidebarLogoComponent,
         SidebarUserPanelComponent,
-        SidebarMenuComponent
+        SidebarMenuComponent,
+        //taks
+        TasksComponent,
+        CreateTaskComponent
+    
     ],
     imports: [
         CommonModule,

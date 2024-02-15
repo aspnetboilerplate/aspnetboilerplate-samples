@@ -117,5 +117,20 @@
     <text name="ResetPasswordStepOneInfo">1. Enter your administrator password</text>
     <text name="ResetPasswordStepTwoInfo">2. Copy this random password so you can send it to the user</text>
     <text name="UsersActivation">Users activation</text>
+
+	<text name="TaskSystem" value="Task System" />
+	<text name="TaskList" value="Task List" />
+	<text name="NewTask" value="New Task" />
+	<text name="Xtasks" value="{0} tasks" />
+	<text name="AllTasks" value="All tasks" />
+	<text name="ActiveTasks" value="Active tasks" />
+	<text name="CompletedTasks" value="Completed tasks" />
+	<text name="TaskDescription" value="Task description" />
+	<text name="EnterDescriptionHere" value="Task description" />
+	<text name="AssignTo" value="Assign to" />
+	<text name="SelectUser" value="Select user" />
+	<text name="CreateTheTask" value="Create the task" />
+	<text name="TaskUpdatedMessage" value="Task has been successfully updated." />
+	<text name="TaskCreatedMessage" value="Task {0} has been created successfully." />
   </texts>
 </localizationDictionary>
