@@ -1,0 +1,70 @@
+<form
+  class="form-horizontal"
+  autocomplete="off"
+  #createTaskForm="ngForm"
+  (ngSubmit)="save()"
+>
+  <abp-modal-header
+    [title]="'CreateTheTask' | localize"
+    (onCloseClick)="bsModalRef.hide()"
+  ></abp-modal-header>
+  <div class="modal-body">
+    <div class="form-group row required">
+      <label class="col-md-3 col-form-label" for="tenancyName">
+        {{ "TaskDescription" | localize }}
+      </label>
+      <div class="col-md-9">
+        <input
+          type="text"
+          class="form-control"
+          name="description"
+          id="description"
+          minlength="2"
+          maxlength="64"
+          required
+          [(ngModel)]="task.description"
+          #descriptionModel="ngModel"
+          #descriptionEl
+        />
+        <abp-validation-summary
+          [control]="descriptionModel"
+          [controlEl]="descriptionEl"
+        ></abp-validation-summary>
+      </div>
+    </div>
+
+    <div class="form-group row required">
+        <label class="col-md-3 col-form-label" for="TaskAssignedUser">
+          {{ "AssignTo" | localize }}
+        </label>
+        <div class="col-md-9">
+          <select
+            type="text"
+            class="form-control"
+            name="assignedUserId"
+            id="TaskAssignedUser"
+            required
+            [(ngModel)]="task.assignedUserId"
+            #assignedUserIdModel="ngModel"
+            #assignedUserIdEl
+         
+          >
+          <option value="" disabled selected >Select user</option>
+          <option *ngFor="let user of users" [value]="user.id">{{user.name}}</option>
+        </select>
+
+          <abp-validation-summary
+            [control]="assignedUserIdModel"
+            [controlEl]="assignedUserIdEl"
+          ></abp-validation-summary>
+        </div>
+      </div>
+
+  </div>
+
+  <abp-modal-footer
+    [cancelDisabled]="saving"
+    [saveDisabled]="!createTaskForm.form.valid || saving"
+    (onCancelClick)="bsModalRef.hide()"
+  ></abp-modal-footer>
+</form>

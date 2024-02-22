@@ -1,0 +1,87 @@
+<div>
+  <section class="content-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <h3 class="panel-title col-xs-6">
+            {{ "TaskList" | localize }} - <span>{{ getTaskCountText() }}</span>
+          </h3>
+        </div>
+        <div class="col-6 text-right">
+          <div class="col-xs-6 text-right d-inline-block mr-4">
+            <select class="form-control" [(ngModel)]="selectedTaskState" (change)="list()">
+              <option value="0">{{ "AllTasks" | localize }}</option>
+              <option value="1">{{ "ActiveTasks" | localize }}</option>
+              <option value="2">{{ "CompletedTasks" | localize }}</option>
+            </select>
+          </div>
+          <a href="javascript:;"
+            class="btn bg-blue"
+            (click)="createTask()" >
+            <i class="fa fa-plus-square"></i>
+            {{ "Create" | localize }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="content px-2 pb-5" *ngIf="tasks.length > 0">
+    <div class="container">
+      <ul class="list-group">
+        <li *ngFor="let task of tasks" class="list-group-item">
+            <span
+            class="task-state-icon"
+            (click)="update(task)">
+            <i
+              class="fa-solid"
+              [ngClass]="{
+                'fa-minus': task.state == 1,
+                'fa-check': task.state == 2
+              }"
+            ></i>
+          </span>
+ 
+          <span
+          class="ml-3"
+            [ngClass]="{
+              'task-description-active': task.state == 1,
+              'task-description-completed': task.state == 2
+            }"
+            >{{ task.description }}</span
+          >
+          <br />
+          <span *ngIf="task.assignedUserId">
+            <span class="task-assignedto">{{ task.assignedUserName }}</span>
+          </span>
+          <span class="task-creationtime ml-2">{{ task.creationTime | date : "short" }}</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<style>
+  body {
+  padding-top: 80px;
+}
+.task-description-active {
+  font-weight: bold;
+}
+.task-description-completed {
+  color: #999;
+  -moz-text-decoration-line: line-through;
+  text-decoration-line: line-through;
+}
+.task-assignedto {
+  font-size: smaller;
+}
+.task-creationtime {
+  color: #999;
+  font-size: smaller;
+}
+.task-state-icon {
+  cursor: pointer;
+  font-size: 18px;
+}
+</style>
