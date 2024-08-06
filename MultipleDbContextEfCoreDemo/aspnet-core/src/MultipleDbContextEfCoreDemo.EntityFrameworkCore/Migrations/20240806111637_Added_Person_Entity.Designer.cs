@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MultipleDbContextEfCoreDemo.EntityFrameworkCore;
 
@@ -11,9 +12,11 @@ using MultipleDbContextEfCoreDemo.EntityFrameworkCore;
 namespace MultipleDbContextEfCoreDemo.Migrations
 {
     [DbContext(typeof(MultipleDbContextEfCoreDemoDbContext))]
-    partial class MultipleDbContextEfCoreDemoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240806111637_Added_Person_Entity")]
+    partial class Added_Person_Entity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

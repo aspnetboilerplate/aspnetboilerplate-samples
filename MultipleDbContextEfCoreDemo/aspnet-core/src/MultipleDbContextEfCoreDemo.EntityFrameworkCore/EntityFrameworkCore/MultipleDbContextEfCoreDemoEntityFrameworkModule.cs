@@ -20,6 +20,7 @@ namespace MultipleDbContextEfCoreDemo.EntityFrameworkCore
         {
             if (!SkipDbContextRegistration)
             {
+                // Configure first DbContext
                 Configuration.Modules.AbpEfCore().AddDbContext<MultipleDbContextEfCoreDemoDbContext>(options =>
                 {
                     if (options.ExistingConnection != null)
@@ -29,6 +30,18 @@ namespace MultipleDbContextEfCoreDemo.EntityFrameworkCore
                     else
                     {
                         MultipleDbContextEfCoreDemoDbContextConfigurer.Configure(options.DbContextOptions, options.ConnectionString);
+                    }
+                });
+
+                Configuration.Modules.AbpEfCore().AddDbContext<MultipleDbContextEfCoreDemoSecondDbContext>(options =>
+                {
+                    if (options.ExistingConnection != null)
+                    {
+                        MultipleDbContextEfCoreDemoSecondDbContextConfigurer.Configure(options.DbContextOptions, options.ExistingConnection);
+                    }
+                    else
+                    {
+                        MultipleDbContextEfCoreDemoSecondDbContextConfigurer.Configure(options.DbContextOptions, options.ConnectionString);
                     }
                 });
             }

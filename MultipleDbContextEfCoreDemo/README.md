@@ -10,8 +10,9 @@ A sample project to show multiple Entity Framework Core DbContexts working toget
 ### Run Migrations
 
 * Open Package Manager Console, select MultipleDbContextEfCoreDemo.EntityFrameworkCore as default project.
-* Run command to create first db: **Update-Database -Context MultipleDbContextEfCoreDemoDbContext**
-* Run command to create second db: **Update-Database -Context MultipleDbContextEfCoreDemoSecondDbContext**
+* Run command to create first db migration file: **add-migration Added_Person_Entity -Context MultipleDbContextEfCoreDemoDbContext**
+* Run command to create second db migration file: **add-migration Added_Course_Entity -Contex MultipleDbContextEfCoreDemoSecondDbContext**
+* Run the ***.Migrator project** to apply the changes to the database.
 
 ### Run Application
 

@@ -7,7 +7,10 @@ using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
 using Abp.Extensions;
 using Abp.MultiTenancy;
+using Abp.Reflection.Extensions;
 using Abp.Runtime.Security;
+using Microsoft.Extensions.Configuration;
+using MultipleDbContextEfCoreDemo.Configuration;
 using MultipleDbContextEfCoreDemo.EntityFrameworkCore;
 using MultipleDbContextEfCoreDemo.EntityFrameworkCore.Seed;
 using MultipleDbContextEfCoreDemo.MultiTenancy;
@@ -18,11 +21,12 @@ namespace MultipleDbContextEfCoreDemo.Migrator
     {
         private readonly Log _log;
         private readonly AbpZeroDbMigrator _migrator;
+        private readonly CustomSecondDbMigrator _secondMigrator;
         private readonly IRepository<Tenant> _tenantRepository;
         private readonly IDbPerTenantConnectionStringResolver _connectionStringResolver;
-
         public MultiTenantMigrateExecuter(
             AbpZeroDbMigrator migrator,
+            CustomSecondDbMigrator secondMigrator,
             IRepository<Tenant> tenantRepository,
             Log log,
             IDbPerTenantConnectionStringResolver connectionStringResolver)
@@ -30,6 +34,7 @@ namespace MultipleDbContextEfCoreDemo.Migrator
             _log = log;
 
             _migrator = migrator;
+            _secondMigrator = secondMigrator;
             _tenantRepository = tenantRepository;
             _connectionStringResolver = connectionStringResolver;
         }
@@ -37,16 +42,27 @@ namespace MultipleDbContextEfCoreDemo.Migrator
         public bool Run(bool skipConnVerification)
         {
             var hostConnStr = CensorConnectionString(_connectionStringResolver.GetNameOrConnectionString(new ConnectionStringResolveArgs(MultiTenancySides.Host)));
+
+            var secondConnStr = CensorConnectionString(_secondMigrator.GetSecondDbConnectionString());
+
             if (hostConnStr.IsNullOrWhiteSpace())
             {
                 _log.Write("Configuration file should contain a connection string named 'Default'");
                 return false;
             }
 
+            if (secondConnStr.IsNullOrWhiteSpace())
+            {
+                _log.Write("Configuration file should contain a connection string named 'Second'");
+                return false;
+            }
+
             _log.Write("Host database: " + ConnectionStringHelper.GetConnectionString(hostConnStr));
+            _log.Write("Second database: " + ConnectionStringHelper.GetConnectionString(secondConnStr));
+
             if (!skipConnVerification)
             {
-                _log.Write("Continue to migration for this host database and all tenants..? (Y/N): ");
+                _log.Write("Continue to migration for this host and second database and all tenants..? (Y/N): ");
                 var command = Console.ReadLine();
                 if (!command.IsIn("Y", "y"))
                 {
@@ -56,10 +72,12 @@ namespace MultipleDbContextEfCoreDemo.Migrator
             }
 
             _log.Write("HOST database migration started...");
+            _log.Write("Second database migration started...");
 
             try
             {
                 _migrator.CreateOrMigrateForHost(SeedHelper.SeedHostDb);
+                _secondMigrator.CreateOrMigrate();
             }
             catch (Exception ex)
             {
@@ -70,6 +88,7 @@ namespace MultipleDbContextEfCoreDemo.Migrator
             }
 
             _log.Write("HOST database migration completed.");
+            _log.Write("DEFAULT database migration completed.");
             _log.Write("--------------------------------------------------------");
 
             var migratedDatabases = new HashSet<string>();

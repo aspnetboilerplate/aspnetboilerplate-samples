@@ -8,6 +8,8 @@ namespace MultipleDbContextEfCoreDemo
 
         public const string ConnectionStringName = "Default";
 
+        public const string SecondConnectionStringName = "Second";
+
         public const bool MultiTenancyEnabled = true;
 
 
